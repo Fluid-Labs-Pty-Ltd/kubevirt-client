@@ -77,7 +77,7 @@ export type K8sIoApiCoreV1TolerationOperatorEnum = typeof K8sIoApiCoreV1Tolerati
  */
 export declare function instanceOfK8sIoApiCoreV1Toleration(value: object): value is K8sIoApiCoreV1Toleration;
 export declare function K8sIoApiCoreV1TolerationFromJSON(json: any): K8sIoApiCoreV1Toleration;
-export declare function K8sIoApiCoreV1TolerationFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1Toleration;
+export declare function K8sIoApiCoreV1TolerationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1Toleration;
 export declare function K8sIoApiCoreV1TolerationToJSON(json: any): K8sIoApiCoreV1Toleration;
-export declare function K8sIoApiCoreV1TolerationToJSONTyped(value?: K8sIoApiCoreV1Toleration | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1TolerationToJSONTyped(value?: K8sIoApiCoreV1Toleration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1Toleration.d.ts.map

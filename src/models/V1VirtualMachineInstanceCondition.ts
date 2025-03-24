@@ -58,7 +58,7 @@ export function V1VirtualMachineInstanceConditionFromJSON(json: any): V1VirtualM
     return V1VirtualMachineInstanceConditionFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceConditionFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceCondition {
+export function V1VirtualMachineInstanceConditionFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceCondition {
     if (json == null) {
         return json;
     }
@@ -75,7 +75,7 @@ export function V1VirtualMachineInstanceConditionToJSON(json: any): V1VirtualMac
     return V1VirtualMachineInstanceConditionToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceConditionToJSONTyped(value?: V1VirtualMachineInstanceCondition | null, ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceConditionToJSONTyped(value?: V1VirtualMachineInstanceCondition | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

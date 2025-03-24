@@ -22,7 +22,7 @@ export function instanceOfV1NodeMediatedDeviceTypesConfig(value) {
 export function V1NodeMediatedDeviceTypesConfigFromJSON(json) {
     return V1NodeMediatedDeviceTypesConfigFromJSONTyped(json, false);
 }
-export function V1NodeMediatedDeviceTypesConfigFromJSONTyped(json, ignoreDiscriminator) {
+export function V1NodeMediatedDeviceTypesConfigFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,7 +35,7 @@ export function V1NodeMediatedDeviceTypesConfigFromJSONTyped(json, ignoreDiscrim
 export function V1NodeMediatedDeviceTypesConfigToJSON(json) {
     return V1NodeMediatedDeviceTypesConfigToJSONTyped(json, false);
 }
-export function V1NodeMediatedDeviceTypesConfigToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1NodeMediatedDeviceTypesConfigToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

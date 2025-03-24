@@ -20,7 +20,7 @@ export function instanceOfV1PreferenceMatcher(value) {
 export function V1PreferenceMatcherFromJSON(json) {
     return V1PreferenceMatcherFromJSONTyped(json, false);
 }
-export function V1PreferenceMatcherFromJSONTyped(json, ignoreDiscriminator) {
+export function V1PreferenceMatcherFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,7 +35,7 @@ export function V1PreferenceMatcherFromJSONTyped(json, ignoreDiscriminator) {
 export function V1PreferenceMatcherToJSON(json) {
     return V1PreferenceMatcherToJSONTyped(json, false);
 }
-export function V1PreferenceMatcherToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1PreferenceMatcherToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

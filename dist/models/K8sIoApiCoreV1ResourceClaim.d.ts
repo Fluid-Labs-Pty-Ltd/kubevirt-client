@@ -33,7 +33,7 @@ export interface K8sIoApiCoreV1ResourceClaim {
  */
 export declare function instanceOfK8sIoApiCoreV1ResourceClaim(value: object): value is K8sIoApiCoreV1ResourceClaim;
 export declare function K8sIoApiCoreV1ResourceClaimFromJSON(json: any): K8sIoApiCoreV1ResourceClaim;
-export declare function K8sIoApiCoreV1ResourceClaimFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1ResourceClaim;
+export declare function K8sIoApiCoreV1ResourceClaimFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1ResourceClaim;
 export declare function K8sIoApiCoreV1ResourceClaimToJSON(json: any): K8sIoApiCoreV1ResourceClaim;
-export declare function K8sIoApiCoreV1ResourceClaimToJSONTyped(value?: K8sIoApiCoreV1ResourceClaim | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1ResourceClaimToJSONTyped(value?: K8sIoApiCoreV1ResourceClaim | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1ResourceClaim.d.ts.map

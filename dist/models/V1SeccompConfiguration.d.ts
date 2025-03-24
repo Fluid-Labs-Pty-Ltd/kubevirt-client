@@ -28,7 +28,7 @@ export interface V1SeccompConfiguration {
  */
 export declare function instanceOfV1SeccompConfiguration(value: object): value is V1SeccompConfiguration;
 export declare function V1SeccompConfigurationFromJSON(json: any): V1SeccompConfiguration;
-export declare function V1SeccompConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SeccompConfiguration;
+export declare function V1SeccompConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SeccompConfiguration;
 export declare function V1SeccompConfigurationToJSON(json: any): V1SeccompConfiguration;
-export declare function V1SeccompConfigurationToJSONTyped(value?: V1SeccompConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SeccompConfigurationToJSONTyped(value?: V1SeccompConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SeccompConfiguration.d.ts.map

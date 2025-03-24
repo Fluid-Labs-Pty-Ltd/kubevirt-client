@@ -40,7 +40,7 @@ export interface V1USBHostDevice {
  */
 export declare function instanceOfV1USBHostDevice(value: object): value is V1USBHostDevice;
 export declare function V1USBHostDeviceFromJSON(json: any): V1USBHostDevice;
-export declare function V1USBHostDeviceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1USBHostDevice;
+export declare function V1USBHostDeviceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1USBHostDevice;
 export declare function V1USBHostDeviceToJSON(json: any): V1USBHostDevice;
-export declare function V1USBHostDeviceToJSONTyped(value?: V1USBHostDevice | null, ignoreDiscriminator?: boolean): any;
+export declare function V1USBHostDeviceToJSONTyped(value?: V1USBHostDevice | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1USBHostDevice.d.ts.map

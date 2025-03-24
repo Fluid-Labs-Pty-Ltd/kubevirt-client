@@ -69,7 +69,7 @@ export interface V1SEVMeasurementInfo {
  */
 export declare function instanceOfV1SEVMeasurementInfo(value: object): value is V1SEVMeasurementInfo;
 export declare function V1SEVMeasurementInfoFromJSON(json: any): V1SEVMeasurementInfo;
-export declare function V1SEVMeasurementInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SEVMeasurementInfo;
+export declare function V1SEVMeasurementInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SEVMeasurementInfo;
 export declare function V1SEVMeasurementInfoToJSON(json: any): V1SEVMeasurementInfo;
-export declare function V1SEVMeasurementInfoToJSONTyped(value?: V1SEVMeasurementInfo | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SEVMeasurementInfoToJSONTyped(value?: V1SEVMeasurementInfo | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SEVMeasurementInfo.d.ts.map

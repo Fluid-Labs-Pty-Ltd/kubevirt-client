@@ -21,7 +21,7 @@ export function instanceOfV1KSMConfiguration(value) {
 export function V1KSMConfigurationFromJSON(json) {
     return V1KSMConfigurationFromJSONTyped(json, false);
 }
-export function V1KSMConfigurationFromJSONTyped(json, ignoreDiscriminator) {
+export function V1KSMConfigurationFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1KSMConfigurationFromJSONTyped(json, ignoreDiscriminator) {
 export function V1KSMConfigurationToJSON(json) {
     return V1KSMConfigurationToJSONTyped(json, false);
 }
-export function V1KSMConfigurationToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1KSMConfigurationToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

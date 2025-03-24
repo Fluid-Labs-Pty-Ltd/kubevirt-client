@@ -28,7 +28,7 @@ export interface V1LaunchSecurity {
  */
 export declare function instanceOfV1LaunchSecurity(value: object): value is V1LaunchSecurity;
 export declare function V1LaunchSecurityFromJSON(json: any): V1LaunchSecurity;
-export declare function V1LaunchSecurityFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1LaunchSecurity;
+export declare function V1LaunchSecurityFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1LaunchSecurity;
 export declare function V1LaunchSecurityToJSON(json: any): V1LaunchSecurity;
-export declare function V1LaunchSecurityToJSONTyped(value?: V1LaunchSecurity | null, ignoreDiscriminator?: boolean): any;
+export declare function V1LaunchSecurityToJSONTyped(value?: V1LaunchSecurity | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1LaunchSecurity.d.ts.map

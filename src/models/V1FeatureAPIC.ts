@@ -44,7 +44,7 @@ export function V1FeatureAPICFromJSON(json: any): V1FeatureAPIC {
     return V1FeatureAPICFromJSONTyped(json, false);
 }
 
-export function V1FeatureAPICFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1FeatureAPIC {
+export function V1FeatureAPICFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1FeatureAPIC {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1FeatureAPICToJSON(json: any): V1FeatureAPIC {
     return V1FeatureAPICToJSONTyped(json, false);
 }
 
-export function V1FeatureAPICToJSONTyped(value?: V1FeatureAPIC | null, ignoreDiscriminator: boolean = false): any {
+export function V1FeatureAPICToJSONTyped(value?: V1FeatureAPIC | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

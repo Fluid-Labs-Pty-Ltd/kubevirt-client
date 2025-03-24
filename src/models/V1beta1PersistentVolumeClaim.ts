@@ -59,7 +59,7 @@ export function V1beta1PersistentVolumeClaimFromJSON(json: any): V1beta1Persiste
     return V1beta1PersistentVolumeClaimFromJSONTyped(json, false);
 }
 
-export function V1beta1PersistentVolumeClaimFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1PersistentVolumeClaim {
+export function V1beta1PersistentVolumeClaimFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1PersistentVolumeClaim {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1beta1PersistentVolumeClaimToJSON(json: any): V1beta1Persistent
     return V1beta1PersistentVolumeClaimToJSONTyped(json, false);
 }
 
-export function V1beta1PersistentVolumeClaimToJSONTyped(value?: V1beta1PersistentVolumeClaim | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1PersistentVolumeClaimToJSONTyped(value?: V1beta1PersistentVolumeClaim | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

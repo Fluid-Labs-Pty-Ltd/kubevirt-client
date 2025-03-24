@@ -27,7 +27,7 @@ export interface V1TPMDevice {
  */
 export declare function instanceOfV1TPMDevice(value: object): value is V1TPMDevice;
 export declare function V1TPMDeviceFromJSON(json: any): V1TPMDevice;
-export declare function V1TPMDeviceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1TPMDevice;
+export declare function V1TPMDeviceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1TPMDevice;
 export declare function V1TPMDeviceToJSON(json: any): V1TPMDevice;
-export declare function V1TPMDeviceToJSONTyped(value?: V1TPMDevice | null, ignoreDiscriminator?: boolean): any;
+export declare function V1TPMDeviceToJSONTyped(value?: V1TPMDevice | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1TPMDevice.d.ts.map

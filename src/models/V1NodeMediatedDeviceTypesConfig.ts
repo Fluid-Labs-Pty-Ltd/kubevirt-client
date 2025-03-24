@@ -51,7 +51,7 @@ export function V1NodeMediatedDeviceTypesConfigFromJSON(json: any): V1NodeMediat
     return V1NodeMediatedDeviceTypesConfigFromJSONTyped(json, false);
 }
 
-export function V1NodeMediatedDeviceTypesConfigFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1NodeMediatedDeviceTypesConfig {
+export function V1NodeMediatedDeviceTypesConfigFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1NodeMediatedDeviceTypesConfig {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function V1NodeMediatedDeviceTypesConfigToJSON(json: any): V1NodeMediated
     return V1NodeMediatedDeviceTypesConfigToJSONTyped(json, false);
 }
 
-export function V1NodeMediatedDeviceTypesConfigToJSONTyped(value?: V1NodeMediatedDeviceTypesConfig | null, ignoreDiscriminator: boolean = false): any {
+export function V1NodeMediatedDeviceTypesConfigToJSONTyped(value?: V1NodeMediatedDeviceTypesConfig | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

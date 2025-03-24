@@ -20,7 +20,7 @@ export function instanceOfV1TopologyHints(value) {
 export function V1TopologyHintsFromJSON(json) {
     return V1TopologyHintsFromJSONTyped(json, false);
 }
-export function V1TopologyHintsFromJSONTyped(json, ignoreDiscriminator) {
+export function V1TopologyHintsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function V1TopologyHintsFromJSONTyped(json, ignoreDiscriminator) {
 export function V1TopologyHintsToJSON(json) {
     return V1TopologyHintsToJSONTyped(json, false);
 }
-export function V1TopologyHintsToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1TopologyHintsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

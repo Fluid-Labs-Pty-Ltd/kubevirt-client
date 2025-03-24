@@ -38,7 +38,7 @@ export function V1I6300ESBWatchdogFromJSON(json: any): V1I6300ESBWatchdog {
     return V1I6300ESBWatchdogFromJSONTyped(json, false);
 }
 
-export function V1I6300ESBWatchdogFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1I6300ESBWatchdog {
+export function V1I6300ESBWatchdogFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1I6300ESBWatchdog {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1I6300ESBWatchdogToJSON(json: any): V1I6300ESBWatchdog {
     return V1I6300ESBWatchdogToJSONTyped(json, false);
 }
 
-export function V1I6300ESBWatchdogToJSONTyped(value?: V1I6300ESBWatchdog | null, ignoreDiscriminator: boolean = false): any {
+export function V1I6300ESBWatchdogToJSONTyped(value?: V1I6300ESBWatchdog | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

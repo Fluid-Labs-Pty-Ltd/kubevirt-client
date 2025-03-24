@@ -21,7 +21,7 @@ export function instanceOfV1SysprepSource(value) {
 export function V1SysprepSourceFromJSON(json) {
     return V1SysprepSourceFromJSONTyped(json, false);
 }
-export function V1SysprepSourceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1SysprepSourceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1SysprepSourceFromJSONTyped(json, ignoreDiscriminator) {
 export function V1SysprepSourceToJSON(json) {
     return V1SysprepSourceToJSONTyped(json, false);
 }
-export function V1SysprepSourceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1SysprepSourceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -33,7 +33,7 @@ export interface V1CPUFeature {
  */
 export declare function instanceOfV1CPUFeature(value: object): value is V1CPUFeature;
 export declare function V1CPUFeatureFromJSON(json: any): V1CPUFeature;
-export declare function V1CPUFeatureFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CPUFeature;
+export declare function V1CPUFeatureFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CPUFeature;
 export declare function V1CPUFeatureToJSON(json: any): V1CPUFeature;
-export declare function V1CPUFeatureToJSONTyped(value?: V1CPUFeature | null, ignoreDiscriminator?: boolean): any;
+export declare function V1CPUFeatureToJSONTyped(value?: V1CPUFeature | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1CPUFeature.d.ts.map

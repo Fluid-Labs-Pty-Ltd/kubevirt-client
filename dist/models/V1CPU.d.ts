@@ -84,7 +84,7 @@ export interface V1CPU {
  */
 export declare function instanceOfV1CPU(value: object): value is V1CPU;
 export declare function V1CPUFromJSON(json: any): V1CPU;
-export declare function V1CPUFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CPU;
+export declare function V1CPUFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CPU;
 export declare function V1CPUToJSON(json: any): V1CPU;
-export declare function V1CPUToJSONTyped(value?: V1CPU | null, ignoreDiscriminator?: boolean): any;
+export declare function V1CPUToJSONTyped(value?: V1CPU | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1CPU.d.ts.map

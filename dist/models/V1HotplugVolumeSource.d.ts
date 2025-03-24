@@ -35,7 +35,7 @@ export interface V1HotplugVolumeSource {
  */
 export declare function instanceOfV1HotplugVolumeSource(value: object): value is V1HotplugVolumeSource;
 export declare function V1HotplugVolumeSourceFromJSON(json: any): V1HotplugVolumeSource;
-export declare function V1HotplugVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1HotplugVolumeSource;
+export declare function V1HotplugVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1HotplugVolumeSource;
 export declare function V1HotplugVolumeSourceToJSON(json: any): V1HotplugVolumeSource;
-export declare function V1HotplugVolumeSourceToJSONTyped(value?: V1HotplugVolumeSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1HotplugVolumeSourceToJSONTyped(value?: V1HotplugVolumeSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1HotplugVolumeSource.d.ts.map

@@ -28,7 +28,7 @@ export interface V1SSHPublicKeyAccessCredentialSource {
  */
 export declare function instanceOfV1SSHPublicKeyAccessCredentialSource(value: object): value is V1SSHPublicKeyAccessCredentialSource;
 export declare function V1SSHPublicKeyAccessCredentialSourceFromJSON(json: any): V1SSHPublicKeyAccessCredentialSource;
-export declare function V1SSHPublicKeyAccessCredentialSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SSHPublicKeyAccessCredentialSource;
+export declare function V1SSHPublicKeyAccessCredentialSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SSHPublicKeyAccessCredentialSource;
 export declare function V1SSHPublicKeyAccessCredentialSourceToJSON(json: any): V1SSHPublicKeyAccessCredentialSource;
-export declare function V1SSHPublicKeyAccessCredentialSourceToJSONTyped(value?: V1SSHPublicKeyAccessCredentialSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SSHPublicKeyAccessCredentialSourceToJSONTyped(value?: V1SSHPublicKeyAccessCredentialSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SSHPublicKeyAccessCredentialSource.d.ts.map

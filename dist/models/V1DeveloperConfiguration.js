@@ -22,7 +22,7 @@ export function instanceOfV1DeveloperConfiguration(value) {
 export function V1DeveloperConfigurationFromJSON(json) {
     return V1DeveloperConfigurationFromJSONTyped(json, false);
 }
-export function V1DeveloperConfigurationFromJSONTyped(json, ignoreDiscriminator) {
+export function V1DeveloperConfigurationFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -42,7 +42,7 @@ export function V1DeveloperConfigurationFromJSONTyped(json, ignoreDiscriminator)
 export function V1DeveloperConfigurationToJSON(json) {
     return V1DeveloperConfigurationToJSONTyped(json, false);
 }
-export function V1DeveloperConfigurationToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1DeveloperConfigurationToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

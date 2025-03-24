@@ -34,7 +34,7 @@ export interface V1SysprepSource {
  */
 export declare function instanceOfV1SysprepSource(value: object): value is V1SysprepSource;
 export declare function V1SysprepSourceFromJSON(json: any): V1SysprepSource;
-export declare function V1SysprepSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SysprepSource;
+export declare function V1SysprepSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SysprepSource;
 export declare function V1SysprepSourceToJSON(json: any): V1SysprepSource;
-export declare function V1SysprepSourceToJSONTyped(value?: V1SysprepSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SysprepSourceToJSONTyped(value?: V1SysprepSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SysprepSource.d.ts.map

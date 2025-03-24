@@ -83,7 +83,7 @@ export function K8sIoApimachineryPkgApisMetaV1WatchEventFromJSON(json: any): K8s
     return K8sIoApimachineryPkgApisMetaV1WatchEventFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1WatchEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1WatchEvent {
+export function K8sIoApimachineryPkgApisMetaV1WatchEventFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1WatchEvent {
     if (json == null) {
         return json;
     }
@@ -98,7 +98,7 @@ export function K8sIoApimachineryPkgApisMetaV1WatchEventToJSON(json: any): K8sIo
     return K8sIoApimachineryPkgApisMetaV1WatchEventToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1WatchEventToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1WatchEvent | null, ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1WatchEventToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1WatchEvent | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -45,7 +45,7 @@ export interface V1StartOptions {
  */
 export declare function instanceOfV1StartOptions(value: object): value is V1StartOptions;
 export declare function V1StartOptionsFromJSON(json: any): V1StartOptions;
-export declare function V1StartOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1StartOptions;
+export declare function V1StartOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1StartOptions;
 export declare function V1StartOptionsToJSON(json: any): V1StartOptions;
-export declare function V1StartOptionsToJSONTyped(value?: V1StartOptions | null, ignoreDiscriminator?: boolean): any;
+export declare function V1StartOptionsToJSONTyped(value?: V1StartOptions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1StartOptions.d.ts.map

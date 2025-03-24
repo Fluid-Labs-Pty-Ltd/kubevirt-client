@@ -27,7 +27,7 @@ export interface V1HyperVPassthrough {
  */
 export declare function instanceOfV1HyperVPassthrough(value: object): value is V1HyperVPassthrough;
 export declare function V1HyperVPassthroughFromJSON(json: any): V1HyperVPassthrough;
-export declare function V1HyperVPassthroughFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1HyperVPassthrough;
+export declare function V1HyperVPassthroughFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1HyperVPassthrough;
 export declare function V1HyperVPassthroughToJSON(json: any): V1HyperVPassthrough;
-export declare function V1HyperVPassthroughToJSONTyped(value?: V1HyperVPassthrough | null, ignoreDiscriminator?: boolean): any;
+export declare function V1HyperVPassthroughToJSONTyped(value?: V1HyperVPassthrough | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1HyperVPassthrough.d.ts.map

@@ -23,7 +23,7 @@ export function instanceOfV1beta1VolumeSnapshotStatus(value) {
 export function V1beta1VolumeSnapshotStatusFromJSON(json) {
     return V1beta1VolumeSnapshotStatusFromJSONTyped(json, false);
 }
-export function V1beta1VolumeSnapshotStatusFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1VolumeSnapshotStatusFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -37,7 +37,7 @@ export function V1beta1VolumeSnapshotStatusFromJSONTyped(json, ignoreDiscriminat
 export function V1beta1VolumeSnapshotStatusToJSON(json) {
     return V1beta1VolumeSnapshotStatusToJSONTyped(json, false);
 }
-export function V1beta1VolumeSnapshotStatusToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1VolumeSnapshotStatusToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

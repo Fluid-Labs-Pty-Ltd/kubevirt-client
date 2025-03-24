@@ -97,7 +97,7 @@ export interface V1DomainSpec {
  */
 export declare function instanceOfV1DomainSpec(value: object): value is V1DomainSpec;
 export declare function V1DomainSpecFromJSON(json: any): V1DomainSpec;
-export declare function V1DomainSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DomainSpec;
+export declare function V1DomainSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DomainSpec;
 export declare function V1DomainSpecToJSON(json: any): V1DomainSpec;
-export declare function V1DomainSpecToJSONTyped(value?: V1DomainSpec | null, ignoreDiscriminator?: boolean): any;
+export declare function V1DomainSpecToJSONTyped(value?: V1DomainSpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1DomainSpec.d.ts.map

@@ -22,7 +22,7 @@ export function instanceOfV1beta1DataVolumeSourceGCS(value) {
 export function V1beta1DataVolumeSourceGCSFromJSON(json) {
     return V1beta1DataVolumeSourceGCSFromJSONTyped(json, false);
 }
-export function V1beta1DataVolumeSourceGCSFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1DataVolumeSourceGCSFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function V1beta1DataVolumeSourceGCSFromJSONTyped(json, ignoreDiscriminato
 export function V1beta1DataVolumeSourceGCSToJSON(json) {
     return V1beta1DataVolumeSourceGCSToJSONTyped(json, false);
 }
-export function V1beta1DataVolumeSourceGCSToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1DataVolumeSourceGCSToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -51,7 +51,7 @@ export interface V1Chassis {
  */
 export declare function instanceOfV1Chassis(value: object): value is V1Chassis;
 export declare function V1ChassisFromJSON(json: any): V1Chassis;
-export declare function V1ChassisFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Chassis;
+export declare function V1ChassisFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Chassis;
 export declare function V1ChassisToJSON(json: any): V1Chassis;
-export declare function V1ChassisToJSONTyped(value?: V1Chassis | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ChassisToJSONTyped(value?: V1Chassis | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Chassis.d.ts.map

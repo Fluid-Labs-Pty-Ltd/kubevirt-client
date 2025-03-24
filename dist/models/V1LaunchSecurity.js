@@ -21,7 +21,7 @@ export function instanceOfV1LaunchSecurity(value) {
 export function V1LaunchSecurityFromJSON(json) {
     return V1LaunchSecurityFromJSONTyped(json, false);
 }
-export function V1LaunchSecurityFromJSONTyped(json, ignoreDiscriminator) {
+export function V1LaunchSecurityFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1LaunchSecurityFromJSONTyped(json, ignoreDiscriminator) {
 export function V1LaunchSecurityToJSON(json) {
     return V1LaunchSecurityToJSONTyped(json, false);
 }
-export function V1LaunchSecurityToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1LaunchSecurityToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

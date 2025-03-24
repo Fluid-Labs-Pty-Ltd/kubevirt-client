@@ -20,7 +20,7 @@ export function instanceOfK8sIoApiCoreV1TCPSocketAction(value) {
 export function K8sIoApiCoreV1TCPSocketActionFromJSON(json) {
     return K8sIoApiCoreV1TCPSocketActionFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1TCPSocketActionFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1TCPSocketActionFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function K8sIoApiCoreV1TCPSocketActionFromJSONTyped(json, ignoreDiscrimin
 export function K8sIoApiCoreV1TCPSocketActionToJSON(json) {
     return K8sIoApiCoreV1TCPSocketActionToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1TCPSocketActionToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1TCPSocketActionToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

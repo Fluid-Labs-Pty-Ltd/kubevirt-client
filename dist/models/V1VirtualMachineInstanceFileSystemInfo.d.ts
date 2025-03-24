@@ -28,7 +28,7 @@ export interface V1VirtualMachineInstanceFileSystemInfo {
  */
 export declare function instanceOfV1VirtualMachineInstanceFileSystemInfo(value: object): value is V1VirtualMachineInstanceFileSystemInfo;
 export declare function V1VirtualMachineInstanceFileSystemInfoFromJSON(json: any): V1VirtualMachineInstanceFileSystemInfo;
-export declare function V1VirtualMachineInstanceFileSystemInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceFileSystemInfo;
+export declare function V1VirtualMachineInstanceFileSystemInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceFileSystemInfo;
 export declare function V1VirtualMachineInstanceFileSystemInfoToJSON(json: any): V1VirtualMachineInstanceFileSystemInfo;
-export declare function V1VirtualMachineInstanceFileSystemInfoToJSONTyped(value?: V1VirtualMachineInstanceFileSystemInfo | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceFileSystemInfoToJSONTyped(value?: V1VirtualMachineInstanceFileSystemInfo | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceFileSystemInfo.d.ts.map

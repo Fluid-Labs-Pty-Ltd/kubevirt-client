@@ -42,7 +42,7 @@ export interface K8sIoApiCoreV1Affinity {
  */
 export declare function instanceOfK8sIoApiCoreV1Affinity(value: object): value is K8sIoApiCoreV1Affinity;
 export declare function K8sIoApiCoreV1AffinityFromJSON(json: any): K8sIoApiCoreV1Affinity;
-export declare function K8sIoApiCoreV1AffinityFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1Affinity;
+export declare function K8sIoApiCoreV1AffinityFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1Affinity;
 export declare function K8sIoApiCoreV1AffinityToJSON(json: any): K8sIoApiCoreV1Affinity;
-export declare function K8sIoApiCoreV1AffinityToJSONTyped(value?: K8sIoApiCoreV1Affinity | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1AffinityToJSONTyped(value?: K8sIoApiCoreV1Affinity | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1Affinity.d.ts.map

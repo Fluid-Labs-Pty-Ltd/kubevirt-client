@@ -20,7 +20,7 @@ export function instanceOfV1DomainMemoryDumpInfo(value) {
 export function V1DomainMemoryDumpInfoFromJSON(json) {
     return V1DomainMemoryDumpInfoFromJSONTyped(json, false);
 }
-export function V1DomainMemoryDumpInfoFromJSONTyped(json, ignoreDiscriminator) {
+export function V1DomainMemoryDumpInfoFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function V1DomainMemoryDumpInfoFromJSONTyped(json, ignoreDiscriminator) {
 export function V1DomainMemoryDumpInfoToJSON(json) {
     return V1DomainMemoryDumpInfoToJSONTyped(json, false);
 }
-export function V1DomainMemoryDumpInfoToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1DomainMemoryDumpInfoToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

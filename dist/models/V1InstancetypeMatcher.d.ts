@@ -51,7 +51,7 @@ export interface V1InstancetypeMatcher {
  */
 export declare function instanceOfV1InstancetypeMatcher(value: object): value is V1InstancetypeMatcher;
 export declare function V1InstancetypeMatcherFromJSON(json: any): V1InstancetypeMatcher;
-export declare function V1InstancetypeMatcherFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1InstancetypeMatcher;
+export declare function V1InstancetypeMatcherFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1InstancetypeMatcher;
 export declare function V1InstancetypeMatcherToJSON(json: any): V1InstancetypeMatcher;
-export declare function V1InstancetypeMatcherToJSONTyped(value?: V1InstancetypeMatcher | null, ignoreDiscriminator?: boolean): any;
+export declare function V1InstancetypeMatcherToJSONTyped(value?: V1InstancetypeMatcher | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1InstancetypeMatcher.d.ts.map

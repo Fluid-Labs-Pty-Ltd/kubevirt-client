@@ -58,7 +58,7 @@ export interface V1CloudInitNoCloudSource {
  */
 export declare function instanceOfV1CloudInitNoCloudSource(value: object): value is V1CloudInitNoCloudSource;
 export declare function V1CloudInitNoCloudSourceFromJSON(json: any): V1CloudInitNoCloudSource;
-export declare function V1CloudInitNoCloudSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CloudInitNoCloudSource;
+export declare function V1CloudInitNoCloudSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CloudInitNoCloudSource;
 export declare function V1CloudInitNoCloudSourceToJSON(json: any): V1CloudInitNoCloudSource;
-export declare function V1CloudInitNoCloudSourceToJSONTyped(value?: V1CloudInitNoCloudSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1CloudInitNoCloudSourceToJSONTyped(value?: V1CloudInitNoCloudSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1CloudInitNoCloudSource.d.ts.map

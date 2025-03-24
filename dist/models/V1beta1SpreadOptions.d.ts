@@ -37,7 +37,7 @@ export interface V1beta1SpreadOptions {
  */
 export declare function instanceOfV1beta1SpreadOptions(value: object): value is V1beta1SpreadOptions;
 export declare function V1beta1SpreadOptionsFromJSON(json: any): V1beta1SpreadOptions;
-export declare function V1beta1SpreadOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1SpreadOptions;
+export declare function V1beta1SpreadOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1SpreadOptions;
 export declare function V1beta1SpreadOptionsToJSON(json: any): V1beta1SpreadOptions;
-export declare function V1beta1SpreadOptionsToJSONTyped(value?: V1beta1SpreadOptions | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1SpreadOptionsToJSONTyped(value?: V1beta1SpreadOptions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1SpreadOptions.d.ts.map

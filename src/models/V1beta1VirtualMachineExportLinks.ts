@@ -52,7 +52,7 @@ export function V1beta1VirtualMachineExportLinksFromJSON(json: any): V1beta1Virt
     return V1beta1VirtualMachineExportLinksFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportLinksFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineExportLinks {
+export function V1beta1VirtualMachineExportLinksFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineExportLinks {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function V1beta1VirtualMachineExportLinksToJSON(json: any): V1beta1Virtua
     return V1beta1VirtualMachineExportLinksToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportLinksToJSONTyped(value?: V1beta1VirtualMachineExportLinks | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineExportLinksToJSONTyped(value?: V1beta1VirtualMachineExportLinks | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

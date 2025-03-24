@@ -53,7 +53,7 @@ export interface V1DataVolumeTemplateSpec {
  */
 export declare function instanceOfV1DataVolumeTemplateSpec(value: object): value is V1DataVolumeTemplateSpec;
 export declare function V1DataVolumeTemplateSpecFromJSON(json: any): V1DataVolumeTemplateSpec;
-export declare function V1DataVolumeTemplateSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DataVolumeTemplateSpec;
+export declare function V1DataVolumeTemplateSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DataVolumeTemplateSpec;
 export declare function V1DataVolumeTemplateSpecToJSON(json: any): V1DataVolumeTemplateSpec;
-export declare function V1DataVolumeTemplateSpecToJSONTyped(value?: V1DataVolumeTemplateSpec | null, ignoreDiscriminator?: boolean): any;
+export declare function V1DataVolumeTemplateSpecToJSONTyped(value?: V1DataVolumeTemplateSpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1DataVolumeTemplateSpec.d.ts.map

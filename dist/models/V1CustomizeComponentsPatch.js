@@ -28,7 +28,7 @@ export function instanceOfV1CustomizeComponentsPatch(value) {
 export function V1CustomizeComponentsPatchFromJSON(json) {
     return V1CustomizeComponentsPatchFromJSONTyped(json, false);
 }
-export function V1CustomizeComponentsPatchFromJSONTyped(json, ignoreDiscriminator) {
+export function V1CustomizeComponentsPatchFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -42,7 +42,7 @@ export function V1CustomizeComponentsPatchFromJSONTyped(json, ignoreDiscriminato
 export function V1CustomizeComponentsPatchToJSON(json) {
     return V1CustomizeComponentsPatchToJSONTyped(json, false);
 }
-export function V1CustomizeComponentsPatchToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1CustomizeComponentsPatchToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

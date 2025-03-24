@@ -37,7 +37,7 @@ export interface K8sIoApiCoreV1VolumeResourceRequirements {
  */
 export declare function instanceOfK8sIoApiCoreV1VolumeResourceRequirements(value: object): value is K8sIoApiCoreV1VolumeResourceRequirements;
 export declare function K8sIoApiCoreV1VolumeResourceRequirementsFromJSON(json: any): K8sIoApiCoreV1VolumeResourceRequirements;
-export declare function K8sIoApiCoreV1VolumeResourceRequirementsFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1VolumeResourceRequirements;
+export declare function K8sIoApiCoreV1VolumeResourceRequirementsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1VolumeResourceRequirements;
 export declare function K8sIoApiCoreV1VolumeResourceRequirementsToJSON(json: any): K8sIoApiCoreV1VolumeResourceRequirements;
-export declare function K8sIoApiCoreV1VolumeResourceRequirementsToJSONTyped(value?: K8sIoApiCoreV1VolumeResourceRequirements | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1VolumeResourceRequirementsToJSONTyped(value?: K8sIoApiCoreV1VolumeResourceRequirements | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1VolumeResourceRequirements.d.ts.map

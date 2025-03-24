@@ -34,7 +34,7 @@ export interface K8sIoApiCoreV1PreferredSchedulingTerm {
  */
 export declare function instanceOfK8sIoApiCoreV1PreferredSchedulingTerm(value: object): value is K8sIoApiCoreV1PreferredSchedulingTerm;
 export declare function K8sIoApiCoreV1PreferredSchedulingTermFromJSON(json: any): K8sIoApiCoreV1PreferredSchedulingTerm;
-export declare function K8sIoApiCoreV1PreferredSchedulingTermFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1PreferredSchedulingTerm;
+export declare function K8sIoApiCoreV1PreferredSchedulingTermFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1PreferredSchedulingTerm;
 export declare function K8sIoApiCoreV1PreferredSchedulingTermToJSON(json: any): K8sIoApiCoreV1PreferredSchedulingTerm;
-export declare function K8sIoApiCoreV1PreferredSchedulingTermToJSONTyped(value?: K8sIoApiCoreV1PreferredSchedulingTerm | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1PreferredSchedulingTermToJSONTyped(value?: K8sIoApiCoreV1PreferredSchedulingTerm | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1PreferredSchedulingTerm.d.ts.map

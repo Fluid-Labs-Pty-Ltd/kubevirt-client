@@ -45,7 +45,7 @@ export interface V1CustomizeComponentsPatch {
  */
 export declare function instanceOfV1CustomizeComponentsPatch(value: object): value is V1CustomizeComponentsPatch;
 export declare function V1CustomizeComponentsPatchFromJSON(json: any): V1CustomizeComponentsPatch;
-export declare function V1CustomizeComponentsPatchFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CustomizeComponentsPatch;
+export declare function V1CustomizeComponentsPatchFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CustomizeComponentsPatch;
 export declare function V1CustomizeComponentsPatchToJSON(json: any): V1CustomizeComponentsPatch;
-export declare function V1CustomizeComponentsPatchToJSONTyped(value?: V1CustomizeComponentsPatch | null, ignoreDiscriminator?: boolean): any;
+export declare function V1CustomizeComponentsPatchToJSONTyped(value?: V1CustomizeComponentsPatch | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1CustomizeComponentsPatch.d.ts.map

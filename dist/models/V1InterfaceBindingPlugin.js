@@ -22,7 +22,7 @@ export function instanceOfV1InterfaceBindingPlugin(value) {
 export function V1InterfaceBindingPluginFromJSON(json) {
     return V1InterfaceBindingPluginFromJSONTyped(json, false);
 }
-export function V1InterfaceBindingPluginFromJSONTyped(json, ignoreDiscriminator) {
+export function V1InterfaceBindingPluginFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function V1InterfaceBindingPluginFromJSONTyped(json, ignoreDiscriminator)
 export function V1InterfaceBindingPluginToJSON(json) {
     return V1InterfaceBindingPluginToJSONTyped(json, false);
 }
-export function V1InterfaceBindingPluginToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1InterfaceBindingPluginToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

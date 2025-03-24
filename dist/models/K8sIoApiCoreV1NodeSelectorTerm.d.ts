@@ -34,7 +34,7 @@ export interface K8sIoApiCoreV1NodeSelectorTerm {
  */
 export declare function instanceOfK8sIoApiCoreV1NodeSelectorTerm(value: object): value is K8sIoApiCoreV1NodeSelectorTerm;
 export declare function K8sIoApiCoreV1NodeSelectorTermFromJSON(json: any): K8sIoApiCoreV1NodeSelectorTerm;
-export declare function K8sIoApiCoreV1NodeSelectorTermFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1NodeSelectorTerm;
+export declare function K8sIoApiCoreV1NodeSelectorTermFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1NodeSelectorTerm;
 export declare function K8sIoApiCoreV1NodeSelectorTermToJSON(json: any): K8sIoApiCoreV1NodeSelectorTerm;
-export declare function K8sIoApiCoreV1NodeSelectorTermToJSONTyped(value?: K8sIoApiCoreV1NodeSelectorTerm | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1NodeSelectorTermToJSONTyped(value?: K8sIoApiCoreV1NodeSelectorTerm | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1NodeSelectorTerm.d.ts.map

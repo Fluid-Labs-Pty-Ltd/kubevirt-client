@@ -23,7 +23,7 @@ export function instanceOfV1beta1VirtualMachineSnapshotSpec(value) {
 export function V1beta1VirtualMachineSnapshotSpecFromJSON(json) {
     return V1beta1VirtualMachineSnapshotSpecFromJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineSnapshotSpecFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1VirtualMachineSnapshotSpecFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,7 +36,7 @@ export function V1beta1VirtualMachineSnapshotSpecFromJSONTyped(json, ignoreDiscr
 export function V1beta1VirtualMachineSnapshotSpecToJSON(json) {
     return V1beta1VirtualMachineSnapshotSpecToJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineSnapshotSpecToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1VirtualMachineSnapshotSpecToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

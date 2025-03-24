@@ -24,7 +24,7 @@ export function instanceOfK8sIoApiCoreV1TypedLocalObjectReference(value) {
 export function K8sIoApiCoreV1TypedLocalObjectReferenceFromJSON(json) {
     return K8sIoApiCoreV1TypedLocalObjectReferenceFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1TypedLocalObjectReferenceFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1TypedLocalObjectReferenceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -37,7 +37,7 @@ export function K8sIoApiCoreV1TypedLocalObjectReferenceFromJSONTyped(json, ignor
 export function K8sIoApiCoreV1TypedLocalObjectReferenceToJSON(json) {
     return K8sIoApiCoreV1TypedLocalObjectReferenceToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1TypedLocalObjectReferenceToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1TypedLocalObjectReferenceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

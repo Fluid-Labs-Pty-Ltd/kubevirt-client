@@ -21,7 +21,7 @@ export function instanceOfK8sIoApiCoreV1PodDNSConfig(value) {
 export function K8sIoApiCoreV1PodDNSConfigFromJSON(json) {
     return K8sIoApiCoreV1PodDNSConfigFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1PodDNSConfigFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1PodDNSConfigFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function K8sIoApiCoreV1PodDNSConfigFromJSONTyped(json, ignoreDiscriminato
 export function K8sIoApiCoreV1PodDNSConfigToJSON(json) {
     return K8sIoApiCoreV1PodDNSConfigToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1PodDNSConfigToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1PodDNSConfigToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

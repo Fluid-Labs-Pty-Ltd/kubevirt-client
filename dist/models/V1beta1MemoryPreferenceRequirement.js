@@ -22,7 +22,7 @@ export function instanceOfV1beta1MemoryPreferenceRequirement(value) {
 export function V1beta1MemoryPreferenceRequirementFromJSON(json) {
     return V1beta1MemoryPreferenceRequirementFromJSONTyped(json, false);
 }
-export function V1beta1MemoryPreferenceRequirementFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1MemoryPreferenceRequirementFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1beta1MemoryPreferenceRequirementFromJSONTyped(json, ignoreDisc
 export function V1beta1MemoryPreferenceRequirementToJSON(json) {
     return V1beta1MemoryPreferenceRequirementToJSONTyped(json, false);
 }
-export function V1beta1MemoryPreferenceRequirementToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1MemoryPreferenceRequirementToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

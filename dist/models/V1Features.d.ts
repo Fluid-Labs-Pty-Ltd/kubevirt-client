@@ -68,7 +68,7 @@ export interface V1Features {
  */
 export declare function instanceOfV1Features(value: object): value is V1Features;
 export declare function V1FeaturesFromJSON(json: any): V1Features;
-export declare function V1FeaturesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Features;
+export declare function V1FeaturesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Features;
 export declare function V1FeaturesToJSON(json: any): V1Features;
-export declare function V1FeaturesToJSONTyped(value?: V1Features | null, ignoreDiscriminator?: boolean): any;
+export declare function V1FeaturesToJSONTyped(value?: V1Features | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Features.d.ts.map

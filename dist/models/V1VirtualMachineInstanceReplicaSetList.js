@@ -24,7 +24,7 @@ export function instanceOfV1VirtualMachineInstanceReplicaSetList(value) {
 export function V1VirtualMachineInstanceReplicaSetListFromJSON(json) {
     return V1VirtualMachineInstanceReplicaSetListFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceReplicaSetListFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstanceReplicaSetListFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function V1VirtualMachineInstanceReplicaSetListFromJSONTyped(json, ignore
 export function V1VirtualMachineInstanceReplicaSetListToJSON(json) {
     return V1VirtualMachineInstanceReplicaSetListToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceReplicaSetListToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstanceReplicaSetListToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

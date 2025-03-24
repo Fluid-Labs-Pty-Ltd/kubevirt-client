@@ -33,7 +33,7 @@ export interface K8sIoApiCoreV1PodDNSConfigOption {
  */
 export declare function instanceOfK8sIoApiCoreV1PodDNSConfigOption(value: object): value is K8sIoApiCoreV1PodDNSConfigOption;
 export declare function K8sIoApiCoreV1PodDNSConfigOptionFromJSON(json: any): K8sIoApiCoreV1PodDNSConfigOption;
-export declare function K8sIoApiCoreV1PodDNSConfigOptionFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1PodDNSConfigOption;
+export declare function K8sIoApiCoreV1PodDNSConfigOptionFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1PodDNSConfigOption;
 export declare function K8sIoApiCoreV1PodDNSConfigOptionToJSON(json: any): K8sIoApiCoreV1PodDNSConfigOption;
-export declare function K8sIoApiCoreV1PodDNSConfigOptionToJSONTyped(value?: K8sIoApiCoreV1PodDNSConfigOption | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1PodDNSConfigOptionToJSONTyped(value?: K8sIoApiCoreV1PodDNSConfigOption | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1PodDNSConfigOption.d.ts.map

@@ -60,7 +60,7 @@ export function V1beta1VolumeBackupFromJSON(json: any): V1beta1VolumeBackup {
     return V1beta1VolumeBackupFromJSONTyped(json, false);
 }
 
-export function V1beta1VolumeBackupFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VolumeBackup {
+export function V1beta1VolumeBackupFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VolumeBackup {
     if (json == null) {
         return json;
     }
@@ -76,7 +76,7 @@ export function V1beta1VolumeBackupToJSON(json: any): V1beta1VolumeBackup {
     return V1beta1VolumeBackupToJSONTyped(json, false);
 }
 
-export function V1beta1VolumeBackupToJSONTyped(value?: V1beta1VolumeBackup | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1VolumeBackupToJSONTyped(value?: V1beta1VolumeBackup | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

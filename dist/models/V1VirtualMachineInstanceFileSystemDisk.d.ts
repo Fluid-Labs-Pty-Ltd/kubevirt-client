@@ -33,7 +33,7 @@ export interface V1VirtualMachineInstanceFileSystemDisk {
  */
 export declare function instanceOfV1VirtualMachineInstanceFileSystemDisk(value: object): value is V1VirtualMachineInstanceFileSystemDisk;
 export declare function V1VirtualMachineInstanceFileSystemDiskFromJSON(json: any): V1VirtualMachineInstanceFileSystemDisk;
-export declare function V1VirtualMachineInstanceFileSystemDiskFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceFileSystemDisk;
+export declare function V1VirtualMachineInstanceFileSystemDiskFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceFileSystemDisk;
 export declare function V1VirtualMachineInstanceFileSystemDiskToJSON(json: any): V1VirtualMachineInstanceFileSystemDisk;
-export declare function V1VirtualMachineInstanceFileSystemDiskToJSONTyped(value?: V1VirtualMachineInstanceFileSystemDisk | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceFileSystemDiskToJSONTyped(value?: V1VirtualMachineInstanceFileSystemDisk | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceFileSystemDisk.d.ts.map

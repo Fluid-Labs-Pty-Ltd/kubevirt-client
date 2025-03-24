@@ -45,7 +45,7 @@ export function K8sIoApiCoreV1ObjectFieldSelectorFromJSON(json: any): K8sIoApiCo
     return K8sIoApiCoreV1ObjectFieldSelectorFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1ObjectFieldSelectorFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1ObjectFieldSelector {
+export function K8sIoApiCoreV1ObjectFieldSelectorFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1ObjectFieldSelector {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function K8sIoApiCoreV1ObjectFieldSelectorToJSON(json: any): K8sIoApiCore
     return K8sIoApiCoreV1ObjectFieldSelectorToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1ObjectFieldSelectorToJSONTyped(value?: K8sIoApiCoreV1ObjectFieldSelector | null, ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1ObjectFieldSelectorToJSONTyped(value?: K8sIoApiCoreV1ObjectFieldSelector | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

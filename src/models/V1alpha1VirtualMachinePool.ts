@@ -85,7 +85,7 @@ export function V1alpha1VirtualMachinePoolFromJSON(json: any): V1alpha1VirtualMa
     return V1alpha1VirtualMachinePoolFromJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachinePoolFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachinePool {
+export function V1alpha1VirtualMachinePoolFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachinePool {
     if (json == null) {
         return json;
     }
@@ -103,7 +103,7 @@ export function V1alpha1VirtualMachinePoolToJSON(json: any): V1alpha1VirtualMach
     return V1alpha1VirtualMachinePoolToJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachinePoolToJSONTyped(value?: V1alpha1VirtualMachinePool | null, ignoreDiscriminator: boolean = false): any {
+export function V1alpha1VirtualMachinePoolToJSONTyped(value?: V1alpha1VirtualMachinePool | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

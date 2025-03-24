@@ -21,7 +21,7 @@ export function instanceOfV1Memory(value) {
 export function V1MemoryFromJSON(json) {
     return V1MemoryFromJSONTyped(json, false);
 }
-export function V1MemoryFromJSONTyped(json, ignoreDiscriminator) {
+export function V1MemoryFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function V1MemoryFromJSONTyped(json, ignoreDiscriminator) {
 export function V1MemoryToJSON(json) {
     return V1MemoryToJSONTyped(json, false);
 }
-export function V1MemoryToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1MemoryToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

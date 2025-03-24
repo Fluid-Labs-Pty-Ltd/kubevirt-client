@@ -27,7 +27,7 @@ export interface K8sIoApiCoreV1ExecAction {
  */
 export declare function instanceOfK8sIoApiCoreV1ExecAction(value: object): value is K8sIoApiCoreV1ExecAction;
 export declare function K8sIoApiCoreV1ExecActionFromJSON(json: any): K8sIoApiCoreV1ExecAction;
-export declare function K8sIoApiCoreV1ExecActionFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1ExecAction;
+export declare function K8sIoApiCoreV1ExecActionFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1ExecAction;
 export declare function K8sIoApiCoreV1ExecActionToJSON(json: any): K8sIoApiCoreV1ExecAction;
-export declare function K8sIoApiCoreV1ExecActionToJSONTyped(value?: K8sIoApiCoreV1ExecAction | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1ExecActionToJSONTyped(value?: K8sIoApiCoreV1ExecAction | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1ExecAction.d.ts.map

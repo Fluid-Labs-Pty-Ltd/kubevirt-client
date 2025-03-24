@@ -23,7 +23,7 @@ export function instanceOfV1Watchdog(value) {
 export function V1WatchdogFromJSON(json) {
     return V1WatchdogFromJSONTyped(json, false);
 }
-export function V1WatchdogFromJSONTyped(json, ignoreDiscriminator) {
+export function V1WatchdogFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,7 +35,7 @@ export function V1WatchdogFromJSONTyped(json, ignoreDiscriminator) {
 export function V1WatchdogToJSON(json) {
     return V1WatchdogToJSONTyped(json, false);
 }
-export function V1WatchdogToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1WatchdogToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

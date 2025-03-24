@@ -27,7 +27,7 @@ export interface V1AccessCredentialSecretSource {
  */
 export declare function instanceOfV1AccessCredentialSecretSource(value: object): value is V1AccessCredentialSecretSource;
 export declare function V1AccessCredentialSecretSourceFromJSON(json: any): V1AccessCredentialSecretSource;
-export declare function V1AccessCredentialSecretSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1AccessCredentialSecretSource;
+export declare function V1AccessCredentialSecretSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1AccessCredentialSecretSource;
 export declare function V1AccessCredentialSecretSourceToJSON(json: any): V1AccessCredentialSecretSource;
-export declare function V1AccessCredentialSecretSourceToJSONTyped(value?: V1AccessCredentialSecretSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1AccessCredentialSecretSourceToJSONTyped(value?: V1AccessCredentialSecretSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1AccessCredentialSecretSource.d.ts.map

@@ -39,7 +39,7 @@ export interface V1CPUTopology {
  */
 export declare function instanceOfV1CPUTopology(value: object): value is V1CPUTopology;
 export declare function V1CPUTopologyFromJSON(json: any): V1CPUTopology;
-export declare function V1CPUTopologyFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CPUTopology;
+export declare function V1CPUTopologyFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CPUTopology;
 export declare function V1CPUTopologyToJSON(json: any): V1CPUTopology;
-export declare function V1CPUTopologyToJSONTyped(value?: V1CPUTopology | null, ignoreDiscriminator?: boolean): any;
+export declare function V1CPUTopologyToJSONTyped(value?: V1CPUTopology | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1CPUTopology.d.ts.map

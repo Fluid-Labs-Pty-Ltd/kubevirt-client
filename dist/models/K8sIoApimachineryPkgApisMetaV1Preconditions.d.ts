@@ -33,7 +33,7 @@ export interface K8sIoApimachineryPkgApisMetaV1Preconditions {
  */
 export declare function instanceOfK8sIoApimachineryPkgApisMetaV1Preconditions(value: object): value is K8sIoApimachineryPkgApisMetaV1Preconditions;
 export declare function K8sIoApimachineryPkgApisMetaV1PreconditionsFromJSON(json: any): K8sIoApimachineryPkgApisMetaV1Preconditions;
-export declare function K8sIoApimachineryPkgApisMetaV1PreconditionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1Preconditions;
+export declare function K8sIoApimachineryPkgApisMetaV1PreconditionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1Preconditions;
 export declare function K8sIoApimachineryPkgApisMetaV1PreconditionsToJSON(json: any): K8sIoApimachineryPkgApisMetaV1Preconditions;
-export declare function K8sIoApimachineryPkgApisMetaV1PreconditionsToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1Preconditions | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApimachineryPkgApisMetaV1PreconditionsToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1Preconditions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1Preconditions.d.ts.map

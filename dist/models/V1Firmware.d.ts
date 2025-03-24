@@ -54,7 +54,7 @@ export interface V1Firmware {
  */
 export declare function instanceOfV1Firmware(value: object): value is V1Firmware;
 export declare function V1FirmwareFromJSON(json: any): V1Firmware;
-export declare function V1FirmwareFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Firmware;
+export declare function V1FirmwareFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Firmware;
 export declare function V1FirmwareToJSON(json: any): V1Firmware;
-export declare function V1FirmwareToJSONTyped(value?: V1Firmware | null, ignoreDiscriminator?: boolean): any;
+export declare function V1FirmwareToJSONTyped(value?: V1Firmware | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Firmware.d.ts.map

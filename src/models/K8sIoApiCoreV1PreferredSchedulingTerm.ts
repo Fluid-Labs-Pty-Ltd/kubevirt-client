@@ -54,7 +54,7 @@ export function K8sIoApiCoreV1PreferredSchedulingTermFromJSON(json: any): K8sIoA
     return K8sIoApiCoreV1PreferredSchedulingTermFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PreferredSchedulingTermFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1PreferredSchedulingTerm {
+export function K8sIoApiCoreV1PreferredSchedulingTermFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1PreferredSchedulingTerm {
     if (json == null) {
         return json;
     }
@@ -69,7 +69,7 @@ export function K8sIoApiCoreV1PreferredSchedulingTermToJSON(json: any): K8sIoApi
     return K8sIoApiCoreV1PreferredSchedulingTermToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PreferredSchedulingTermToJSONTyped(value?: K8sIoApiCoreV1PreferredSchedulingTerm | null, ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1PreferredSchedulingTermToJSONTyped(value?: K8sIoApiCoreV1PreferredSchedulingTerm | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

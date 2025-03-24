@@ -40,7 +40,7 @@ export interface V1MediatedDevicesConfiguration {
  */
 export declare function instanceOfV1MediatedDevicesConfiguration(value: object): value is V1MediatedDevicesConfiguration;
 export declare function V1MediatedDevicesConfigurationFromJSON(json: any): V1MediatedDevicesConfiguration;
-export declare function V1MediatedDevicesConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1MediatedDevicesConfiguration;
+export declare function V1MediatedDevicesConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1MediatedDevicesConfiguration;
 export declare function V1MediatedDevicesConfigurationToJSON(json: any): V1MediatedDevicesConfiguration;
-export declare function V1MediatedDevicesConfigurationToJSONTyped(value?: V1MediatedDevicesConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1MediatedDevicesConfigurationToJSONTyped(value?: V1MediatedDevicesConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1MediatedDevicesConfiguration.d.ts.map

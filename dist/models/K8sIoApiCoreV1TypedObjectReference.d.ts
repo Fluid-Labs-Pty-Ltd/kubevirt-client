@@ -45,7 +45,7 @@ export interface K8sIoApiCoreV1TypedObjectReference {
  */
 export declare function instanceOfK8sIoApiCoreV1TypedObjectReference(value: object): value is K8sIoApiCoreV1TypedObjectReference;
 export declare function K8sIoApiCoreV1TypedObjectReferenceFromJSON(json: any): K8sIoApiCoreV1TypedObjectReference;
-export declare function K8sIoApiCoreV1TypedObjectReferenceFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1TypedObjectReference;
+export declare function K8sIoApiCoreV1TypedObjectReferenceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1TypedObjectReference;
 export declare function K8sIoApiCoreV1TypedObjectReferenceToJSON(json: any): K8sIoApiCoreV1TypedObjectReference;
-export declare function K8sIoApiCoreV1TypedObjectReferenceToJSONTyped(value?: K8sIoApiCoreV1TypedObjectReference | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1TypedObjectReferenceToJSONTyped(value?: K8sIoApiCoreV1TypedObjectReference | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1TypedObjectReference.d.ts.map

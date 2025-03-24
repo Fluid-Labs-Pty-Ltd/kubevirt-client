@@ -33,7 +33,7 @@ export interface V1beta1DataVolumeSourceGCS {
  */
 export declare function instanceOfV1beta1DataVolumeSourceGCS(value: object): value is V1beta1DataVolumeSourceGCS;
 export declare function V1beta1DataVolumeSourceGCSFromJSON(json: any): V1beta1DataVolumeSourceGCS;
-export declare function V1beta1DataVolumeSourceGCSFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSourceGCS;
+export declare function V1beta1DataVolumeSourceGCSFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSourceGCS;
 export declare function V1beta1DataVolumeSourceGCSToJSON(json: any): V1beta1DataVolumeSourceGCS;
-export declare function V1beta1DataVolumeSourceGCSToJSONTyped(value?: V1beta1DataVolumeSourceGCS | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1DataVolumeSourceGCSToJSONTyped(value?: V1beta1DataVolumeSourceGCS | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1DataVolumeSourceGCS.d.ts.map

@@ -198,7 +198,7 @@ export function V1beta1DevicePreferencesFromJSON(json: any): V1beta1DevicePrefer
     return V1beta1DevicePreferencesFromJSONTyped(json, false);
 }
 
-export function V1beta1DevicePreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DevicePreferences {
+export function V1beta1DevicePreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DevicePreferences {
     if (json == null) {
         return json;
     }
@@ -235,7 +235,7 @@ export function V1beta1DevicePreferencesToJSON(json: any): V1beta1DevicePreferen
     return V1beta1DevicePreferencesToJSONTyped(json, false);
 }
 
-export function V1beta1DevicePreferencesToJSONTyped(value?: V1beta1DevicePreferences | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1DevicePreferencesToJSONTyped(value?: V1beta1DevicePreferences | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

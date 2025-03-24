@@ -59,7 +59,7 @@ export interface V1LogVerbosity {
  */
 export declare function instanceOfV1LogVerbosity(value: object): value is V1LogVerbosity;
 export declare function V1LogVerbosityFromJSON(json: any): V1LogVerbosity;
-export declare function V1LogVerbosityFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1LogVerbosity;
+export declare function V1LogVerbosityFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1LogVerbosity;
 export declare function V1LogVerbosityToJSON(json: any): V1LogVerbosity;
-export declare function V1LogVerbosityToJSONTyped(value?: V1LogVerbosity | null, ignoreDiscriminator?: boolean): any;
+export declare function V1LogVerbosityToJSONTyped(value?: V1LogVerbosity | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1LogVerbosity.d.ts.map

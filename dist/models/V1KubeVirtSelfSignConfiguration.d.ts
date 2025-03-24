@@ -52,7 +52,7 @@ export interface V1KubeVirtSelfSignConfiguration {
  */
 export declare function instanceOfV1KubeVirtSelfSignConfiguration(value: object): value is V1KubeVirtSelfSignConfiguration;
 export declare function V1KubeVirtSelfSignConfigurationFromJSON(json: any): V1KubeVirtSelfSignConfiguration;
-export declare function V1KubeVirtSelfSignConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtSelfSignConfiguration;
+export declare function V1KubeVirtSelfSignConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtSelfSignConfiguration;
 export declare function V1KubeVirtSelfSignConfigurationToJSON(json: any): V1KubeVirtSelfSignConfiguration;
-export declare function V1KubeVirtSelfSignConfigurationToJSONTyped(value?: V1KubeVirtSelfSignConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1KubeVirtSelfSignConfigurationToJSONTyped(value?: V1KubeVirtSelfSignConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1KubeVirtSelfSignConfiguration.d.ts.map

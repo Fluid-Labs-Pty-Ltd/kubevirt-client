@@ -20,7 +20,7 @@ export function instanceOfK8sIoApiCoreV1ExecAction(value) {
 export function K8sIoApiCoreV1ExecActionFromJSON(json) {
     return K8sIoApiCoreV1ExecActionFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1ExecActionFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1ExecActionFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function K8sIoApiCoreV1ExecActionFromJSONTyped(json, ignoreDiscriminator)
 export function K8sIoApiCoreV1ExecActionToJSON(json) {
     return K8sIoApiCoreV1ExecActionToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1ExecActionToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1ExecActionToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

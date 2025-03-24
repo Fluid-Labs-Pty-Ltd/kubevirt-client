@@ -47,7 +47,7 @@ export interface V1alpha1VirtualMachineCloneList {
  */
 export declare function instanceOfV1alpha1VirtualMachineCloneList(value: object): value is V1alpha1VirtualMachineCloneList;
 export declare function V1alpha1VirtualMachineCloneListFromJSON(json: any): V1alpha1VirtualMachineCloneList;
-export declare function V1alpha1VirtualMachineCloneListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneList;
+export declare function V1alpha1VirtualMachineCloneListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneList;
 export declare function V1alpha1VirtualMachineCloneListToJSON(json: any): V1alpha1VirtualMachineCloneList;
-export declare function V1alpha1VirtualMachineCloneListToJSONTyped(value?: V1alpha1VirtualMachineCloneList | null, ignoreDiscriminator?: boolean): any;
+export declare function V1alpha1VirtualMachineCloneListToJSONTyped(value?: V1alpha1VirtualMachineCloneList | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1alpha1VirtualMachineCloneList.d.ts.map

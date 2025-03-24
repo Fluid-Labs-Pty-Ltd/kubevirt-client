@@ -35,7 +35,7 @@ export interface V1beta1PreferenceRequirements {
  */
 export declare function instanceOfV1beta1PreferenceRequirements(value: object): value is V1beta1PreferenceRequirements;
 export declare function V1beta1PreferenceRequirementsFromJSON(json: any): V1beta1PreferenceRequirements;
-export declare function V1beta1PreferenceRequirementsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1PreferenceRequirements;
+export declare function V1beta1PreferenceRequirementsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1PreferenceRequirements;
 export declare function V1beta1PreferenceRequirementsToJSON(json: any): V1beta1PreferenceRequirements;
-export declare function V1beta1PreferenceRequirementsToJSONTyped(value?: V1beta1PreferenceRequirements | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1PreferenceRequirementsToJSONTyped(value?: V1beta1PreferenceRequirements | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1PreferenceRequirements.d.ts.map

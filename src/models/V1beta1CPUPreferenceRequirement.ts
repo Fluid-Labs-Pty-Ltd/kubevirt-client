@@ -39,7 +39,7 @@ export function V1beta1CPUPreferenceRequirementFromJSON(json: any): V1beta1CPUPr
     return V1beta1CPUPreferenceRequirementFromJSONTyped(json, false);
 }
 
-export function V1beta1CPUPreferenceRequirementFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1CPUPreferenceRequirement {
+export function V1beta1CPUPreferenceRequirementFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1CPUPreferenceRequirement {
     if (json == null) {
         return json;
     }
@@ -53,7 +53,7 @@ export function V1beta1CPUPreferenceRequirementToJSON(json: any): V1beta1CPUPref
     return V1beta1CPUPreferenceRequirementToJSONTyped(json, false);
 }
 
-export function V1beta1CPUPreferenceRequirementToJSONTyped(value?: V1beta1CPUPreferenceRequirement | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1CPUPreferenceRequirementToJSONTyped(value?: V1beta1CPUPreferenceRequirement | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

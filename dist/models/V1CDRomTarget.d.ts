@@ -39,7 +39,7 @@ export interface V1CDRomTarget {
  */
 export declare function instanceOfV1CDRomTarget(value: object): value is V1CDRomTarget;
 export declare function V1CDRomTargetFromJSON(json: any): V1CDRomTarget;
-export declare function V1CDRomTargetFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CDRomTarget;
+export declare function V1CDRomTargetFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CDRomTarget;
 export declare function V1CDRomTargetToJSON(json: any): V1CDRomTarget;
-export declare function V1CDRomTargetToJSONTyped(value?: V1CDRomTarget | null, ignoreDiscriminator?: boolean): any;
+export declare function V1CDRomTargetToJSONTyped(value?: V1CDRomTarget | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1CDRomTarget.d.ts.map

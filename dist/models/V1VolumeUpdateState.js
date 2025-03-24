@@ -21,7 +21,7 @@ export function instanceOfV1VolumeUpdateState(value) {
 export function V1VolumeUpdateStateFromJSON(json) {
     return V1VolumeUpdateStateFromJSONTyped(json, false);
 }
-export function V1VolumeUpdateStateFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VolumeUpdateStateFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1VolumeUpdateStateFromJSONTyped(json, ignoreDiscriminator) {
 export function V1VolumeUpdateStateToJSON(json) {
     return V1VolumeUpdateStateToJSONTyped(json, false);
 }
-export function V1VolumeUpdateStateToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VolumeUpdateStateToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

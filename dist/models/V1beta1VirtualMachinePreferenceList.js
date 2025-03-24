@@ -24,7 +24,7 @@ export function instanceOfV1beta1VirtualMachinePreferenceList(value) {
 export function V1beta1VirtualMachinePreferenceListFromJSON(json) {
     return V1beta1VirtualMachinePreferenceListFromJSONTyped(json, false);
 }
-export function V1beta1VirtualMachinePreferenceListFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1VirtualMachinePreferenceListFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function V1beta1VirtualMachinePreferenceListFromJSONTyped(json, ignoreDis
 export function V1beta1VirtualMachinePreferenceListToJSON(json) {
     return V1beta1VirtualMachinePreferenceListToJSONTyped(json, false);
 }
-export function V1beta1VirtualMachinePreferenceListToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1VirtualMachinePreferenceListToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

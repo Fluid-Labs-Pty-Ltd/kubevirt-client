@@ -20,7 +20,7 @@ export function instanceOfV1LunTarget(value) {
 export function V1LunTargetFromJSON(json) {
     return V1LunTargetFromJSONTyped(json, false);
 }
-export function V1LunTargetFromJSONTyped(json, ignoreDiscriminator) {
+export function V1LunTargetFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1LunTargetFromJSONTyped(json, ignoreDiscriminator) {
 export function V1LunTargetToJSON(json) {
     return V1LunTargetToJSONTyped(json, false);
 }
-export function V1LunTargetToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1LunTargetToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

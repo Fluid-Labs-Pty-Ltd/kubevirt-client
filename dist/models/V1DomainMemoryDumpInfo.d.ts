@@ -45,7 +45,7 @@ export interface V1DomainMemoryDumpInfo {
  */
 export declare function instanceOfV1DomainMemoryDumpInfo(value: object): value is V1DomainMemoryDumpInfo;
 export declare function V1DomainMemoryDumpInfoFromJSON(json: any): V1DomainMemoryDumpInfo;
-export declare function V1DomainMemoryDumpInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DomainMemoryDumpInfo;
+export declare function V1DomainMemoryDumpInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DomainMemoryDumpInfo;
 export declare function V1DomainMemoryDumpInfoToJSON(json: any): V1DomainMemoryDumpInfo;
-export declare function V1DomainMemoryDumpInfoToJSONTyped(value?: V1DomainMemoryDumpInfo | null, ignoreDiscriminator?: boolean): any;
+export declare function V1DomainMemoryDumpInfoToJSONTyped(value?: V1DomainMemoryDumpInfo | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1DomainMemoryDumpInfo.d.ts.map

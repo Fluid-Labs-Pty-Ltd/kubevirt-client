@@ -33,7 +33,7 @@ export interface V1PITTimer {
  */
 export declare function instanceOfV1PITTimer(value: object): value is V1PITTimer;
 export declare function V1PITTimerFromJSON(json: any): V1PITTimer;
-export declare function V1PITTimerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PITTimer;
+export declare function V1PITTimerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PITTimer;
 export declare function V1PITTimerToJSON(json: any): V1PITTimer;
-export declare function V1PITTimerToJSONTyped(value?: V1PITTimer | null, ignoreDiscriminator?: boolean): any;
+export declare function V1PITTimerToJSONTyped(value?: V1PITTimer | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1PITTimer.d.ts.map

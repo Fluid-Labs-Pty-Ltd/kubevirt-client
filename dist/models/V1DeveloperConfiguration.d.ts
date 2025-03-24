@@ -85,7 +85,7 @@ export interface V1DeveloperConfiguration {
  */
 export declare function instanceOfV1DeveloperConfiguration(value: object): value is V1DeveloperConfiguration;
 export declare function V1DeveloperConfigurationFromJSON(json: any): V1DeveloperConfiguration;
-export declare function V1DeveloperConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DeveloperConfiguration;
+export declare function V1DeveloperConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DeveloperConfiguration;
 export declare function V1DeveloperConfigurationToJSON(json: any): V1DeveloperConfiguration;
-export declare function V1DeveloperConfigurationToJSONTyped(value?: V1DeveloperConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1DeveloperConfigurationToJSONTyped(value?: V1DeveloperConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1DeveloperConfiguration.d.ts.map

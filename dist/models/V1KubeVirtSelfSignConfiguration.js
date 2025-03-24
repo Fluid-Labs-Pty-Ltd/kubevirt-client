@@ -21,7 +21,7 @@ export function instanceOfV1KubeVirtSelfSignConfiguration(value) {
 export function V1KubeVirtSelfSignConfigurationFromJSON(json) {
     return V1KubeVirtSelfSignConfigurationFromJSONTyped(json, false);
 }
-export function V1KubeVirtSelfSignConfigurationFromJSONTyped(json, ignoreDiscriminator) {
+export function V1KubeVirtSelfSignConfigurationFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,7 +36,7 @@ export function V1KubeVirtSelfSignConfigurationFromJSONTyped(json, ignoreDiscrim
 export function V1KubeVirtSelfSignConfigurationToJSON(json) {
     return V1KubeVirtSelfSignConfigurationToJSONTyped(json, false);
 }
-export function V1KubeVirtSelfSignConfigurationToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1KubeVirtSelfSignConfigurationToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

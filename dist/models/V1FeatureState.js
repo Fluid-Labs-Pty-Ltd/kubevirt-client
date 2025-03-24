@@ -20,7 +20,7 @@ export function instanceOfV1FeatureState(value) {
 export function V1FeatureStateFromJSON(json) {
     return V1FeatureStateFromJSONTyped(json, false);
 }
-export function V1FeatureStateFromJSONTyped(json, ignoreDiscriminator) {
+export function V1FeatureStateFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function V1FeatureStateFromJSONTyped(json, ignoreDiscriminator) {
 export function V1FeatureStateToJSON(json) {
     return V1FeatureStateToJSONTyped(json, false);
 }
-export function V1FeatureStateToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1FeatureStateToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

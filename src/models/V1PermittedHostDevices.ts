@@ -72,7 +72,7 @@ export function V1PermittedHostDevicesFromJSON(json: any): V1PermittedHostDevice
     return V1PermittedHostDevicesFromJSONTyped(json, false);
 }
 
-export function V1PermittedHostDevicesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PermittedHostDevices {
+export function V1PermittedHostDevicesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PermittedHostDevices {
     if (json == null) {
         return json;
     }
@@ -88,7 +88,7 @@ export function V1PermittedHostDevicesToJSON(json: any): V1PermittedHostDevices 
     return V1PermittedHostDevicesToJSONTyped(json, false);
 }
 
-export function V1PermittedHostDevicesToJSONTyped(value?: V1PermittedHostDevices | null, ignoreDiscriminator: boolean = false): any {
+export function V1PermittedHostDevicesToJSONTyped(value?: V1PermittedHostDevices | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

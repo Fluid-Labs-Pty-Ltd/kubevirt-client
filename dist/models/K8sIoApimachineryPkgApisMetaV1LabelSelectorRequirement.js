@@ -24,7 +24,7 @@ export function instanceOfK8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement
 export function K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementFromJSON(json) {
     return K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementFromJSONTyped(json, false);
 }
-export function K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -37,7 +37,7 @@ export function K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementFromJSONTy
 export function K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementToJSON(json) {
     return K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementToJSONTyped(json, false);
 }
-export function K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -27,7 +27,7 @@ export interface V1HypervTimer {
  */
 export declare function instanceOfV1HypervTimer(value: object): value is V1HypervTimer;
 export declare function V1HypervTimerFromJSON(json: any): V1HypervTimer;
-export declare function V1HypervTimerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1HypervTimer;
+export declare function V1HypervTimerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1HypervTimer;
 export declare function V1HypervTimerToJSON(json: any): V1HypervTimer;
-export declare function V1HypervTimerToJSONTyped(value?: V1HypervTimer | null, ignoreDiscriminator?: boolean): any;
+export declare function V1HypervTimerToJSONTyped(value?: V1HypervTimer | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1HypervTimer.d.ts.map

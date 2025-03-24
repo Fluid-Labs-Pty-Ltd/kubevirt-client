@@ -27,7 +27,7 @@ export interface V1I6300ESBWatchdog {
  */
 export declare function instanceOfV1I6300ESBWatchdog(value: object): value is V1I6300ESBWatchdog;
 export declare function V1I6300ESBWatchdogFromJSON(json: any): V1I6300ESBWatchdog;
-export declare function V1I6300ESBWatchdogFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1I6300ESBWatchdog;
+export declare function V1I6300ESBWatchdogFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1I6300ESBWatchdog;
 export declare function V1I6300ESBWatchdogToJSON(json: any): V1I6300ESBWatchdog;
-export declare function V1I6300ESBWatchdogToJSONTyped(value?: V1I6300ESBWatchdog | null, ignoreDiscriminator?: boolean): any;
+export declare function V1I6300ESBWatchdogToJSONTyped(value?: V1I6300ESBWatchdog | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1I6300ESBWatchdog.d.ts.map

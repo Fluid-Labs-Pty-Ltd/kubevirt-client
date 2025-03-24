@@ -25,7 +25,7 @@ export function instanceOfV1KubeVirt(value) {
 export function V1KubeVirtFromJSON(json) {
     return V1KubeVirtFromJSONTyped(json, false);
 }
-export function V1KubeVirtFromJSONTyped(json, ignoreDiscriminator) {
+export function V1KubeVirtFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -40,7 +40,7 @@ export function V1KubeVirtFromJSONTyped(json, ignoreDiscriminator) {
 export function V1KubeVirtToJSON(json) {
     return V1KubeVirtToJSONTyped(json, false);
 }
-export function V1KubeVirtToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1KubeVirtToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

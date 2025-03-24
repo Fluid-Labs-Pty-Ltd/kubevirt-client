@@ -42,7 +42,7 @@ export interface V1beta1VirtualMachineRestoreSpec {
  */
 export declare function instanceOfV1beta1VirtualMachineRestoreSpec(value: object): value is V1beta1VirtualMachineRestoreSpec;
 export declare function V1beta1VirtualMachineRestoreSpecFromJSON(json: any): V1beta1VirtualMachineRestoreSpec;
-export declare function V1beta1VirtualMachineRestoreSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineRestoreSpec;
+export declare function V1beta1VirtualMachineRestoreSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineRestoreSpec;
 export declare function V1beta1VirtualMachineRestoreSpecToJSON(json: any): V1beta1VirtualMachineRestoreSpec;
-export declare function V1beta1VirtualMachineRestoreSpecToJSONTyped(value?: V1beta1VirtualMachineRestoreSpec | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1VirtualMachineRestoreSpecToJSONTyped(value?: V1beta1VirtualMachineRestoreSpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1VirtualMachineRestoreSpec.d.ts.map

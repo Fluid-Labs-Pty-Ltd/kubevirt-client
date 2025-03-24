@@ -47,7 +47,7 @@ export interface V1VirtualMachineInstanceReplicaSetSpec {
  */
 export declare function instanceOfV1VirtualMachineInstanceReplicaSetSpec(value: object): value is V1VirtualMachineInstanceReplicaSetSpec;
 export declare function V1VirtualMachineInstanceReplicaSetSpecFromJSON(json: any): V1VirtualMachineInstanceReplicaSetSpec;
-export declare function V1VirtualMachineInstanceReplicaSetSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSetSpec;
+export declare function V1VirtualMachineInstanceReplicaSetSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSetSpec;
 export declare function V1VirtualMachineInstanceReplicaSetSpecToJSON(json: any): V1VirtualMachineInstanceReplicaSetSpec;
-export declare function V1VirtualMachineInstanceReplicaSetSpecToJSONTyped(value?: V1VirtualMachineInstanceReplicaSetSpec | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceReplicaSetSpecToJSONTyped(value?: V1VirtualMachineInstanceReplicaSetSpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceReplicaSetSpec.d.ts.map

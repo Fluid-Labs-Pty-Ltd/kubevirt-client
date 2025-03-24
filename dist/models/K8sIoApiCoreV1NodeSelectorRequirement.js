@@ -35,7 +35,7 @@ export function instanceOfK8sIoApiCoreV1NodeSelectorRequirement(value) {
 export function K8sIoApiCoreV1NodeSelectorRequirementFromJSON(json) {
     return K8sIoApiCoreV1NodeSelectorRequirementFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1NodeSelectorRequirementFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1NodeSelectorRequirementFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -48,7 +48,7 @@ export function K8sIoApiCoreV1NodeSelectorRequirementFromJSONTyped(json, ignoreD
 export function K8sIoApiCoreV1NodeSelectorRequirementToJSON(json) {
     return K8sIoApiCoreV1NodeSelectorRequirementToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1NodeSelectorRequirementToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1NodeSelectorRequirementToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -45,7 +45,7 @@ export interface V1KubeVirtCondition {
  */
 export declare function instanceOfV1KubeVirtCondition(value: object): value is V1KubeVirtCondition;
 export declare function V1KubeVirtConditionFromJSON(json: any): V1KubeVirtCondition;
-export declare function V1KubeVirtConditionFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtCondition;
+export declare function V1KubeVirtConditionFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtCondition;
 export declare function V1KubeVirtConditionToJSON(json: any): V1KubeVirtCondition;
-export declare function V1KubeVirtConditionToJSONTyped(value?: V1KubeVirtCondition | null, ignoreDiscriminator?: boolean): any;
+export declare function V1KubeVirtConditionToJSONTyped(value?: V1KubeVirtCondition | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1KubeVirtCondition.d.ts.map

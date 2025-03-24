@@ -45,7 +45,7 @@ export function V1DataVolumeSourceFromJSON(json: any): V1DataVolumeSource {
     return V1DataVolumeSourceFromJSONTyped(json, false);
 }
 
-export function V1DataVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DataVolumeSource {
+export function V1DataVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DataVolumeSource {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1DataVolumeSourceToJSON(json: any): V1DataVolumeSource {
     return V1DataVolumeSourceToJSONTyped(json, false);
 }
 
-export function V1DataVolumeSourceToJSONTyped(value?: V1DataVolumeSource | null, ignoreDiscriminator: boolean = false): any {
+export function V1DataVolumeSourceToJSONTyped(value?: V1DataVolumeSource | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

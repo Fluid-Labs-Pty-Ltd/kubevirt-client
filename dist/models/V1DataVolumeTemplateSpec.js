@@ -24,7 +24,7 @@ export function instanceOfV1DataVolumeTemplateSpec(value) {
 export function V1DataVolumeTemplateSpecFromJSON(json) {
     return V1DataVolumeTemplateSpecFromJSONTyped(json, false);
 }
-export function V1DataVolumeTemplateSpecFromJSONTyped(json, ignoreDiscriminator) {
+export function V1DataVolumeTemplateSpecFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -39,7 +39,7 @@ export function V1DataVolumeTemplateSpecFromJSONTyped(json, ignoreDiscriminator)
 export function V1DataVolumeTemplateSpecToJSON(json) {
     return V1DataVolumeTemplateSpecToJSONTyped(json, false);
 }
-export function V1DataVolumeTemplateSpecToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1DataVolumeTemplateSpecToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

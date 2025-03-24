@@ -205,7 +205,7 @@ export type V1VirtualMachineInstanceStatusQosClassEnum = typeof V1VirtualMachine
  */
 export declare function instanceOfV1VirtualMachineInstanceStatus(value: object): value is V1VirtualMachineInstanceStatus;
 export declare function V1VirtualMachineInstanceStatusFromJSON(json: any): V1VirtualMachineInstanceStatus;
-export declare function V1VirtualMachineInstanceStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceStatus;
+export declare function V1VirtualMachineInstanceStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceStatus;
 export declare function V1VirtualMachineInstanceStatusToJSON(json: any): V1VirtualMachineInstanceStatus;
-export declare function V1VirtualMachineInstanceStatusToJSONTyped(value?: V1VirtualMachineInstanceStatus | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceStatusToJSONTyped(value?: V1VirtualMachineInstanceStatus | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceStatus.d.ts.map

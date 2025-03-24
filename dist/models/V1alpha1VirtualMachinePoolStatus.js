@@ -21,7 +21,7 @@ export function instanceOfV1alpha1VirtualMachinePoolStatus(value) {
 export function V1alpha1VirtualMachinePoolStatusFromJSON(json) {
     return V1alpha1VirtualMachinePoolStatusFromJSONTyped(json, false);
 }
-export function V1alpha1VirtualMachinePoolStatusFromJSONTyped(json, ignoreDiscriminator) {
+export function V1alpha1VirtualMachinePoolStatusFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,7 +35,7 @@ export function V1alpha1VirtualMachinePoolStatusFromJSONTyped(json, ignoreDiscri
 export function V1alpha1VirtualMachinePoolStatusToJSON(json) {
     return V1alpha1VirtualMachinePoolStatusToJSONTyped(json, false);
 }
-export function V1alpha1VirtualMachinePoolStatusToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1alpha1VirtualMachinePoolStatusToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -24,7 +24,7 @@ export function instanceOfV1Filesystem(value) {
 export function V1FilesystemFromJSON(json) {
     return V1FilesystemFromJSONTyped(json, false);
 }
-export function V1FilesystemFromJSONTyped(json, ignoreDiscriminator) {
+export function V1FilesystemFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,7 +36,7 @@ export function V1FilesystemFromJSONTyped(json, ignoreDiscriminator) {
 export function V1FilesystemToJSON(json) {
     return V1FilesystemToJSONTyped(json, false);
 }
-export function V1FilesystemToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1FilesystemToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -20,7 +20,7 @@ export function instanceOfV1LiveUpdateConfiguration(value) {
 export function V1LiveUpdateConfigurationFromJSON(json) {
     return V1LiveUpdateConfigurationFromJSONTyped(json, false);
 }
-export function V1LiveUpdateConfigurationFromJSONTyped(json, ignoreDiscriminator) {
+export function V1LiveUpdateConfigurationFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1LiveUpdateConfigurationFromJSONTyped(json, ignoreDiscriminator
 export function V1LiveUpdateConfigurationToJSON(json) {
     return V1LiveUpdateConfigurationToJSONTyped(json, false);
 }
-export function V1LiveUpdateConfigurationToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1LiveUpdateConfigurationToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

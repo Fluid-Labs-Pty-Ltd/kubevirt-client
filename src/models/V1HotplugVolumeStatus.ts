@@ -44,7 +44,7 @@ export function V1HotplugVolumeStatusFromJSON(json: any): V1HotplugVolumeStatus 
     return V1HotplugVolumeStatusFromJSONTyped(json, false);
 }
 
-export function V1HotplugVolumeStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1HotplugVolumeStatus {
+export function V1HotplugVolumeStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1HotplugVolumeStatus {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1HotplugVolumeStatusToJSON(json: any): V1HotplugVolumeStatus {
     return V1HotplugVolumeStatusToJSONTyped(json, false);
 }
 
-export function V1HotplugVolumeStatusToJSONTyped(value?: V1HotplugVolumeStatus | null, ignoreDiscriminator: boolean = false): any {
+export function V1HotplugVolumeStatusToJSONTyped(value?: V1HotplugVolumeStatus | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

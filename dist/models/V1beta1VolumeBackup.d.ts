@@ -40,7 +40,7 @@ export interface V1beta1VolumeBackup {
  */
 export declare function instanceOfV1beta1VolumeBackup(value: object): value is V1beta1VolumeBackup;
 export declare function V1beta1VolumeBackupFromJSON(json: any): V1beta1VolumeBackup;
-export declare function V1beta1VolumeBackupFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VolumeBackup;
+export declare function V1beta1VolumeBackupFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VolumeBackup;
 export declare function V1beta1VolumeBackupToJSON(json: any): V1beta1VolumeBackup;
-export declare function V1beta1VolumeBackupToJSONTyped(value?: V1beta1VolumeBackup | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1VolumeBackupToJSONTyped(value?: V1beta1VolumeBackup | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1VolumeBackup.d.ts.map

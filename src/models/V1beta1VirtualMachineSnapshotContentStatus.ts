@@ -71,7 +71,7 @@ export function V1beta1VirtualMachineSnapshotContentStatusFromJSON(json: any): V
     return V1beta1VirtualMachineSnapshotContentStatusFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineSnapshotContentStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshotContentStatus {
+export function V1beta1VirtualMachineSnapshotContentStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshotContentStatus {
     if (json == null) {
         return json;
     }
@@ -88,7 +88,7 @@ export function V1beta1VirtualMachineSnapshotContentStatusToJSON(json: any): V1b
     return V1beta1VirtualMachineSnapshotContentStatusToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineSnapshotContentStatusToJSONTyped(value?: V1beta1VirtualMachineSnapshotContentStatus | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineSnapshotContentStatusToJSONTyped(value?: V1beta1VirtualMachineSnapshotContentStatus | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

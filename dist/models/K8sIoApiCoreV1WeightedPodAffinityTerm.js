@@ -25,7 +25,7 @@ export function instanceOfK8sIoApiCoreV1WeightedPodAffinityTerm(value) {
 export function K8sIoApiCoreV1WeightedPodAffinityTermFromJSON(json) {
     return K8sIoApiCoreV1WeightedPodAffinityTermFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1WeightedPodAffinityTermFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1WeightedPodAffinityTermFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -37,7 +37,7 @@ export function K8sIoApiCoreV1WeightedPodAffinityTermFromJSONTyped(json, ignoreD
 export function K8sIoApiCoreV1WeightedPodAffinityTermToJSON(json) {
     return K8sIoApiCoreV1WeightedPodAffinityTermToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1WeightedPodAffinityTermToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1WeightedPodAffinityTermToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -47,7 +47,7 @@ export interface V1beta1VirtualMachineClusterPreference {
  */
 export declare function instanceOfV1beta1VirtualMachineClusterPreference(value: object): value is V1beta1VirtualMachineClusterPreference;
 export declare function V1beta1VirtualMachineClusterPreferenceFromJSON(json: any): V1beta1VirtualMachineClusterPreference;
-export declare function V1beta1VirtualMachineClusterPreferenceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineClusterPreference;
+export declare function V1beta1VirtualMachineClusterPreferenceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineClusterPreference;
 export declare function V1beta1VirtualMachineClusterPreferenceToJSON(json: any): V1beta1VirtualMachineClusterPreference;
-export declare function V1beta1VirtualMachineClusterPreferenceToJSONTyped(value?: V1beta1VirtualMachineClusterPreference | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1VirtualMachineClusterPreferenceToJSONTyped(value?: V1beta1VirtualMachineClusterPreference | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1VirtualMachineClusterPreference.d.ts.map

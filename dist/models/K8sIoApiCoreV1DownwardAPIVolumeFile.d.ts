@@ -47,7 +47,7 @@ export interface K8sIoApiCoreV1DownwardAPIVolumeFile {
  */
 export declare function instanceOfK8sIoApiCoreV1DownwardAPIVolumeFile(value: object): value is K8sIoApiCoreV1DownwardAPIVolumeFile;
 export declare function K8sIoApiCoreV1DownwardAPIVolumeFileFromJSON(json: any): K8sIoApiCoreV1DownwardAPIVolumeFile;
-export declare function K8sIoApiCoreV1DownwardAPIVolumeFileFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1DownwardAPIVolumeFile;
+export declare function K8sIoApiCoreV1DownwardAPIVolumeFileFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1DownwardAPIVolumeFile;
 export declare function K8sIoApiCoreV1DownwardAPIVolumeFileToJSON(json: any): K8sIoApiCoreV1DownwardAPIVolumeFile;
-export declare function K8sIoApiCoreV1DownwardAPIVolumeFileToJSONTyped(value?: K8sIoApiCoreV1DownwardAPIVolumeFile | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1DownwardAPIVolumeFileToJSONTyped(value?: K8sIoApiCoreV1DownwardAPIVolumeFile | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1DownwardAPIVolumeFile.d.ts.map

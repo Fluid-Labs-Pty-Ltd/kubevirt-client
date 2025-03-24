@@ -24,7 +24,7 @@ export function instanceOfV1VirtualMachineMemoryDumpRequest(value) {
 export function V1VirtualMachineMemoryDumpRequestFromJSON(json) {
     return V1VirtualMachineMemoryDumpRequestFromJSONTyped(json, false);
 }
-export function V1VirtualMachineMemoryDumpRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineMemoryDumpRequestFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -41,7 +41,7 @@ export function V1VirtualMachineMemoryDumpRequestFromJSONTyped(json, ignoreDiscr
 export function V1VirtualMachineMemoryDumpRequestToJSON(json) {
     return V1VirtualMachineMemoryDumpRequestToJSONTyped(json, false);
 }
-export function V1VirtualMachineMemoryDumpRequestToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineMemoryDumpRequestToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -103,7 +103,7 @@ export interface V1beta1VirtualMachinePreferenceSpec {
  */
 export declare function instanceOfV1beta1VirtualMachinePreferenceSpec(value: object): value is V1beta1VirtualMachinePreferenceSpec;
 export declare function V1beta1VirtualMachinePreferenceSpecFromJSON(json: any): V1beta1VirtualMachinePreferenceSpec;
-export declare function V1beta1VirtualMachinePreferenceSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachinePreferenceSpec;
+export declare function V1beta1VirtualMachinePreferenceSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachinePreferenceSpec;
 export declare function V1beta1VirtualMachinePreferenceSpecToJSON(json: any): V1beta1VirtualMachinePreferenceSpec;
-export declare function V1beta1VirtualMachinePreferenceSpecToJSONTyped(value?: V1beta1VirtualMachinePreferenceSpec | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1VirtualMachinePreferenceSpecToJSONTyped(value?: V1beta1VirtualMachinePreferenceSpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1VirtualMachinePreferenceSpec.d.ts.map

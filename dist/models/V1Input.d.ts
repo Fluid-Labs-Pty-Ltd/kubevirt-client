@@ -39,7 +39,7 @@ export interface V1Input {
  */
 export declare function instanceOfV1Input(value: object): value is V1Input;
 export declare function V1InputFromJSON(json: any): V1Input;
-export declare function V1InputFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Input;
+export declare function V1InputFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Input;
 export declare function V1InputToJSON(json: any): V1Input;
-export declare function V1InputToJSONTyped(value?: V1Input | null, ignoreDiscriminator?: boolean): any;
+export declare function V1InputToJSONTyped(value?: V1Input | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Input.d.ts.map

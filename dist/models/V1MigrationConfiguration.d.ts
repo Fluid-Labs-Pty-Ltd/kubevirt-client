@@ -129,7 +129,7 @@ export interface V1MigrationConfiguration {
  */
 export declare function instanceOfV1MigrationConfiguration(value: object): value is V1MigrationConfiguration;
 export declare function V1MigrationConfigurationFromJSON(json: any): V1MigrationConfiguration;
-export declare function V1MigrationConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1MigrationConfiguration;
+export declare function V1MigrationConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1MigrationConfiguration;
 export declare function V1MigrationConfigurationToJSON(json: any): V1MigrationConfiguration;
-export declare function V1MigrationConfigurationToJSONTyped(value?: V1MigrationConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1MigrationConfigurationToJSONTyped(value?: V1MigrationConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1MigrationConfiguration.d.ts.map

@@ -59,7 +59,7 @@ export type K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum = typeof K8sIoApiC
  */
 export declare function instanceOfK8sIoApiCoreV1NodeSelectorRequirement(value: object): value is K8sIoApiCoreV1NodeSelectorRequirement;
 export declare function K8sIoApiCoreV1NodeSelectorRequirementFromJSON(json: any): K8sIoApiCoreV1NodeSelectorRequirement;
-export declare function K8sIoApiCoreV1NodeSelectorRequirementFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1NodeSelectorRequirement;
+export declare function K8sIoApiCoreV1NodeSelectorRequirementFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1NodeSelectorRequirement;
 export declare function K8sIoApiCoreV1NodeSelectorRequirementToJSON(json: any): K8sIoApiCoreV1NodeSelectorRequirement;
-export declare function K8sIoApiCoreV1NodeSelectorRequirementToJSONTyped(value?: K8sIoApiCoreV1NodeSelectorRequirement | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1NodeSelectorRequirementToJSONTyped(value?: K8sIoApiCoreV1NodeSelectorRequirement | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1NodeSelectorRequirement.d.ts.map

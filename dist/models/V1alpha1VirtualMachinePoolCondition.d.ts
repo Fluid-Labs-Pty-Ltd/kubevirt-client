@@ -45,7 +45,7 @@ export interface V1alpha1VirtualMachinePoolCondition {
  */
 export declare function instanceOfV1alpha1VirtualMachinePoolCondition(value: object): value is V1alpha1VirtualMachinePoolCondition;
 export declare function V1alpha1VirtualMachinePoolConditionFromJSON(json: any): V1alpha1VirtualMachinePoolCondition;
-export declare function V1alpha1VirtualMachinePoolConditionFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachinePoolCondition;
+export declare function V1alpha1VirtualMachinePoolConditionFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachinePoolCondition;
 export declare function V1alpha1VirtualMachinePoolConditionToJSON(json: any): V1alpha1VirtualMachinePoolCondition;
-export declare function V1alpha1VirtualMachinePoolConditionToJSONTyped(value?: V1alpha1VirtualMachinePoolCondition | null, ignoreDiscriminator?: boolean): any;
+export declare function V1alpha1VirtualMachinePoolConditionToJSONTyped(value?: V1alpha1VirtualMachinePoolCondition | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1alpha1VirtualMachinePoolCondition.d.ts.map

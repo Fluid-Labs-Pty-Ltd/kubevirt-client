@@ -51,7 +51,7 @@ export interface V1PreferenceMatcher {
  */
 export declare function instanceOfV1PreferenceMatcher(value: object): value is V1PreferenceMatcher;
 export declare function V1PreferenceMatcherFromJSON(json: any): V1PreferenceMatcher;
-export declare function V1PreferenceMatcherFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PreferenceMatcher;
+export declare function V1PreferenceMatcherFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PreferenceMatcher;
 export declare function V1PreferenceMatcherToJSON(json: any): V1PreferenceMatcher;
-export declare function V1PreferenceMatcherToJSONTyped(value?: V1PreferenceMatcher | null, ignoreDiscriminator?: boolean): any;
+export declare function V1PreferenceMatcherToJSONTyped(value?: V1PreferenceMatcher | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1PreferenceMatcher.d.ts.map

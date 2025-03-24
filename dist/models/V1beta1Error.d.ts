@@ -33,7 +33,7 @@ export interface V1beta1Error {
  */
 export declare function instanceOfV1beta1Error(value: object): value is V1beta1Error;
 export declare function V1beta1ErrorFromJSON(json: any): V1beta1Error;
-export declare function V1beta1ErrorFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1Error;
+export declare function V1beta1ErrorFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1Error;
 export declare function V1beta1ErrorToJSON(json: any): V1beta1Error;
-export declare function V1beta1ErrorToJSONTyped(value?: V1beta1Error | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1ErrorToJSONTyped(value?: V1beta1Error | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1Error.d.ts.map

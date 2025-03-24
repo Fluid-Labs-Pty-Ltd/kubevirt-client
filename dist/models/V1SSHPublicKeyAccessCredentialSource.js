@@ -21,7 +21,7 @@ export function instanceOfV1SSHPublicKeyAccessCredentialSource(value) {
 export function V1SSHPublicKeyAccessCredentialSourceFromJSON(json) {
     return V1SSHPublicKeyAccessCredentialSourceFromJSONTyped(json, false);
 }
-export function V1SSHPublicKeyAccessCredentialSourceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1SSHPublicKeyAccessCredentialSourceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1SSHPublicKeyAccessCredentialSourceFromJSONTyped(json, ignoreDi
 export function V1SSHPublicKeyAccessCredentialSourceToJSON(json) {
     return V1SSHPublicKeyAccessCredentialSourceToJSONTyped(json, false);
 }
-export function V1SSHPublicKeyAccessCredentialSourceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1SSHPublicKeyAccessCredentialSourceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -42,7 +42,7 @@ export interface V1PermittedHostDevices {
  */
 export declare function instanceOfV1PermittedHostDevices(value: object): value is V1PermittedHostDevices;
 export declare function V1PermittedHostDevicesFromJSON(json: any): V1PermittedHostDevices;
-export declare function V1PermittedHostDevicesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PermittedHostDevices;
+export declare function V1PermittedHostDevicesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PermittedHostDevices;
 export declare function V1PermittedHostDevicesToJSON(json: any): V1PermittedHostDevices;
-export declare function V1PermittedHostDevicesToJSONTyped(value?: V1PermittedHostDevices | null, ignoreDiscriminator?: boolean): any;
+export declare function V1PermittedHostDevicesToJSONTyped(value?: V1PermittedHostDevices | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1PermittedHostDevices.d.ts.map

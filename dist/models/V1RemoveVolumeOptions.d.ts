@@ -33,7 +33,7 @@ export interface V1RemoveVolumeOptions {
  */
 export declare function instanceOfV1RemoveVolumeOptions(value: object): value is V1RemoveVolumeOptions;
 export declare function V1RemoveVolumeOptionsFromJSON(json: any): V1RemoveVolumeOptions;
-export declare function V1RemoveVolumeOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1RemoveVolumeOptions;
+export declare function V1RemoveVolumeOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1RemoveVolumeOptions;
 export declare function V1RemoveVolumeOptionsToJSON(json: any): V1RemoveVolumeOptions;
-export declare function V1RemoveVolumeOptionsToJSONTyped(value?: V1RemoveVolumeOptions | null, ignoreDiscriminator?: boolean): any;
+export declare function V1RemoveVolumeOptionsToJSONTyped(value?: V1RemoveVolumeOptions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1RemoveVolumeOptions.d.ts.map

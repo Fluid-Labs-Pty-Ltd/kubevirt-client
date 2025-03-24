@@ -46,7 +46,7 @@ export function V1VolumeMigrationStateFromJSON(json: any): V1VolumeMigrationStat
     return V1VolumeMigrationStateFromJSONTyped(json, false);
 }
 
-export function V1VolumeMigrationStateFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VolumeMigrationState {
+export function V1VolumeMigrationStateFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VolumeMigrationState {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1VolumeMigrationStateToJSON(json: any): V1VolumeMigrationState 
     return V1VolumeMigrationStateToJSONTyped(json, false);
 }
 
-export function V1VolumeMigrationStateToJSONTyped(value?: V1VolumeMigrationState | null, ignoreDiscriminator: boolean = false): any {
+export function V1VolumeMigrationStateToJSONTyped(value?: V1VolumeMigrationState | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

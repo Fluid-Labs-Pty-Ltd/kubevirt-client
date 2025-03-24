@@ -20,7 +20,7 @@ export function instanceOfV1StopOptions(value) {
 export function V1StopOptionsFromJSON(json) {
     return V1StopOptionsFromJSONTyped(json, false);
 }
-export function V1StopOptionsFromJSONTyped(json, ignoreDiscriminator) {
+export function V1StopOptionsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function V1StopOptionsFromJSONTyped(json, ignoreDiscriminator) {
 export function V1StopOptionsToJSON(json) {
     return V1StopOptionsToJSONTyped(json, false);
 }
-export function V1StopOptionsToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1StopOptionsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

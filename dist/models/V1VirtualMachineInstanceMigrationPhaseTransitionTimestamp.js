@@ -20,7 +20,7 @@ export function instanceOfV1VirtualMachineInstanceMigrationPhaseTransitionTimest
 export function V1VirtualMachineInstanceMigrationPhaseTransitionTimestampFromJSON(json) {
     return V1VirtualMachineInstanceMigrationPhaseTransitionTimestampFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceMigrationPhaseTransitionTimestampFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstanceMigrationPhaseTransitionTimestampFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1VirtualMachineInstanceMigrationPhaseTransitionTimestampFromJSO
 export function V1VirtualMachineInstanceMigrationPhaseTransitionTimestampToJSON(json) {
     return V1VirtualMachineInstanceMigrationPhaseTransitionTimestampToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceMigrationPhaseTransitionTimestampToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstanceMigrationPhaseTransitionTimestampToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

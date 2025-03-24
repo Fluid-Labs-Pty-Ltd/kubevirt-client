@@ -47,7 +47,7 @@ export interface V1beta1VirtualMachineRestoreList {
  */
 export declare function instanceOfV1beta1VirtualMachineRestoreList(value: object): value is V1beta1VirtualMachineRestoreList;
 export declare function V1beta1VirtualMachineRestoreListFromJSON(json: any): V1beta1VirtualMachineRestoreList;
-export declare function V1beta1VirtualMachineRestoreListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineRestoreList;
+export declare function V1beta1VirtualMachineRestoreListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineRestoreList;
 export declare function V1beta1VirtualMachineRestoreListToJSON(json: any): V1beta1VirtualMachineRestoreList;
-export declare function V1beta1VirtualMachineRestoreListToJSONTyped(value?: V1beta1VirtualMachineRestoreList | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1VirtualMachineRestoreListToJSONTyped(value?: V1beta1VirtualMachineRestoreList | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1VirtualMachineRestoreList.d.ts.map

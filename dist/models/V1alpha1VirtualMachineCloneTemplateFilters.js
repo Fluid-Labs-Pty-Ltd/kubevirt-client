@@ -20,7 +20,7 @@ export function instanceOfV1alpha1VirtualMachineCloneTemplateFilters(value) {
 export function V1alpha1VirtualMachineCloneTemplateFiltersFromJSON(json) {
     return V1alpha1VirtualMachineCloneTemplateFiltersFromJSONTyped(json, false);
 }
-export function V1alpha1VirtualMachineCloneTemplateFiltersFromJSONTyped(json, ignoreDiscriminator) {
+export function V1alpha1VirtualMachineCloneTemplateFiltersFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1alpha1VirtualMachineCloneTemplateFiltersFromJSONTyped(json, ig
 export function V1alpha1VirtualMachineCloneTemplateFiltersToJSON(json) {
     return V1alpha1VirtualMachineCloneTemplateFiltersToJSONTyped(json, false);
 }
-export function V1alpha1VirtualMachineCloneTemplateFiltersToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1alpha1VirtualMachineCloneTemplateFiltersToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -22,7 +22,7 @@ export function instanceOfK8sIoApiCoreV1PodAntiAffinity(value) {
 export function K8sIoApiCoreV1PodAntiAffinityFromJSON(json) {
     return K8sIoApiCoreV1PodAntiAffinityFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1PodAntiAffinityFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1PodAntiAffinityFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function K8sIoApiCoreV1PodAntiAffinityFromJSONTyped(json, ignoreDiscrimin
 export function K8sIoApiCoreV1PodAntiAffinityToJSON(json) {
     return K8sIoApiCoreV1PodAntiAffinityToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1PodAntiAffinityToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1PodAntiAffinityToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

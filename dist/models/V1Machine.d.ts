@@ -27,7 +27,7 @@ export interface V1Machine {
  */
 export declare function instanceOfV1Machine(value: object): value is V1Machine;
 export declare function V1MachineFromJSON(json: any): V1Machine;
-export declare function V1MachineFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Machine;
+export declare function V1MachineFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Machine;
 export declare function V1MachineToJSON(json: any): V1Machine;
-export declare function V1MachineToJSONTyped(value?: V1Machine | null, ignoreDiscriminator?: boolean): any;
+export declare function V1MachineToJSONTyped(value?: V1Machine | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Machine.d.ts.map

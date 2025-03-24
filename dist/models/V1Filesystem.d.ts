@@ -33,7 +33,7 @@ export interface V1Filesystem {
  */
 export declare function instanceOfV1Filesystem(value: object): value is V1Filesystem;
 export declare function V1FilesystemFromJSON(json: any): V1Filesystem;
-export declare function V1FilesystemFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Filesystem;
+export declare function V1FilesystemFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Filesystem;
 export declare function V1FilesystemToJSON(json: any): V1Filesystem;
-export declare function V1FilesystemToJSONTyped(value?: V1Filesystem | null, ignoreDiscriminator?: boolean): any;
+export declare function V1FilesystemToJSONTyped(value?: V1Filesystem | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Filesystem.d.ts.map

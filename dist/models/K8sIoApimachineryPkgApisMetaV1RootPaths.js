@@ -22,7 +22,7 @@ export function instanceOfK8sIoApimachineryPkgApisMetaV1RootPaths(value) {
 export function K8sIoApimachineryPkgApisMetaV1RootPathsFromJSON(json) {
     return K8sIoApimachineryPkgApisMetaV1RootPathsFromJSONTyped(json, false);
 }
-export function K8sIoApimachineryPkgApisMetaV1RootPathsFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApimachineryPkgApisMetaV1RootPathsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function K8sIoApimachineryPkgApisMetaV1RootPathsFromJSONTyped(json, ignor
 export function K8sIoApimachineryPkgApisMetaV1RootPathsToJSON(json) {
     return K8sIoApimachineryPkgApisMetaV1RootPathsToJSONTyped(json, false);
 }
-export function K8sIoApimachineryPkgApisMetaV1RootPathsToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApimachineryPkgApisMetaV1RootPathsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

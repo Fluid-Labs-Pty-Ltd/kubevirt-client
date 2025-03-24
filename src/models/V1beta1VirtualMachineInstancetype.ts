@@ -72,7 +72,7 @@ export function V1beta1VirtualMachineInstancetypeFromJSON(json: any): V1beta1Vir
     return V1beta1VirtualMachineInstancetypeFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineInstancetypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineInstancetype {
+export function V1beta1VirtualMachineInstancetypeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineInstancetype {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1beta1VirtualMachineInstancetypeToJSON(json: any): V1beta1Virtu
     return V1beta1VirtualMachineInstancetypeToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineInstancetypeToJSONTyped(value?: V1beta1VirtualMachineInstancetype | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineInstancetypeToJSONTyped(value?: V1beta1VirtualMachineInstancetype | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

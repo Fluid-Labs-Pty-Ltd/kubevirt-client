@@ -22,7 +22,7 @@ export function instanceOfV1HotplugVolumeSource(value) {
 export function V1HotplugVolumeSourceFromJSON(json) {
     return V1HotplugVolumeSourceFromJSONTyped(json, false);
 }
-export function V1HotplugVolumeSourceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1HotplugVolumeSourceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function V1HotplugVolumeSourceFromJSONTyped(json, ignoreDiscriminator) {
 export function V1HotplugVolumeSourceToJSON(json) {
     return V1HotplugVolumeSourceToJSONTyped(json, false);
 }
-export function V1HotplugVolumeSourceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1HotplugVolumeSourceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -35,7 +35,7 @@ export interface V1CustomizeComponents {
  */
 export declare function instanceOfV1CustomizeComponents(value: object): value is V1CustomizeComponents;
 export declare function V1CustomizeComponentsFromJSON(json: any): V1CustomizeComponents;
-export declare function V1CustomizeComponentsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CustomizeComponents;
+export declare function V1CustomizeComponentsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CustomizeComponents;
 export declare function V1CustomizeComponentsToJSON(json: any): V1CustomizeComponents;
-export declare function V1CustomizeComponentsToJSONTyped(value?: V1CustomizeComponents | null, ignoreDiscriminator?: boolean): any;
+export declare function V1CustomizeComponentsToJSONTyped(value?: V1CustomizeComponents | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1CustomizeComponents.d.ts.map

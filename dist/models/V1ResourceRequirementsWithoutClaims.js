@@ -20,7 +20,7 @@ export function instanceOfV1ResourceRequirementsWithoutClaims(value) {
 export function V1ResourceRequirementsWithoutClaimsFromJSON(json) {
     return V1ResourceRequirementsWithoutClaimsFromJSONTyped(json, false);
 }
-export function V1ResourceRequirementsWithoutClaimsFromJSONTyped(json, ignoreDiscriminator) {
+export function V1ResourceRequirementsWithoutClaimsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1ResourceRequirementsWithoutClaimsFromJSONTyped(json, ignoreDis
 export function V1ResourceRequirementsWithoutClaimsToJSON(json) {
     return V1ResourceRequirementsWithoutClaimsToJSONTyped(json, false);
 }
-export function V1ResourceRequirementsWithoutClaimsToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1ResourceRequirementsWithoutClaimsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -89,7 +89,7 @@ export type V1PersistentVolumeClaimInfoVolumeModeEnum = typeof V1PersistentVolum
  */
 export declare function instanceOfV1PersistentVolumeClaimInfo(value: object): value is V1PersistentVolumeClaimInfo;
 export declare function V1PersistentVolumeClaimInfoFromJSON(json: any): V1PersistentVolumeClaimInfo;
-export declare function V1PersistentVolumeClaimInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PersistentVolumeClaimInfo;
+export declare function V1PersistentVolumeClaimInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PersistentVolumeClaimInfo;
 export declare function V1PersistentVolumeClaimInfoToJSON(json: any): V1PersistentVolumeClaimInfo;
-export declare function V1PersistentVolumeClaimInfoToJSONTyped(value?: V1PersistentVolumeClaimInfo | null, ignoreDiscriminator?: boolean): any;
+export declare function V1PersistentVolumeClaimInfoToJSONTyped(value?: V1PersistentVolumeClaimInfo | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1PersistentVolumeClaimInfo.d.ts.map

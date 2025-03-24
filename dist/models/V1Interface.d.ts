@@ -126,7 +126,7 @@ export interface V1Interface {
  */
 export declare function instanceOfV1Interface(value: object): value is V1Interface;
 export declare function V1InterfaceFromJSON(json: any): V1Interface;
-export declare function V1InterfaceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Interface;
+export declare function V1InterfaceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Interface;
 export declare function V1InterfaceToJSON(json: any): V1Interface;
-export declare function V1InterfaceToJSONTyped(value?: V1Interface | null, ignoreDiscriminator?: boolean): any;
+export declare function V1InterfaceToJSONTyped(value?: V1Interface | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Interface.d.ts.map

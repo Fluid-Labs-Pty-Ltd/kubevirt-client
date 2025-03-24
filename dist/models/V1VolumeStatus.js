@@ -28,7 +28,7 @@ export function instanceOfV1VolumeStatus(value) {
 export function V1VolumeStatusFromJSON(json) {
     return V1VolumeStatusFromJSONTyped(json, false);
 }
-export function V1VolumeStatusFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VolumeStatusFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -48,7 +48,7 @@ export function V1VolumeStatusFromJSONTyped(json, ignoreDiscriminator) {
 export function V1VolumeStatusToJSON(json) {
     return V1VolumeStatusToJSONTyped(json, false);
 }
-export function V1VolumeStatusToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VolumeStatusToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

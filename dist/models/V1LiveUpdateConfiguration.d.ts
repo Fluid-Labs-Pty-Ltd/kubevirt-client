@@ -75,7 +75,7 @@ export interface V1LiveUpdateConfiguration {
  */
 export declare function instanceOfV1LiveUpdateConfiguration(value: object): value is V1LiveUpdateConfiguration;
 export declare function V1LiveUpdateConfigurationFromJSON(json: any): V1LiveUpdateConfiguration;
-export declare function V1LiveUpdateConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1LiveUpdateConfiguration;
+export declare function V1LiveUpdateConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1LiveUpdateConfiguration;
 export declare function V1LiveUpdateConfigurationToJSON(json: any): V1LiveUpdateConfiguration;
-export declare function V1LiveUpdateConfigurationToJSONTyped(value?: V1LiveUpdateConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1LiveUpdateConfigurationToJSONTyped(value?: V1LiveUpdateConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1LiveUpdateConfiguration.d.ts.map

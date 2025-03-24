@@ -22,7 +22,7 @@ export function instanceOfV1beta1DataVolumeSourceS3(value) {
 export function V1beta1DataVolumeSourceS3FromJSON(json) {
     return V1beta1DataVolumeSourceS3FromJSONTyped(json, false);
 }
-export function V1beta1DataVolumeSourceS3FromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1DataVolumeSourceS3FromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,7 +35,7 @@ export function V1beta1DataVolumeSourceS3FromJSONTyped(json, ignoreDiscriminator
 export function V1beta1DataVolumeSourceS3ToJSON(json) {
     return V1beta1DataVolumeSourceS3ToJSONTyped(json, false);
 }
-export function V1beta1DataVolumeSourceS3ToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1DataVolumeSourceS3ToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

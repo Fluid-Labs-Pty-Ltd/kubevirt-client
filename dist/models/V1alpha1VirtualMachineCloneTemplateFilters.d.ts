@@ -33,7 +33,7 @@ export interface V1alpha1VirtualMachineCloneTemplateFilters {
  */
 export declare function instanceOfV1alpha1VirtualMachineCloneTemplateFilters(value: object): value is V1alpha1VirtualMachineCloneTemplateFilters;
 export declare function V1alpha1VirtualMachineCloneTemplateFiltersFromJSON(json: any): V1alpha1VirtualMachineCloneTemplateFilters;
-export declare function V1alpha1VirtualMachineCloneTemplateFiltersFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneTemplateFilters;
+export declare function V1alpha1VirtualMachineCloneTemplateFiltersFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneTemplateFilters;
 export declare function V1alpha1VirtualMachineCloneTemplateFiltersToJSON(json: any): V1alpha1VirtualMachineCloneTemplateFilters;
-export declare function V1alpha1VirtualMachineCloneTemplateFiltersToJSONTyped(value?: V1alpha1VirtualMachineCloneTemplateFilters | null, ignoreDiscriminator?: boolean): any;
+export declare function V1alpha1VirtualMachineCloneTemplateFiltersToJSONTyped(value?: V1alpha1VirtualMachineCloneTemplateFilters | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1alpha1VirtualMachineCloneTemplateFilters.d.ts.map

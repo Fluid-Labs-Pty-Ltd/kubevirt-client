@@ -21,7 +21,7 @@ export function instanceOfV1VirtualMachineInstanceProfile(value) {
 export function V1VirtualMachineInstanceProfileFromJSON(json) {
     return V1VirtualMachineInstanceProfileFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceProfileFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstanceProfileFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1VirtualMachineInstanceProfileFromJSONTyped(json, ignoreDiscrim
 export function V1VirtualMachineInstanceProfileToJSON(json) {
     return V1VirtualMachineInstanceProfileToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceProfileToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstanceProfileToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

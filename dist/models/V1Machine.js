@@ -20,7 +20,7 @@ export function instanceOfV1Machine(value) {
 export function V1MachineFromJSON(json) {
     return V1MachineFromJSONTyped(json, false);
 }
-export function V1MachineFromJSONTyped(json, ignoreDiscriminator) {
+export function V1MachineFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function V1MachineFromJSONTyped(json, ignoreDiscriminator) {
 export function V1MachineToJSON(json) {
     return V1MachineToJSONTyped(json, false);
 }
-export function V1MachineToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1MachineToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

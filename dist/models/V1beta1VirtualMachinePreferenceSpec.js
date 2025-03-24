@@ -28,7 +28,7 @@ export function instanceOfV1beta1VirtualMachinePreferenceSpec(value) {
 export function V1beta1VirtualMachinePreferenceSpecFromJSON(json) {
     return V1beta1VirtualMachinePreferenceSpecFromJSONTyped(json, false);
 }
-export function V1beta1VirtualMachinePreferenceSpecFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1VirtualMachinePreferenceSpecFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -50,7 +50,7 @@ export function V1beta1VirtualMachinePreferenceSpecFromJSONTyped(json, ignoreDis
 export function V1beta1VirtualMachinePreferenceSpecToJSON(json) {
     return V1beta1VirtualMachinePreferenceSpecToJSONTyped(json, false);
 }
-export function V1beta1VirtualMachinePreferenceSpecToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1VirtualMachinePreferenceSpecToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -85,7 +85,7 @@ export interface V1VirtualMachineInstanceGuestAgentInfo {
  */
 export declare function instanceOfV1VirtualMachineInstanceGuestAgentInfo(value: object): value is V1VirtualMachineInstanceGuestAgentInfo;
 export declare function V1VirtualMachineInstanceGuestAgentInfoFromJSON(json: any): V1VirtualMachineInstanceGuestAgentInfo;
-export declare function V1VirtualMachineInstanceGuestAgentInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestAgentInfo;
+export declare function V1VirtualMachineInstanceGuestAgentInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestAgentInfo;
 export declare function V1VirtualMachineInstanceGuestAgentInfoToJSON(json: any): V1VirtualMachineInstanceGuestAgentInfo;
-export declare function V1VirtualMachineInstanceGuestAgentInfoToJSONTyped(value?: V1VirtualMachineInstanceGuestAgentInfo | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceGuestAgentInfoToJSONTyped(value?: V1VirtualMachineInstanceGuestAgentInfo | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceGuestAgentInfo.d.ts.map

@@ -27,7 +27,7 @@ export interface K8sIoApimachineryPkgApisMetaV1RootPaths {
  */
 export declare function instanceOfK8sIoApimachineryPkgApisMetaV1RootPaths(value: object): value is K8sIoApimachineryPkgApisMetaV1RootPaths;
 export declare function K8sIoApimachineryPkgApisMetaV1RootPathsFromJSON(json: any): K8sIoApimachineryPkgApisMetaV1RootPaths;
-export declare function K8sIoApimachineryPkgApisMetaV1RootPathsFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1RootPaths;
+export declare function K8sIoApimachineryPkgApisMetaV1RootPathsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1RootPaths;
 export declare function K8sIoApimachineryPkgApisMetaV1RootPathsToJSON(json: any): K8sIoApimachineryPkgApisMetaV1RootPaths;
-export declare function K8sIoApimachineryPkgApisMetaV1RootPathsToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1RootPaths | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApimachineryPkgApisMetaV1RootPathsToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1RootPaths | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1RootPaths.d.ts.map

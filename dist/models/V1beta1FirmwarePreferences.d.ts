@@ -56,7 +56,7 @@ export interface V1beta1FirmwarePreferences {
  */
 export declare function instanceOfV1beta1FirmwarePreferences(value: object): value is V1beta1FirmwarePreferences;
 export declare function V1beta1FirmwarePreferencesFromJSON(json: any): V1beta1FirmwarePreferences;
-export declare function V1beta1FirmwarePreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1FirmwarePreferences;
+export declare function V1beta1FirmwarePreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1FirmwarePreferences;
 export declare function V1beta1FirmwarePreferencesToJSON(json: any): V1beta1FirmwarePreferences;
-export declare function V1beta1FirmwarePreferencesToJSONTyped(value?: V1beta1FirmwarePreferences | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1FirmwarePreferencesToJSONTyped(value?: V1beta1FirmwarePreferences | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1FirmwarePreferences.d.ts.map

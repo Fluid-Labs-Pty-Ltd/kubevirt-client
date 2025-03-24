@@ -27,7 +27,7 @@ export interface V1VirtualMachineInstanceMigrationSpec {
  */
 export declare function instanceOfV1VirtualMachineInstanceMigrationSpec(value: object): value is V1VirtualMachineInstanceMigrationSpec;
 export declare function V1VirtualMachineInstanceMigrationSpecFromJSON(json: any): V1VirtualMachineInstanceMigrationSpec;
-export declare function V1VirtualMachineInstanceMigrationSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigrationSpec;
+export declare function V1VirtualMachineInstanceMigrationSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigrationSpec;
 export declare function V1VirtualMachineInstanceMigrationSpecToJSON(json: any): V1VirtualMachineInstanceMigrationSpec;
-export declare function V1VirtualMachineInstanceMigrationSpecToJSONTyped(value?: V1VirtualMachineInstanceMigrationSpec | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceMigrationSpecToJSONTyped(value?: V1VirtualMachineInstanceMigrationSpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceMigrationSpec.d.ts.map

@@ -24,7 +24,7 @@ export function instanceOfV1beta1DataVolumeSourceSnapshot(value) {
 export function V1beta1DataVolumeSourceSnapshotFromJSON(json) {
     return V1beta1DataVolumeSourceSnapshotFromJSONTyped(json, false);
 }
-export function V1beta1DataVolumeSourceSnapshotFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1DataVolumeSourceSnapshotFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,7 +36,7 @@ export function V1beta1DataVolumeSourceSnapshotFromJSONTyped(json, ignoreDiscrim
 export function V1beta1DataVolumeSourceSnapshotToJSON(json) {
     return V1beta1DataVolumeSourceSnapshotToJSONTyped(json, false);
 }
-export function V1beta1DataVolumeSourceSnapshotToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1DataVolumeSourceSnapshotToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

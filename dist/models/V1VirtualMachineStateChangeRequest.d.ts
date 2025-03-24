@@ -41,7 +41,7 @@ export interface V1VirtualMachineStateChangeRequest {
  */
 export declare function instanceOfV1VirtualMachineStateChangeRequest(value: object): value is V1VirtualMachineStateChangeRequest;
 export declare function V1VirtualMachineStateChangeRequestFromJSON(json: any): V1VirtualMachineStateChangeRequest;
-export declare function V1VirtualMachineStateChangeRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineStateChangeRequest;
+export declare function V1VirtualMachineStateChangeRequestFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineStateChangeRequest;
 export declare function V1VirtualMachineStateChangeRequestToJSON(json: any): V1VirtualMachineStateChangeRequest;
-export declare function V1VirtualMachineStateChangeRequestToJSONTyped(value?: V1VirtualMachineStateChangeRequest | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineStateChangeRequestToJSONTyped(value?: V1VirtualMachineStateChangeRequest | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineStateChangeRequest.d.ts.map

@@ -114,7 +114,7 @@ export function V1CPUFromJSON(json: any): V1CPU {
     return V1CPUFromJSONTyped(json, false);
 }
 
-export function V1CPUFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CPU {
+export function V1CPUFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CPU {
     if (json == null) {
         return json;
     }
@@ -137,7 +137,7 @@ export function V1CPUToJSON(json: any): V1CPU {
     return V1CPUToJSONTyped(json, false);
 }
 
-export function V1CPUToJSONTyped(value?: V1CPU | null, ignoreDiscriminator: boolean = false): any {
+export function V1CPUToJSONTyped(value?: V1CPU | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

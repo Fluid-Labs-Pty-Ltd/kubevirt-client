@@ -168,7 +168,7 @@ export interface V1beta1DevicePreferences {
  */
 export declare function instanceOfV1beta1DevicePreferences(value: object): value is V1beta1DevicePreferences;
 export declare function V1beta1DevicePreferencesFromJSON(json: any): V1beta1DevicePreferences;
-export declare function V1beta1DevicePreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DevicePreferences;
+export declare function V1beta1DevicePreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DevicePreferences;
 export declare function V1beta1DevicePreferencesToJSON(json: any): V1beta1DevicePreferences;
-export declare function V1beta1DevicePreferencesToJSONTyped(value?: V1beta1DevicePreferences | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1DevicePreferencesToJSONTyped(value?: V1beta1DevicePreferences | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1DevicePreferences.d.ts.map

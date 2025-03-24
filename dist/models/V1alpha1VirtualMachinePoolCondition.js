@@ -24,7 +24,7 @@ export function instanceOfV1alpha1VirtualMachinePoolCondition(value) {
 export function V1alpha1VirtualMachinePoolConditionFromJSON(json) {
     return V1alpha1VirtualMachinePoolConditionFromJSONTyped(json, false);
 }
-export function V1alpha1VirtualMachinePoolConditionFromJSONTyped(json, ignoreDiscriminator) {
+export function V1alpha1VirtualMachinePoolConditionFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function V1alpha1VirtualMachinePoolConditionFromJSONTyped(json, ignoreDis
 export function V1alpha1VirtualMachinePoolConditionToJSON(json) {
     return V1alpha1VirtualMachinePoolConditionToJSONTyped(json, false);
 }
-export function V1alpha1VirtualMachinePoolConditionToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1alpha1VirtualMachinePoolConditionToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

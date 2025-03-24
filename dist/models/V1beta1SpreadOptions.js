@@ -20,7 +20,7 @@ export function instanceOfV1beta1SpreadOptions(value) {
 export function V1beta1SpreadOptionsFromJSON(json) {
     return V1beta1SpreadOptionsFromJSONTyped(json, false);
 }
-export function V1beta1SpreadOptionsFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1SpreadOptionsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1beta1SpreadOptionsFromJSONTyped(json, ignoreDiscriminator) {
 export function V1beta1SpreadOptionsToJSON(json) {
     return V1beta1SpreadOptionsToJSONTyped(json, false);
 }
-export function V1beta1SpreadOptionsToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1SpreadOptionsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

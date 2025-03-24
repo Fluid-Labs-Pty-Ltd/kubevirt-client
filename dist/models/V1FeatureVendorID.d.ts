@@ -33,7 +33,7 @@ export interface V1FeatureVendorID {
  */
 export declare function instanceOfV1FeatureVendorID(value: object): value is V1FeatureVendorID;
 export declare function V1FeatureVendorIDFromJSON(json: any): V1FeatureVendorID;
-export declare function V1FeatureVendorIDFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1FeatureVendorID;
+export declare function V1FeatureVendorIDFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1FeatureVendorID;
 export declare function V1FeatureVendorIDToJSON(json: any): V1FeatureVendorID;
-export declare function V1FeatureVendorIDToJSONTyped(value?: V1FeatureVendorID | null, ignoreDiscriminator?: boolean): any;
+export declare function V1FeatureVendorIDToJSONTyped(value?: V1FeatureVendorID | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1FeatureVendorID.d.ts.map

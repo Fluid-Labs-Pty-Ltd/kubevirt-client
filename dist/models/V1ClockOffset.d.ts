@@ -34,7 +34,7 @@ export interface V1ClockOffset {
  */
 export declare function instanceOfV1ClockOffset(value: object): value is V1ClockOffset;
 export declare function V1ClockOffsetFromJSON(json: any): V1ClockOffset;
-export declare function V1ClockOffsetFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ClockOffset;
+export declare function V1ClockOffsetFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ClockOffset;
 export declare function V1ClockOffsetToJSON(json: any): V1ClockOffset;
-export declare function V1ClockOffsetToJSONTyped(value?: V1ClockOffset | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ClockOffsetToJSONTyped(value?: V1ClockOffset | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1ClockOffset.d.ts.map

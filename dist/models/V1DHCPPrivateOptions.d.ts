@@ -33,7 +33,7 @@ export interface V1DHCPPrivateOptions {
  */
 export declare function instanceOfV1DHCPPrivateOptions(value: object): value is V1DHCPPrivateOptions;
 export declare function V1DHCPPrivateOptionsFromJSON(json: any): V1DHCPPrivateOptions;
-export declare function V1DHCPPrivateOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DHCPPrivateOptions;
+export declare function V1DHCPPrivateOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DHCPPrivateOptions;
 export declare function V1DHCPPrivateOptionsToJSON(json: any): V1DHCPPrivateOptions;
-export declare function V1DHCPPrivateOptionsToJSONTyped(value?: V1DHCPPrivateOptions | null, ignoreDiscriminator?: boolean): any;
+export declare function V1DHCPPrivateOptionsToJSONTyped(value?: V1DHCPPrivateOptions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1DHCPPrivateOptions.d.ts.map

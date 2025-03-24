@@ -20,7 +20,7 @@ export function instanceOfV1InterfaceBindingMigration(value) {
 export function V1InterfaceBindingMigrationFromJSON(json) {
     return V1InterfaceBindingMigrationFromJSONTyped(json, false);
 }
-export function V1InterfaceBindingMigrationFromJSONTyped(json, ignoreDiscriminator) {
+export function V1InterfaceBindingMigrationFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function V1InterfaceBindingMigrationFromJSONTyped(json, ignoreDiscriminat
 export function V1InterfaceBindingMigrationToJSON(json) {
     return V1InterfaceBindingMigrationToJSONTyped(json, false);
 }
-export function V1InterfaceBindingMigrationToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1InterfaceBindingMigrationToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

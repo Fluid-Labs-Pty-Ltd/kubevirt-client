@@ -51,7 +51,7 @@ export interface V1beta1DataVolumeSourceHTTP {
  */
 export declare function instanceOfV1beta1DataVolumeSourceHTTP(value: object): value is V1beta1DataVolumeSourceHTTP;
 export declare function V1beta1DataVolumeSourceHTTPFromJSON(json: any): V1beta1DataVolumeSourceHTTP;
-export declare function V1beta1DataVolumeSourceHTTPFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSourceHTTP;
+export declare function V1beta1DataVolumeSourceHTTPFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSourceHTTP;
 export declare function V1beta1DataVolumeSourceHTTPToJSON(json: any): V1beta1DataVolumeSourceHTTP;
-export declare function V1beta1DataVolumeSourceHTTPToJSONTyped(value?: V1beta1DataVolumeSourceHTTP | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1DataVolumeSourceHTTPToJSONTyped(value?: V1beta1DataVolumeSourceHTTP | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1DataVolumeSourceHTTP.d.ts.map

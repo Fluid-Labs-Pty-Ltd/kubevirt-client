@@ -21,7 +21,7 @@ export function instanceOfV1beta1SourceSpec(value) {
 export function V1beta1SourceSpecFromJSON(json) {
     return V1beta1SourceSpecFromJSONTyped(json, false);
 }
-export function V1beta1SourceSpecFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1SourceSpecFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1beta1SourceSpecFromJSONTyped(json, ignoreDiscriminator) {
 export function V1beta1SourceSpecToJSON(json) {
     return V1beta1SourceSpecToJSONTyped(json, false);
 }
-export function V1beta1SourceSpecToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1SourceSpecToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -20,7 +20,7 @@ export function instanceOfV1VirtualMachineInstanceNetworkInterface(value) {
 export function V1VirtualMachineInstanceNetworkInterfaceFromJSON(json) {
     return V1VirtualMachineInstanceNetworkInterfaceFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceNetworkInterfaceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstanceNetworkInterfaceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function V1VirtualMachineInstanceNetworkInterfaceFromJSONTyped(json, igno
 export function V1VirtualMachineInstanceNetworkInterfaceToJSON(json) {
     return V1VirtualMachineInstanceNetworkInterfaceToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceNetworkInterfaceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstanceNetworkInterfaceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -27,7 +27,7 @@ export interface V1FreezeUnfreezeTimeout {
  */
 export declare function instanceOfV1FreezeUnfreezeTimeout(value: object): value is V1FreezeUnfreezeTimeout;
 export declare function V1FreezeUnfreezeTimeoutFromJSON(json: any): V1FreezeUnfreezeTimeout;
-export declare function V1FreezeUnfreezeTimeoutFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1FreezeUnfreezeTimeout;
+export declare function V1FreezeUnfreezeTimeoutFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1FreezeUnfreezeTimeout;
 export declare function V1FreezeUnfreezeTimeoutToJSON(json: any): V1FreezeUnfreezeTimeout;
-export declare function V1FreezeUnfreezeTimeoutToJSONTyped(value?: V1FreezeUnfreezeTimeout | null, ignoreDiscriminator?: boolean): any;
+export declare function V1FreezeUnfreezeTimeoutToJSONTyped(value?: V1FreezeUnfreezeTimeout | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1FreezeUnfreezeTimeout.d.ts.map

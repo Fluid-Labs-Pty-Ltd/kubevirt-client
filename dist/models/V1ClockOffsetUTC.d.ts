@@ -27,7 +27,7 @@ export interface V1ClockOffsetUTC {
  */
 export declare function instanceOfV1ClockOffsetUTC(value: object): value is V1ClockOffsetUTC;
 export declare function V1ClockOffsetUTCFromJSON(json: any): V1ClockOffsetUTC;
-export declare function V1ClockOffsetUTCFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ClockOffsetUTC;
+export declare function V1ClockOffsetUTCFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ClockOffsetUTC;
 export declare function V1ClockOffsetUTCToJSON(json: any): V1ClockOffsetUTC;
-export declare function V1ClockOffsetUTCToJSONTyped(value?: V1ClockOffsetUTC | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ClockOffsetUTCToJSONTyped(value?: V1ClockOffsetUTC | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1ClockOffsetUTC.d.ts.map

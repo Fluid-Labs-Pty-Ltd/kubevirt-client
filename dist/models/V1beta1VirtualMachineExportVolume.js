@@ -23,7 +23,7 @@ export function instanceOfV1beta1VirtualMachineExportVolume(value) {
 export function V1beta1VirtualMachineExportVolumeFromJSON(json) {
     return V1beta1VirtualMachineExportVolumeFromJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineExportVolumeFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1VirtualMachineExportVolumeFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,7 +35,7 @@ export function V1beta1VirtualMachineExportVolumeFromJSONTyped(json, ignoreDiscr
 export function V1beta1VirtualMachineExportVolumeToJSON(json) {
     return V1beta1VirtualMachineExportVolumeToJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineExportVolumeToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1VirtualMachineExportVolumeToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

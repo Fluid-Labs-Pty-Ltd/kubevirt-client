@@ -20,7 +20,7 @@ export function instanceOfV1InitrdInfo(value) {
 export function V1InitrdInfoFromJSON(json) {
     return V1InitrdInfoFromJSONTyped(json, false);
 }
-export function V1InitrdInfoFromJSONTyped(json, ignoreDiscriminator) {
+export function V1InitrdInfoFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function V1InitrdInfoFromJSONTyped(json, ignoreDiscriminator) {
 export function V1InitrdInfoToJSON(json) {
     return V1InitrdInfoToJSONTyped(json, false);
 }
-export function V1InitrdInfoToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1InitrdInfoToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

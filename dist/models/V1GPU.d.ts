@@ -46,7 +46,7 @@ export interface V1GPU {
  */
 export declare function instanceOfV1GPU(value: object): value is V1GPU;
 export declare function V1GPUFromJSON(json: any): V1GPU;
-export declare function V1GPUFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1GPU;
+export declare function V1GPUFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1GPU;
 export declare function V1GPUToJSON(json: any): V1GPU;
-export declare function V1GPUToJSONTyped(value?: V1GPU | null, ignoreDiscriminator?: boolean): any;
+export declare function V1GPUToJSONTyped(value?: V1GPU | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1GPU.d.ts.map

@@ -27,7 +27,7 @@ export interface V1ACPI {
  */
 export declare function instanceOfV1ACPI(value: object): value is V1ACPI;
 export declare function V1ACPIFromJSON(json: any): V1ACPI;
-export declare function V1ACPIFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ACPI;
+export declare function V1ACPIFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ACPI;
 export declare function V1ACPIToJSON(json: any): V1ACPI;
-export declare function V1ACPIToJSONTyped(value?: V1ACPI | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ACPIToJSONTyped(value?: V1ACPI | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1ACPI.d.ts.map

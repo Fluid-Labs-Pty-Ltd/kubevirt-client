@@ -43,7 +43,7 @@ export interface V1NodePlacement {
  */
 export declare function instanceOfV1NodePlacement(value: object): value is V1NodePlacement;
 export declare function V1NodePlacementFromJSON(json: any): V1NodePlacement;
-export declare function V1NodePlacementFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1NodePlacement;
+export declare function V1NodePlacementFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1NodePlacement;
 export declare function V1NodePlacementToJSON(json: any): V1NodePlacement;
-export declare function V1NodePlacementToJSONTyped(value?: V1NodePlacement | null, ignoreDiscriminator?: boolean): any;
+export declare function V1NodePlacementToJSONTyped(value?: V1NodePlacement | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1NodePlacement.d.ts.map

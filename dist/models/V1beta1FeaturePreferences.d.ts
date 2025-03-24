@@ -61,7 +61,7 @@ export interface V1beta1FeaturePreferences {
  */
 export declare function instanceOfV1beta1FeaturePreferences(value: object): value is V1beta1FeaturePreferences;
 export declare function V1beta1FeaturePreferencesFromJSON(json: any): V1beta1FeaturePreferences;
-export declare function V1beta1FeaturePreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1FeaturePreferences;
+export declare function V1beta1FeaturePreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1FeaturePreferences;
 export declare function V1beta1FeaturePreferencesToJSON(json: any): V1beta1FeaturePreferences;
-export declare function V1beta1FeaturePreferencesToJSONTyped(value?: V1beta1FeaturePreferences | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1FeaturePreferencesToJSONTyped(value?: V1beta1FeaturePreferences | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1FeaturePreferences.d.ts.map

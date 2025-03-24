@@ -75,7 +75,7 @@ export function V1DiskVerificationFromJSON(json: any): V1DiskVerification {
     return V1DiskVerificationFromJSONTyped(json, false);
 }
 
-export function V1DiskVerificationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DiskVerification {
+export function V1DiskVerificationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DiskVerification {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1DiskVerificationToJSON(json: any): V1DiskVerification {
     return V1DiskVerificationToJSONTyped(json, false);
 }
 
-export function V1DiskVerificationToJSONTyped(value?: V1DiskVerification | null, ignoreDiscriminator: boolean = false): any {
+export function V1DiskVerificationToJSONTyped(value?: V1DiskVerification | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

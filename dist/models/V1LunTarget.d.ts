@@ -39,7 +39,7 @@ export interface V1LunTarget {
  */
 export declare function instanceOfV1LunTarget(value: object): value is V1LunTarget;
 export declare function V1LunTargetFromJSON(json: any): V1LunTarget;
-export declare function V1LunTargetFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1LunTarget;
+export declare function V1LunTargetFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1LunTarget;
 export declare function V1LunTargetToJSON(json: any): V1LunTarget;
-export declare function V1LunTargetToJSONTyped(value?: V1LunTarget | null, ignoreDiscriminator?: boolean): any;
+export declare function V1LunTargetToJSONTyped(value?: V1LunTarget | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1LunTarget.d.ts.map

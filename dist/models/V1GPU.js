@@ -25,7 +25,7 @@ export function instanceOfV1GPU(value) {
 export function V1GPUFromJSON(json) {
     return V1GPUFromJSONTyped(json, false);
 }
-export function V1GPUFromJSONTyped(json, ignoreDiscriminator) {
+export function V1GPUFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -39,7 +39,7 @@ export function V1GPUFromJSONTyped(json, ignoreDiscriminator) {
 export function V1GPUToJSON(json) {
     return V1GPUToJSONTyped(json, false);
 }
-export function V1GPUToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1GPUToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

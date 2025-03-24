@@ -20,7 +20,7 @@ export function instanceOfV1DiskTarget(value) {
 export function V1DiskTargetFromJSON(json) {
     return V1DiskTargetFromJSONTyped(json, false);
 }
-export function V1DiskTargetFromJSONTyped(json, ignoreDiscriminator) {
+export function V1DiskTargetFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1DiskTargetFromJSONTyped(json, ignoreDiscriminator) {
 export function V1DiskTargetToJSON(json) {
     return V1DiskTargetToJSONTyped(json, false);
 }
-export function V1DiskTargetToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1DiskTargetToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

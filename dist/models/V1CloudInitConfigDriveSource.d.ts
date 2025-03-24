@@ -58,7 +58,7 @@ export interface V1CloudInitConfigDriveSource {
  */
 export declare function instanceOfV1CloudInitConfigDriveSource(value: object): value is V1CloudInitConfigDriveSource;
 export declare function V1CloudInitConfigDriveSourceFromJSON(json: any): V1CloudInitConfigDriveSource;
-export declare function V1CloudInitConfigDriveSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CloudInitConfigDriveSource;
+export declare function V1CloudInitConfigDriveSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CloudInitConfigDriveSource;
 export declare function V1CloudInitConfigDriveSourceToJSON(json: any): V1CloudInitConfigDriveSource;
-export declare function V1CloudInitConfigDriveSourceToJSONTyped(value?: V1CloudInitConfigDriveSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1CloudInitConfigDriveSourceToJSONTyped(value?: V1CloudInitConfigDriveSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1CloudInitConfigDriveSource.d.ts.map

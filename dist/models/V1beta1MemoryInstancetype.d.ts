@@ -120,7 +120,7 @@ export interface V1beta1MemoryInstancetype {
  */
 export declare function instanceOfV1beta1MemoryInstancetype(value: object): value is V1beta1MemoryInstancetype;
 export declare function V1beta1MemoryInstancetypeFromJSON(json: any): V1beta1MemoryInstancetype;
-export declare function V1beta1MemoryInstancetypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1MemoryInstancetype;
+export declare function V1beta1MemoryInstancetypeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1MemoryInstancetype;
 export declare function V1beta1MemoryInstancetypeToJSON(json: any): V1beta1MemoryInstancetype;
-export declare function V1beta1MemoryInstancetypeToJSONTyped(value?: V1beta1MemoryInstancetype | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1MemoryInstancetypeToJSONTyped(value?: V1beta1MemoryInstancetype | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1MemoryInstancetype.d.ts.map

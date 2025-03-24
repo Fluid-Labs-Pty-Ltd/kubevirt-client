@@ -25,7 +25,7 @@ export function instanceOfV1Interface(value) {
 export function V1InterfaceFromJSON(json) {
     return V1InterfaceFromJSONTyped(json, false);
 }
-export function V1InterfaceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1InterfaceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1InterfaceFromJSONTyped(json, ignoreDiscriminator) {
 export function V1InterfaceToJSON(json) {
     return V1InterfaceToJSONTyped(json, false);
 }
-export function V1InterfaceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1InterfaceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

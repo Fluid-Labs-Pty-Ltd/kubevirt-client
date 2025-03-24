@@ -168,7 +168,7 @@ export interface V1VirtualMachineInstanceMigrationState {
  */
 export declare function instanceOfV1VirtualMachineInstanceMigrationState(value: object): value is V1VirtualMachineInstanceMigrationState;
 export declare function V1VirtualMachineInstanceMigrationStateFromJSON(json: any): V1VirtualMachineInstanceMigrationState;
-export declare function V1VirtualMachineInstanceMigrationStateFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigrationState;
+export declare function V1VirtualMachineInstanceMigrationStateFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigrationState;
 export declare function V1VirtualMachineInstanceMigrationStateToJSON(json: any): V1VirtualMachineInstanceMigrationState;
-export declare function V1VirtualMachineInstanceMigrationStateToJSONTyped(value?: V1VirtualMachineInstanceMigrationState | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceMigrationStateToJSONTyped(value?: V1VirtualMachineInstanceMigrationState | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceMigrationState.d.ts.map

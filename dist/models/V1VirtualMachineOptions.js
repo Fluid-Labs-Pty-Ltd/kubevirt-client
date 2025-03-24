@@ -20,7 +20,7 @@ export function instanceOfV1VirtualMachineOptions(value) {
 export function V1VirtualMachineOptionsFromJSON(json) {
     return V1VirtualMachineOptionsFromJSONTyped(json, false);
 }
-export function V1VirtualMachineOptionsFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineOptionsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1VirtualMachineOptionsFromJSONTyped(json, ignoreDiscriminator) 
 export function V1VirtualMachineOptionsToJSON(json) {
     return V1VirtualMachineOptionsToJSONTyped(json, false);
 }
-export function V1VirtualMachineOptionsToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineOptionsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

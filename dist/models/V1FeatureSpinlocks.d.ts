@@ -33,7 +33,7 @@ export interface V1FeatureSpinlocks {
  */
 export declare function instanceOfV1FeatureSpinlocks(value: object): value is V1FeatureSpinlocks;
 export declare function V1FeatureSpinlocksFromJSON(json: any): V1FeatureSpinlocks;
-export declare function V1FeatureSpinlocksFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1FeatureSpinlocks;
+export declare function V1FeatureSpinlocksFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1FeatureSpinlocks;
 export declare function V1FeatureSpinlocksToJSON(json: any): V1FeatureSpinlocks;
-export declare function V1FeatureSpinlocksToJSONTyped(value?: V1FeatureSpinlocks | null, ignoreDiscriminator?: boolean): any;
+export declare function V1FeatureSpinlocksToJSONTyped(value?: V1FeatureSpinlocks | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1FeatureSpinlocks.d.ts.map

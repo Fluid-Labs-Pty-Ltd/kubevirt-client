@@ -33,7 +33,7 @@ export interface V1FeatureAPIC {
  */
 export declare function instanceOfV1FeatureAPIC(value: object): value is V1FeatureAPIC;
 export declare function V1FeatureAPICFromJSON(json: any): V1FeatureAPIC;
-export declare function V1FeatureAPICFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1FeatureAPIC;
+export declare function V1FeatureAPICFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1FeatureAPIC;
 export declare function V1FeatureAPICToJSON(json: any): V1FeatureAPIC;
-export declare function V1FeatureAPICToJSONTyped(value?: V1FeatureAPIC | null, ignoreDiscriminator?: boolean): any;
+export declare function V1FeatureAPICToJSONTyped(value?: V1FeatureAPIC | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1FeatureAPIC.d.ts.map

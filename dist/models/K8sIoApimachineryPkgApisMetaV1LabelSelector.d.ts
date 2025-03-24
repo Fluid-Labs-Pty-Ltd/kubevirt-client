@@ -36,7 +36,7 @@ export interface K8sIoApimachineryPkgApisMetaV1LabelSelector {
  */
 export declare function instanceOfK8sIoApimachineryPkgApisMetaV1LabelSelector(value: object): value is K8sIoApimachineryPkgApisMetaV1LabelSelector;
 export declare function K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSON(json: any): K8sIoApimachineryPkgApisMetaV1LabelSelector;
-export declare function K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1LabelSelector;
+export declare function K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1LabelSelector;
 export declare function K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSON(json: any): K8sIoApimachineryPkgApisMetaV1LabelSelector;
-export declare function K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1LabelSelector | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1LabelSelector | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1LabelSelector.d.ts.map

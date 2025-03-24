@@ -36,7 +36,7 @@ export function instanceOfV1PersistentVolumeClaimInfo(value) {
 export function V1PersistentVolumeClaimInfoFromJSON(json) {
     return V1PersistentVolumeClaimInfoFromJSONTyped(json, false);
 }
-export function V1PersistentVolumeClaimInfoFromJSONTyped(json, ignoreDiscriminator) {
+export function V1PersistentVolumeClaimInfoFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -53,7 +53,7 @@ export function V1PersistentVolumeClaimInfoFromJSONTyped(json, ignoreDiscriminat
 export function V1PersistentVolumeClaimInfoToJSON(json) {
     return V1PersistentVolumeClaimInfoToJSONTyped(json, false);
 }
-export function V1PersistentVolumeClaimInfoToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1PersistentVolumeClaimInfoToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

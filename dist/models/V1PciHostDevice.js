@@ -24,7 +24,7 @@ export function instanceOfV1PciHostDevice(value) {
 export function V1PciHostDeviceFromJSON(json) {
     return V1PciHostDeviceFromJSONTyped(json, false);
 }
-export function V1PciHostDeviceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1PciHostDeviceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -37,7 +37,7 @@ export function V1PciHostDeviceFromJSONTyped(json, ignoreDiscriminator) {
 export function V1PciHostDeviceToJSON(json) {
     return V1PciHostDeviceToJSONTyped(json, false);
 }
-export function V1PciHostDeviceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1PciHostDeviceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

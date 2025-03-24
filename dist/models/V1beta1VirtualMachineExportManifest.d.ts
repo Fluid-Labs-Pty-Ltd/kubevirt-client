@@ -33,7 +33,7 @@ export interface V1beta1VirtualMachineExportManifest {
  */
 export declare function instanceOfV1beta1VirtualMachineExportManifest(value: object): value is V1beta1VirtualMachineExportManifest;
 export declare function V1beta1VirtualMachineExportManifestFromJSON(json: any): V1beta1VirtualMachineExportManifest;
-export declare function V1beta1VirtualMachineExportManifestFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineExportManifest;
+export declare function V1beta1VirtualMachineExportManifestFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineExportManifest;
 export declare function V1beta1VirtualMachineExportManifestToJSON(json: any): V1beta1VirtualMachineExportManifest;
-export declare function V1beta1VirtualMachineExportManifestToJSONTyped(value?: V1beta1VirtualMachineExportManifest | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1VirtualMachineExportManifestToJSONTyped(value?: V1beta1VirtualMachineExportManifest | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1VirtualMachineExportManifest.d.ts.map

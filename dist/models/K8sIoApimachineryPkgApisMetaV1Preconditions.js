@@ -20,7 +20,7 @@ export function instanceOfK8sIoApimachineryPkgApisMetaV1Preconditions(value) {
 export function K8sIoApimachineryPkgApisMetaV1PreconditionsFromJSON(json) {
     return K8sIoApimachineryPkgApisMetaV1PreconditionsFromJSONTyped(json, false);
 }
-export function K8sIoApimachineryPkgApisMetaV1PreconditionsFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApimachineryPkgApisMetaV1PreconditionsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function K8sIoApimachineryPkgApisMetaV1PreconditionsFromJSONTyped(json, i
 export function K8sIoApimachineryPkgApisMetaV1PreconditionsToJSON(json) {
     return K8sIoApimachineryPkgApisMetaV1PreconditionsToJSONTyped(json, false);
 }
-export function K8sIoApimachineryPkgApisMetaV1PreconditionsToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApimachineryPkgApisMetaV1PreconditionsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

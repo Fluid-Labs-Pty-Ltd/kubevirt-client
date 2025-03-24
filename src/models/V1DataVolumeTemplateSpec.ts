@@ -78,7 +78,7 @@ export function V1DataVolumeTemplateSpecFromJSON(json: any): V1DataVolumeTemplat
     return V1DataVolumeTemplateSpecFromJSONTyped(json, false);
 }
 
-export function V1DataVolumeTemplateSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DataVolumeTemplateSpec {
+export function V1DataVolumeTemplateSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DataVolumeTemplateSpec {
     if (json == null) {
         return json;
     }
@@ -96,7 +96,7 @@ export function V1DataVolumeTemplateSpecToJSON(json: any): V1DataVolumeTemplateS
     return V1DataVolumeTemplateSpecToJSONTyped(json, false);
 }
 
-export function V1DataVolumeTemplateSpecToJSONTyped(value?: V1DataVolumeTemplateSpec | null, ignoreDiscriminator: boolean = false): any {
+export function V1DataVolumeTemplateSpecToJSONTyped(value?: V1DataVolumeTemplateSpec | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

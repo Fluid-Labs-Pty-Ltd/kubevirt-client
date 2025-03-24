@@ -46,7 +46,7 @@ export function V1FilesystemFromJSON(json: any): V1Filesystem {
     return V1FilesystemFromJSONTyped(json, false);
 }
 
-export function V1FilesystemFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Filesystem {
+export function V1FilesystemFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Filesystem {
     if (json == null) {
         return json;
     }
@@ -61,7 +61,7 @@ export function V1FilesystemToJSON(json: any): V1Filesystem {
     return V1FilesystemToJSONTyped(json, false);
 }
 
-export function V1FilesystemToJSONTyped(value?: V1Filesystem | null, ignoreDiscriminator: boolean = false): any {
+export function V1FilesystemToJSONTyped(value?: V1Filesystem | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -20,7 +20,7 @@ export function instanceOfK8sIoApiCoreV1VolumeResourceRequirements(value) {
 export function K8sIoApiCoreV1VolumeResourceRequirementsFromJSON(json) {
     return K8sIoApiCoreV1VolumeResourceRequirementsFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1VolumeResourceRequirementsFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1VolumeResourceRequirementsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function K8sIoApiCoreV1VolumeResourceRequirementsFromJSONTyped(json, igno
 export function K8sIoApiCoreV1VolumeResourceRequirementsToJSON(json) {
     return K8sIoApiCoreV1VolumeResourceRequirementsToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1VolumeResourceRequirementsToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1VolumeResourceRequirementsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

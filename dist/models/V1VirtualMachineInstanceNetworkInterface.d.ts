@@ -69,7 +69,7 @@ export interface V1VirtualMachineInstanceNetworkInterface {
  */
 export declare function instanceOfV1VirtualMachineInstanceNetworkInterface(value: object): value is V1VirtualMachineInstanceNetworkInterface;
 export declare function V1VirtualMachineInstanceNetworkInterfaceFromJSON(json: any): V1VirtualMachineInstanceNetworkInterface;
-export declare function V1VirtualMachineInstanceNetworkInterfaceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceNetworkInterface;
+export declare function V1VirtualMachineInstanceNetworkInterfaceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceNetworkInterface;
 export declare function V1VirtualMachineInstanceNetworkInterfaceToJSON(json: any): V1VirtualMachineInstanceNetworkInterface;
-export declare function V1VirtualMachineInstanceNetworkInterfaceToJSONTyped(value?: V1VirtualMachineInstanceNetworkInterface | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceNetworkInterfaceToJSONTyped(value?: V1VirtualMachineInstanceNetworkInterface | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceNetworkInterface.d.ts.map

@@ -27,7 +27,7 @@ export interface V1InstancetypeConfiguration {
  */
 export declare function instanceOfV1InstancetypeConfiguration(value: object): value is V1InstancetypeConfiguration;
 export declare function V1InstancetypeConfigurationFromJSON(json: any): V1InstancetypeConfiguration;
-export declare function V1InstancetypeConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1InstancetypeConfiguration;
+export declare function V1InstancetypeConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1InstancetypeConfiguration;
 export declare function V1InstancetypeConfigurationToJSON(json: any): V1InstancetypeConfiguration;
-export declare function V1InstancetypeConfigurationToJSONTyped(value?: V1InstancetypeConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1InstancetypeConfigurationToJSONTyped(value?: V1InstancetypeConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1InstancetypeConfiguration.d.ts.map

@@ -39,7 +39,7 @@ export interface V1DiskTarget {
  */
 export declare function instanceOfV1DiskTarget(value: object): value is V1DiskTarget;
 export declare function V1DiskTargetFromJSON(json: any): V1DiskTarget;
-export declare function V1DiskTargetFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DiskTarget;
+export declare function V1DiskTargetFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DiskTarget;
 export declare function V1DiskTargetToJSON(json: any): V1DiskTarget;
-export declare function V1DiskTargetToJSONTyped(value?: V1DiskTarget | null, ignoreDiscriminator?: boolean): any;
+export declare function V1DiskTargetToJSONTyped(value?: V1DiskTarget | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1DiskTarget.d.ts.map

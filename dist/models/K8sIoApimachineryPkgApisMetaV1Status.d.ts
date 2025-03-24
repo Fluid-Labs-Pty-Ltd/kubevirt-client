@@ -71,7 +71,7 @@ export interface K8sIoApimachineryPkgApisMetaV1Status {
  */
 export declare function instanceOfK8sIoApimachineryPkgApisMetaV1Status(value: object): value is K8sIoApimachineryPkgApisMetaV1Status;
 export declare function K8sIoApimachineryPkgApisMetaV1StatusFromJSON(json: any): K8sIoApimachineryPkgApisMetaV1Status;
-export declare function K8sIoApimachineryPkgApisMetaV1StatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1Status;
+export declare function K8sIoApimachineryPkgApisMetaV1StatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1Status;
 export declare function K8sIoApimachineryPkgApisMetaV1StatusToJSON(json: any): K8sIoApimachineryPkgApisMetaV1Status;
-export declare function K8sIoApimachineryPkgApisMetaV1StatusToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1Status | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApimachineryPkgApisMetaV1StatusToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1Status | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1Status.d.ts.map

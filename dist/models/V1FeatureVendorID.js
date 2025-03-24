@@ -20,7 +20,7 @@ export function instanceOfV1FeatureVendorID(value) {
 export function V1FeatureVendorIDFromJSON(json) {
     return V1FeatureVendorIDFromJSONTyped(json, false);
 }
-export function V1FeatureVendorIDFromJSONTyped(json, ignoreDiscriminator) {
+export function V1FeatureVendorIDFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1FeatureVendorIDFromJSONTyped(json, ignoreDiscriminator) {
 export function V1FeatureVendorIDToJSON(json) {
     return V1FeatureVendorIDToJSONTyped(json, false);
 }
-export function V1FeatureVendorIDToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1FeatureVendorIDToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

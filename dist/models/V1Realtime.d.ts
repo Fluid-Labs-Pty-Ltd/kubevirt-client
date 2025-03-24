@@ -27,7 +27,7 @@ export interface V1Realtime {
  */
 export declare function instanceOfV1Realtime(value: object): value is V1Realtime;
 export declare function V1RealtimeFromJSON(json: any): V1Realtime;
-export declare function V1RealtimeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Realtime;
+export declare function V1RealtimeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Realtime;
 export declare function V1RealtimeToJSON(json: any): V1Realtime;
-export declare function V1RealtimeToJSONTyped(value?: V1Realtime | null, ignoreDiscriminator?: boolean): any;
+export declare function V1RealtimeToJSONTyped(value?: V1Realtime | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Realtime.d.ts.map

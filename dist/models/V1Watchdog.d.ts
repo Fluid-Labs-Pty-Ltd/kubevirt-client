@@ -34,7 +34,7 @@ export interface V1Watchdog {
  */
 export declare function instanceOfV1Watchdog(value: object): value is V1Watchdog;
 export declare function V1WatchdogFromJSON(json: any): V1Watchdog;
-export declare function V1WatchdogFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Watchdog;
+export declare function V1WatchdogFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Watchdog;
 export declare function V1WatchdogToJSON(json: any): V1Watchdog;
-export declare function V1WatchdogToJSONTyped(value?: V1Watchdog | null, ignoreDiscriminator?: boolean): any;
+export declare function V1WatchdogToJSONTyped(value?: V1Watchdog | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Watchdog.d.ts.map

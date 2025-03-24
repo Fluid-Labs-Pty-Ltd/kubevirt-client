@@ -27,7 +27,7 @@ export interface V1TopologyHints {
  */
 export declare function instanceOfV1TopologyHints(value: object): value is V1TopologyHints;
 export declare function V1TopologyHintsFromJSON(json: any): V1TopologyHints;
-export declare function V1TopologyHintsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1TopologyHints;
+export declare function V1TopologyHintsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1TopologyHints;
 export declare function V1TopologyHintsToJSON(json: any): V1TopologyHints;
-export declare function V1TopologyHintsToJSONTyped(value?: V1TopologyHints | null, ignoreDiscriminator?: boolean): any;
+export declare function V1TopologyHintsToJSONTyped(value?: V1TopologyHints | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1TopologyHints.d.ts.map

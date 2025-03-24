@@ -58,7 +58,7 @@ export type K8sIoApiCoreV1HTTPGetActionSchemeEnum = typeof K8sIoApiCoreV1HTTPGet
  */
 export declare function instanceOfK8sIoApiCoreV1HTTPGetAction(value: object): value is K8sIoApiCoreV1HTTPGetAction;
 export declare function K8sIoApiCoreV1HTTPGetActionFromJSON(json: any): K8sIoApiCoreV1HTTPGetAction;
-export declare function K8sIoApiCoreV1HTTPGetActionFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1HTTPGetAction;
+export declare function K8sIoApiCoreV1HTTPGetActionFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1HTTPGetAction;
 export declare function K8sIoApiCoreV1HTTPGetActionToJSON(json: any): K8sIoApiCoreV1HTTPGetAction;
-export declare function K8sIoApiCoreV1HTTPGetActionToJSONTyped(value?: K8sIoApiCoreV1HTTPGetAction | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1HTTPGetActionToJSONTyped(value?: K8sIoApiCoreV1HTTPGetAction | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1HTTPGetAction.d.ts.map

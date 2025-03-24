@@ -67,7 +67,7 @@ export interface K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry {
  */
 export declare function instanceOfK8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry(value: object): value is K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry;
 export declare function K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryFromJSON(json: any): K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry;
-export declare function K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry;
+export declare function K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry;
 export declare function K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryToJSON(json: any): K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry;
-export declare function K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry.d.ts.map

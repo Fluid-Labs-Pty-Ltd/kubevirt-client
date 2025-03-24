@@ -24,7 +24,7 @@ export function instanceOfV1VirtualMachineInstanceCondition(value) {
 export function V1VirtualMachineInstanceConditionFromJSON(json) {
     return V1VirtualMachineInstanceConditionFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceConditionFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstanceConditionFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function V1VirtualMachineInstanceConditionFromJSONTyped(json, ignoreDiscr
 export function V1VirtualMachineInstanceConditionToJSON(json) {
     return V1VirtualMachineInstanceConditionToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceConditionToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstanceConditionToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

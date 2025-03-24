@@ -24,7 +24,7 @@ export function instanceOfV1beta1VirtualMachineClusterPreferenceList(value) {
 export function V1beta1VirtualMachineClusterPreferenceListFromJSON(json) {
     return V1beta1VirtualMachineClusterPreferenceListFromJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineClusterPreferenceListFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1VirtualMachineClusterPreferenceListFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function V1beta1VirtualMachineClusterPreferenceListFromJSONTyped(json, ig
 export function V1beta1VirtualMachineClusterPreferenceListToJSON(json) {
     return V1beta1VirtualMachineClusterPreferenceListToJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineClusterPreferenceListToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1VirtualMachineClusterPreferenceListToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -20,7 +20,7 @@ export function instanceOfV1VirtualMachineInstanceMigrationSpec(value) {
 export function V1VirtualMachineInstanceMigrationSpecFromJSON(json) {
     return V1VirtualMachineInstanceMigrationSpecFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceMigrationSpecFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstanceMigrationSpecFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function V1VirtualMachineInstanceMigrationSpecFromJSONTyped(json, ignoreD
 export function V1VirtualMachineInstanceMigrationSpecToJSON(json) {
     return V1VirtualMachineInstanceMigrationSpecToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceMigrationSpecToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstanceMigrationSpecToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -75,7 +75,7 @@ export interface K8sIoApiCoreV1ResourceFieldSelector {
  */
 export declare function instanceOfK8sIoApiCoreV1ResourceFieldSelector(value: object): value is K8sIoApiCoreV1ResourceFieldSelector;
 export declare function K8sIoApiCoreV1ResourceFieldSelectorFromJSON(json: any): K8sIoApiCoreV1ResourceFieldSelector;
-export declare function K8sIoApiCoreV1ResourceFieldSelectorFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1ResourceFieldSelector;
+export declare function K8sIoApiCoreV1ResourceFieldSelectorFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1ResourceFieldSelector;
 export declare function K8sIoApiCoreV1ResourceFieldSelectorToJSON(json: any): K8sIoApiCoreV1ResourceFieldSelector;
-export declare function K8sIoApiCoreV1ResourceFieldSelectorToJSONTyped(value?: K8sIoApiCoreV1ResourceFieldSelector | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1ResourceFieldSelectorToJSONTyped(value?: K8sIoApiCoreV1ResourceFieldSelector | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1ResourceFieldSelector.d.ts.map

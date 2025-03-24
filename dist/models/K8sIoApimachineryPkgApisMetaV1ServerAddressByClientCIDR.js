@@ -24,7 +24,7 @@ export function instanceOfK8sIoApimachineryPkgApisMetaV1ServerAddressByClientCID
 export function K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRFromJSON(json) {
     return K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRFromJSONTyped(json, false);
 }
-export function K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,7 +36,7 @@ export function K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRFromJSONT
 export function K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRToJSON(json) {
     return K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRToJSONTyped(json, false);
 }
-export function K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

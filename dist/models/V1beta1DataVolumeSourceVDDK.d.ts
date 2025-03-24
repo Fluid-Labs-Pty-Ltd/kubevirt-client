@@ -57,7 +57,7 @@ export interface V1beta1DataVolumeSourceVDDK {
  */
 export declare function instanceOfV1beta1DataVolumeSourceVDDK(value: object): value is V1beta1DataVolumeSourceVDDK;
 export declare function V1beta1DataVolumeSourceVDDKFromJSON(json: any): V1beta1DataVolumeSourceVDDK;
-export declare function V1beta1DataVolumeSourceVDDKFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSourceVDDK;
+export declare function V1beta1DataVolumeSourceVDDKFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSourceVDDK;
 export declare function V1beta1DataVolumeSourceVDDKToJSON(json: any): V1beta1DataVolumeSourceVDDK;
-export declare function V1beta1DataVolumeSourceVDDKToJSONTyped(value?: V1beta1DataVolumeSourceVDDK | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1DataVolumeSourceVDDKToJSONTyped(value?: V1beta1DataVolumeSourceVDDK | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1DataVolumeSourceVDDK.d.ts.map

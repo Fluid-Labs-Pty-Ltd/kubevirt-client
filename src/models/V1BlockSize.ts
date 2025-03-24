@@ -59,7 +59,7 @@ export function V1BlockSizeFromJSON(json: any): V1BlockSize {
     return V1BlockSizeFromJSONTyped(json, false);
 }
 
-export function V1BlockSizeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1BlockSize {
+export function V1BlockSizeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1BlockSize {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1BlockSizeToJSON(json: any): V1BlockSize {
     return V1BlockSizeToJSONTyped(json, false);
 }
 
-export function V1BlockSizeToJSONTyped(value?: V1BlockSize | null, ignoreDiscriminator: boolean = false): any {
+export function V1BlockSizeToJSONTyped(value?: V1BlockSize | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

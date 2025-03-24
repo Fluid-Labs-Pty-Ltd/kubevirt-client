@@ -33,7 +33,7 @@ export interface V1beta1DataVolumeSourceSnapshot {
  */
 export declare function instanceOfV1beta1DataVolumeSourceSnapshot(value: object): value is V1beta1DataVolumeSourceSnapshot;
 export declare function V1beta1DataVolumeSourceSnapshotFromJSON(json: any): V1beta1DataVolumeSourceSnapshot;
-export declare function V1beta1DataVolumeSourceSnapshotFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSourceSnapshot;
+export declare function V1beta1DataVolumeSourceSnapshotFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSourceSnapshot;
 export declare function V1beta1DataVolumeSourceSnapshotToJSON(json: any): V1beta1DataVolumeSourceSnapshot;
-export declare function V1beta1DataVolumeSourceSnapshotToJSONTyped(value?: V1beta1DataVolumeSourceSnapshot | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1DataVolumeSourceSnapshotToJSONTyped(value?: V1beta1DataVolumeSourceSnapshot | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1DataVolumeSourceSnapshot.d.ts.map

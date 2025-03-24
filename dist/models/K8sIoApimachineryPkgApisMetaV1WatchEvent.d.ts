@@ -70,7 +70,7 @@ export interface K8sIoApimachineryPkgApisMetaV1WatchEvent {
  */
 export declare function instanceOfK8sIoApimachineryPkgApisMetaV1WatchEvent(value: object): value is K8sIoApimachineryPkgApisMetaV1WatchEvent;
 export declare function K8sIoApimachineryPkgApisMetaV1WatchEventFromJSON(json: any): K8sIoApimachineryPkgApisMetaV1WatchEvent;
-export declare function K8sIoApimachineryPkgApisMetaV1WatchEventFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1WatchEvent;
+export declare function K8sIoApimachineryPkgApisMetaV1WatchEventFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1WatchEvent;
 export declare function K8sIoApimachineryPkgApisMetaV1WatchEventToJSON(json: any): K8sIoApimachineryPkgApisMetaV1WatchEvent;
-export declare function K8sIoApimachineryPkgApisMetaV1WatchEventToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1WatchEvent | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApimachineryPkgApisMetaV1WatchEventToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1WatchEvent | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1WatchEvent.d.ts.map

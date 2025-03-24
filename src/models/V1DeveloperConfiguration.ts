@@ -107,7 +107,7 @@ export function V1DeveloperConfigurationFromJSON(json: any): V1DeveloperConfigur
     return V1DeveloperConfigurationFromJSONTyped(json, false);
 }
 
-export function V1DeveloperConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DeveloperConfiguration {
+export function V1DeveloperConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DeveloperConfiguration {
     if (json == null) {
         return json;
     }
@@ -130,7 +130,7 @@ export function V1DeveloperConfigurationToJSON(json: any): V1DeveloperConfigurat
     return V1DeveloperConfigurationToJSONTyped(json, false);
 }
 
-export function V1DeveloperConfigurationToJSONTyped(value?: V1DeveloperConfiguration | null, ignoreDiscriminator: boolean = false): any {
+export function V1DeveloperConfigurationToJSONTyped(value?: V1DeveloperConfiguration | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

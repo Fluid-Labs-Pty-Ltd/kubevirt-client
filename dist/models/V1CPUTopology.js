@@ -20,7 +20,7 @@ export function instanceOfV1CPUTopology(value) {
 export function V1CPUTopologyFromJSON(json) {
     return V1CPUTopologyFromJSONTyped(json, false);
 }
-export function V1CPUTopologyFromJSONTyped(json, ignoreDiscriminator) {
+export function V1CPUTopologyFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1CPUTopologyFromJSONTyped(json, ignoreDiscriminator) {
 export function V1CPUTopologyToJSON(json) {
     return V1CPUTopologyToJSONTyped(json, false);
 }
-export function V1CPUTopologyToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1CPUTopologyToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

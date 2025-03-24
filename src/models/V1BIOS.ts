@@ -38,7 +38,7 @@ export function V1BIOSFromJSON(json: any): V1BIOS {
     return V1BIOSFromJSONTyped(json, false);
 }
 
-export function V1BIOSFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1BIOS {
+export function V1BIOSFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1BIOS {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1BIOSToJSON(json: any): V1BIOS {
     return V1BIOSToJSONTyped(json, false);
 }
 
-export function V1BIOSToJSONTyped(value?: V1BIOS | null, ignoreDiscriminator: boolean = false): any {
+export function V1BIOSToJSONTyped(value?: V1BIOS | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -20,7 +20,7 @@ export function instanceOfV1beta1SnapshotVolumesLists(value) {
 export function V1beta1SnapshotVolumesListsFromJSON(json) {
     return V1beta1SnapshotVolumesListsFromJSONTyped(json, false);
 }
-export function V1beta1SnapshotVolumesListsFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1SnapshotVolumesListsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1beta1SnapshotVolumesListsFromJSONTyped(json, ignoreDiscriminat
 export function V1beta1SnapshotVolumesListsToJSON(json) {
     return V1beta1SnapshotVolumesListsToJSONTyped(json, false);
 }
-export function V1beta1SnapshotVolumesListsToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1SnapshotVolumesListsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

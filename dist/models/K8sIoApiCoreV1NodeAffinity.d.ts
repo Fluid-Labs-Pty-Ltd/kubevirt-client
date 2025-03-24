@@ -35,7 +35,7 @@ export interface K8sIoApiCoreV1NodeAffinity {
  */
 export declare function instanceOfK8sIoApiCoreV1NodeAffinity(value: object): value is K8sIoApiCoreV1NodeAffinity;
 export declare function K8sIoApiCoreV1NodeAffinityFromJSON(json: any): K8sIoApiCoreV1NodeAffinity;
-export declare function K8sIoApiCoreV1NodeAffinityFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1NodeAffinity;
+export declare function K8sIoApiCoreV1NodeAffinityFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1NodeAffinity;
 export declare function K8sIoApiCoreV1NodeAffinityToJSON(json: any): K8sIoApiCoreV1NodeAffinity;
-export declare function K8sIoApiCoreV1NodeAffinityToJSONTyped(value?: K8sIoApiCoreV1NodeAffinity | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1NodeAffinityToJSONTyped(value?: K8sIoApiCoreV1NodeAffinity | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1NodeAffinity.d.ts.map

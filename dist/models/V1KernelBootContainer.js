@@ -30,7 +30,7 @@ export function instanceOfV1KernelBootContainer(value) {
 export function V1KernelBootContainerFromJSON(json) {
     return V1KernelBootContainerFromJSONTyped(json, false);
 }
-export function V1KernelBootContainerFromJSONTyped(json, ignoreDiscriminator) {
+export function V1KernelBootContainerFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -45,7 +45,7 @@ export function V1KernelBootContainerFromJSONTyped(json, ignoreDiscriminator) {
 export function V1KernelBootContainerToJSON(json) {
     return V1KernelBootContainerToJSONTyped(json, false);
 }
-export function V1KernelBootContainerToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1KernelBootContainerToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

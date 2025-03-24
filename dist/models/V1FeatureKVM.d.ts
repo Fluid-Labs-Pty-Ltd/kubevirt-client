@@ -27,7 +27,7 @@ export interface V1FeatureKVM {
  */
 export declare function instanceOfV1FeatureKVM(value: object): value is V1FeatureKVM;
 export declare function V1FeatureKVMFromJSON(json: any): V1FeatureKVM;
-export declare function V1FeatureKVMFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1FeatureKVM;
+export declare function V1FeatureKVMFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1FeatureKVM;
 export declare function V1FeatureKVMToJSON(json: any): V1FeatureKVM;
-export declare function V1FeatureKVMToJSONTyped(value?: V1FeatureKVM | null, ignoreDiscriminator?: boolean): any;
+export declare function V1FeatureKVMToJSONTyped(value?: V1FeatureKVM | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1FeatureKVM.d.ts.map

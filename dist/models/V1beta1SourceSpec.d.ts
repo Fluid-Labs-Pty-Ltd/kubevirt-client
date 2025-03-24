@@ -28,7 +28,7 @@ export interface V1beta1SourceSpec {
  */
 export declare function instanceOfV1beta1SourceSpec(value: object): value is V1beta1SourceSpec;
 export declare function V1beta1SourceSpecFromJSON(json: any): V1beta1SourceSpec;
-export declare function V1beta1SourceSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1SourceSpec;
+export declare function V1beta1SourceSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1SourceSpec;
 export declare function V1beta1SourceSpecToJSON(json: any): V1beta1SourceSpec;
-export declare function V1beta1SourceSpecToJSONTyped(value?: V1beta1SourceSpec | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1SourceSpecToJSONTyped(value?: V1beta1SourceSpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1SourceSpec.d.ts.map

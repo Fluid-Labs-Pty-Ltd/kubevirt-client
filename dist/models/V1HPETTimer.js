@@ -20,7 +20,7 @@ export function instanceOfV1HPETTimer(value) {
 export function V1HPETTimerFromJSON(json) {
     return V1HPETTimerFromJSONTyped(json, false);
 }
-export function V1HPETTimerFromJSONTyped(json, ignoreDiscriminator) {
+export function V1HPETTimerFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1HPETTimerFromJSONTyped(json, ignoreDiscriminator) {
 export function V1HPETTimerToJSON(json) {
     return V1HPETTimerToJSONTyped(json, false);
 }
-export function V1HPETTimerToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1HPETTimerToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

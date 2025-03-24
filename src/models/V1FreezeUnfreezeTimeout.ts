@@ -39,7 +39,7 @@ export function V1FreezeUnfreezeTimeoutFromJSON(json: any): V1FreezeUnfreezeTime
     return V1FreezeUnfreezeTimeoutFromJSONTyped(json, false);
 }
 
-export function V1FreezeUnfreezeTimeoutFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1FreezeUnfreezeTimeout {
+export function V1FreezeUnfreezeTimeoutFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1FreezeUnfreezeTimeout {
     if (json == null) {
         return json;
     }
@@ -53,7 +53,7 @@ export function V1FreezeUnfreezeTimeoutToJSON(json: any): V1FreezeUnfreezeTimeou
     return V1FreezeUnfreezeTimeoutToJSONTyped(json, false);
 }
 
-export function V1FreezeUnfreezeTimeoutToJSONTyped(value?: V1FreezeUnfreezeTimeout | null, ignoreDiscriminator: boolean = false): any {
+export function V1FreezeUnfreezeTimeoutToJSONTyped(value?: V1FreezeUnfreezeTimeout | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

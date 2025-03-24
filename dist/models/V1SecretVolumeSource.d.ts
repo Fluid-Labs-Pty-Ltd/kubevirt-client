@@ -39,7 +39,7 @@ export interface V1SecretVolumeSource {
  */
 export declare function instanceOfV1SecretVolumeSource(value: object): value is V1SecretVolumeSource;
 export declare function V1SecretVolumeSourceFromJSON(json: any): V1SecretVolumeSource;
-export declare function V1SecretVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SecretVolumeSource;
+export declare function V1SecretVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SecretVolumeSource;
 export declare function V1SecretVolumeSourceToJSON(json: any): V1SecretVolumeSource;
-export declare function V1SecretVolumeSourceToJSONTyped(value?: V1SecretVolumeSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SecretVolumeSourceToJSONTyped(value?: V1SecretVolumeSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SecretVolumeSource.d.ts.map

@@ -94,7 +94,7 @@ export function V1HostDiskFromJSON(json: any): V1HostDisk {
     return V1HostDiskFromJSONTyped(json, false);
 }
 
-export function V1HostDiskFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1HostDisk {
+export function V1HostDiskFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1HostDisk {
     if (json == null) {
         return json;
     }
@@ -111,7 +111,7 @@ export function V1HostDiskToJSON(json: any): V1HostDisk {
     return V1HostDiskToJSONTyped(json, false);
 }
 
-export function V1HostDiskToJSONTyped(value?: V1HostDisk | null, ignoreDiscriminator: boolean = false): any {
+export function V1HostDiskToJSONTyped(value?: V1HostDisk | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

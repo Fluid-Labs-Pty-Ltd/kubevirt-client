@@ -45,7 +45,7 @@ export interface V1beta1DataVolumeSourceImageIO {
  */
 export declare function instanceOfV1beta1DataVolumeSourceImageIO(value: object): value is V1beta1DataVolumeSourceImageIO;
 export declare function V1beta1DataVolumeSourceImageIOFromJSON(json: any): V1beta1DataVolumeSourceImageIO;
-export declare function V1beta1DataVolumeSourceImageIOFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSourceImageIO;
+export declare function V1beta1DataVolumeSourceImageIOFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSourceImageIO;
 export declare function V1beta1DataVolumeSourceImageIOToJSON(json: any): V1beta1DataVolumeSourceImageIO;
-export declare function V1beta1DataVolumeSourceImageIOToJSONTyped(value?: V1beta1DataVolumeSourceImageIO | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1DataVolumeSourceImageIOToJSONTyped(value?: V1beta1DataVolumeSourceImageIO | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1DataVolumeSourceImageIO.d.ts.map

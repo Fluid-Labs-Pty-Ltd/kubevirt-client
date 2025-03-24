@@ -34,7 +34,7 @@ export interface V1ComponentConfig {
  */
 export declare function instanceOfV1ComponentConfig(value: object): value is V1ComponentConfig;
 export declare function V1ComponentConfigFromJSON(json: any): V1ComponentConfig;
-export declare function V1ComponentConfigFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ComponentConfig;
+export declare function V1ComponentConfigFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ComponentConfig;
 export declare function V1ComponentConfigToJSON(json: any): V1ComponentConfig;
-export declare function V1ComponentConfigToJSONTyped(value?: V1ComponentConfig | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ComponentConfigToJSONTyped(value?: V1ComponentConfig | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1ComponentConfig.d.ts.map

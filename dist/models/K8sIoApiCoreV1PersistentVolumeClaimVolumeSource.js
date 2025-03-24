@@ -22,7 +22,7 @@ export function instanceOfK8sIoApiCoreV1PersistentVolumeClaimVolumeSource(value)
 export function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceFromJSON(json) {
     return K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceFromJSONTyped(jso
 export function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceToJSON(json) {
     return K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

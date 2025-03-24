@@ -33,7 +33,7 @@ export interface V1EFI {
  */
 export declare function instanceOfV1EFI(value: object): value is V1EFI;
 export declare function V1EFIFromJSON(json: any): V1EFI;
-export declare function V1EFIFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1EFI;
+export declare function V1EFIFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1EFI;
 export declare function V1EFIToJSON(json: any): V1EFI;
-export declare function V1EFIToJSONTyped(value?: V1EFI | null, ignoreDiscriminator?: boolean): any;
+export declare function V1EFIToJSONTyped(value?: V1EFI | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1EFI.d.ts.map

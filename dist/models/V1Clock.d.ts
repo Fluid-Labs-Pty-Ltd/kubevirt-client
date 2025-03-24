@@ -41,7 +41,7 @@ export interface V1Clock {
  */
 export declare function instanceOfV1Clock(value: object): value is V1Clock;
 export declare function V1ClockFromJSON(json: any): V1Clock;
-export declare function V1ClockFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Clock;
+export declare function V1ClockFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Clock;
 export declare function V1ClockToJSON(json: any): V1Clock;
-export declare function V1ClockToJSONTyped(value?: V1Clock | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ClockToJSONTyped(value?: V1Clock | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Clock.d.ts.map

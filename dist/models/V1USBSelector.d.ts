@@ -33,7 +33,7 @@ export interface V1USBSelector {
  */
 export declare function instanceOfV1USBSelector(value: object): value is V1USBSelector;
 export declare function V1USBSelectorFromJSON(json: any): V1USBSelector;
-export declare function V1USBSelectorFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1USBSelector;
+export declare function V1USBSelectorFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1USBSelector;
 export declare function V1USBSelectorToJSON(json: any): V1USBSelector;
-export declare function V1USBSelectorToJSONTyped(value?: V1USBSelector | null, ignoreDiscriminator?: boolean): any;
+export declare function V1USBSelectorToJSONTyped(value?: V1USBSelector | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1USBSelector.d.ts.map

@@ -39,7 +39,7 @@ export interface K8sIoApiCoreV1TypedLocalObjectReference {
  */
 export declare function instanceOfK8sIoApiCoreV1TypedLocalObjectReference(value: object): value is K8sIoApiCoreV1TypedLocalObjectReference;
 export declare function K8sIoApiCoreV1TypedLocalObjectReferenceFromJSON(json: any): K8sIoApiCoreV1TypedLocalObjectReference;
-export declare function K8sIoApiCoreV1TypedLocalObjectReferenceFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1TypedLocalObjectReference;
+export declare function K8sIoApiCoreV1TypedLocalObjectReferenceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1TypedLocalObjectReference;
 export declare function K8sIoApiCoreV1TypedLocalObjectReferenceToJSON(json: any): K8sIoApiCoreV1TypedLocalObjectReference;
-export declare function K8sIoApiCoreV1TypedLocalObjectReferenceToJSONTyped(value?: K8sIoApiCoreV1TypedLocalObjectReference | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1TypedLocalObjectReferenceToJSONTyped(value?: K8sIoApiCoreV1TypedLocalObjectReference | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1TypedLocalObjectReference.d.ts.map

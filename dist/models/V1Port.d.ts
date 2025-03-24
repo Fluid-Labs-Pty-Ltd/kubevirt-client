@@ -39,7 +39,7 @@ export interface V1Port {
  */
 export declare function instanceOfV1Port(value: object): value is V1Port;
 export declare function V1PortFromJSON(json: any): V1Port;
-export declare function V1PortFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Port;
+export declare function V1PortFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Port;
 export declare function V1PortToJSON(json: any): V1Port;
-export declare function V1PortToJSONTyped(value?: V1Port | null, ignoreDiscriminator?: boolean): any;
+export declare function V1PortToJSONTyped(value?: V1Port | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Port.d.ts.map

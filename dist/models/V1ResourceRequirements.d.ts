@@ -39,7 +39,7 @@ export interface V1ResourceRequirements {
  */
 export declare function instanceOfV1ResourceRequirements(value: object): value is V1ResourceRequirements;
 export declare function V1ResourceRequirementsFromJSON(json: any): V1ResourceRequirements;
-export declare function V1ResourceRequirementsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ResourceRequirements;
+export declare function V1ResourceRequirementsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ResourceRequirements;
 export declare function V1ResourceRequirementsToJSON(json: any): V1ResourceRequirements;
-export declare function V1ResourceRequirementsToJSONTyped(value?: V1ResourceRequirements | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ResourceRequirementsToJSONTyped(value?: V1ResourceRequirements | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1ResourceRequirements.d.ts.map

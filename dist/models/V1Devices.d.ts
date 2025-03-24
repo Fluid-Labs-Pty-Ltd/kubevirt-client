@@ -170,7 +170,7 @@ export interface V1Devices {
  */
 export declare function instanceOfV1Devices(value: object): value is V1Devices;
 export declare function V1DevicesFromJSON(json: any): V1Devices;
-export declare function V1DevicesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Devices;
+export declare function V1DevicesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Devices;
 export declare function V1DevicesToJSON(json: any): V1Devices;
-export declare function V1DevicesToJSONTyped(value?: V1Devices | null, ignoreDiscriminator?: boolean): any;
+export declare function V1DevicesToJSONTyped(value?: V1Devices | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Devices.d.ts.map

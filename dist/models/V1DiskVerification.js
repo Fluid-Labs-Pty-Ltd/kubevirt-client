@@ -22,7 +22,7 @@ export function instanceOfV1DiskVerification(value) {
 export function V1DiskVerificationFromJSON(json) {
     return V1DiskVerificationFromJSONTyped(json, false);
 }
-export function V1DiskVerificationFromJSONTyped(json, ignoreDiscriminator) {
+export function V1DiskVerificationFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1DiskVerificationFromJSONTyped(json, ignoreDiscriminator) {
 export function V1DiskVerificationToJSON(json) {
     return V1DiskVerificationToJSONTyped(json, false);
 }
-export function V1DiskVerificationToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1DiskVerificationToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

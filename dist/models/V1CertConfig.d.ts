@@ -33,7 +33,7 @@ export interface V1CertConfig {
  */
 export declare function instanceOfV1CertConfig(value: object): value is V1CertConfig;
 export declare function V1CertConfigFromJSON(json: any): V1CertConfig;
-export declare function V1CertConfigFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CertConfig;
+export declare function V1CertConfigFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CertConfig;
 export declare function V1CertConfigToJSON(json: any): V1CertConfig;
-export declare function V1CertConfigToJSONTyped(value?: V1CertConfig | null, ignoreDiscriminator?: boolean): any;
+export declare function V1CertConfigToJSONTyped(value?: V1CertConfig | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1CertConfig.d.ts.map

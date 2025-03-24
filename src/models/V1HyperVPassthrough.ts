@@ -38,7 +38,7 @@ export function V1HyperVPassthroughFromJSON(json: any): V1HyperVPassthrough {
     return V1HyperVPassthroughFromJSONTyped(json, false);
 }
 
-export function V1HyperVPassthroughFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1HyperVPassthrough {
+export function V1HyperVPassthroughFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1HyperVPassthrough {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1HyperVPassthroughToJSON(json: any): V1HyperVPassthrough {
     return V1HyperVPassthroughToJSONTyped(json, false);
 }
 
-export function V1HyperVPassthroughToJSONTyped(value?: V1HyperVPassthrough | null, ignoreDiscriminator: boolean = false): any {
+export function V1HyperVPassthroughToJSONTyped(value?: V1HyperVPassthrough | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

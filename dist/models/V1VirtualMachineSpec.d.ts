@@ -67,7 +67,7 @@ export interface V1VirtualMachineSpec {
  */
 export declare function instanceOfV1VirtualMachineSpec(value: object): value is V1VirtualMachineSpec;
 export declare function V1VirtualMachineSpecFromJSON(json: any): V1VirtualMachineSpec;
-export declare function V1VirtualMachineSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineSpec;
+export declare function V1VirtualMachineSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineSpec;
 export declare function V1VirtualMachineSpecToJSON(json: any): V1VirtualMachineSpec;
-export declare function V1VirtualMachineSpecToJSONTyped(value?: V1VirtualMachineSpec | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineSpecToJSONTyped(value?: V1VirtualMachineSpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineSpec.d.ts.map

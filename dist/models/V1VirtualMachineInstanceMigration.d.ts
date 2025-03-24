@@ -54,7 +54,7 @@ export interface V1VirtualMachineInstanceMigration {
  */
 export declare function instanceOfV1VirtualMachineInstanceMigration(value: object): value is V1VirtualMachineInstanceMigration;
 export declare function V1VirtualMachineInstanceMigrationFromJSON(json: any): V1VirtualMachineInstanceMigration;
-export declare function V1VirtualMachineInstanceMigrationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigration;
+export declare function V1VirtualMachineInstanceMigrationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigration;
 export declare function V1VirtualMachineInstanceMigrationToJSON(json: any): V1VirtualMachineInstanceMigration;
-export declare function V1VirtualMachineInstanceMigrationToJSONTyped(value?: V1VirtualMachineInstanceMigration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceMigrationToJSONTyped(value?: V1VirtualMachineInstanceMigration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceMigration.d.ts.map

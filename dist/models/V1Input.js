@@ -24,7 +24,7 @@ export function instanceOfV1Input(value) {
 export function V1InputFromJSON(json) {
     return V1InputFromJSONTyped(json, false);
 }
-export function V1InputFromJSONTyped(json, ignoreDiscriminator) {
+export function V1InputFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -37,7 +37,7 @@ export function V1InputFromJSONTyped(json, ignoreDiscriminator) {
 export function V1InputToJSON(json) {
     return V1InputToJSONTyped(json, false);
 }
-export function V1InputToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1InputToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

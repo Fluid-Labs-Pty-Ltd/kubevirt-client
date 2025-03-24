@@ -20,7 +20,7 @@ export function instanceOfV1beta1Error(value) {
 export function V1beta1ErrorFromJSON(json) {
     return V1beta1ErrorFromJSONTyped(json, false);
 }
-export function V1beta1ErrorFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1ErrorFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1beta1ErrorFromJSONTyped(json, ignoreDiscriminator) {
 export function V1beta1ErrorToJSON(json) {
     return V1beta1ErrorToJSONTyped(json, false);
 }
-export function V1beta1ErrorToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1ErrorToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -58,7 +58,7 @@ export interface K8sIoApimachineryPkgApisMetaV1StatusDetails {
  */
 export declare function instanceOfK8sIoApimachineryPkgApisMetaV1StatusDetails(value: object): value is K8sIoApimachineryPkgApisMetaV1StatusDetails;
 export declare function K8sIoApimachineryPkgApisMetaV1StatusDetailsFromJSON(json: any): K8sIoApimachineryPkgApisMetaV1StatusDetails;
-export declare function K8sIoApimachineryPkgApisMetaV1StatusDetailsFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1StatusDetails;
+export declare function K8sIoApimachineryPkgApisMetaV1StatusDetailsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1StatusDetails;
 export declare function K8sIoApimachineryPkgApisMetaV1StatusDetailsToJSON(json: any): K8sIoApimachineryPkgApisMetaV1StatusDetails;
-export declare function K8sIoApimachineryPkgApisMetaV1StatusDetailsToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1StatusDetails | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApimachineryPkgApisMetaV1StatusDetailsToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1StatusDetails | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1StatusDetails.d.ts.map

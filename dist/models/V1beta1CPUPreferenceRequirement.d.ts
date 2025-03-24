@@ -27,7 +27,7 @@ export interface V1beta1CPUPreferenceRequirement {
  */
 export declare function instanceOfV1beta1CPUPreferenceRequirement(value: object): value is V1beta1CPUPreferenceRequirement;
 export declare function V1beta1CPUPreferenceRequirementFromJSON(json: any): V1beta1CPUPreferenceRequirement;
-export declare function V1beta1CPUPreferenceRequirementFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1CPUPreferenceRequirement;
+export declare function V1beta1CPUPreferenceRequirementFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1CPUPreferenceRequirement;
 export declare function V1beta1CPUPreferenceRequirementToJSON(json: any): V1beta1CPUPreferenceRequirement;
-export declare function V1beta1CPUPreferenceRequirementToJSONTyped(value?: V1beta1CPUPreferenceRequirement | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1CPUPreferenceRequirementToJSONTyped(value?: V1beta1CPUPreferenceRequirement | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1CPUPreferenceRequirement.d.ts.map

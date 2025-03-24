@@ -33,7 +33,7 @@ export interface V1TokenBucketRateLimiter {
  */
 export declare function instanceOfV1TokenBucketRateLimiter(value: object): value is V1TokenBucketRateLimiter;
 export declare function V1TokenBucketRateLimiterFromJSON(json: any): V1TokenBucketRateLimiter;
-export declare function V1TokenBucketRateLimiterFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1TokenBucketRateLimiter;
+export declare function V1TokenBucketRateLimiterFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1TokenBucketRateLimiter;
 export declare function V1TokenBucketRateLimiterToJSON(json: any): V1TokenBucketRateLimiter;
-export declare function V1TokenBucketRateLimiterToJSONTyped(value?: V1TokenBucketRateLimiter | null, ignoreDiscriminator?: boolean): any;
+export declare function V1TokenBucketRateLimiterToJSONTyped(value?: V1TokenBucketRateLimiter | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1TokenBucketRateLimiter.d.ts.map

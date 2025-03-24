@@ -39,7 +39,7 @@ export interface V1PersistentVolumeClaimVolumeSource {
  */
 export declare function instanceOfV1PersistentVolumeClaimVolumeSource(value: object): value is V1PersistentVolumeClaimVolumeSource;
 export declare function V1PersistentVolumeClaimVolumeSourceFromJSON(json: any): V1PersistentVolumeClaimVolumeSource;
-export declare function V1PersistentVolumeClaimVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PersistentVolumeClaimVolumeSource;
+export declare function V1PersistentVolumeClaimVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PersistentVolumeClaimVolumeSource;
 export declare function V1PersistentVolumeClaimVolumeSourceToJSON(json: any): V1PersistentVolumeClaimVolumeSource;
-export declare function V1PersistentVolumeClaimVolumeSourceToJSONTyped(value?: V1PersistentVolumeClaimVolumeSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1PersistentVolumeClaimVolumeSourceToJSONTyped(value?: V1PersistentVolumeClaimVolumeSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1PersistentVolumeClaimVolumeSource.d.ts.map

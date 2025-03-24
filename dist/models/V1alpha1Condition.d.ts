@@ -45,7 +45,7 @@ export interface V1alpha1Condition {
  */
 export declare function instanceOfV1alpha1Condition(value: object): value is V1alpha1Condition;
 export declare function V1alpha1ConditionFromJSON(json: any): V1alpha1Condition;
-export declare function V1alpha1ConditionFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1Condition;
+export declare function V1alpha1ConditionFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1Condition;
 export declare function V1alpha1ConditionToJSON(json: any): V1alpha1Condition;
-export declare function V1alpha1ConditionToJSONTyped(value?: V1alpha1Condition | null, ignoreDiscriminator?: boolean): any;
+export declare function V1alpha1ConditionToJSONTyped(value?: V1alpha1Condition | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1alpha1Condition.d.ts.map

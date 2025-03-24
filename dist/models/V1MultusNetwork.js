@@ -22,7 +22,7 @@ export function instanceOfV1MultusNetwork(value) {
 export function V1MultusNetworkFromJSON(json) {
     return V1MultusNetworkFromJSONTyped(json, false);
 }
-export function V1MultusNetworkFromJSONTyped(json, ignoreDiscriminator) {
+export function V1MultusNetworkFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function V1MultusNetworkFromJSONTyped(json, ignoreDiscriminator) {
 export function V1MultusNetworkToJSON(json) {
     return V1MultusNetworkToJSONTyped(json, false);
 }
-export function V1MultusNetworkToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1MultusNetworkToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

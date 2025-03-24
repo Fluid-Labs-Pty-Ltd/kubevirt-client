@@ -24,7 +24,7 @@ export function instanceOfV1beta1VirtualMachineExportLink(value) {
 export function V1beta1VirtualMachineExportLinkFromJSON(json) {
     return V1beta1VirtualMachineExportLinkFromJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineExportLinkFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1VirtualMachineExportLinkFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -37,7 +37,7 @@ export function V1beta1VirtualMachineExportLinkFromJSONTyped(json, ignoreDiscrim
 export function V1beta1VirtualMachineExportLinkToJSON(json) {
     return V1beta1VirtualMachineExportLinkToJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineExportLinkToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1VirtualMachineExportLinkToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

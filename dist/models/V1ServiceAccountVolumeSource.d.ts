@@ -27,7 +27,7 @@ export interface V1ServiceAccountVolumeSource {
  */
 export declare function instanceOfV1ServiceAccountVolumeSource(value: object): value is V1ServiceAccountVolumeSource;
 export declare function V1ServiceAccountVolumeSourceFromJSON(json: any): V1ServiceAccountVolumeSource;
-export declare function V1ServiceAccountVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ServiceAccountVolumeSource;
+export declare function V1ServiceAccountVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ServiceAccountVolumeSource;
 export declare function V1ServiceAccountVolumeSourceToJSON(json: any): V1ServiceAccountVolumeSource;
-export declare function V1ServiceAccountVolumeSourceToJSONTyped(value?: V1ServiceAccountVolumeSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ServiceAccountVolumeSourceToJSONTyped(value?: V1ServiceAccountVolumeSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1ServiceAccountVolumeSource.d.ts.map

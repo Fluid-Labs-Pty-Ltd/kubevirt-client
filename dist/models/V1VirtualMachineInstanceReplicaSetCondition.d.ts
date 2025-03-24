@@ -45,7 +45,7 @@ export interface V1VirtualMachineInstanceReplicaSetCondition {
  */
 export declare function instanceOfV1VirtualMachineInstanceReplicaSetCondition(value: object): value is V1VirtualMachineInstanceReplicaSetCondition;
 export declare function V1VirtualMachineInstanceReplicaSetConditionFromJSON(json: any): V1VirtualMachineInstanceReplicaSetCondition;
-export declare function V1VirtualMachineInstanceReplicaSetConditionFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSetCondition;
+export declare function V1VirtualMachineInstanceReplicaSetConditionFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSetCondition;
 export declare function V1VirtualMachineInstanceReplicaSetConditionToJSON(json: any): V1VirtualMachineInstanceReplicaSetCondition;
-export declare function V1VirtualMachineInstanceReplicaSetConditionToJSONTyped(value?: V1VirtualMachineInstanceReplicaSetCondition | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceReplicaSetConditionToJSONTyped(value?: V1VirtualMachineInstanceReplicaSetCondition | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceReplicaSetCondition.d.ts.map

@@ -64,7 +64,7 @@ export interface K8sIoApimachineryPkgApisMetaV1DeleteOptions {
  */
 export declare function instanceOfK8sIoApimachineryPkgApisMetaV1DeleteOptions(value: object): value is K8sIoApimachineryPkgApisMetaV1DeleteOptions;
 export declare function K8sIoApimachineryPkgApisMetaV1DeleteOptionsFromJSON(json: any): K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-export declare function K8sIoApimachineryPkgApisMetaV1DeleteOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1DeleteOptions;
+export declare function K8sIoApimachineryPkgApisMetaV1DeleteOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1DeleteOptions;
 export declare function K8sIoApimachineryPkgApisMetaV1DeleteOptionsToJSON(json: any): K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-export declare function K8sIoApimachineryPkgApisMetaV1DeleteOptionsToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1DeleteOptions | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApimachineryPkgApisMetaV1DeleteOptionsToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1DeleteOptions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1DeleteOptions.d.ts.map

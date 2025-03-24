@@ -39,7 +39,7 @@ export interface V1ArchSpecificConfiguration {
  */
 export declare function instanceOfV1ArchSpecificConfiguration(value: object): value is V1ArchSpecificConfiguration;
 export declare function V1ArchSpecificConfigurationFromJSON(json: any): V1ArchSpecificConfiguration;
-export declare function V1ArchSpecificConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ArchSpecificConfiguration;
+export declare function V1ArchSpecificConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ArchSpecificConfiguration;
 export declare function V1ArchSpecificConfigurationToJSON(json: any): V1ArchSpecificConfiguration;
-export declare function V1ArchSpecificConfigurationToJSONTyped(value?: V1ArchSpecificConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ArchSpecificConfigurationToJSONTyped(value?: V1ArchSpecificConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1ArchSpecificConfiguration.d.ts.map

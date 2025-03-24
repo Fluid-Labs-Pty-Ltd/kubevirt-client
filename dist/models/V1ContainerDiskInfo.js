@@ -20,7 +20,7 @@ export function instanceOfV1ContainerDiskInfo(value) {
 export function V1ContainerDiskInfoFromJSON(json) {
     return V1ContainerDiskInfoFromJSONTyped(json, false);
 }
-export function V1ContainerDiskInfoFromJSONTyped(json, ignoreDiscriminator) {
+export function V1ContainerDiskInfoFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function V1ContainerDiskInfoFromJSONTyped(json, ignoreDiscriminator) {
 export function V1ContainerDiskInfoToJSON(json) {
     return V1ContainerDiskInfoToJSONTyped(json, false);
 }
-export function V1ContainerDiskInfoToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1ContainerDiskInfoToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

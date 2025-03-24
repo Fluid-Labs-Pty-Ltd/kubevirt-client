@@ -23,7 +23,7 @@ export function instanceOfV1USBHostDevice(value) {
 export function V1USBHostDeviceFromJSON(json) {
     return V1USBHostDeviceFromJSONTyped(json, false);
 }
-export function V1USBHostDeviceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1USBHostDeviceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,7 +36,7 @@ export function V1USBHostDeviceFromJSONTyped(json, ignoreDiscriminator) {
 export function V1USBHostDeviceToJSON(json) {
     return V1USBHostDeviceToJSONTyped(json, false);
 }
-export function V1USBHostDeviceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1USBHostDeviceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -170,7 +170,7 @@ export function V1DomainSpecFromJSON(json: any): V1DomainSpec {
     return V1DomainSpecFromJSONTyped(json, false);
 }
 
-export function V1DomainSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DomainSpec {
+export function V1DomainSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DomainSpec {
     if (json == null) {
         return json;
     }
@@ -194,7 +194,7 @@ export function V1DomainSpecToJSON(json: any): V1DomainSpec {
     return V1DomainSpecToJSONTyped(json, false);
 }
 
-export function V1DomainSpecToJSONTyped(value?: V1DomainSpec | null, ignoreDiscriminator: boolean = false): any {
+export function V1DomainSpecToJSONTyped(value?: V1DomainSpec | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

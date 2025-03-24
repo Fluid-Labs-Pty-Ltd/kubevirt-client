@@ -21,7 +21,7 @@ export function instanceOfV1EphemeralVolumeSource(value) {
 export function V1EphemeralVolumeSourceFromJSON(json) {
     return V1EphemeralVolumeSourceFromJSONTyped(json, false);
 }
-export function V1EphemeralVolumeSourceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1EphemeralVolumeSourceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1EphemeralVolumeSourceFromJSONTyped(json, ignoreDiscriminator) 
 export function V1EphemeralVolumeSourceToJSON(json) {
     return V1EphemeralVolumeSourceToJSONTyped(json, false);
 }
-export function V1EphemeralVolumeSourceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1EphemeralVolumeSourceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

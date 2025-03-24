@@ -28,7 +28,7 @@ export interface V1KubeVirtCertificateRotateStrategy {
  */
 export declare function instanceOfV1KubeVirtCertificateRotateStrategy(value: object): value is V1KubeVirtCertificateRotateStrategy;
 export declare function V1KubeVirtCertificateRotateStrategyFromJSON(json: any): V1KubeVirtCertificateRotateStrategy;
-export declare function V1KubeVirtCertificateRotateStrategyFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtCertificateRotateStrategy;
+export declare function V1KubeVirtCertificateRotateStrategyFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtCertificateRotateStrategy;
 export declare function V1KubeVirtCertificateRotateStrategyToJSON(json: any): V1KubeVirtCertificateRotateStrategy;
-export declare function V1KubeVirtCertificateRotateStrategyToJSONTyped(value?: V1KubeVirtCertificateRotateStrategy | null, ignoreDiscriminator?: boolean): any;
+export declare function V1KubeVirtCertificateRotateStrategyToJSONTyped(value?: V1KubeVirtCertificateRotateStrategy | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1KubeVirtCertificateRotateStrategy.d.ts.map

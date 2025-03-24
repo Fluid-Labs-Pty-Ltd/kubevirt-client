@@ -39,7 +39,7 @@ export interface V1HostDevice {
  */
 export declare function instanceOfV1HostDevice(value: object): value is V1HostDevice;
 export declare function V1HostDeviceFromJSON(json: any): V1HostDevice;
-export declare function V1HostDeviceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1HostDevice;
+export declare function V1HostDeviceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1HostDevice;
 export declare function V1HostDeviceToJSON(json: any): V1HostDevice;
-export declare function V1HostDeviceToJSONTyped(value?: V1HostDevice | null, ignoreDiscriminator?: boolean): any;
+export declare function V1HostDeviceToJSONTyped(value?: V1HostDevice | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1HostDevice.d.ts.map

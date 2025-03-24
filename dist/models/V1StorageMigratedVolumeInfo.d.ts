@@ -40,7 +40,7 @@ export interface V1StorageMigratedVolumeInfo {
  */
 export declare function instanceOfV1StorageMigratedVolumeInfo(value: object): value is V1StorageMigratedVolumeInfo;
 export declare function V1StorageMigratedVolumeInfoFromJSON(json: any): V1StorageMigratedVolumeInfo;
-export declare function V1StorageMigratedVolumeInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1StorageMigratedVolumeInfo;
+export declare function V1StorageMigratedVolumeInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1StorageMigratedVolumeInfo;
 export declare function V1StorageMigratedVolumeInfoToJSON(json: any): V1StorageMigratedVolumeInfo;
-export declare function V1StorageMigratedVolumeInfoToJSONTyped(value?: V1StorageMigratedVolumeInfo | null, ignoreDiscriminator?: boolean): any;
+export declare function V1StorageMigratedVolumeInfoToJSONTyped(value?: V1StorageMigratedVolumeInfo | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1StorageMigratedVolumeInfo.d.ts.map

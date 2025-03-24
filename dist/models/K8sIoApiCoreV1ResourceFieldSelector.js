@@ -22,7 +22,7 @@ export function instanceOfK8sIoApiCoreV1ResourceFieldSelector(value) {
 export function K8sIoApiCoreV1ResourceFieldSelectorFromJSON(json) {
     return K8sIoApiCoreV1ResourceFieldSelectorFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1ResourceFieldSelectorFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1ResourceFieldSelectorFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,7 +35,7 @@ export function K8sIoApiCoreV1ResourceFieldSelectorFromJSONTyped(json, ignoreDis
 export function K8sIoApiCoreV1ResourceFieldSelectorToJSON(json) {
     return K8sIoApiCoreV1ResourceFieldSelectorToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1ResourceFieldSelectorToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1ResourceFieldSelectorToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

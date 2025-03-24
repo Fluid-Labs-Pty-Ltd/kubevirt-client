@@ -35,7 +35,7 @@ export interface V1BlockSize {
  */
 export declare function instanceOfV1BlockSize(value: object): value is V1BlockSize;
 export declare function V1BlockSizeFromJSON(json: any): V1BlockSize;
-export declare function V1BlockSizeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1BlockSize;
+export declare function V1BlockSizeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1BlockSize;
 export declare function V1BlockSizeToJSON(json: any): V1BlockSize;
-export declare function V1BlockSizeToJSONTyped(value?: V1BlockSize | null, ignoreDiscriminator?: boolean): any;
+export declare function V1BlockSizeToJSONTyped(value?: V1BlockSize | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1BlockSize.d.ts.map

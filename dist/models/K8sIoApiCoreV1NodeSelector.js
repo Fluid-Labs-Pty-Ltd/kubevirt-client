@@ -23,7 +23,7 @@ export function instanceOfK8sIoApiCoreV1NodeSelector(value) {
 export function K8sIoApiCoreV1NodeSelectorFromJSON(json) {
     return K8sIoApiCoreV1NodeSelectorFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1NodeSelectorFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1NodeSelectorFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function K8sIoApiCoreV1NodeSelectorFromJSONTyped(json, ignoreDiscriminato
 export function K8sIoApiCoreV1NodeSelectorToJSON(json) {
     return K8sIoApiCoreV1NodeSelectorToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1NodeSelectorToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1NodeSelectorToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

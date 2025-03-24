@@ -24,7 +24,7 @@ export function instanceOfV1TokenBucketRateLimiter(value) {
 export function V1TokenBucketRateLimiterFromJSON(json) {
     return V1TokenBucketRateLimiterFromJSONTyped(json, false);
 }
-export function V1TokenBucketRateLimiterFromJSONTyped(json, ignoreDiscriminator) {
+export function V1TokenBucketRateLimiterFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,7 +36,7 @@ export function V1TokenBucketRateLimiterFromJSONTyped(json, ignoreDiscriminator)
 export function V1TokenBucketRateLimiterToJSON(json) {
     return V1TokenBucketRateLimiterToJSONTyped(json, false);
 }
-export function V1TokenBucketRateLimiterToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1TokenBucketRateLimiterToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

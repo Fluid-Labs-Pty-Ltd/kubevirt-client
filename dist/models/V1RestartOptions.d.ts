@@ -45,7 +45,7 @@ export interface V1RestartOptions {
  */
 export declare function instanceOfV1RestartOptions(value: object): value is V1RestartOptions;
 export declare function V1RestartOptionsFromJSON(json: any): V1RestartOptions;
-export declare function V1RestartOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1RestartOptions;
+export declare function V1RestartOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1RestartOptions;
 export declare function V1RestartOptionsToJSON(json: any): V1RestartOptions;
-export declare function V1RestartOptionsToJSONTyped(value?: V1RestartOptions | null, ignoreDiscriminator?: boolean): any;
+export declare function V1RestartOptionsToJSONTyped(value?: V1RestartOptions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1RestartOptions.d.ts.map

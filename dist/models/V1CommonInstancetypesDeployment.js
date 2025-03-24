@@ -20,7 +20,7 @@ export function instanceOfV1CommonInstancetypesDeployment(value) {
 export function V1CommonInstancetypesDeploymentFromJSON(json) {
     return V1CommonInstancetypesDeploymentFromJSONTyped(json, false);
 }
-export function V1CommonInstancetypesDeploymentFromJSONTyped(json, ignoreDiscriminator) {
+export function V1CommonInstancetypesDeploymentFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function V1CommonInstancetypesDeploymentFromJSONTyped(json, ignoreDiscrim
 export function V1CommonInstancetypesDeploymentToJSON(json) {
     return V1CommonInstancetypesDeploymentToJSONTyped(json, false);
 }
-export function V1CommonInstancetypesDeploymentToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1CommonInstancetypesDeploymentToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

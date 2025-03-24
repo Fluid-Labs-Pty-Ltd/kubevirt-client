@@ -39,7 +39,7 @@ export interface V1ConfigMapVolumeSource {
  */
 export declare function instanceOfV1ConfigMapVolumeSource(value: object): value is V1ConfigMapVolumeSource;
 export declare function V1ConfigMapVolumeSourceFromJSON(json: any): V1ConfigMapVolumeSource;
-export declare function V1ConfigMapVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ConfigMapVolumeSource;
+export declare function V1ConfigMapVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ConfigMapVolumeSource;
 export declare function V1ConfigMapVolumeSourceToJSON(json: any): V1ConfigMapVolumeSource;
-export declare function V1ConfigMapVolumeSourceToJSONTyped(value?: V1ConfigMapVolumeSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ConfigMapVolumeSourceToJSONTyped(value?: V1ConfigMapVolumeSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1ConfigMapVolumeSource.d.ts.map

@@ -46,7 +46,7 @@ export interface K8sIoApimachineryPkgApisMetaV1APIResourceList {
  */
 export declare function instanceOfK8sIoApimachineryPkgApisMetaV1APIResourceList(value: object): value is K8sIoApimachineryPkgApisMetaV1APIResourceList;
 export declare function K8sIoApimachineryPkgApisMetaV1APIResourceListFromJSON(json: any): K8sIoApimachineryPkgApisMetaV1APIResourceList;
-export declare function K8sIoApimachineryPkgApisMetaV1APIResourceListFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1APIResourceList;
+export declare function K8sIoApimachineryPkgApisMetaV1APIResourceListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1APIResourceList;
 export declare function K8sIoApimachineryPkgApisMetaV1APIResourceListToJSON(json: any): K8sIoApimachineryPkgApisMetaV1APIResourceList;
-export declare function K8sIoApimachineryPkgApisMetaV1APIResourceListToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1APIResourceList | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApimachineryPkgApisMetaV1APIResourceListToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1APIResourceList | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1APIResourceList.d.ts.map

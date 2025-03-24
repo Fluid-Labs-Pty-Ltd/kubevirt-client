@@ -46,7 +46,7 @@ export interface V1ArchConfiguration {
  */
 export declare function instanceOfV1ArchConfiguration(value: object): value is V1ArchConfiguration;
 export declare function V1ArchConfigurationFromJSON(json: any): V1ArchConfiguration;
-export declare function V1ArchConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ArchConfiguration;
+export declare function V1ArchConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ArchConfiguration;
 export declare function V1ArchConfigurationToJSON(json: any): V1ArchConfiguration;
-export declare function V1ArchConfigurationToJSONTyped(value?: V1ArchConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ArchConfigurationToJSONTyped(value?: V1ArchConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1ArchConfiguration.d.ts.map

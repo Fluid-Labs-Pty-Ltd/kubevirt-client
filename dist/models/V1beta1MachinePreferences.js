@@ -20,7 +20,7 @@ export function instanceOfV1beta1MachinePreferences(value) {
 export function V1beta1MachinePreferencesFromJSON(json) {
     return V1beta1MachinePreferencesFromJSONTyped(json, false);
 }
-export function V1beta1MachinePreferencesFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1MachinePreferencesFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function V1beta1MachinePreferencesFromJSONTyped(json, ignoreDiscriminator
 export function V1beta1MachinePreferencesToJSON(json) {
     return V1beta1MachinePreferencesToJSONTyped(json, false);
 }
-export function V1beta1MachinePreferencesToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1MachinePreferencesToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -28,7 +28,7 @@ export function instanceOfK8sIoApiCoreV1HTTPGetAction(value) {
 export function K8sIoApiCoreV1HTTPGetActionFromJSON(json) {
     return K8sIoApiCoreV1HTTPGetActionFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1HTTPGetActionFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1HTTPGetActionFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -42,7 +42,7 @@ export function K8sIoApiCoreV1HTTPGetActionFromJSONTyped(json, ignoreDiscriminat
 export function K8sIoApiCoreV1HTTPGetActionToJSON(json) {
     return K8sIoApiCoreV1HTTPGetActionToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1HTTPGetActionToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1HTTPGetActionToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

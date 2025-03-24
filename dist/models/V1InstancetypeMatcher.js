@@ -20,7 +20,7 @@ export function instanceOfV1InstancetypeMatcher(value) {
 export function V1InstancetypeMatcherFromJSON(json) {
     return V1InstancetypeMatcherFromJSONTyped(json, false);
 }
-export function V1InstancetypeMatcherFromJSONTyped(json, ignoreDiscriminator) {
+export function V1InstancetypeMatcherFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,7 +35,7 @@ export function V1InstancetypeMatcherFromJSONTyped(json, ignoreDiscriminator) {
 export function V1InstancetypeMatcherToJSON(json) {
     return V1InstancetypeMatcherToJSONTyped(json, false);
 }
-export function V1InstancetypeMatcherToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1InstancetypeMatcherToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

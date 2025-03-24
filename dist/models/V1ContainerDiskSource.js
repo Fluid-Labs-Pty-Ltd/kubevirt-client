@@ -30,7 +30,7 @@ export function instanceOfV1ContainerDiskSource(value) {
 export function V1ContainerDiskSourceFromJSON(json) {
     return V1ContainerDiskSourceFromJSONTyped(json, false);
 }
-export function V1ContainerDiskSourceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1ContainerDiskSourceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -44,7 +44,7 @@ export function V1ContainerDiskSourceFromJSONTyped(json, ignoreDiscriminator) {
 export function V1ContainerDiskSourceToJSON(json) {
     return V1ContainerDiskSourceToJSONTyped(json, false);
 }
-export function V1ContainerDiskSourceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1ContainerDiskSourceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

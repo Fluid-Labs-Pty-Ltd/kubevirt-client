@@ -20,7 +20,7 @@ export function instanceOfV1PauseOptions(value) {
 export function V1PauseOptionsFromJSON(json) {
     return V1PauseOptionsFromJSONTyped(json, false);
 }
-export function V1PauseOptionsFromJSONTyped(json, ignoreDiscriminator) {
+export function V1PauseOptionsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1PauseOptionsFromJSONTyped(json, ignoreDiscriminator) {
 export function V1PauseOptionsToJSON(json) {
     return V1PauseOptionsToJSONTyped(json, false);
 }
-export function V1PauseOptionsToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1PauseOptionsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

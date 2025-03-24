@@ -101,7 +101,7 @@ export type K8sIoApiCoreV1PersistentVolumeClaimSpecVolumeModeEnum = typeof K8sIo
  */
 export declare function instanceOfK8sIoApiCoreV1PersistentVolumeClaimSpec(value: object): value is K8sIoApiCoreV1PersistentVolumeClaimSpec;
 export declare function K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSON(json: any): K8sIoApiCoreV1PersistentVolumeClaimSpec;
-export declare function K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1PersistentVolumeClaimSpec;
+export declare function K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1PersistentVolumeClaimSpec;
 export declare function K8sIoApiCoreV1PersistentVolumeClaimSpecToJSON(json: any): K8sIoApiCoreV1PersistentVolumeClaimSpec;
-export declare function K8sIoApiCoreV1PersistentVolumeClaimSpecToJSONTyped(value?: K8sIoApiCoreV1PersistentVolumeClaimSpec | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1PersistentVolumeClaimSpecToJSONTyped(value?: K8sIoApiCoreV1PersistentVolumeClaimSpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1PersistentVolumeClaimSpec.d.ts.map

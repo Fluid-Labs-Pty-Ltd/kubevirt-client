@@ -28,7 +28,7 @@ export interface V1VolumeUpdateState {
  */
 export declare function instanceOfV1VolumeUpdateState(value: object): value is V1VolumeUpdateState;
 export declare function V1VolumeUpdateStateFromJSON(json: any): V1VolumeUpdateState;
-export declare function V1VolumeUpdateStateFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VolumeUpdateState;
+export declare function V1VolumeUpdateStateFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VolumeUpdateState;
 export declare function V1VolumeUpdateStateToJSON(json: any): V1VolumeUpdateState;
-export declare function V1VolumeUpdateStateToJSONTyped(value?: V1VolumeUpdateState | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VolumeUpdateStateToJSONTyped(value?: V1VolumeUpdateState | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VolumeUpdateState.d.ts.map

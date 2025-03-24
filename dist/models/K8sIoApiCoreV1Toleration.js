@@ -35,7 +35,7 @@ export function instanceOfK8sIoApiCoreV1Toleration(value) {
 export function K8sIoApiCoreV1TolerationFromJSON(json) {
     return K8sIoApiCoreV1TolerationFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1TolerationFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1TolerationFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -50,7 +50,7 @@ export function K8sIoApiCoreV1TolerationFromJSONTyped(json, ignoreDiscriminator)
 export function K8sIoApiCoreV1TolerationToJSON(json) {
     return K8sIoApiCoreV1TolerationToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1TolerationToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1TolerationToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

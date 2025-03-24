@@ -46,7 +46,7 @@ export interface V1DHCPOptions {
  */
 export declare function instanceOfV1DHCPOptions(value: object): value is V1DHCPOptions;
 export declare function V1DHCPOptionsFromJSON(json: any): V1DHCPOptions;
-export declare function V1DHCPOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DHCPOptions;
+export declare function V1DHCPOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DHCPOptions;
 export declare function V1DHCPOptionsToJSON(json: any): V1DHCPOptions;
-export declare function V1DHCPOptionsToJSONTyped(value?: V1DHCPOptions | null, ignoreDiscriminator?: boolean): any;
+export declare function V1DHCPOptionsToJSONTyped(value?: V1DHCPOptions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1DHCPOptions.d.ts.map

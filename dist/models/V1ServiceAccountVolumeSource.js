@@ -20,7 +20,7 @@ export function instanceOfV1ServiceAccountVolumeSource(value) {
 export function V1ServiceAccountVolumeSourceFromJSON(json) {
     return V1ServiceAccountVolumeSourceFromJSONTyped(json, false);
 }
-export function V1ServiceAccountVolumeSourceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1ServiceAccountVolumeSourceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function V1ServiceAccountVolumeSourceFromJSONTyped(json, ignoreDiscrimina
 export function V1ServiceAccountVolumeSourceToJSON(json) {
     return V1ServiceAccountVolumeSourceToJSONTyped(json, false);
 }
-export function V1ServiceAccountVolumeSourceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1ServiceAccountVolumeSourceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

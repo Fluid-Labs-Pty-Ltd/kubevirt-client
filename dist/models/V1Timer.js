@@ -25,7 +25,7 @@ export function instanceOfV1Timer(value) {
 export function V1TimerFromJSON(json) {
     return V1TimerFromJSONTyped(json, false);
 }
-export function V1TimerFromJSONTyped(json, ignoreDiscriminator) {
+export function V1TimerFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -40,7 +40,7 @@ export function V1TimerFromJSONTyped(json, ignoreDiscriminator) {
 export function V1TimerToJSON(json) {
     return V1TimerToJSONTyped(json, false);
 }
-export function V1TimerToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1TimerToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

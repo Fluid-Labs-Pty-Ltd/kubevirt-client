@@ -37,7 +37,7 @@ export interface V1ResourceRequirementsWithoutClaims {
  */
 export declare function instanceOfV1ResourceRequirementsWithoutClaims(value: object): value is V1ResourceRequirementsWithoutClaims;
 export declare function V1ResourceRequirementsWithoutClaimsFromJSON(json: any): V1ResourceRequirementsWithoutClaims;
-export declare function V1ResourceRequirementsWithoutClaimsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ResourceRequirementsWithoutClaims;
+export declare function V1ResourceRequirementsWithoutClaimsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ResourceRequirementsWithoutClaims;
 export declare function V1ResourceRequirementsWithoutClaimsToJSON(json: any): V1ResourceRequirementsWithoutClaims;
-export declare function V1ResourceRequirementsWithoutClaimsToJSONTyped(value?: V1ResourceRequirementsWithoutClaims | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ResourceRequirementsWithoutClaimsToJSONTyped(value?: V1ResourceRequirementsWithoutClaims | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1ResourceRequirementsWithoutClaims.d.ts.map

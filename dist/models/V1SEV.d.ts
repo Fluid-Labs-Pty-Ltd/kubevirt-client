@@ -46,7 +46,7 @@ export interface V1SEV {
  */
 export declare function instanceOfV1SEV(value: object): value is V1SEV;
 export declare function V1SEVFromJSON(json: any): V1SEV;
-export declare function V1SEVFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SEV;
+export declare function V1SEVFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SEV;
 export declare function V1SEVToJSON(json: any): V1SEV;
-export declare function V1SEVToJSONTyped(value?: V1SEV | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SEVToJSONTyped(value?: V1SEV | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SEV.d.ts.map

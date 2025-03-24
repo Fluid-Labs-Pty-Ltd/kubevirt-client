@@ -89,7 +89,7 @@ export interface V1beta1DataVolumeSource {
  */
 export declare function instanceOfV1beta1DataVolumeSource(value: object): value is V1beta1DataVolumeSource;
 export declare function V1beta1DataVolumeSourceFromJSON(json: any): V1beta1DataVolumeSource;
-export declare function V1beta1DataVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSource;
+export declare function V1beta1DataVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSource;
 export declare function V1beta1DataVolumeSourceToJSON(json: any): V1beta1DataVolumeSource;
-export declare function V1beta1DataVolumeSourceToJSONTyped(value?: V1beta1DataVolumeSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1DataVolumeSourceToJSONTyped(value?: V1beta1DataVolumeSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1DataVolumeSource.d.ts.map

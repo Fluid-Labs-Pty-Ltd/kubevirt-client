@@ -21,7 +21,7 @@ export function instanceOfV1KubeVirtCertificateRotateStrategy(value) {
 export function V1KubeVirtCertificateRotateStrategyFromJSON(json) {
     return V1KubeVirtCertificateRotateStrategyFromJSONTyped(json, false);
 }
-export function V1KubeVirtCertificateRotateStrategyFromJSONTyped(json, ignoreDiscriminator) {
+export function V1KubeVirtCertificateRotateStrategyFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1KubeVirtCertificateRotateStrategyFromJSONTyped(json, ignoreDis
 export function V1KubeVirtCertificateRotateStrategyToJSON(json) {
     return V1KubeVirtCertificateRotateStrategyToJSONTyped(json, false);
 }
-export function V1KubeVirtCertificateRotateStrategyToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1KubeVirtCertificateRotateStrategyToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

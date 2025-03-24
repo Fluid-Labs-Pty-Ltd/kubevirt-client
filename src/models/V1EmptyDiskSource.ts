@@ -75,7 +75,7 @@ export function V1EmptyDiskSourceFromJSON(json: any): V1EmptyDiskSource {
     return V1EmptyDiskSourceFromJSONTyped(json, false);
 }
 
-export function V1EmptyDiskSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1EmptyDiskSource {
+export function V1EmptyDiskSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1EmptyDiskSource {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1EmptyDiskSourceToJSON(json: any): V1EmptyDiskSource {
     return V1EmptyDiskSourceToJSONTyped(json, false);
 }
 
-export function V1EmptyDiskSourceToJSONTyped(value?: V1EmptyDiskSource | null, ignoreDiscriminator: boolean = false): any {
+export function V1EmptyDiskSourceToJSONTyped(value?: V1EmptyDiskSource | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

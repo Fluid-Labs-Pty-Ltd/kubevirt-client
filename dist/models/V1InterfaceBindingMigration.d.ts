@@ -27,7 +27,7 @@ export interface V1InterfaceBindingMigration {
  */
 export declare function instanceOfV1InterfaceBindingMigration(value: object): value is V1InterfaceBindingMigration;
 export declare function V1InterfaceBindingMigrationFromJSON(json: any): V1InterfaceBindingMigration;
-export declare function V1InterfaceBindingMigrationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1InterfaceBindingMigration;
+export declare function V1InterfaceBindingMigrationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1InterfaceBindingMigration;
 export declare function V1InterfaceBindingMigrationToJSON(json: any): V1InterfaceBindingMigration;
-export declare function V1InterfaceBindingMigrationToJSONTyped(value?: V1InterfaceBindingMigration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1InterfaceBindingMigrationToJSONTyped(value?: V1InterfaceBindingMigration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1InterfaceBindingMigration.d.ts.map

@@ -88,7 +88,7 @@ export interface V1alpha1MigrationPolicySpec {
  */
 export declare function instanceOfV1alpha1MigrationPolicySpec(value: object): value is V1alpha1MigrationPolicySpec;
 export declare function V1alpha1MigrationPolicySpecFromJSON(json: any): V1alpha1MigrationPolicySpec;
-export declare function V1alpha1MigrationPolicySpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1MigrationPolicySpec;
+export declare function V1alpha1MigrationPolicySpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1MigrationPolicySpec;
 export declare function V1alpha1MigrationPolicySpecToJSON(json: any): V1alpha1MigrationPolicySpec;
-export declare function V1alpha1MigrationPolicySpecToJSONTyped(value?: V1alpha1MigrationPolicySpec | null, ignoreDiscriminator?: boolean): any;
+export declare function V1alpha1MigrationPolicySpecToJSONTyped(value?: V1alpha1MigrationPolicySpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1alpha1MigrationPolicySpec.d.ts.map

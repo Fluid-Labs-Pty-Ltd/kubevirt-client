@@ -59,7 +59,7 @@ export function V1CustomizeComponentsFromJSON(json: any): V1CustomizeComponents 
     return V1CustomizeComponentsFromJSONTyped(json, false);
 }
 
-export function V1CustomizeComponentsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CustomizeComponents {
+export function V1CustomizeComponentsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CustomizeComponents {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1CustomizeComponentsToJSON(json: any): V1CustomizeComponents {
     return V1CustomizeComponentsToJSONTyped(json, false);
 }
 
-export function V1CustomizeComponentsToJSONTyped(value?: V1CustomizeComponents | null, ignoreDiscriminator: boolean = false): any {
+export function V1CustomizeComponentsToJSONTyped(value?: V1CustomizeComponents | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -64,7 +64,7 @@ export function V1DHCPOptionsFromJSON(json: any): V1DHCPOptions {
     return V1DHCPOptionsFromJSONTyped(json, false);
 }
 
-export function V1DHCPOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DHCPOptions {
+export function V1DHCPOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DHCPOptions {
     if (json == null) {
         return json;
     }
@@ -81,7 +81,7 @@ export function V1DHCPOptionsToJSON(json: any): V1DHCPOptions {
     return V1DHCPOptionsToJSONTyped(json, false);
 }
 
-export function V1DHCPOptionsToJSONTyped(value?: V1DHCPOptions | null, ignoreDiscriminator: boolean = false): any {
+export function V1DHCPOptionsToJSONTyped(value?: V1DHCPOptions | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

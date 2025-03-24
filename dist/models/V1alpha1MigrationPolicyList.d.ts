@@ -47,7 +47,7 @@ export interface V1alpha1MigrationPolicyList {
  */
 export declare function instanceOfV1alpha1MigrationPolicyList(value: object): value is V1alpha1MigrationPolicyList;
 export declare function V1alpha1MigrationPolicyListFromJSON(json: any): V1alpha1MigrationPolicyList;
-export declare function V1alpha1MigrationPolicyListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1MigrationPolicyList;
+export declare function V1alpha1MigrationPolicyListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1MigrationPolicyList;
 export declare function V1alpha1MigrationPolicyListToJSON(json: any): V1alpha1MigrationPolicyList;
-export declare function V1alpha1MigrationPolicyListToJSONTyped(value?: V1alpha1MigrationPolicyList | null, ignoreDiscriminator?: boolean): any;
+export declare function V1alpha1MigrationPolicyListToJSONTyped(value?: V1alpha1MigrationPolicyList | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1alpha1MigrationPolicyList.d.ts.map

@@ -44,7 +44,7 @@ export function V1beta1ErrorFromJSON(json: any): V1beta1Error {
     return V1beta1ErrorFromJSONTyped(json, false);
 }
 
-export function V1beta1ErrorFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1Error {
+export function V1beta1ErrorFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1Error {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1beta1ErrorToJSON(json: any): V1beta1Error {
     return V1beta1ErrorToJSONTyped(json, false);
 }
 
-export function V1beta1ErrorToJSONTyped(value?: V1beta1Error | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1ErrorToJSONTyped(value?: V1beta1Error | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -44,7 +44,7 @@ export function V1beta1SnapshotVolumesListsFromJSON(json: any): V1beta1SnapshotV
     return V1beta1SnapshotVolumesListsFromJSONTyped(json, false);
 }
 
-export function V1beta1SnapshotVolumesListsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1SnapshotVolumesLists {
+export function V1beta1SnapshotVolumesListsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1SnapshotVolumesLists {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1beta1SnapshotVolumesListsToJSON(json: any): V1beta1SnapshotVol
     return V1beta1SnapshotVolumesListsToJSONTyped(json, false);
 }
 
-export function V1beta1SnapshotVolumesListsToJSONTyped(value?: V1beta1SnapshotVolumesLists | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1SnapshotVolumesListsToJSONTyped(value?: V1beta1SnapshotVolumesLists | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

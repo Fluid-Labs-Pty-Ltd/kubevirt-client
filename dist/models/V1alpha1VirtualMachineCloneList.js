@@ -24,7 +24,7 @@ export function instanceOfV1alpha1VirtualMachineCloneList(value) {
 export function V1alpha1VirtualMachineCloneListFromJSON(json) {
     return V1alpha1VirtualMachineCloneListFromJSONTyped(json, false);
 }
-export function V1alpha1VirtualMachineCloneListFromJSONTyped(json, ignoreDiscriminator) {
+export function V1alpha1VirtualMachineCloneListFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function V1alpha1VirtualMachineCloneListFromJSONTyped(json, ignoreDiscrim
 export function V1alpha1VirtualMachineCloneListToJSON(json) {
     return V1alpha1VirtualMachineCloneListToJSONTyped(json, false);
 }
-export function V1alpha1VirtualMachineCloneListToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1alpha1VirtualMachineCloneListToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

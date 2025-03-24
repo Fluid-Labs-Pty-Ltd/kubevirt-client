@@ -40,7 +40,7 @@ export interface V1SSHPublicKeyAccessCredentialPropagationMethod {
  */
 export declare function instanceOfV1SSHPublicKeyAccessCredentialPropagationMethod(value: object): value is V1SSHPublicKeyAccessCredentialPropagationMethod;
 export declare function V1SSHPublicKeyAccessCredentialPropagationMethodFromJSON(json: any): V1SSHPublicKeyAccessCredentialPropagationMethod;
-export declare function V1SSHPublicKeyAccessCredentialPropagationMethodFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SSHPublicKeyAccessCredentialPropagationMethod;
+export declare function V1SSHPublicKeyAccessCredentialPropagationMethodFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SSHPublicKeyAccessCredentialPropagationMethod;
 export declare function V1SSHPublicKeyAccessCredentialPropagationMethodToJSON(json: any): V1SSHPublicKeyAccessCredentialPropagationMethod;
-export declare function V1SSHPublicKeyAccessCredentialPropagationMethodToJSONTyped(value?: V1SSHPublicKeyAccessCredentialPropagationMethod | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SSHPublicKeyAccessCredentialPropagationMethodToJSONTyped(value?: V1SSHPublicKeyAccessCredentialPropagationMethod | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SSHPublicKeyAccessCredentialPropagationMethod.d.ts.map

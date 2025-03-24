@@ -63,7 +63,7 @@ export interface V1VirtualMachineMemoryDumpRequest {
  */
 export declare function instanceOfV1VirtualMachineMemoryDumpRequest(value: object): value is V1VirtualMachineMemoryDumpRequest;
 export declare function V1VirtualMachineMemoryDumpRequestFromJSON(json: any): V1VirtualMachineMemoryDumpRequest;
-export declare function V1VirtualMachineMemoryDumpRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineMemoryDumpRequest;
+export declare function V1VirtualMachineMemoryDumpRequestFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineMemoryDumpRequest;
 export declare function V1VirtualMachineMemoryDumpRequestToJSON(json: any): V1VirtualMachineMemoryDumpRequest;
-export declare function V1VirtualMachineMemoryDumpRequestToJSONTyped(value?: V1VirtualMachineMemoryDumpRequest | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineMemoryDumpRequestToJSONTyped(value?: V1VirtualMachineMemoryDumpRequest | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineMemoryDumpRequest.d.ts.map

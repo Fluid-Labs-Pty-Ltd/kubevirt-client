@@ -34,7 +34,7 @@ export interface V1VGPUDisplayOptions {
  */
 export declare function instanceOfV1VGPUDisplayOptions(value: object): value is V1VGPUDisplayOptions;
 export declare function V1VGPUDisplayOptionsFromJSON(json: any): V1VGPUDisplayOptions;
-export declare function V1VGPUDisplayOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VGPUDisplayOptions;
+export declare function V1VGPUDisplayOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VGPUDisplayOptions;
 export declare function V1VGPUDisplayOptionsToJSON(json: any): V1VGPUDisplayOptions;
-export declare function V1VGPUDisplayOptionsToJSONTyped(value?: V1VGPUDisplayOptions | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VGPUDisplayOptionsToJSONTyped(value?: V1VGPUDisplayOptions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VGPUDisplayOptions.d.ts.map

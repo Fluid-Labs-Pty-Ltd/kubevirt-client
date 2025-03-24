@@ -21,7 +21,7 @@ export function instanceOfV1KernelBoot(value) {
 export function V1KernelBootFromJSON(json) {
     return V1KernelBootFromJSONTyped(json, false);
 }
-export function V1KernelBootFromJSONTyped(json, ignoreDiscriminator) {
+export function V1KernelBootFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1KernelBootFromJSONTyped(json, ignoreDiscriminator) {
 export function V1KernelBootToJSON(json) {
     return V1KernelBootToJSONTyped(json, false);
 }
-export function V1KernelBootToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1KernelBootToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

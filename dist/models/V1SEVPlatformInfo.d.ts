@@ -45,7 +45,7 @@ export interface V1SEVPlatformInfo {
  */
 export declare function instanceOfV1SEVPlatformInfo(value: object): value is V1SEVPlatformInfo;
 export declare function V1SEVPlatformInfoFromJSON(json: any): V1SEVPlatformInfo;
-export declare function V1SEVPlatformInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SEVPlatformInfo;
+export declare function V1SEVPlatformInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SEVPlatformInfo;
 export declare function V1SEVPlatformInfoToJSON(json: any): V1SEVPlatformInfo;
-export declare function V1SEVPlatformInfoToJSONTyped(value?: V1SEVPlatformInfo | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SEVPlatformInfoToJSONTyped(value?: V1SEVPlatformInfo | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SEVPlatformInfo.d.ts.map

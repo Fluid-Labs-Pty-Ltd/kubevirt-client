@@ -56,7 +56,7 @@ export function V1DomainMemoryDumpInfoFromJSON(json: any): V1DomainMemoryDumpInf
     return V1DomainMemoryDumpInfoFromJSONTyped(json, false);
 }
 
-export function V1DomainMemoryDumpInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DomainMemoryDumpInfo {
+export function V1DomainMemoryDumpInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DomainMemoryDumpInfo {
     if (json == null) {
         return json;
     }
@@ -73,7 +73,7 @@ export function V1DomainMemoryDumpInfoToJSON(json: any): V1DomainMemoryDumpInfo 
     return V1DomainMemoryDumpInfoToJSONTyped(json, false);
 }
 
-export function V1DomainMemoryDumpInfoToJSONTyped(value?: V1DomainMemoryDumpInfo | null, ignoreDiscriminator: boolean = false): any {
+export function V1DomainMemoryDumpInfoToJSONTyped(value?: V1DomainMemoryDumpInfo | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

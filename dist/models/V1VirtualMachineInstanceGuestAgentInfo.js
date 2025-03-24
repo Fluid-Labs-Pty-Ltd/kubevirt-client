@@ -24,7 +24,7 @@ export function instanceOfV1VirtualMachineInstanceGuestAgentInfo(value) {
 export function V1VirtualMachineInstanceGuestAgentInfoFromJSON(json) {
     return V1VirtualMachineInstanceGuestAgentInfoFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceGuestAgentInfoFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstanceGuestAgentInfoFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -44,7 +44,7 @@ export function V1VirtualMachineInstanceGuestAgentInfoFromJSONTyped(json, ignore
 export function V1VirtualMachineInstanceGuestAgentInfoToJSON(json) {
     return V1VirtualMachineInstanceGuestAgentInfoToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceGuestAgentInfoToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstanceGuestAgentInfoToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

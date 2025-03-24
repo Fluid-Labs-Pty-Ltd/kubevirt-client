@@ -33,7 +33,7 @@ export interface V1SEVSecretOptions {
  */
 export declare function instanceOfV1SEVSecretOptions(value: object): value is V1SEVSecretOptions;
 export declare function V1SEVSecretOptionsFromJSON(json: any): V1SEVSecretOptions;
-export declare function V1SEVSecretOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SEVSecretOptions;
+export declare function V1SEVSecretOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SEVSecretOptions;
 export declare function V1SEVSecretOptionsToJSON(json: any): V1SEVSecretOptions;
-export declare function V1SEVSecretOptionsToJSONTyped(value?: V1SEVSecretOptions | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SEVSecretOptionsToJSONTyped(value?: V1SEVSecretOptions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SEVSecretOptions.d.ts.map

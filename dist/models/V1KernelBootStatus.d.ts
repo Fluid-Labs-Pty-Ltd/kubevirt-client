@@ -35,7 +35,7 @@ export interface V1KernelBootStatus {
  */
 export declare function instanceOfV1KernelBootStatus(value: object): value is V1KernelBootStatus;
 export declare function V1KernelBootStatusFromJSON(json: any): V1KernelBootStatus;
-export declare function V1KernelBootStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KernelBootStatus;
+export declare function V1KernelBootStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KernelBootStatus;
 export declare function V1KernelBootStatusToJSON(json: any): V1KernelBootStatus;
-export declare function V1KernelBootStatusToJSONTyped(value?: V1KernelBootStatus | null, ignoreDiscriminator?: boolean): any;
+export declare function V1KernelBootStatusToJSONTyped(value?: V1KernelBootStatus | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1KernelBootStatus.d.ts.map

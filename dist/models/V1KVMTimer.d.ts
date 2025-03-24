@@ -27,7 +27,7 @@ export interface V1KVMTimer {
  */
 export declare function instanceOfV1KVMTimer(value: object): value is V1KVMTimer;
 export declare function V1KVMTimerFromJSON(json: any): V1KVMTimer;
-export declare function V1KVMTimerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KVMTimer;
+export declare function V1KVMTimerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KVMTimer;
 export declare function V1KVMTimerToJSON(json: any): V1KVMTimer;
-export declare function V1KVMTimerToJSONTyped(value?: V1KVMTimer | null, ignoreDiscriminator?: boolean): any;
+export declare function V1KVMTimerToJSONTyped(value?: V1KVMTimer | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1KVMTimer.d.ts.map

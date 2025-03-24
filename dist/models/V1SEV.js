@@ -21,7 +21,7 @@ export function instanceOfV1SEV(value) {
 export function V1SEVFromJSON(json) {
     return V1SEVFromJSONTyped(json, false);
 }
-export function V1SEVFromJSONTyped(json, ignoreDiscriminator) {
+export function V1SEVFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,7 +35,7 @@ export function V1SEVFromJSONTyped(json, ignoreDiscriminator) {
 export function V1SEVToJSON(json) {
     return V1SEVToJSONTyped(json, false);
 }
-export function V1SEVToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1SEVToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

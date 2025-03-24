@@ -40,7 +40,7 @@ export function instanceOfK8sIoApiCoreV1PersistentVolumeClaimSpec(value) {
 export function K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSON(json) {
     return K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSONTyped(json, ignor
 export function K8sIoApiCoreV1PersistentVolumeClaimSpecToJSON(json) {
     return K8sIoApiCoreV1PersistentVolumeClaimSpecToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1PersistentVolumeClaimSpecToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1PersistentVolumeClaimSpecToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

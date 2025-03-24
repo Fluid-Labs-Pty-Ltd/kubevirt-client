@@ -27,7 +27,7 @@ export interface V1BIOS {
  */
 export declare function instanceOfV1BIOS(value: object): value is V1BIOS;
 export declare function V1BIOSFromJSON(json: any): V1BIOS;
-export declare function V1BIOSFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1BIOS;
+export declare function V1BIOSFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1BIOS;
 export declare function V1BIOSToJSON(json: any): V1BIOS;
-export declare function V1BIOSToJSONTyped(value?: V1BIOS | null, ignoreDiscriminator?: boolean): any;
+export declare function V1BIOSToJSONTyped(value?: V1BIOS | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1BIOS.d.ts.map

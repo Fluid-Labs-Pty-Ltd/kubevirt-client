@@ -22,7 +22,7 @@ export function instanceOfV1QemuGuestAgentSSHPublicKeyAccessCredentialPropagatio
 export function V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationFromJSON(json) {
     return V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationFromJSONTyped(json, false);
 }
-export function V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationFromJSONTyped(json, ignoreDiscriminator) {
+export function V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationFromJSONT
 export function V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationToJSON(json) {
     return V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationToJSONTyped(json, false);
 }
-export function V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

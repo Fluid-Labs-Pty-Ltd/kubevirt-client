@@ -21,7 +21,7 @@ export function instanceOfV1VolumeMigrationState(value) {
 export function V1VolumeMigrationStateFromJSON(json) {
     return V1VolumeMigrationStateFromJSONTyped(json, false);
 }
-export function V1VolumeMigrationStateFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VolumeMigrationStateFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1VolumeMigrationStateFromJSONTyped(json, ignoreDiscriminator) {
 export function V1VolumeMigrationStateToJSON(json) {
     return V1VolumeMigrationStateToJSONTyped(json, false);
 }
-export function V1VolumeMigrationStateToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VolumeMigrationStateToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

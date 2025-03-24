@@ -32,7 +32,7 @@ export function instanceOfV1DomainSpec(value) {
 export function V1DomainSpecFromJSON(json) {
     return V1DomainSpecFromJSONTyped(json, false);
 }
-export function V1DomainSpecFromJSONTyped(json, ignoreDiscriminator) {
+export function V1DomainSpecFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -53,7 +53,7 @@ export function V1DomainSpecFromJSONTyped(json, ignoreDiscriminator) {
 export function V1DomainSpecToJSON(json) {
     return V1DomainSpecToJSONTyped(json, false);
 }
-export function V1DomainSpecToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1DomainSpecToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

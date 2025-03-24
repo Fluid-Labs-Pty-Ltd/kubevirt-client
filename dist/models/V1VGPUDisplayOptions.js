@@ -21,7 +21,7 @@ export function instanceOfV1VGPUDisplayOptions(value) {
 export function V1VGPUDisplayOptionsFromJSON(json) {
     return V1VGPUDisplayOptionsFromJSONTyped(json, false);
 }
-export function V1VGPUDisplayOptionsFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VGPUDisplayOptionsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1VGPUDisplayOptionsFromJSONTyped(json, ignoreDiscriminator) {
 export function V1VGPUDisplayOptionsToJSON(json) {
     return V1VGPUDisplayOptionsToJSONTyped(json, false);
 }
-export function V1VGPUDisplayOptionsToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VGPUDisplayOptionsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

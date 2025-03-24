@@ -20,7 +20,7 @@ export function instanceOfV1FeatureAPIC(value) {
 export function V1FeatureAPICFromJSON(json) {
     return V1FeatureAPICFromJSONTyped(json, false);
 }
-export function V1FeatureAPICFromJSONTyped(json, ignoreDiscriminator) {
+export function V1FeatureAPICFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1FeatureAPICFromJSONTyped(json, ignoreDiscriminator) {
 export function V1FeatureAPICToJSON(json) {
     return V1FeatureAPICToJSONTyped(json, false);
 }
-export function V1FeatureAPICToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1FeatureAPICToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

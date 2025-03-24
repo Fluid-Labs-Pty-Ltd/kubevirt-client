@@ -20,7 +20,7 @@ export function instanceOfV1KubeVirtWorkloadUpdateStrategy(value) {
 export function V1KubeVirtWorkloadUpdateStrategyFromJSON(json) {
     return V1KubeVirtWorkloadUpdateStrategyFromJSONTyped(json, false);
 }
-export function V1KubeVirtWorkloadUpdateStrategyFromJSONTyped(json, ignoreDiscriminator) {
+export function V1KubeVirtWorkloadUpdateStrategyFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1KubeVirtWorkloadUpdateStrategyFromJSONTyped(json, ignoreDiscri
 export function V1KubeVirtWorkloadUpdateStrategyToJSON(json) {
     return V1KubeVirtWorkloadUpdateStrategyToJSONTyped(json, false);
 }
-export function V1KubeVirtWorkloadUpdateStrategyToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1KubeVirtWorkloadUpdateStrategyToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

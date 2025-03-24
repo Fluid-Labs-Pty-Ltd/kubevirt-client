@@ -33,7 +33,7 @@ export interface V1PodNetwork {
  */
 export declare function instanceOfV1PodNetwork(value: object): value is V1PodNetwork;
 export declare function V1PodNetworkFromJSON(json: any): V1PodNetwork;
-export declare function V1PodNetworkFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PodNetwork;
+export declare function V1PodNetworkFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PodNetwork;
 export declare function V1PodNetworkToJSON(json: any): V1PodNetwork;
-export declare function V1PodNetworkToJSONTyped(value?: V1PodNetwork | null, ignoreDiscriminator?: boolean): any;
+export declare function V1PodNetworkToJSONTyped(value?: V1PodNetwork | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1PodNetwork.d.ts.map

@@ -22,7 +22,7 @@ export function instanceOfV1VirtualMachineInstanceGuestOSUser(value) {
 export function V1VirtualMachineInstanceGuestOSUserFromJSON(json) {
     return V1VirtualMachineInstanceGuestOSUserFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceGuestOSUserFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstanceGuestOSUserFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,7 +35,7 @@ export function V1VirtualMachineInstanceGuestOSUserFromJSONTyped(json, ignoreDis
 export function V1VirtualMachineInstanceGuestOSUserToJSON(json) {
     return V1VirtualMachineInstanceGuestOSUserToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceGuestOSUserToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstanceGuestOSUserToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

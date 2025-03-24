@@ -27,7 +27,7 @@ export interface V1Hugepages {
  */
 export declare function instanceOfV1Hugepages(value: object): value is V1Hugepages;
 export declare function V1HugepagesFromJSON(json: any): V1Hugepages;
-export declare function V1HugepagesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Hugepages;
+export declare function V1HugepagesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Hugepages;
 export declare function V1HugepagesToJSON(json: any): V1Hugepages;
-export declare function V1HugepagesToJSONTyped(value?: V1Hugepages | null, ignoreDiscriminator?: boolean): any;
+export declare function V1HugepagesToJSONTyped(value?: V1Hugepages | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Hugepages.d.ts.map

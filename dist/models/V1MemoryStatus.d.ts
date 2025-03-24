@@ -147,7 +147,7 @@ export interface V1MemoryStatus {
  */
 export declare function instanceOfV1MemoryStatus(value: object): value is V1MemoryStatus;
 export declare function V1MemoryStatusFromJSON(json: any): V1MemoryStatus;
-export declare function V1MemoryStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1MemoryStatus;
+export declare function V1MemoryStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1MemoryStatus;
 export declare function V1MemoryStatusToJSON(json: any): V1MemoryStatus;
-export declare function V1MemoryStatusToJSONTyped(value?: V1MemoryStatus | null, ignoreDiscriminator?: boolean): any;
+export declare function V1MemoryStatusToJSONTyped(value?: V1MemoryStatus | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1MemoryStatus.d.ts.map

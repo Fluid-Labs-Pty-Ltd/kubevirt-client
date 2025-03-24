@@ -22,7 +22,7 @@ export function instanceOfV1VirtualMachineInstanceTemplateSpec(value) {
 export function V1VirtualMachineInstanceTemplateSpecFromJSON(json) {
     return V1VirtualMachineInstanceTemplateSpecFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceTemplateSpecFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstanceTemplateSpecFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function V1VirtualMachineInstanceTemplateSpecFromJSONTyped(json, ignoreDi
 export function V1VirtualMachineInstanceTemplateSpecToJSON(json) {
     return V1VirtualMachineInstanceTemplateSpecToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceTemplateSpecToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstanceTemplateSpecToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

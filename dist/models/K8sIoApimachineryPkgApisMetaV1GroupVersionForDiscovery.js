@@ -24,7 +24,7 @@ export function instanceOfK8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery
 export function K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryFromJSON(json) {
     return K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryFromJSONTyped(json, false);
 }
-export function K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,7 +36,7 @@ export function K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryFromJSONTy
 export function K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryToJSON(json) {
     return K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryToJSONTyped(json, false);
 }
-export function K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

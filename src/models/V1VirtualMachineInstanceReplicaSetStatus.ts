@@ -64,7 +64,7 @@ export function V1VirtualMachineInstanceReplicaSetStatusFromJSON(json: any): V1V
     return V1VirtualMachineInstanceReplicaSetStatusFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceReplicaSetStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSetStatus {
+export function V1VirtualMachineInstanceReplicaSetStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSetStatus {
     if (json == null) {
         return json;
     }
@@ -81,7 +81,7 @@ export function V1VirtualMachineInstanceReplicaSetStatusToJSON(json: any): V1Vir
     return V1VirtualMachineInstanceReplicaSetStatusToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceReplicaSetStatusToJSONTyped(value?: V1VirtualMachineInstanceReplicaSetStatus | null, ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceReplicaSetStatusToJSONTyped(value?: V1VirtualMachineInstanceReplicaSetStatus | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

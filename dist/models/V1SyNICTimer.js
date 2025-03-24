@@ -21,7 +21,7 @@ export function instanceOfV1SyNICTimer(value) {
 export function V1SyNICTimerFromJSON(json) {
     return V1SyNICTimerFromJSONTyped(json, false);
 }
-export function V1SyNICTimerFromJSONTyped(json, ignoreDiscriminator) {
+export function V1SyNICTimerFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1SyNICTimerFromJSONTyped(json, ignoreDiscriminator) {
 export function V1SyNICTimerToJSON(json) {
     return V1SyNICTimerToJSONTyped(json, false);
 }
-export function V1SyNICTimerToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1SyNICTimerToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

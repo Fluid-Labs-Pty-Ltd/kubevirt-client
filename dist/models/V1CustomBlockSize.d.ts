@@ -33,7 +33,7 @@ export interface V1CustomBlockSize {
  */
 export declare function instanceOfV1CustomBlockSize(value: object): value is V1CustomBlockSize;
 export declare function V1CustomBlockSizeFromJSON(json: any): V1CustomBlockSize;
-export declare function V1CustomBlockSizeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CustomBlockSize;
+export declare function V1CustomBlockSizeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CustomBlockSize;
 export declare function V1CustomBlockSizeToJSON(json: any): V1CustomBlockSize;
-export declare function V1CustomBlockSizeToJSONTyped(value?: V1CustomBlockSize | null, ignoreDiscriminator?: boolean): any;
+export declare function V1CustomBlockSizeToJSONTyped(value?: V1CustomBlockSize | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1CustomBlockSize.d.ts.map

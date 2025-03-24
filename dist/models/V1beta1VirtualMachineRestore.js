@@ -25,7 +25,7 @@ export function instanceOfV1beta1VirtualMachineRestore(value) {
 export function V1beta1VirtualMachineRestoreFromJSON(json) {
     return V1beta1VirtualMachineRestoreFromJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineRestoreFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1VirtualMachineRestoreFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -40,7 +40,7 @@ export function V1beta1VirtualMachineRestoreFromJSONTyped(json, ignoreDiscrimina
 export function V1beta1VirtualMachineRestoreToJSON(json) {
     return V1beta1VirtualMachineRestoreToJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineRestoreToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1VirtualMachineRestoreToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

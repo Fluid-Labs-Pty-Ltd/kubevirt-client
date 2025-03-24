@@ -22,7 +22,7 @@ export function instanceOfV1AccessCredentialSecretSource(value) {
 export function V1AccessCredentialSecretSourceFromJSON(json) {
     return V1AccessCredentialSecretSourceFromJSONTyped(json, false);
 }
-export function V1AccessCredentialSecretSourceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1AccessCredentialSecretSourceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1AccessCredentialSecretSourceFromJSONTyped(json, ignoreDiscrimi
 export function V1AccessCredentialSecretSourceToJSON(json) {
     return V1AccessCredentialSecretSourceToJSONTyped(json, false);
 }
-export function V1AccessCredentialSecretSourceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1AccessCredentialSecretSourceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

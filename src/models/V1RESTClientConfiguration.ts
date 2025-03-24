@@ -46,7 +46,7 @@ export function V1RESTClientConfigurationFromJSON(json: any): V1RESTClientConfig
     return V1RESTClientConfigurationFromJSONTyped(json, false);
 }
 
-export function V1RESTClientConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1RESTClientConfiguration {
+export function V1RESTClientConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1RESTClientConfiguration {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1RESTClientConfigurationToJSON(json: any): V1RESTClientConfigur
     return V1RESTClientConfigurationToJSONTyped(json, false);
 }
 
-export function V1RESTClientConfigurationToJSONTyped(value?: V1RESTClientConfiguration | null, ignoreDiscriminator: boolean = false): any {
+export function V1RESTClientConfigurationToJSONTyped(value?: V1RESTClientConfiguration | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

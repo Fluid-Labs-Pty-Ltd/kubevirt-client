@@ -50,7 +50,7 @@ export function V1RTCTimerFromJSON(json: any): V1RTCTimer {
     return V1RTCTimerFromJSONTyped(json, false);
 }
 
-export function V1RTCTimerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1RTCTimer {
+export function V1RTCTimerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1RTCTimer {
     if (json == null) {
         return json;
     }
@@ -66,7 +66,7 @@ export function V1RTCTimerToJSON(json: any): V1RTCTimer {
     return V1RTCTimerToJSONTyped(json, false);
 }
 
-export function V1RTCTimerToJSONTyped(value?: V1RTCTimer | null, ignoreDiscriminator: boolean = false): any {
+export function V1RTCTimerToJSONTyped(value?: V1RTCTimer | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

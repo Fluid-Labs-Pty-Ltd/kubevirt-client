@@ -228,7 +228,7 @@ export function V1VolumeFromJSON(json: any): V1Volume {
     return V1VolumeFromJSONTyped(json, false);
 }
 
-export function V1VolumeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Volume {
+export function V1VolumeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Volume {
     if (json == null) {
         return json;
     }
@@ -257,7 +257,7 @@ export function V1VolumeToJSON(json: any): V1Volume {
     return V1VolumeToJSONTyped(json, false);
 }
 
-export function V1VolumeToJSONTyped(value?: V1Volume | null, ignoreDiscriminator: boolean = false): any {
+export function V1VolumeToJSONTyped(value?: V1Volume | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

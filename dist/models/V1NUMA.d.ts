@@ -27,7 +27,7 @@ export interface V1NUMA {
  */
 export declare function instanceOfV1NUMA(value: object): value is V1NUMA;
 export declare function V1NUMAFromJSON(json: any): V1NUMA;
-export declare function V1NUMAFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1NUMA;
+export declare function V1NUMAFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1NUMA;
 export declare function V1NUMAToJSON(json: any): V1NUMA;
-export declare function V1NUMAToJSONTyped(value?: V1NUMA | null, ignoreDiscriminator?: boolean): any;
+export declare function V1NUMAToJSONTyped(value?: V1NUMA | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1NUMA.d.ts.map

@@ -41,7 +41,7 @@ export interface V1Network {
  */
 export declare function instanceOfV1Network(value: object): value is V1Network;
 export declare function V1NetworkFromJSON(json: any): V1Network;
-export declare function V1NetworkFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Network;
+export declare function V1NetworkFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Network;
 export declare function V1NetworkToJSON(json: any): V1Network;
-export declare function V1NetworkToJSONTyped(value?: V1Network | null, ignoreDiscriminator?: boolean): any;
+export declare function V1NetworkToJSONTyped(value?: V1Network | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Network.d.ts.map

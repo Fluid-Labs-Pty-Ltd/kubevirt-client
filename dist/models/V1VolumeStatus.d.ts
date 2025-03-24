@@ -85,7 +85,7 @@ export interface V1VolumeStatus {
  */
 export declare function instanceOfV1VolumeStatus(value: object): value is V1VolumeStatus;
 export declare function V1VolumeStatusFromJSON(json: any): V1VolumeStatus;
-export declare function V1VolumeStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VolumeStatus;
+export declare function V1VolumeStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VolumeStatus;
 export declare function V1VolumeStatusToJSON(json: any): V1VolumeStatus;
-export declare function V1VolumeStatusToJSONTyped(value?: V1VolumeStatus | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VolumeStatusToJSONTyped(value?: V1VolumeStatus | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VolumeStatus.d.ts.map

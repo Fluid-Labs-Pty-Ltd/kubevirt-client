@@ -63,7 +63,7 @@ export interface V1EmptyDiskSource {
  */
 export declare function instanceOfV1EmptyDiskSource(value: object): value is V1EmptyDiskSource;
 export declare function V1EmptyDiskSourceFromJSON(json: any): V1EmptyDiskSource;
-export declare function V1EmptyDiskSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1EmptyDiskSource;
+export declare function V1EmptyDiskSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1EmptyDiskSource;
 export declare function V1EmptyDiskSourceToJSON(json: any): V1EmptyDiskSource;
-export declare function V1EmptyDiskSourceToJSONTyped(value?: V1EmptyDiskSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1EmptyDiskSourceToJSONTyped(value?: V1EmptyDiskSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1EmptyDiskSource.d.ts.map

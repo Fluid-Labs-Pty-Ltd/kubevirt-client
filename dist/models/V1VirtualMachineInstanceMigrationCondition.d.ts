@@ -45,7 +45,7 @@ export interface V1VirtualMachineInstanceMigrationCondition {
  */
 export declare function instanceOfV1VirtualMachineInstanceMigrationCondition(value: object): value is V1VirtualMachineInstanceMigrationCondition;
 export declare function V1VirtualMachineInstanceMigrationConditionFromJSON(json: any): V1VirtualMachineInstanceMigrationCondition;
-export declare function V1VirtualMachineInstanceMigrationConditionFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigrationCondition;
+export declare function V1VirtualMachineInstanceMigrationConditionFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigrationCondition;
 export declare function V1VirtualMachineInstanceMigrationConditionToJSON(json: any): V1VirtualMachineInstanceMigrationCondition;
-export declare function V1VirtualMachineInstanceMigrationConditionToJSONTyped(value?: V1VirtualMachineInstanceMigrationCondition | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceMigrationConditionToJSONTyped(value?: V1VirtualMachineInstanceMigrationCondition | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceMigrationCondition.d.ts.map

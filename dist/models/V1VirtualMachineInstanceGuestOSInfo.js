@@ -20,7 +20,7 @@ export function instanceOfV1VirtualMachineInstanceGuestOSInfo(value) {
 export function V1VirtualMachineInstanceGuestOSInfoFromJSON(json) {
     return V1VirtualMachineInstanceGuestOSInfoFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceGuestOSInfoFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstanceGuestOSInfoFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function V1VirtualMachineInstanceGuestOSInfoFromJSONTyped(json, ignoreDis
 export function V1VirtualMachineInstanceGuestOSInfoToJSON(json) {
     return V1VirtualMachineInstanceGuestOSInfoToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceGuestOSInfoToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstanceGuestOSInfoToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

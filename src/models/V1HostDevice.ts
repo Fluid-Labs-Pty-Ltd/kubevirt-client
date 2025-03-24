@@ -52,7 +52,7 @@ export function V1HostDeviceFromJSON(json: any): V1HostDevice {
     return V1HostDeviceFromJSONTyped(json, false);
 }
 
-export function V1HostDeviceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1HostDevice {
+export function V1HostDeviceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1HostDevice {
     if (json == null) {
         return json;
     }
@@ -68,7 +68,7 @@ export function V1HostDeviceToJSON(json: any): V1HostDevice {
     return V1HostDeviceToJSONTyped(json, false);
 }
 
-export function V1HostDeviceToJSONTyped(value?: V1HostDevice | null, ignoreDiscriminator: boolean = false): any {
+export function V1HostDeviceToJSONTyped(value?: V1HostDevice | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

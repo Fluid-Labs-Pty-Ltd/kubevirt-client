@@ -46,7 +46,7 @@ export interface V1beta1VolumeSnapshotStatus {
  */
 export declare function instanceOfV1beta1VolumeSnapshotStatus(value: object): value is V1beta1VolumeSnapshotStatus;
 export declare function V1beta1VolumeSnapshotStatusFromJSON(json: any): V1beta1VolumeSnapshotStatus;
-export declare function V1beta1VolumeSnapshotStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VolumeSnapshotStatus;
+export declare function V1beta1VolumeSnapshotStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VolumeSnapshotStatus;
 export declare function V1beta1VolumeSnapshotStatusToJSON(json: any): V1beta1VolumeSnapshotStatus;
-export declare function V1beta1VolumeSnapshotStatusToJSONTyped(value?: V1beta1VolumeSnapshotStatus | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1VolumeSnapshotStatusToJSONTyped(value?: V1beta1VolumeSnapshotStatus | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1VolumeSnapshotStatus.d.ts.map

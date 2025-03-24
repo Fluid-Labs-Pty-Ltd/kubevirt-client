@@ -172,7 +172,7 @@ export function V1VirtualMachineStatusFromJSON(json: any): V1VirtualMachineStatu
     return V1VirtualMachineStatusFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineStatus {
+export function V1VirtualMachineStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineStatus {
     if (json == null) {
         return json;
     }
@@ -200,7 +200,7 @@ export function V1VirtualMachineStatusToJSON(json: any): V1VirtualMachineStatus 
     return V1VirtualMachineStatusToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineStatusToJSONTyped(value?: V1VirtualMachineStatus | null, ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineStatusToJSONTyped(value?: V1VirtualMachineStatus | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

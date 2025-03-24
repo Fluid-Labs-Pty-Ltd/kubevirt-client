@@ -21,7 +21,7 @@ export function instanceOfV1DownwardAPIVolumeSource(value) {
 export function V1DownwardAPIVolumeSourceFromJSON(json) {
     return V1DownwardAPIVolumeSourceFromJSONTyped(json, false);
 }
-export function V1DownwardAPIVolumeSourceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1DownwardAPIVolumeSourceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1DownwardAPIVolumeSourceFromJSONTyped(json, ignoreDiscriminator
 export function V1DownwardAPIVolumeSourceToJSON(json) {
     return V1DownwardAPIVolumeSourceToJSONTyped(json, false);
 }
-export function V1DownwardAPIVolumeSourceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1DownwardAPIVolumeSourceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -48,7 +48,7 @@ export interface V1NetworkConfiguration {
  */
 export declare function instanceOfV1NetworkConfiguration(value: object): value is V1NetworkConfiguration;
 export declare function V1NetworkConfigurationFromJSON(json: any): V1NetworkConfiguration;
-export declare function V1NetworkConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1NetworkConfiguration;
+export declare function V1NetworkConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1NetworkConfiguration;
 export declare function V1NetworkConfigurationToJSON(json: any): V1NetworkConfiguration;
-export declare function V1NetworkConfigurationToJSONTyped(value?: V1NetworkConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1NetworkConfigurationToJSONTyped(value?: V1NetworkConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1NetworkConfiguration.d.ts.map

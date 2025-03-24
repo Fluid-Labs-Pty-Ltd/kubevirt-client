@@ -23,7 +23,7 @@ export function instanceOfV1beta1VirtualMachineExportSpec(value) {
 export function V1beta1VirtualMachineExportSpecFromJSON(json) {
     return V1beta1VirtualMachineExportSpecFromJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineExportSpecFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1VirtualMachineExportSpecFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,7 +36,7 @@ export function V1beta1VirtualMachineExportSpecFromJSONTyped(json, ignoreDiscrim
 export function V1beta1VirtualMachineExportSpecToJSON(json) {
     return V1beta1VirtualMachineExportSpecToJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineExportSpecToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1VirtualMachineExportSpecToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

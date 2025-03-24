@@ -76,7 +76,7 @@ export function V1CloudInitNoCloudSourceFromJSON(json: any): V1CloudInitNoCloudS
     return V1CloudInitNoCloudSourceFromJSONTyped(json, false);
 }
 
-export function V1CloudInitNoCloudSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CloudInitNoCloudSource {
+export function V1CloudInitNoCloudSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CloudInitNoCloudSource {
     if (json == null) {
         return json;
     }
@@ -95,7 +95,7 @@ export function V1CloudInitNoCloudSourceToJSON(json: any): V1CloudInitNoCloudSou
     return V1CloudInitNoCloudSourceToJSONTyped(json, false);
 }
 
-export function V1CloudInitNoCloudSourceToJSONTyped(value?: V1CloudInitNoCloudSource | null, ignoreDiscriminator: boolean = false): any {
+export function V1CloudInitNoCloudSourceToJSONTyped(value?: V1CloudInitNoCloudSource | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

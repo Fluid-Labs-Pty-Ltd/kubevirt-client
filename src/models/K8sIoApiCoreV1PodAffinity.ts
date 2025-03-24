@@ -59,7 +59,7 @@ export function K8sIoApiCoreV1PodAffinityFromJSON(json: any): K8sIoApiCoreV1PodA
     return K8sIoApiCoreV1PodAffinityFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PodAffinityFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1PodAffinity {
+export function K8sIoApiCoreV1PodAffinityFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1PodAffinity {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function K8sIoApiCoreV1PodAffinityToJSON(json: any): K8sIoApiCoreV1PodAff
     return K8sIoApiCoreV1PodAffinityToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PodAffinityToJSONTyped(value?: K8sIoApiCoreV1PodAffinity | null, ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1PodAffinityToJSONTyped(value?: K8sIoApiCoreV1PodAffinity | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

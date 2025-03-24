@@ -51,7 +51,7 @@ export interface V1SMBiosConfiguration {
  */
 export declare function instanceOfV1SMBiosConfiguration(value: object): value is V1SMBiosConfiguration;
 export declare function V1SMBiosConfigurationFromJSON(json: any): V1SMBiosConfiguration;
-export declare function V1SMBiosConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SMBiosConfiguration;
+export declare function V1SMBiosConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SMBiosConfiguration;
 export declare function V1SMBiosConfigurationToJSON(json: any): V1SMBiosConfiguration;
-export declare function V1SMBiosConfigurationToJSONTyped(value?: V1SMBiosConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SMBiosConfigurationToJSONTyped(value?: V1SMBiosConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SMBiosConfiguration.d.ts.map

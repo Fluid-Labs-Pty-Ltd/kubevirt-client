@@ -65,7 +65,7 @@ export type V1KernelBootContainerImagePullPolicyEnum = typeof V1KernelBootContai
  */
 export declare function instanceOfV1KernelBootContainer(value: object): value is V1KernelBootContainer;
 export declare function V1KernelBootContainerFromJSON(json: any): V1KernelBootContainer;
-export declare function V1KernelBootContainerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KernelBootContainer;
+export declare function V1KernelBootContainerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KernelBootContainer;
 export declare function V1KernelBootContainerToJSON(json: any): V1KernelBootContainer;
-export declare function V1KernelBootContainerToJSONTyped(value?: V1KernelBootContainer | null, ignoreDiscriminator?: boolean): any;
+export declare function V1KernelBootContainerToJSONTyped(value?: V1KernelBootContainer | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1KernelBootContainer.d.ts.map

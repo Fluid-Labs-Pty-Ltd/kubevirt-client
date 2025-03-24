@@ -21,7 +21,7 @@ export function instanceOfV1CloudInitNoCloudSource(value) {
 export function V1CloudInitNoCloudSourceFromJSON(json) {
     return V1CloudInitNoCloudSourceFromJSONTyped(json, false);
 }
-export function V1CloudInitNoCloudSourceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1CloudInitNoCloudSourceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -37,7 +37,7 @@ export function V1CloudInitNoCloudSourceFromJSONTyped(json, ignoreDiscriminator)
 export function V1CloudInitNoCloudSourceToJSON(json) {
     return V1CloudInitNoCloudSourceToJSONTyped(json, false);
 }
-export function V1CloudInitNoCloudSourceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1CloudInitNoCloudSourceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

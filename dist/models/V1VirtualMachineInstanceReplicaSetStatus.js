@@ -21,7 +21,7 @@ export function instanceOfV1VirtualMachineInstanceReplicaSetStatus(value) {
 export function V1VirtualMachineInstanceReplicaSetStatusFromJSON(json) {
     return V1VirtualMachineInstanceReplicaSetStatusFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceReplicaSetStatusFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstanceReplicaSetStatusFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,7 +35,7 @@ export function V1VirtualMachineInstanceReplicaSetStatusFromJSONTyped(json, igno
 export function V1VirtualMachineInstanceReplicaSetStatusToJSON(json) {
     return V1VirtualMachineInstanceReplicaSetStatusToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceReplicaSetStatusToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstanceReplicaSetStatusToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

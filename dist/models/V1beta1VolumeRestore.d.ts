@@ -45,7 +45,7 @@ export interface V1beta1VolumeRestore {
  */
 export declare function instanceOfV1beta1VolumeRestore(value: object): value is V1beta1VolumeRestore;
 export declare function V1beta1VolumeRestoreFromJSON(json: any): V1beta1VolumeRestore;
-export declare function V1beta1VolumeRestoreFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VolumeRestore;
+export declare function V1beta1VolumeRestoreFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VolumeRestore;
 export declare function V1beta1VolumeRestoreToJSON(json: any): V1beta1VolumeRestore;
-export declare function V1beta1VolumeRestoreToJSONTyped(value?: V1beta1VolumeRestore | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1VolumeRestoreToJSONTyped(value?: V1beta1VolumeRestore | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1VolumeRestore.d.ts.map

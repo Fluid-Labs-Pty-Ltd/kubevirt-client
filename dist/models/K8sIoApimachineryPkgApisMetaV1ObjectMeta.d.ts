@@ -127,7 +127,7 @@ export interface K8sIoApimachineryPkgApisMetaV1ObjectMeta {
  */
 export declare function instanceOfK8sIoApimachineryPkgApisMetaV1ObjectMeta(value: object): value is K8sIoApimachineryPkgApisMetaV1ObjectMeta;
 export declare function K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON(json: any): K8sIoApimachineryPkgApisMetaV1ObjectMeta;
-export declare function K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1ObjectMeta;
+export declare function K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1ObjectMeta;
 export declare function K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON(json: any): K8sIoApimachineryPkgApisMetaV1ObjectMeta;
-export declare function K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1ObjectMeta | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1ObjectMeta | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1ObjectMeta.d.ts.map

@@ -24,7 +24,7 @@ export function instanceOfK8sIoApimachineryPkgApisMetaV1WatchEvent(value) {
 export function K8sIoApimachineryPkgApisMetaV1WatchEventFromJSON(json) {
     return K8sIoApimachineryPkgApisMetaV1WatchEventFromJSONTyped(json, false);
 }
-export function K8sIoApimachineryPkgApisMetaV1WatchEventFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApimachineryPkgApisMetaV1WatchEventFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,7 +36,7 @@ export function K8sIoApimachineryPkgApisMetaV1WatchEventFromJSONTyped(json, igno
 export function K8sIoApimachineryPkgApisMetaV1WatchEventToJSON(json) {
     return K8sIoApimachineryPkgApisMetaV1WatchEventToJSONTyped(json, false);
 }
-export function K8sIoApimachineryPkgApisMetaV1WatchEventToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApimachineryPkgApisMetaV1WatchEventToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

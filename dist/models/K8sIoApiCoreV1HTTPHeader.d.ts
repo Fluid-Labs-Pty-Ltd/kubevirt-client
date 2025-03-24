@@ -33,7 +33,7 @@ export interface K8sIoApiCoreV1HTTPHeader {
  */
 export declare function instanceOfK8sIoApiCoreV1HTTPHeader(value: object): value is K8sIoApiCoreV1HTTPHeader;
 export declare function K8sIoApiCoreV1HTTPHeaderFromJSON(json: any): K8sIoApiCoreV1HTTPHeader;
-export declare function K8sIoApiCoreV1HTTPHeaderFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1HTTPHeader;
+export declare function K8sIoApiCoreV1HTTPHeaderFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1HTTPHeader;
 export declare function K8sIoApiCoreV1HTTPHeaderToJSON(json: any): K8sIoApiCoreV1HTTPHeader;
-export declare function K8sIoApiCoreV1HTTPHeaderToJSONTyped(value?: K8sIoApiCoreV1HTTPHeader | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1HTTPHeaderToJSONTyped(value?: K8sIoApiCoreV1HTTPHeader | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1HTTPHeader.d.ts.map

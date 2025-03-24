@@ -89,7 +89,7 @@ export function V1beta1VirtualMachineExportStatusFromJSON(json: any): V1beta1Vir
     return V1beta1VirtualMachineExportStatusFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineExportStatus {
+export function V1beta1VirtualMachineExportStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineExportStatus {
     if (json == null) {
         return json;
     }
@@ -109,7 +109,7 @@ export function V1beta1VirtualMachineExportStatusToJSON(json: any): V1beta1Virtu
     return V1beta1VirtualMachineExportStatusToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportStatusToJSONTyped(value?: V1beta1VirtualMachineExportStatus | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineExportStatusToJSONTyped(value?: V1beta1VirtualMachineExportStatus | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

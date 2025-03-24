@@ -47,7 +47,7 @@ export interface V1KubeVirtList {
  */
 export declare function instanceOfV1KubeVirtList(value: object): value is V1KubeVirtList;
 export declare function V1KubeVirtListFromJSON(json: any): V1KubeVirtList;
-export declare function V1KubeVirtListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtList;
+export declare function V1KubeVirtListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtList;
 export declare function V1KubeVirtListToJSON(json: any): V1KubeVirtList;
-export declare function V1KubeVirtListToJSONTyped(value?: V1KubeVirtList | null, ignoreDiscriminator?: boolean): any;
+export declare function V1KubeVirtListToJSONTyped(value?: V1KubeVirtList | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1KubeVirtList.d.ts.map

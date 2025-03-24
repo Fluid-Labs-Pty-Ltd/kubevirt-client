@@ -69,7 +69,7 @@ export interface V1beta1CPUInstancetype {
  */
 export declare function instanceOfV1beta1CPUInstancetype(value: object): value is V1beta1CPUInstancetype;
 export declare function V1beta1CPUInstancetypeFromJSON(json: any): V1beta1CPUInstancetype;
-export declare function V1beta1CPUInstancetypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1CPUInstancetype;
+export declare function V1beta1CPUInstancetypeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1CPUInstancetype;
 export declare function V1beta1CPUInstancetypeToJSON(json: any): V1beta1CPUInstancetype;
-export declare function V1beta1CPUInstancetypeToJSONTyped(value?: V1beta1CPUInstancetype | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1CPUInstancetypeToJSONTyped(value?: V1beta1CPUInstancetype | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1CPUInstancetype.d.ts.map

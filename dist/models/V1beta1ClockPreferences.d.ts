@@ -35,7 +35,7 @@ export interface V1beta1ClockPreferences {
  */
 export declare function instanceOfV1beta1ClockPreferences(value: object): value is V1beta1ClockPreferences;
 export declare function V1beta1ClockPreferencesFromJSON(json: any): V1beta1ClockPreferences;
-export declare function V1beta1ClockPreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1ClockPreferences;
+export declare function V1beta1ClockPreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1ClockPreferences;
 export declare function V1beta1ClockPreferencesToJSON(json: any): V1beta1ClockPreferences;
-export declare function V1beta1ClockPreferencesToJSONTyped(value?: V1beta1ClockPreferences | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1ClockPreferencesToJSONTyped(value?: V1beta1ClockPreferences | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1ClockPreferences.d.ts.map

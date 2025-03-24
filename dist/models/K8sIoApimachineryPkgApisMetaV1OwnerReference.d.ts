@@ -57,7 +57,7 @@ export interface K8sIoApimachineryPkgApisMetaV1OwnerReference {
  */
 export declare function instanceOfK8sIoApimachineryPkgApisMetaV1OwnerReference(value: object): value is K8sIoApimachineryPkgApisMetaV1OwnerReference;
 export declare function K8sIoApimachineryPkgApisMetaV1OwnerReferenceFromJSON(json: any): K8sIoApimachineryPkgApisMetaV1OwnerReference;
-export declare function K8sIoApimachineryPkgApisMetaV1OwnerReferenceFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1OwnerReference;
+export declare function K8sIoApimachineryPkgApisMetaV1OwnerReferenceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1OwnerReference;
 export declare function K8sIoApimachineryPkgApisMetaV1OwnerReferenceToJSON(json: any): K8sIoApimachineryPkgApisMetaV1OwnerReference;
-export declare function K8sIoApimachineryPkgApisMetaV1OwnerReferenceToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1OwnerReference | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApimachineryPkgApisMetaV1OwnerReferenceToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1OwnerReference | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1OwnerReference.d.ts.map

@@ -63,7 +63,7 @@ export interface V1DiskVerification {
  */
 export declare function instanceOfV1DiskVerification(value: object): value is V1DiskVerification;
 export declare function V1DiskVerificationFromJSON(json: any): V1DiskVerification;
-export declare function V1DiskVerificationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DiskVerification;
+export declare function V1DiskVerificationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DiskVerification;
 export declare function V1DiskVerificationToJSON(json: any): V1DiskVerification;
-export declare function V1DiskVerificationToJSONTyped(value?: V1DiskVerification | null, ignoreDiscriminator?: boolean): any;
+export declare function V1DiskVerificationToJSONTyped(value?: V1DiskVerification | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1DiskVerification.d.ts.map

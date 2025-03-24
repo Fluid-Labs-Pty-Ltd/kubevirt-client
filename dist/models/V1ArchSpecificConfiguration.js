@@ -20,7 +20,7 @@ export function instanceOfV1ArchSpecificConfiguration(value) {
 export function V1ArchSpecificConfigurationFromJSON(json) {
     return V1ArchSpecificConfigurationFromJSONTyped(json, false);
 }
-export function V1ArchSpecificConfigurationFromJSONTyped(json, ignoreDiscriminator) {
+export function V1ArchSpecificConfigurationFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1ArchSpecificConfigurationFromJSONTyped(json, ignoreDiscriminat
 export function V1ArchSpecificConfigurationToJSON(json) {
     return V1ArchSpecificConfigurationToJSONTyped(json, false);
 }
-export function V1ArchSpecificConfigurationToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1ArchSpecificConfigurationToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

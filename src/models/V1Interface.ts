@@ -157,7 +157,7 @@ export function V1InterfaceFromJSON(json: any): V1Interface {
     return V1InterfaceFromJSONTyped(json, false);
 }
 
-export function V1InterfaceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Interface {
+export function V1InterfaceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Interface {
     if (json == null) {
         return json;
     }
@@ -187,7 +187,7 @@ export function V1InterfaceToJSON(json: any): V1Interface {
     return V1InterfaceToJSONTyped(json, false);
 }
 
-export function V1InterfaceToJSONTyped(value?: V1Interface | null, ignoreDiscriminator: boolean = false): any {
+export function V1InterfaceToJSONTyped(value?: V1Interface | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

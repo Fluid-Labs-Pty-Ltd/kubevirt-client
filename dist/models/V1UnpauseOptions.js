@@ -20,7 +20,7 @@ export function instanceOfV1UnpauseOptions(value) {
 export function V1UnpauseOptionsFromJSON(json) {
     return V1UnpauseOptionsFromJSONTyped(json, false);
 }
-export function V1UnpauseOptionsFromJSONTyped(json, ignoreDiscriminator) {
+export function V1UnpauseOptionsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1UnpauseOptionsFromJSONTyped(json, ignoreDiscriminator) {
 export function V1UnpauseOptionsToJSON(json) {
     return V1UnpauseOptionsToJSONTyped(json, false);
 }
-export function V1UnpauseOptionsToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1UnpauseOptionsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

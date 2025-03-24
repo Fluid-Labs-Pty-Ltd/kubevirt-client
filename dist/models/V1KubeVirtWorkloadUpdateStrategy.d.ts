@@ -43,7 +43,7 @@ export interface V1KubeVirtWorkloadUpdateStrategy {
  */
 export declare function instanceOfV1KubeVirtWorkloadUpdateStrategy(value: object): value is V1KubeVirtWorkloadUpdateStrategy;
 export declare function V1KubeVirtWorkloadUpdateStrategyFromJSON(json: any): V1KubeVirtWorkloadUpdateStrategy;
-export declare function V1KubeVirtWorkloadUpdateStrategyFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtWorkloadUpdateStrategy;
+export declare function V1KubeVirtWorkloadUpdateStrategyFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtWorkloadUpdateStrategy;
 export declare function V1KubeVirtWorkloadUpdateStrategyToJSON(json: any): V1KubeVirtWorkloadUpdateStrategy;
-export declare function V1KubeVirtWorkloadUpdateStrategyToJSONTyped(value?: V1KubeVirtWorkloadUpdateStrategy | null, ignoreDiscriminator?: boolean): any;
+export declare function V1KubeVirtWorkloadUpdateStrategyToJSONTyped(value?: V1KubeVirtWorkloadUpdateStrategy | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1KubeVirtWorkloadUpdateStrategy.d.ts.map

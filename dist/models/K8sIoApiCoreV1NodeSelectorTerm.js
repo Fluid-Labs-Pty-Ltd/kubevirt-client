@@ -21,7 +21,7 @@ export function instanceOfK8sIoApiCoreV1NodeSelectorTerm(value) {
 export function K8sIoApiCoreV1NodeSelectorTermFromJSON(json) {
     return K8sIoApiCoreV1NodeSelectorTermFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1NodeSelectorTermFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1NodeSelectorTermFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function K8sIoApiCoreV1NodeSelectorTermFromJSONTyped(json, ignoreDiscrimi
 export function K8sIoApiCoreV1NodeSelectorTermToJSON(json) {
     return K8sIoApiCoreV1NodeSelectorTermToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1NodeSelectorTermToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1NodeSelectorTermToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

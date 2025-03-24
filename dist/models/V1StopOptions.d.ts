@@ -45,7 +45,7 @@ export interface V1StopOptions {
  */
 export declare function instanceOfV1StopOptions(value: object): value is V1StopOptions;
 export declare function V1StopOptionsFromJSON(json: any): V1StopOptions;
-export declare function V1StopOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1StopOptions;
+export declare function V1StopOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1StopOptions;
 export declare function V1StopOptionsToJSON(json: any): V1StopOptions;
-export declare function V1StopOptionsToJSONTyped(value?: V1StopOptions | null, ignoreDiscriminator?: boolean): any;
+export declare function V1StopOptionsToJSONTyped(value?: V1StopOptions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1StopOptions.d.ts.map

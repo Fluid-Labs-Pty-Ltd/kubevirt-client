@@ -28,7 +28,7 @@ export interface V1RESTClientConfiguration {
  */
 export declare function instanceOfV1RESTClientConfiguration(value: object): value is V1RESTClientConfiguration;
 export declare function V1RESTClientConfigurationFromJSON(json: any): V1RESTClientConfiguration;
-export declare function V1RESTClientConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1RESTClientConfiguration;
+export declare function V1RESTClientConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1RESTClientConfiguration;
 export declare function V1RESTClientConfigurationToJSON(json: any): V1RESTClientConfiguration;
-export declare function V1RESTClientConfigurationToJSONTyped(value?: V1RESTClientConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1RESTClientConfigurationToJSONTyped(value?: V1RESTClientConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1RESTClientConfiguration.d.ts.map

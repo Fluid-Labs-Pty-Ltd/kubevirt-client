@@ -236,7 +236,7 @@ export function V1VirtualMachineInstanceSpecFromJSON(json: any): V1VirtualMachin
     return V1VirtualMachineInstanceSpecFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceSpec {
+export function V1VirtualMachineInstanceSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceSpec {
     if (json == null) {
         return json;
     }
@@ -269,7 +269,7 @@ export function V1VirtualMachineInstanceSpecToJSON(json: any): V1VirtualMachineI
     return V1VirtualMachineInstanceSpecToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceSpecToJSONTyped(value?: V1VirtualMachineInstanceSpec | null, ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceSpecToJSONTyped(value?: V1VirtualMachineInstanceSpec | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

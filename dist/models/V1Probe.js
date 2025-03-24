@@ -23,7 +23,7 @@ export function instanceOfV1Probe(value) {
 export function V1ProbeFromJSON(json) {
     return V1ProbeFromJSONTyped(json, false);
 }
-export function V1ProbeFromJSONTyped(json, ignoreDiscriminator) {
+export function V1ProbeFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -42,7 +42,7 @@ export function V1ProbeFromJSONTyped(json, ignoreDiscriminator) {
 export function V1ProbeToJSON(json) {
     return V1ProbeToJSONTyped(json, false);
 }
-export function V1ProbeToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1ProbeToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

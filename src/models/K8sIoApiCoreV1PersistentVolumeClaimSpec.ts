@@ -141,7 +141,7 @@ export function K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSON(json: any): K8sI
     return K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1PersistentVolumeClaimSpec {
+export function K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1PersistentVolumeClaimSpec {
     if (json == null) {
         return json;
     }
@@ -163,7 +163,7 @@ export function K8sIoApiCoreV1PersistentVolumeClaimSpecToJSON(json: any): K8sIoA
     return K8sIoApiCoreV1PersistentVolumeClaimSpecToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PersistentVolumeClaimSpecToJSONTyped(value?: K8sIoApiCoreV1PersistentVolumeClaimSpec | null, ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1PersistentVolumeClaimSpecToJSONTyped(value?: K8sIoApiCoreV1PersistentVolumeClaimSpec | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

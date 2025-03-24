@@ -112,7 +112,7 @@ export interface V1Memory {
  */
 export declare function instanceOfV1Memory(value: object): value is V1Memory;
 export declare function V1MemoryFromJSON(json: any): V1Memory;
-export declare function V1MemoryFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Memory;
+export declare function V1MemoryFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Memory;
 export declare function V1MemoryToJSON(json: any): V1Memory;
-export declare function V1MemoryToJSONTyped(value?: V1Memory | null, ignoreDiscriminator?: boolean): any;
+export declare function V1MemoryToJSONTyped(value?: V1Memory | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Memory.d.ts.map

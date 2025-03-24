@@ -46,7 +46,7 @@ export function V1DHCPPrivateOptionsFromJSON(json: any): V1DHCPPrivateOptions {
     return V1DHCPPrivateOptionsFromJSONTyped(json, false);
 }
 
-export function V1DHCPPrivateOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DHCPPrivateOptions {
+export function V1DHCPPrivateOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DHCPPrivateOptions {
     if (json == null) {
         return json;
     }
@@ -61,7 +61,7 @@ export function V1DHCPPrivateOptionsToJSON(json: any): V1DHCPPrivateOptions {
     return V1DHCPPrivateOptionsToJSONTyped(json, false);
 }
 
-export function V1DHCPPrivateOptionsToJSONTyped(value?: V1DHCPPrivateOptions | null, ignoreDiscriminator: boolean = false): any {
+export function V1DHCPPrivateOptionsToJSONTyped(value?: V1DHCPPrivateOptions | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

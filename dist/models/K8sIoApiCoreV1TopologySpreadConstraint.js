@@ -48,7 +48,7 @@ export function instanceOfK8sIoApiCoreV1TopologySpreadConstraint(value) {
 export function K8sIoApiCoreV1TopologySpreadConstraintFromJSON(json) {
     return K8sIoApiCoreV1TopologySpreadConstraintFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1TopologySpreadConstraintFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1TopologySpreadConstraintFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -66,7 +66,7 @@ export function K8sIoApiCoreV1TopologySpreadConstraintFromJSONTyped(json, ignore
 export function K8sIoApiCoreV1TopologySpreadConstraintToJSON(json) {
     return K8sIoApiCoreV1TopologySpreadConstraintToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1TopologySpreadConstraintToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1TopologySpreadConstraintToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

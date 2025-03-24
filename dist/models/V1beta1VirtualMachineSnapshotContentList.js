@@ -26,7 +26,7 @@ export function instanceOfV1beta1VirtualMachineSnapshotContentList(value) {
 export function V1beta1VirtualMachineSnapshotContentListFromJSON(json) {
     return V1beta1VirtualMachineSnapshotContentListFromJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineSnapshotContentListFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1VirtualMachineSnapshotContentListFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -40,7 +40,7 @@ export function V1beta1VirtualMachineSnapshotContentListFromJSONTyped(json, igno
 export function V1beta1VirtualMachineSnapshotContentListToJSON(json) {
     return V1beta1VirtualMachineSnapshotContentListToJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineSnapshotContentListToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1VirtualMachineSnapshotContentListToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

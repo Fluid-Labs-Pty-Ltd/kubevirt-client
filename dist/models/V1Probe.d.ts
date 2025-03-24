@@ -78,7 +78,7 @@ export interface V1Probe {
  */
 export declare function instanceOfV1Probe(value: object): value is V1Probe;
 export declare function V1ProbeFromJSON(json: any): V1Probe;
-export declare function V1ProbeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Probe;
+export declare function V1ProbeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Probe;
 export declare function V1ProbeToJSON(json: any): V1Probe;
-export declare function V1ProbeToJSONTyped(value?: V1Probe | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ProbeToJSONTyped(value?: V1Probe | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Probe.d.ts.map

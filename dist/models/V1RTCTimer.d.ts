@@ -39,7 +39,7 @@ export interface V1RTCTimer {
  */
 export declare function instanceOfV1RTCTimer(value: object): value is V1RTCTimer;
 export declare function V1RTCTimerFromJSON(json: any): V1RTCTimer;
-export declare function V1RTCTimerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1RTCTimer;
+export declare function V1RTCTimerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1RTCTimer;
 export declare function V1RTCTimerToJSON(json: any): V1RTCTimer;
-export declare function V1RTCTimerToJSONTyped(value?: V1RTCTimer | null, ignoreDiscriminator?: boolean): any;
+export declare function V1RTCTimerToJSONTyped(value?: V1RTCTimer | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1RTCTimer.d.ts.map

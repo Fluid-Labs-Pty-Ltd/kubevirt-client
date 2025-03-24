@@ -35,7 +35,7 @@ export interface V1VirtualMachineInstanceTemplateSpec {
  */
 export declare function instanceOfV1VirtualMachineInstanceTemplateSpec(value: object): value is V1VirtualMachineInstanceTemplateSpec;
 export declare function V1VirtualMachineInstanceTemplateSpecFromJSON(json: any): V1VirtualMachineInstanceTemplateSpec;
-export declare function V1VirtualMachineInstanceTemplateSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceTemplateSpec;
+export declare function V1VirtualMachineInstanceTemplateSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceTemplateSpec;
 export declare function V1VirtualMachineInstanceTemplateSpecToJSON(json: any): V1VirtualMachineInstanceTemplateSpec;
-export declare function V1VirtualMachineInstanceTemplateSpecToJSONTyped(value?: V1VirtualMachineInstanceTemplateSpec | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceTemplateSpecToJSONTyped(value?: V1VirtualMachineInstanceTemplateSpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceTemplateSpec.d.ts.map

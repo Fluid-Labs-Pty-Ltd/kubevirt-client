@@ -24,7 +24,7 @@ export function instanceOfV1beta1FeaturePreferences(value) {
 export function V1beta1FeaturePreferencesFromJSON(json) {
     return V1beta1FeaturePreferencesFromJSONTyped(json, false);
 }
-export function V1beta1FeaturePreferencesFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1FeaturePreferencesFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -40,7 +40,7 @@ export function V1beta1FeaturePreferencesFromJSONTyped(json, ignoreDiscriminator
 export function V1beta1FeaturePreferencesToJSON(json) {
     return V1beta1FeaturePreferencesToJSONTyped(json, false);
 }
-export function V1beta1FeaturePreferencesToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1FeaturePreferencesToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

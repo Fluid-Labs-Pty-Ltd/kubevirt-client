@@ -46,7 +46,7 @@ export function V1RateLimiterFromJSON(json: any): V1RateLimiter {
     return V1RateLimiterFromJSONTyped(json, false);
 }
 
-export function V1RateLimiterFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1RateLimiter {
+export function V1RateLimiterFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1RateLimiter {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1RateLimiterToJSON(json: any): V1RateLimiter {
     return V1RateLimiterToJSONTyped(json, false);
 }
 
-export function V1RateLimiterToJSONTyped(value?: V1RateLimiter | null, ignoreDiscriminator: boolean = false): any {
+export function V1RateLimiterToJSONTyped(value?: V1RateLimiter | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

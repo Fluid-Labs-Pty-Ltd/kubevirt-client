@@ -121,7 +121,7 @@ export function V1VirtualMachineInstanceGuestAgentInfoFromJSON(json: any): V1Vir
     return V1VirtualMachineInstanceGuestAgentInfoFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceGuestAgentInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestAgentInfo {
+export function V1VirtualMachineInstanceGuestAgentInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestAgentInfo {
     if (json == null) {
         return json;
     }
@@ -144,7 +144,7 @@ export function V1VirtualMachineInstanceGuestAgentInfoToJSON(json: any): V1Virtu
     return V1VirtualMachineInstanceGuestAgentInfoToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceGuestAgentInfoToJSONTyped(value?: V1VirtualMachineInstanceGuestAgentInfo | null, ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceGuestAgentInfoToJSONTyped(value?: V1VirtualMachineInstanceGuestAgentInfo | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

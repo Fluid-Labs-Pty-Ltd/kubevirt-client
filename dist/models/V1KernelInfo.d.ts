@@ -27,7 +27,7 @@ export interface V1KernelInfo {
  */
 export declare function instanceOfV1KernelInfo(value: object): value is V1KernelInfo;
 export declare function V1KernelInfoFromJSON(json: any): V1KernelInfo;
-export declare function V1KernelInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KernelInfo;
+export declare function V1KernelInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KernelInfo;
 export declare function V1KernelInfoToJSON(json: any): V1KernelInfo;
-export declare function V1KernelInfoToJSONTyped(value?: V1KernelInfo | null, ignoreDiscriminator?: boolean): any;
+export declare function V1KernelInfoToJSONTyped(value?: V1KernelInfo | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1KernelInfo.d.ts.map

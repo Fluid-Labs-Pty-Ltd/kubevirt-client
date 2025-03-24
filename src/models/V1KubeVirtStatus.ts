@@ -137,7 +137,7 @@ export function V1KubeVirtStatusFromJSON(json: any): V1KubeVirtStatus {
     return V1KubeVirtStatusFromJSONTyped(json, false);
 }
 
-export function V1KubeVirtStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtStatus {
+export function V1KubeVirtStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtStatus {
     if (json == null) {
         return json;
     }
@@ -165,7 +165,7 @@ export function V1KubeVirtStatusToJSON(json: any): V1KubeVirtStatus {
     return V1KubeVirtStatusToJSONTyped(json, false);
 }
 
-export function V1KubeVirtStatusToJSONTyped(value?: V1KubeVirtStatus | null, ignoreDiscriminator: boolean = false): any {
+export function V1KubeVirtStatusToJSONTyped(value?: V1KubeVirtStatus | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -22,7 +22,7 @@ export function instanceOfV1SoundDevice(value) {
 export function V1SoundDeviceFromJSON(json) {
     return V1SoundDeviceFromJSONTyped(json, false);
 }
-export function V1SoundDeviceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1SoundDeviceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function V1SoundDeviceFromJSONTyped(json, ignoreDiscriminator) {
 export function V1SoundDeviceToJSON(json) {
     return V1SoundDeviceToJSONTyped(json, false);
 }
-export function V1SoundDeviceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1SoundDeviceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

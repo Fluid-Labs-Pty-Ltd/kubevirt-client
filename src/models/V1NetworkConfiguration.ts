@@ -64,7 +64,7 @@ export function V1NetworkConfigurationFromJSON(json: any): V1NetworkConfiguratio
     return V1NetworkConfigurationFromJSONTyped(json, false);
 }
 
-export function V1NetworkConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1NetworkConfiguration {
+export function V1NetworkConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1NetworkConfiguration {
     if (json == null) {
         return json;
     }
@@ -81,7 +81,7 @@ export function V1NetworkConfigurationToJSON(json: any): V1NetworkConfiguration 
     return V1NetworkConfigurationToJSONTyped(json, false);
 }
 
-export function V1NetworkConfigurationToJSONTyped(value?: V1NetworkConfiguration | null, ignoreDiscriminator: boolean = false): any {
+export function V1NetworkConfigurationToJSONTyped(value?: V1NetworkConfiguration | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

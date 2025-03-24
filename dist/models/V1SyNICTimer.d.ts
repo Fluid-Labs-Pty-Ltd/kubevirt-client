@@ -34,7 +34,7 @@ export interface V1SyNICTimer {
  */
 export declare function instanceOfV1SyNICTimer(value: object): value is V1SyNICTimer;
 export declare function V1SyNICTimerFromJSON(json: any): V1SyNICTimer;
-export declare function V1SyNICTimerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SyNICTimer;
+export declare function V1SyNICTimerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SyNICTimer;
 export declare function V1SyNICTimerToJSON(json: any): V1SyNICTimer;
-export declare function V1SyNICTimerToJSONTyped(value?: V1SyNICTimer | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SyNICTimerToJSONTyped(value?: V1SyNICTimer | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SyNICTimer.d.ts.map

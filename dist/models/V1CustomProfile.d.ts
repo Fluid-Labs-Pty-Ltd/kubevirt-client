@@ -33,7 +33,7 @@ export interface V1CustomProfile {
  */
 export declare function instanceOfV1CustomProfile(value: object): value is V1CustomProfile;
 export declare function V1CustomProfileFromJSON(json: any): V1CustomProfile;
-export declare function V1CustomProfileFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CustomProfile;
+export declare function V1CustomProfileFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CustomProfile;
 export declare function V1CustomProfileToJSON(json: any): V1CustomProfile;
-export declare function V1CustomProfileToJSONTyped(value?: V1CustomProfile | null, ignoreDiscriminator?: boolean): any;
+export declare function V1CustomProfileToJSONTyped(value?: V1CustomProfile | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1CustomProfile.d.ts.map

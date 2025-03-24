@@ -24,7 +24,7 @@ export function instanceOfV1alpha1VirtualMachineCloneSpec(value) {
 export function V1alpha1VirtualMachineCloneSpecFromJSON(json) {
     return V1alpha1VirtualMachineCloneSpecFromJSONTyped(json, false);
 }
-export function V1alpha1VirtualMachineCloneSpecFromJSONTyped(json, ignoreDiscriminator) {
+export function V1alpha1VirtualMachineCloneSpecFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -41,7 +41,7 @@ export function V1alpha1VirtualMachineCloneSpecFromJSONTyped(json, ignoreDiscrim
 export function V1alpha1VirtualMachineCloneSpecToJSON(json) {
     return V1alpha1VirtualMachineCloneSpecToJSONTyped(json, false);
 }
-export function V1alpha1VirtualMachineCloneSpecToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1alpha1VirtualMachineCloneSpecToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -81,7 +81,7 @@ export interface V1HostDisk {
  */
 export declare function instanceOfV1HostDisk(value: object): value is V1HostDisk;
 export declare function V1HostDiskFromJSON(json: any): V1HostDisk;
-export declare function V1HostDiskFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1HostDisk;
+export declare function V1HostDiskFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1HostDisk;
 export declare function V1HostDiskToJSON(json: any): V1HostDisk;
-export declare function V1HostDiskToJSONTyped(value?: V1HostDisk | null, ignoreDiscriminator?: boolean): any;
+export declare function V1HostDiskToJSONTyped(value?: V1HostDisk | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1HostDisk.d.ts.map

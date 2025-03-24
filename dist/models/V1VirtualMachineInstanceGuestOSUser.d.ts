@@ -39,7 +39,7 @@ export interface V1VirtualMachineInstanceGuestOSUser {
  */
 export declare function instanceOfV1VirtualMachineInstanceGuestOSUser(value: object): value is V1VirtualMachineInstanceGuestOSUser;
 export declare function V1VirtualMachineInstanceGuestOSUserFromJSON(json: any): V1VirtualMachineInstanceGuestOSUser;
-export declare function V1VirtualMachineInstanceGuestOSUserFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestOSUser;
+export declare function V1VirtualMachineInstanceGuestOSUserFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestOSUser;
 export declare function V1VirtualMachineInstanceGuestOSUserToJSON(json: any): V1VirtualMachineInstanceGuestOSUser;
-export declare function V1VirtualMachineInstanceGuestOSUserToJSONTyped(value?: V1VirtualMachineInstanceGuestOSUser | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceGuestOSUserToJSONTyped(value?: V1VirtualMachineInstanceGuestOSUser | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceGuestOSUser.d.ts.map

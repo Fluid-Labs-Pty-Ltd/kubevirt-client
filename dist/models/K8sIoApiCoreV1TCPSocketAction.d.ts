@@ -27,7 +27,7 @@ export interface K8sIoApiCoreV1TCPSocketAction {
  */
 export declare function instanceOfK8sIoApiCoreV1TCPSocketAction(value: object): value is K8sIoApiCoreV1TCPSocketAction;
 export declare function K8sIoApiCoreV1TCPSocketActionFromJSON(json: any): K8sIoApiCoreV1TCPSocketAction;
-export declare function K8sIoApiCoreV1TCPSocketActionFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1TCPSocketAction;
+export declare function K8sIoApiCoreV1TCPSocketActionFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1TCPSocketAction;
 export declare function K8sIoApiCoreV1TCPSocketActionToJSON(json: any): K8sIoApiCoreV1TCPSocketAction;
-export declare function K8sIoApiCoreV1TCPSocketActionToJSONTyped(value?: K8sIoApiCoreV1TCPSocketAction | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1TCPSocketActionToJSONTyped(value?: K8sIoApiCoreV1TCPSocketAction | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1TCPSocketAction.d.ts.map

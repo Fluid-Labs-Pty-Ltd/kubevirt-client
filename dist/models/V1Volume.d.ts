@@ -131,7 +131,7 @@ export interface V1Volume {
  */
 export declare function instanceOfV1Volume(value: object): value is V1Volume;
 export declare function V1VolumeFromJSON(json: any): V1Volume;
-export declare function V1VolumeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Volume;
+export declare function V1VolumeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Volume;
 export declare function V1VolumeToJSON(json: any): V1Volume;
-export declare function V1VolumeToJSONTyped(value?: V1Volume | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VolumeToJSONTyped(value?: V1Volume | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Volume.d.ts.map

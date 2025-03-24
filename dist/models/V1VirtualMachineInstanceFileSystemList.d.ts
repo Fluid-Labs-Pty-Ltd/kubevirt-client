@@ -47,7 +47,7 @@ export interface V1VirtualMachineInstanceFileSystemList {
  */
 export declare function instanceOfV1VirtualMachineInstanceFileSystemList(value: object): value is V1VirtualMachineInstanceFileSystemList;
 export declare function V1VirtualMachineInstanceFileSystemListFromJSON(json: any): V1VirtualMachineInstanceFileSystemList;
-export declare function V1VirtualMachineInstanceFileSystemListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceFileSystemList;
+export declare function V1VirtualMachineInstanceFileSystemListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceFileSystemList;
 export declare function V1VirtualMachineInstanceFileSystemListToJSON(json: any): V1VirtualMachineInstanceFileSystemList;
-export declare function V1VirtualMachineInstanceFileSystemListToJSONTyped(value?: V1VirtualMachineInstanceFileSystemList | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceFileSystemListToJSONTyped(value?: V1VirtualMachineInstanceFileSystemList | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceFileSystemList.d.ts.map

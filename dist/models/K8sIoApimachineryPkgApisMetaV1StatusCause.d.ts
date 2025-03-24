@@ -43,7 +43,7 @@ export interface K8sIoApimachineryPkgApisMetaV1StatusCause {
  */
 export declare function instanceOfK8sIoApimachineryPkgApisMetaV1StatusCause(value: object): value is K8sIoApimachineryPkgApisMetaV1StatusCause;
 export declare function K8sIoApimachineryPkgApisMetaV1StatusCauseFromJSON(json: any): K8sIoApimachineryPkgApisMetaV1StatusCause;
-export declare function K8sIoApimachineryPkgApisMetaV1StatusCauseFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1StatusCause;
+export declare function K8sIoApimachineryPkgApisMetaV1StatusCauseFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1StatusCause;
 export declare function K8sIoApimachineryPkgApisMetaV1StatusCauseToJSON(json: any): K8sIoApimachineryPkgApisMetaV1StatusCause;
-export declare function K8sIoApimachineryPkgApisMetaV1StatusCauseToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1StatusCause | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApimachineryPkgApisMetaV1StatusCauseToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1StatusCause | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1StatusCause.d.ts.map

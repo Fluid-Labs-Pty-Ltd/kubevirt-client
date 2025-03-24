@@ -39,7 +39,7 @@ export interface V1VirtualMachineStartFailure {
  */
 export declare function instanceOfV1VirtualMachineStartFailure(value: object): value is V1VirtualMachineStartFailure;
 export declare function V1VirtualMachineStartFailureFromJSON(json: any): V1VirtualMachineStartFailure;
-export declare function V1VirtualMachineStartFailureFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineStartFailure;
+export declare function V1VirtualMachineStartFailureFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineStartFailure;
 export declare function V1VirtualMachineStartFailureToJSON(json: any): V1VirtualMachineStartFailure;
-export declare function V1VirtualMachineStartFailureToJSONTyped(value?: V1VirtualMachineStartFailure | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineStartFailureToJSONTyped(value?: V1VirtualMachineStartFailure | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineStartFailure.d.ts.map

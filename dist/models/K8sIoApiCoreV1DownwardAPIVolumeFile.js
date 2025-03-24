@@ -24,7 +24,7 @@ export function instanceOfK8sIoApiCoreV1DownwardAPIVolumeFile(value) {
 export function K8sIoApiCoreV1DownwardAPIVolumeFileFromJSON(json) {
     return K8sIoApiCoreV1DownwardAPIVolumeFileFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1DownwardAPIVolumeFileFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1DownwardAPIVolumeFileFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function K8sIoApiCoreV1DownwardAPIVolumeFileFromJSONTyped(json, ignoreDis
 export function K8sIoApiCoreV1DownwardAPIVolumeFileToJSON(json) {
     return K8sIoApiCoreV1DownwardAPIVolumeFileToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1DownwardAPIVolumeFileToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1DownwardAPIVolumeFileToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

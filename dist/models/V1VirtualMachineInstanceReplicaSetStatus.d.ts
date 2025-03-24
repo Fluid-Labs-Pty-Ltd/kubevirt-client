@@ -46,7 +46,7 @@ export interface V1VirtualMachineInstanceReplicaSetStatus {
  */
 export declare function instanceOfV1VirtualMachineInstanceReplicaSetStatus(value: object): value is V1VirtualMachineInstanceReplicaSetStatus;
 export declare function V1VirtualMachineInstanceReplicaSetStatusFromJSON(json: any): V1VirtualMachineInstanceReplicaSetStatus;
-export declare function V1VirtualMachineInstanceReplicaSetStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSetStatus;
+export declare function V1VirtualMachineInstanceReplicaSetStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSetStatus;
 export declare function V1VirtualMachineInstanceReplicaSetStatusToJSON(json: any): V1VirtualMachineInstanceReplicaSetStatus;
-export declare function V1VirtualMachineInstanceReplicaSetStatusToJSONTyped(value?: V1VirtualMachineInstanceReplicaSetStatus | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceReplicaSetStatusToJSONTyped(value?: V1VirtualMachineInstanceReplicaSetStatus | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceReplicaSetStatus.d.ts.map

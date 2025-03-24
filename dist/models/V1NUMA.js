@@ -20,7 +20,7 @@ export function instanceOfV1NUMA(value) {
 export function V1NUMAFromJSON(json) {
     return V1NUMAFromJSONTyped(json, false);
 }
-export function V1NUMAFromJSONTyped(json, ignoreDiscriminator) {
+export function V1NUMAFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function V1NUMAFromJSONTyped(json, ignoreDiscriminator) {
 export function V1NUMAToJSON(json) {
     return V1NUMAToJSONTyped(json, false);
 }
-export function V1NUMAToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1NUMAToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

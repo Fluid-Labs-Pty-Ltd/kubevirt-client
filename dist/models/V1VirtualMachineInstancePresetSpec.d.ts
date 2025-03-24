@@ -35,7 +35,7 @@ export interface V1VirtualMachineInstancePresetSpec {
  */
 export declare function instanceOfV1VirtualMachineInstancePresetSpec(value: object): value is V1VirtualMachineInstancePresetSpec;
 export declare function V1VirtualMachineInstancePresetSpecFromJSON(json: any): V1VirtualMachineInstancePresetSpec;
-export declare function V1VirtualMachineInstancePresetSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstancePresetSpec;
+export declare function V1VirtualMachineInstancePresetSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstancePresetSpec;
 export declare function V1VirtualMachineInstancePresetSpecToJSON(json: any): V1VirtualMachineInstancePresetSpec;
-export declare function V1VirtualMachineInstancePresetSpecToJSONTyped(value?: V1VirtualMachineInstancePresetSpec | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstancePresetSpecToJSONTyped(value?: V1VirtualMachineInstancePresetSpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstancePresetSpec.d.ts.map

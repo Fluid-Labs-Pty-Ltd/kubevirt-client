@@ -27,7 +27,7 @@ export interface V1CommonInstancetypesDeployment {
  */
 export declare function instanceOfV1CommonInstancetypesDeployment(value: object): value is V1CommonInstancetypesDeployment;
 export declare function V1CommonInstancetypesDeploymentFromJSON(json: any): V1CommonInstancetypesDeployment;
-export declare function V1CommonInstancetypesDeploymentFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CommonInstancetypesDeployment;
+export declare function V1CommonInstancetypesDeploymentFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CommonInstancetypesDeployment;
 export declare function V1CommonInstancetypesDeploymentToJSON(json: any): V1CommonInstancetypesDeployment;
-export declare function V1CommonInstancetypesDeploymentToJSONTyped(value?: V1CommonInstancetypesDeployment | null, ignoreDiscriminator?: boolean): any;
+export declare function V1CommonInstancetypesDeploymentToJSONTyped(value?: V1CommonInstancetypesDeployment | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1CommonInstancetypesDeployment.d.ts.map

@@ -109,7 +109,7 @@ export interface V1FeatureHyperv {
  */
 export declare function instanceOfV1FeatureHyperv(value: object): value is V1FeatureHyperv;
 export declare function V1FeatureHypervFromJSON(json: any): V1FeatureHyperv;
-export declare function V1FeatureHypervFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1FeatureHyperv;
+export declare function V1FeatureHypervFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1FeatureHyperv;
 export declare function V1FeatureHypervToJSON(json: any): V1FeatureHyperv;
-export declare function V1FeatureHypervToJSONTyped(value?: V1FeatureHyperv | null, ignoreDiscriminator?: boolean): any;
+export declare function V1FeatureHypervToJSONTyped(value?: V1FeatureHyperv | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1FeatureHyperv.d.ts.map

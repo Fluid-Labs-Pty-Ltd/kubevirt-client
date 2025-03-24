@@ -33,7 +33,7 @@ export interface V1GuestAgentCommandInfo {
  */
 export declare function instanceOfV1GuestAgentCommandInfo(value: object): value is V1GuestAgentCommandInfo;
 export declare function V1GuestAgentCommandInfoFromJSON(json: any): V1GuestAgentCommandInfo;
-export declare function V1GuestAgentCommandInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1GuestAgentCommandInfo;
+export declare function V1GuestAgentCommandInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1GuestAgentCommandInfo;
 export declare function V1GuestAgentCommandInfoToJSON(json: any): V1GuestAgentCommandInfo;
-export declare function V1GuestAgentCommandInfoToJSONTyped(value?: V1GuestAgentCommandInfo | null, ignoreDiscriminator?: boolean): any;
+export declare function V1GuestAgentCommandInfoToJSONTyped(value?: V1GuestAgentCommandInfo | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1GuestAgentCommandInfo.d.ts.map

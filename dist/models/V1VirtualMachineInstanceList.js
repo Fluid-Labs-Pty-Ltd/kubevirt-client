@@ -24,7 +24,7 @@ export function instanceOfV1VirtualMachineInstanceList(value) {
 export function V1VirtualMachineInstanceListFromJSON(json) {
     return V1VirtualMachineInstanceListFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceListFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstanceListFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function V1VirtualMachineInstanceListFromJSONTyped(json, ignoreDiscrimina
 export function V1VirtualMachineInstanceListToJSON(json) {
     return V1VirtualMachineInstanceListToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceListToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstanceListToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

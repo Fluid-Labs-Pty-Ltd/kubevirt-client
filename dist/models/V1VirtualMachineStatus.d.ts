@@ -118,7 +118,7 @@ export interface V1VirtualMachineStatus {
  */
 export declare function instanceOfV1VirtualMachineStatus(value: object): value is V1VirtualMachineStatus;
 export declare function V1VirtualMachineStatusFromJSON(json: any): V1VirtualMachineStatus;
-export declare function V1VirtualMachineStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineStatus;
+export declare function V1VirtualMachineStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineStatus;
 export declare function V1VirtualMachineStatusToJSON(json: any): V1VirtualMachineStatus;
-export declare function V1VirtualMachineStatusToJSONTyped(value?: V1VirtualMachineStatus | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineStatusToJSONTyped(value?: V1VirtualMachineStatus | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineStatus.d.ts.map

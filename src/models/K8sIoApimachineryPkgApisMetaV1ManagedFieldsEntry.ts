@@ -78,7 +78,7 @@ export function K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryFromJSON(json: a
     return K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry {
+export function K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry {
     if (json == null) {
         return json;
     }
@@ -98,7 +98,7 @@ export function K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryToJSON(json: any
     return K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry | null, ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

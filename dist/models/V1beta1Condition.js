@@ -24,7 +24,7 @@ export function instanceOfV1beta1Condition(value) {
 export function V1beta1ConditionFromJSON(json) {
     return V1beta1ConditionFromJSONTyped(json, false);
 }
-export function V1beta1ConditionFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1ConditionFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function V1beta1ConditionFromJSONTyped(json, ignoreDiscriminator) {
 export function V1beta1ConditionToJSON(json) {
     return V1beta1ConditionToJSONTyped(json, false);
 }
-export function V1beta1ConditionToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1ConditionToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

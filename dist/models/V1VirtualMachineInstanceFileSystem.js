@@ -31,7 +31,7 @@ export function instanceOfV1VirtualMachineInstanceFileSystem(value) {
 export function V1VirtualMachineInstanceFileSystemFromJSON(json) {
     return V1VirtualMachineInstanceFileSystemFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceFileSystemFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstanceFileSystemFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -47,7 +47,7 @@ export function V1VirtualMachineInstanceFileSystemFromJSONTyped(json, ignoreDisc
 export function V1VirtualMachineInstanceFileSystemToJSON(json) {
     return V1VirtualMachineInstanceFileSystemToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceFileSystemToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstanceFileSystemToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -27,7 +27,7 @@ export interface V1InitrdInfo {
  */
 export declare function instanceOfV1InitrdInfo(value: object): value is V1InitrdInfo;
 export declare function V1InitrdInfoFromJSON(json: any): V1InitrdInfo;
-export declare function V1InitrdInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1InitrdInfo;
+export declare function V1InitrdInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1InitrdInfo;
 export declare function V1InitrdInfoToJSON(json: any): V1InitrdInfo;
-export declare function V1InitrdInfoToJSONTyped(value?: V1InitrdInfo | null, ignoreDiscriminator?: boolean): any;
+export declare function V1InitrdInfoToJSONTyped(value?: V1InitrdInfo | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1InitrdInfo.d.ts.map

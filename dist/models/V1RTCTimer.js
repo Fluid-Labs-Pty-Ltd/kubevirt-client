@@ -20,7 +20,7 @@ export function instanceOfV1RTCTimer(value) {
 export function V1RTCTimerFromJSON(json) {
     return V1RTCTimerFromJSONTyped(json, false);
 }
-export function V1RTCTimerFromJSONTyped(json, ignoreDiscriminator) {
+export function V1RTCTimerFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1RTCTimerFromJSONTyped(json, ignoreDiscriminator) {
 export function V1RTCTimerToJSON(json) {
     return V1RTCTimerToJSONTyped(json, false);
 }
-export function V1RTCTimerToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1RTCTimerToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -24,7 +24,7 @@ export function instanceOfV1Network(value) {
 export function V1NetworkFromJSON(json) {
     return V1NetworkFromJSONTyped(json, false);
 }
-export function V1NetworkFromJSONTyped(json, ignoreDiscriminator) {
+export function V1NetworkFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -37,7 +37,7 @@ export function V1NetworkFromJSONTyped(json, ignoreDiscriminator) {
 export function V1NetworkToJSON(json) {
     return V1NetworkToJSONTyped(json, false);
 }
-export function V1NetworkToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1NetworkToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

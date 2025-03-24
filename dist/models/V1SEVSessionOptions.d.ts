@@ -33,7 +33,7 @@ export interface V1SEVSessionOptions {
  */
 export declare function instanceOfV1SEVSessionOptions(value: object): value is V1SEVSessionOptions;
 export declare function V1SEVSessionOptionsFromJSON(json: any): V1SEVSessionOptions;
-export declare function V1SEVSessionOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SEVSessionOptions;
+export declare function V1SEVSessionOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SEVSessionOptions;
 export declare function V1SEVSessionOptionsToJSON(json: any): V1SEVSessionOptions;
-export declare function V1SEVSessionOptionsToJSONTyped(value?: V1SEVSessionOptions | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SEVSessionOptionsToJSONTyped(value?: V1SEVSessionOptions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SEVSessionOptions.d.ts.map

@@ -33,7 +33,7 @@ export interface V1beta1DataVolumeCheckpoint {
  */
 export declare function instanceOfV1beta1DataVolumeCheckpoint(value: object): value is V1beta1DataVolumeCheckpoint;
 export declare function V1beta1DataVolumeCheckpointFromJSON(json: any): V1beta1DataVolumeCheckpoint;
-export declare function V1beta1DataVolumeCheckpointFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeCheckpoint;
+export declare function V1beta1DataVolumeCheckpointFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeCheckpoint;
 export declare function V1beta1DataVolumeCheckpointToJSON(json: any): V1beta1DataVolumeCheckpoint;
-export declare function V1beta1DataVolumeCheckpointToJSONTyped(value?: V1beta1DataVolumeCheckpoint | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1DataVolumeCheckpointToJSONTyped(value?: V1beta1DataVolumeCheckpoint | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1DataVolumeCheckpoint.d.ts.map

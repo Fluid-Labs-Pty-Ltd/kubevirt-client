@@ -63,7 +63,7 @@ export interface V1beta1MemoryPreferenceRequirement {
  */
 export declare function instanceOfV1beta1MemoryPreferenceRequirement(value: object): value is V1beta1MemoryPreferenceRequirement;
 export declare function V1beta1MemoryPreferenceRequirementFromJSON(json: any): V1beta1MemoryPreferenceRequirement;
-export declare function V1beta1MemoryPreferenceRequirementFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1MemoryPreferenceRequirement;
+export declare function V1beta1MemoryPreferenceRequirementFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1MemoryPreferenceRequirement;
 export declare function V1beta1MemoryPreferenceRequirementToJSON(json: any): V1beta1MemoryPreferenceRequirement;
-export declare function V1beta1MemoryPreferenceRequirementToJSONTyped(value?: V1beta1MemoryPreferenceRequirement | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1MemoryPreferenceRequirementToJSONTyped(value?: V1beta1MemoryPreferenceRequirement | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1MemoryPreferenceRequirement.d.ts.map

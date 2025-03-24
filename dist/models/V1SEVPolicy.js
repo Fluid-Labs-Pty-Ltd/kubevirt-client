@@ -20,7 +20,7 @@ export function instanceOfV1SEVPolicy(value) {
 export function V1SEVPolicyFromJSON(json) {
     return V1SEVPolicyFromJSONTyped(json, false);
 }
-export function V1SEVPolicyFromJSONTyped(json, ignoreDiscriminator) {
+export function V1SEVPolicyFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function V1SEVPolicyFromJSONTyped(json, ignoreDiscriminator) {
 export function V1SEVPolicyToJSON(json) {
     return V1SEVPolicyToJSONTyped(json, false);
 }
-export function V1SEVPolicyToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1SEVPolicyToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

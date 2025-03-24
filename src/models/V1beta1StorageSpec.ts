@@ -135,7 +135,7 @@ export function V1beta1StorageSpecFromJSON(json: any): V1beta1StorageSpec {
     return V1beta1StorageSpecFromJSONTyped(json, false);
 }
 
-export function V1beta1StorageSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1StorageSpec {
+export function V1beta1StorageSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1StorageSpec {
     if (json == null) {
         return json;
     }
@@ -156,7 +156,7 @@ export function V1beta1StorageSpecToJSON(json: any): V1beta1StorageSpec {
     return V1beta1StorageSpecToJSONTyped(json, false);
 }
 
-export function V1beta1StorageSpecToJSONTyped(value?: V1beta1StorageSpec | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1StorageSpecToJSONTyped(value?: V1beta1StorageSpec | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

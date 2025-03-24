@@ -50,7 +50,7 @@ export function V1SecretVolumeSourceFromJSON(json: any): V1SecretVolumeSource {
     return V1SecretVolumeSourceFromJSONTyped(json, false);
 }
 
-export function V1SecretVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SecretVolumeSource {
+export function V1SecretVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SecretVolumeSource {
     if (json == null) {
         return json;
     }
@@ -66,7 +66,7 @@ export function V1SecretVolumeSourceToJSON(json: any): V1SecretVolumeSource {
     return V1SecretVolumeSourceToJSONTyped(json, false);
 }
 
-export function V1SecretVolumeSourceToJSONTyped(value?: V1SecretVolumeSource | null, ignoreDiscriminator: boolean = false): any {
+export function V1SecretVolumeSourceToJSONTyped(value?: V1SecretVolumeSource | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

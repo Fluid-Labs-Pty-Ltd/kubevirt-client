@@ -33,7 +33,7 @@ export interface V1MultusNetwork {
  */
 export declare function instanceOfV1MultusNetwork(value: object): value is V1MultusNetwork;
 export declare function V1MultusNetworkFromJSON(json: any): V1MultusNetwork;
-export declare function V1MultusNetworkFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1MultusNetwork;
+export declare function V1MultusNetworkFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1MultusNetwork;
 export declare function V1MultusNetworkToJSON(json: any): V1MultusNetwork;
-export declare function V1MultusNetworkToJSONTyped(value?: V1MultusNetwork | null, ignoreDiscriminator?: boolean): any;
+export declare function V1MultusNetworkToJSONTyped(value?: V1MultusNetwork | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1MultusNetwork.d.ts.map

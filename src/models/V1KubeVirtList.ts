@@ -72,7 +72,7 @@ export function V1KubeVirtListFromJSON(json: any): V1KubeVirtList {
     return V1KubeVirtListFromJSONTyped(json, false);
 }
 
-export function V1KubeVirtListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtList {
+export function V1KubeVirtListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1KubeVirtListToJSON(json: any): V1KubeVirtList {
     return V1KubeVirtListToJSONTyped(json, false);
 }
 
-export function V1KubeVirtListToJSONTyped(value?: V1KubeVirtList | null, ignoreDiscriminator: boolean = false): any {
+export function V1KubeVirtListToJSONTyped(value?: V1KubeVirtList | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

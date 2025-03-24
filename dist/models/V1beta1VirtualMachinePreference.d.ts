@@ -47,7 +47,7 @@ export interface V1beta1VirtualMachinePreference {
  */
 export declare function instanceOfV1beta1VirtualMachinePreference(value: object): value is V1beta1VirtualMachinePreference;
 export declare function V1beta1VirtualMachinePreferenceFromJSON(json: any): V1beta1VirtualMachinePreference;
-export declare function V1beta1VirtualMachinePreferenceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachinePreference;
+export declare function V1beta1VirtualMachinePreferenceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachinePreference;
 export declare function V1beta1VirtualMachinePreferenceToJSON(json: any): V1beta1VirtualMachinePreference;
-export declare function V1beta1VirtualMachinePreferenceToJSONTyped(value?: V1beta1VirtualMachinePreference | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1VirtualMachinePreferenceToJSONTyped(value?: V1beta1VirtualMachinePreference | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1VirtualMachinePreference.d.ts.map

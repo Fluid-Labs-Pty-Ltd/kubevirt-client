@@ -22,7 +22,7 @@ export function instanceOfV1EmptyDiskSource(value) {
 export function V1EmptyDiskSourceFromJSON(json) {
     return V1EmptyDiskSourceFromJSONTyped(json, false);
 }
-export function V1EmptyDiskSourceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1EmptyDiskSourceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1EmptyDiskSourceFromJSONTyped(json, ignoreDiscriminator) {
 export function V1EmptyDiskSourceToJSON(json) {
     return V1EmptyDiskSourceToJSONTyped(json, false);
 }
-export function V1EmptyDiskSourceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1EmptyDiskSourceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

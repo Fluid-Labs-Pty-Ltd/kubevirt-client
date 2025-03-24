@@ -48,7 +48,7 @@ export interface V1VirtualMachineInstanceMigrationStatus {
  */
 export declare function instanceOfV1VirtualMachineInstanceMigrationStatus(value: object): value is V1VirtualMachineInstanceMigrationStatus;
 export declare function V1VirtualMachineInstanceMigrationStatusFromJSON(json: any): V1VirtualMachineInstanceMigrationStatus;
-export declare function V1VirtualMachineInstanceMigrationStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigrationStatus;
+export declare function V1VirtualMachineInstanceMigrationStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigrationStatus;
 export declare function V1VirtualMachineInstanceMigrationStatusToJSON(json: any): V1VirtualMachineInstanceMigrationStatus;
-export declare function V1VirtualMachineInstanceMigrationStatusToJSONTyped(value?: V1VirtualMachineInstanceMigrationStatus | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceMigrationStatusToJSONTyped(value?: V1VirtualMachineInstanceMigrationStatus | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceMigrationStatus.d.ts.map

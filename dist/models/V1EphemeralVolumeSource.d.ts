@@ -28,7 +28,7 @@ export interface V1EphemeralVolumeSource {
  */
 export declare function instanceOfV1EphemeralVolumeSource(value: object): value is V1EphemeralVolumeSource;
 export declare function V1EphemeralVolumeSourceFromJSON(json: any): V1EphemeralVolumeSource;
-export declare function V1EphemeralVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1EphemeralVolumeSource;
+export declare function V1EphemeralVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1EphemeralVolumeSource;
 export declare function V1EphemeralVolumeSourceToJSON(json: any): V1EphemeralVolumeSource;
-export declare function V1EphemeralVolumeSourceToJSONTyped(value?: V1EphemeralVolumeSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1EphemeralVolumeSourceToJSONTyped(value?: V1EphemeralVolumeSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1EphemeralVolumeSource.d.ts.map

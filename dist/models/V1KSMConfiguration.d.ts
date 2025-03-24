@@ -28,7 +28,7 @@ export interface V1KSMConfiguration {
  */
 export declare function instanceOfV1KSMConfiguration(value: object): value is V1KSMConfiguration;
 export declare function V1KSMConfigurationFromJSON(json: any): V1KSMConfiguration;
-export declare function V1KSMConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KSMConfiguration;
+export declare function V1KSMConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KSMConfiguration;
 export declare function V1KSMConfigurationToJSON(json: any): V1KSMConfiguration;
-export declare function V1KSMConfigurationToJSONTyped(value?: V1KSMConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1KSMConfigurationToJSONTyped(value?: V1KSMConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1KSMConfiguration.d.ts.map

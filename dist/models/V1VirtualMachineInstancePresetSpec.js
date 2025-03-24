@@ -24,7 +24,7 @@ export function instanceOfV1VirtualMachineInstancePresetSpec(value) {
 export function V1VirtualMachineInstancePresetSpecFromJSON(json) {
     return V1VirtualMachineInstancePresetSpecFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstancePresetSpecFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstancePresetSpecFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,7 +36,7 @@ export function V1VirtualMachineInstancePresetSpecFromJSONTyped(json, ignoreDisc
 export function V1VirtualMachineInstancePresetSpecToJSON(json) {
     return V1VirtualMachineInstancePresetSpecToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstancePresetSpecToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstancePresetSpecToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

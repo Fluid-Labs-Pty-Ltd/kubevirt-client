@@ -27,7 +27,7 @@ export interface V1PluginBinding {
  */
 export declare function instanceOfV1PluginBinding(value: object): value is V1PluginBinding;
 export declare function V1PluginBindingFromJSON(json: any): V1PluginBinding;
-export declare function V1PluginBindingFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PluginBinding;
+export declare function V1PluginBindingFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PluginBinding;
 export declare function V1PluginBindingToJSON(json: any): V1PluginBinding;
-export declare function V1PluginBindingToJSONTyped(value?: V1PluginBinding | null, ignoreDiscriminator?: boolean): any;
+export declare function V1PluginBindingToJSONTyped(value?: V1PluginBinding | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1PluginBinding.d.ts.map

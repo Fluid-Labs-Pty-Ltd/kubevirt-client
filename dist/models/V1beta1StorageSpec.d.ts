@@ -95,7 +95,7 @@ export type V1beta1StorageSpecVolumeModeEnum = typeof V1beta1StorageSpecVolumeMo
  */
 export declare function instanceOfV1beta1StorageSpec(value: object): value is V1beta1StorageSpec;
 export declare function V1beta1StorageSpecFromJSON(json: any): V1beta1StorageSpec;
-export declare function V1beta1StorageSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1StorageSpec;
+export declare function V1beta1StorageSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1StorageSpec;
 export declare function V1beta1StorageSpecToJSON(json: any): V1beta1StorageSpec;
-export declare function V1beta1StorageSpecToJSONTyped(value?: V1beta1StorageSpec | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1StorageSpecToJSONTyped(value?: V1beta1StorageSpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1StorageSpec.d.ts.map

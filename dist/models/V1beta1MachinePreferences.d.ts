@@ -27,7 +27,7 @@ export interface V1beta1MachinePreferences {
  */
 export declare function instanceOfV1beta1MachinePreferences(value: object): value is V1beta1MachinePreferences;
 export declare function V1beta1MachinePreferencesFromJSON(json: any): V1beta1MachinePreferences;
-export declare function V1beta1MachinePreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1MachinePreferences;
+export declare function V1beta1MachinePreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1MachinePreferences;
 export declare function V1beta1MachinePreferencesToJSON(json: any): V1beta1MachinePreferences;
-export declare function V1beta1MachinePreferencesToJSONTyped(value?: V1beta1MachinePreferences | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1MachinePreferencesToJSONTyped(value?: V1beta1MachinePreferences | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1MachinePreferences.d.ts.map

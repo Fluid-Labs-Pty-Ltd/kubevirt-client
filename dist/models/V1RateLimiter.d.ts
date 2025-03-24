@@ -28,7 +28,7 @@ export interface V1RateLimiter {
  */
 export declare function instanceOfV1RateLimiter(value: object): value is V1RateLimiter;
 export declare function V1RateLimiterFromJSON(json: any): V1RateLimiter;
-export declare function V1RateLimiterFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1RateLimiter;
+export declare function V1RateLimiterFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1RateLimiter;
 export declare function V1RateLimiterToJSON(json: any): V1RateLimiter;
-export declare function V1RateLimiterToJSONTyped(value?: V1RateLimiter | null, ignoreDiscriminator?: boolean): any;
+export declare function V1RateLimiterToJSONTyped(value?: V1RateLimiter | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1RateLimiter.d.ts.map

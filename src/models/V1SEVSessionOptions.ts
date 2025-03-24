@@ -44,7 +44,7 @@ export function V1SEVSessionOptionsFromJSON(json: any): V1SEVSessionOptions {
     return V1SEVSessionOptionsFromJSONTyped(json, false);
 }
 
-export function V1SEVSessionOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SEVSessionOptions {
+export function V1SEVSessionOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SEVSessionOptions {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1SEVSessionOptionsToJSON(json: any): V1SEVSessionOptions {
     return V1SEVSessionOptionsToJSONTyped(json, false);
 }
 
-export function V1SEVSessionOptionsToJSONTyped(value?: V1SEVSessionOptions | null, ignoreDiscriminator: boolean = false): any {
+export function V1SEVSessionOptionsToJSONTyped(value?: V1SEVSessionOptions | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

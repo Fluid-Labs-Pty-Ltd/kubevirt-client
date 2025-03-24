@@ -34,7 +34,7 @@ export interface V1DownwardAPIVolumeSource {
  */
 export declare function instanceOfV1DownwardAPIVolumeSource(value: object): value is V1DownwardAPIVolumeSource;
 export declare function V1DownwardAPIVolumeSourceFromJSON(json: any): V1DownwardAPIVolumeSource;
-export declare function V1DownwardAPIVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DownwardAPIVolumeSource;
+export declare function V1DownwardAPIVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DownwardAPIVolumeSource;
 export declare function V1DownwardAPIVolumeSourceToJSON(json: any): V1DownwardAPIVolumeSource;
-export declare function V1DownwardAPIVolumeSourceToJSONTyped(value?: V1DownwardAPIVolumeSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1DownwardAPIVolumeSourceToJSONTyped(value?: V1DownwardAPIVolumeSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1DownwardAPIVolumeSource.d.ts.map

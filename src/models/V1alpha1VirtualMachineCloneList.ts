@@ -72,7 +72,7 @@ export function V1alpha1VirtualMachineCloneListFromJSON(json: any): V1alpha1Virt
     return V1alpha1VirtualMachineCloneListFromJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineCloneListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneList {
+export function V1alpha1VirtualMachineCloneListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1alpha1VirtualMachineCloneListToJSON(json: any): V1alpha1Virtua
     return V1alpha1VirtualMachineCloneListToJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineCloneListToJSONTyped(value?: V1alpha1VirtualMachineCloneList | null, ignoreDiscriminator: boolean = false): any {
+export function V1alpha1VirtualMachineCloneListToJSONTyped(value?: V1alpha1VirtualMachineCloneList | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

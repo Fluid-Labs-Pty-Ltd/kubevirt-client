@@ -27,7 +27,7 @@ export interface V1SEVPolicy {
  */
 export declare function instanceOfV1SEVPolicy(value: object): value is V1SEVPolicy;
 export declare function V1SEVPolicyFromJSON(json: any): V1SEVPolicy;
-export declare function V1SEVPolicyFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SEVPolicy;
+export declare function V1SEVPolicyFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SEVPolicy;
 export declare function V1SEVPolicyToJSON(json: any): V1SEVPolicy;
-export declare function V1SEVPolicyToJSONTyped(value?: V1SEVPolicy | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SEVPolicyToJSONTyped(value?: V1SEVPolicy | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SEVPolicy.d.ts.map

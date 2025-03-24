@@ -33,7 +33,7 @@ export interface V1HPETTimer {
  */
 export declare function instanceOfV1HPETTimer(value: object): value is V1HPETTimer;
 export declare function V1HPETTimerFromJSON(json: any): V1HPETTimer;
-export declare function V1HPETTimerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1HPETTimer;
+export declare function V1HPETTimerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1HPETTimer;
 export declare function V1HPETTimerToJSON(json: any): V1HPETTimer;
-export declare function V1HPETTimerToJSONTyped(value?: V1HPETTimer | null, ignoreDiscriminator?: boolean): any;
+export declare function V1HPETTimerToJSONTyped(value?: V1HPETTimer | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1HPETTimer.d.ts.map

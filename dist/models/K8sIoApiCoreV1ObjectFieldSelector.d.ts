@@ -33,7 +33,7 @@ export interface K8sIoApiCoreV1ObjectFieldSelector {
  */
 export declare function instanceOfK8sIoApiCoreV1ObjectFieldSelector(value: object): value is K8sIoApiCoreV1ObjectFieldSelector;
 export declare function K8sIoApiCoreV1ObjectFieldSelectorFromJSON(json: any): K8sIoApiCoreV1ObjectFieldSelector;
-export declare function K8sIoApiCoreV1ObjectFieldSelectorFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1ObjectFieldSelector;
+export declare function K8sIoApiCoreV1ObjectFieldSelectorFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1ObjectFieldSelector;
 export declare function K8sIoApiCoreV1ObjectFieldSelectorToJSON(json: any): K8sIoApiCoreV1ObjectFieldSelector;
-export declare function K8sIoApiCoreV1ObjectFieldSelectorToJSONTyped(value?: K8sIoApiCoreV1ObjectFieldSelector | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1ObjectFieldSelectorToJSONTyped(value?: K8sIoApiCoreV1ObjectFieldSelector | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1ObjectFieldSelector.d.ts.map

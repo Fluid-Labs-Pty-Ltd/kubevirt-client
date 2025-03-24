@@ -28,7 +28,7 @@ export interface V1VirtualMachineInstanceProfile {
  */
 export declare function instanceOfV1VirtualMachineInstanceProfile(value: object): value is V1VirtualMachineInstanceProfile;
 export declare function V1VirtualMachineInstanceProfileFromJSON(json: any): V1VirtualMachineInstanceProfile;
-export declare function V1VirtualMachineInstanceProfileFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceProfile;
+export declare function V1VirtualMachineInstanceProfileFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceProfile;
 export declare function V1VirtualMachineInstanceProfileToJSON(json: any): V1VirtualMachineInstanceProfile;
-export declare function V1VirtualMachineInstanceProfileToJSONTyped(value?: V1VirtualMachineInstanceProfile | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceProfileToJSONTyped(value?: V1VirtualMachineInstanceProfile | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceProfile.d.ts.map

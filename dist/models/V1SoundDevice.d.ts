@@ -33,7 +33,7 @@ export interface V1SoundDevice {
  */
 export declare function instanceOfV1SoundDevice(value: object): value is V1SoundDevice;
 export declare function V1SoundDeviceFromJSON(json: any): V1SoundDevice;
-export declare function V1SoundDeviceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SoundDevice;
+export declare function V1SoundDeviceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SoundDevice;
 export declare function V1SoundDeviceToJSON(json: any): V1SoundDevice;
-export declare function V1SoundDeviceToJSONTyped(value?: V1SoundDevice | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SoundDeviceToJSONTyped(value?: V1SoundDevice | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SoundDevice.d.ts.map

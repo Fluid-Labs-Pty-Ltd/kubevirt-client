@@ -39,7 +39,7 @@ export interface V1MemoryDumpVolumeSource {
  */
 export declare function instanceOfV1MemoryDumpVolumeSource(value: object): value is V1MemoryDumpVolumeSource;
 export declare function V1MemoryDumpVolumeSourceFromJSON(json: any): V1MemoryDumpVolumeSource;
-export declare function V1MemoryDumpVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1MemoryDumpVolumeSource;
+export declare function V1MemoryDumpVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1MemoryDumpVolumeSource;
 export declare function V1MemoryDumpVolumeSourceToJSON(json: any): V1MemoryDumpVolumeSource;
-export declare function V1MemoryDumpVolumeSourceToJSONTyped(value?: V1MemoryDumpVolumeSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1MemoryDumpVolumeSourceToJSONTyped(value?: V1MemoryDumpVolumeSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1MemoryDumpVolumeSource.d.ts.map

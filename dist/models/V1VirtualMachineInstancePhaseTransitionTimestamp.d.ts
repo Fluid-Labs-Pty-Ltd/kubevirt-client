@@ -33,7 +33,7 @@ export interface V1VirtualMachineInstancePhaseTransitionTimestamp {
  */
 export declare function instanceOfV1VirtualMachineInstancePhaseTransitionTimestamp(value: object): value is V1VirtualMachineInstancePhaseTransitionTimestamp;
 export declare function V1VirtualMachineInstancePhaseTransitionTimestampFromJSON(json: any): V1VirtualMachineInstancePhaseTransitionTimestamp;
-export declare function V1VirtualMachineInstancePhaseTransitionTimestampFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstancePhaseTransitionTimestamp;
+export declare function V1VirtualMachineInstancePhaseTransitionTimestampFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstancePhaseTransitionTimestamp;
 export declare function V1VirtualMachineInstancePhaseTransitionTimestampToJSON(json: any): V1VirtualMachineInstancePhaseTransitionTimestamp;
-export declare function V1VirtualMachineInstancePhaseTransitionTimestampToJSONTyped(value?: V1VirtualMachineInstancePhaseTransitionTimestamp | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstancePhaseTransitionTimestampToJSONTyped(value?: V1VirtualMachineInstancePhaseTransitionTimestamp | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstancePhaseTransitionTimestamp.d.ts.map

@@ -24,7 +24,7 @@ export function instanceOfK8sIoApiCoreV1HTTPHeader(value) {
 export function K8sIoApiCoreV1HTTPHeaderFromJSON(json) {
     return K8sIoApiCoreV1HTTPHeaderFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1HTTPHeaderFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1HTTPHeaderFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,7 +36,7 @@ export function K8sIoApiCoreV1HTTPHeaderFromJSONTyped(json, ignoreDiscriminator)
 export function K8sIoApiCoreV1HTTPHeaderToJSON(json) {
     return K8sIoApiCoreV1HTTPHeaderToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1HTTPHeaderToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1HTTPHeaderToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

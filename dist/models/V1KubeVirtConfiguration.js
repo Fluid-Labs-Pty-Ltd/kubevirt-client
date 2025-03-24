@@ -45,7 +45,7 @@ export function instanceOfV1KubeVirtConfiguration(value) {
 export function V1KubeVirtConfigurationFromJSON(json) {
     return V1KubeVirtConfigurationFromJSONTyped(json, false);
 }
-export function V1KubeVirtConfigurationFromJSONTyped(json, ignoreDiscriminator) {
+export function V1KubeVirtConfigurationFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -92,7 +92,7 @@ export function V1KubeVirtConfigurationFromJSONTyped(json, ignoreDiscriminator) 
 export function V1KubeVirtConfigurationToJSON(json) {
     return V1KubeVirtConfigurationToJSONTyped(json, false);
 }
-export function V1KubeVirtConfigurationToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1KubeVirtConfigurationToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -22,7 +22,7 @@ export function instanceOfV1VirtualMachineStateChangeRequest(value) {
 export function V1VirtualMachineStateChangeRequestFromJSON(json) {
     return V1VirtualMachineStateChangeRequestFromJSONTyped(json, false);
 }
-export function V1VirtualMachineStateChangeRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineStateChangeRequestFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,7 +35,7 @@ export function V1VirtualMachineStateChangeRequestFromJSONTyped(json, ignoreDisc
 export function V1VirtualMachineStateChangeRequestToJSON(json) {
     return V1VirtualMachineStateChangeRequestToJSONTyped(json, false);
 }
-export function V1VirtualMachineStateChangeRequestToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineStateChangeRequestToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -140,7 +140,7 @@ export function V1DiskFromJSON(json: any): V1Disk {
     return V1DiskFromJSONTyped(json, false);
 }
 
-export function V1DiskFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Disk {
+export function V1DiskFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Disk {
     if (json == null) {
         return json;
     }
@@ -166,7 +166,7 @@ export function V1DiskToJSON(json: any): V1Disk {
     return V1DiskToJSONTyped(json, false);
 }
 
-export function V1DiskToJSONTyped(value?: V1Disk | null, ignoreDiscriminator: boolean = false): any {
+export function V1DiskToJSONTyped(value?: V1Disk | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

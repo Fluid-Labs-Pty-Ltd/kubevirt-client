@@ -24,7 +24,7 @@ export function instanceOfV1beta1DataVolumeSourcePVC(value) {
 export function V1beta1DataVolumeSourcePVCFromJSON(json) {
     return V1beta1DataVolumeSourcePVCFromJSONTyped(json, false);
 }
-export function V1beta1DataVolumeSourcePVCFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1DataVolumeSourcePVCFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,7 +36,7 @@ export function V1beta1DataVolumeSourcePVCFromJSONTyped(json, ignoreDiscriminato
 export function V1beta1DataVolumeSourcePVCToJSON(json) {
     return V1beta1DataVolumeSourcePVCToJSONTyped(json, false);
 }
-export function V1beta1DataVolumeSourcePVCToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1DataVolumeSourcePVCToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

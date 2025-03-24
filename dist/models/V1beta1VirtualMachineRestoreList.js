@@ -26,7 +26,7 @@ export function instanceOfV1beta1VirtualMachineRestoreList(value) {
 export function V1beta1VirtualMachineRestoreListFromJSON(json) {
     return V1beta1VirtualMachineRestoreListFromJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineRestoreListFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1VirtualMachineRestoreListFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -40,7 +40,7 @@ export function V1beta1VirtualMachineRestoreListFromJSONTyped(json, ignoreDiscri
 export function V1beta1VirtualMachineRestoreListToJSON(json) {
     return V1beta1VirtualMachineRestoreListToJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineRestoreListToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1VirtualMachineRestoreListToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

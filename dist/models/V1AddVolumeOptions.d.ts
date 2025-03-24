@@ -47,7 +47,7 @@ export interface V1AddVolumeOptions {
  */
 export declare function instanceOfV1AddVolumeOptions(value: object): value is V1AddVolumeOptions;
 export declare function V1AddVolumeOptionsFromJSON(json: any): V1AddVolumeOptions;
-export declare function V1AddVolumeOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1AddVolumeOptions;
+export declare function V1AddVolumeOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1AddVolumeOptions;
 export declare function V1AddVolumeOptionsToJSON(json: any): V1AddVolumeOptions;
-export declare function V1AddVolumeOptionsToJSONTyped(value?: V1AddVolumeOptions | null, ignoreDiscriminator?: boolean): any;
+export declare function V1AddVolumeOptionsToJSONTyped(value?: V1AddVolumeOptions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1AddVolumeOptions.d.ts.map

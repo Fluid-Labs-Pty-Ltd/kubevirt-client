@@ -20,7 +20,7 @@ export function instanceOfV1ClockOffsetUTC(value) {
 export function V1ClockOffsetUTCFromJSON(json) {
     return V1ClockOffsetUTCFromJSONTyped(json, false);
 }
-export function V1ClockOffsetUTCFromJSONTyped(json, ignoreDiscriminator) {
+export function V1ClockOffsetUTCFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function V1ClockOffsetUTCFromJSONTyped(json, ignoreDiscriminator) {
 export function V1ClockOffsetUTCToJSON(json) {
     return V1ClockOffsetUTCToJSONTyped(json, false);
 }
-export function V1ClockOffsetUTCToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1ClockOffsetUTCToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

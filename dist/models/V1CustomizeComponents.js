@@ -22,7 +22,7 @@ export function instanceOfV1CustomizeComponents(value) {
 export function V1CustomizeComponentsFromJSON(json) {
     return V1CustomizeComponentsFromJSONTyped(json, false);
 }
-export function V1CustomizeComponentsFromJSONTyped(json, ignoreDiscriminator) {
+export function V1CustomizeComponentsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function V1CustomizeComponentsFromJSONTyped(json, ignoreDiscriminator) {
 export function V1CustomizeComponentsToJSON(json) {
     return V1CustomizeComponentsToJSONTyped(json, false);
 }
-export function V1CustomizeComponentsToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1CustomizeComponentsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

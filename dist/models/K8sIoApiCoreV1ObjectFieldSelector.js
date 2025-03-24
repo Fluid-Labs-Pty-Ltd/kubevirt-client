@@ -22,7 +22,7 @@ export function instanceOfK8sIoApiCoreV1ObjectFieldSelector(value) {
 export function K8sIoApiCoreV1ObjectFieldSelectorFromJSON(json) {
     return K8sIoApiCoreV1ObjectFieldSelectorFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1ObjectFieldSelectorFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1ObjectFieldSelectorFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function K8sIoApiCoreV1ObjectFieldSelectorFromJSONTyped(json, ignoreDiscr
 export function K8sIoApiCoreV1ObjectFieldSelectorToJSON(json) {
     return K8sIoApiCoreV1ObjectFieldSelectorToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1ObjectFieldSelectorToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1ObjectFieldSelectorToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

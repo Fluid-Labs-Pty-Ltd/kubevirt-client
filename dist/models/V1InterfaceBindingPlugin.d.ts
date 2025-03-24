@@ -59,7 +59,7 @@ export interface V1InterfaceBindingPlugin {
  */
 export declare function instanceOfV1InterfaceBindingPlugin(value: object): value is V1InterfaceBindingPlugin;
 export declare function V1InterfaceBindingPluginFromJSON(json: any): V1InterfaceBindingPlugin;
-export declare function V1InterfaceBindingPluginFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1InterfaceBindingPlugin;
+export declare function V1InterfaceBindingPluginFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1InterfaceBindingPlugin;
 export declare function V1InterfaceBindingPluginToJSON(json: any): V1InterfaceBindingPlugin;
-export declare function V1InterfaceBindingPluginToJSONTyped(value?: V1InterfaceBindingPlugin | null, ignoreDiscriminator?: boolean): any;
+export declare function V1InterfaceBindingPluginToJSONTyped(value?: V1InterfaceBindingPlugin | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1InterfaceBindingPlugin.d.ts.map

@@ -24,7 +24,7 @@ export function instanceOfV1MediatedHostDevice(value) {
 export function V1MediatedHostDeviceFromJSON(json) {
     return V1MediatedHostDeviceFromJSONTyped(json, false);
 }
-export function V1MediatedHostDeviceFromJSONTyped(json, ignoreDiscriminator) {
+export function V1MediatedHostDeviceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -37,7 +37,7 @@ export function V1MediatedHostDeviceFromJSONTyped(json, ignoreDiscriminator) {
 export function V1MediatedHostDeviceToJSON(json) {
     return V1MediatedHostDeviceToJSONTyped(json, false);
 }
-export function V1MediatedHostDeviceToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1MediatedHostDeviceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

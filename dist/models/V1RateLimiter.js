@@ -21,7 +21,7 @@ export function instanceOfV1RateLimiter(value) {
 export function V1RateLimiterFromJSON(json) {
     return V1RateLimiterFromJSONTyped(json, false);
 }
-export function V1RateLimiterFromJSONTyped(json, ignoreDiscriminator) {
+export function V1RateLimiterFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1RateLimiterFromJSONTyped(json, ignoreDiscriminator) {
 export function V1RateLimiterToJSON(json) {
     return V1RateLimiterToJSONTyped(json, false);
 }
-export function V1RateLimiterToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1RateLimiterToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

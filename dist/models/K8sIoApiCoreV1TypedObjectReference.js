@@ -24,7 +24,7 @@ export function instanceOfK8sIoApiCoreV1TypedObjectReference(value) {
 export function K8sIoApiCoreV1TypedObjectReferenceFromJSON(json) {
     return K8sIoApiCoreV1TypedObjectReferenceFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1TypedObjectReferenceFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1TypedObjectReferenceFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function K8sIoApiCoreV1TypedObjectReferenceFromJSONTyped(json, ignoreDisc
 export function K8sIoApiCoreV1TypedObjectReferenceToJSON(json) {
     return K8sIoApiCoreV1TypedObjectReferenceToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1TypedObjectReferenceToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1TypedObjectReferenceToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

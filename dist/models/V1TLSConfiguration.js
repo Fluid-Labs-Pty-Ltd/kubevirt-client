@@ -20,7 +20,7 @@ export function instanceOfV1TLSConfiguration(value) {
 export function V1TLSConfigurationFromJSON(json) {
     return V1TLSConfigurationFromJSONTyped(json, false);
 }
-export function V1TLSConfigurationFromJSONTyped(json, ignoreDiscriminator) {
+export function V1TLSConfigurationFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1TLSConfigurationFromJSONTyped(json, ignoreDiscriminator) {
 export function V1TLSConfigurationToJSON(json) {
     return V1TLSConfigurationToJSONTyped(json, false);
 }
-export function V1TLSConfigurationToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1TLSConfigurationToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

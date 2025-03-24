@@ -310,7 +310,7 @@ export type V1KubeVirtConfigurationImagePullPolicyEnum = typeof V1KubeVirtConfig
  */
 export declare function instanceOfV1KubeVirtConfiguration(value: object): value is V1KubeVirtConfiguration;
 export declare function V1KubeVirtConfigurationFromJSON(json: any): V1KubeVirtConfiguration;
-export declare function V1KubeVirtConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtConfiguration;
+export declare function V1KubeVirtConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtConfiguration;
 export declare function V1KubeVirtConfigurationToJSON(json: any): V1KubeVirtConfiguration;
-export declare function V1KubeVirtConfigurationToJSONTyped(value?: V1KubeVirtConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1KubeVirtConfigurationToJSONTyped(value?: V1KubeVirtConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1KubeVirtConfiguration.d.ts.map

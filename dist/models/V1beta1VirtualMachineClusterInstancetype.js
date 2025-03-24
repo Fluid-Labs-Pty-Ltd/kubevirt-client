@@ -24,7 +24,7 @@ export function instanceOfV1beta1VirtualMachineClusterInstancetype(value) {
 export function V1beta1VirtualMachineClusterInstancetypeFromJSON(json) {
     return V1beta1VirtualMachineClusterInstancetypeFromJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineClusterInstancetypeFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1VirtualMachineClusterInstancetypeFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function V1beta1VirtualMachineClusterInstancetypeFromJSONTyped(json, igno
 export function V1beta1VirtualMachineClusterInstancetypeToJSON(json) {
     return V1beta1VirtualMachineClusterInstancetypeToJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineClusterInstancetypeToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1VirtualMachineClusterInstancetypeToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

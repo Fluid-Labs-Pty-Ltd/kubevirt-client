@@ -27,7 +27,7 @@ export interface V1FeatureState {
  */
 export declare function instanceOfV1FeatureState(value: object): value is V1FeatureState;
 export declare function V1FeatureStateFromJSON(json: any): V1FeatureState;
-export declare function V1FeatureStateFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1FeatureState;
+export declare function V1FeatureStateFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1FeatureState;
 export declare function V1FeatureStateToJSON(json: any): V1FeatureState;
-export declare function V1FeatureStateToJSONTyped(value?: V1FeatureState | null, ignoreDiscriminator?: boolean): any;
+export declare function V1FeatureStateToJSONTyped(value?: V1FeatureState | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1FeatureState.d.ts.map

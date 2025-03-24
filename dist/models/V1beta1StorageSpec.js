@@ -40,7 +40,7 @@ export function instanceOfV1beta1StorageSpec(value) {
 export function V1beta1StorageSpecFromJSON(json) {
     return V1beta1StorageSpecFromJSONTyped(json, false);
 }
-export function V1beta1StorageSpecFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1StorageSpecFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -58,7 +58,7 @@ export function V1beta1StorageSpecFromJSONTyped(json, ignoreDiscriminator) {
 export function V1beta1StorageSpecToJSON(json) {
     return V1beta1StorageSpecToJSONTyped(json, false);
 }
-export function V1beta1StorageSpecToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1StorageSpecToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

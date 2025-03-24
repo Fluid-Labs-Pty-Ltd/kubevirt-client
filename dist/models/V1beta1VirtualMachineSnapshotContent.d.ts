@@ -54,7 +54,7 @@ export interface V1beta1VirtualMachineSnapshotContent {
  */
 export declare function instanceOfV1beta1VirtualMachineSnapshotContent(value: object): value is V1beta1VirtualMachineSnapshotContent;
 export declare function V1beta1VirtualMachineSnapshotContentFromJSON(json: any): V1beta1VirtualMachineSnapshotContent;
-export declare function V1beta1VirtualMachineSnapshotContentFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshotContent;
+export declare function V1beta1VirtualMachineSnapshotContentFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshotContent;
 export declare function V1beta1VirtualMachineSnapshotContentToJSON(json: any): V1beta1VirtualMachineSnapshotContent;
-export declare function V1beta1VirtualMachineSnapshotContentToJSONTyped(value?: V1beta1VirtualMachineSnapshotContent | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1VirtualMachineSnapshotContentToJSONTyped(value?: V1beta1VirtualMachineSnapshotContent | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1VirtualMachineSnapshotContent.d.ts.map

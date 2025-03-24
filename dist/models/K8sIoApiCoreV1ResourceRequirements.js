@@ -21,7 +21,7 @@ export function instanceOfK8sIoApiCoreV1ResourceRequirements(value) {
 export function K8sIoApiCoreV1ResourceRequirementsFromJSON(json) {
     return K8sIoApiCoreV1ResourceRequirementsFromJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1ResourceRequirementsFromJSONTyped(json, ignoreDiscriminator) {
+export function K8sIoApiCoreV1ResourceRequirementsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function K8sIoApiCoreV1ResourceRequirementsFromJSONTyped(json, ignoreDisc
 export function K8sIoApiCoreV1ResourceRequirementsToJSON(json) {
     return K8sIoApiCoreV1ResourceRequirementsToJSONTyped(json, false);
 }
-export function K8sIoApiCoreV1ResourceRequirementsToJSONTyped(value, ignoreDiscriminator = false) {
+export function K8sIoApiCoreV1ResourceRequirementsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

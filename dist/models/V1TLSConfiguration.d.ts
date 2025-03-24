@@ -37,7 +37,7 @@ export interface V1TLSConfiguration {
  */
 export declare function instanceOfV1TLSConfiguration(value: object): value is V1TLSConfiguration;
 export declare function V1TLSConfigurationFromJSON(json: any): V1TLSConfiguration;
-export declare function V1TLSConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1TLSConfiguration;
+export declare function V1TLSConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1TLSConfiguration;
 export declare function V1TLSConfigurationToJSON(json: any): V1TLSConfiguration;
-export declare function V1TLSConfigurationToJSONTyped(value?: V1TLSConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1TLSConfigurationToJSONTyped(value?: V1TLSConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1TLSConfiguration.d.ts.map

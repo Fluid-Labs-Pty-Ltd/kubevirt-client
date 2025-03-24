@@ -35,7 +35,7 @@ export interface V1Bootloader {
  */
 export declare function instanceOfV1Bootloader(value: object): value is V1Bootloader;
 export declare function V1BootloaderFromJSON(json: any): V1Bootloader;
-export declare function V1BootloaderFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Bootloader;
+export declare function V1BootloaderFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Bootloader;
 export declare function V1BootloaderToJSON(json: any): V1Bootloader;
-export declare function V1BootloaderToJSONTyped(value?: V1Bootloader | null, ignoreDiscriminator?: boolean): any;
+export declare function V1BootloaderToJSONTyped(value?: V1Bootloader | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Bootloader.d.ts.map

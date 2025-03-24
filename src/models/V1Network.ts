@@ -66,7 +66,7 @@ export function V1NetworkFromJSON(json: any): V1Network {
     return V1NetworkFromJSONTyped(json, false);
 }
 
-export function V1NetworkFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Network {
+export function V1NetworkFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Network {
     if (json == null) {
         return json;
     }
@@ -82,7 +82,7 @@ export function V1NetworkToJSON(json: any): V1Network {
     return V1NetworkToJSONTyped(json, false);
 }
 
-export function V1NetworkToJSONTyped(value?: V1Network | null, ignoreDiscriminator: boolean = false): any {
+export function V1NetworkToJSONTyped(value?: V1Network | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

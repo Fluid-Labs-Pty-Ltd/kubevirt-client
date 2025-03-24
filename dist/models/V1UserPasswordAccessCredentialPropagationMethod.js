@@ -20,7 +20,7 @@ export function instanceOfV1UserPasswordAccessCredentialPropagationMethod(value)
 export function V1UserPasswordAccessCredentialPropagationMethodFromJSON(json) {
     return V1UserPasswordAccessCredentialPropagationMethodFromJSONTyped(json, false);
 }
-export function V1UserPasswordAccessCredentialPropagationMethodFromJSONTyped(json, ignoreDiscriminator) {
+export function V1UserPasswordAccessCredentialPropagationMethodFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function V1UserPasswordAccessCredentialPropagationMethodFromJSONTyped(jso
 export function V1UserPasswordAccessCredentialPropagationMethodToJSON(json) {
     return V1UserPasswordAccessCredentialPropagationMethodToJSONTyped(json, false);
 }
-export function V1UserPasswordAccessCredentialPropagationMethodToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1UserPasswordAccessCredentialPropagationMethodToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

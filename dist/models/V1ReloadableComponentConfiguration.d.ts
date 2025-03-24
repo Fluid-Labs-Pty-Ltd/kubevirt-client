@@ -28,7 +28,7 @@ export interface V1ReloadableComponentConfiguration {
  */
 export declare function instanceOfV1ReloadableComponentConfiguration(value: object): value is V1ReloadableComponentConfiguration;
 export declare function V1ReloadableComponentConfigurationFromJSON(json: any): V1ReloadableComponentConfiguration;
-export declare function V1ReloadableComponentConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ReloadableComponentConfiguration;
+export declare function V1ReloadableComponentConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ReloadableComponentConfiguration;
 export declare function V1ReloadableComponentConfigurationToJSON(json: any): V1ReloadableComponentConfiguration;
-export declare function V1ReloadableComponentConfigurationToJSONTyped(value?: V1ReloadableComponentConfiguration | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ReloadableComponentConfigurationToJSONTyped(value?: V1ReloadableComponentConfiguration | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1ReloadableComponentConfiguration.d.ts.map

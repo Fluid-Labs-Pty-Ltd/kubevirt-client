@@ -56,7 +56,7 @@ export interface V1Timer {
  */
 export declare function instanceOfV1Timer(value: object): value is V1Timer;
 export declare function V1TimerFromJSON(json: any): V1Timer;
-export declare function V1TimerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Timer;
+export declare function V1TimerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Timer;
 export declare function V1TimerToJSON(json: any): V1Timer;
-export declare function V1TimerToJSONTyped(value?: V1Timer | null, ignoreDiscriminator?: boolean): any;
+export declare function V1TimerToJSONTyped(value?: V1Timer | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Timer.d.ts.map

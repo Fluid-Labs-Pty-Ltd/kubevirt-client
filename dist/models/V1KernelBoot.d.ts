@@ -34,7 +34,7 @@ export interface V1KernelBoot {
  */
 export declare function instanceOfV1KernelBoot(value: object): value is V1KernelBoot;
 export declare function V1KernelBootFromJSON(json: any): V1KernelBoot;
-export declare function V1KernelBootFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KernelBoot;
+export declare function V1KernelBootFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KernelBoot;
 export declare function V1KernelBootToJSON(json: any): V1KernelBoot;
-export declare function V1KernelBootToJSONTyped(value?: V1KernelBoot | null, ignoreDiscriminator?: boolean): any;
+export declare function V1KernelBootToJSONTyped(value?: V1KernelBoot | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1KernelBoot.d.ts.map

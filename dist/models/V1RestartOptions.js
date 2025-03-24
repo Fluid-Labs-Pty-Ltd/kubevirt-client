@@ -20,7 +20,7 @@ export function instanceOfV1RestartOptions(value) {
 export function V1RestartOptionsFromJSON(json) {
     return V1RestartOptionsFromJSONTyped(json, false);
 }
-export function V1RestartOptionsFromJSONTyped(json, ignoreDiscriminator) {
+export function V1RestartOptionsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function V1RestartOptionsFromJSONTyped(json, ignoreDiscriminator) {
 export function V1RestartOptionsToJSON(json) {
     return V1RestartOptionsToJSONTyped(json, false);
 }
-export function V1RestartOptionsToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1RestartOptionsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

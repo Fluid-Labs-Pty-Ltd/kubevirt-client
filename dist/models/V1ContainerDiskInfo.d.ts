@@ -27,7 +27,7 @@ export interface V1ContainerDiskInfo {
  */
 export declare function instanceOfV1ContainerDiskInfo(value: object): value is V1ContainerDiskInfo;
 export declare function V1ContainerDiskInfoFromJSON(json: any): V1ContainerDiskInfo;
-export declare function V1ContainerDiskInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ContainerDiskInfo;
+export declare function V1ContainerDiskInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ContainerDiskInfo;
 export declare function V1ContainerDiskInfoToJSON(json: any): V1ContainerDiskInfo;
-export declare function V1ContainerDiskInfoToJSONTyped(value?: V1ContainerDiskInfo | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ContainerDiskInfoToJSONTyped(value?: V1ContainerDiskInfo | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1ContainerDiskInfo.d.ts.map

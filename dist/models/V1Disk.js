@@ -26,7 +26,7 @@ export function instanceOfV1Disk(value) {
 export function V1DiskFromJSON(json) {
     return V1DiskFromJSONTyped(json, false);
 }
-export function V1DiskFromJSONTyped(json, ignoreDiscriminator) {
+export function V1DiskFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -49,7 +49,7 @@ export function V1DiskFromJSONTyped(json, ignoreDiscriminator) {
 export function V1DiskToJSON(json) {
     return V1DiskToJSONTyped(json, false);
 }
-export function V1DiskToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1DiskToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

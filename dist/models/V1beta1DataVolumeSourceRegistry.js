@@ -20,7 +20,7 @@ export function instanceOfV1beta1DataVolumeSourceRegistry(value) {
 export function V1beta1DataVolumeSourceRegistryFromJSON(json) {
     return V1beta1DataVolumeSourceRegistryFromJSONTyped(json, false);
 }
-export function V1beta1DataVolumeSourceRegistryFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1DataVolumeSourceRegistryFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,7 +35,7 @@ export function V1beta1DataVolumeSourceRegistryFromJSONTyped(json, ignoreDiscrim
 export function V1beta1DataVolumeSourceRegistryToJSON(json) {
     return V1beta1DataVolumeSourceRegistryToJSONTyped(json, false);
 }
-export function V1beta1DataVolumeSourceRegistryToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1DataVolumeSourceRegistryToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

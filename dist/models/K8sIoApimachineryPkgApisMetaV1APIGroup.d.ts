@@ -59,7 +59,7 @@ export interface K8sIoApimachineryPkgApisMetaV1APIGroup {
  */
 export declare function instanceOfK8sIoApimachineryPkgApisMetaV1APIGroup(value: object): value is K8sIoApimachineryPkgApisMetaV1APIGroup;
 export declare function K8sIoApimachineryPkgApisMetaV1APIGroupFromJSON(json: any): K8sIoApimachineryPkgApisMetaV1APIGroup;
-export declare function K8sIoApimachineryPkgApisMetaV1APIGroupFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1APIGroup;
+export declare function K8sIoApimachineryPkgApisMetaV1APIGroupFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1APIGroup;
 export declare function K8sIoApimachineryPkgApisMetaV1APIGroupToJSON(json: any): K8sIoApimachineryPkgApisMetaV1APIGroup;
-export declare function K8sIoApimachineryPkgApisMetaV1APIGroupToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1APIGroup | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApimachineryPkgApisMetaV1APIGroupToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1APIGroup | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1APIGroup.d.ts.map

@@ -51,7 +51,7 @@ export interface V1beta1DataVolumeSourceRegistry {
  */
 export declare function instanceOfV1beta1DataVolumeSourceRegistry(value: object): value is V1beta1DataVolumeSourceRegistry;
 export declare function V1beta1DataVolumeSourceRegistryFromJSON(json: any): V1beta1DataVolumeSourceRegistry;
-export declare function V1beta1DataVolumeSourceRegistryFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSourceRegistry;
+export declare function V1beta1DataVolumeSourceRegistryFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSourceRegistry;
 export declare function V1beta1DataVolumeSourceRegistryToJSON(json: any): V1beta1DataVolumeSourceRegistry;
-export declare function V1beta1DataVolumeSourceRegistryToJSONTyped(value?: V1beta1DataVolumeSourceRegistry | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1DataVolumeSourceRegistryToJSONTyped(value?: V1beta1DataVolumeSourceRegistry | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1DataVolumeSourceRegistry.d.ts.map

@@ -35,7 +35,7 @@ export interface V1UserPasswordAccessCredential {
  */
 export declare function instanceOfV1UserPasswordAccessCredential(value: object): value is V1UserPasswordAccessCredential;
 export declare function V1UserPasswordAccessCredentialFromJSON(json: any): V1UserPasswordAccessCredential;
-export declare function V1UserPasswordAccessCredentialFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1UserPasswordAccessCredential;
+export declare function V1UserPasswordAccessCredentialFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1UserPasswordAccessCredential;
 export declare function V1UserPasswordAccessCredentialToJSON(json: any): V1UserPasswordAccessCredential;
-export declare function V1UserPasswordAccessCredentialToJSONTyped(value?: V1UserPasswordAccessCredential | null, ignoreDiscriminator?: boolean): any;
+export declare function V1UserPasswordAccessCredentialToJSONTyped(value?: V1UserPasswordAccessCredential | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1UserPasswordAccessCredential.d.ts.map

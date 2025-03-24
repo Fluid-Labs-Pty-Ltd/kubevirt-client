@@ -34,7 +34,7 @@ export interface V1SupportContainerResources {
  */
 export declare function instanceOfV1SupportContainerResources(value: object): value is V1SupportContainerResources;
 export declare function V1SupportContainerResourcesFromJSON(json: any): V1SupportContainerResources;
-export declare function V1SupportContainerResourcesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SupportContainerResources;
+export declare function V1SupportContainerResourcesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SupportContainerResources;
 export declare function V1SupportContainerResourcesToJSON(json: any): V1SupportContainerResources;
-export declare function V1SupportContainerResourcesToJSONTyped(value?: V1SupportContainerResources | null, ignoreDiscriminator?: boolean): any;
+export declare function V1SupportContainerResourcesToJSONTyped(value?: V1SupportContainerResources | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1SupportContainerResources.d.ts.map

@@ -168,7 +168,7 @@ export type V1VirtualMachineInstanceSpecDnsPolicyEnum = typeof V1VirtualMachineI
  */
 export declare function instanceOfV1VirtualMachineInstanceSpec(value: object): value is V1VirtualMachineInstanceSpec;
 export declare function V1VirtualMachineInstanceSpecFromJSON(json: any): V1VirtualMachineInstanceSpec;
-export declare function V1VirtualMachineInstanceSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceSpec;
+export declare function V1VirtualMachineInstanceSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceSpec;
 export declare function V1VirtualMachineInstanceSpecToJSON(json: any): V1VirtualMachineInstanceSpec;
-export declare function V1VirtualMachineInstanceSpecToJSONTyped(value?: V1VirtualMachineInstanceSpec | null, ignoreDiscriminator?: boolean): any;
+export declare function V1VirtualMachineInstanceSpecToJSONTyped(value?: V1VirtualMachineInstanceSpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1VirtualMachineInstanceSpec.d.ts.map

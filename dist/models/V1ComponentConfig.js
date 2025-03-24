@@ -21,7 +21,7 @@ export function instanceOfV1ComponentConfig(value) {
 export function V1ComponentConfigFromJSON(json) {
     return V1ComponentConfigFromJSONTyped(json, false);
 }
-export function V1ComponentConfigFromJSONTyped(json, ignoreDiscriminator) {
+export function V1ComponentConfigFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1ComponentConfigFromJSONTyped(json, ignoreDiscriminator) {
 export function V1ComponentConfigToJSON(json) {
     return V1ComponentConfigToJSONTyped(json, false);
 }
-export function V1ComponentConfigToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1ComponentConfigToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

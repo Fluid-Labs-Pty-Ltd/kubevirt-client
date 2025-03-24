@@ -39,7 +39,7 @@ export interface V1MigrateOptions {
  */
 export declare function instanceOfV1MigrateOptions(value: object): value is V1MigrateOptions;
 export declare function V1MigrateOptionsFromJSON(json: any): V1MigrateOptions;
-export declare function V1MigrateOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1MigrateOptions;
+export declare function V1MigrateOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1MigrateOptions;
 export declare function V1MigrateOptionsToJSON(json: any): V1MigrateOptions;
-export declare function V1MigrateOptionsToJSONTyped(value?: V1MigrateOptions | null, ignoreDiscriminator?: boolean): any;
+export declare function V1MigrateOptionsToJSONTyped(value?: V1MigrateOptions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1MigrateOptions.d.ts.map

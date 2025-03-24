@@ -24,7 +24,7 @@ export function instanceOfV1beta1VirtualMachineInstancetypeList(value) {
 export function V1beta1VirtualMachineInstancetypeListFromJSON(json) {
     return V1beta1VirtualMachineInstancetypeListFromJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineInstancetypeListFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1VirtualMachineInstancetypeListFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function V1beta1VirtualMachineInstancetypeListFromJSONTyped(json, ignoreD
 export function V1beta1VirtualMachineInstancetypeListToJSON(json) {
     return V1beta1VirtualMachineInstancetypeListToJSONTyped(json, false);
 }
-export function V1beta1VirtualMachineInstancetypeListToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1VirtualMachineInstancetypeListToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

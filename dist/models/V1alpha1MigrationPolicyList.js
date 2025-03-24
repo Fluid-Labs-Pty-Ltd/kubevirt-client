@@ -24,7 +24,7 @@ export function instanceOfV1alpha1MigrationPolicyList(value) {
 export function V1alpha1MigrationPolicyListFromJSON(json) {
     return V1alpha1MigrationPolicyListFromJSONTyped(json, false);
 }
-export function V1alpha1MigrationPolicyListFromJSONTyped(json, ignoreDiscriminator) {
+export function V1alpha1MigrationPolicyListFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,7 +38,7 @@ export function V1alpha1MigrationPolicyListFromJSONTyped(json, ignoreDiscriminat
 export function V1alpha1MigrationPolicyListToJSON(json) {
     return V1alpha1MigrationPolicyListToJSONTyped(json, false);
 }
-export function V1alpha1MigrationPolicyListToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1alpha1MigrationPolicyListToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

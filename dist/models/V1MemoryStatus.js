@@ -20,7 +20,7 @@ export function instanceOfV1MemoryStatus(value) {
 export function V1MemoryStatusFromJSON(json) {
     return V1MemoryStatusFromJSONTyped(json, false);
 }
-export function V1MemoryStatusFromJSONTyped(json, ignoreDiscriminator) {
+export function V1MemoryStatusFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function V1MemoryStatusFromJSONTyped(json, ignoreDiscriminator) {
 export function V1MemoryStatusToJSON(json) {
     return V1MemoryStatusToJSONTyped(json, false);
 }
-export function V1MemoryStatusToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1MemoryStatusToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

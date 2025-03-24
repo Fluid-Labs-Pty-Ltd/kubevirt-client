@@ -65,7 +65,7 @@ export function V1beta1CPUPreferencesFromJSON(json: any): V1beta1CPUPreferences 
     return V1beta1CPUPreferencesFromJSONTyped(json, false);
 }
 
-export function V1beta1CPUPreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1CPUPreferences {
+export function V1beta1CPUPreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1CPUPreferences {
     if (json == null) {
         return json;
     }
@@ -81,7 +81,7 @@ export function V1beta1CPUPreferencesToJSON(json: any): V1beta1CPUPreferences {
     return V1beta1CPUPreferencesToJSONTyped(json, false);
 }
 
-export function V1beta1CPUPreferencesToJSONTyped(value?: V1beta1CPUPreferences | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1CPUPreferencesToJSONTyped(value?: V1beta1CPUPreferences | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

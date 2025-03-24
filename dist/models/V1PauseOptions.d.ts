@@ -39,7 +39,7 @@ export interface V1PauseOptions {
  */
 export declare function instanceOfV1PauseOptions(value: object): value is V1PauseOptions;
 export declare function V1PauseOptionsFromJSON(json: any): V1PauseOptions;
-export declare function V1PauseOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PauseOptions;
+export declare function V1PauseOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PauseOptions;
 export declare function V1PauseOptionsToJSON(json: any): V1PauseOptions;
-export declare function V1PauseOptionsToJSONTyped(value?: V1PauseOptions | null, ignoreDiscriminator?: boolean): any;
+export declare function V1PauseOptionsToJSONTyped(value?: V1PauseOptions | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1PauseOptions.d.ts.map

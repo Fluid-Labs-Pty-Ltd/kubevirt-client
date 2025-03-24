@@ -28,7 +28,7 @@ export function instanceOfV1AddVolumeOptions(value) {
 export function V1AddVolumeOptionsFromJSON(json) {
     return V1AddVolumeOptionsFromJSONTyped(json, false);
 }
-export function V1AddVolumeOptionsFromJSONTyped(json, ignoreDiscriminator) {
+export function V1AddVolumeOptionsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -42,7 +42,7 @@ export function V1AddVolumeOptionsFromJSONTyped(json, ignoreDiscriminator) {
 export function V1AddVolumeOptionsToJSON(json) {
     return V1AddVolumeOptionsToJSONTyped(json, false);
 }
-export function V1AddVolumeOptionsToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1AddVolumeOptionsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

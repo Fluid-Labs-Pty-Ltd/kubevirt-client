@@ -27,7 +27,7 @@ export interface V1beta1VolumePreferences {
  */
 export declare function instanceOfV1beta1VolumePreferences(value: object): value is V1beta1VolumePreferences;
 export declare function V1beta1VolumePreferencesFromJSON(json: any): V1beta1VolumePreferences;
-export declare function V1beta1VolumePreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VolumePreferences;
+export declare function V1beta1VolumePreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VolumePreferences;
 export declare function V1beta1VolumePreferencesToJSON(json: any): V1beta1VolumePreferences;
-export declare function V1beta1VolumePreferencesToJSONTyped(value?: V1beta1VolumePreferences | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1VolumePreferencesToJSONTyped(value?: V1beta1VolumePreferences | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1VolumePreferences.d.ts.map

@@ -147,7 +147,7 @@ export function K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON(json: any): K8s
     return K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1ObjectMeta {
+export function K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1ObjectMeta {
     if (json == null) {
         return json;
     }
@@ -175,7 +175,7 @@ export function K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON(json: any): K8sIo
     return K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1ObjectMeta | null, ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1ObjectMeta | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

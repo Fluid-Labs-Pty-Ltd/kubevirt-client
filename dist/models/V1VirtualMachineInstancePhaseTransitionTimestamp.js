@@ -20,7 +20,7 @@ export function instanceOfV1VirtualMachineInstancePhaseTransitionTimestamp(value
 export function V1VirtualMachineInstancePhaseTransitionTimestampFromJSON(json) {
     return V1VirtualMachineInstancePhaseTransitionTimestampFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstancePhaseTransitionTimestampFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstancePhaseTransitionTimestampFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -32,7 +32,7 @@ export function V1VirtualMachineInstancePhaseTransitionTimestampFromJSONTyped(js
 export function V1VirtualMachineInstancePhaseTransitionTimestampToJSON(json) {
     return V1VirtualMachineInstancePhaseTransitionTimestampToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstancePhaseTransitionTimestampToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstancePhaseTransitionTimestampToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

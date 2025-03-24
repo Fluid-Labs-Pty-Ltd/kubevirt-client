@@ -113,7 +113,7 @@ export interface V1KubeVirtStatus {
  */
 export declare function instanceOfV1KubeVirtStatus(value: object): value is V1KubeVirtStatus;
 export declare function V1KubeVirtStatusFromJSON(json: any): V1KubeVirtStatus;
-export declare function V1KubeVirtStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtStatus;
+export declare function V1KubeVirtStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtStatus;
 export declare function V1KubeVirtStatusToJSON(json: any): V1KubeVirtStatus;
-export declare function V1KubeVirtStatusToJSONTyped(value?: V1KubeVirtStatus | null, ignoreDiscriminator?: boolean): any;
+export declare function V1KubeVirtStatusToJSONTyped(value?: V1KubeVirtStatus | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1KubeVirtStatus.d.ts.map

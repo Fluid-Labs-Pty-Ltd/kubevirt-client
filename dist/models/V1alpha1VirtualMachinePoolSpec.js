@@ -26,7 +26,7 @@ export function instanceOfV1alpha1VirtualMachinePoolSpec(value) {
 export function V1alpha1VirtualMachinePoolSpecFromJSON(json) {
     return V1alpha1VirtualMachinePoolSpecFromJSONTyped(json, false);
 }
-export function V1alpha1VirtualMachinePoolSpecFromJSONTyped(json, ignoreDiscriminator) {
+export function V1alpha1VirtualMachinePoolSpecFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -40,7 +40,7 @@ export function V1alpha1VirtualMachinePoolSpecFromJSONTyped(json, ignoreDiscrimi
 export function V1alpha1VirtualMachinePoolSpecToJSON(json) {
     return V1alpha1VirtualMachinePoolSpecToJSONTyped(json, false);
 }
-export function V1alpha1VirtualMachinePoolSpecToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1alpha1VirtualMachinePoolSpecToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

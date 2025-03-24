@@ -145,7 +145,7 @@ export type V1KubeVirtSpecImagePullPolicyEnum = typeof V1KubeVirtSpecImagePullPo
  */
 export declare function instanceOfV1KubeVirtSpec(value: object): value is V1KubeVirtSpec;
 export declare function V1KubeVirtSpecFromJSON(json: any): V1KubeVirtSpec;
-export declare function V1KubeVirtSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtSpec;
+export declare function V1KubeVirtSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtSpec;
 export declare function V1KubeVirtSpecToJSON(json: any): V1KubeVirtSpec;
-export declare function V1KubeVirtSpecToJSONTyped(value?: V1KubeVirtSpec | null, ignoreDiscriminator?: boolean): any;
+export declare function V1KubeVirtSpecToJSONTyped(value?: V1KubeVirtSpec | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1KubeVirtSpec.d.ts.map

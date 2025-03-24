@@ -117,7 +117,7 @@ export type K8sIoApiCoreV1TopologySpreadConstraintWhenUnsatisfiableEnum = typeof
  */
 export declare function instanceOfK8sIoApiCoreV1TopologySpreadConstraint(value: object): value is K8sIoApiCoreV1TopologySpreadConstraint;
 export declare function K8sIoApiCoreV1TopologySpreadConstraintFromJSON(json: any): K8sIoApiCoreV1TopologySpreadConstraint;
-export declare function K8sIoApiCoreV1TopologySpreadConstraintFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1TopologySpreadConstraint;
+export declare function K8sIoApiCoreV1TopologySpreadConstraintFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1TopologySpreadConstraint;
 export declare function K8sIoApiCoreV1TopologySpreadConstraintToJSON(json: any): K8sIoApiCoreV1TopologySpreadConstraint;
-export declare function K8sIoApiCoreV1TopologySpreadConstraintToJSONTyped(value?: K8sIoApiCoreV1TopologySpreadConstraint | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1TopologySpreadConstraintToJSONTyped(value?: K8sIoApiCoreV1TopologySpreadConstraint | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1TopologySpreadConstraint.d.ts.map

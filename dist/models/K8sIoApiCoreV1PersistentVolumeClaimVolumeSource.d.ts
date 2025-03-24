@@ -33,7 +33,7 @@ export interface K8sIoApiCoreV1PersistentVolumeClaimVolumeSource {
  */
 export declare function instanceOfK8sIoApiCoreV1PersistentVolumeClaimVolumeSource(value: object): value is K8sIoApiCoreV1PersistentVolumeClaimVolumeSource;
 export declare function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceFromJSON(json: any): K8sIoApiCoreV1PersistentVolumeClaimVolumeSource;
-export declare function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1PersistentVolumeClaimVolumeSource;
+export declare function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1PersistentVolumeClaimVolumeSource;
 export declare function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceToJSON(json: any): K8sIoApiCoreV1PersistentVolumeClaimVolumeSource;
-export declare function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceToJSONTyped(value?: K8sIoApiCoreV1PersistentVolumeClaimVolumeSource | null, ignoreDiscriminator?: boolean): any;
+export declare function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceToJSONTyped(value?: K8sIoApiCoreV1PersistentVolumeClaimVolumeSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=K8sIoApiCoreV1PersistentVolumeClaimVolumeSource.d.ts.map

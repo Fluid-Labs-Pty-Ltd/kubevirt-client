@@ -28,7 +28,7 @@ export function instanceOfV1GenerationStatus(value) {
 export function V1GenerationStatusFromJSON(json) {
     return V1GenerationStatusFromJSONTyped(json, false);
 }
-export function V1GenerationStatusFromJSONTyped(json, ignoreDiscriminator) {
+export function V1GenerationStatusFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -44,7 +44,7 @@ export function V1GenerationStatusFromJSONTyped(json, ignoreDiscriminator) {
 export function V1GenerationStatusToJSON(json) {
     return V1GenerationStatusToJSONTyped(json, false);
 }
-export function V1GenerationStatusToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1GenerationStatusToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

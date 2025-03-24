@@ -57,7 +57,7 @@ export interface V1GenerationStatus {
  */
 export declare function instanceOfV1GenerationStatus(value: object): value is V1GenerationStatus;
 export declare function V1GenerationStatusFromJSON(json: any): V1GenerationStatus;
-export declare function V1GenerationStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1GenerationStatus;
+export declare function V1GenerationStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1GenerationStatus;
 export declare function V1GenerationStatusToJSON(json: any): V1GenerationStatus;
-export declare function V1GenerationStatusToJSONTyped(value?: V1GenerationStatus | null, ignoreDiscriminator?: boolean): any;
+export declare function V1GenerationStatusToJSONTyped(value?: V1GenerationStatus | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1GenerationStatus.d.ts.map

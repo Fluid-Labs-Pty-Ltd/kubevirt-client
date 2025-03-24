@@ -122,7 +122,7 @@ export function V1beta1DataVolumeSpecFromJSON(json: any): V1beta1DataVolumeSpec 
     return V1beta1DataVolumeSpecFromJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSpec {
+export function V1beta1DataVolumeSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSpec {
     if (json == null) {
         return json;
     }
@@ -144,7 +144,7 @@ export function V1beta1DataVolumeSpecToJSON(json: any): V1beta1DataVolumeSpec {
     return V1beta1DataVolumeSpecToJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSpecToJSONTyped(value?: V1beta1DataVolumeSpec | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1DataVolumeSpecToJSONTyped(value?: V1beta1DataVolumeSpec | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

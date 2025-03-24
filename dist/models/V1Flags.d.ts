@@ -45,7 +45,7 @@ export interface V1Flags {
  */
 export declare function instanceOfV1Flags(value: object): value is V1Flags;
 export declare function V1FlagsFromJSON(json: any): V1Flags;
-export declare function V1FlagsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Flags;
+export declare function V1FlagsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Flags;
 export declare function V1FlagsToJSON(json: any): V1Flags;
-export declare function V1FlagsToJSONTyped(value?: V1Flags | null, ignoreDiscriminator?: boolean): any;
+export declare function V1FlagsToJSONTyped(value?: V1Flags | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1Flags.d.ts.map

@@ -37,7 +37,7 @@ export interface V1alpha1Selectors {
  */
 export declare function instanceOfV1alpha1Selectors(value: object): value is V1alpha1Selectors;
 export declare function V1alpha1SelectorsFromJSON(json: any): V1alpha1Selectors;
-export declare function V1alpha1SelectorsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1Selectors;
+export declare function V1alpha1SelectorsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1Selectors;
 export declare function V1alpha1SelectorsToJSON(json: any): V1alpha1Selectors;
-export declare function V1alpha1SelectorsToJSONTyped(value?: V1alpha1Selectors | null, ignoreDiscriminator?: boolean): any;
+export declare function V1alpha1SelectorsToJSONTyped(value?: V1alpha1Selectors | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1alpha1Selectors.d.ts.map

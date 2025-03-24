@@ -40,7 +40,7 @@ export function instanceOfV1VirtualMachineInstanceStatus(value) {
 export function V1VirtualMachineInstanceStatusFromJSON(json) {
     return V1VirtualMachineInstanceStatusFromJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceStatusFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineInstanceStatusFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -76,7 +76,7 @@ export function V1VirtualMachineInstanceStatusFromJSONTyped(json, ignoreDiscrimi
 export function V1VirtualMachineInstanceStatusToJSON(json) {
     return V1VirtualMachineInstanceStatusToJSONTyped(json, false);
 }
-export function V1VirtualMachineInstanceStatusToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineInstanceStatusToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

@@ -59,7 +59,7 @@ export type V1ContainerDiskSourceImagePullPolicyEnum = typeof V1ContainerDiskSou
  */
 export declare function instanceOfV1ContainerDiskSource(value: object): value is V1ContainerDiskSource;
 export declare function V1ContainerDiskSourceFromJSON(json: any): V1ContainerDiskSource;
-export declare function V1ContainerDiskSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ContainerDiskSource;
+export declare function V1ContainerDiskSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ContainerDiskSource;
 export declare function V1ContainerDiskSourceToJSON(json: any): V1ContainerDiskSource;
-export declare function V1ContainerDiskSourceToJSONTyped(value?: V1ContainerDiskSource | null, ignoreDiscriminator?: boolean): any;
+export declare function V1ContainerDiskSourceToJSONTyped(value?: V1ContainerDiskSource | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1ContainerDiskSource.d.ts.map

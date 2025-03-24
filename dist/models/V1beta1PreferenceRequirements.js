@@ -22,7 +22,7 @@ export function instanceOfV1beta1PreferenceRequirements(value) {
 export function V1beta1PreferenceRequirementsFromJSON(json) {
     return V1beta1PreferenceRequirementsFromJSONTyped(json, false);
 }
-export function V1beta1PreferenceRequirementsFromJSONTyped(json, ignoreDiscriminator) {
+export function V1beta1PreferenceRequirementsFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function V1beta1PreferenceRequirementsFromJSONTyped(json, ignoreDiscrimin
 export function V1beta1PreferenceRequirementsToJSON(json) {
     return V1beta1PreferenceRequirementsToJSONTyped(json, false);
 }
-export function V1beta1PreferenceRequirementsToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1beta1PreferenceRequirementsToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

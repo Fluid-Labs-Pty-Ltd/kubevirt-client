@@ -24,7 +24,7 @@ export function instanceOfV1CustomBlockSize(value) {
 export function V1CustomBlockSizeFromJSON(json) {
     return V1CustomBlockSizeFromJSONTyped(json, false);
 }
-export function V1CustomBlockSizeFromJSONTyped(json, ignoreDiscriminator) {
+export function V1CustomBlockSizeFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,7 +36,7 @@ export function V1CustomBlockSizeFromJSONTyped(json, ignoreDiscriminator) {
 export function V1CustomBlockSizeToJSON(json) {
     return V1CustomBlockSizeToJSONTyped(json, false);
 }
-export function V1CustomBlockSizeToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1CustomBlockSizeToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

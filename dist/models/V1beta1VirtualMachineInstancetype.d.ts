@@ -47,7 +47,7 @@ export interface V1beta1VirtualMachineInstancetype {
  */
 export declare function instanceOfV1beta1VirtualMachineInstancetype(value: object): value is V1beta1VirtualMachineInstancetype;
 export declare function V1beta1VirtualMachineInstancetypeFromJSON(json: any): V1beta1VirtualMachineInstancetype;
-export declare function V1beta1VirtualMachineInstancetypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineInstancetype;
+export declare function V1beta1VirtualMachineInstancetypeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineInstancetype;
 export declare function V1beta1VirtualMachineInstancetypeToJSON(json: any): V1beta1VirtualMachineInstancetype;
-export declare function V1beta1VirtualMachineInstancetypeToJSONTyped(value?: V1beta1VirtualMachineInstancetype | null, ignoreDiscriminator?: boolean): any;
+export declare function V1beta1VirtualMachineInstancetypeToJSONTyped(value?: V1beta1VirtualMachineInstancetype | null, _ignoreDiscriminator?: boolean): any;
 //# sourceMappingURL=V1beta1VirtualMachineInstancetype.d.ts.map

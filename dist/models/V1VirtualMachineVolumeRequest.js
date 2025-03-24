@@ -22,7 +22,7 @@ export function instanceOfV1VirtualMachineVolumeRequest(value) {
 export function V1VirtualMachineVolumeRequestFromJSON(json) {
     return V1VirtualMachineVolumeRequestFromJSONTyped(json, false);
 }
-export function V1VirtualMachineVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function V1VirtualMachineVolumeRequestFromJSONTyped(json, _ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function V1VirtualMachineVolumeRequestFromJSONTyped(json, ignoreDiscrimin
 export function V1VirtualMachineVolumeRequestToJSON(json) {
     return V1VirtualMachineVolumeRequestToJSONTyped(json, false);
 }
-export function V1VirtualMachineVolumeRequestToJSONTyped(value, ignoreDiscriminator = false) {
+export function V1VirtualMachineVolumeRequestToJSONTyped(value, _ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }
