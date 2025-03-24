@@ -56,7 +56,7 @@ export function V1SEVPlatformInfoFromJSON(json: any): V1SEVPlatformInfo {
     return V1SEVPlatformInfoFromJSONTyped(json, false);
 }
 
-export function V1SEVPlatformInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SEVPlatformInfo {
+export function V1SEVPlatformInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SEVPlatformInfo {
     if (json == null) {
         return json;
     }
@@ -73,7 +73,7 @@ export function V1SEVPlatformInfoToJSON(json: any): V1SEVPlatformInfo {
     return V1SEVPlatformInfoToJSONTyped(json, false);
 }
 
-export function V1SEVPlatformInfoToJSONTyped(value?: V1SEVPlatformInfo | null, ignoreDiscriminator: boolean = false): any {
+export function V1SEVPlatformInfoToJSONTyped(value?: V1SEVPlatformInfo | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -83,7 +83,7 @@ export function V1InterfaceBindingPluginFromJSON(json: any): V1InterfaceBindingP
     return V1InterfaceBindingPluginFromJSONTyped(json, false);
 }
 
-export function V1InterfaceBindingPluginFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1InterfaceBindingPlugin {
+export function V1InterfaceBindingPluginFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1InterfaceBindingPlugin {
     if (json == null) {
         return json;
     }
@@ -102,7 +102,7 @@ export function V1InterfaceBindingPluginToJSON(json: any): V1InterfaceBindingPlu
     return V1InterfaceBindingPluginToJSONTyped(json, false);
 }
 
-export function V1InterfaceBindingPluginToJSONTyped(value?: V1InterfaceBindingPlugin | null, ignoreDiscriminator: boolean = false): any {
+export function V1InterfaceBindingPluginToJSONTyped(value?: V1InterfaceBindingPlugin | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

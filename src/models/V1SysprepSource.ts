@@ -52,7 +52,7 @@ export function V1SysprepSourceFromJSON(json: any): V1SysprepSource {
     return V1SysprepSourceFromJSONTyped(json, false);
 }
 
-export function V1SysprepSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SysprepSource {
+export function V1SysprepSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SysprepSource {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function V1SysprepSourceToJSON(json: any): V1SysprepSource {
     return V1SysprepSourceToJSONTyped(json, false);
 }
 
-export function V1SysprepSourceToJSONTyped(value?: V1SysprepSource | null, ignoreDiscriminator: boolean = false): any {
+export function V1SysprepSourceToJSONTyped(value?: V1SysprepSource | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

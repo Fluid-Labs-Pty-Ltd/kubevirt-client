@@ -72,7 +72,7 @@ export function V1VirtualMachineInstanceGuestOSUserListFromJSON(json: any): V1Vi
     return V1VirtualMachineInstanceGuestOSUserListFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceGuestOSUserListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestOSUserList {
+export function V1VirtualMachineInstanceGuestOSUserListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestOSUserList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1VirtualMachineInstanceGuestOSUserListToJSON(json: any): V1Virt
     return V1VirtualMachineInstanceGuestOSUserListToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceGuestOSUserListToJSONTyped(value?: V1VirtualMachineInstanceGuestOSUserList | null, ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceGuestOSUserListToJSONTyped(value?: V1VirtualMachineInstanceGuestOSUserList | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

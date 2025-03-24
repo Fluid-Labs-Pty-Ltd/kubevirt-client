@@ -149,7 +149,7 @@ export function V1beta1DataVolumeSourceFromJSON(json: any): V1beta1DataVolumeSou
     return V1beta1DataVolumeSourceFromJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSource {
+export function V1beta1DataVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSource {
     if (json == null) {
         return json;
     }
@@ -172,7 +172,7 @@ export function V1beta1DataVolumeSourceToJSON(json: any): V1beta1DataVolumeSourc
     return V1beta1DataVolumeSourceToJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceToJSONTyped(value?: V1beta1DataVolumeSource | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1DataVolumeSourceToJSONTyped(value?: V1beta1DataVolumeSource | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -80,7 +80,7 @@ export function V1SEVMeasurementInfoFromJSON(json: any): V1SEVMeasurementInfo {
     return V1SEVMeasurementInfoFromJSONTyped(json, false);
 }
 
-export function V1SEVMeasurementInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SEVMeasurementInfo {
+export function V1SEVMeasurementInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SEVMeasurementInfo {
     if (json == null) {
         return json;
     }
@@ -101,7 +101,7 @@ export function V1SEVMeasurementInfoToJSON(json: any): V1SEVMeasurementInfo {
     return V1SEVMeasurementInfoToJSONTyped(json, false);
 }
 
-export function V1SEVMeasurementInfoToJSONTyped(value?: V1SEVMeasurementInfo | null, ignoreDiscriminator: boolean = false): any {
+export function V1SEVMeasurementInfoToJSONTyped(value?: V1SEVMeasurementInfo | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

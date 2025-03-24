@@ -12,6 +12,10 @@
  * Do not edit the class manually.
  */
 
+/**
+ * Add missing GlobalFetch type
+ */
+type GlobalFetch = any;
 
 export const BASE_PATH = "http://localhost".replace(/\/+$/, "");
 

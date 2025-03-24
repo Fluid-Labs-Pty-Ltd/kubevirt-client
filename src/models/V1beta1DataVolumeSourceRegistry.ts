@@ -62,7 +62,7 @@ export function V1beta1DataVolumeSourceRegistryFromJSON(json: any): V1beta1DataV
     return V1beta1DataVolumeSourceRegistryFromJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceRegistryFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSourceRegistry {
+export function V1beta1DataVolumeSourceRegistryFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSourceRegistry {
     if (json == null) {
         return json;
     }
@@ -80,7 +80,7 @@ export function V1beta1DataVolumeSourceRegistryToJSON(json: any): V1beta1DataVol
     return V1beta1DataVolumeSourceRegistryToJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceRegistryToJSONTyped(value?: V1beta1DataVolumeSourceRegistry | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1DataVolumeSourceRegistryToJSONTyped(value?: V1beta1DataVolumeSourceRegistry | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

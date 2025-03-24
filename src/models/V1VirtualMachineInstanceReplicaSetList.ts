@@ -72,7 +72,7 @@ export function V1VirtualMachineInstanceReplicaSetListFromJSON(json: any): V1Vir
     return V1VirtualMachineInstanceReplicaSetListFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceReplicaSetListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSetList {
+export function V1VirtualMachineInstanceReplicaSetListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSetList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1VirtualMachineInstanceReplicaSetListToJSON(json: any): V1Virtu
     return V1VirtualMachineInstanceReplicaSetListToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceReplicaSetListToJSONTyped(value?: V1VirtualMachineInstanceReplicaSetList | null, ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceReplicaSetListToJSONTyped(value?: V1VirtualMachineInstanceReplicaSetList | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -47,7 +47,7 @@ export function V1VirtualMachineInstanceFileSystemInfoFromJSON(json: any): V1Vir
     return V1VirtualMachineInstanceFileSystemInfoFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceFileSystemInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceFileSystemInfo {
+export function V1VirtualMachineInstanceFileSystemInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceFileSystemInfo {
     if (json == null) {
         return json;
     }
@@ -61,7 +61,7 @@ export function V1VirtualMachineInstanceFileSystemInfoToJSON(json: any): V1Virtu
     return V1VirtualMachineInstanceFileSystemInfoToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceFileSystemInfoToJSONTyped(value?: V1VirtualMachineInstanceFileSystemInfo | null, ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceFileSystemInfoToJSONTyped(value?: V1VirtualMachineInstanceFileSystemInfo | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

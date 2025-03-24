@@ -38,7 +38,7 @@ export function V1CommonInstancetypesDeploymentFromJSON(json: any): V1CommonInst
     return V1CommonInstancetypesDeploymentFromJSONTyped(json, false);
 }
 
-export function V1CommonInstancetypesDeploymentFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CommonInstancetypesDeployment {
+export function V1CommonInstancetypesDeploymentFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CommonInstancetypesDeployment {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1CommonInstancetypesDeploymentToJSON(json: any): V1CommonInstan
     return V1CommonInstancetypesDeploymentToJSONTyped(json, false);
 }
 
-export function V1CommonInstancetypesDeploymentToJSONTyped(value?: V1CommonInstancetypesDeployment | null, ignoreDiscriminator: boolean = false): any {
+export function V1CommonInstancetypesDeploymentToJSONTyped(value?: V1CommonInstancetypesDeployment | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

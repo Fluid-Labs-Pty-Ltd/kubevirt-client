@@ -44,7 +44,7 @@ export function V1CertConfigFromJSON(json: any): V1CertConfig {
     return V1CertConfigFromJSONTyped(json, false);
 }
 
-export function V1CertConfigFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CertConfig {
+export function V1CertConfigFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CertConfig {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1CertConfigToJSON(json: any): V1CertConfig {
     return V1CertConfigToJSONTyped(json, false);
 }
 
-export function V1CertConfigToJSONTyped(value?: V1CertConfig | null, ignoreDiscriminator: boolean = false): any {
+export function V1CertConfigToJSONTyped(value?: V1CertConfig | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

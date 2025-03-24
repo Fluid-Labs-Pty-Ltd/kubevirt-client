@@ -66,7 +66,7 @@ export function K8sIoApimachineryPkgApisMetaV1APIResourceListFromJSON(json: any)
     return K8sIoApimachineryPkgApisMetaV1APIResourceListFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1APIResourceListFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1APIResourceList {
+export function K8sIoApimachineryPkgApisMetaV1APIResourceListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1APIResourceList {
     if (json == null) {
         return json;
     }
@@ -83,7 +83,7 @@ export function K8sIoApimachineryPkgApisMetaV1APIResourceListToJSON(json: any): 
     return K8sIoApimachineryPkgApisMetaV1APIResourceListToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1APIResourceListToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1APIResourceList | null, ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1APIResourceListToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1APIResourceList | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

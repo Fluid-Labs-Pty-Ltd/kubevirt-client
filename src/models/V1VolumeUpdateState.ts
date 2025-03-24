@@ -46,7 +46,7 @@ export function V1VolumeUpdateStateFromJSON(json: any): V1VolumeUpdateState {
     return V1VolumeUpdateStateFromJSONTyped(json, false);
 }
 
-export function V1VolumeUpdateStateFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VolumeUpdateState {
+export function V1VolumeUpdateStateFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VolumeUpdateState {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1VolumeUpdateStateToJSON(json: any): V1VolumeUpdateState {
     return V1VolumeUpdateStateToJSONTyped(json, false);
 }
 
-export function V1VolumeUpdateStateToJSONTyped(value?: V1VolumeUpdateState | null, ignoreDiscriminator: boolean = false): any {
+export function V1VolumeUpdateStateToJSONTyped(value?: V1VolumeUpdateState | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

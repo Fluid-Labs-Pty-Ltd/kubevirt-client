@@ -75,7 +75,7 @@ export function V1beta1MemoryPreferenceRequirementFromJSON(json: any): V1beta1Me
     return V1beta1MemoryPreferenceRequirementFromJSONTyped(json, false);
 }
 
-export function V1beta1MemoryPreferenceRequirementFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1MemoryPreferenceRequirement {
+export function V1beta1MemoryPreferenceRequirementFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1MemoryPreferenceRequirement {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1beta1MemoryPreferenceRequirementToJSON(json: any): V1beta1Memo
     return V1beta1MemoryPreferenceRequirementToJSONTyped(json, false);
 }
 
-export function V1beta1MemoryPreferenceRequirementToJSONTyped(value?: V1beta1MemoryPreferenceRequirement | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1MemoryPreferenceRequirementToJSONTyped(value?: V1beta1MemoryPreferenceRequirement | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

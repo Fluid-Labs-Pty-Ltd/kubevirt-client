@@ -73,7 +73,7 @@ export function V1VirtualMachineInstancePresetFromJSON(json: any): V1VirtualMach
     return V1VirtualMachineInstancePresetFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstancePresetFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstancePreset {
+export function V1VirtualMachineInstancePresetFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstancePreset {
     if (json == null) {
         return json;
     }
@@ -90,7 +90,7 @@ export function V1VirtualMachineInstancePresetToJSON(json: any): V1VirtualMachin
     return V1VirtualMachineInstancePresetToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstancePresetToJSONTyped(value?: V1VirtualMachineInstancePreset | null, ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstancePresetToJSONTyped(value?: V1VirtualMachineInstancePreset | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

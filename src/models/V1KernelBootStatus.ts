@@ -59,7 +59,7 @@ export function V1KernelBootStatusFromJSON(json: any): V1KernelBootStatus {
     return V1KernelBootStatusFromJSONTyped(json, false);
 }
 
-export function V1KernelBootStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KernelBootStatus {
+export function V1KernelBootStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KernelBootStatus {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1KernelBootStatusToJSON(json: any): V1KernelBootStatus {
     return V1KernelBootStatusToJSONTyped(json, false);
 }
 
-export function V1KernelBootStatusToJSONTyped(value?: V1KernelBootStatus | null, ignoreDiscriminator: boolean = false): any {
+export function V1KernelBootStatusToJSONTyped(value?: V1KernelBootStatus | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

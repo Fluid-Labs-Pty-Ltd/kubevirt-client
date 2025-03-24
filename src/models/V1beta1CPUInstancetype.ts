@@ -94,7 +94,7 @@ export function V1beta1CPUInstancetypeFromJSON(json: any): V1beta1CPUInstancetyp
     return V1beta1CPUInstancetypeFromJSONTyped(json, false);
 }
 
-export function V1beta1CPUInstancetypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1CPUInstancetype {
+export function V1beta1CPUInstancetypeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1CPUInstancetype {
     if (json == null) {
         return json;
     }
@@ -114,7 +114,7 @@ export function V1beta1CPUInstancetypeToJSON(json: any): V1beta1CPUInstancetype 
     return V1beta1CPUInstancetypeToJSONTyped(json, false);
 }
 
-export function V1beta1CPUInstancetypeToJSONTyped(value?: V1beta1CPUInstancetype | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1CPUInstancetypeToJSONTyped(value?: V1beta1CPUInstancetype | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

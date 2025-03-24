@@ -58,7 +58,7 @@ export function V1SSHPublicKeyAccessCredentialPropagationMethodFromJSON(json: an
     return V1SSHPublicKeyAccessCredentialPropagationMethodFromJSONTyped(json, false);
 }
 
-export function V1SSHPublicKeyAccessCredentialPropagationMethodFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SSHPublicKeyAccessCredentialPropagationMethod {
+export function V1SSHPublicKeyAccessCredentialPropagationMethodFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SSHPublicKeyAccessCredentialPropagationMethod {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1SSHPublicKeyAccessCredentialPropagationMethodToJSON(json: any)
     return V1SSHPublicKeyAccessCredentialPropagationMethodToJSONTyped(json, false);
 }
 
-export function V1SSHPublicKeyAccessCredentialPropagationMethodToJSONTyped(value?: V1SSHPublicKeyAccessCredentialPropagationMethod | null, ignoreDiscriminator: boolean = false): any {
+export function V1SSHPublicKeyAccessCredentialPropagationMethodToJSONTyped(value?: V1SSHPublicKeyAccessCredentialPropagationMethod | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

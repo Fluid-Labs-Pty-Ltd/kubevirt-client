@@ -64,7 +64,7 @@ export function V1ArchConfigurationFromJSON(json: any): V1ArchConfiguration {
     return V1ArchConfigurationFromJSONTyped(json, false);
 }
 
-export function V1ArchConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ArchConfiguration {
+export function V1ArchConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ArchConfiguration {
     if (json == null) {
         return json;
     }
@@ -81,7 +81,7 @@ export function V1ArchConfigurationToJSON(json: any): V1ArchConfiguration {
     return V1ArchConfigurationToJSONTyped(json, false);
 }
 
-export function V1ArchConfigurationToJSONTyped(value?: V1ArchConfiguration | null, ignoreDiscriminator: boolean = false): any {
+export function V1ArchConfigurationToJSONTyped(value?: V1ArchConfiguration | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

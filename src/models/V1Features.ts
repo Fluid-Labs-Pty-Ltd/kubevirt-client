@@ -110,7 +110,7 @@ export function V1FeaturesFromJSON(json: any): V1Features {
     return V1FeaturesFromJSONTyped(json, false);
 }
 
-export function V1FeaturesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Features {
+export function V1FeaturesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Features {
     if (json == null) {
         return json;
     }
@@ -130,7 +130,7 @@ export function V1FeaturesToJSON(json: any): V1Features {
     return V1FeaturesToJSONTyped(json, false);
 }
 
-export function V1FeaturesToJSONTyped(value?: V1Features | null, ignoreDiscriminator: boolean = false): any {
+export function V1FeaturesToJSONTyped(value?: V1Features | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

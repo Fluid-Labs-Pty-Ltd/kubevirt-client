@@ -60,7 +60,7 @@ export function V1VirtualMachineInstancePresetSpecFromJSON(json: any): V1Virtual
     return V1VirtualMachineInstancePresetSpecFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstancePresetSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstancePresetSpec {
+export function V1VirtualMachineInstancePresetSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstancePresetSpec {
     if (json == null) {
         return json;
     }
@@ -75,7 +75,7 @@ export function V1VirtualMachineInstancePresetSpecToJSON(json: any): V1VirtualMa
     return V1VirtualMachineInstancePresetSpecToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstancePresetSpecToJSONTyped(value?: V1VirtualMachineInstancePresetSpec | null, ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstancePresetSpecToJSONTyped(value?: V1VirtualMachineInstancePresetSpec | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

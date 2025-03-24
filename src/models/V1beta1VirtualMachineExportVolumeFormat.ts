@@ -46,7 +46,7 @@ export function V1beta1VirtualMachineExportVolumeFormatFromJSON(json: any): V1be
     return V1beta1VirtualMachineExportVolumeFormatFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportVolumeFormatFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineExportVolumeFormat {
+export function V1beta1VirtualMachineExportVolumeFormatFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineExportVolumeFormat {
     if (json == null) {
         return json;
     }
@@ -61,7 +61,7 @@ export function V1beta1VirtualMachineExportVolumeFormatToJSON(json: any): V1beta
     return V1beta1VirtualMachineExportVolumeFormatToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportVolumeFormatToJSONTyped(value?: V1beta1VirtualMachineExportVolumeFormat | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineExportVolumeFormatToJSONTyped(value?: V1beta1VirtualMachineExportVolumeFormat | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

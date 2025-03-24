@@ -38,7 +38,7 @@ export function V1HugepagesFromJSON(json: any): V1Hugepages {
     return V1HugepagesFromJSONTyped(json, false);
 }
 
-export function V1HugepagesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Hugepages {
+export function V1HugepagesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Hugepages {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1HugepagesToJSON(json: any): V1Hugepages {
     return V1HugepagesToJSONTyped(json, false);
 }
 
-export function V1HugepagesToJSONTyped(value?: V1Hugepages | null, ignoreDiscriminator: boolean = false): any {
+export function V1HugepagesToJSONTyped(value?: V1Hugepages | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

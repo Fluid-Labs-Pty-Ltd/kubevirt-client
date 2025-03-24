@@ -90,7 +90,7 @@ export function V1alpha1VirtualMachineCloneSpecFromJSON(json: any): V1alpha1Virt
     return V1alpha1VirtualMachineCloneSpecFromJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineCloneSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneSpec {
+export function V1alpha1VirtualMachineCloneSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneSpec {
     if (json == null) {
         return json;
     }
@@ -110,7 +110,7 @@ export function V1alpha1VirtualMachineCloneSpecToJSON(json: any): V1alpha1Virtua
     return V1alpha1VirtualMachineCloneSpecToJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineCloneSpecToJSONTyped(value?: V1alpha1VirtualMachineCloneSpec | null, ignoreDiscriminator: boolean = false): any {
+export function V1alpha1VirtualMachineCloneSpecToJSONTyped(value?: V1alpha1VirtualMachineCloneSpec | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -46,7 +46,7 @@ export function V1SSHPublicKeyAccessCredentialSourceFromJSON(json: any): V1SSHPu
     return V1SSHPublicKeyAccessCredentialSourceFromJSONTyped(json, false);
 }
 
-export function V1SSHPublicKeyAccessCredentialSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SSHPublicKeyAccessCredentialSource {
+export function V1SSHPublicKeyAccessCredentialSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SSHPublicKeyAccessCredentialSource {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1SSHPublicKeyAccessCredentialSourceToJSON(json: any): V1SSHPubl
     return V1SSHPublicKeyAccessCredentialSourceToJSONTyped(json, false);
 }
 
-export function V1SSHPublicKeyAccessCredentialSourceToJSONTyped(value?: V1SSHPublicKeyAccessCredentialSource | null, ignoreDiscriminator: boolean = false): any {
+export function V1SSHPublicKeyAccessCredentialSourceToJSONTyped(value?: V1SSHPublicKeyAccessCredentialSource | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

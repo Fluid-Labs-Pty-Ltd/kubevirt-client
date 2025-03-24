@@ -50,7 +50,7 @@ export function V1CDRomTargetFromJSON(json: any): V1CDRomTarget {
     return V1CDRomTargetFromJSONTyped(json, false);
 }
 
-export function V1CDRomTargetFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CDRomTarget {
+export function V1CDRomTargetFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CDRomTarget {
     if (json == null) {
         return json;
     }
@@ -66,7 +66,7 @@ export function V1CDRomTargetToJSON(json: any): V1CDRomTarget {
     return V1CDRomTargetToJSONTyped(json, false);
 }
 
-export function V1CDRomTargetToJSONTyped(value?: V1CDRomTarget | null, ignoreDiscriminator: boolean = false): any {
+export function V1CDRomTargetToJSONTyped(value?: V1CDRomTarget | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

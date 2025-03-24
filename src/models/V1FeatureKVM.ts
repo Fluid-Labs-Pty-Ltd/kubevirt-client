@@ -38,7 +38,7 @@ export function V1FeatureKVMFromJSON(json: any): V1FeatureKVM {
     return V1FeatureKVMFromJSONTyped(json, false);
 }
 
-export function V1FeatureKVMFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1FeatureKVM {
+export function V1FeatureKVMFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1FeatureKVM {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1FeatureKVMToJSON(json: any): V1FeatureKVM {
     return V1FeatureKVMToJSONTyped(json, false);
 }
 
-export function V1FeatureKVMToJSONTyped(value?: V1FeatureKVM | null, ignoreDiscriminator: boolean = false): any {
+export function V1FeatureKVMToJSONTyped(value?: V1FeatureKVM | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

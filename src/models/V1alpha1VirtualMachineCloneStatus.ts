@@ -76,7 +76,7 @@ export function V1alpha1VirtualMachineCloneStatusFromJSON(json: any): V1alpha1Vi
     return V1alpha1VirtualMachineCloneStatusFromJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineCloneStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneStatus {
+export function V1alpha1VirtualMachineCloneStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneStatus {
     if (json == null) {
         return json;
     }
@@ -95,7 +95,7 @@ export function V1alpha1VirtualMachineCloneStatusToJSON(json: any): V1alpha1Virt
     return V1alpha1VirtualMachineCloneStatusToJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineCloneStatusToJSONTyped(value?: V1alpha1VirtualMachineCloneStatus | null, ignoreDiscriminator: boolean = false): any {
+export function V1alpha1VirtualMachineCloneStatusToJSONTyped(value?: V1alpha1VirtualMachineCloneStatus | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

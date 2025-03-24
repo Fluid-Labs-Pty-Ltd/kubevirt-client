@@ -76,7 +76,7 @@ export function V1CloudInitConfigDriveSourceFromJSON(json: any): V1CloudInitConf
     return V1CloudInitConfigDriveSourceFromJSONTyped(json, false);
 }
 
-export function V1CloudInitConfigDriveSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CloudInitConfigDriveSource {
+export function V1CloudInitConfigDriveSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CloudInitConfigDriveSource {
     if (json == null) {
         return json;
     }
@@ -95,7 +95,7 @@ export function V1CloudInitConfigDriveSourceToJSON(json: any): V1CloudInitConfig
     return V1CloudInitConfigDriveSourceToJSONTyped(json, false);
 }
 
-export function V1CloudInitConfigDriveSourceToJSONTyped(value?: V1CloudInitConfigDriveSource | null, ignoreDiscriminator: boolean = false): any {
+export function V1CloudInitConfigDriveSourceToJSONTyped(value?: V1CloudInitConfigDriveSource | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

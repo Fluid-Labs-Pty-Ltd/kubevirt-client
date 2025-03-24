@@ -97,7 +97,7 @@ export function V1beta1FeaturePreferencesFromJSON(json: any): V1beta1FeaturePref
     return V1beta1FeaturePreferencesFromJSONTyped(json, false);
 }
 
-export function V1beta1FeaturePreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1FeaturePreferences {
+export function V1beta1FeaturePreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1FeaturePreferences {
     if (json == null) {
         return json;
     }
@@ -116,7 +116,7 @@ export function V1beta1FeaturePreferencesToJSON(json: any): V1beta1FeaturePrefer
     return V1beta1FeaturePreferencesToJSONTyped(json, false);
 }
 
-export function V1beta1FeaturePreferencesToJSONTyped(value?: V1beta1FeaturePreferences | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1FeaturePreferencesToJSONTyped(value?: V1beta1FeaturePreferences | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

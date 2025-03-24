@@ -74,7 +74,7 @@ export function V1AddVolumeOptionsFromJSON(json: any): V1AddVolumeOptions {
     return V1AddVolumeOptionsFromJSONTyped(json, false);
 }
 
-export function V1AddVolumeOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1AddVolumeOptions {
+export function V1AddVolumeOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1AddVolumeOptions {
     if (json == null) {
         return json;
     }
@@ -91,7 +91,7 @@ export function V1AddVolumeOptionsToJSON(json: any): V1AddVolumeOptions {
     return V1AddVolumeOptionsToJSONTyped(json, false);
 }
 
-export function V1AddVolumeOptionsToJSONTyped(value?: V1AddVolumeOptions | null, ignoreDiscriminator: boolean = false): any {
+export function V1AddVolumeOptionsToJSONTyped(value?: V1AddVolumeOptions | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -44,7 +44,7 @@ export function V1FeatureVendorIDFromJSON(json: any): V1FeatureVendorID {
     return V1FeatureVendorIDFromJSONTyped(json, false);
 }
 
-export function V1FeatureVendorIDFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1FeatureVendorID {
+export function V1FeatureVendorIDFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1FeatureVendorID {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1FeatureVendorIDToJSON(json: any): V1FeatureVendorID {
     return V1FeatureVendorIDToJSONTyped(json, false);
 }
 
-export function V1FeatureVendorIDToJSONTyped(value?: V1FeatureVendorID | null, ignoreDiscriminator: boolean = false): any {
+export function V1FeatureVendorIDToJSONTyped(value?: V1FeatureVendorID | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

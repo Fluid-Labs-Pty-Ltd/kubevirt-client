@@ -44,7 +44,7 @@ export function V1HPETTimerFromJSON(json: any): V1HPETTimer {
     return V1HPETTimerFromJSONTyped(json, false);
 }
 
-export function V1HPETTimerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1HPETTimer {
+export function V1HPETTimerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1HPETTimer {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1HPETTimerToJSON(json: any): V1HPETTimer {
     return V1HPETTimerToJSONTyped(json, false);
 }
 
-export function V1HPETTimerToJSONTyped(value?: V1HPETTimer | null, ignoreDiscriminator: boolean = false): any {
+export function V1HPETTimerToJSONTyped(value?: V1HPETTimer | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -74,7 +74,7 @@ export function V1beta1FirmwarePreferencesFromJSON(json: any): V1beta1FirmwarePr
     return V1beta1FirmwarePreferencesFromJSONTyped(json, false);
 }
 
-export function V1beta1FirmwarePreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1FirmwarePreferences {
+export function V1beta1FirmwarePreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1FirmwarePreferences {
     if (json == null) {
         return json;
     }
@@ -92,7 +92,7 @@ export function V1beta1FirmwarePreferencesToJSON(json: any): V1beta1FirmwarePref
     return V1beta1FirmwarePreferencesToJSONTyped(json, false);
 }
 
-export function V1beta1FirmwarePreferencesToJSONTyped(value?: V1beta1FirmwarePreferences | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1FirmwarePreferencesToJSONTyped(value?: V1beta1FirmwarePreferences | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

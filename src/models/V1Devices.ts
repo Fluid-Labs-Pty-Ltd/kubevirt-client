@@ -236,7 +236,7 @@ export function V1DevicesFromJSON(json: any): V1Devices {
     return V1DevicesFromJSONTyped(json, false);
 }
 
-export function V1DevicesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Devices {
+export function V1DevicesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Devices {
     if (json == null) {
         return json;
     }
@@ -272,7 +272,7 @@ export function V1DevicesToJSON(json: any): V1Devices {
     return V1DevicesToJSONTyped(json, false);
 }
 
-export function V1DevicesToJSONTyped(value?: V1Devices | null, ignoreDiscriminator: boolean = false): any {
+export function V1DevicesToJSONTyped(value?: V1Devices | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

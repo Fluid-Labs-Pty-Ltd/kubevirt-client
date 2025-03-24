@@ -45,7 +45,7 @@ export function V1CPUFeatureFromJSON(json: any): V1CPUFeature {
     return V1CPUFeatureFromJSONTyped(json, false);
 }
 
-export function V1CPUFeatureFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CPUFeature {
+export function V1CPUFeatureFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CPUFeature {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1CPUFeatureToJSON(json: any): V1CPUFeature {
     return V1CPUFeatureToJSONTyped(json, false);
 }
 
-export function V1CPUFeatureToJSONTyped(value?: V1CPUFeature | null, ignoreDiscriminator: boolean = false): any {
+export function V1CPUFeatureToJSONTyped(value?: V1CPUFeature | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

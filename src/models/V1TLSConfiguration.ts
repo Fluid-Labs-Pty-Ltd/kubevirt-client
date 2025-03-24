@@ -48,7 +48,7 @@ export function V1TLSConfigurationFromJSON(json: any): V1TLSConfiguration {
     return V1TLSConfigurationFromJSONTyped(json, false);
 }
 
-export function V1TLSConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1TLSConfiguration {
+export function V1TLSConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1TLSConfiguration {
     if (json == null) {
         return json;
     }
@@ -63,7 +63,7 @@ export function V1TLSConfigurationToJSON(json: any): V1TLSConfiguration {
     return V1TLSConfigurationToJSONTyped(json, false);
 }
 
-export function V1TLSConfigurationToJSONTyped(value?: V1TLSConfiguration | null, ignoreDiscriminator: boolean = false): any {
+export function V1TLSConfigurationToJSONTyped(value?: V1TLSConfiguration | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

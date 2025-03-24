@@ -61,7 +61,7 @@ export function V1UserPasswordAccessCredentialFromJSON(json: any): V1UserPasswor
     return V1UserPasswordAccessCredentialFromJSONTyped(json, false);
 }
 
-export function V1UserPasswordAccessCredentialFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1UserPasswordAccessCredential {
+export function V1UserPasswordAccessCredentialFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1UserPasswordAccessCredential {
     if (json == null) {
         return json;
     }
@@ -76,7 +76,7 @@ export function V1UserPasswordAccessCredentialToJSON(json: any): V1UserPasswordA
     return V1UserPasswordAccessCredentialToJSONTyped(json, false);
 }
 
-export function V1UserPasswordAccessCredentialToJSONTyped(value?: V1UserPasswordAccessCredential | null, ignoreDiscriminator: boolean = false): any {
+export function V1UserPasswordAccessCredentialToJSONTyped(value?: V1UserPasswordAccessCredential | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

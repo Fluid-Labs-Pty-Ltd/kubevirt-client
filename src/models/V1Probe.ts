@@ -108,7 +108,7 @@ export function V1ProbeFromJSON(json: any): V1Probe {
     return V1ProbeFromJSONTyped(json, false);
 }
 
-export function V1ProbeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Probe {
+export function V1ProbeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Probe {
     if (json == null) {
         return json;
     }
@@ -130,7 +130,7 @@ export function V1ProbeToJSON(json: any): V1Probe {
     return V1ProbeToJSONTyped(json, false);
 }
 
-export function V1ProbeToJSONTyped(value?: V1Probe | null, ignoreDiscriminator: boolean = false): any {
+export function V1ProbeToJSONTyped(value?: V1Probe | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

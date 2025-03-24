@@ -46,7 +46,7 @@ export function V1beta1DataVolumeCheckpointFromJSON(json: any): V1beta1DataVolum
     return V1beta1DataVolumeCheckpointFromJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeCheckpointFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeCheckpoint {
+export function V1beta1DataVolumeCheckpointFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeCheckpoint {
     if (json == null) {
         return json;
     }
@@ -61,7 +61,7 @@ export function V1beta1DataVolumeCheckpointToJSON(json: any): V1beta1DataVolumeC
     return V1beta1DataVolumeCheckpointToJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeCheckpointToJSONTyped(value?: V1beta1DataVolumeCheckpoint | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1DataVolumeCheckpointToJSONTyped(value?: V1beta1DataVolumeCheckpoint | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

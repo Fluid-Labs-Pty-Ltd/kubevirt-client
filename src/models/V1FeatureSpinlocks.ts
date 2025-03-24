@@ -44,7 +44,7 @@ export function V1FeatureSpinlocksFromJSON(json: any): V1FeatureSpinlocks {
     return V1FeatureSpinlocksFromJSONTyped(json, false);
 }
 
-export function V1FeatureSpinlocksFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1FeatureSpinlocks {
+export function V1FeatureSpinlocksFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1FeatureSpinlocks {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1FeatureSpinlocksToJSON(json: any): V1FeatureSpinlocks {
     return V1FeatureSpinlocksToJSONTyped(json, false);
 }
 
-export function V1FeatureSpinlocksToJSONTyped(value?: V1FeatureSpinlocks | null, ignoreDiscriminator: boolean = false): any {
+export function V1FeatureSpinlocksToJSONTyped(value?: V1FeatureSpinlocks | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

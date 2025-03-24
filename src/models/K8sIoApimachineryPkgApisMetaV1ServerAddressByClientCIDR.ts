@@ -46,7 +46,7 @@ export function K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRFromJSON(
     return K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR {
+export function K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR {
     if (json == null) {
         return json;
     }
@@ -61,7 +61,7 @@ export function K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRToJSON(js
     return K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR | null, ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

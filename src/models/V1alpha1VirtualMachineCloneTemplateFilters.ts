@@ -44,7 +44,7 @@ export function V1alpha1VirtualMachineCloneTemplateFiltersFromJSON(json: any): V
     return V1alpha1VirtualMachineCloneTemplateFiltersFromJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineCloneTemplateFiltersFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneTemplateFilters {
+export function V1alpha1VirtualMachineCloneTemplateFiltersFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneTemplateFilters {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1alpha1VirtualMachineCloneTemplateFiltersToJSON(json: any): V1a
     return V1alpha1VirtualMachineCloneTemplateFiltersToJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineCloneTemplateFiltersToJSONTyped(value?: V1alpha1VirtualMachineCloneTemplateFilters | null, ignoreDiscriminator: boolean = false): any {
+export function V1alpha1VirtualMachineCloneTemplateFiltersToJSONTyped(value?: V1alpha1VirtualMachineCloneTemplateFilters | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

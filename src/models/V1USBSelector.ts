@@ -46,7 +46,7 @@ export function V1USBSelectorFromJSON(json: any): V1USBSelector {
     return V1USBSelectorFromJSONTyped(json, false);
 }
 
-export function V1USBSelectorFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1USBSelector {
+export function V1USBSelectorFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1USBSelector {
     if (json == null) {
         return json;
     }
@@ -61,7 +61,7 @@ export function V1USBSelectorToJSON(json: any): V1USBSelector {
     return V1USBSelectorToJSONTyped(json, false);
 }
 
-export function V1USBSelectorToJSONTyped(value?: V1USBSelector | null, ignoreDiscriminator: boolean = false): any {
+export function V1USBSelectorToJSONTyped(value?: V1USBSelector | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

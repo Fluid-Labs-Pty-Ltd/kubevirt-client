@@ -38,7 +38,7 @@ export function V1TPMDeviceFromJSON(json: any): V1TPMDevice {
     return V1TPMDeviceFromJSONTyped(json, false);
 }
 
-export function V1TPMDeviceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1TPMDevice {
+export function V1TPMDeviceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1TPMDevice {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1TPMDeviceToJSON(json: any): V1TPMDevice {
     return V1TPMDeviceToJSONTyped(json, false);
 }
 
-export function V1TPMDeviceToJSONTyped(value?: V1TPMDevice | null, ignoreDiscriminator: boolean = false): any {
+export function V1TPMDeviceToJSONTyped(value?: V1TPMDevice | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

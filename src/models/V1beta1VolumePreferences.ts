@@ -38,7 +38,7 @@ export function V1beta1VolumePreferencesFromJSON(json: any): V1beta1VolumePrefer
     return V1beta1VolumePreferencesFromJSONTyped(json, false);
 }
 
-export function V1beta1VolumePreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VolumePreferences {
+export function V1beta1VolumePreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VolumePreferences {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1beta1VolumePreferencesToJSON(json: any): V1beta1VolumePreferen
     return V1beta1VolumePreferencesToJSONTyped(json, false);
 }
 
-export function V1beta1VolumePreferencesToJSONTyped(value?: V1beta1VolumePreferences | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1VolumePreferencesToJSONTyped(value?: V1beta1VolumePreferences | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

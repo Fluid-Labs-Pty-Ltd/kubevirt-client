@@ -50,7 +50,7 @@ export function V1FlagsFromJSON(json: any): V1Flags {
     return V1FlagsFromJSONTyped(json, false);
 }
 
-export function V1FlagsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Flags {
+export function V1FlagsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Flags {
     if (json == null) {
         return json;
     }
@@ -66,7 +66,7 @@ export function V1FlagsToJSON(json: any): V1Flags {
     return V1FlagsToJSONTyped(json, false);
 }
 
-export function V1FlagsToJSONTyped(value?: V1Flags | null, ignoreDiscriminator: boolean = false): any {
+export function V1FlagsToJSONTyped(value?: V1Flags | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

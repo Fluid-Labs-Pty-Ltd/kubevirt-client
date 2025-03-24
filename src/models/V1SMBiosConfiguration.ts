@@ -62,7 +62,7 @@ export function V1SMBiosConfigurationFromJSON(json: any): V1SMBiosConfiguration 
     return V1SMBiosConfigurationFromJSONTyped(json, false);
 }
 
-export function V1SMBiosConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SMBiosConfiguration {
+export function V1SMBiosConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SMBiosConfiguration {
     if (json == null) {
         return json;
     }
@@ -80,7 +80,7 @@ export function V1SMBiosConfigurationToJSON(json: any): V1SMBiosConfiguration {
     return V1SMBiosConfigurationToJSONTyped(json, false);
 }
 
-export function V1SMBiosConfigurationToJSONTyped(value?: V1SMBiosConfiguration | null, ignoreDiscriminator: boolean = false): any {
+export function V1SMBiosConfigurationToJSONTyped(value?: V1SMBiosConfiguration | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

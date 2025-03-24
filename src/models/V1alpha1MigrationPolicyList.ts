@@ -72,7 +72,7 @@ export function V1alpha1MigrationPolicyListFromJSON(json: any): V1alpha1Migratio
     return V1alpha1MigrationPolicyListFromJSONTyped(json, false);
 }
 
-export function V1alpha1MigrationPolicyListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1MigrationPolicyList {
+export function V1alpha1MigrationPolicyListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1MigrationPolicyList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1alpha1MigrationPolicyListToJSON(json: any): V1alpha1MigrationP
     return V1alpha1MigrationPolicyListToJSONTyped(json, false);
 }
 
-export function V1alpha1MigrationPolicyListToJSONTyped(value?: V1alpha1MigrationPolicyList | null, ignoreDiscriminator: boolean = false): any {
+export function V1alpha1MigrationPolicyListToJSONTyped(value?: V1alpha1MigrationPolicyList | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

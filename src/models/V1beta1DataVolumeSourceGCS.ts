@@ -45,7 +45,7 @@ export function V1beta1DataVolumeSourceGCSFromJSON(json: any): V1beta1DataVolume
     return V1beta1DataVolumeSourceGCSFromJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceGCSFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSourceGCS {
+export function V1beta1DataVolumeSourceGCSFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSourceGCS {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1beta1DataVolumeSourceGCSToJSON(json: any): V1beta1DataVolumeSo
     return V1beta1DataVolumeSourceGCSToJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceGCSToJSONTyped(value?: V1beta1DataVolumeSourceGCS | null, ignoreDiscriminator: boolean = false): any {
+export function V1beta1DataVolumeSourceGCSToJSONTyped(value?: V1beta1DataVolumeSourceGCS | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

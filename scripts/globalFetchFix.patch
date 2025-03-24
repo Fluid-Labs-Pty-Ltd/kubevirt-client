@@ -1,0 +1,15 @@
+diff --git a/src/runtime.ts b/src/runtime.ts
+index c7e4aa5..d15324c 100644
+--- a/src/runtime.ts
++++ b/src/runtime.ts
+@@ -12,6 +12,10 @@
+  * Do not edit the class manually.
+  */
+ 
++/**
++ * Add missing GlobalFetch type
++ */
++type GlobalFetch = any;
+ 
+ export const BASE_PATH = "http://localhost".replace(/\/+$/, "");
+ 

@@ -59,7 +59,7 @@ export function V1BootloaderFromJSON(json: any): V1Bootloader {
     return V1BootloaderFromJSONTyped(json, false);
 }
 
-export function V1BootloaderFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Bootloader {
+export function V1BootloaderFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Bootloader {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1BootloaderToJSON(json: any): V1Bootloader {
     return V1BootloaderToJSONTyped(json, false);
 }
 
-export function V1BootloaderToJSONTyped(value?: V1Bootloader | null, ignoreDiscriminator: boolean = false): any {
+export function V1BootloaderToJSONTyped(value?: V1Bootloader | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

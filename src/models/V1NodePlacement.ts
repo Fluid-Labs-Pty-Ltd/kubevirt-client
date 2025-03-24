@@ -65,7 +65,7 @@ export function V1NodePlacementFromJSON(json: any): V1NodePlacement {
     return V1NodePlacementFromJSONTyped(json, false);
 }
 
-export function V1NodePlacementFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1NodePlacement {
+export function V1NodePlacementFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1NodePlacement {
     if (json == null) {
         return json;
     }
@@ -81,7 +81,7 @@ export function V1NodePlacementToJSON(json: any): V1NodePlacement {
     return V1NodePlacementToJSONTyped(json, false);
 }
 
-export function V1NodePlacementToJSONTyped(value?: V1NodePlacement | null, ignoreDiscriminator: boolean = false): any {
+export function V1NodePlacementToJSONTyped(value?: V1NodePlacement | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

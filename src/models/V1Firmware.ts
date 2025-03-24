@@ -84,7 +84,7 @@ export function V1FirmwareFromJSON(json: any): V1Firmware {
     return V1FirmwareFromJSONTyped(json, false);
 }
 
-export function V1FirmwareFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Firmware {
+export function V1FirmwareFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Firmware {
     if (json == null) {
         return json;
     }
@@ -102,7 +102,7 @@ export function V1FirmwareToJSON(json: any): V1Firmware {
     return V1FirmwareToJSONTyped(json, false);
 }
 
-export function V1FirmwareToJSONTyped(value?: V1Firmware | null, ignoreDiscriminator: boolean = false): any {
+export function V1FirmwareToJSONTyped(value?: V1Firmware | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

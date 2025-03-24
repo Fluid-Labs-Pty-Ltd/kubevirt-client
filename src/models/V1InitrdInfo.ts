@@ -38,7 +38,7 @@ export function V1InitrdInfoFromJSON(json: any): V1InitrdInfo {
     return V1InitrdInfoFromJSONTyped(json, false);
 }
 
-export function V1InitrdInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1InitrdInfo {
+export function V1InitrdInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1InitrdInfo {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1InitrdInfoToJSON(json: any): V1InitrdInfo {
     return V1InitrdInfoToJSONTyped(json, false);
 }
 
-export function V1InitrdInfoToJSONTyped(value?: V1InitrdInfo | null, ignoreDiscriminator: boolean = false): any {
+export function V1InitrdInfoToJSONTyped(value?: V1InitrdInfo | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

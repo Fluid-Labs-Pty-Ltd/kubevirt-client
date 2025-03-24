@@ -65,7 +65,7 @@ export function V1ClockFromJSON(json: any): V1Clock {
     return V1ClockFromJSONTyped(json, false);
 }
 
-export function V1ClockFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Clock {
+export function V1ClockFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Clock {
     if (json == null) {
         return json;
     }
@@ -81,7 +81,7 @@ export function V1ClockToJSON(json: any): V1Clock {
     return V1ClockToJSONTyped(json, false);
 }
 
-export function V1ClockToJSONTyped(value?: V1Clock | null, ignoreDiscriminator: boolean = false): any {
+export function V1ClockToJSONTyped(value?: V1Clock | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

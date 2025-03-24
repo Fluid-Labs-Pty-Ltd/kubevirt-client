@@ -72,7 +72,7 @@ export function V1GenerationStatusFromJSON(json: any): V1GenerationStatus {
     return V1GenerationStatusFromJSONTyped(json, false);
 }
 
-export function V1GenerationStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1GenerationStatus {
+export function V1GenerationStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1GenerationStatus {
     if (json == null) {
         return json;
     }
@@ -91,7 +91,7 @@ export function V1GenerationStatusToJSON(json: any): V1GenerationStatus {
     return V1GenerationStatusToJSONTyped(json, false);
 }
 
-export function V1GenerationStatusToJSONTyped(value?: V1GenerationStatus | null, ignoreDiscriminator: boolean = false): any {
+export function V1GenerationStatusToJSONTyped(value?: V1GenerationStatus | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

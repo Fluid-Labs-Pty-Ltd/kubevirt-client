@@ -38,7 +38,7 @@ export function V1HypervTimerFromJSON(json: any): V1HypervTimer {
     return V1HypervTimerFromJSONTyped(json, false);
 }
 
-export function V1HypervTimerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1HypervTimer {
+export function V1HypervTimerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1HypervTimer {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1HypervTimerToJSON(json: any): V1HypervTimer {
     return V1HypervTimerToJSONTyped(json, false);
 }
 
-export function V1HypervTimerToJSONTyped(value?: V1HypervTimer | null, ignoreDiscriminator: boolean = false): any {
+export function V1HypervTimerToJSONTyped(value?: V1HypervTimer | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -50,7 +50,7 @@ export function V1UnpauseOptionsFromJSON(json: any): V1UnpauseOptions {
     return V1UnpauseOptionsFromJSONTyped(json, false);
 }
 
-export function V1UnpauseOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1UnpauseOptions {
+export function V1UnpauseOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1UnpauseOptions {
     if (json == null) {
         return json;
     }
@@ -66,7 +66,7 @@ export function V1UnpauseOptionsToJSON(json: any): V1UnpauseOptions {
     return V1UnpauseOptionsToJSONTyped(json, false);
 }
 
-export function V1UnpauseOptionsToJSONTyped(value?: V1UnpauseOptions | null, ignoreDiscriminator: boolean = false): any {
+export function V1UnpauseOptionsToJSONTyped(value?: V1UnpauseOptions | null, _ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
