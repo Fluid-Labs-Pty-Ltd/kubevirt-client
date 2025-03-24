@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 import {
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+} from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 
 /**
  * KSMConfiguration holds information about KSM.
@@ -46,7 +46,7 @@ export function V1KSMConfigurationFromJSON(json: any): V1KSMConfiguration {
     return V1KSMConfigurationFromJSONTyped(json, false);
 }
 
-export function V1KSMConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KSMConfiguration {
+export function V1KSMConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KSMConfiguration {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1KSMConfigurationToJSON(json: any): V1KSMConfiguration {
     return V1KSMConfigurationToJSONTyped(json, false);
 }
 
-export function V1KSMConfigurationToJSONTyped(value?: V1KSMConfiguration | null, _ignoreDiscriminator: boolean = false): any {
+export function V1KSMConfigurationToJSONTyped(value?: V1KSMConfiguration | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

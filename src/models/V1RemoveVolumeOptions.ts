@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * RemoveVolumeOptions is provided when dynamically hot unplugging volume and disk
  * @export
@@ -45,7 +45,7 @@ export function V1RemoveVolumeOptionsFromJSON(json: any): V1RemoveVolumeOptions 
     return V1RemoveVolumeOptionsFromJSONTyped(json, false);
 }
 
-export function V1RemoveVolumeOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1RemoveVolumeOptions {
+export function V1RemoveVolumeOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1RemoveVolumeOptions {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1RemoveVolumeOptionsToJSON(json: any): V1RemoveVolumeOptions {
     return V1RemoveVolumeOptionsToJSONTyped(json, false);
 }
 
-export function V1RemoveVolumeOptionsToJSONTyped(value?: V1RemoveVolumeOptions | null, _ignoreDiscriminator: boolean = false): any {
+export function V1RemoveVolumeOptionsToJSONTyped(value?: V1RemoveVolumeOptions | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

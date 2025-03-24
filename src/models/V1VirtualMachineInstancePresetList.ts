@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1VirtualMachineInstancePreset } from './V1VirtualMachineInstancePreset';
+import { mapValues } from '../runtime.js';
+import type { V1VirtualMachineInstancePreset } from './V1VirtualMachineInstancePreset.js';
 import {
     V1VirtualMachineInstancePresetFromJSON,
     V1VirtualMachineInstancePresetFromJSONTyped,
     V1VirtualMachineInstancePresetToJSON,
     V1VirtualMachineInstancePresetToJSONTyped,
-} from './V1VirtualMachineInstancePreset';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+} from './V1VirtualMachineInstancePreset.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 
 /**
  * VirtualMachineInstancePresetList is a list of VirtualMachinePresets
@@ -72,7 +72,7 @@ export function V1VirtualMachineInstancePresetListFromJSON(json: any): V1Virtual
     return V1VirtualMachineInstancePresetListFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstancePresetListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstancePresetList {
+export function V1VirtualMachineInstancePresetListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstancePresetList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1VirtualMachineInstancePresetListToJSON(json: any): V1VirtualMa
     return V1VirtualMachineInstancePresetListToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstancePresetListToJSONTyped(value?: V1VirtualMachineInstancePresetList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstancePresetListToJSONTyped(value?: V1VirtualMachineInstancePresetList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

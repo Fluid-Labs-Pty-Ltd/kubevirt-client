@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1alpha1VirtualMachinePoolStatus } from './V1alpha1VirtualMachinePoolStatus';
+import { mapValues } from '../runtime.js';
+import type { V1alpha1VirtualMachinePoolStatus } from './V1alpha1VirtualMachinePoolStatus.js';
 import {
     V1alpha1VirtualMachinePoolStatusFromJSON,
     V1alpha1VirtualMachinePoolStatusFromJSONTyped,
     V1alpha1VirtualMachinePoolStatusToJSON,
     V1alpha1VirtualMachinePoolStatusToJSONTyped,
-} from './V1alpha1VirtualMachinePoolStatus';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './V1alpha1VirtualMachinePoolStatus.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
-import type { V1alpha1VirtualMachinePoolSpec } from './V1alpha1VirtualMachinePoolSpec';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
+import type { V1alpha1VirtualMachinePoolSpec } from './V1alpha1VirtualMachinePoolSpec.js';
 import {
     V1alpha1VirtualMachinePoolSpecFromJSON,
     V1alpha1VirtualMachinePoolSpecFromJSONTyped,
     V1alpha1VirtualMachinePoolSpecToJSON,
     V1alpha1VirtualMachinePoolSpecToJSONTyped,
-} from './V1alpha1VirtualMachinePoolSpec';
+} from './V1alpha1VirtualMachinePoolSpec.js';
 
 /**
  * VirtualMachinePool resource contains a VirtualMachine configuration that can be used to replicate multiple VirtualMachine resources.
@@ -85,7 +85,7 @@ export function V1alpha1VirtualMachinePoolFromJSON(json: any): V1alpha1VirtualMa
     return V1alpha1VirtualMachinePoolFromJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachinePoolFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachinePool {
+export function V1alpha1VirtualMachinePoolFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachinePool {
     if (json == null) {
         return json;
     }
@@ -103,7 +103,7 @@ export function V1alpha1VirtualMachinePoolToJSON(json: any): V1alpha1VirtualMach
     return V1alpha1VirtualMachinePoolToJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachinePoolToJSONTyped(value?: V1alpha1VirtualMachinePool | null, _ignoreDiscriminator: boolean = false): any {
+export function V1alpha1VirtualMachinePoolToJSONTyped(value?: V1alpha1VirtualMachinePool | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

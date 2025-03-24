@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * VirtualMachineCondition represents the state of VirtualMachine
  * @export
@@ -58,7 +58,7 @@ export function V1VirtualMachineConditionFromJSON(json: any): V1VirtualMachineCo
     return V1VirtualMachineConditionFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineConditionFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineCondition {
+export function V1VirtualMachineConditionFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineCondition {
     if (json == null) {
         return json;
     }
@@ -75,7 +75,7 @@ export function V1VirtualMachineConditionToJSON(json: any): V1VirtualMachineCond
     return V1VirtualMachineConditionToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineConditionToJSONTyped(value?: V1VirtualMachineCondition | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineConditionToJSONTyped(value?: V1VirtualMachineCondition | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

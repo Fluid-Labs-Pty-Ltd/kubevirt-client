@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery } from './K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery } from './K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery.js';
 import {
     K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryFromJSON,
     K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryToJSON,
     K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery';
-import type { K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR } from './K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR';
+} from './K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery.js';
+import type { K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR } from './K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRFromJSON,
     K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRToJSON,
     K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDRToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR';
+} from './K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR.js';
 
 /**
  * APIGroup contains the name, the supported versions, and the preferred version of a group.
@@ -85,7 +85,7 @@ export function K8sIoApimachineryPkgApisMetaV1APIGroupFromJSON(json: any): K8sIo
     return K8sIoApimachineryPkgApisMetaV1APIGroupFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1APIGroupFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1APIGroup {
+export function K8sIoApimachineryPkgApisMetaV1APIGroupFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1APIGroup {
     if (json == null) {
         return json;
     }
@@ -104,7 +104,7 @@ export function K8sIoApimachineryPkgApisMetaV1APIGroupToJSON(json: any): K8sIoAp
     return K8sIoApimachineryPkgApisMetaV1APIGroupToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1APIGroupToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1APIGroup | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1APIGroupToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1APIGroup | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

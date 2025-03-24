@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * VirtualMachineMemoryDumpRequest represent the memory dump request phase and info
  * @export
@@ -76,7 +76,7 @@ export function V1VirtualMachineMemoryDumpRequestFromJSON(json: any): V1VirtualM
     return V1VirtualMachineMemoryDumpRequestFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineMemoryDumpRequestFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineMemoryDumpRequest {
+export function V1VirtualMachineMemoryDumpRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineMemoryDumpRequest {
     if (json == null) {
         return json;
     }
@@ -96,7 +96,7 @@ export function V1VirtualMachineMemoryDumpRequestToJSON(json: any): V1VirtualMac
     return V1VirtualMachineMemoryDumpRequestToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineMemoryDumpRequestToJSONTyped(value?: V1VirtualMachineMemoryDumpRequest | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineMemoryDumpRequestToJSONTyped(value?: V1VirtualMachineMemoryDumpRequest | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

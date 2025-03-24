@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1CustomizeComponentsPatch } from './V1CustomizeComponentsPatch';
+import { mapValues } from '../runtime.js';
+import type { V1CustomizeComponentsPatch } from './V1CustomizeComponentsPatch.js';
 import {
     V1CustomizeComponentsPatchFromJSON,
     V1CustomizeComponentsPatchFromJSONTyped,
     V1CustomizeComponentsPatchToJSON,
     V1CustomizeComponentsPatchToJSONTyped,
-} from './V1CustomizeComponentsPatch';
-import type { V1Flags } from './V1Flags';
+} from './V1CustomizeComponentsPatch.js';
+import type { V1Flags } from './V1Flags.js';
 import {
     V1FlagsFromJSON,
     V1FlagsFromJSONTyped,
     V1FlagsToJSON,
     V1FlagsToJSONTyped,
-} from './V1Flags';
+} from './V1Flags.js';
 
 /**
  * 
@@ -59,7 +59,7 @@ export function V1CustomizeComponentsFromJSON(json: any): V1CustomizeComponents 
     return V1CustomizeComponentsFromJSONTyped(json, false);
 }
 
-export function V1CustomizeComponentsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CustomizeComponents {
+export function V1CustomizeComponentsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CustomizeComponents {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1CustomizeComponentsToJSON(json: any): V1CustomizeComponents {
     return V1CustomizeComponentsToJSONTyped(json, false);
 }
 
-export function V1CustomizeComponentsToJSONTyped(value?: V1CustomizeComponents | null, _ignoreDiscriminator: boolean = false): any {
+export function V1CustomizeComponentsToJSONTyped(value?: V1CustomizeComponents | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

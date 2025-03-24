@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -38,7 +38,7 @@ export function V1NUMAFromJSON(json: any): V1NUMA {
     return V1NUMAFromJSONTyped(json, false);
 }
 
-export function V1NUMAFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1NUMA {
+export function V1NUMAFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1NUMA {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1NUMAToJSON(json: any): V1NUMA {
     return V1NUMAToJSONTyped(json, false);
 }
 
-export function V1NUMAToJSONTyped(value?: V1NUMA | null, _ignoreDiscriminator: boolean = false): any {
+export function V1NUMAToJSONTyped(value?: V1NUMA | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * VirtualMachineOptions holds the cluster level information regarding the virtual machine.
  * @export
@@ -44,7 +44,7 @@ export function V1VirtualMachineOptionsFromJSON(json: any): V1VirtualMachineOpti
     return V1VirtualMachineOptionsFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineOptions {
+export function V1VirtualMachineOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineOptions {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1VirtualMachineOptionsToJSON(json: any): V1VirtualMachineOption
     return V1VirtualMachineOptionsToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineOptionsToJSONTyped(value?: V1VirtualMachineOptions | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineOptionsToJSONTyped(value?: V1VirtualMachineOptions | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1beta1VirtualMachineRestore } from './V1beta1VirtualMachineRestore';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1beta1VirtualMachineRestore } from './V1beta1VirtualMachineRestore.js';
 import {
     V1beta1VirtualMachineRestoreFromJSON,
     V1beta1VirtualMachineRestoreFromJSONTyped,
     V1beta1VirtualMachineRestoreToJSON,
     V1beta1VirtualMachineRestoreToJSONTyped,
-} from './V1beta1VirtualMachineRestore';
+} from './V1beta1VirtualMachineRestore.js';
 
 /**
  * VirtualMachineRestoreList is a list of VirtualMachineRestore resources
@@ -73,7 +73,7 @@ export function V1beta1VirtualMachineRestoreListFromJSON(json: any): V1beta1Virt
     return V1beta1VirtualMachineRestoreListFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineRestoreListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineRestoreList {
+export function V1beta1VirtualMachineRestoreListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineRestoreList {
     if (json == null) {
         return json;
     }
@@ -90,7 +90,7 @@ export function V1beta1VirtualMachineRestoreListToJSON(json: any): V1beta1Virtua
     return V1beta1VirtualMachineRestoreListToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineRestoreListToJSONTyped(value?: V1beta1VirtualMachineRestoreList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineRestoreListToJSONTyped(value?: V1beta1VirtualMachineRestoreList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1PodAffinityTerm } from './K8sIoApiCoreV1PodAffinityTerm';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1PodAffinityTerm } from './K8sIoApiCoreV1PodAffinityTerm.js';
 import {
     K8sIoApiCoreV1PodAffinityTermFromJSON,
     K8sIoApiCoreV1PodAffinityTermFromJSONTyped,
     K8sIoApiCoreV1PodAffinityTermToJSON,
     K8sIoApiCoreV1PodAffinityTermToJSONTyped,
-} from './K8sIoApiCoreV1PodAffinityTerm';
-import type { K8sIoApiCoreV1WeightedPodAffinityTerm } from './K8sIoApiCoreV1WeightedPodAffinityTerm';
+} from './K8sIoApiCoreV1PodAffinityTerm.js';
+import type { K8sIoApiCoreV1WeightedPodAffinityTerm } from './K8sIoApiCoreV1WeightedPodAffinityTerm.js';
 import {
     K8sIoApiCoreV1WeightedPodAffinityTermFromJSON,
     K8sIoApiCoreV1WeightedPodAffinityTermFromJSONTyped,
     K8sIoApiCoreV1WeightedPodAffinityTermToJSON,
     K8sIoApiCoreV1WeightedPodAffinityTermToJSONTyped,
-} from './K8sIoApiCoreV1WeightedPodAffinityTerm';
+} from './K8sIoApiCoreV1WeightedPodAffinityTerm.js';
 
 /**
  * Pod affinity is a group of inter pod affinity scheduling rules.
@@ -59,7 +59,7 @@ export function K8sIoApiCoreV1PodAffinityFromJSON(json: any): K8sIoApiCoreV1PodA
     return K8sIoApiCoreV1PodAffinityFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PodAffinityFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1PodAffinity {
+export function K8sIoApiCoreV1PodAffinityFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1PodAffinity {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function K8sIoApiCoreV1PodAffinityToJSON(json: any): K8sIoApiCoreV1PodAff
     return K8sIoApiCoreV1PodAffinityToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PodAffinityToJSONTyped(value?: K8sIoApiCoreV1PodAffinity | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1PodAffinityToJSONTyped(value?: K8sIoApiCoreV1PodAffinity | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

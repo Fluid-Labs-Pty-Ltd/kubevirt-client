@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1beta1Error } from './V1beta1Error';
+import { mapValues } from '../runtime.js';
+import type { V1beta1Error } from './V1beta1Error.js';
 import {
     V1beta1ErrorFromJSON,
     V1beta1ErrorFromJSONTyped,
     V1beta1ErrorToJSON,
     V1beta1ErrorToJSONTyped,
-} from './V1beta1Error';
-import type { V1beta1VolumeSnapshotStatus } from './V1beta1VolumeSnapshotStatus';
+} from './V1beta1Error.js';
+import type { V1beta1VolumeSnapshotStatus } from './V1beta1VolumeSnapshotStatus.js';
 import {
     V1beta1VolumeSnapshotStatusFromJSON,
     V1beta1VolumeSnapshotStatusFromJSONTyped,
     V1beta1VolumeSnapshotStatusToJSON,
     V1beta1VolumeSnapshotStatusToJSONTyped,
-} from './V1beta1VolumeSnapshotStatus';
+} from './V1beta1VolumeSnapshotStatus.js';
 
 /**
  * VirtualMachineSnapshotContentStatus is the status for a VirtualMachineSnapshotStatus resource
@@ -71,7 +71,7 @@ export function V1beta1VirtualMachineSnapshotContentStatusFromJSON(json: any): V
     return V1beta1VirtualMachineSnapshotContentStatusFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineSnapshotContentStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshotContentStatus {
+export function V1beta1VirtualMachineSnapshotContentStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshotContentStatus {
     if (json == null) {
         return json;
     }
@@ -88,7 +88,7 @@ export function V1beta1VirtualMachineSnapshotContentStatusToJSON(json: any): V1b
     return V1beta1VirtualMachineSnapshotContentStatusToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineSnapshotContentStatusToJSONTyped(value?: V1beta1VirtualMachineSnapshotContentStatus | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineSnapshotContentStatusToJSONTyped(value?: V1beta1VirtualMachineSnapshotContentStatus | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

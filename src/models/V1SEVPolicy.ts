@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -38,7 +38,7 @@ export function V1SEVPolicyFromJSON(json: any): V1SEVPolicy {
     return V1SEVPolicyFromJSONTyped(json, false);
 }
 
-export function V1SEVPolicyFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SEVPolicy {
+export function V1SEVPolicyFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SEVPolicy {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1SEVPolicyToJSON(json: any): V1SEVPolicy {
     return V1SEVPolicyToJSONTyped(json, false);
 }
 
-export function V1SEVPolicyToJSONTyped(value?: V1SEVPolicy | null, _ignoreDiscriminator: boolean = false): any {
+export function V1SEVPolicyToJSONTyped(value?: V1SEVPolicy | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

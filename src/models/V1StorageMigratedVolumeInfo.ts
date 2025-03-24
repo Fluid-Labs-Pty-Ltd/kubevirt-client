@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1PersistentVolumeClaimInfo } from './V1PersistentVolumeClaimInfo';
+import { mapValues } from '../runtime.js';
+import type { V1PersistentVolumeClaimInfo } from './V1PersistentVolumeClaimInfo.js';
 import {
     V1PersistentVolumeClaimInfoFromJSON,
     V1PersistentVolumeClaimInfoFromJSONTyped,
     V1PersistentVolumeClaimInfoToJSON,
     V1PersistentVolumeClaimInfoToJSONTyped,
-} from './V1PersistentVolumeClaimInfo';
+} from './V1PersistentVolumeClaimInfo.js';
 
 /**
  * StorageMigratedVolumeInfo tracks the information about the source and destination volumes during the volume migration
@@ -59,7 +59,7 @@ export function V1StorageMigratedVolumeInfoFromJSON(json: any): V1StorageMigrate
     return V1StorageMigratedVolumeInfoFromJSONTyped(json, false);
 }
 
-export function V1StorageMigratedVolumeInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1StorageMigratedVolumeInfo {
+export function V1StorageMigratedVolumeInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1StorageMigratedVolumeInfo {
     if (json == null) {
         return json;
     }
@@ -75,7 +75,7 @@ export function V1StorageMigratedVolumeInfoToJSON(json: any): V1StorageMigratedV
     return V1StorageMigratedVolumeInfoToJSONTyped(json, false);
 }
 
-export function V1StorageMigratedVolumeInfoToJSONTyped(value?: V1StorageMigratedVolumeInfo | null, _ignoreDiscriminator: boolean = false): any {
+export function V1StorageMigratedVolumeInfoToJSONTyped(value?: V1StorageMigratedVolumeInfo | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

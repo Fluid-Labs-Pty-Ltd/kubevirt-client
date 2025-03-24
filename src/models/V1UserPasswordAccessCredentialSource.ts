@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1AccessCredentialSecretSource } from './V1AccessCredentialSecretSource';
+import { mapValues } from '../runtime.js';
+import type { V1AccessCredentialSecretSource } from './V1AccessCredentialSecretSource.js';
 import {
     V1AccessCredentialSecretSourceFromJSON,
     V1AccessCredentialSecretSourceFromJSONTyped,
     V1AccessCredentialSecretSourceToJSON,
     V1AccessCredentialSecretSourceToJSONTyped,
-} from './V1AccessCredentialSecretSource';
+} from './V1AccessCredentialSecretSource.js';
 
 /**
  * UserPasswordAccessCredentialSource represents where to retrieve the user password credentials Only one of its members may be specified.
@@ -46,7 +46,7 @@ export function V1UserPasswordAccessCredentialSourceFromJSON(json: any): V1UserP
     return V1UserPasswordAccessCredentialSourceFromJSONTyped(json, false);
 }
 
-export function V1UserPasswordAccessCredentialSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1UserPasswordAccessCredentialSource {
+export function V1UserPasswordAccessCredentialSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1UserPasswordAccessCredentialSource {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1UserPasswordAccessCredentialSourceToJSON(json: any): V1UserPas
     return V1UserPasswordAccessCredentialSourceToJSONTyped(json, false);
 }
 
-export function V1UserPasswordAccessCredentialSourceToJSONTyped(value?: V1UserPasswordAccessCredentialSource | null, _ignoreDiscriminator: boolean = false): any {
+export function V1UserPasswordAccessCredentialSourceToJSONTyped(value?: V1UserPasswordAccessCredentialSource | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

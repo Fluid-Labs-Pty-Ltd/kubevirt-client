@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1HTTPHeader } from './K8sIoApiCoreV1HTTPHeader';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1HTTPHeader } from './K8sIoApiCoreV1HTTPHeader.js';
 import {
     K8sIoApiCoreV1HTTPHeaderFromJSON,
     K8sIoApiCoreV1HTTPHeaderFromJSONTyped,
     K8sIoApiCoreV1HTTPHeaderToJSON,
     K8sIoApiCoreV1HTTPHeaderToJSONTyped,
-} from './K8sIoApiCoreV1HTTPHeader';
+} from './K8sIoApiCoreV1HTTPHeader.js';
 
 /**
  * HTTPGetAction describes an action based on HTTP Get requests.
@@ -79,7 +79,7 @@ export function K8sIoApiCoreV1HTTPGetActionFromJSON(json: any): K8sIoApiCoreV1HT
     return K8sIoApiCoreV1HTTPGetActionFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1HTTPGetActionFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1HTTPGetAction {
+export function K8sIoApiCoreV1HTTPGetActionFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1HTTPGetAction {
     if (json == null) {
         return json;
     }
@@ -96,7 +96,7 @@ export function K8sIoApiCoreV1HTTPGetActionToJSON(json: any): K8sIoApiCoreV1HTTP
     return K8sIoApiCoreV1HTTPGetActionToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1HTTPGetActionToJSONTyped(value?: K8sIoApiCoreV1HTTPGetAction | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1HTTPGetActionToJSONTyped(value?: K8sIoApiCoreV1HTTPGetAction | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

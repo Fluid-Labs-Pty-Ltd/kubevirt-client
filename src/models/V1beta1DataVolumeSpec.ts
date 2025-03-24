@@ -12,42 +12,42 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1PersistentVolumeClaimSpec } from './K8sIoApiCoreV1PersistentVolumeClaimSpec';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1PersistentVolumeClaimSpec } from './K8sIoApiCoreV1PersistentVolumeClaimSpec.js';
 import {
     K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSON,
     K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSONTyped,
     K8sIoApiCoreV1PersistentVolumeClaimSpecToJSON,
     K8sIoApiCoreV1PersistentVolumeClaimSpecToJSONTyped,
-} from './K8sIoApiCoreV1PersistentVolumeClaimSpec';
-import type { V1beta1DataVolumeSource } from './V1beta1DataVolumeSource';
+} from './K8sIoApiCoreV1PersistentVolumeClaimSpec.js';
+import type { V1beta1DataVolumeSource } from './V1beta1DataVolumeSource.js';
 import {
     V1beta1DataVolumeSourceFromJSON,
     V1beta1DataVolumeSourceFromJSONTyped,
     V1beta1DataVolumeSourceToJSON,
     V1beta1DataVolumeSourceToJSONTyped,
-} from './V1beta1DataVolumeSource';
-import type { V1beta1StorageSpec } from './V1beta1StorageSpec';
+} from './V1beta1DataVolumeSource.js';
+import type { V1beta1StorageSpec } from './V1beta1StorageSpec.js';
 import {
     V1beta1StorageSpecFromJSON,
     V1beta1StorageSpecFromJSONTyped,
     V1beta1StorageSpecToJSON,
     V1beta1StorageSpecToJSONTyped,
-} from './V1beta1StorageSpec';
-import type { V1beta1DataVolumeSourceRef } from './V1beta1DataVolumeSourceRef';
+} from './V1beta1StorageSpec.js';
+import type { V1beta1DataVolumeSourceRef } from './V1beta1DataVolumeSourceRef.js';
 import {
     V1beta1DataVolumeSourceRefFromJSON,
     V1beta1DataVolumeSourceRefFromJSONTyped,
     V1beta1DataVolumeSourceRefToJSON,
     V1beta1DataVolumeSourceRefToJSONTyped,
-} from './V1beta1DataVolumeSourceRef';
-import type { V1beta1DataVolumeCheckpoint } from './V1beta1DataVolumeCheckpoint';
+} from './V1beta1DataVolumeSourceRef.js';
+import type { V1beta1DataVolumeCheckpoint } from './V1beta1DataVolumeCheckpoint.js';
 import {
     V1beta1DataVolumeCheckpointFromJSON,
     V1beta1DataVolumeCheckpointFromJSONTyped,
     V1beta1DataVolumeCheckpointToJSON,
     V1beta1DataVolumeCheckpointToJSONTyped,
-} from './V1beta1DataVolumeCheckpoint';
+} from './V1beta1DataVolumeCheckpoint.js';
 
 /**
  * DataVolumeSpec defines the DataVolume type specification
@@ -122,7 +122,7 @@ export function V1beta1DataVolumeSpecFromJSON(json: any): V1beta1DataVolumeSpec 
     return V1beta1DataVolumeSpecFromJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSpec {
+export function V1beta1DataVolumeSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSpec {
     if (json == null) {
         return json;
     }
@@ -144,7 +144,7 @@ export function V1beta1DataVolumeSpecToJSON(json: any): V1beta1DataVolumeSpec {
     return V1beta1DataVolumeSpecToJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSpecToJSONTyped(value?: V1beta1DataVolumeSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1DataVolumeSpecToJSONTyped(value?: V1beta1DataVolumeSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

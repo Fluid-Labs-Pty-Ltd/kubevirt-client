@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1CPUFeature } from './V1CPUFeature';
+import { mapValues } from '../runtime.js';
+import type { V1CPUFeature } from './V1CPUFeature.js';
 import {
     V1CPUFeatureFromJSON,
     V1CPUFeatureFromJSONTyped,
     V1CPUFeatureToJSON,
     V1CPUFeatureToJSONTyped,
-} from './V1CPUFeature';
-import type { V1beta1SpreadOptions } from './V1beta1SpreadOptions';
+} from './V1CPUFeature.js';
+import type { V1beta1SpreadOptions } from './V1beta1SpreadOptions.js';
 import {
     V1beta1SpreadOptionsFromJSON,
     V1beta1SpreadOptionsFromJSONTyped,
     V1beta1SpreadOptionsToJSON,
     V1beta1SpreadOptionsToJSONTyped,
-} from './V1beta1SpreadOptions';
+} from './V1beta1SpreadOptions.js';
 
 /**
  * CPUPreferences contains various optional CPU preferences.
@@ -65,7 +65,7 @@ export function V1beta1CPUPreferencesFromJSON(json: any): V1beta1CPUPreferences 
     return V1beta1CPUPreferencesFromJSONTyped(json, false);
 }
 
-export function V1beta1CPUPreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1CPUPreferences {
+export function V1beta1CPUPreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1CPUPreferences {
     if (json == null) {
         return json;
     }
@@ -81,7 +81,7 @@ export function V1beta1CPUPreferencesToJSON(json: any): V1beta1CPUPreferences {
     return V1beta1CPUPreferencesToJSONTyped(json, false);
 }
 
-export function V1beta1CPUPreferencesToJSONTyped(value?: V1beta1CPUPreferences | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1CPUPreferencesToJSONTyped(value?: V1beta1CPUPreferences | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1VirtualMachineInstanceMigrationCondition } from './V1VirtualMachineInstanceMigrationCondition';
+import { mapValues } from '../runtime.js';
+import type { V1VirtualMachineInstanceMigrationCondition } from './V1VirtualMachineInstanceMigrationCondition.js';
 import {
     V1VirtualMachineInstanceMigrationConditionFromJSON,
     V1VirtualMachineInstanceMigrationConditionFromJSONTyped,
     V1VirtualMachineInstanceMigrationConditionToJSON,
     V1VirtualMachineInstanceMigrationConditionToJSONTyped,
-} from './V1VirtualMachineInstanceMigrationCondition';
-import type { V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp } from './V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp';
+} from './V1VirtualMachineInstanceMigrationCondition.js';
+import type { V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp } from './V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp.js';
 import {
     V1VirtualMachineInstanceMigrationPhaseTransitionTimestampFromJSON,
     V1VirtualMachineInstanceMigrationPhaseTransitionTimestampFromJSONTyped,
     V1VirtualMachineInstanceMigrationPhaseTransitionTimestampToJSON,
     V1VirtualMachineInstanceMigrationPhaseTransitionTimestampToJSONTyped,
-} from './V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp';
-import type { V1VirtualMachineInstanceMigrationState } from './V1VirtualMachineInstanceMigrationState';
+} from './V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp.js';
+import type { V1VirtualMachineInstanceMigrationState } from './V1VirtualMachineInstanceMigrationState.js';
 import {
     V1VirtualMachineInstanceMigrationStateFromJSON,
     V1VirtualMachineInstanceMigrationStateFromJSONTyped,
     V1VirtualMachineInstanceMigrationStateToJSON,
     V1VirtualMachineInstanceMigrationStateToJSONTyped,
-} from './V1VirtualMachineInstanceMigrationState';
+} from './V1VirtualMachineInstanceMigrationState.js';
 
 /**
  * VirtualMachineInstanceMigration reprents information pertaining to a VMI's migration.
@@ -78,7 +78,7 @@ export function V1VirtualMachineInstanceMigrationStatusFromJSON(json: any): V1Vi
     return V1VirtualMachineInstanceMigrationStatusFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceMigrationStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigrationStatus {
+export function V1VirtualMachineInstanceMigrationStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigrationStatus {
     if (json == null) {
         return json;
     }
@@ -95,7 +95,7 @@ export function V1VirtualMachineInstanceMigrationStatusToJSON(json: any): V1Virt
     return V1VirtualMachineInstanceMigrationStatusToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceMigrationStatusToJSONTyped(value?: V1VirtualMachineInstanceMigrationStatus | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceMigrationStatusToJSONTyped(value?: V1VirtualMachineInstanceMigrationStatus | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

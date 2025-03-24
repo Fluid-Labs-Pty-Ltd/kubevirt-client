@@ -12,70 +12,70 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1SoundDevice } from './V1SoundDevice';
+import { mapValues } from '../runtime.js';
+import type { V1SoundDevice } from './V1SoundDevice.js';
 import {
     V1SoundDeviceFromJSON,
     V1SoundDeviceFromJSONTyped,
     V1SoundDeviceToJSON,
     V1SoundDeviceToJSONTyped,
-} from './V1SoundDevice';
-import type { V1GPU } from './V1GPU';
+} from './V1SoundDevice.js';
+import type { V1GPU } from './V1GPU.js';
 import {
     V1GPUFromJSON,
     V1GPUFromJSONTyped,
     V1GPUToJSON,
     V1GPUToJSONTyped,
-} from './V1GPU';
-import type { V1Input } from './V1Input';
+} from './V1GPU.js';
+import type { V1Input } from './V1Input.js';
 import {
     V1InputFromJSON,
     V1InputFromJSONTyped,
     V1InputToJSON,
     V1InputToJSONTyped,
-} from './V1Input';
-import type { V1Interface } from './V1Interface';
+} from './V1Input.js';
+import type { V1Interface } from './V1Interface.js';
 import {
     V1InterfaceFromJSON,
     V1InterfaceFromJSONTyped,
     V1InterfaceToJSON,
     V1InterfaceToJSONTyped,
-} from './V1Interface';
-import type { V1Watchdog } from './V1Watchdog';
+} from './V1Interface.js';
+import type { V1Watchdog } from './V1Watchdog.js';
 import {
     V1WatchdogFromJSON,
     V1WatchdogFromJSONTyped,
     V1WatchdogToJSON,
     V1WatchdogToJSONTyped,
-} from './V1Watchdog';
-import type { V1HostDevice } from './V1HostDevice';
+} from './V1Watchdog.js';
+import type { V1HostDevice } from './V1HostDevice.js';
 import {
     V1HostDeviceFromJSON,
     V1HostDeviceFromJSONTyped,
     V1HostDeviceToJSON,
     V1HostDeviceToJSONTyped,
-} from './V1HostDevice';
-import type { V1TPMDevice } from './V1TPMDevice';
+} from './V1HostDevice.js';
+import type { V1TPMDevice } from './V1TPMDevice.js';
 import {
     V1TPMDeviceFromJSON,
     V1TPMDeviceFromJSONTyped,
     V1TPMDeviceToJSON,
     V1TPMDeviceToJSONTyped,
-} from './V1TPMDevice';
-import type { V1Disk } from './V1Disk';
+} from './V1TPMDevice.js';
+import type { V1Disk } from './V1Disk.js';
 import {
     V1DiskFromJSON,
     V1DiskFromJSONTyped,
     V1DiskToJSON,
     V1DiskToJSONTyped,
-} from './V1Disk';
-import type { V1Filesystem } from './V1Filesystem';
+} from './V1Disk.js';
+import type { V1Filesystem } from './V1Filesystem.js';
 import {
     V1FilesystemFromJSON,
     V1FilesystemFromJSONTyped,
     V1FilesystemToJSON,
     V1FilesystemToJSONTyped,
-} from './V1Filesystem';
+} from './V1Filesystem.js';
 
 /**
  * 
@@ -236,7 +236,7 @@ export function V1DevicesFromJSON(json: any): V1Devices {
     return V1DevicesFromJSONTyped(json, false);
 }
 
-export function V1DevicesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Devices {
+export function V1DevicesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Devices {
     if (json == null) {
         return json;
     }
@@ -272,7 +272,7 @@ export function V1DevicesToJSON(json: any): V1Devices {
     return V1DevicesToJSONTyped(json, false);
 }
 
-export function V1DevicesToJSONTyped(value?: V1Devices | null, _ignoreDiscriminator: boolean = false): any {
+export function V1DevicesToJSONTyped(value?: V1Devices | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

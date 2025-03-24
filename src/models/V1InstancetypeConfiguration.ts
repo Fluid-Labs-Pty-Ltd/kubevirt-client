@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -38,7 +38,7 @@ export function V1InstancetypeConfigurationFromJSON(json: any): V1InstancetypeCo
     return V1InstancetypeConfigurationFromJSONTyped(json, false);
 }
 
-export function V1InstancetypeConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1InstancetypeConfiguration {
+export function V1InstancetypeConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1InstancetypeConfiguration {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1InstancetypeConfigurationToJSON(json: any): V1InstancetypeConf
     return V1InstancetypeConfigurationToJSONTyped(json, false);
 }
 
-export function V1InstancetypeConfigurationToJSONTyped(value?: V1InstancetypeConfiguration | null, _ignoreDiscriminator: boolean = false): any {
+export function V1InstancetypeConfigurationToJSONTyped(value?: V1InstancetypeConfiguration | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

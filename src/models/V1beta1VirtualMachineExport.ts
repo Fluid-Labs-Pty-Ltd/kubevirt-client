@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1beta1VirtualMachineExportStatus } from './V1beta1VirtualMachineExportStatus';
+import { mapValues } from '../runtime.js';
+import type { V1beta1VirtualMachineExportStatus } from './V1beta1VirtualMachineExportStatus.js';
 import {
     V1beta1VirtualMachineExportStatusFromJSON,
     V1beta1VirtualMachineExportStatusFromJSONTyped,
     V1beta1VirtualMachineExportStatusToJSON,
     V1beta1VirtualMachineExportStatusToJSONTyped,
-} from './V1beta1VirtualMachineExportStatus';
-import type { V1beta1VirtualMachineExportSpec } from './V1beta1VirtualMachineExportSpec';
+} from './V1beta1VirtualMachineExportStatus.js';
+import type { V1beta1VirtualMachineExportSpec } from './V1beta1VirtualMachineExportSpec.js';
 import {
     V1beta1VirtualMachineExportSpecFromJSON,
     V1beta1VirtualMachineExportSpecFromJSONTyped,
     V1beta1VirtualMachineExportSpecToJSON,
     V1beta1VirtualMachineExportSpecToJSONTyped,
-} from './V1beta1VirtualMachineExportSpec';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './V1beta1VirtualMachineExportSpec.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 
 /**
  * VirtualMachineExport defines the operation of exporting a VM source
@@ -85,7 +85,7 @@ export function V1beta1VirtualMachineExportFromJSON(json: any): V1beta1VirtualMa
     return V1beta1VirtualMachineExportFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineExport {
+export function V1beta1VirtualMachineExportFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineExport {
     if (json == null) {
         return json;
     }
@@ -103,7 +103,7 @@ export function V1beta1VirtualMachineExportToJSON(json: any): V1beta1VirtualMach
     return V1beta1VirtualMachineExportToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportToJSONTyped(value?: V1beta1VirtualMachineExport | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineExportToJSONTyped(value?: V1beta1VirtualMachineExport | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

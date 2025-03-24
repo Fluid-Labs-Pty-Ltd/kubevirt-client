@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * MigrateOptions may be provided on migrate request.
  * @export
@@ -50,7 +50,7 @@ export function V1MigrateOptionsFromJSON(json: any): V1MigrateOptions {
     return V1MigrateOptionsFromJSONTyped(json, false);
 }
 
-export function V1MigrateOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1MigrateOptions {
+export function V1MigrateOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1MigrateOptions {
     if (json == null) {
         return json;
     }
@@ -66,7 +66,7 @@ export function V1MigrateOptionsToJSON(json: any): V1MigrateOptions {
     return V1MigrateOptionsToJSONTyped(json, false);
 }
 
-export function V1MigrateOptionsToJSONTyped(value?: V1MigrateOptions | null, _ignoreDiscriminator: boolean = false): any {
+export function V1MigrateOptionsToJSONTyped(value?: V1MigrateOptions | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

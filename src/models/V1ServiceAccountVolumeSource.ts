@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * ServiceAccountVolumeSource adapts a ServiceAccount into a volume.
  * @export
@@ -38,7 +38,7 @@ export function V1ServiceAccountVolumeSourceFromJSON(json: any): V1ServiceAccoun
     return V1ServiceAccountVolumeSourceFromJSONTyped(json, false);
 }
 
-export function V1ServiceAccountVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ServiceAccountVolumeSource {
+export function V1ServiceAccountVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ServiceAccountVolumeSource {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1ServiceAccountVolumeSourceToJSON(json: any): V1ServiceAccountV
     return V1ServiceAccountVolumeSourceToJSONTyped(json, false);
 }
 
-export function V1ServiceAccountVolumeSourceToJSONTyped(value?: V1ServiceAccountVolumeSource | null, _ignoreDiscriminator: boolean = false): any {
+export function V1ServiceAccountVolumeSourceToJSONTyped(value?: V1ServiceAccountVolumeSource | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

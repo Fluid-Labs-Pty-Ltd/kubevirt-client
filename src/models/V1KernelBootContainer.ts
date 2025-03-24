@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * If set, the VM will be booted from the defined kernel / initrd.
  * @export
@@ -80,7 +80,7 @@ export function V1KernelBootContainerFromJSON(json: any): V1KernelBootContainer 
     return V1KernelBootContainerFromJSONTyped(json, false);
 }
 
-export function V1KernelBootContainerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KernelBootContainer {
+export function V1KernelBootContainerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KernelBootContainer {
     if (json == null) {
         return json;
     }
@@ -98,7 +98,7 @@ export function V1KernelBootContainerToJSON(json: any): V1KernelBootContainer {
     return V1KernelBootContainerToJSONTyped(json, false);
 }
 
-export function V1KernelBootContainerToJSONTyped(value?: V1KernelBootContainer | null, _ignoreDiscriminator: boolean = false): any {
+export function V1KernelBootContainerToJSONTyped(value?: V1KernelBootContainer | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

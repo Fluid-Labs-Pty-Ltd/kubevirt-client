@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1beta1VirtualMachineClusterInstancetype } from './V1beta1VirtualMachineClusterInstancetype';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1beta1VirtualMachineClusterInstancetype } from './V1beta1VirtualMachineClusterInstancetype.js';
 import {
     V1beta1VirtualMachineClusterInstancetypeFromJSON,
     V1beta1VirtualMachineClusterInstancetypeFromJSONTyped,
     V1beta1VirtualMachineClusterInstancetypeToJSON,
     V1beta1VirtualMachineClusterInstancetypeToJSONTyped,
-} from './V1beta1VirtualMachineClusterInstancetype';
+} from './V1beta1VirtualMachineClusterInstancetype.js';
 
 /**
  * VirtualMachineClusterInstancetypeList is a list of VirtualMachineClusterInstancetype resources.
@@ -72,7 +72,7 @@ export function V1beta1VirtualMachineClusterInstancetypeListFromJSON(json: any):
     return V1beta1VirtualMachineClusterInstancetypeListFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineClusterInstancetypeListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineClusterInstancetypeList {
+export function V1beta1VirtualMachineClusterInstancetypeListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineClusterInstancetypeList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1beta1VirtualMachineClusterInstancetypeListToJSON(json: any): V
     return V1beta1VirtualMachineClusterInstancetypeListToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineClusterInstancetypeListToJSONTyped(value?: V1beta1VirtualMachineClusterInstancetypeList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineClusterInstancetypeListToJSONTyped(value?: V1beta1VirtualMachineClusterInstancetypeList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

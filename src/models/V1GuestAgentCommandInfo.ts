@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * List of commands that QEMU guest agent supports
  * @export
@@ -45,7 +45,7 @@ export function V1GuestAgentCommandInfoFromJSON(json: any): V1GuestAgentCommandI
     return V1GuestAgentCommandInfoFromJSONTyped(json, false);
 }
 
-export function V1GuestAgentCommandInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1GuestAgentCommandInfo {
+export function V1GuestAgentCommandInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1GuestAgentCommandInfo {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1GuestAgentCommandInfoToJSON(json: any): V1GuestAgentCommandInf
     return V1GuestAgentCommandInfoToJSONTyped(json, false);
 }
 
-export function V1GuestAgentCommandInfoToJSONTyped(value?: V1GuestAgentCommandInfo | null, _ignoreDiscriminator: boolean = false): any {
+export function V1GuestAgentCommandInfoToJSONTyped(value?: V1GuestAgentCommandInfo | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

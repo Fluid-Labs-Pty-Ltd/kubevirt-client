@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -38,7 +38,7 @@ export function V1TopologyHintsFromJSON(json: any): V1TopologyHints {
     return V1TopologyHintsFromJSONTyped(json, false);
 }
 
-export function V1TopologyHintsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1TopologyHints {
+export function V1TopologyHintsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1TopologyHints {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1TopologyHintsToJSON(json: any): V1TopologyHints {
     return V1TopologyHintsToJSONTyped(json, false);
 }
 
-export function V1TopologyHintsToJSONTyped(value?: V1TopologyHints | null, _ignoreDiscriminator: boolean = false): any {
+export function V1TopologyHintsToJSONTyped(value?: V1TopologyHints | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

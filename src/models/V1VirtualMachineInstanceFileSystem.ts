@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1VirtualMachineInstanceFileSystemDisk } from './V1VirtualMachineInstanceFileSystemDisk';
+import { mapValues } from '../runtime.js';
+import type { V1VirtualMachineInstanceFileSystemDisk } from './V1VirtualMachineInstanceFileSystemDisk.js';
 import {
     V1VirtualMachineInstanceFileSystemDiskFromJSON,
     V1VirtualMachineInstanceFileSystemDiskFromJSONTyped,
     V1VirtualMachineInstanceFileSystemDiskToJSON,
     V1VirtualMachineInstanceFileSystemDiskToJSONTyped,
-} from './V1VirtualMachineInstanceFileSystemDisk';
+} from './V1VirtualMachineInstanceFileSystemDisk.js';
 
 /**
  * VirtualMachineInstanceFileSystem represents guest os disk
@@ -81,7 +81,7 @@ export function V1VirtualMachineInstanceFileSystemFromJSON(json: any): V1Virtual
     return V1VirtualMachineInstanceFileSystemFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceFileSystemFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceFileSystem {
+export function V1VirtualMachineInstanceFileSystemFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceFileSystem {
     if (json == null) {
         return json;
     }
@@ -100,7 +100,7 @@ export function V1VirtualMachineInstanceFileSystemToJSON(json: any): V1VirtualMa
     return V1VirtualMachineInstanceFileSystemToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceFileSystemToJSONTyped(value?: V1VirtualMachineInstanceFileSystem | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceFileSystemToJSONTyped(value?: V1VirtualMachineInstanceFileSystem | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

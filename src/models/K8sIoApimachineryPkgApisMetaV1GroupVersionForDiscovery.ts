@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * GroupVersion contains the "group/version" and "version" string of a version. It is made a struct to keep extensibility.
  * @export
@@ -46,7 +46,7 @@ export function K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryFromJSON(j
     return K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery {
+export function K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery {
     if (json == null) {
         return json;
     }
@@ -61,7 +61,7 @@ export function K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryToJSON(jso
     return K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscoveryToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

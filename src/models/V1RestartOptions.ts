@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * RestartOptions may be provided when deleting an API object.
  * @export
@@ -56,7 +56,7 @@ export function V1RestartOptionsFromJSON(json: any): V1RestartOptions {
     return V1RestartOptionsFromJSONTyped(json, false);
 }
 
-export function V1RestartOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1RestartOptions {
+export function V1RestartOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1RestartOptions {
     if (json == null) {
         return json;
     }
@@ -73,7 +73,7 @@ export function V1RestartOptionsToJSON(json: any): V1RestartOptions {
     return V1RestartOptionsToJSONTyped(json, false);
 }
 
-export function V1RestartOptionsToJSONTyped(value?: V1RestartOptions | null, _ignoreDiscriminator: boolean = false): any {
+export function V1RestartOptionsToJSONTyped(value?: V1RestartOptions | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

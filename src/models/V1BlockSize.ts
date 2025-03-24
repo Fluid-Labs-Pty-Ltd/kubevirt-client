@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1CustomBlockSize } from './V1CustomBlockSize';
+import { mapValues } from '../runtime.js';
+import type { V1CustomBlockSize } from './V1CustomBlockSize.js';
 import {
     V1CustomBlockSizeFromJSON,
     V1CustomBlockSizeFromJSONTyped,
     V1CustomBlockSizeToJSON,
     V1CustomBlockSizeToJSONTyped,
-} from './V1CustomBlockSize';
-import type { V1FeatureState } from './V1FeatureState';
+} from './V1CustomBlockSize.js';
+import type { V1FeatureState } from './V1FeatureState.js';
 import {
     V1FeatureStateFromJSON,
     V1FeatureStateFromJSONTyped,
     V1FeatureStateToJSON,
     V1FeatureStateToJSONTyped,
-} from './V1FeatureState';
+} from './V1FeatureState.js';
 
 /**
  * BlockSize provides the option to change the block size presented to the VM for a disk. Only one of its members may be specified.
@@ -59,7 +59,7 @@ export function V1BlockSizeFromJSON(json: any): V1BlockSize {
     return V1BlockSizeFromJSONTyped(json, false);
 }
 
-export function V1BlockSizeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1BlockSize {
+export function V1BlockSizeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1BlockSize {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1BlockSizeToJSON(json: any): V1BlockSize {
     return V1BlockSizeToJSONTyped(json, false);
 }
 
-export function V1BlockSizeToJSONTyped(value?: V1BlockSize | null, _ignoreDiscriminator: boolean = false): any {
+export function V1BlockSizeToJSONTyped(value?: V1BlockSize | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

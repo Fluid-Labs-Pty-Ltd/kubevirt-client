@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1APIResource } from './K8sIoApimachineryPkgApisMetaV1APIResource';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1APIResource } from './K8sIoApimachineryPkgApisMetaV1APIResource.js';
 import {
     K8sIoApimachineryPkgApisMetaV1APIResourceFromJSON,
     K8sIoApimachineryPkgApisMetaV1APIResourceFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1APIResourceToJSON,
     K8sIoApimachineryPkgApisMetaV1APIResourceToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1APIResource';
+} from './K8sIoApimachineryPkgApisMetaV1APIResource.js';
 
 /**
  * APIResourceList is a list of APIResource, it is used to expose the name of the resources supported in a specific group and version, and if the resource is namespaced.
@@ -66,7 +66,7 @@ export function K8sIoApimachineryPkgApisMetaV1APIResourceListFromJSON(json: any)
     return K8sIoApimachineryPkgApisMetaV1APIResourceListFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1APIResourceListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1APIResourceList {
+export function K8sIoApimachineryPkgApisMetaV1APIResourceListFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1APIResourceList {
     if (json == null) {
         return json;
     }
@@ -83,7 +83,7 @@ export function K8sIoApimachineryPkgApisMetaV1APIResourceListToJSON(json: any): 
     return K8sIoApimachineryPkgApisMetaV1APIResourceListToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1APIResourceListToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1APIResourceList | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1APIResourceListToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1APIResourceList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1VirtualMachineInstanceGuestOSUser } from './V1VirtualMachineInstanceGuestOSUser';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1VirtualMachineInstanceGuestOSUser } from './V1VirtualMachineInstanceGuestOSUser.js';
 import {
     V1VirtualMachineInstanceGuestOSUserFromJSON,
     V1VirtualMachineInstanceGuestOSUserFromJSONTyped,
     V1VirtualMachineInstanceGuestOSUserToJSON,
     V1VirtualMachineInstanceGuestOSUserToJSONTyped,
-} from './V1VirtualMachineInstanceGuestOSUser';
+} from './V1VirtualMachineInstanceGuestOSUser.js';
 
 /**
  * VirtualMachineInstanceGuestOSUserList comprises the list of all active users on guest machine
@@ -72,7 +72,7 @@ export function V1VirtualMachineInstanceGuestOSUserListFromJSON(json: any): V1Vi
     return V1VirtualMachineInstanceGuestOSUserListFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceGuestOSUserListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestOSUserList {
+export function V1VirtualMachineInstanceGuestOSUserListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestOSUserList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1VirtualMachineInstanceGuestOSUserListToJSON(json: any): V1Virt
     return V1VirtualMachineInstanceGuestOSUserListToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceGuestOSUserListToJSONTyped(value?: V1VirtualMachineInstanceGuestOSUserList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceGuestOSUserListToJSONTyped(value?: V1VirtualMachineInstanceGuestOSUserList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

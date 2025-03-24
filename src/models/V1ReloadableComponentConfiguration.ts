@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1RESTClientConfiguration } from './V1RESTClientConfiguration';
+import { mapValues } from '../runtime.js';
+import type { V1RESTClientConfiguration } from './V1RESTClientConfiguration.js';
 import {
     V1RESTClientConfigurationFromJSON,
     V1RESTClientConfigurationFromJSONTyped,
     V1RESTClientConfigurationToJSON,
     V1RESTClientConfigurationToJSONTyped,
-} from './V1RESTClientConfiguration';
+} from './V1RESTClientConfiguration.js';
 
 /**
  * ReloadableComponentConfiguration holds all generic k8s configuration options which can be reloaded by components without requiring a restart.
@@ -46,7 +46,7 @@ export function V1ReloadableComponentConfigurationFromJSON(json: any): V1Reloada
     return V1ReloadableComponentConfigurationFromJSONTyped(json, false);
 }
 
-export function V1ReloadableComponentConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ReloadableComponentConfiguration {
+export function V1ReloadableComponentConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ReloadableComponentConfiguration {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1ReloadableComponentConfigurationToJSON(json: any): V1Reloadabl
     return V1ReloadableComponentConfigurationToJSONTyped(json, false);
 }
 
-export function V1ReloadableComponentConfigurationToJSONTyped(value?: V1ReloadableComponentConfiguration | null, _ignoreDiscriminator: boolean = false): any {
+export function V1ReloadableComponentConfigurationToJSONTyped(value?: V1ReloadableComponentConfiguration | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

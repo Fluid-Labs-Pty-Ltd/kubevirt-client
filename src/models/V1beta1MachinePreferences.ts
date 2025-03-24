@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * MachinePreferences contains various optional defaults for Machine.
  * @export
@@ -38,7 +38,7 @@ export function V1beta1MachinePreferencesFromJSON(json: any): V1beta1MachinePref
     return V1beta1MachinePreferencesFromJSONTyped(json, false);
 }
 
-export function V1beta1MachinePreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1MachinePreferences {
+export function V1beta1MachinePreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1MachinePreferences {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1beta1MachinePreferencesToJSON(json: any): V1beta1MachinePrefer
     return V1beta1MachinePreferencesToJSONTyped(json, false);
 }
 
-export function V1beta1MachinePreferencesToJSONTyped(value?: V1beta1MachinePreferences | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1MachinePreferencesToJSONTyped(value?: V1beta1MachinePreferences | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

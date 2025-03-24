@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -38,7 +38,7 @@ export function V1MachineFromJSON(json: any): V1Machine {
     return V1MachineFromJSONTyped(json, false);
 }
 
-export function V1MachineFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Machine {
+export function V1MachineFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Machine {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1MachineToJSON(json: any): V1Machine {
     return V1MachineToJSONTyped(json, false);
 }
 
-export function V1MachineToJSONTyped(value?: V1Machine | null, _ignoreDiscriminator: boolean = false): any {
+export function V1MachineToJSONTyped(value?: V1Machine | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

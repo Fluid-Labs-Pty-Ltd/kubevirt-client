@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * Represents a docker image with an embedded disk.
  * @export
@@ -74,7 +74,7 @@ export function V1ContainerDiskSourceFromJSON(json: any): V1ContainerDiskSource 
     return V1ContainerDiskSourceFromJSONTyped(json, false);
 }
 
-export function V1ContainerDiskSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ContainerDiskSource {
+export function V1ContainerDiskSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ContainerDiskSource {
     if (json == null) {
         return json;
     }
@@ -91,7 +91,7 @@ export function V1ContainerDiskSourceToJSON(json: any): V1ContainerDiskSource {
     return V1ContainerDiskSourceToJSONTyped(json, false);
 }
 
-export function V1ContainerDiskSourceToJSONTyped(value?: V1ContainerDiskSource | null, _ignoreDiscriminator: boolean = false): any {
+export function V1ContainerDiskSourceToJSONTyped(value?: V1ContainerDiskSource | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

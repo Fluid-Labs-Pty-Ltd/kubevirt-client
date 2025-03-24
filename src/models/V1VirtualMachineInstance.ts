@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1VirtualMachineInstanceSpec } from './V1VirtualMachineInstanceSpec';
+import { mapValues } from '../runtime.js';
+import type { V1VirtualMachineInstanceSpec } from './V1VirtualMachineInstanceSpec.js';
 import {
     V1VirtualMachineInstanceSpecFromJSON,
     V1VirtualMachineInstanceSpecFromJSONTyped,
     V1VirtualMachineInstanceSpecToJSON,
     V1VirtualMachineInstanceSpecToJSONTyped,
-} from './V1VirtualMachineInstanceSpec';
-import type { V1VirtualMachineInstanceStatus } from './V1VirtualMachineInstanceStatus';
+} from './V1VirtualMachineInstanceSpec.js';
+import type { V1VirtualMachineInstanceStatus } from './V1VirtualMachineInstanceStatus.js';
 import {
     V1VirtualMachineInstanceStatusFromJSON,
     V1VirtualMachineInstanceStatusFromJSONTyped,
     V1VirtualMachineInstanceStatusToJSON,
     V1VirtualMachineInstanceStatusToJSONTyped,
-} from './V1VirtualMachineInstanceStatus';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './V1VirtualMachineInstanceStatus.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 
 /**
  * VirtualMachineInstance is *the* VirtualMachineInstance Definition. It represents a virtual machine in the runtime environment of kubernetes.
@@ -85,7 +85,7 @@ export function V1VirtualMachineInstanceFromJSON(json: any): V1VirtualMachineIns
     return V1VirtualMachineInstanceFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstance {
+export function V1VirtualMachineInstanceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstance {
     if (json == null) {
         return json;
     }
@@ -103,7 +103,7 @@ export function V1VirtualMachineInstanceToJSON(json: any): V1VirtualMachineInsta
     return V1VirtualMachineInstanceToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceToJSONTyped(value?: V1VirtualMachineInstance | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceToJSONTyped(value?: V1VirtualMachineInstance | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

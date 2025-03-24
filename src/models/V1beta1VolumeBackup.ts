@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1beta1PersistentVolumeClaim } from './V1beta1PersistentVolumeClaim';
+import { mapValues } from '../runtime.js';
+import type { V1beta1PersistentVolumeClaim } from './V1beta1PersistentVolumeClaim.js';
 import {
     V1beta1PersistentVolumeClaimFromJSON,
     V1beta1PersistentVolumeClaimFromJSONTyped,
     V1beta1PersistentVolumeClaimToJSON,
     V1beta1PersistentVolumeClaimToJSONTyped,
-} from './V1beta1PersistentVolumeClaim';
+} from './V1beta1PersistentVolumeClaim.js';
 
 /**
  * VolumeBackup contains the data neeed to restore a PVC
@@ -60,7 +60,7 @@ export function V1beta1VolumeBackupFromJSON(json: any): V1beta1VolumeBackup {
     return V1beta1VolumeBackupFromJSONTyped(json, false);
 }
 
-export function V1beta1VolumeBackupFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VolumeBackup {
+export function V1beta1VolumeBackupFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VolumeBackup {
     if (json == null) {
         return json;
     }
@@ -76,7 +76,7 @@ export function V1beta1VolumeBackupToJSON(json: any): V1beta1VolumeBackup {
     return V1beta1VolumeBackupToJSONTyped(json, false);
 }
 
-export function V1beta1VolumeBackupToJSONTyped(value?: V1beta1VolumeBackup | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VolumeBackupToJSONTyped(value?: V1beta1VolumeBackup | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

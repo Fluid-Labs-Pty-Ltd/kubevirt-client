@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1KernelBootContainer } from './V1KernelBootContainer';
+import { mapValues } from '../runtime.js';
+import type { V1KernelBootContainer } from './V1KernelBootContainer.js';
 import {
     V1KernelBootContainerFromJSON,
     V1KernelBootContainerFromJSONTyped,
     V1KernelBootContainerToJSON,
     V1KernelBootContainerToJSONTyped,
-} from './V1KernelBootContainer';
+} from './V1KernelBootContainer.js';
 
 /**
  * Represents the firmware blob used to assist in the kernel boot process. Used for setting the kernel, initrd and command line arguments
@@ -52,7 +52,7 @@ export function V1KernelBootFromJSON(json: any): V1KernelBoot {
     return V1KernelBootFromJSONTyped(json, false);
 }
 
-export function V1KernelBootFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KernelBoot {
+export function V1KernelBootFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KernelBoot {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function V1KernelBootToJSON(json: any): V1KernelBoot {
     return V1KernelBootToJSONTyped(json, false);
 }
 
-export function V1KernelBootToJSONTyped(value?: V1KernelBoot | null, _ignoreDiscriminator: boolean = false): any {
+export function V1KernelBootToJSONTyped(value?: V1KernelBoot | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

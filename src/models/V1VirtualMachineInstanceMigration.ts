@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1VirtualMachineInstanceMigrationStatus } from './V1VirtualMachineInstanceMigrationStatus';
+import { mapValues } from '../runtime.js';
+import type { V1VirtualMachineInstanceMigrationStatus } from './V1VirtualMachineInstanceMigrationStatus.js';
 import {
     V1VirtualMachineInstanceMigrationStatusFromJSON,
     V1VirtualMachineInstanceMigrationStatusFromJSONTyped,
     V1VirtualMachineInstanceMigrationStatusToJSON,
     V1VirtualMachineInstanceMigrationStatusToJSONTyped,
-} from './V1VirtualMachineInstanceMigrationStatus';
-import type { V1VirtualMachineInstanceMigrationSpec } from './V1VirtualMachineInstanceMigrationSpec';
+} from './V1VirtualMachineInstanceMigrationStatus.js';
+import type { V1VirtualMachineInstanceMigrationSpec } from './V1VirtualMachineInstanceMigrationSpec.js';
 import {
     V1VirtualMachineInstanceMigrationSpecFromJSON,
     V1VirtualMachineInstanceMigrationSpecFromJSONTyped,
     V1VirtualMachineInstanceMigrationSpecToJSON,
     V1VirtualMachineInstanceMigrationSpecToJSONTyped,
-} from './V1VirtualMachineInstanceMigrationSpec';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './V1VirtualMachineInstanceMigrationSpec.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 
 /**
  * VirtualMachineInstanceMigration represents the object tracking a VMI's migration to another host in the cluster
@@ -85,7 +85,7 @@ export function V1VirtualMachineInstanceMigrationFromJSON(json: any): V1VirtualM
     return V1VirtualMachineInstanceMigrationFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceMigrationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigration {
+export function V1VirtualMachineInstanceMigrationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigration {
     if (json == null) {
         return json;
     }
@@ -103,7 +103,7 @@ export function V1VirtualMachineInstanceMigrationToJSON(json: any): V1VirtualMac
     return V1VirtualMachineInstanceMigrationToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceMigrationToJSONTyped(value?: V1VirtualMachineInstanceMigration | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceMigrationToJSONTyped(value?: V1VirtualMachineInstanceMigration | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

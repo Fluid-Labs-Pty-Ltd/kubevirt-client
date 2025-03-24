@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement } from './K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement } from './K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement.js';
 import {
     K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementFromJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementToJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement';
+} from './K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement.js';
 
 /**
  * A label selector is a label query over a set of resources. The result of matchLabels and matchExpressions are ANDed. An empty label selector matches all objects. A null label selector matches no objects.
@@ -52,7 +52,7 @@ export function K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSON(json: any): 
     return K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1LabelSelector {
+export function K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1LabelSelector {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSON(json: any): K8
     return K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1LabelSelector | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1LabelSelector | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

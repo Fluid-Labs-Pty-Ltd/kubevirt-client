@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1PodDNSConfigOption } from './K8sIoApiCoreV1PodDNSConfigOption';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1PodDNSConfigOption } from './K8sIoApiCoreV1PodDNSConfigOption.js';
 import {
     K8sIoApiCoreV1PodDNSConfigOptionFromJSON,
     K8sIoApiCoreV1PodDNSConfigOptionFromJSONTyped,
     K8sIoApiCoreV1PodDNSConfigOptionToJSON,
     K8sIoApiCoreV1PodDNSConfigOptionToJSONTyped,
-} from './K8sIoApiCoreV1PodDNSConfigOption';
+} from './K8sIoApiCoreV1PodDNSConfigOption.js';
 
 /**
  * PodDNSConfig defines the DNS parameters of a pod in addition to those generated from DNSPolicy.
@@ -58,7 +58,7 @@ export function K8sIoApiCoreV1PodDNSConfigFromJSON(json: any): K8sIoApiCoreV1Pod
     return K8sIoApiCoreV1PodDNSConfigFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PodDNSConfigFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1PodDNSConfig {
+export function K8sIoApiCoreV1PodDNSConfigFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1PodDNSConfig {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function K8sIoApiCoreV1PodDNSConfigToJSON(json: any): K8sIoApiCoreV1PodDN
     return K8sIoApiCoreV1PodDNSConfigToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PodDNSConfigToJSONTyped(value?: K8sIoApiCoreV1PodDNSConfig | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1PodDNSConfigToJSONTyped(value?: K8sIoApiCoreV1PodDNSConfig | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

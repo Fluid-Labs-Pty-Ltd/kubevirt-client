@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -38,7 +38,7 @@ export function V1InterfaceBindingMigrationFromJSON(json: any): V1InterfaceBindi
     return V1InterfaceBindingMigrationFromJSONTyped(json, false);
 }
 
-export function V1InterfaceBindingMigrationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1InterfaceBindingMigration {
+export function V1InterfaceBindingMigrationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1InterfaceBindingMigration {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1InterfaceBindingMigrationToJSON(json: any): V1InterfaceBinding
     return V1InterfaceBindingMigrationToJSONTyped(json, false);
 }
 
-export function V1InterfaceBindingMigrationToJSONTyped(value?: V1InterfaceBindingMigration | null, _ignoreDiscriminator: boolean = false): any {
+export function V1InterfaceBindingMigrationToJSONTyped(value?: V1InterfaceBindingMigration | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

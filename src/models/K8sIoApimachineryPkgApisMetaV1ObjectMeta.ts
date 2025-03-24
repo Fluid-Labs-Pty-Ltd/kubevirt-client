@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1OwnerReference } from './K8sIoApimachineryPkgApisMetaV1OwnerReference';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1OwnerReference } from './K8sIoApimachineryPkgApisMetaV1OwnerReference.js';
 import {
     K8sIoApimachineryPkgApisMetaV1OwnerReferenceFromJSON,
     K8sIoApimachineryPkgApisMetaV1OwnerReferenceFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1OwnerReferenceToJSON,
     K8sIoApimachineryPkgApisMetaV1OwnerReferenceToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1OwnerReference';
-import type { K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry } from './K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry';
+} from './K8sIoApimachineryPkgApisMetaV1OwnerReference.js';
+import type { K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry } from './K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryFromJSON,
     K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryToJSON,
     K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntryToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry';
+} from './K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry.js';
 
 /**
  * ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
@@ -147,7 +147,7 @@ export function K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON(json: any): K8s
     return K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1ObjectMeta {
+export function K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1ObjectMeta {
     if (json == null) {
         return json;
     }
@@ -175,7 +175,7 @@ export function K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON(json: any): K8sIo
     return K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1ObjectMeta | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1ObjectMeta | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

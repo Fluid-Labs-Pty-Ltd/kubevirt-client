@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * DataVolumeSourceVDDK provides the parameters to create a Data Volume from a Vmware source
  * @export
@@ -68,7 +68,7 @@ export function V1beta1DataVolumeSourceVDDKFromJSON(json: any): V1beta1DataVolum
     return V1beta1DataVolumeSourceVDDKFromJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceVDDKFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSourceVDDK {
+export function V1beta1DataVolumeSourceVDDKFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSourceVDDK {
     if (json == null) {
         return json;
     }
@@ -87,7 +87,7 @@ export function V1beta1DataVolumeSourceVDDKToJSON(json: any): V1beta1DataVolumeS
     return V1beta1DataVolumeSourceVDDKToJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceVDDKToJSONTyped(value?: V1beta1DataVolumeSourceVDDK | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1DataVolumeSourceVDDKToJSONTyped(value?: V1beta1DataVolumeSourceVDDK | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

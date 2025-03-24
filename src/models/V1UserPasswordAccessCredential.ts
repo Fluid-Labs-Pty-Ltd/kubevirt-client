@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1UserPasswordAccessCredentialSource } from './V1UserPasswordAccessCredentialSource';
+import { mapValues } from '../runtime.js';
+import type { V1UserPasswordAccessCredentialSource } from './V1UserPasswordAccessCredentialSource.js';
 import {
     V1UserPasswordAccessCredentialSourceFromJSON,
     V1UserPasswordAccessCredentialSourceFromJSONTyped,
     V1UserPasswordAccessCredentialSourceToJSON,
     V1UserPasswordAccessCredentialSourceToJSONTyped,
-} from './V1UserPasswordAccessCredentialSource';
-import type { V1UserPasswordAccessCredentialPropagationMethod } from './V1UserPasswordAccessCredentialPropagationMethod';
+} from './V1UserPasswordAccessCredentialSource.js';
+import type { V1UserPasswordAccessCredentialPropagationMethod } from './V1UserPasswordAccessCredentialPropagationMethod.js';
 import {
     V1UserPasswordAccessCredentialPropagationMethodFromJSON,
     V1UserPasswordAccessCredentialPropagationMethodFromJSONTyped,
     V1UserPasswordAccessCredentialPropagationMethodToJSON,
     V1UserPasswordAccessCredentialPropagationMethodToJSONTyped,
-} from './V1UserPasswordAccessCredentialPropagationMethod';
+} from './V1UserPasswordAccessCredentialPropagationMethod.js';
 
 /**
  * UserPasswordAccessCredential represents a source and propagation method for injecting user passwords into a vm guest Only one of its members may be specified.
@@ -61,7 +61,7 @@ export function V1UserPasswordAccessCredentialFromJSON(json: any): V1UserPasswor
     return V1UserPasswordAccessCredentialFromJSONTyped(json, false);
 }
 
-export function V1UserPasswordAccessCredentialFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1UserPasswordAccessCredential {
+export function V1UserPasswordAccessCredentialFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1UserPasswordAccessCredential {
     if (json == null) {
         return json;
     }
@@ -76,7 +76,7 @@ export function V1UserPasswordAccessCredentialToJSON(json: any): V1UserPasswordA
     return V1UserPasswordAccessCredentialToJSONTyped(json, false);
 }
 
-export function V1UserPasswordAccessCredentialToJSONTyped(value?: V1UserPasswordAccessCredential | null, _ignoreDiscriminator: boolean = false): any {
+export function V1UserPasswordAccessCredentialToJSONTyped(value?: V1UserPasswordAccessCredential | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

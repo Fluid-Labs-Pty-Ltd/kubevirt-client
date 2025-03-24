@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -50,7 +50,7 @@ export function V1DiskTargetFromJSON(json: any): V1DiskTarget {
     return V1DiskTargetFromJSONTyped(json, false);
 }
 
-export function V1DiskTargetFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DiskTarget {
+export function V1DiskTargetFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DiskTarget {
     if (json == null) {
         return json;
     }
@@ -66,7 +66,7 @@ export function V1DiskTargetToJSON(json: any): V1DiskTarget {
     return V1DiskTargetToJSONTyped(json, false);
 }
 
-export function V1DiskTargetToJSONTyped(value?: V1DiskTarget | null, _ignoreDiscriminator: boolean = false): any {
+export function V1DiskTargetToJSONTyped(value?: V1DiskTarget | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
-import type { V1beta1VirtualMachineRestoreSpec } from './V1beta1VirtualMachineRestoreSpec';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
+import type { V1beta1VirtualMachineRestoreSpec } from './V1beta1VirtualMachineRestoreSpec.js';
 import {
     V1beta1VirtualMachineRestoreSpecFromJSON,
     V1beta1VirtualMachineRestoreSpecFromJSONTyped,
     V1beta1VirtualMachineRestoreSpecToJSON,
     V1beta1VirtualMachineRestoreSpecToJSONTyped,
-} from './V1beta1VirtualMachineRestoreSpec';
-import type { V1beta1VirtualMachineRestoreStatus } from './V1beta1VirtualMachineRestoreStatus';
+} from './V1beta1VirtualMachineRestoreSpec.js';
+import type { V1beta1VirtualMachineRestoreStatus } from './V1beta1VirtualMachineRestoreStatus.js';
 import {
     V1beta1VirtualMachineRestoreStatusFromJSON,
     V1beta1VirtualMachineRestoreStatusFromJSONTyped,
     V1beta1VirtualMachineRestoreStatusToJSON,
     V1beta1VirtualMachineRestoreStatusToJSONTyped,
-} from './V1beta1VirtualMachineRestoreStatus';
+} from './V1beta1VirtualMachineRestoreStatus.js';
 
 /**
  * VirtualMachineRestore defines the operation of restoring a VM
@@ -85,7 +85,7 @@ export function V1beta1VirtualMachineRestoreFromJSON(json: any): V1beta1VirtualM
     return V1beta1VirtualMachineRestoreFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineRestoreFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineRestore {
+export function V1beta1VirtualMachineRestoreFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineRestore {
     if (json == null) {
         return json;
     }
@@ -103,7 +103,7 @@ export function V1beta1VirtualMachineRestoreToJSON(json: any): V1beta1VirtualMac
     return V1beta1VirtualMachineRestoreToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineRestoreToJSONTyped(value?: V1beta1VirtualMachineRestore | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineRestoreToJSONTyped(value?: V1beta1VirtualMachineRestore | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

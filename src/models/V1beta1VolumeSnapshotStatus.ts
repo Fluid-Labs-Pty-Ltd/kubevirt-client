@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1beta1Error } from './V1beta1Error';
+import { mapValues } from '../runtime.js';
+import type { V1beta1Error } from './V1beta1Error.js';
 import {
     V1beta1ErrorFromJSON,
     V1beta1ErrorFromJSONTyped,
     V1beta1ErrorToJSON,
     V1beta1ErrorToJSONTyped,
-} from './V1beta1Error';
+} from './V1beta1Error.js';
 
 /**
  * VolumeSnapshotStatus is the status of a VolumeSnapshot
@@ -65,7 +65,7 @@ export function V1beta1VolumeSnapshotStatusFromJSON(json: any): V1beta1VolumeSna
     return V1beta1VolumeSnapshotStatusFromJSONTyped(json, false);
 }
 
-export function V1beta1VolumeSnapshotStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VolumeSnapshotStatus {
+export function V1beta1VolumeSnapshotStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VolumeSnapshotStatus {
     if (json == null) {
         return json;
     }
@@ -82,7 +82,7 @@ export function V1beta1VolumeSnapshotStatusToJSON(json: any): V1beta1VolumeSnaps
     return V1beta1VolumeSnapshotStatusToJSONTyped(json, false);
 }
 
-export function V1beta1VolumeSnapshotStatusToJSONTyped(value?: V1beta1VolumeSnapshotStatus | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VolumeSnapshotStatusToJSONTyped(value?: V1beta1VolumeSnapshotStatus | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

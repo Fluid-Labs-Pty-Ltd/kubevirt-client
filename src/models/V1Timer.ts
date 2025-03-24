@@ -12,42 +12,42 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1HPETTimer } from './V1HPETTimer';
+import { mapValues } from '../runtime.js';
+import type { V1HPETTimer } from './V1HPETTimer.js';
 import {
     V1HPETTimerFromJSON,
     V1HPETTimerFromJSONTyped,
     V1HPETTimerToJSON,
     V1HPETTimerToJSONTyped,
-} from './V1HPETTimer';
-import type { V1KVMTimer } from './V1KVMTimer';
+} from './V1HPETTimer.js';
+import type { V1KVMTimer } from './V1KVMTimer.js';
 import {
     V1KVMTimerFromJSON,
     V1KVMTimerFromJSONTyped,
     V1KVMTimerToJSON,
     V1KVMTimerToJSONTyped,
-} from './V1KVMTimer';
-import type { V1PITTimer } from './V1PITTimer';
+} from './V1KVMTimer.js';
+import type { V1PITTimer } from './V1PITTimer.js';
 import {
     V1PITTimerFromJSON,
     V1PITTimerFromJSONTyped,
     V1PITTimerToJSON,
     V1PITTimerToJSONTyped,
-} from './V1PITTimer';
-import type { V1HypervTimer } from './V1HypervTimer';
+} from './V1PITTimer.js';
+import type { V1HypervTimer } from './V1HypervTimer.js';
 import {
     V1HypervTimerFromJSON,
     V1HypervTimerFromJSONTyped,
     V1HypervTimerToJSON,
     V1HypervTimerToJSONTyped,
-} from './V1HypervTimer';
-import type { V1RTCTimer } from './V1RTCTimer';
+} from './V1HypervTimer.js';
+import type { V1RTCTimer } from './V1RTCTimer.js';
 import {
     V1RTCTimerFromJSON,
     V1RTCTimerFromJSONTyped,
     V1RTCTimerToJSON,
     V1RTCTimerToJSONTyped,
-} from './V1RTCTimer';
+} from './V1RTCTimer.js';
 
 /**
  * Represents all available timers in a vmi.
@@ -98,7 +98,7 @@ export function V1TimerFromJSON(json: any): V1Timer {
     return V1TimerFromJSONTyped(json, false);
 }
 
-export function V1TimerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Timer {
+export function V1TimerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Timer {
     if (json == null) {
         return json;
     }
@@ -116,7 +116,7 @@ export function V1TimerToJSON(json: any): V1Timer {
     return V1TimerToJSONTyped(json, false);
 }
 
-export function V1TimerToJSONTyped(value?: V1Timer | null, _ignoreDiscriminator: boolean = false): any {
+export function V1TimerToJSONTyped(value?: V1Timer | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

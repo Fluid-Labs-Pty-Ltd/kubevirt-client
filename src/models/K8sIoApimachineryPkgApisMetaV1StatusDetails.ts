@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1StatusCause } from './K8sIoApimachineryPkgApisMetaV1StatusCause';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1StatusCause } from './K8sIoApimachineryPkgApisMetaV1StatusCause.js';
 import {
     K8sIoApimachineryPkgApisMetaV1StatusCauseFromJSON,
     K8sIoApimachineryPkgApisMetaV1StatusCauseFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1StatusCauseToJSON,
     K8sIoApimachineryPkgApisMetaV1StatusCauseToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1StatusCause';
+} from './K8sIoApimachineryPkgApisMetaV1StatusCause.js';
 
 /**
  * StatusDetails is a set of additional properties that MAY be set by the server to provide additional information about a response. The Reason field of a Status object defines what attributes will be set. Clients must ignore fields that do not match the defined type of each attribute, and should assume that any attribute may be empty, invalid, or under defined.
@@ -76,7 +76,7 @@ export function K8sIoApimachineryPkgApisMetaV1StatusDetailsFromJSON(json: any): 
     return K8sIoApimachineryPkgApisMetaV1StatusDetailsFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1StatusDetailsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1StatusDetails {
+export function K8sIoApimachineryPkgApisMetaV1StatusDetailsFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1StatusDetails {
     if (json == null) {
         return json;
     }
@@ -95,7 +95,7 @@ export function K8sIoApimachineryPkgApisMetaV1StatusDetailsToJSON(json: any): K8
     return K8sIoApimachineryPkgApisMetaV1StatusDetailsToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1StatusDetailsToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1StatusDetails | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1StatusDetailsToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1StatusDetails | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1ClockOffset } from './V1ClockOffset';
+import { mapValues } from '../runtime.js';
+import type { V1ClockOffset } from './V1ClockOffset.js';
 import {
     V1ClockOffsetFromJSON,
     V1ClockOffsetFromJSONTyped,
     V1ClockOffsetToJSON,
     V1ClockOffsetToJSONTyped,
-} from './V1ClockOffset';
-import type { V1Timer } from './V1Timer';
+} from './V1ClockOffset.js';
+import type { V1Timer } from './V1Timer.js';
 import {
     V1TimerFromJSON,
     V1TimerFromJSONTyped,
     V1TimerToJSON,
     V1TimerToJSONTyped,
-} from './V1Timer';
+} from './V1Timer.js';
 
 /**
  * ClockPreferences contains various optional defaults for Clock.
@@ -59,7 +59,7 @@ export function V1beta1ClockPreferencesFromJSON(json: any): V1beta1ClockPreferen
     return V1beta1ClockPreferencesFromJSONTyped(json, false);
 }
 
-export function V1beta1ClockPreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1ClockPreferences {
+export function V1beta1ClockPreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1ClockPreferences {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1beta1ClockPreferencesToJSON(json: any): V1beta1ClockPreference
     return V1beta1ClockPreferencesToJSONTyped(json, false);
 }
 
-export function V1beta1ClockPreferencesToJSONTyped(value?: V1beta1ClockPreferences | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1ClockPreferencesToJSONTyped(value?: V1beta1ClockPreferences | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

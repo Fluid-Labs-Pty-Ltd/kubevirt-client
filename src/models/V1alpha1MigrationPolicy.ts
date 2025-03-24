@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1alpha1MigrationPolicySpec } from './V1alpha1MigrationPolicySpec';
+import { mapValues } from '../runtime.js';
+import type { V1alpha1MigrationPolicySpec } from './V1alpha1MigrationPolicySpec.js';
 import {
     V1alpha1MigrationPolicySpecFromJSON,
     V1alpha1MigrationPolicySpecFromJSONTyped,
     V1alpha1MigrationPolicySpecToJSON,
     V1alpha1MigrationPolicySpecToJSONTyped,
-} from './V1alpha1MigrationPolicySpec';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './V1alpha1MigrationPolicySpec.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 
 /**
  * MigrationPolicy holds migration policy (i.e. configurations) to apply to a VM or group of VMs
@@ -78,7 +78,7 @@ export function V1alpha1MigrationPolicyFromJSON(json: any): V1alpha1MigrationPol
     return V1alpha1MigrationPolicyFromJSONTyped(json, false);
 }
 
-export function V1alpha1MigrationPolicyFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1MigrationPolicy {
+export function V1alpha1MigrationPolicyFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1MigrationPolicy {
     if (json == null) {
         return json;
     }
@@ -96,7 +96,7 @@ export function V1alpha1MigrationPolicyToJSON(json: any): V1alpha1MigrationPolic
     return V1alpha1MigrationPolicyToJSONTyped(json, false);
 }
 
-export function V1alpha1MigrationPolicyToJSONTyped(value?: V1alpha1MigrationPolicy | null, _ignoreDiscriminator: boolean = false): any {
+export function V1alpha1MigrationPolicyToJSONTyped(value?: V1alpha1MigrationPolicy | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

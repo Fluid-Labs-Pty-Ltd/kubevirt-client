@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1PodNetwork } from './V1PodNetwork';
+import { mapValues } from '../runtime.js';
+import type { V1PodNetwork } from './V1PodNetwork.js';
 import {
     V1PodNetworkFromJSON,
     V1PodNetworkFromJSONTyped,
     V1PodNetworkToJSON,
     V1PodNetworkToJSONTyped,
-} from './V1PodNetwork';
-import type { V1MultusNetwork } from './V1MultusNetwork';
+} from './V1PodNetwork.js';
+import type { V1MultusNetwork } from './V1MultusNetwork.js';
 import {
     V1MultusNetworkFromJSON,
     V1MultusNetworkFromJSONTyped,
     V1MultusNetworkToJSON,
     V1MultusNetworkToJSONTyped,
-} from './V1MultusNetwork';
+} from './V1MultusNetwork.js';
 
 /**
  * Network represents a network type and a resource that should be connected to the vm.
@@ -66,7 +66,7 @@ export function V1NetworkFromJSON(json: any): V1Network {
     return V1NetworkFromJSONTyped(json, false);
 }
 
-export function V1NetworkFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Network {
+export function V1NetworkFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Network {
     if (json == null) {
         return json;
     }
@@ -82,7 +82,7 @@ export function V1NetworkToJSON(json: any): V1Network {
     return V1NetworkToJSONTyped(json, false);
 }
 
-export function V1NetworkToJSONTyped(value?: V1Network | null, _ignoreDiscriminator: boolean = false): any {
+export function V1NetworkToJSONTyped(value?: V1Network | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

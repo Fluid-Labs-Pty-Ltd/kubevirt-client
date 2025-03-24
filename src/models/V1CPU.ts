@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1CPUFeature } from './V1CPUFeature';
+import { mapValues } from '../runtime.js';
+import type { V1CPUFeature } from './V1CPUFeature.js';
 import {
     V1CPUFeatureFromJSON,
     V1CPUFeatureFromJSONTyped,
     V1CPUFeatureToJSON,
     V1CPUFeatureToJSONTyped,
-} from './V1CPUFeature';
-import type { V1NUMA } from './V1NUMA';
+} from './V1CPUFeature.js';
+import type { V1NUMA } from './V1NUMA.js';
 import {
     V1NUMAFromJSON,
     V1NUMAFromJSONTyped,
     V1NUMAToJSON,
     V1NUMAToJSONTyped,
-} from './V1NUMA';
-import type { V1Realtime } from './V1Realtime';
+} from './V1NUMA.js';
+import type { V1Realtime } from './V1Realtime.js';
 import {
     V1RealtimeFromJSON,
     V1RealtimeFromJSONTyped,
     V1RealtimeToJSON,
     V1RealtimeToJSONTyped,
-} from './V1Realtime';
+} from './V1Realtime.js';
 
 /**
  * CPU allows specifying the CPU topology.
@@ -114,7 +114,7 @@ export function V1CPUFromJSON(json: any): V1CPU {
     return V1CPUFromJSONTyped(json, false);
 }
 
-export function V1CPUFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CPU {
+export function V1CPUFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CPU {
     if (json == null) {
         return json;
     }
@@ -137,7 +137,7 @@ export function V1CPUToJSON(json: any): V1CPU {
     return V1CPUToJSONTyped(json, false);
 }
 
-export function V1CPUToJSONTyped(value?: V1CPU | null, _ignoreDiscriminator: boolean = false): any {
+export function V1CPUToJSONTyped(value?: V1CPU | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

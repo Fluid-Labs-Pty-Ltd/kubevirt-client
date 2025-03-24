@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * Chassis specifies the chassis info passed to the domain.
  * @export
@@ -62,7 +62,7 @@ export function V1ChassisFromJSON(json: any): V1Chassis {
     return V1ChassisFromJSONTyped(json, false);
 }
 
-export function V1ChassisFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Chassis {
+export function V1ChassisFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Chassis {
     if (json == null) {
         return json;
     }
@@ -80,7 +80,7 @@ export function V1ChassisToJSON(json: any): V1Chassis {
     return V1ChassisToJSONTyped(json, false);
 }
 
-export function V1ChassisToJSONTyped(value?: V1Chassis | null, _ignoreDiscriminator: boolean = false): any {
+export function V1ChassisToJSONTyped(value?: V1Chassis | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

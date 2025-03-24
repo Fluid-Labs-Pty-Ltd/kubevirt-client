@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * ResourceRequirementsWithoutClaims describes the compute resource requirements. This struct was taken from the k8s.ResourceRequirements and cleaned up the `Claims` field.
  * @export
@@ -44,7 +44,7 @@ export function V1ResourceRequirementsWithoutClaimsFromJSON(json: any): V1Resour
     return V1ResourceRequirementsWithoutClaimsFromJSONTyped(json, false);
 }
 
-export function V1ResourceRequirementsWithoutClaimsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ResourceRequirementsWithoutClaims {
+export function V1ResourceRequirementsWithoutClaimsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ResourceRequirementsWithoutClaims {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1ResourceRequirementsWithoutClaimsToJSON(json: any): V1Resource
     return V1ResourceRequirementsWithoutClaimsToJSONTyped(json, false);
 }
 
-export function V1ResourceRequirementsWithoutClaimsToJSONTyped(value?: V1ResourceRequirementsWithoutClaims | null, _ignoreDiscriminator: boolean = false): any {
+export function V1ResourceRequirementsWithoutClaimsToJSONTyped(value?: V1ResourceRequirementsWithoutClaims | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

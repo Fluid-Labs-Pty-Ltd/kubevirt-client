@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1alpha1MigrationPolicy } from './V1alpha1MigrationPolicy';
+import { mapValues } from '../runtime.js';
+import type { V1alpha1MigrationPolicy } from './V1alpha1MigrationPolicy.js';
 import {
     V1alpha1MigrationPolicyFromJSON,
     V1alpha1MigrationPolicyFromJSONTyped,
     V1alpha1MigrationPolicyToJSON,
     V1alpha1MigrationPolicyToJSONTyped,
-} from './V1alpha1MigrationPolicy';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+} from './V1alpha1MigrationPolicy.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 
 /**
  * MigrationPolicyList is a list of MigrationPolicy
@@ -72,7 +72,7 @@ export function V1alpha1MigrationPolicyListFromJSON(json: any): V1alpha1Migratio
     return V1alpha1MigrationPolicyListFromJSONTyped(json, false);
 }
 
-export function V1alpha1MigrationPolicyListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1MigrationPolicyList {
+export function V1alpha1MigrationPolicyListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1MigrationPolicyList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1alpha1MigrationPolicyListToJSON(json: any): V1alpha1MigrationP
     return V1alpha1MigrationPolicyListToJSONTyped(json, false);
 }
 
-export function V1alpha1MigrationPolicyListToJSONTyped(value?: V1alpha1MigrationPolicyList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1alpha1MigrationPolicyListToJSONTyped(value?: V1alpha1MigrationPolicyList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

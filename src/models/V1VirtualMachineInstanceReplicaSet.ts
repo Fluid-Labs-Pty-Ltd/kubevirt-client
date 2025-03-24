@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1VirtualMachineInstanceReplicaSetSpec } from './V1VirtualMachineInstanceReplicaSetSpec';
+import { mapValues } from '../runtime.js';
+import type { V1VirtualMachineInstanceReplicaSetSpec } from './V1VirtualMachineInstanceReplicaSetSpec.js';
 import {
     V1VirtualMachineInstanceReplicaSetSpecFromJSON,
     V1VirtualMachineInstanceReplicaSetSpecFromJSONTyped,
     V1VirtualMachineInstanceReplicaSetSpecToJSON,
     V1VirtualMachineInstanceReplicaSetSpecToJSONTyped,
-} from './V1VirtualMachineInstanceReplicaSetSpec';
-import type { V1VirtualMachineInstanceReplicaSetStatus } from './V1VirtualMachineInstanceReplicaSetStatus';
+} from './V1VirtualMachineInstanceReplicaSetSpec.js';
+import type { V1VirtualMachineInstanceReplicaSetStatus } from './V1VirtualMachineInstanceReplicaSetStatus.js';
 import {
     V1VirtualMachineInstanceReplicaSetStatusFromJSON,
     V1VirtualMachineInstanceReplicaSetStatusFromJSONTyped,
     V1VirtualMachineInstanceReplicaSetStatusToJSON,
     V1VirtualMachineInstanceReplicaSetStatusToJSONTyped,
-} from './V1VirtualMachineInstanceReplicaSetStatus';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './V1VirtualMachineInstanceReplicaSetStatus.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 
 /**
  * VirtualMachineInstance is *the* VirtualMachineInstance Definition. It represents a virtual machine in the runtime environment of kubernetes.
@@ -85,7 +85,7 @@ export function V1VirtualMachineInstanceReplicaSetFromJSON(json: any): V1Virtual
     return V1VirtualMachineInstanceReplicaSetFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceReplicaSetFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSet {
+export function V1VirtualMachineInstanceReplicaSetFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSet {
     if (json == null) {
         return json;
     }
@@ -103,7 +103,7 @@ export function V1VirtualMachineInstanceReplicaSetToJSON(json: any): V1VirtualMa
     return V1VirtualMachineInstanceReplicaSetToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceReplicaSetToJSONTyped(value?: V1VirtualMachineInstanceReplicaSet | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceReplicaSetToJSONTyped(value?: V1VirtualMachineInstanceReplicaSet | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

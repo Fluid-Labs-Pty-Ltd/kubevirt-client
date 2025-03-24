@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * VirtualMachineInstancePhaseTransitionTimestamp gives a timestamp in relation to when a phase is set on a vmi
  * @export
@@ -44,7 +44,7 @@ export function V1VirtualMachineInstancePhaseTransitionTimestampFromJSON(json: a
     return V1VirtualMachineInstancePhaseTransitionTimestampFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstancePhaseTransitionTimestampFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstancePhaseTransitionTimestamp {
+export function V1VirtualMachineInstancePhaseTransitionTimestampFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstancePhaseTransitionTimestamp {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1VirtualMachineInstancePhaseTransitionTimestampToJSON(json: any
     return V1VirtualMachineInstancePhaseTransitionTimestampToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstancePhaseTransitionTimestampToJSONTyped(value?: V1VirtualMachineInstancePhaseTransitionTimestamp | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstancePhaseTransitionTimestampToJSONTyped(value?: V1VirtualMachineInstancePhaseTransitionTimestamp | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

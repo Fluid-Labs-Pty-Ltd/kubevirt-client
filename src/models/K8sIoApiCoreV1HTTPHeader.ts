@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * HTTPHeader describes a custom header to be used in HTTP probes
  * @export
@@ -46,7 +46,7 @@ export function K8sIoApiCoreV1HTTPHeaderFromJSON(json: any): K8sIoApiCoreV1HTTPH
     return K8sIoApiCoreV1HTTPHeaderFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1HTTPHeaderFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1HTTPHeader {
+export function K8sIoApiCoreV1HTTPHeaderFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1HTTPHeader {
     if (json == null) {
         return json;
     }
@@ -61,7 +61,7 @@ export function K8sIoApiCoreV1HTTPHeaderToJSON(json: any): K8sIoApiCoreV1HTTPHea
     return K8sIoApiCoreV1HTTPHeaderToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1HTTPHeaderToJSONTyped(value?: K8sIoApiCoreV1HTTPHeader | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1HTTPHeaderToJSONTyped(value?: K8sIoApiCoreV1HTTPHeader | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

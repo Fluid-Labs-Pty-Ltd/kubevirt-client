@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1PersistentVolumeClaimSpec } from './K8sIoApiCoreV1PersistentVolumeClaimSpec';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1PersistentVolumeClaimSpec } from './K8sIoApiCoreV1PersistentVolumeClaimSpec.js';
 import {
     K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSON,
     K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSONTyped,
     K8sIoApiCoreV1PersistentVolumeClaimSpecToJSON,
     K8sIoApiCoreV1PersistentVolumeClaimSpecToJSONTyped,
-} from './K8sIoApiCoreV1PersistentVolumeClaimSpec';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './K8sIoApiCoreV1PersistentVolumeClaimSpec.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 
 /**
  * 
@@ -59,7 +59,7 @@ export function V1beta1PersistentVolumeClaimFromJSON(json: any): V1beta1Persiste
     return V1beta1PersistentVolumeClaimFromJSONTyped(json, false);
 }
 
-export function V1beta1PersistentVolumeClaimFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1PersistentVolumeClaim {
+export function V1beta1PersistentVolumeClaimFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1PersistentVolumeClaim {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1beta1PersistentVolumeClaimToJSON(json: any): V1beta1Persistent
     return V1beta1PersistentVolumeClaimToJSONTyped(json, false);
 }
 
-export function V1beta1PersistentVolumeClaimToJSONTyped(value?: V1beta1PersistentVolumeClaim | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1PersistentVolumeClaimToJSONTyped(value?: V1beta1PersistentVolumeClaim | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

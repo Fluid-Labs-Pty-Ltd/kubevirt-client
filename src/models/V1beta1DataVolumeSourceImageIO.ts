@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * DataVolumeSourceImageIO provides the parameters to create a Data Volume from an imageio source
  * @export
@@ -58,7 +58,7 @@ export function V1beta1DataVolumeSourceImageIOFromJSON(json: any): V1beta1DataVo
     return V1beta1DataVolumeSourceImageIOFromJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceImageIOFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSourceImageIO {
+export function V1beta1DataVolumeSourceImageIOFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSourceImageIO {
     if (json == null) {
         return json;
     }
@@ -75,7 +75,7 @@ export function V1beta1DataVolumeSourceImageIOToJSON(json: any): V1beta1DataVolu
     return V1beta1DataVolumeSourceImageIOToJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceImageIOToJSONTyped(value?: V1beta1DataVolumeSourceImageIO | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1DataVolumeSourceImageIOToJSONTyped(value?: V1beta1DataVolumeSourceImageIO | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

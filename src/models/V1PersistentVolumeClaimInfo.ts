@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * PersistentVolumeClaimInfo contains the relavant information virt-handler needs cached about a PVC
  * @export
@@ -100,7 +100,7 @@ export function V1PersistentVolumeClaimInfoFromJSON(json: any): V1PersistentVolu
     return V1PersistentVolumeClaimInfoFromJSONTyped(json, false);
 }
 
-export function V1PersistentVolumeClaimInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PersistentVolumeClaimInfo {
+export function V1PersistentVolumeClaimInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PersistentVolumeClaimInfo {
     if (json == null) {
         return json;
     }
@@ -120,7 +120,7 @@ export function V1PersistentVolumeClaimInfoToJSON(json: any): V1PersistentVolume
     return V1PersistentVolumeClaimInfoToJSONTyped(json, false);
 }
 
-export function V1PersistentVolumeClaimInfoToJSONTyped(value?: V1PersistentVolumeClaimInfo | null, _ignoreDiscriminator: boolean = false): any {
+export function V1PersistentVolumeClaimInfoToJSONTyped(value?: V1PersistentVolumeClaimInfo | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

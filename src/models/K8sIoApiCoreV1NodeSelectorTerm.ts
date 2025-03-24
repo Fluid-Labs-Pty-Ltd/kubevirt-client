@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1NodeSelectorRequirement } from './K8sIoApiCoreV1NodeSelectorRequirement';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1NodeSelectorRequirement } from './K8sIoApiCoreV1NodeSelectorRequirement.js';
 import {
     K8sIoApiCoreV1NodeSelectorRequirementFromJSON,
     K8sIoApiCoreV1NodeSelectorRequirementFromJSONTyped,
     K8sIoApiCoreV1NodeSelectorRequirementToJSON,
     K8sIoApiCoreV1NodeSelectorRequirementToJSONTyped,
-} from './K8sIoApiCoreV1NodeSelectorRequirement';
+} from './K8sIoApiCoreV1NodeSelectorRequirement.js';
 
 /**
  * A null or empty node selector term matches no objects. The requirements of them are ANDed. The TopologySelectorTerm type implements a subset of the NodeSelectorTerm.
@@ -52,7 +52,7 @@ export function K8sIoApiCoreV1NodeSelectorTermFromJSON(json: any): K8sIoApiCoreV
     return K8sIoApiCoreV1NodeSelectorTermFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1NodeSelectorTermFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1NodeSelectorTerm {
+export function K8sIoApiCoreV1NodeSelectorTermFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1NodeSelectorTerm {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function K8sIoApiCoreV1NodeSelectorTermToJSON(json: any): K8sIoApiCoreV1N
     return K8sIoApiCoreV1NodeSelectorTermToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1NodeSelectorTermToJSONTyped(value?: K8sIoApiCoreV1NodeSelectorTerm | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1NodeSelectorTermToJSONTyped(value?: K8sIoApiCoreV1NodeSelectorTerm | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

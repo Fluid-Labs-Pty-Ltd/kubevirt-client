@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1KubeVirtSelfSignConfiguration } from './V1KubeVirtSelfSignConfiguration';
+import { mapValues } from '../runtime.js';
+import type { V1KubeVirtSelfSignConfiguration } from './V1KubeVirtSelfSignConfiguration.js';
 import {
     V1KubeVirtSelfSignConfigurationFromJSON,
     V1KubeVirtSelfSignConfigurationFromJSONTyped,
     V1KubeVirtSelfSignConfigurationToJSON,
     V1KubeVirtSelfSignConfigurationToJSONTyped,
-} from './V1KubeVirtSelfSignConfiguration';
+} from './V1KubeVirtSelfSignConfiguration.js';
 
 /**
  * 
@@ -46,7 +46,7 @@ export function V1KubeVirtCertificateRotateStrategyFromJSON(json: any): V1KubeVi
     return V1KubeVirtCertificateRotateStrategyFromJSONTyped(json, false);
 }
 
-export function V1KubeVirtCertificateRotateStrategyFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtCertificateRotateStrategy {
+export function V1KubeVirtCertificateRotateStrategyFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtCertificateRotateStrategy {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1KubeVirtCertificateRotateStrategyToJSON(json: any): V1KubeVirt
     return V1KubeVirtCertificateRotateStrategyToJSONTyped(json, false);
 }
 
-export function V1KubeVirtCertificateRotateStrategyToJSONTyped(value?: V1KubeVirtCertificateRotateStrategy | null, _ignoreDiscriminator: boolean = false): any {
+export function V1KubeVirtCertificateRotateStrategyToJSONTyped(value?: V1KubeVirtCertificateRotateStrategy | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

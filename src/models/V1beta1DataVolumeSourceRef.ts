@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * DataVolumeSourceRef defines an indirect reference to the source of data for the DataVolume
  * @export
@@ -52,7 +52,7 @@ export function V1beta1DataVolumeSourceRefFromJSON(json: any): V1beta1DataVolume
     return V1beta1DataVolumeSourceRefFromJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceRefFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSourceRef {
+export function V1beta1DataVolumeSourceRefFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSourceRef {
     if (json == null) {
         return json;
     }
@@ -68,7 +68,7 @@ export function V1beta1DataVolumeSourceRefToJSON(json: any): V1beta1DataVolumeSo
     return V1beta1DataVolumeSourceRefToJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceRefToJSONTyped(value?: V1beta1DataVolumeSourceRef | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1DataVolumeSourceRefToJSONTyped(value?: V1beta1DataVolumeSourceRef | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

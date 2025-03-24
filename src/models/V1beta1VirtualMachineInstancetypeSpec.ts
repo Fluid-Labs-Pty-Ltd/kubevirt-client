@@ -12,42 +12,42 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1GPU } from './V1GPU';
+import { mapValues } from '../runtime.js';
+import type { V1GPU } from './V1GPU.js';
 import {
     V1GPUFromJSON,
     V1GPUFromJSONTyped,
     V1GPUToJSON,
     V1GPUToJSONTyped,
-} from './V1GPU';
-import type { V1beta1CPUInstancetype } from './V1beta1CPUInstancetype';
+} from './V1GPU.js';
+import type { V1beta1CPUInstancetype } from './V1beta1CPUInstancetype.js';
 import {
     V1beta1CPUInstancetypeFromJSON,
     V1beta1CPUInstancetypeFromJSONTyped,
     V1beta1CPUInstancetypeToJSON,
     V1beta1CPUInstancetypeToJSONTyped,
-} from './V1beta1CPUInstancetype';
-import type { V1HostDevice } from './V1HostDevice';
+} from './V1beta1CPUInstancetype.js';
+import type { V1HostDevice } from './V1HostDevice.js';
 import {
     V1HostDeviceFromJSON,
     V1HostDeviceFromJSONTyped,
     V1HostDeviceToJSON,
     V1HostDeviceToJSONTyped,
-} from './V1HostDevice';
-import type { V1LaunchSecurity } from './V1LaunchSecurity';
+} from './V1HostDevice.js';
+import type { V1LaunchSecurity } from './V1LaunchSecurity.js';
 import {
     V1LaunchSecurityFromJSON,
     V1LaunchSecurityFromJSONTyped,
     V1LaunchSecurityToJSON,
     V1LaunchSecurityToJSONTyped,
-} from './V1LaunchSecurity';
-import type { V1beta1MemoryInstancetype } from './V1beta1MemoryInstancetype';
+} from './V1LaunchSecurity.js';
+import type { V1beta1MemoryInstancetype } from './V1beta1MemoryInstancetype.js';
 import {
     V1beta1MemoryInstancetypeFromJSON,
     V1beta1MemoryInstancetypeFromJSONTyped,
     V1beta1MemoryInstancetypeToJSON,
     V1beta1MemoryInstancetypeToJSONTyped,
-} from './V1beta1MemoryInstancetype';
+} from './V1beta1MemoryInstancetype.js';
 
 /**
  * VirtualMachineInstancetypeSpec is a description of the VirtualMachineInstancetype or VirtualMachineClusterInstancetype.
@@ -130,7 +130,7 @@ export function V1beta1VirtualMachineInstancetypeSpecFromJSON(json: any): V1beta
     return V1beta1VirtualMachineInstancetypeSpecFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineInstancetypeSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineInstancetypeSpec {
+export function V1beta1VirtualMachineInstancetypeSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineInstancetypeSpec {
     if (json == null) {
         return json;
     }
@@ -152,7 +152,7 @@ export function V1beta1VirtualMachineInstancetypeSpecToJSON(json: any): V1beta1V
     return V1beta1VirtualMachineInstancetypeSpecToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineInstancetypeSpecToJSONTyped(value?: V1beta1VirtualMachineInstancetypeSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineInstancetypeSpecToJSONTyped(value?: V1beta1VirtualMachineInstancetypeSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

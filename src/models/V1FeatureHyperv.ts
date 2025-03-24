@@ -12,35 +12,35 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1FeatureVendorID } from './V1FeatureVendorID';
+import { mapValues } from '../runtime.js';
+import type { V1FeatureVendorID } from './V1FeatureVendorID.js';
 import {
     V1FeatureVendorIDFromJSON,
     V1FeatureVendorIDFromJSONTyped,
     V1FeatureVendorIDToJSON,
     V1FeatureVendorIDToJSONTyped,
-} from './V1FeatureVendorID';
-import type { V1SyNICTimer } from './V1SyNICTimer';
+} from './V1FeatureVendorID.js';
+import type { V1SyNICTimer } from './V1SyNICTimer.js';
 import {
     V1SyNICTimerFromJSON,
     V1SyNICTimerFromJSONTyped,
     V1SyNICTimerToJSON,
     V1SyNICTimerToJSONTyped,
-} from './V1SyNICTimer';
-import type { V1FeatureSpinlocks } from './V1FeatureSpinlocks';
+} from './V1SyNICTimer.js';
+import type { V1FeatureSpinlocks } from './V1FeatureSpinlocks.js';
 import {
     V1FeatureSpinlocksFromJSON,
     V1FeatureSpinlocksFromJSONTyped,
     V1FeatureSpinlocksToJSON,
     V1FeatureSpinlocksToJSONTyped,
-} from './V1FeatureSpinlocks';
-import type { V1FeatureState } from './V1FeatureState';
+} from './V1FeatureSpinlocks.js';
+import type { V1FeatureState } from './V1FeatureState.js';
 import {
     V1FeatureStateFromJSON,
     V1FeatureStateFromJSONTyped,
     V1FeatureStateToJSON,
     V1FeatureStateToJSONTyped,
-} from './V1FeatureState';
+} from './V1FeatureState.js';
 
 /**
  * Hyperv specific features.
@@ -145,7 +145,7 @@ export function V1FeatureHypervFromJSON(json: any): V1FeatureHyperv {
     return V1FeatureHypervFromJSONTyped(json, false);
 }
 
-export function V1FeatureHypervFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1FeatureHyperv {
+export function V1FeatureHypervFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1FeatureHyperv {
     if (json == null) {
         return json;
     }
@@ -172,7 +172,7 @@ export function V1FeatureHypervToJSON(json: any): V1FeatureHyperv {
     return V1FeatureHypervToJSONTyped(json, false);
 }
 
-export function V1FeatureHypervToJSONTyped(value?: V1FeatureHyperv | null, _ignoreDiscriminator: boolean = false): any {
+export function V1FeatureHypervToJSONTyped(value?: V1FeatureHyperv | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

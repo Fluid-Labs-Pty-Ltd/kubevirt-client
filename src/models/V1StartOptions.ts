@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * StartOptions may be provided on start request.
  * @export
@@ -56,7 +56,7 @@ export function V1StartOptionsFromJSON(json: any): V1StartOptions {
     return V1StartOptionsFromJSONTyped(json, false);
 }
 
-export function V1StartOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1StartOptions {
+export function V1StartOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1StartOptions {
     if (json == null) {
         return json;
     }
@@ -73,7 +73,7 @@ export function V1StartOptionsToJSON(json: any): V1StartOptions {
     return V1StartOptionsToJSONTyped(json, false);
 }
 
-export function V1StartOptionsToJSONTyped(value?: V1StartOptions | null, _ignoreDiscriminator: boolean = false): any {
+export function V1StartOptionsToJSONTyped(value?: V1StartOptions | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -44,7 +44,7 @@ export function V1PITTimerFromJSON(json: any): V1PITTimer {
     return V1PITTimerFromJSONTyped(json, false);
 }
 
-export function V1PITTimerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PITTimer {
+export function V1PITTimerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PITTimer {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1PITTimerToJSON(json: any): V1PITTimer {
     return V1PITTimerToJSONTyped(json, false);
 }
 
-export function V1PITTimerToJSONTyped(value?: V1PITTimer | null, _ignoreDiscriminator: boolean = false): any {
+export function V1PITTimerToJSONTyped(value?: V1PITTimer | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

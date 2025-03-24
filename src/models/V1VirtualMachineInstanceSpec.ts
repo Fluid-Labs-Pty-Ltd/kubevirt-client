@@ -12,70 +12,70 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1Network } from './V1Network';
+import { mapValues } from '../runtime.js';
+import type { V1Network } from './V1Network.js';
 import {
     V1NetworkFromJSON,
     V1NetworkFromJSONTyped,
     V1NetworkToJSON,
     V1NetworkToJSONTyped,
-} from './V1Network';
-import type { V1Volume } from './V1Volume';
+} from './V1Network.js';
+import type { V1Volume } from './V1Volume.js';
 import {
     V1VolumeFromJSON,
     V1VolumeFromJSONTyped,
     V1VolumeToJSON,
     V1VolumeToJSONTyped,
-} from './V1Volume';
-import type { K8sIoApiCoreV1Affinity } from './K8sIoApiCoreV1Affinity';
+} from './V1Volume.js';
+import type { K8sIoApiCoreV1Affinity } from './K8sIoApiCoreV1Affinity.js';
 import {
     K8sIoApiCoreV1AffinityFromJSON,
     K8sIoApiCoreV1AffinityFromJSONTyped,
     K8sIoApiCoreV1AffinityToJSON,
     K8sIoApiCoreV1AffinityToJSONTyped,
-} from './K8sIoApiCoreV1Affinity';
-import type { K8sIoApiCoreV1TopologySpreadConstraint } from './K8sIoApiCoreV1TopologySpreadConstraint';
+} from './K8sIoApiCoreV1Affinity.js';
+import type { K8sIoApiCoreV1TopologySpreadConstraint } from './K8sIoApiCoreV1TopologySpreadConstraint.js';
 import {
     K8sIoApiCoreV1TopologySpreadConstraintFromJSON,
     K8sIoApiCoreV1TopologySpreadConstraintFromJSONTyped,
     K8sIoApiCoreV1TopologySpreadConstraintToJSON,
     K8sIoApiCoreV1TopologySpreadConstraintToJSONTyped,
-} from './K8sIoApiCoreV1TopologySpreadConstraint';
-import type { V1Probe } from './V1Probe';
+} from './K8sIoApiCoreV1TopologySpreadConstraint.js';
+import type { V1Probe } from './V1Probe.js';
 import {
     V1ProbeFromJSON,
     V1ProbeFromJSONTyped,
     V1ProbeToJSON,
     V1ProbeToJSONTyped,
-} from './V1Probe';
-import type { V1AccessCredential } from './V1AccessCredential';
+} from './V1Probe.js';
+import type { V1AccessCredential } from './V1AccessCredential.js';
 import {
     V1AccessCredentialFromJSON,
     V1AccessCredentialFromJSONTyped,
     V1AccessCredentialToJSON,
     V1AccessCredentialToJSONTyped,
-} from './V1AccessCredential';
-import type { K8sIoApiCoreV1PodDNSConfig } from './K8sIoApiCoreV1PodDNSConfig';
+} from './V1AccessCredential.js';
+import type { K8sIoApiCoreV1PodDNSConfig } from './K8sIoApiCoreV1PodDNSConfig.js';
 import {
     K8sIoApiCoreV1PodDNSConfigFromJSON,
     K8sIoApiCoreV1PodDNSConfigFromJSONTyped,
     K8sIoApiCoreV1PodDNSConfigToJSON,
     K8sIoApiCoreV1PodDNSConfigToJSONTyped,
-} from './K8sIoApiCoreV1PodDNSConfig';
-import type { K8sIoApiCoreV1Toleration } from './K8sIoApiCoreV1Toleration';
+} from './K8sIoApiCoreV1PodDNSConfig.js';
+import type { K8sIoApiCoreV1Toleration } from './K8sIoApiCoreV1Toleration.js';
 import {
     K8sIoApiCoreV1TolerationFromJSON,
     K8sIoApiCoreV1TolerationFromJSONTyped,
     K8sIoApiCoreV1TolerationToJSON,
     K8sIoApiCoreV1TolerationToJSONTyped,
-} from './K8sIoApiCoreV1Toleration';
-import type { V1DomainSpec } from './V1DomainSpec';
+} from './K8sIoApiCoreV1Toleration.js';
+import type { V1DomainSpec } from './V1DomainSpec.js';
 import {
     V1DomainSpecFromJSON,
     V1DomainSpecFromJSONTyped,
     V1DomainSpecToJSON,
     V1DomainSpecToJSONTyped,
-} from './V1DomainSpec';
+} from './V1DomainSpec.js';
 
 /**
  * VirtualMachineInstanceSpec is a description of a VirtualMachineInstance.
@@ -236,7 +236,7 @@ export function V1VirtualMachineInstanceSpecFromJSON(json: any): V1VirtualMachin
     return V1VirtualMachineInstanceSpecFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceSpec {
+export function V1VirtualMachineInstanceSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceSpec {
     if (json == null) {
         return json;
     }
@@ -269,7 +269,7 @@ export function V1VirtualMachineInstanceSpecToJSON(json: any): V1VirtualMachineI
     return V1VirtualMachineInstanceSpecToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceSpecToJSONTyped(value?: V1VirtualMachineInstanceSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceSpecToJSONTyped(value?: V1VirtualMachineInstanceSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

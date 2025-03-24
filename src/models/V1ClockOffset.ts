@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1ClockOffsetUTC } from './V1ClockOffsetUTC';
+import { mapValues } from '../runtime.js';
+import type { V1ClockOffsetUTC } from './V1ClockOffsetUTC.js';
 import {
     V1ClockOffsetUTCFromJSON,
     V1ClockOffsetUTCFromJSONTyped,
     V1ClockOffsetUTCToJSON,
     V1ClockOffsetUTCToJSONTyped,
-} from './V1ClockOffsetUTC';
+} from './V1ClockOffsetUTC.js';
 
 /**
  * Exactly one of its members must be set.
@@ -52,7 +52,7 @@ export function V1ClockOffsetFromJSON(json: any): V1ClockOffset {
     return V1ClockOffsetFromJSONTyped(json, false);
 }
 
-export function V1ClockOffsetFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ClockOffset {
+export function V1ClockOffsetFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ClockOffset {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function V1ClockOffsetToJSON(json: any): V1ClockOffset {
     return V1ClockOffsetToJSONTyped(json, false);
 }
 
-export function V1ClockOffsetToJSONTyped(value?: V1ClockOffset | null, _ignoreDiscriminator: boolean = false): any {
+export function V1ClockOffsetToJSONTyped(value?: V1ClockOffset | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

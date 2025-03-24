@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1VirtualMachineInstanceTemplateSpec } from './V1VirtualMachineInstanceTemplateSpec';
+import { mapValues } from '../runtime.js';
+import type { V1VirtualMachineInstanceTemplateSpec } from './V1VirtualMachineInstanceTemplateSpec.js';
 import {
     V1VirtualMachineInstanceTemplateSpecFromJSON,
     V1VirtualMachineInstanceTemplateSpecFromJSONTyped,
     V1VirtualMachineInstanceTemplateSpecToJSON,
     V1VirtualMachineInstanceTemplateSpecToJSONTyped,
-} from './V1VirtualMachineInstanceTemplateSpec';
-import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+} from './V1VirtualMachineInstanceTemplateSpec.js';
+import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 import {
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+} from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 
 /**
  * 
@@ -73,7 +73,7 @@ export function V1VirtualMachineInstanceReplicaSetSpecFromJSON(json: any): V1Vir
     return V1VirtualMachineInstanceReplicaSetSpecFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceReplicaSetSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSetSpec {
+export function V1VirtualMachineInstanceReplicaSetSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSetSpec {
     if (json == null) {
         return json;
     }
@@ -90,7 +90,7 @@ export function V1VirtualMachineInstanceReplicaSetSpecToJSON(json: any): V1Virtu
     return V1VirtualMachineInstanceReplicaSetSpecToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceReplicaSetSpecToJSONTyped(value?: V1VirtualMachineInstanceReplicaSetSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceReplicaSetSpecToJSONTyped(value?: V1VirtualMachineInstanceReplicaSetSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

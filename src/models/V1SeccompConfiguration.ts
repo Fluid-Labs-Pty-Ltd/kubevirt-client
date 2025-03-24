@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1VirtualMachineInstanceProfile } from './V1VirtualMachineInstanceProfile';
+import { mapValues } from '../runtime.js';
+import type { V1VirtualMachineInstanceProfile } from './V1VirtualMachineInstanceProfile.js';
 import {
     V1VirtualMachineInstanceProfileFromJSON,
     V1VirtualMachineInstanceProfileFromJSONTyped,
     V1VirtualMachineInstanceProfileToJSON,
     V1VirtualMachineInstanceProfileToJSONTyped,
-} from './V1VirtualMachineInstanceProfile';
+} from './V1VirtualMachineInstanceProfile.js';
 
 /**
  * SeccompConfiguration holds Seccomp configuration for Kubevirt components
@@ -46,7 +46,7 @@ export function V1SeccompConfigurationFromJSON(json: any): V1SeccompConfiguratio
     return V1SeccompConfigurationFromJSONTyped(json, false);
 }
 
-export function V1SeccompConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SeccompConfiguration {
+export function V1SeccompConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SeccompConfiguration {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1SeccompConfigurationToJSON(json: any): V1SeccompConfiguration 
     return V1SeccompConfigurationToJSONTyped(json, false);
 }
 
-export function V1SeccompConfigurationToJSONTyped(value?: V1SeccompConfiguration | null, _ignoreDiscriminator: boolean = false): any {
+export function V1SeccompConfigurationToJSONTyped(value?: V1SeccompConfiguration | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

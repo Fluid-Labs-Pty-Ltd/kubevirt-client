@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * PersistentVolumeClaimVolumeSource references the user's PVC in the same namespace. This volume finds the bound PV and mounts that volume for the pod. A PersistentVolumeClaimVolumeSource is, essentially, a wrapper around another type of volume that is owned by someone else (the system).
  * @export
@@ -45,7 +45,7 @@ export function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceFromJSON(json: an
     return K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1PersistentVolumeClaimVolumeSource {
+export function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1PersistentVolumeClaimVolumeSource {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceToJSON(json: any)
     return K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceToJSONTyped(value?: K8sIoApiCoreV1PersistentVolumeClaimVolumeSource | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceToJSONTyped(value?: K8sIoApiCoreV1PersistentVolumeClaimVolumeSource | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

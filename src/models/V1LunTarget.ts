@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -50,7 +50,7 @@ export function V1LunTargetFromJSON(json: any): V1LunTarget {
     return V1LunTargetFromJSONTyped(json, false);
 }
 
-export function V1LunTargetFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1LunTarget {
+export function V1LunTargetFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1LunTarget {
     if (json == null) {
         return json;
     }
@@ -66,7 +66,7 @@ export function V1LunTargetToJSON(json: any): V1LunTarget {
     return V1LunTargetToJSONTyped(json, false);
 }
 
-export function V1LunTargetToJSONTyped(value?: V1LunTarget | null, _ignoreDiscriminator: boolean = false): any {
+export function V1LunTargetToJSONTyped(value?: V1LunTarget | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

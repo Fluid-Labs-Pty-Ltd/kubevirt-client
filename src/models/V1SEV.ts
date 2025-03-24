@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1SEVPolicy } from './V1SEVPolicy';
+import { mapValues } from '../runtime.js';
+import type { V1SEVPolicy } from './V1SEVPolicy.js';
 import {
     V1SEVPolicyFromJSON,
     V1SEVPolicyFromJSONTyped,
     V1SEVPolicyToJSON,
     V1SEVPolicyToJSONTyped,
-} from './V1SEVPolicy';
+} from './V1SEVPolicy.js';
 
 /**
  * 
@@ -64,7 +64,7 @@ export function V1SEVFromJSON(json: any): V1SEV {
     return V1SEVFromJSONTyped(json, false);
 }
 
-export function V1SEVFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SEV {
+export function V1SEVFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SEV {
     if (json == null) {
         return json;
     }
@@ -81,7 +81,7 @@ export function V1SEVToJSON(json: any): V1SEV {
     return V1SEVToJSONTyped(json, false);
 }
 
-export function V1SEVToJSONTyped(value?: V1SEV | null, _ignoreDiscriminator: boolean = false): any {
+export function V1SEVToJSONTyped(value?: V1SEV | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

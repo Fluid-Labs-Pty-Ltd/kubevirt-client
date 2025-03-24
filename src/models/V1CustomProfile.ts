@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -44,7 +44,7 @@ export function V1CustomProfileFromJSON(json: any): V1CustomProfile {
     return V1CustomProfileFromJSONTyped(json, false);
 }
 
-export function V1CustomProfileFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CustomProfile {
+export function V1CustomProfileFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CustomProfile {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1CustomProfileToJSON(json: any): V1CustomProfile {
     return V1CustomProfileToJSONTyped(json, false);
 }
 
-export function V1CustomProfileToJSONTyped(value?: V1CustomProfile | null, _ignoreDiscriminator: boolean = false): any {
+export function V1CustomProfileToJSONTyped(value?: V1CustomProfile | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

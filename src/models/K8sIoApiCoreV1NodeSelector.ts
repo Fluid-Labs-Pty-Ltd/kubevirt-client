@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1NodeSelectorTerm } from './K8sIoApiCoreV1NodeSelectorTerm';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1NodeSelectorTerm } from './K8sIoApiCoreV1NodeSelectorTerm.js';
 import {
     K8sIoApiCoreV1NodeSelectorTermFromJSON,
     K8sIoApiCoreV1NodeSelectorTermFromJSONTyped,
     K8sIoApiCoreV1NodeSelectorTermToJSON,
     K8sIoApiCoreV1NodeSelectorTermToJSONTyped,
-} from './K8sIoApiCoreV1NodeSelectorTerm';
+} from './K8sIoApiCoreV1NodeSelectorTerm.js';
 
 /**
  * A node selector represents the union of the results of one or more label queries over a set of nodes; that is, it represents the OR of the selectors represented by the node selector terms.
@@ -47,7 +47,7 @@ export function K8sIoApiCoreV1NodeSelectorFromJSON(json: any): K8sIoApiCoreV1Nod
     return K8sIoApiCoreV1NodeSelectorFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1NodeSelectorFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1NodeSelector {
+export function K8sIoApiCoreV1NodeSelectorFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1NodeSelector {
     if (json == null) {
         return json;
     }
@@ -61,7 +61,7 @@ export function K8sIoApiCoreV1NodeSelectorToJSON(json: any): K8sIoApiCoreV1NodeS
     return K8sIoApiCoreV1NodeSelectorToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1NodeSelectorToJSONTyped(value?: K8sIoApiCoreV1NodeSelector | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1NodeSelectorToJSONTyped(value?: K8sIoApiCoreV1NodeSelector | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

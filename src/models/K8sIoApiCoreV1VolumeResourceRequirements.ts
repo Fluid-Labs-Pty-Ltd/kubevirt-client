@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * VolumeResourceRequirements describes the storage resource requirements for a volume.
  * @export
@@ -44,7 +44,7 @@ export function K8sIoApiCoreV1VolumeResourceRequirementsFromJSON(json: any): K8s
     return K8sIoApiCoreV1VolumeResourceRequirementsFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1VolumeResourceRequirementsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1VolumeResourceRequirements {
+export function K8sIoApiCoreV1VolumeResourceRequirementsFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1VolumeResourceRequirements {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function K8sIoApiCoreV1VolumeResourceRequirementsToJSON(json: any): K8sIo
     return K8sIoApiCoreV1VolumeResourceRequirementsToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1VolumeResourceRequirementsToJSONTyped(value?: K8sIoApiCoreV1VolumeResourceRequirements | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1VolumeResourceRequirementsToJSONTyped(value?: K8sIoApiCoreV1VolumeResourceRequirements | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1beta1VirtualMachineSnapshotContent } from './V1beta1VirtualMachineSnapshotContent';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1beta1VirtualMachineSnapshotContent } from './V1beta1VirtualMachineSnapshotContent.js';
 import {
     V1beta1VirtualMachineSnapshotContentFromJSON,
     V1beta1VirtualMachineSnapshotContentFromJSONTyped,
     V1beta1VirtualMachineSnapshotContentToJSON,
     V1beta1VirtualMachineSnapshotContentToJSONTyped,
-} from './V1beta1VirtualMachineSnapshotContent';
+} from './V1beta1VirtualMachineSnapshotContent.js';
 
 /**
  * VirtualMachineSnapshotContentList is a list of VirtualMachineSnapshot resources
@@ -73,7 +73,7 @@ export function V1beta1VirtualMachineSnapshotContentListFromJSON(json: any): V1b
     return V1beta1VirtualMachineSnapshotContentListFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineSnapshotContentListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshotContentList {
+export function V1beta1VirtualMachineSnapshotContentListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshotContentList {
     if (json == null) {
         return json;
     }
@@ -90,7 +90,7 @@ export function V1beta1VirtualMachineSnapshotContentListToJSON(json: any): V1bet
     return V1beta1VirtualMachineSnapshotContentListToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineSnapshotContentListToJSONTyped(value?: V1beta1VirtualMachineSnapshotContentList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineSnapshotContentListToJSONTyped(value?: V1beta1VirtualMachineSnapshotContentList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

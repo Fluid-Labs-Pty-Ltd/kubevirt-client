@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1NodeMediatedDeviceTypesConfig } from './V1NodeMediatedDeviceTypesConfig';
+import { mapValues } from '../runtime.js';
+import type { V1NodeMediatedDeviceTypesConfig } from './V1NodeMediatedDeviceTypesConfig.js';
 import {
     V1NodeMediatedDeviceTypesConfigFromJSON,
     V1NodeMediatedDeviceTypesConfigFromJSONTyped,
     V1NodeMediatedDeviceTypesConfigToJSON,
     V1NodeMediatedDeviceTypesConfigToJSONTyped,
-} from './V1NodeMediatedDeviceTypesConfig';
+} from './V1NodeMediatedDeviceTypesConfig.js';
 
 /**
  * MediatedDevicesConfiguration holds information about MDEV types to be defined, if available
@@ -58,7 +58,7 @@ export function V1MediatedDevicesConfigurationFromJSON(json: any): V1MediatedDev
     return V1MediatedDevicesConfigurationFromJSONTyped(json, false);
 }
 
-export function V1MediatedDevicesConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1MediatedDevicesConfiguration {
+export function V1MediatedDevicesConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1MediatedDevicesConfiguration {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1MediatedDevicesConfigurationToJSON(json: any): V1MediatedDevic
     return V1MediatedDevicesConfigurationToJSONTyped(json, false);
 }
 
-export function V1MediatedDevicesConfigurationToJSONTyped(value?: V1MediatedDevicesConfiguration | null, _ignoreDiscriminator: boolean = false): any {
+export function V1MediatedDevicesConfigurationToJSONTyped(value?: V1MediatedDevicesConfiguration | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

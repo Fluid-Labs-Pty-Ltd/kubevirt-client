@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1LocalObjectReference } from './K8sIoApiCoreV1LocalObjectReference';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1LocalObjectReference } from './K8sIoApiCoreV1LocalObjectReference.js';
 import {
     K8sIoApiCoreV1LocalObjectReferenceFromJSON,
     K8sIoApiCoreV1LocalObjectReferenceFromJSONTyped,
     K8sIoApiCoreV1LocalObjectReferenceToJSON,
     K8sIoApiCoreV1LocalObjectReferenceToJSONTyped,
-} from './K8sIoApiCoreV1LocalObjectReference';
+} from './K8sIoApiCoreV1LocalObjectReference.js';
 
 /**
  * Represents a Sysprep volume source.
@@ -52,7 +52,7 @@ export function V1SysprepSourceFromJSON(json: any): V1SysprepSource {
     return V1SysprepSourceFromJSONTyped(json, false);
 }
 
-export function V1SysprepSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SysprepSource {
+export function V1SysprepSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SysprepSource {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function V1SysprepSourceToJSON(json: any): V1SysprepSource {
     return V1SysprepSourceToJSONTyped(json, false);
 }
 
-export function V1SysprepSourceToJSONTyped(value?: V1SysprepSource | null, _ignoreDiscriminator: boolean = false): any {
+export function V1SysprepSourceToJSONTyped(value?: V1SysprepSource | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

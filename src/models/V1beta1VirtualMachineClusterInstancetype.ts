@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
-import type { V1beta1VirtualMachineInstancetypeSpec } from './V1beta1VirtualMachineInstancetypeSpec';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
+import type { V1beta1VirtualMachineInstancetypeSpec } from './V1beta1VirtualMachineInstancetypeSpec.js';
 import {
     V1beta1VirtualMachineInstancetypeSpecFromJSON,
     V1beta1VirtualMachineInstancetypeSpecFromJSONTyped,
     V1beta1VirtualMachineInstancetypeSpecToJSON,
     V1beta1VirtualMachineInstancetypeSpecToJSONTyped,
-} from './V1beta1VirtualMachineInstancetypeSpec';
+} from './V1beta1VirtualMachineInstancetypeSpec.js';
 
 /**
  * VirtualMachineClusterInstancetype is a cluster scoped version of VirtualMachineInstancetype resource.
@@ -72,7 +72,7 @@ export function V1beta1VirtualMachineClusterInstancetypeFromJSON(json: any): V1b
     return V1beta1VirtualMachineClusterInstancetypeFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineClusterInstancetypeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineClusterInstancetype {
+export function V1beta1VirtualMachineClusterInstancetypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineClusterInstancetype {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1beta1VirtualMachineClusterInstancetypeToJSON(json: any): V1bet
     return V1beta1VirtualMachineClusterInstancetypeToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineClusterInstancetypeToJSONTyped(value?: V1beta1VirtualMachineClusterInstancetype | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineClusterInstancetypeToJSONTyped(value?: V1beta1VirtualMachineClusterInstancetype | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

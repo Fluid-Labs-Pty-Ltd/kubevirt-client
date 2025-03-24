@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1NodeAffinity } from './K8sIoApiCoreV1NodeAffinity';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1NodeAffinity } from './K8sIoApiCoreV1NodeAffinity.js';
 import {
     K8sIoApiCoreV1NodeAffinityFromJSON,
     K8sIoApiCoreV1NodeAffinityFromJSONTyped,
     K8sIoApiCoreV1NodeAffinityToJSON,
     K8sIoApiCoreV1NodeAffinityToJSONTyped,
-} from './K8sIoApiCoreV1NodeAffinity';
-import type { K8sIoApiCoreV1PodAffinity } from './K8sIoApiCoreV1PodAffinity';
+} from './K8sIoApiCoreV1NodeAffinity.js';
+import type { K8sIoApiCoreV1PodAffinity } from './K8sIoApiCoreV1PodAffinity.js';
 import {
     K8sIoApiCoreV1PodAffinityFromJSON,
     K8sIoApiCoreV1PodAffinityFromJSONTyped,
     K8sIoApiCoreV1PodAffinityToJSON,
     K8sIoApiCoreV1PodAffinityToJSONTyped,
-} from './K8sIoApiCoreV1PodAffinity';
-import type { K8sIoApiCoreV1PodAntiAffinity } from './K8sIoApiCoreV1PodAntiAffinity';
+} from './K8sIoApiCoreV1PodAffinity.js';
+import type { K8sIoApiCoreV1PodAntiAffinity } from './K8sIoApiCoreV1PodAntiAffinity.js';
 import {
     K8sIoApiCoreV1PodAntiAffinityFromJSON,
     K8sIoApiCoreV1PodAntiAffinityFromJSONTyped,
     K8sIoApiCoreV1PodAntiAffinityToJSON,
     K8sIoApiCoreV1PodAntiAffinityToJSONTyped,
-} from './K8sIoApiCoreV1PodAntiAffinity';
+} from './K8sIoApiCoreV1PodAntiAffinity.js';
 
 /**
  * Affinity is a group of affinity scheduling rules.
@@ -72,7 +72,7 @@ export function K8sIoApiCoreV1AffinityFromJSON(json: any): K8sIoApiCoreV1Affinit
     return K8sIoApiCoreV1AffinityFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1AffinityFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1Affinity {
+export function K8sIoApiCoreV1AffinityFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1Affinity {
     if (json == null) {
         return json;
     }
@@ -88,7 +88,7 @@ export function K8sIoApiCoreV1AffinityToJSON(json: any): K8sIoApiCoreV1Affinity 
     return K8sIoApiCoreV1AffinityToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1AffinityToJSONTyped(value?: K8sIoApiCoreV1Affinity | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1AffinityToJSONTyped(value?: K8sIoApiCoreV1Affinity | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

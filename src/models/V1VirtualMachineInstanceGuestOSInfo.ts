@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -80,7 +80,7 @@ export function V1VirtualMachineInstanceGuestOSInfoFromJSON(json: any): V1Virtua
     return V1VirtualMachineInstanceGuestOSInfoFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceGuestOSInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestOSInfo {
+export function V1VirtualMachineInstanceGuestOSInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestOSInfo {
     if (json == null) {
         return json;
     }
@@ -101,7 +101,7 @@ export function V1VirtualMachineInstanceGuestOSInfoToJSON(json: any): V1VirtualM
     return V1VirtualMachineInstanceGuestOSInfoToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceGuestOSInfoToJSONTyped(value?: V1VirtualMachineInstanceGuestOSInfo | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceGuestOSInfoToJSONTyped(value?: V1VirtualMachineInstanceGuestOSInfo | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

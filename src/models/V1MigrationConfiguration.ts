@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * MigrationConfiguration holds migration options. Can be overridden for specific groups of VMs though migration policies. Visit https://kubevirt.io/user-guide/operations/migration_policies/ for more information.
  * @export
@@ -140,7 +140,7 @@ export function V1MigrationConfigurationFromJSON(json: any): V1MigrationConfigur
     return V1MigrationConfigurationFromJSONTyped(json, false);
 }
 
-export function V1MigrationConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1MigrationConfiguration {
+export function V1MigrationConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1MigrationConfiguration {
     if (json == null) {
         return json;
     }
@@ -165,7 +165,7 @@ export function V1MigrationConfigurationToJSON(json: any): V1MigrationConfigurat
     return V1MigrationConfigurationToJSONTyped(json, false);
 }
 
-export function V1MigrationConfigurationToJSONTyped(value?: V1MigrationConfiguration | null, _ignoreDiscriminator: boolean = false): any {
+export function V1MigrationConfigurationToJSONTyped(value?: V1MigrationConfiguration | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

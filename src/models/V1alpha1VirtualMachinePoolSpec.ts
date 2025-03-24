@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1alpha1VirtualMachineTemplateSpec } from './V1alpha1VirtualMachineTemplateSpec';
+import { mapValues } from '../runtime.js';
+import type { V1alpha1VirtualMachineTemplateSpec } from './V1alpha1VirtualMachineTemplateSpec.js';
 import {
     V1alpha1VirtualMachineTemplateSpecFromJSON,
     V1alpha1VirtualMachineTemplateSpecFromJSONTyped,
     V1alpha1VirtualMachineTemplateSpecToJSON,
     V1alpha1VirtualMachineTemplateSpecToJSONTyped,
-} from './V1alpha1VirtualMachineTemplateSpec';
-import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+} from './V1alpha1VirtualMachineTemplateSpec.js';
+import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 import {
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+} from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 
 /**
  * 
@@ -73,7 +73,7 @@ export function V1alpha1VirtualMachinePoolSpecFromJSON(json: any): V1alpha1Virtu
     return V1alpha1VirtualMachinePoolSpecFromJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachinePoolSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachinePoolSpec {
+export function V1alpha1VirtualMachinePoolSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachinePoolSpec {
     if (json == null) {
         return json;
     }
@@ -90,7 +90,7 @@ export function V1alpha1VirtualMachinePoolSpecToJSON(json: any): V1alpha1Virtual
     return V1alpha1VirtualMachinePoolSpecToJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachinePoolSpecToJSONTyped(value?: V1alpha1VirtualMachinePoolSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1alpha1VirtualMachinePoolSpecToJSONTyped(value?: V1alpha1VirtualMachinePoolSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

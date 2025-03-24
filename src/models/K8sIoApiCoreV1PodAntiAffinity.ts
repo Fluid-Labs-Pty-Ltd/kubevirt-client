@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1PodAffinityTerm } from './K8sIoApiCoreV1PodAffinityTerm';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1PodAffinityTerm } from './K8sIoApiCoreV1PodAffinityTerm.js';
 import {
     K8sIoApiCoreV1PodAffinityTermFromJSON,
     K8sIoApiCoreV1PodAffinityTermFromJSONTyped,
     K8sIoApiCoreV1PodAffinityTermToJSON,
     K8sIoApiCoreV1PodAffinityTermToJSONTyped,
-} from './K8sIoApiCoreV1PodAffinityTerm';
-import type { K8sIoApiCoreV1WeightedPodAffinityTerm } from './K8sIoApiCoreV1WeightedPodAffinityTerm';
+} from './K8sIoApiCoreV1PodAffinityTerm.js';
+import type { K8sIoApiCoreV1WeightedPodAffinityTerm } from './K8sIoApiCoreV1WeightedPodAffinityTerm.js';
 import {
     K8sIoApiCoreV1WeightedPodAffinityTermFromJSON,
     K8sIoApiCoreV1WeightedPodAffinityTermFromJSONTyped,
     K8sIoApiCoreV1WeightedPodAffinityTermToJSON,
     K8sIoApiCoreV1WeightedPodAffinityTermToJSONTyped,
-} from './K8sIoApiCoreV1WeightedPodAffinityTerm';
+} from './K8sIoApiCoreV1WeightedPodAffinityTerm.js';
 
 /**
  * Pod anti affinity is a group of inter pod anti affinity scheduling rules.
@@ -59,7 +59,7 @@ export function K8sIoApiCoreV1PodAntiAffinityFromJSON(json: any): K8sIoApiCoreV1
     return K8sIoApiCoreV1PodAntiAffinityFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PodAntiAffinityFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1PodAntiAffinity {
+export function K8sIoApiCoreV1PodAntiAffinityFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1PodAntiAffinity {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function K8sIoApiCoreV1PodAntiAffinityToJSON(json: any): K8sIoApiCoreV1Po
     return K8sIoApiCoreV1PodAntiAffinityToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PodAntiAffinityToJSONTyped(value?: K8sIoApiCoreV1PodAntiAffinity | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1PodAntiAffinityToJSONTyped(value?: K8sIoApiCoreV1PodAntiAffinity | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

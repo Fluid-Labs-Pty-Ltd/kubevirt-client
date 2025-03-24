@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1ACPI } from './V1ACPI';
+import { mapValues } from '../runtime.js';
+import type { V1ACPI } from './V1ACPI.js';
 import {
     V1ACPIFromJSON,
     V1ACPIFromJSONTyped,
     V1ACPIToJSON,
     V1ACPIToJSONTyped,
-} from './V1ACPI';
-import type { V1Bootloader } from './V1Bootloader';
+} from './V1ACPI.js';
+import type { V1Bootloader } from './V1Bootloader.js';
 import {
     V1BootloaderFromJSON,
     V1BootloaderFromJSONTyped,
     V1BootloaderToJSON,
     V1BootloaderToJSONTyped,
-} from './V1Bootloader';
-import type { V1KernelBoot } from './V1KernelBoot';
+} from './V1Bootloader.js';
+import type { V1KernelBoot } from './V1KernelBoot.js';
 import {
     V1KernelBootFromJSON,
     V1KernelBootFromJSONTyped,
     V1KernelBootToJSON,
     V1KernelBootToJSONTyped,
-} from './V1KernelBoot';
+} from './V1KernelBoot.js';
 
 /**
  * 
@@ -84,7 +84,7 @@ export function V1FirmwareFromJSON(json: any): V1Firmware {
     return V1FirmwareFromJSONTyped(json, false);
 }
 
-export function V1FirmwareFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Firmware {
+export function V1FirmwareFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Firmware {
     if (json == null) {
         return json;
     }
@@ -102,7 +102,7 @@ export function V1FirmwareToJSON(json: any): V1Firmware {
     return V1FirmwareToJSONTyped(json, false);
 }
 
-export function V1FirmwareToJSONTyped(value?: V1Firmware | null, _ignoreDiscriminator: boolean = false): any {
+export function V1FirmwareToJSONTyped(value?: V1Firmware | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

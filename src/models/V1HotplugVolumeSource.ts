@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1PersistentVolumeClaimVolumeSource } from './V1PersistentVolumeClaimVolumeSource';
+import { mapValues } from '../runtime.js';
+import type { V1PersistentVolumeClaimVolumeSource } from './V1PersistentVolumeClaimVolumeSource.js';
 import {
     V1PersistentVolumeClaimVolumeSourceFromJSON,
     V1PersistentVolumeClaimVolumeSourceFromJSONTyped,
     V1PersistentVolumeClaimVolumeSourceToJSON,
     V1PersistentVolumeClaimVolumeSourceToJSONTyped,
-} from './V1PersistentVolumeClaimVolumeSource';
-import type { V1DataVolumeSource } from './V1DataVolumeSource';
+} from './V1PersistentVolumeClaimVolumeSource.js';
+import type { V1DataVolumeSource } from './V1DataVolumeSource.js';
 import {
     V1DataVolumeSourceFromJSON,
     V1DataVolumeSourceFromJSONTyped,
     V1DataVolumeSourceToJSON,
     V1DataVolumeSourceToJSONTyped,
-} from './V1DataVolumeSource';
+} from './V1DataVolumeSource.js';
 
 /**
  * HotplugVolumeSource Represents the source of a volume to mount which are capable of being hotplugged on a live running VMI. Only one of its members may be specified.
@@ -59,7 +59,7 @@ export function V1HotplugVolumeSourceFromJSON(json: any): V1HotplugVolumeSource 
     return V1HotplugVolumeSourceFromJSONTyped(json, false);
 }
 
-export function V1HotplugVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1HotplugVolumeSource {
+export function V1HotplugVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1HotplugVolumeSource {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1HotplugVolumeSourceToJSON(json: any): V1HotplugVolumeSource {
     return V1HotplugVolumeSourceToJSONTyped(json, false);
 }
 
-export function V1HotplugVolumeSourceToJSONTyped(value?: V1HotplugVolumeSource | null, _ignoreDiscriminator: boolean = false): any {
+export function V1HotplugVolumeSourceToJSONTyped(value?: V1HotplugVolumeSource | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

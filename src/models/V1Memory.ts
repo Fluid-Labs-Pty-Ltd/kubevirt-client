@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1Hugepages } from './V1Hugepages';
+import { mapValues } from '../runtime.js';
+import type { V1Hugepages } from './V1Hugepages.js';
 import {
     V1HugepagesFromJSON,
     V1HugepagesFromJSONTyped,
     V1HugepagesToJSON,
     V1HugepagesToJSONTyped,
-} from './V1Hugepages';
+} from './V1Hugepages.js';
 
 /**
  * Memory allows specifying the VirtualMachineInstance memory features.
@@ -130,7 +130,7 @@ export function V1MemoryFromJSON(json: any): V1Memory {
     return V1MemoryFromJSONTyped(json, false);
 }
 
-export function V1MemoryFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Memory {
+export function V1MemoryFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Memory {
     if (json == null) {
         return json;
     }
@@ -146,7 +146,7 @@ export function V1MemoryToJSON(json: any): V1Memory {
     return V1MemoryToJSONTyped(json, false);
 }
 
-export function V1MemoryToJSONTyped(value?: V1Memory | null, _ignoreDiscriminator: boolean = false): any {
+export function V1MemoryToJSONTyped(value?: V1Memory | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

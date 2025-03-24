@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1FeatureState } from './V1FeatureState';
+import { mapValues } from '../runtime.js';
+import type { V1FeatureState } from './V1FeatureState.js';
 import {
     V1FeatureStateFromJSON,
     V1FeatureStateFromJSONTyped,
     V1FeatureStateToJSON,
     V1FeatureStateToJSONTyped,
-} from './V1FeatureState';
+} from './V1FeatureState.js';
 
 /**
  * 
@@ -52,7 +52,7 @@ export function V1VGPUDisplayOptionsFromJSON(json: any): V1VGPUDisplayOptions {
     return V1VGPUDisplayOptionsFromJSONTyped(json, false);
 }
 
-export function V1VGPUDisplayOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VGPUDisplayOptions {
+export function V1VGPUDisplayOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VGPUDisplayOptions {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function V1VGPUDisplayOptionsToJSON(json: any): V1VGPUDisplayOptions {
     return V1VGPUDisplayOptionsToJSONTyped(json, false);
 }
 
-export function V1VGPUDisplayOptionsToJSONTyped(value?: V1VGPUDisplayOptions | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VGPUDisplayOptionsToJSONTyped(value?: V1VGPUDisplayOptions | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

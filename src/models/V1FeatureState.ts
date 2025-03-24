@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * Represents if a feature is enabled or disabled.
  * @export
@@ -38,7 +38,7 @@ export function V1FeatureStateFromJSON(json: any): V1FeatureState {
     return V1FeatureStateFromJSONTyped(json, false);
 }
 
-export function V1FeatureStateFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1FeatureState {
+export function V1FeatureStateFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1FeatureState {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1FeatureStateToJSON(json: any): V1FeatureState {
     return V1FeatureStateToJSONTyped(json, false);
 }
 
-export function V1FeatureStateToJSONTyped(value?: V1FeatureState | null, _ignoreDiscriminator: boolean = false): any {
+export function V1FeatureStateToJSONTyped(value?: V1FeatureState | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

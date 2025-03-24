@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1APIGroup } from './K8sIoApimachineryPkgApisMetaV1APIGroup';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1APIGroup } from './K8sIoApimachineryPkgApisMetaV1APIGroup.js';
 import {
     K8sIoApimachineryPkgApisMetaV1APIGroupFromJSON,
     K8sIoApimachineryPkgApisMetaV1APIGroupFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1APIGroupToJSON,
     K8sIoApimachineryPkgApisMetaV1APIGroupToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1APIGroup';
+} from './K8sIoApimachineryPkgApisMetaV1APIGroup.js';
 
 /**
  * APIGroupList is a list of APIGroup, to allow clients to discover the API at /apis.
@@ -59,7 +59,7 @@ export function K8sIoApimachineryPkgApisMetaV1APIGroupListFromJSON(json: any): K
     return K8sIoApimachineryPkgApisMetaV1APIGroupListFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1APIGroupListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1APIGroupList {
+export function K8sIoApimachineryPkgApisMetaV1APIGroupListFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1APIGroupList {
     if (json == null) {
         return json;
     }
@@ -75,7 +75,7 @@ export function K8sIoApimachineryPkgApisMetaV1APIGroupListToJSON(json: any): K8s
     return K8sIoApimachineryPkgApisMetaV1APIGroupListToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1APIGroupListToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1APIGroupList | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1APIGroupListToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1APIGroupList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

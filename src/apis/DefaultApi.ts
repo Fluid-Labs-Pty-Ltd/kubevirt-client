@@ -13,7 +13,7 @@
  */
 
 
-import * as runtime from '../runtime';
+import * as runtime from '../runtime.js';
 import type {
   K8sIoApimachineryPkgApisMetaV1APIGroup,
   K8sIoApimachineryPkgApisMetaV1APIGroupList,
@@ -73,7 +73,7 @@ import type {
   V1beta1VirtualMachineSnapshotContent,
   V1beta1VirtualMachineSnapshotContentList,
   V1beta1VirtualMachineSnapshotList,
-} from '../models/index';
+} from '../models/index.js';
 import {
     K8sIoApimachineryPkgApisMetaV1APIGroupFromJSON,
     K8sIoApimachineryPkgApisMetaV1APIGroupToJSON,
@@ -191,7 +191,7 @@ import {
     V1beta1VirtualMachineSnapshotContentListToJSON,
     V1beta1VirtualMachineSnapshotListFromJSON,
     V1beta1VirtualMachineSnapshotListToJSON,
-} from '../models/index';
+} from '../models/index.js';
 
 export interface CreateMigrationPolicyRequest {
     body: V1alpha1MigrationPolicy;

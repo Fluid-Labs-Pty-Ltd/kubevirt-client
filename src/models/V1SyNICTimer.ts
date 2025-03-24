@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1FeatureState } from './V1FeatureState';
+import { mapValues } from '../runtime.js';
+import type { V1FeatureState } from './V1FeatureState.js';
 import {
     V1FeatureStateFromJSON,
     V1FeatureStateFromJSONTyped,
     V1FeatureStateToJSON,
     V1FeatureStateToJSONTyped,
-} from './V1FeatureState';
+} from './V1FeatureState.js';
 
 /**
  * 
@@ -52,7 +52,7 @@ export function V1SyNICTimerFromJSON(json: any): V1SyNICTimer {
     return V1SyNICTimerFromJSONTyped(json, false);
 }
 
-export function V1SyNICTimerFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SyNICTimer {
+export function V1SyNICTimerFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SyNICTimer {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function V1SyNICTimerToJSON(json: any): V1SyNICTimer {
     return V1SyNICTimerToJSONTyped(json, false);
 }
 
-export function V1SyNICTimerToJSONTyped(value?: V1SyNICTimer | null, _ignoreDiscriminator: boolean = false): any {
+export function V1SyNICTimerToJSONTyped(value?: V1SyNICTimer | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

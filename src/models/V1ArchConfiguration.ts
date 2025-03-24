@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1ArchSpecificConfiguration } from './V1ArchSpecificConfiguration';
+import { mapValues } from '../runtime.js';
+import type { V1ArchSpecificConfiguration } from './V1ArchSpecificConfiguration.js';
 import {
     V1ArchSpecificConfigurationFromJSON,
     V1ArchSpecificConfigurationFromJSONTyped,
     V1ArchSpecificConfigurationToJSON,
     V1ArchSpecificConfigurationToJSONTyped,
-} from './V1ArchSpecificConfiguration';
+} from './V1ArchSpecificConfiguration.js';
 
 /**
  * 
@@ -64,7 +64,7 @@ export function V1ArchConfigurationFromJSON(json: any): V1ArchConfiguration {
     return V1ArchConfigurationFromJSONTyped(json, false);
 }
 
-export function V1ArchConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ArchConfiguration {
+export function V1ArchConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ArchConfiguration {
     if (json == null) {
         return json;
     }
@@ -81,7 +81,7 @@ export function V1ArchConfigurationToJSON(json: any): V1ArchConfiguration {
     return V1ArchConfigurationToJSONTyped(json, false);
 }
 
-export function V1ArchConfigurationToJSONTyped(value?: V1ArchConfiguration | null, _ignoreDiscriminator: boolean = false): any {
+export function V1ArchConfigurationToJSONTyped(value?: V1ArchConfiguration | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

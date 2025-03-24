@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1NodePlacement } from './V1NodePlacement';
+import { mapValues } from '../runtime.js';
+import type { V1NodePlacement } from './V1NodePlacement.js';
 import {
     V1NodePlacementFromJSON,
     V1NodePlacementFromJSONTyped,
     V1NodePlacementToJSON,
     V1NodePlacementToJSONTyped,
-} from './V1NodePlacement';
+} from './V1NodePlacement.js';
 
 /**
  * 
@@ -52,7 +52,7 @@ export function V1ComponentConfigFromJSON(json: any): V1ComponentConfig {
     return V1ComponentConfigFromJSONTyped(json, false);
 }
 
-export function V1ComponentConfigFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ComponentConfig {
+export function V1ComponentConfigFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ComponentConfig {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function V1ComponentConfigToJSON(json: any): V1ComponentConfig {
     return V1ComponentConfigToJSONTyped(json, false);
 }
 
-export function V1ComponentConfigToJSONTyped(value?: V1ComponentConfig | null, _ignoreDiscriminator: boolean = false): any {
+export function V1ComponentConfigToJSONTyped(value?: V1ComponentConfig | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

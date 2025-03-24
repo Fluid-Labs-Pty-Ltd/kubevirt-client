@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * Represents the multus cni network.
  * @export
@@ -45,7 +45,7 @@ export function V1MultusNetworkFromJSON(json: any): V1MultusNetwork {
     return V1MultusNetworkFromJSONTyped(json, false);
 }
 
-export function V1MultusNetworkFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1MultusNetwork {
+export function V1MultusNetworkFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1MultusNetwork {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1MultusNetworkToJSON(json: any): V1MultusNetwork {
     return V1MultusNetworkToJSONTyped(json, false);
 }
 
-export function V1MultusNetworkToJSONTyped(value?: V1MultusNetwork | null, _ignoreDiscriminator: boolean = false): any {
+export function V1MultusNetworkToJSONTyped(value?: V1MultusNetwork | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

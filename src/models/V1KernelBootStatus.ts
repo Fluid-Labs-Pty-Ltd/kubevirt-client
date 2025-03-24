@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1InitrdInfo } from './V1InitrdInfo';
+import { mapValues } from '../runtime.js';
+import type { V1InitrdInfo } from './V1InitrdInfo.js';
 import {
     V1InitrdInfoFromJSON,
     V1InitrdInfoFromJSONTyped,
     V1InitrdInfoToJSON,
     V1InitrdInfoToJSONTyped,
-} from './V1InitrdInfo';
-import type { V1KernelInfo } from './V1KernelInfo';
+} from './V1InitrdInfo.js';
+import type { V1KernelInfo } from './V1KernelInfo.js';
 import {
     V1KernelInfoFromJSON,
     V1KernelInfoFromJSONTyped,
     V1KernelInfoToJSON,
     V1KernelInfoToJSONTyped,
-} from './V1KernelInfo';
+} from './V1KernelInfo.js';
 
 /**
  * KernelBootStatus contains info about the kernelBootContainer
@@ -59,7 +59,7 @@ export function V1KernelBootStatusFromJSON(json: any): V1KernelBootStatus {
     return V1KernelBootStatusFromJSONTyped(json, false);
 }
 
-export function V1KernelBootStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KernelBootStatus {
+export function V1KernelBootStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KernelBootStatus {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1KernelBootStatusToJSON(json: any): V1KernelBootStatus {
     return V1KernelBootStatusToJSONTyped(json, false);
 }
 
-export function V1KernelBootStatusToJSONTyped(value?: V1KernelBootStatus | null, _ignoreDiscriminator: boolean = false): any {
+export function V1KernelBootStatusToJSONTyped(value?: V1KernelBootStatus | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

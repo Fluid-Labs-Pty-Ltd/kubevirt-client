@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1DownwardAPIVolumeFile } from './K8sIoApiCoreV1DownwardAPIVolumeFile';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1DownwardAPIVolumeFile } from './K8sIoApiCoreV1DownwardAPIVolumeFile.js';
 import {
     K8sIoApiCoreV1DownwardAPIVolumeFileFromJSON,
     K8sIoApiCoreV1DownwardAPIVolumeFileFromJSONTyped,
     K8sIoApiCoreV1DownwardAPIVolumeFileToJSON,
     K8sIoApiCoreV1DownwardAPIVolumeFileToJSONTyped,
-} from './K8sIoApiCoreV1DownwardAPIVolumeFile';
+} from './K8sIoApiCoreV1DownwardAPIVolumeFile.js';
 
 /**
  * DownwardAPIVolumeSource represents a volume containing downward API info.
@@ -52,7 +52,7 @@ export function V1DownwardAPIVolumeSourceFromJSON(json: any): V1DownwardAPIVolum
     return V1DownwardAPIVolumeSourceFromJSONTyped(json, false);
 }
 
-export function V1DownwardAPIVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DownwardAPIVolumeSource {
+export function V1DownwardAPIVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DownwardAPIVolumeSource {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function V1DownwardAPIVolumeSourceToJSON(json: any): V1DownwardAPIVolumeS
     return V1DownwardAPIVolumeSourceToJSONTyped(json, false);
 }
 
-export function V1DownwardAPIVolumeSourceToJSONTyped(value?: V1DownwardAPIVolumeSource | null, _ignoreDiscriminator: boolean = false): any {
+export function V1DownwardAPIVolumeSourceToJSONTyped(value?: V1DownwardAPIVolumeSource | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

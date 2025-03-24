@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * PauseOptions may be provided on pause request.
  * @export
@@ -50,7 +50,7 @@ export function V1PauseOptionsFromJSON(json: any): V1PauseOptions {
     return V1PauseOptionsFromJSONTyped(json, false);
 }
 
-export function V1PauseOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PauseOptions {
+export function V1PauseOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PauseOptions {
     if (json == null) {
         return json;
     }
@@ -66,7 +66,7 @@ export function V1PauseOptionsToJSON(json: any): V1PauseOptions {
     return V1PauseOptionsToJSONTyped(json, false);
 }
 
-export function V1PauseOptionsToJSONTyped(value?: V1PauseOptions | null, _ignoreDiscriminator: boolean = false): any {
+export function V1PauseOptionsToJSONTyped(value?: V1PauseOptions | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

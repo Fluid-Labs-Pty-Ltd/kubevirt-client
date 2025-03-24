@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -51,7 +51,7 @@ export function V1VirtualMachineStateChangeRequestFromJSON(json: any): V1Virtual
     return V1VirtualMachineStateChangeRequestFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineStateChangeRequestFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineStateChangeRequest {
+export function V1VirtualMachineStateChangeRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineStateChangeRequest {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function V1VirtualMachineStateChangeRequestToJSON(json: any): V1VirtualMa
     return V1VirtualMachineStateChangeRequestToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineStateChangeRequestToJSONTyped(value?: V1VirtualMachineStateChangeRequest | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineStateChangeRequestToJSONTyped(value?: V1VirtualMachineStateChangeRequest | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

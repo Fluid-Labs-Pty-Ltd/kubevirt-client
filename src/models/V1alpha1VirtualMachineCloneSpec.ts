@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1TypedLocalObjectReference } from './K8sIoApiCoreV1TypedLocalObjectReference';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1TypedLocalObjectReference } from './K8sIoApiCoreV1TypedLocalObjectReference.js';
 import {
     K8sIoApiCoreV1TypedLocalObjectReferenceFromJSON,
     K8sIoApiCoreV1TypedLocalObjectReferenceFromJSONTyped,
     K8sIoApiCoreV1TypedLocalObjectReferenceToJSON,
     K8sIoApiCoreV1TypedLocalObjectReferenceToJSONTyped,
-} from './K8sIoApiCoreV1TypedLocalObjectReference';
-import type { V1alpha1VirtualMachineCloneTemplateFilters } from './V1alpha1VirtualMachineCloneTemplateFilters';
+} from './K8sIoApiCoreV1TypedLocalObjectReference.js';
+import type { V1alpha1VirtualMachineCloneTemplateFilters } from './V1alpha1VirtualMachineCloneTemplateFilters.js';
 import {
     V1alpha1VirtualMachineCloneTemplateFiltersFromJSON,
     V1alpha1VirtualMachineCloneTemplateFiltersFromJSONTyped,
     V1alpha1VirtualMachineCloneTemplateFiltersToJSON,
     V1alpha1VirtualMachineCloneTemplateFiltersToJSONTyped,
-} from './V1alpha1VirtualMachineCloneTemplateFilters';
+} from './V1alpha1VirtualMachineCloneTemplateFilters.js';
 
 /**
  * 
@@ -90,7 +90,7 @@ export function V1alpha1VirtualMachineCloneSpecFromJSON(json: any): V1alpha1Virt
     return V1alpha1VirtualMachineCloneSpecFromJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineCloneSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneSpec {
+export function V1alpha1VirtualMachineCloneSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneSpec {
     if (json == null) {
         return json;
     }
@@ -110,7 +110,7 @@ export function V1alpha1VirtualMachineCloneSpecToJSON(json: any): V1alpha1Virtua
     return V1alpha1VirtualMachineCloneSpecToJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineCloneSpecToJSONTyped(value?: V1alpha1VirtualMachineCloneSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1alpha1VirtualMachineCloneSpecToJSONTyped(value?: V1alpha1VirtualMachineCloneSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

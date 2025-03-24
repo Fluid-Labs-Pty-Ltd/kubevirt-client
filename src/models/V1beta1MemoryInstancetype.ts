@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1Hugepages } from './V1Hugepages';
+import { mapValues } from '../runtime.js';
+import type { V1Hugepages } from './V1Hugepages.js';
 import {
     V1HugepagesFromJSON,
     V1HugepagesFromJSONTyped,
     V1HugepagesToJSON,
     V1HugepagesToJSONTyped,
-} from './V1Hugepages';
+} from './V1Hugepages.js';
 
 /**
  * MemoryInstancetype contains the Memory related configuration of a given VirtualMachineInstancetypeSpec.
@@ -139,7 +139,7 @@ export function V1beta1MemoryInstancetypeFromJSON(json: any): V1beta1MemoryInsta
     return V1beta1MemoryInstancetypeFromJSONTyped(json, false);
 }
 
-export function V1beta1MemoryInstancetypeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1MemoryInstancetype {
+export function V1beta1MemoryInstancetypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1MemoryInstancetype {
     if (json == null) {
         return json;
     }
@@ -156,7 +156,7 @@ export function V1beta1MemoryInstancetypeToJSON(json: any): V1beta1MemoryInstanc
     return V1beta1MemoryInstancetypeToJSONTyped(json, false);
 }
 
-export function V1beta1MemoryInstancetypeToJSONTyped(value?: V1beta1MemoryInstancetype | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1MemoryInstancetypeToJSONTyped(value?: V1beta1MemoryInstancetype | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

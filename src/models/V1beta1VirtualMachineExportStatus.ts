@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1beta1VirtualMachineExportLinks } from './V1beta1VirtualMachineExportLinks';
+import { mapValues } from '../runtime.js';
+import type { V1beta1VirtualMachineExportLinks } from './V1beta1VirtualMachineExportLinks.js';
 import {
     V1beta1VirtualMachineExportLinksFromJSON,
     V1beta1VirtualMachineExportLinksFromJSONTyped,
     V1beta1VirtualMachineExportLinksToJSON,
     V1beta1VirtualMachineExportLinksToJSONTyped,
-} from './V1beta1VirtualMachineExportLinks';
-import type { V1beta1Condition } from './V1beta1Condition';
+} from './V1beta1VirtualMachineExportLinks.js';
+import type { V1beta1Condition } from './V1beta1Condition.js';
 import {
     V1beta1ConditionFromJSON,
     V1beta1ConditionFromJSONTyped,
     V1beta1ConditionToJSON,
     V1beta1ConditionToJSONTyped,
-} from './V1beta1Condition';
+} from './V1beta1Condition.js';
 
 /**
  * VirtualMachineExportStatus is the status for a VirtualMachineExport resource
@@ -89,7 +89,7 @@ export function V1beta1VirtualMachineExportStatusFromJSON(json: any): V1beta1Vir
     return V1beta1VirtualMachineExportStatusFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineExportStatus {
+export function V1beta1VirtualMachineExportStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineExportStatus {
     if (json == null) {
         return json;
     }
@@ -109,7 +109,7 @@ export function V1beta1VirtualMachineExportStatusToJSON(json: any): V1beta1Virtu
     return V1beta1VirtualMachineExportStatusToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportStatusToJSONTyped(value?: V1beta1VirtualMachineExportStatus | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineExportStatusToJSONTyped(value?: V1beta1VirtualMachineExportStatus | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

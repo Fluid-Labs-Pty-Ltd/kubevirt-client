@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1NodeSelectorTerm } from './K8sIoApiCoreV1NodeSelectorTerm';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1NodeSelectorTerm } from './K8sIoApiCoreV1NodeSelectorTerm.js';
 import {
     K8sIoApiCoreV1NodeSelectorTermFromJSON,
     K8sIoApiCoreV1NodeSelectorTermFromJSONTyped,
     K8sIoApiCoreV1NodeSelectorTermToJSON,
     K8sIoApiCoreV1NodeSelectorTermToJSONTyped,
-} from './K8sIoApiCoreV1NodeSelectorTerm';
+} from './K8sIoApiCoreV1NodeSelectorTerm.js';
 
 /**
  * An empty preferred scheduling term matches all objects with implicit weight 0 (i.e. it's a no-op). A null preferred scheduling term matches no objects (i.e. is also a no-op).
@@ -54,7 +54,7 @@ export function K8sIoApiCoreV1PreferredSchedulingTermFromJSON(json: any): K8sIoA
     return K8sIoApiCoreV1PreferredSchedulingTermFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PreferredSchedulingTermFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1PreferredSchedulingTerm {
+export function K8sIoApiCoreV1PreferredSchedulingTermFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1PreferredSchedulingTerm {
     if (json == null) {
         return json;
     }
@@ -69,7 +69,7 @@ export function K8sIoApiCoreV1PreferredSchedulingTermToJSON(json: any): K8sIoApi
     return K8sIoApiCoreV1PreferredSchedulingTermToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PreferredSchedulingTermToJSONTyped(value?: K8sIoApiCoreV1PreferredSchedulingTerm | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1PreferredSchedulingTermToJSONTyped(value?: K8sIoApiCoreV1PreferredSchedulingTerm | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

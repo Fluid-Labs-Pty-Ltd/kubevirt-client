@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1RemoveVolumeOptions } from './V1RemoveVolumeOptions';
+import { mapValues } from '../runtime.js';
+import type { V1RemoveVolumeOptions } from './V1RemoveVolumeOptions.js';
 import {
     V1RemoveVolumeOptionsFromJSON,
     V1RemoveVolumeOptionsFromJSONTyped,
     V1RemoveVolumeOptionsToJSON,
     V1RemoveVolumeOptionsToJSONTyped,
-} from './V1RemoveVolumeOptions';
-import type { V1AddVolumeOptions } from './V1AddVolumeOptions';
+} from './V1RemoveVolumeOptions.js';
+import type { V1AddVolumeOptions } from './V1AddVolumeOptions.js';
 import {
     V1AddVolumeOptionsFromJSON,
     V1AddVolumeOptionsFromJSONTyped,
     V1AddVolumeOptionsToJSON,
     V1AddVolumeOptionsToJSONTyped,
-} from './V1AddVolumeOptions';
+} from './V1AddVolumeOptions.js';
 
 /**
  * 
@@ -59,7 +59,7 @@ export function V1VirtualMachineVolumeRequestFromJSON(json: any): V1VirtualMachi
     return V1VirtualMachineVolumeRequestFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineVolumeRequestFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineVolumeRequest {
+export function V1VirtualMachineVolumeRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineVolumeRequest {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1VirtualMachineVolumeRequestToJSON(json: any): V1VirtualMachine
     return V1VirtualMachineVolumeRequestToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineVolumeRequestToJSONTyped(value?: V1VirtualMachineVolumeRequest | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineVolumeRequestToJSONTyped(value?: V1VirtualMachineVolumeRequest | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

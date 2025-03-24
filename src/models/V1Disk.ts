@@ -12,35 +12,35 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1DiskTarget } from './V1DiskTarget';
+import { mapValues } from '../runtime.js';
+import type { V1DiskTarget } from './V1DiskTarget.js';
 import {
     V1DiskTargetFromJSON,
     V1DiskTargetFromJSONTyped,
     V1DiskTargetToJSON,
     V1DiskTargetToJSONTyped,
-} from './V1DiskTarget';
-import type { V1LunTarget } from './V1LunTarget';
+} from './V1DiskTarget.js';
+import type { V1LunTarget } from './V1LunTarget.js';
 import {
     V1LunTargetFromJSON,
     V1LunTargetFromJSONTyped,
     V1LunTargetToJSON,
     V1LunTargetToJSONTyped,
-} from './V1LunTarget';
-import type { V1BlockSize } from './V1BlockSize';
+} from './V1LunTarget.js';
+import type { V1BlockSize } from './V1BlockSize.js';
 import {
     V1BlockSizeFromJSON,
     V1BlockSizeFromJSONTyped,
     V1BlockSizeToJSON,
     V1BlockSizeToJSONTyped,
-} from './V1BlockSize';
-import type { V1CDRomTarget } from './V1CDRomTarget';
+} from './V1BlockSize.js';
+import type { V1CDRomTarget } from './V1CDRomTarget.js';
 import {
     V1CDRomTargetFromJSON,
     V1CDRomTargetFromJSONTyped,
     V1CDRomTargetToJSON,
     V1CDRomTargetToJSONTyped,
-} from './V1CDRomTarget';
+} from './V1CDRomTarget.js';
 
 /**
  * 
@@ -140,7 +140,7 @@ export function V1DiskFromJSON(json: any): V1Disk {
     return V1DiskFromJSONTyped(json, false);
 }
 
-export function V1DiskFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Disk {
+export function V1DiskFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Disk {
     if (json == null) {
         return json;
     }
@@ -166,7 +166,7 @@ export function V1DiskToJSON(json: any): V1Disk {
     return V1DiskToJSONTyped(json, false);
 }
 
-export function V1DiskToJSONTyped(value?: V1Disk | null, _ignoreDiscriminator: boolean = false): any {
+export function V1DiskToJSONTyped(value?: V1Disk | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

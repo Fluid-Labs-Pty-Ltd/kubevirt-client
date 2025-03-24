@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 import {
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+} from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 
 /**
  * TopologySpreadConstraint specifies how to spread matching pods among the given topology.
@@ -143,7 +143,7 @@ export function K8sIoApiCoreV1TopologySpreadConstraintFromJSON(json: any): K8sIo
     return K8sIoApiCoreV1TopologySpreadConstraintFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1TopologySpreadConstraintFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1TopologySpreadConstraint {
+export function K8sIoApiCoreV1TopologySpreadConstraintFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1TopologySpreadConstraint {
     if (json == null) {
         return json;
     }
@@ -164,7 +164,7 @@ export function K8sIoApiCoreV1TopologySpreadConstraintToJSON(json: any): K8sIoAp
     return K8sIoApiCoreV1TopologySpreadConstraintToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1TopologySpreadConstraintToJSONTyped(value?: K8sIoApiCoreV1TopologySpreadConstraint | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1TopologySpreadConstraintToJSONTyped(value?: K8sIoApiCoreV1TopologySpreadConstraint | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * PreferenceMatcher references a set of preference that is used to fill fields in the VMI template.
  * @export
@@ -62,7 +62,7 @@ export function V1PreferenceMatcherFromJSON(json: any): V1PreferenceMatcher {
     return V1PreferenceMatcherFromJSONTyped(json, false);
 }
 
-export function V1PreferenceMatcherFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PreferenceMatcher {
+export function V1PreferenceMatcherFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PreferenceMatcher {
     if (json == null) {
         return json;
     }
@@ -80,7 +80,7 @@ export function V1PreferenceMatcherToJSON(json: any): V1PreferenceMatcher {
     return V1PreferenceMatcherToJSONTyped(json, false);
 }
 
-export function V1PreferenceMatcherToJSONTyped(value?: V1PreferenceMatcher | null, _ignoreDiscriminator: boolean = false): any {
+export function V1PreferenceMatcherToJSONTyped(value?: V1PreferenceMatcher | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

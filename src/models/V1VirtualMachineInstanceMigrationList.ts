@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1VirtualMachineInstanceMigration } from './V1VirtualMachineInstanceMigration';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1VirtualMachineInstanceMigration } from './V1VirtualMachineInstanceMigration.js';
 import {
     V1VirtualMachineInstanceMigrationFromJSON,
     V1VirtualMachineInstanceMigrationFromJSONTyped,
     V1VirtualMachineInstanceMigrationToJSON,
     V1VirtualMachineInstanceMigrationToJSONTyped,
-} from './V1VirtualMachineInstanceMigration';
+} from './V1VirtualMachineInstanceMigration.js';
 
 /**
  * VirtualMachineInstanceMigrationList is a list of VirtualMachineMigrations
@@ -72,7 +72,7 @@ export function V1VirtualMachineInstanceMigrationListFromJSON(json: any): V1Virt
     return V1VirtualMachineInstanceMigrationListFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceMigrationListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigrationList {
+export function V1VirtualMachineInstanceMigrationListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceMigrationList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1VirtualMachineInstanceMigrationListToJSON(json: any): V1Virtua
     return V1VirtualMachineInstanceMigrationListToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceMigrationListToJSONTyped(value?: V1VirtualMachineInstanceMigrationList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceMigrationListToJSONTyped(value?: V1VirtualMachineInstanceMigrationList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

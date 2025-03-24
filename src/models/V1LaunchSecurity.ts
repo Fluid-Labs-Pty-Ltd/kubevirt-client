@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1SEV } from './V1SEV';
+import { mapValues } from '../runtime.js';
+import type { V1SEV } from './V1SEV.js';
 import {
     V1SEVFromJSON,
     V1SEVFromJSONTyped,
     V1SEVToJSON,
     V1SEVToJSONTyped,
-} from './V1SEV';
+} from './V1SEV.js';
 
 /**
  * 
@@ -46,7 +46,7 @@ export function V1LaunchSecurityFromJSON(json: any): V1LaunchSecurity {
     return V1LaunchSecurityFromJSONTyped(json, false);
 }
 
-export function V1LaunchSecurityFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1LaunchSecurity {
+export function V1LaunchSecurityFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1LaunchSecurity {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1LaunchSecurityToJSON(json: any): V1LaunchSecurity {
     return V1LaunchSecurityToJSONTyped(json, false);
 }
 
-export function V1LaunchSecurityToJSONTyped(value?: V1LaunchSecurity | null, _ignoreDiscriminator: boolean = false): any {
+export function V1LaunchSecurityToJSONTyped(value?: V1LaunchSecurity | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

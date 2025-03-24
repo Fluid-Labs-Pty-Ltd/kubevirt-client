@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1SSHPublicKeyAccessCredentialPropagationMethod } from './V1SSHPublicKeyAccessCredentialPropagationMethod';
+import { mapValues } from '../runtime.js';
+import type { V1SSHPublicKeyAccessCredentialPropagationMethod } from './V1SSHPublicKeyAccessCredentialPropagationMethod.js';
 import {
     V1SSHPublicKeyAccessCredentialPropagationMethodFromJSON,
     V1SSHPublicKeyAccessCredentialPropagationMethodFromJSONTyped,
     V1SSHPublicKeyAccessCredentialPropagationMethodToJSON,
     V1SSHPublicKeyAccessCredentialPropagationMethodToJSONTyped,
-} from './V1SSHPublicKeyAccessCredentialPropagationMethod';
-import type { V1SSHPublicKeyAccessCredentialSource } from './V1SSHPublicKeyAccessCredentialSource';
+} from './V1SSHPublicKeyAccessCredentialPropagationMethod.js';
+import type { V1SSHPublicKeyAccessCredentialSource } from './V1SSHPublicKeyAccessCredentialSource.js';
 import {
     V1SSHPublicKeyAccessCredentialSourceFromJSON,
     V1SSHPublicKeyAccessCredentialSourceFromJSONTyped,
     V1SSHPublicKeyAccessCredentialSourceToJSON,
     V1SSHPublicKeyAccessCredentialSourceToJSONTyped,
-} from './V1SSHPublicKeyAccessCredentialSource';
+} from './V1SSHPublicKeyAccessCredentialSource.js';
 
 /**
  * SSHPublicKeyAccessCredential represents a source and propagation method for injecting ssh public keys into a vm guest
@@ -61,7 +61,7 @@ export function V1SSHPublicKeyAccessCredentialFromJSON(json: any): V1SSHPublicKe
     return V1SSHPublicKeyAccessCredentialFromJSONTyped(json, false);
 }
 
-export function V1SSHPublicKeyAccessCredentialFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SSHPublicKeyAccessCredential {
+export function V1SSHPublicKeyAccessCredentialFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SSHPublicKeyAccessCredential {
     if (json == null) {
         return json;
     }
@@ -76,7 +76,7 @@ export function V1SSHPublicKeyAccessCredentialToJSON(json: any): V1SSHPublicKeyA
     return V1SSHPublicKeyAccessCredentialToJSONTyped(json, false);
 }
 
-export function V1SSHPublicKeyAccessCredentialToJSONTyped(value?: V1SSHPublicKeyAccessCredential | null, _ignoreDiscriminator: boolean = false): any {
+export function V1SSHPublicKeyAccessCredentialToJSONTyped(value?: V1SSHPublicKeyAccessCredential | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

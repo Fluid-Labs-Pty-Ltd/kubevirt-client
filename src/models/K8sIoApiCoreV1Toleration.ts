@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * The pod this Toleration is attached to tolerates any taint that matches the triple <key,value,effect> using the matching operator <operator>.
  * @export
@@ -92,7 +92,7 @@ export function K8sIoApiCoreV1TolerationFromJSON(json: any): K8sIoApiCoreV1Toler
     return K8sIoApiCoreV1TolerationFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1TolerationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1Toleration {
+export function K8sIoApiCoreV1TolerationFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1Toleration {
     if (json == null) {
         return json;
     }
@@ -110,7 +110,7 @@ export function K8sIoApiCoreV1TolerationToJSON(json: any): K8sIoApiCoreV1Tolerat
     return K8sIoApiCoreV1TolerationToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1TolerationToJSONTyped(value?: K8sIoApiCoreV1Toleration | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1TolerationToJSONTyped(value?: K8sIoApiCoreV1Toleration | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

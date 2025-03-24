@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -50,7 +50,7 @@ export function V1ResourceRequirementsFromJSON(json: any): V1ResourceRequirement
     return V1ResourceRequirementsFromJSONTyped(json, false);
 }
 
-export function V1ResourceRequirementsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ResourceRequirements {
+export function V1ResourceRequirementsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ResourceRequirements {
     if (json == null) {
         return json;
     }
@@ -66,7 +66,7 @@ export function V1ResourceRequirementsToJSON(json: any): V1ResourceRequirements 
     return V1ResourceRequirementsToJSONTyped(json, false);
 }
 
-export function V1ResourceRequirementsToJSONTyped(value?: V1ResourceRequirements | null, _ignoreDiscriminator: boolean = false): any {
+export function V1ResourceRequirementsToJSONTyped(value?: V1ResourceRequirements | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

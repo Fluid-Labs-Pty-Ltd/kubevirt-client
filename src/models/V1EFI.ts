@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * If set, EFI will be used instead of BIOS.
  * @export
@@ -44,7 +44,7 @@ export function V1EFIFromJSON(json: any): V1EFI {
     return V1EFIFromJSONTyped(json, false);
 }
 
-export function V1EFIFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1EFI {
+export function V1EFIFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1EFI {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1EFIToJSON(json: any): V1EFI {
     return V1EFIToJSONTyped(json, false);
 }
 
-export function V1EFIToJSONTyped(value?: V1EFI | null, _ignoreDiscriminator: boolean = false): any {
+export function V1EFIToJSONTyped(value?: V1EFI | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

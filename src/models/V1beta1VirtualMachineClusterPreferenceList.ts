@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1beta1VirtualMachineClusterPreference } from './V1beta1VirtualMachineClusterPreference';
+import { mapValues } from '../runtime.js';
+import type { V1beta1VirtualMachineClusterPreference } from './V1beta1VirtualMachineClusterPreference.js';
 import {
     V1beta1VirtualMachineClusterPreferenceFromJSON,
     V1beta1VirtualMachineClusterPreferenceFromJSONTyped,
     V1beta1VirtualMachineClusterPreferenceToJSON,
     V1beta1VirtualMachineClusterPreferenceToJSONTyped,
-} from './V1beta1VirtualMachineClusterPreference';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+} from './V1beta1VirtualMachineClusterPreference.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 
 /**
  * VirtualMachineClusterPreferenceList is a list of VirtualMachineClusterPreference resources.
@@ -72,7 +72,7 @@ export function V1beta1VirtualMachineClusterPreferenceListFromJSON(json: any): V
     return V1beta1VirtualMachineClusterPreferenceListFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineClusterPreferenceListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineClusterPreferenceList {
+export function V1beta1VirtualMachineClusterPreferenceListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineClusterPreferenceList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1beta1VirtualMachineClusterPreferenceListToJSON(json: any): V1b
     return V1beta1VirtualMachineClusterPreferenceListToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineClusterPreferenceListToJSONTyped(value?: V1beta1VirtualMachineClusterPreferenceList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineClusterPreferenceListToJSONTyped(value?: V1beta1VirtualMachineClusterPreferenceList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * Flags will create a patch that will replace all flags for the container's command field. The only flags that will be used are those define. There are no guarantees around forward/backward compatibility.  If set incorrectly this will cause the resource when rolled out to error until flags are updated.
  * @export
@@ -50,7 +50,7 @@ export function V1FlagsFromJSON(json: any): V1Flags {
     return V1FlagsFromJSONTyped(json, false);
 }
 
-export function V1FlagsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Flags {
+export function V1FlagsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Flags {
     if (json == null) {
         return json;
     }
@@ -66,7 +66,7 @@ export function V1FlagsToJSON(json: any): V1Flags {
     return V1FlagsToJSONTyped(json, false);
 }
 
-export function V1FlagsToJSONTyped(value?: V1Flags | null, _ignoreDiscriminator: boolean = false): any {
+export function V1FlagsToJSONTyped(value?: V1Flags | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

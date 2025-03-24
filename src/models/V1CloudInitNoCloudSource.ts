@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1LocalObjectReference } from './K8sIoApiCoreV1LocalObjectReference';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1LocalObjectReference } from './K8sIoApiCoreV1LocalObjectReference.js';
 import {
     K8sIoApiCoreV1LocalObjectReferenceFromJSON,
     K8sIoApiCoreV1LocalObjectReferenceFromJSONTyped,
     K8sIoApiCoreV1LocalObjectReferenceToJSON,
     K8sIoApiCoreV1LocalObjectReferenceToJSONTyped,
-} from './K8sIoApiCoreV1LocalObjectReference';
+} from './K8sIoApiCoreV1LocalObjectReference.js';
 
 /**
  * Represents a cloud-init nocloud user data source. More info: http://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html
@@ -76,7 +76,7 @@ export function V1CloudInitNoCloudSourceFromJSON(json: any): V1CloudInitNoCloudS
     return V1CloudInitNoCloudSourceFromJSONTyped(json, false);
 }
 
-export function V1CloudInitNoCloudSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1CloudInitNoCloudSource {
+export function V1CloudInitNoCloudSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1CloudInitNoCloudSource {
     if (json == null) {
         return json;
     }
@@ -95,7 +95,7 @@ export function V1CloudInitNoCloudSourceToJSON(json: any): V1CloudInitNoCloudSou
     return V1CloudInitNoCloudSourceToJSONTyped(json, false);
 }
 
-export function V1CloudInitNoCloudSourceToJSONTyped(value?: V1CloudInitNoCloudSource | null, _ignoreDiscriminator: boolean = false): any {
+export function V1CloudInitNoCloudSourceToJSONTyped(value?: V1CloudInitNoCloudSource | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

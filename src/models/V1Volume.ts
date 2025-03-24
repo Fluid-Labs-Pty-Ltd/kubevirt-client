@@ -12,105 +12,105 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1SysprepSource } from './V1SysprepSource';
+import { mapValues } from '../runtime.js';
+import type { V1SysprepSource } from './V1SysprepSource.js';
 import {
     V1SysprepSourceFromJSON,
     V1SysprepSourceFromJSONTyped,
     V1SysprepSourceToJSON,
     V1SysprepSourceToJSONTyped,
-} from './V1SysprepSource';
-import type { V1DownwardAPIVolumeSource } from './V1DownwardAPIVolumeSource';
+} from './V1SysprepSource.js';
+import type { V1DownwardAPIVolumeSource } from './V1DownwardAPIVolumeSource.js';
 import {
     V1DownwardAPIVolumeSourceFromJSON,
     V1DownwardAPIVolumeSourceFromJSONTyped,
     V1DownwardAPIVolumeSourceToJSON,
     V1DownwardAPIVolumeSourceToJSONTyped,
-} from './V1DownwardAPIVolumeSource';
-import type { V1EmptyDiskSource } from './V1EmptyDiskSource';
+} from './V1DownwardAPIVolumeSource.js';
+import type { V1EmptyDiskSource } from './V1EmptyDiskSource.js';
 import {
     V1EmptyDiskSourceFromJSON,
     V1EmptyDiskSourceFromJSONTyped,
     V1EmptyDiskSourceToJSON,
     V1EmptyDiskSourceToJSONTyped,
-} from './V1EmptyDiskSource';
-import type { V1MemoryDumpVolumeSource } from './V1MemoryDumpVolumeSource';
+} from './V1EmptyDiskSource.js';
+import type { V1MemoryDumpVolumeSource } from './V1MemoryDumpVolumeSource.js';
 import {
     V1MemoryDumpVolumeSourceFromJSON,
     V1MemoryDumpVolumeSourceFromJSONTyped,
     V1MemoryDumpVolumeSourceToJSON,
     V1MemoryDumpVolumeSourceToJSONTyped,
-} from './V1MemoryDumpVolumeSource';
-import type { V1DataVolumeSource } from './V1DataVolumeSource';
+} from './V1MemoryDumpVolumeSource.js';
+import type { V1DataVolumeSource } from './V1DataVolumeSource.js';
 import {
     V1DataVolumeSourceFromJSON,
     V1DataVolumeSourceFromJSONTyped,
     V1DataVolumeSourceToJSON,
     V1DataVolumeSourceToJSONTyped,
-} from './V1DataVolumeSource';
-import type { V1SecretVolumeSource } from './V1SecretVolumeSource';
+} from './V1DataVolumeSource.js';
+import type { V1SecretVolumeSource } from './V1SecretVolumeSource.js';
 import {
     V1SecretVolumeSourceFromJSON,
     V1SecretVolumeSourceFromJSONTyped,
     V1SecretVolumeSourceToJSON,
     V1SecretVolumeSourceToJSONTyped,
-} from './V1SecretVolumeSource';
-import type { V1EphemeralVolumeSource } from './V1EphemeralVolumeSource';
+} from './V1SecretVolumeSource.js';
+import type { V1EphemeralVolumeSource } from './V1EphemeralVolumeSource.js';
 import {
     V1EphemeralVolumeSourceFromJSON,
     V1EphemeralVolumeSourceFromJSONTyped,
     V1EphemeralVolumeSourceToJSON,
     V1EphemeralVolumeSourceToJSONTyped,
-} from './V1EphemeralVolumeSource';
-import type { V1HostDisk } from './V1HostDisk';
+} from './V1EphemeralVolumeSource.js';
+import type { V1HostDisk } from './V1HostDisk.js';
 import {
     V1HostDiskFromJSON,
     V1HostDiskFromJSONTyped,
     V1HostDiskToJSON,
     V1HostDiskToJSONTyped,
-} from './V1HostDisk';
-import type { V1CloudInitNoCloudSource } from './V1CloudInitNoCloudSource';
+} from './V1HostDisk.js';
+import type { V1CloudInitNoCloudSource } from './V1CloudInitNoCloudSource.js';
 import {
     V1CloudInitNoCloudSourceFromJSON,
     V1CloudInitNoCloudSourceFromJSONTyped,
     V1CloudInitNoCloudSourceToJSON,
     V1CloudInitNoCloudSourceToJSONTyped,
-} from './V1CloudInitNoCloudSource';
-import type { V1ContainerDiskSource } from './V1ContainerDiskSource';
+} from './V1CloudInitNoCloudSource.js';
+import type { V1ContainerDiskSource } from './V1ContainerDiskSource.js';
 import {
     V1ContainerDiskSourceFromJSON,
     V1ContainerDiskSourceFromJSONTyped,
     V1ContainerDiskSourceToJSON,
     V1ContainerDiskSourceToJSONTyped,
-} from './V1ContainerDiskSource';
-import type { V1ServiceAccountVolumeSource } from './V1ServiceAccountVolumeSource';
+} from './V1ContainerDiskSource.js';
+import type { V1ServiceAccountVolumeSource } from './V1ServiceAccountVolumeSource.js';
 import {
     V1ServiceAccountVolumeSourceFromJSON,
     V1ServiceAccountVolumeSourceFromJSONTyped,
     V1ServiceAccountVolumeSourceToJSON,
     V1ServiceAccountVolumeSourceToJSONTyped,
-} from './V1ServiceAccountVolumeSource';
-import type { V1PersistentVolumeClaimVolumeSource } from './V1PersistentVolumeClaimVolumeSource';
+} from './V1ServiceAccountVolumeSource.js';
+import type { V1PersistentVolumeClaimVolumeSource } from './V1PersistentVolumeClaimVolumeSource.js';
 import {
     V1PersistentVolumeClaimVolumeSourceFromJSON,
     V1PersistentVolumeClaimVolumeSourceFromJSONTyped,
     V1PersistentVolumeClaimVolumeSourceToJSON,
     V1PersistentVolumeClaimVolumeSourceToJSONTyped,
-} from './V1PersistentVolumeClaimVolumeSource';
-import type { V1CloudInitConfigDriveSource } from './V1CloudInitConfigDriveSource';
+} from './V1PersistentVolumeClaimVolumeSource.js';
+import type { V1CloudInitConfigDriveSource } from './V1CloudInitConfigDriveSource.js';
 import {
     V1CloudInitConfigDriveSourceFromJSON,
     V1CloudInitConfigDriveSourceFromJSONTyped,
     V1CloudInitConfigDriveSourceToJSON,
     V1CloudInitConfigDriveSourceToJSONTyped,
-} from './V1CloudInitConfigDriveSource';
-import type { V1ConfigMapVolumeSource } from './V1ConfigMapVolumeSource';
+} from './V1CloudInitConfigDriveSource.js';
+import type { V1ConfigMapVolumeSource } from './V1ConfigMapVolumeSource.js';
 import {
     V1ConfigMapVolumeSourceFromJSON,
     V1ConfigMapVolumeSourceFromJSONTyped,
     V1ConfigMapVolumeSourceToJSON,
     V1ConfigMapVolumeSourceToJSONTyped,
-} from './V1ConfigMapVolumeSource';
+} from './V1ConfigMapVolumeSource.js';
 
 /**
  * Volume represents a named volume in a vmi.
@@ -228,7 +228,7 @@ export function V1VolumeFromJSON(json: any): V1Volume {
     return V1VolumeFromJSONTyped(json, false);
 }
 
-export function V1VolumeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Volume {
+export function V1VolumeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Volume {
     if (json == null) {
         return json;
     }
@@ -257,7 +257,7 @@ export function V1VolumeToJSON(json: any): V1Volume {
     return V1VolumeToJSONTyped(json, false);
 }
 
-export function V1VolumeToJSONTyped(value?: V1Volume | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VolumeToJSONTyped(value?: V1Volume | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

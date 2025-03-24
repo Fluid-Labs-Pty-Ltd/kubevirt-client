@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1beta1MemoryPreferenceRequirement } from './V1beta1MemoryPreferenceRequirement';
+import { mapValues } from '../runtime.js';
+import type { V1beta1MemoryPreferenceRequirement } from './V1beta1MemoryPreferenceRequirement.js';
 import {
     V1beta1MemoryPreferenceRequirementFromJSON,
     V1beta1MemoryPreferenceRequirementFromJSONTyped,
     V1beta1MemoryPreferenceRequirementToJSON,
     V1beta1MemoryPreferenceRequirementToJSONTyped,
-} from './V1beta1MemoryPreferenceRequirement';
-import type { V1beta1CPUPreferenceRequirement } from './V1beta1CPUPreferenceRequirement';
+} from './V1beta1MemoryPreferenceRequirement.js';
+import type { V1beta1CPUPreferenceRequirement } from './V1beta1CPUPreferenceRequirement.js';
 import {
     V1beta1CPUPreferenceRequirementFromJSON,
     V1beta1CPUPreferenceRequirementFromJSONTyped,
     V1beta1CPUPreferenceRequirementToJSON,
     V1beta1CPUPreferenceRequirementToJSONTyped,
-} from './V1beta1CPUPreferenceRequirement';
+} from './V1beta1CPUPreferenceRequirement.js';
 
 /**
  * 
@@ -59,7 +59,7 @@ export function V1beta1PreferenceRequirementsFromJSON(json: any): V1beta1Prefere
     return V1beta1PreferenceRequirementsFromJSONTyped(json, false);
 }
 
-export function V1beta1PreferenceRequirementsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1PreferenceRequirements {
+export function V1beta1PreferenceRequirementsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1PreferenceRequirements {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1beta1PreferenceRequirementsToJSON(json: any): V1beta1Preferenc
     return V1beta1PreferenceRequirementsToJSONTyped(json, false);
 }
 
-export function V1beta1PreferenceRequirementsToJSONTyped(value?: V1beta1PreferenceRequirements | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1PreferenceRequirementsToJSONTyped(value?: V1beta1PreferenceRequirements | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

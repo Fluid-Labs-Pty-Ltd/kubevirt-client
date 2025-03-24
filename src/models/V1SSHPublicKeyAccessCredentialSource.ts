@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1AccessCredentialSecretSource } from './V1AccessCredentialSecretSource';
+import { mapValues } from '../runtime.js';
+import type { V1AccessCredentialSecretSource } from './V1AccessCredentialSecretSource.js';
 import {
     V1AccessCredentialSecretSourceFromJSON,
     V1AccessCredentialSecretSourceFromJSONTyped,
     V1AccessCredentialSecretSourceToJSON,
     V1AccessCredentialSecretSourceToJSONTyped,
-} from './V1AccessCredentialSecretSource';
+} from './V1AccessCredentialSecretSource.js';
 
 /**
  * SSHPublicKeyAccessCredentialSource represents where to retrieve the ssh key credentials Only one of its members may be specified.
@@ -46,7 +46,7 @@ export function V1SSHPublicKeyAccessCredentialSourceFromJSON(json: any): V1SSHPu
     return V1SSHPublicKeyAccessCredentialSourceFromJSONTyped(json, false);
 }
 
-export function V1SSHPublicKeyAccessCredentialSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SSHPublicKeyAccessCredentialSource {
+export function V1SSHPublicKeyAccessCredentialSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SSHPublicKeyAccessCredentialSource {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1SSHPublicKeyAccessCredentialSourceToJSON(json: any): V1SSHPubl
     return V1SSHPublicKeyAccessCredentialSourceToJSONTyped(json, false);
 }
 
-export function V1SSHPublicKeyAccessCredentialSourceToJSONTyped(value?: V1SSHPublicKeyAccessCredentialSource | null, _ignoreDiscriminator: boolean = false): any {
+export function V1SSHPublicKeyAccessCredentialSourceToJSONTyped(value?: V1SSHPublicKeyAccessCredentialSource | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

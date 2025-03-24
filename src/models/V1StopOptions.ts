@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * StopOptions may be provided when deleting an API object.
  * @export
@@ -56,7 +56,7 @@ export function V1StopOptionsFromJSON(json: any): V1StopOptions {
     return V1StopOptionsFromJSONTyped(json, false);
 }
 
-export function V1StopOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1StopOptions {
+export function V1StopOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1StopOptions {
     if (json == null) {
         return json;
     }
@@ -73,7 +73,7 @@ export function V1StopOptionsToJSON(json: any): V1StopOptions {
     return V1StopOptionsToJSONTyped(json, false);
 }
 
-export function V1StopOptionsToJSONTyped(value?: V1StopOptions | null, _ignoreDiscriminator: boolean = false): any {
+export function V1StopOptionsToJSONTyped(value?: V1StopOptions | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1alpha1VirtualMachineCloneSpec } from './V1alpha1VirtualMachineCloneSpec';
+import { mapValues } from '../runtime.js';
+import type { V1alpha1VirtualMachineCloneSpec } from './V1alpha1VirtualMachineCloneSpec.js';
 import {
     V1alpha1VirtualMachineCloneSpecFromJSON,
     V1alpha1VirtualMachineCloneSpecFromJSONTyped,
     V1alpha1VirtualMachineCloneSpecToJSON,
     V1alpha1VirtualMachineCloneSpecToJSONTyped,
-} from './V1alpha1VirtualMachineCloneSpec';
-import type { V1alpha1VirtualMachineCloneStatus } from './V1alpha1VirtualMachineCloneStatus';
+} from './V1alpha1VirtualMachineCloneSpec.js';
+import type { V1alpha1VirtualMachineCloneStatus } from './V1alpha1VirtualMachineCloneStatus.js';
 import {
     V1alpha1VirtualMachineCloneStatusFromJSON,
     V1alpha1VirtualMachineCloneStatusFromJSONTyped,
     V1alpha1VirtualMachineCloneStatusToJSON,
     V1alpha1VirtualMachineCloneStatusToJSONTyped,
-} from './V1alpha1VirtualMachineCloneStatus';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './V1alpha1VirtualMachineCloneStatus.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 
 /**
  * VirtualMachineClone is a CRD that clones one VM into another.
@@ -85,7 +85,7 @@ export function V1alpha1VirtualMachineCloneFromJSON(json: any): V1alpha1VirtualM
     return V1alpha1VirtualMachineCloneFromJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineCloneFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachineClone {
+export function V1alpha1VirtualMachineCloneFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachineClone {
     if (json == null) {
         return json;
     }
@@ -103,7 +103,7 @@ export function V1alpha1VirtualMachineCloneToJSON(json: any): V1alpha1VirtualMac
     return V1alpha1VirtualMachineCloneToJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineCloneToJSONTyped(value?: V1alpha1VirtualMachineClone | null, _ignoreDiscriminator: boolean = false): any {
+export function V1alpha1VirtualMachineCloneToJSONTyped(value?: V1alpha1VirtualMachineClone | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

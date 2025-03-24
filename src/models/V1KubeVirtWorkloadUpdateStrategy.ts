@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * KubeVirtWorkloadUpdateStrategy defines options related to updating a KubeVirt install
  * @export
@@ -54,7 +54,7 @@ export function V1KubeVirtWorkloadUpdateStrategyFromJSON(json: any): V1KubeVirtW
     return V1KubeVirtWorkloadUpdateStrategyFromJSONTyped(json, false);
 }
 
-export function V1KubeVirtWorkloadUpdateStrategyFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtWorkloadUpdateStrategy {
+export function V1KubeVirtWorkloadUpdateStrategyFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtWorkloadUpdateStrategy {
     if (json == null) {
         return json;
     }
@@ -70,7 +70,7 @@ export function V1KubeVirtWorkloadUpdateStrategyToJSON(json: any): V1KubeVirtWor
     return V1KubeVirtWorkloadUpdateStrategyToJSONTyped(json, false);
 }
 
-export function V1KubeVirtWorkloadUpdateStrategyToJSONTyped(value?: V1KubeVirtWorkloadUpdateStrategy | null, _ignoreDiscriminator: boolean = false): any {
+export function V1KubeVirtWorkloadUpdateStrategyToJSONTyped(value?: V1KubeVirtWorkloadUpdateStrategy | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

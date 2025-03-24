@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * A label selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
  * @export
@@ -52,7 +52,7 @@ export function K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementFromJSON(j
     return K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement {
+export function K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement {
     if (json == null) {
         return json;
     }
@@ -68,7 +68,7 @@ export function K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementToJSON(jso
     return K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirementToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

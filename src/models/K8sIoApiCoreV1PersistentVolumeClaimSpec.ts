@@ -12,35 +12,35 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1VolumeResourceRequirements } from './K8sIoApiCoreV1VolumeResourceRequirements';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1VolumeResourceRequirements } from './K8sIoApiCoreV1VolumeResourceRequirements.js';
 import {
     K8sIoApiCoreV1VolumeResourceRequirementsFromJSON,
     K8sIoApiCoreV1VolumeResourceRequirementsFromJSONTyped,
     K8sIoApiCoreV1VolumeResourceRequirementsToJSON,
     K8sIoApiCoreV1VolumeResourceRequirementsToJSONTyped,
-} from './K8sIoApiCoreV1VolumeResourceRequirements';
-import type { K8sIoApiCoreV1TypedObjectReference } from './K8sIoApiCoreV1TypedObjectReference';
+} from './K8sIoApiCoreV1VolumeResourceRequirements.js';
+import type { K8sIoApiCoreV1TypedObjectReference } from './K8sIoApiCoreV1TypedObjectReference.js';
 import {
     K8sIoApiCoreV1TypedObjectReferenceFromJSON,
     K8sIoApiCoreV1TypedObjectReferenceFromJSONTyped,
     K8sIoApiCoreV1TypedObjectReferenceToJSON,
     K8sIoApiCoreV1TypedObjectReferenceToJSONTyped,
-} from './K8sIoApiCoreV1TypedObjectReference';
-import type { K8sIoApiCoreV1TypedLocalObjectReference } from './K8sIoApiCoreV1TypedLocalObjectReference';
+} from './K8sIoApiCoreV1TypedObjectReference.js';
+import type { K8sIoApiCoreV1TypedLocalObjectReference } from './K8sIoApiCoreV1TypedLocalObjectReference.js';
 import {
     K8sIoApiCoreV1TypedLocalObjectReferenceFromJSON,
     K8sIoApiCoreV1TypedLocalObjectReferenceFromJSONTyped,
     K8sIoApiCoreV1TypedLocalObjectReferenceToJSON,
     K8sIoApiCoreV1TypedLocalObjectReferenceToJSONTyped,
-} from './K8sIoApiCoreV1TypedLocalObjectReference';
-import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+} from './K8sIoApiCoreV1TypedLocalObjectReference.js';
+import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 import {
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+} from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 
 /**
  * PersistentVolumeClaimSpec describes the common attributes of storage devices and allows a Source for provider-specific attributes
@@ -141,7 +141,7 @@ export function K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSON(json: any): K8sI
     return K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1PersistentVolumeClaimSpec {
+export function K8sIoApiCoreV1PersistentVolumeClaimSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1PersistentVolumeClaimSpec {
     if (json == null) {
         return json;
     }
@@ -163,7 +163,7 @@ export function K8sIoApiCoreV1PersistentVolumeClaimSpecToJSON(json: any): K8sIoA
     return K8sIoApiCoreV1PersistentVolumeClaimSpecToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PersistentVolumeClaimSpecToJSONTyped(value?: K8sIoApiCoreV1PersistentVolumeClaimSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1PersistentVolumeClaimSpecToJSONTyped(value?: K8sIoApiCoreV1PersistentVolumeClaimSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

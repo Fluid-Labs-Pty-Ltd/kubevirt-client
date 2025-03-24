@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -39,7 +39,7 @@ export function V1AccessCredentialSecretSourceFromJSON(json: any): V1AccessCrede
     return V1AccessCredentialSecretSourceFromJSONTyped(json, false);
 }
 
-export function V1AccessCredentialSecretSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1AccessCredentialSecretSource {
+export function V1AccessCredentialSecretSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1AccessCredentialSecretSource {
     if (json == null) {
         return json;
     }
@@ -53,7 +53,7 @@ export function V1AccessCredentialSecretSourceToJSON(json: any): V1AccessCredent
     return V1AccessCredentialSecretSourceToJSONTyped(json, false);
 }
 
-export function V1AccessCredentialSecretSourceToJSONTyped(value?: V1AccessCredentialSecretSource | null, _ignoreDiscriminator: boolean = false): any {
+export function V1AccessCredentialSecretSourceToJSONTyped(value?: V1AccessCredentialSecretSource | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

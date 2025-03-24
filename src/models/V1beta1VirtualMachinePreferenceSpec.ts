@@ -12,63 +12,63 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1beta1ClockPreferences } from './V1beta1ClockPreferences';
+import { mapValues } from '../runtime.js';
+import type { V1beta1ClockPreferences } from './V1beta1ClockPreferences.js';
 import {
     V1beta1ClockPreferencesFromJSON,
     V1beta1ClockPreferencesFromJSONTyped,
     V1beta1ClockPreferencesToJSON,
     V1beta1ClockPreferencesToJSONTyped,
-} from './V1beta1ClockPreferences';
-import type { V1beta1FeaturePreferences } from './V1beta1FeaturePreferences';
+} from './V1beta1ClockPreferences.js';
+import type { V1beta1FeaturePreferences } from './V1beta1FeaturePreferences.js';
 import {
     V1beta1FeaturePreferencesFromJSON,
     V1beta1FeaturePreferencesFromJSONTyped,
     V1beta1FeaturePreferencesToJSON,
     V1beta1FeaturePreferencesToJSONTyped,
-} from './V1beta1FeaturePreferences';
-import type { V1beta1PreferenceRequirements } from './V1beta1PreferenceRequirements';
+} from './V1beta1FeaturePreferences.js';
+import type { V1beta1PreferenceRequirements } from './V1beta1PreferenceRequirements.js';
 import {
     V1beta1PreferenceRequirementsFromJSON,
     V1beta1PreferenceRequirementsFromJSONTyped,
     V1beta1PreferenceRequirementsToJSON,
     V1beta1PreferenceRequirementsToJSONTyped,
-} from './V1beta1PreferenceRequirements';
-import type { V1beta1DevicePreferences } from './V1beta1DevicePreferences';
+} from './V1beta1PreferenceRequirements.js';
+import type { V1beta1DevicePreferences } from './V1beta1DevicePreferences.js';
 import {
     V1beta1DevicePreferencesFromJSON,
     V1beta1DevicePreferencesFromJSONTyped,
     V1beta1DevicePreferencesToJSON,
     V1beta1DevicePreferencesToJSONTyped,
-} from './V1beta1DevicePreferences';
-import type { V1beta1CPUPreferences } from './V1beta1CPUPreferences';
+} from './V1beta1DevicePreferences.js';
+import type { V1beta1CPUPreferences } from './V1beta1CPUPreferences.js';
 import {
     V1beta1CPUPreferencesFromJSON,
     V1beta1CPUPreferencesFromJSONTyped,
     V1beta1CPUPreferencesToJSON,
     V1beta1CPUPreferencesToJSONTyped,
-} from './V1beta1CPUPreferences';
-import type { V1beta1VolumePreferences } from './V1beta1VolumePreferences';
+} from './V1beta1CPUPreferences.js';
+import type { V1beta1VolumePreferences } from './V1beta1VolumePreferences.js';
 import {
     V1beta1VolumePreferencesFromJSON,
     V1beta1VolumePreferencesFromJSONTyped,
     V1beta1VolumePreferencesToJSON,
     V1beta1VolumePreferencesToJSONTyped,
-} from './V1beta1VolumePreferences';
-import type { V1beta1MachinePreferences } from './V1beta1MachinePreferences';
+} from './V1beta1VolumePreferences.js';
+import type { V1beta1MachinePreferences } from './V1beta1MachinePreferences.js';
 import {
     V1beta1MachinePreferencesFromJSON,
     V1beta1MachinePreferencesFromJSONTyped,
     V1beta1MachinePreferencesToJSON,
     V1beta1MachinePreferencesToJSONTyped,
-} from './V1beta1MachinePreferences';
-import type { V1beta1FirmwarePreferences } from './V1beta1FirmwarePreferences';
+} from './V1beta1MachinePreferences.js';
+import type { V1beta1FirmwarePreferences } from './V1beta1FirmwarePreferences.js';
 import {
     V1beta1FirmwarePreferencesFromJSON,
     V1beta1FirmwarePreferencesFromJSONTyped,
     V1beta1FirmwarePreferencesToJSON,
     V1beta1FirmwarePreferencesToJSONTyped,
-} from './V1beta1FirmwarePreferences';
+} from './V1beta1FirmwarePreferences.js';
 
 /**
  * VirtualMachinePreferenceSpec is a description of the VirtualMachinePreference or VirtualMachineClusterPreference.
@@ -161,7 +161,7 @@ export function V1beta1VirtualMachinePreferenceSpecFromJSON(json: any): V1beta1V
     return V1beta1VirtualMachinePreferenceSpecFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachinePreferenceSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachinePreferenceSpec {
+export function V1beta1VirtualMachinePreferenceSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachinePreferenceSpec {
     if (json == null) {
         return json;
     }
@@ -186,7 +186,7 @@ export function V1beta1VirtualMachinePreferenceSpecToJSON(json: any): V1beta1Vir
     return V1beta1VirtualMachinePreferenceSpecToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachinePreferenceSpecToJSONTyped(value?: V1beta1VirtualMachinePreferenceSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachinePreferenceSpecToJSONTyped(value?: V1beta1VirtualMachinePreferenceSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

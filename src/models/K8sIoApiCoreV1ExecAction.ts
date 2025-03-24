@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * ExecAction describes a "run in container" action.
  * @export
@@ -38,7 +38,7 @@ export function K8sIoApiCoreV1ExecActionFromJSON(json: any): K8sIoApiCoreV1ExecA
     return K8sIoApiCoreV1ExecActionFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1ExecActionFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1ExecAction {
+export function K8sIoApiCoreV1ExecActionFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1ExecAction {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function K8sIoApiCoreV1ExecActionToJSON(json: any): K8sIoApiCoreV1ExecAct
     return K8sIoApiCoreV1ExecActionToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1ExecActionToJSONTyped(value?: K8sIoApiCoreV1ExecAction | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1ExecActionToJSONTyped(value?: K8sIoApiCoreV1ExecAction | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1beta1VirtualMachineExport } from './V1beta1VirtualMachineExport';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1beta1VirtualMachineExport } from './V1beta1VirtualMachineExport.js';
 import {
     V1beta1VirtualMachineExportFromJSON,
     V1beta1VirtualMachineExportFromJSONTyped,
     V1beta1VirtualMachineExportToJSON,
     V1beta1VirtualMachineExportToJSONTyped,
-} from './V1beta1VirtualMachineExport';
+} from './V1beta1VirtualMachineExport.js';
 
 /**
  * VirtualMachineExportList is a list of VirtualMachineExport resources
@@ -73,7 +73,7 @@ export function V1beta1VirtualMachineExportListFromJSON(json: any): V1beta1Virtu
     return V1beta1VirtualMachineExportListFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineExportList {
+export function V1beta1VirtualMachineExportListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineExportList {
     if (json == null) {
         return json;
     }
@@ -90,7 +90,7 @@ export function V1beta1VirtualMachineExportListToJSON(json: any): V1beta1Virtual
     return V1beta1VirtualMachineExportListToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportListToJSONTyped(value?: V1beta1VirtualMachineExportList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineExportListToJSONTyped(value?: V1beta1VirtualMachineExportList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1beta1VirtualMachinePreference } from './V1beta1VirtualMachinePreference';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1beta1VirtualMachinePreference } from './V1beta1VirtualMachinePreference.js';
 import {
     V1beta1VirtualMachinePreferenceFromJSON,
     V1beta1VirtualMachinePreferenceFromJSONTyped,
     V1beta1VirtualMachinePreferenceToJSON,
     V1beta1VirtualMachinePreferenceToJSONTyped,
-} from './V1beta1VirtualMachinePreference';
+} from './V1beta1VirtualMachinePreference.js';
 
 /**
  * VirtualMachinePreferenceList is a list of VirtualMachinePreference resources.
@@ -72,7 +72,7 @@ export function V1beta1VirtualMachinePreferenceListFromJSON(json: any): V1beta1V
     return V1beta1VirtualMachinePreferenceListFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachinePreferenceListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachinePreferenceList {
+export function V1beta1VirtualMachinePreferenceListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachinePreferenceList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1beta1VirtualMachinePreferenceListToJSON(json: any): V1beta1Vir
     return V1beta1VirtualMachinePreferenceListToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachinePreferenceListToJSONTyped(value?: V1beta1VirtualMachinePreferenceList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachinePreferenceListToJSONTyped(value?: V1beta1VirtualMachinePreferenceList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

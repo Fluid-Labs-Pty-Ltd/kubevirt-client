@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1LogVerbosity } from './V1LogVerbosity';
+import { mapValues } from '../runtime.js';
+import type { V1LogVerbosity } from './V1LogVerbosity.js';
 import {
     V1LogVerbosityFromJSON,
     V1LogVerbosityFromJSONTyped,
     V1LogVerbosityToJSON,
     V1LogVerbosityToJSONTyped,
-} from './V1LogVerbosity';
-import type { V1DiskVerification } from './V1DiskVerification';
+} from './V1LogVerbosity.js';
+import type { V1DiskVerification } from './V1DiskVerification.js';
 import {
     V1DiskVerificationFromJSON,
     V1DiskVerificationFromJSONTyped,
     V1DiskVerificationToJSON,
     V1DiskVerificationToJSONTyped,
-} from './V1DiskVerification';
+} from './V1DiskVerification.js';
 
 /**
  * DeveloperConfiguration holds developer options
@@ -107,7 +107,7 @@ export function V1DeveloperConfigurationFromJSON(json: any): V1DeveloperConfigur
     return V1DeveloperConfigurationFromJSONTyped(json, false);
 }
 
-export function V1DeveloperConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DeveloperConfiguration {
+export function V1DeveloperConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DeveloperConfiguration {
     if (json == null) {
         return json;
     }
@@ -130,7 +130,7 @@ export function V1DeveloperConfigurationToJSON(json: any): V1DeveloperConfigurat
     return V1DeveloperConfigurationToJSONTyped(json, false);
 }
 
-export function V1DeveloperConfigurationToJSONTyped(value?: V1DeveloperConfiguration | null, _ignoreDiscriminator: boolean = false): any {
+export function V1DeveloperConfigurationToJSONTyped(value?: V1DeveloperConfiguration | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

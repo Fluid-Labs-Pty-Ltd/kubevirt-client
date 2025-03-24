@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -39,7 +39,7 @@ export function V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationFromJSON(
     return V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationFromJSONTyped(json, false);
 }
 
-export function V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation {
+export function V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation {
     if (json == null) {
         return json;
     }
@@ -53,7 +53,7 @@ export function V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationToJSON(js
     return V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationToJSONTyped(json, false);
 }
 
-export function V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationToJSONTyped(value?: V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation | null, _ignoreDiscriminator: boolean = false): any {
+export function V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagationToJSONTyped(value?: V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

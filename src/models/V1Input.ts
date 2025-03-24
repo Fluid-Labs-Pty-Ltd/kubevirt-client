@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -52,7 +52,7 @@ export function V1InputFromJSON(json: any): V1Input {
     return V1InputFromJSONTyped(json, false);
 }
 
-export function V1InputFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Input {
+export function V1InputFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Input {
     if (json == null) {
         return json;
     }
@@ -68,7 +68,7 @@ export function V1InputToJSON(json: any): V1Input {
     return V1InputToJSONTyped(json, false);
 }
 
-export function V1InputToJSONTyped(value?: V1Input | null, _ignoreDiscriminator: boolean = false): any {
+export function V1InputToJSONTyped(value?: V1Input | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

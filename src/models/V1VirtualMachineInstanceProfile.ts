@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1CustomProfile } from './V1CustomProfile';
+import { mapValues } from '../runtime.js';
+import type { V1CustomProfile } from './V1CustomProfile.js';
 import {
     V1CustomProfileFromJSON,
     V1CustomProfileFromJSONTyped,
     V1CustomProfileToJSON,
     V1CustomProfileToJSONTyped,
-} from './V1CustomProfile';
+} from './V1CustomProfile.js';
 
 /**
  * 
@@ -46,7 +46,7 @@ export function V1VirtualMachineInstanceProfileFromJSON(json: any): V1VirtualMac
     return V1VirtualMachineInstanceProfileFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceProfileFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceProfile {
+export function V1VirtualMachineInstanceProfileFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceProfile {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1VirtualMachineInstanceProfileToJSON(json: any): V1VirtualMachi
     return V1VirtualMachineInstanceProfileToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceProfileToJSONTyped(value?: V1VirtualMachineInstanceProfile | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceProfileToJSONTyped(value?: V1VirtualMachineInstanceProfile | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

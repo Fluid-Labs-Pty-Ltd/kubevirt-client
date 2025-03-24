@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1HotplugVolumeSource } from './V1HotplugVolumeSource';
+import { mapValues } from '../runtime.js';
+import type { V1HotplugVolumeSource } from './V1HotplugVolumeSource.js';
 import {
     V1HotplugVolumeSourceFromJSON,
     V1HotplugVolumeSourceFromJSONTyped,
     V1HotplugVolumeSourceToJSON,
     V1HotplugVolumeSourceToJSONTyped,
-} from './V1HotplugVolumeSource';
-import type { V1Disk } from './V1Disk';
+} from './V1HotplugVolumeSource.js';
+import type { V1Disk } from './V1Disk.js';
 import {
     V1DiskFromJSON,
     V1DiskFromJSONTyped,
     V1DiskToJSON,
     V1DiskToJSONTyped,
-} from './V1Disk';
+} from './V1Disk.js';
 
 /**
  * AddVolumeOptions is provided when dynamically hot plugging a volume and disk
@@ -74,7 +74,7 @@ export function V1AddVolumeOptionsFromJSON(json: any): V1AddVolumeOptions {
     return V1AddVolumeOptionsFromJSONTyped(json, false);
 }
 
-export function V1AddVolumeOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1AddVolumeOptions {
+export function V1AddVolumeOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1AddVolumeOptions {
     if (json == null) {
         return json;
     }
@@ -91,7 +91,7 @@ export function V1AddVolumeOptionsToJSON(json: any): V1AddVolumeOptions {
     return V1AddVolumeOptionsToJSONTyped(json, false);
 }
 
-export function V1AddVolumeOptionsToJSONTyped(value?: V1AddVolumeOptions | null, _ignoreDiscriminator: boolean = false): any {
+export function V1AddVolumeOptionsToJSONTyped(value?: V1AddVolumeOptions | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

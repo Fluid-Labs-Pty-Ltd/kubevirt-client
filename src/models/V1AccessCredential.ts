@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1UserPasswordAccessCredential } from './V1UserPasswordAccessCredential';
+import { mapValues } from '../runtime.js';
+import type { V1UserPasswordAccessCredential } from './V1UserPasswordAccessCredential.js';
 import {
     V1UserPasswordAccessCredentialFromJSON,
     V1UserPasswordAccessCredentialFromJSONTyped,
     V1UserPasswordAccessCredentialToJSON,
     V1UserPasswordAccessCredentialToJSONTyped,
-} from './V1UserPasswordAccessCredential';
-import type { V1SSHPublicKeyAccessCredential } from './V1SSHPublicKeyAccessCredential';
+} from './V1UserPasswordAccessCredential.js';
+import type { V1SSHPublicKeyAccessCredential } from './V1SSHPublicKeyAccessCredential.js';
 import {
     V1SSHPublicKeyAccessCredentialFromJSON,
     V1SSHPublicKeyAccessCredentialFromJSONTyped,
     V1SSHPublicKeyAccessCredentialToJSON,
     V1SSHPublicKeyAccessCredentialToJSONTyped,
-} from './V1SSHPublicKeyAccessCredential';
+} from './V1SSHPublicKeyAccessCredential.js';
 
 /**
  * AccessCredential represents a credential source that can be used to authorize remote access to the vm guest Only one of its members may be specified.
@@ -59,7 +59,7 @@ export function V1AccessCredentialFromJSON(json: any): V1AccessCredential {
     return V1AccessCredentialFromJSONTyped(json, false);
 }
 
-export function V1AccessCredentialFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1AccessCredential {
+export function V1AccessCredentialFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1AccessCredential {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1AccessCredentialToJSON(json: any): V1AccessCredential {
     return V1AccessCredentialToJSONTyped(json, false);
 }
 
-export function V1AccessCredentialToJSONTyped(value?: V1AccessCredential | null, _ignoreDiscriminator: boolean = false): any {
+export function V1AccessCredentialToJSONTyped(value?: V1AccessCredential | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

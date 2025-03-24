@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * LogVerbosity sets log verbosity level of  various components
  * @export
@@ -68,7 +68,7 @@ export function V1LogVerbosityFromJSON(json: any): V1LogVerbosity {
     return V1LogVerbosityFromJSONTyped(json, false);
 }
 
-export function V1LogVerbosityFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1LogVerbosity {
+export function V1LogVerbosityFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1LogVerbosity {
     if (json == null) {
         return json;
     }
@@ -87,7 +87,7 @@ export function V1LogVerbosityToJSON(json: any): V1LogVerbosity {
     return V1LogVerbosityToJSONTyped(json, false);
 }
 
-export function V1LogVerbosityToJSONTyped(value?: V1LogVerbosity | null, _ignoreDiscriminator: boolean = false): any {
+export function V1LogVerbosityToJSONTyped(value?: V1LogVerbosity | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

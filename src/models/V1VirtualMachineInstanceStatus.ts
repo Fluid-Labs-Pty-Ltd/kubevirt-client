@@ -12,91 +12,91 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1VolumeStatus } from './V1VolumeStatus';
+import { mapValues } from '../runtime.js';
+import type { V1VolumeStatus } from './V1VolumeStatus.js';
 import {
     V1VolumeStatusFromJSON,
     V1VolumeStatusFromJSONTyped,
     V1VolumeStatusToJSON,
     V1VolumeStatusToJSONTyped,
-} from './V1VolumeStatus';
-import type { V1VirtualMachineInstancePhaseTransitionTimestamp } from './V1VirtualMachineInstancePhaseTransitionTimestamp';
+} from './V1VolumeStatus.js';
+import type { V1VirtualMachineInstancePhaseTransitionTimestamp } from './V1VirtualMachineInstancePhaseTransitionTimestamp.js';
 import {
     V1VirtualMachineInstancePhaseTransitionTimestampFromJSON,
     V1VirtualMachineInstancePhaseTransitionTimestampFromJSONTyped,
     V1VirtualMachineInstancePhaseTransitionTimestampToJSON,
     V1VirtualMachineInstancePhaseTransitionTimestampToJSONTyped,
-} from './V1VirtualMachineInstancePhaseTransitionTimestamp';
-import type { V1VirtualMachineInstanceCondition } from './V1VirtualMachineInstanceCondition';
+} from './V1VirtualMachineInstancePhaseTransitionTimestamp.js';
+import type { V1VirtualMachineInstanceCondition } from './V1VirtualMachineInstanceCondition.js';
 import {
     V1VirtualMachineInstanceConditionFromJSON,
     V1VirtualMachineInstanceConditionFromJSONTyped,
     V1VirtualMachineInstanceConditionToJSON,
     V1VirtualMachineInstanceConditionToJSONTyped,
-} from './V1VirtualMachineInstanceCondition';
-import type { V1CPUTopology } from './V1CPUTopology';
+} from './V1VirtualMachineInstanceCondition.js';
+import type { V1CPUTopology } from './V1CPUTopology.js';
 import {
     V1CPUTopologyFromJSON,
     V1CPUTopologyFromJSONTyped,
     V1CPUTopologyToJSON,
     V1CPUTopologyToJSONTyped,
-} from './V1CPUTopology';
-import type { V1StorageMigratedVolumeInfo } from './V1StorageMigratedVolumeInfo';
+} from './V1CPUTopology.js';
+import type { V1StorageMigratedVolumeInfo } from './V1StorageMigratedVolumeInfo.js';
 import {
     V1StorageMigratedVolumeInfoFromJSON,
     V1StorageMigratedVolumeInfoFromJSONTyped,
     V1StorageMigratedVolumeInfoToJSON,
     V1StorageMigratedVolumeInfoToJSONTyped,
-} from './V1StorageMigratedVolumeInfo';
-import type { V1MemoryStatus } from './V1MemoryStatus';
+} from './V1StorageMigratedVolumeInfo.js';
+import type { V1MemoryStatus } from './V1MemoryStatus.js';
 import {
     V1MemoryStatusFromJSON,
     V1MemoryStatusFromJSONTyped,
     V1MemoryStatusToJSON,
     V1MemoryStatusToJSONTyped,
-} from './V1MemoryStatus';
-import type { V1VirtualMachineInstanceGuestOSInfo } from './V1VirtualMachineInstanceGuestOSInfo';
+} from './V1MemoryStatus.js';
+import type { V1VirtualMachineInstanceGuestOSInfo } from './V1VirtualMachineInstanceGuestOSInfo.js';
 import {
     V1VirtualMachineInstanceGuestOSInfoFromJSON,
     V1VirtualMachineInstanceGuestOSInfoFromJSONTyped,
     V1VirtualMachineInstanceGuestOSInfoToJSON,
     V1VirtualMachineInstanceGuestOSInfoToJSONTyped,
-} from './V1VirtualMachineInstanceGuestOSInfo';
-import type { V1VirtualMachineInstanceMigrationState } from './V1VirtualMachineInstanceMigrationState';
+} from './V1VirtualMachineInstanceGuestOSInfo.js';
+import type { V1VirtualMachineInstanceMigrationState } from './V1VirtualMachineInstanceMigrationState.js';
 import {
     V1VirtualMachineInstanceMigrationStateFromJSON,
     V1VirtualMachineInstanceMigrationStateFromJSONTyped,
     V1VirtualMachineInstanceMigrationStateToJSON,
     V1VirtualMachineInstanceMigrationStateToJSONTyped,
-} from './V1VirtualMachineInstanceMigrationState';
-import type { V1VirtualMachineInstanceNetworkInterface } from './V1VirtualMachineInstanceNetworkInterface';
+} from './V1VirtualMachineInstanceMigrationState.js';
+import type { V1VirtualMachineInstanceNetworkInterface } from './V1VirtualMachineInstanceNetworkInterface.js';
 import {
     V1VirtualMachineInstanceNetworkInterfaceFromJSON,
     V1VirtualMachineInstanceNetworkInterfaceFromJSONTyped,
     V1VirtualMachineInstanceNetworkInterfaceToJSON,
     V1VirtualMachineInstanceNetworkInterfaceToJSONTyped,
-} from './V1VirtualMachineInstanceNetworkInterface';
-import type { V1KernelBootStatus } from './V1KernelBootStatus';
+} from './V1VirtualMachineInstanceNetworkInterface.js';
+import type { V1KernelBootStatus } from './V1KernelBootStatus.js';
 import {
     V1KernelBootStatusFromJSON,
     V1KernelBootStatusFromJSONTyped,
     V1KernelBootStatusToJSON,
     V1KernelBootStatusToJSONTyped,
-} from './V1KernelBootStatus';
-import type { V1TopologyHints } from './V1TopologyHints';
+} from './V1KernelBootStatus.js';
+import type { V1TopologyHints } from './V1TopologyHints.js';
 import {
     V1TopologyHintsFromJSON,
     V1TopologyHintsFromJSONTyped,
     V1TopologyHintsToJSON,
     V1TopologyHintsToJSONTyped,
-} from './V1TopologyHints';
-import type { V1Machine } from './V1Machine';
+} from './V1TopologyHints.js';
+import type { V1Machine } from './V1Machine.js';
 import {
     V1MachineFromJSON,
     V1MachineFromJSONTyped,
     V1MachineToJSON,
     V1MachineToJSONTyped,
-} from './V1Machine';
+} from './V1Machine.js';
 
 /**
  * VirtualMachineInstanceStatus represents information about the status of a VirtualMachineInstance. Status may trail the actual state of a system.
@@ -290,7 +290,7 @@ export function V1VirtualMachineInstanceStatusFromJSON(json: any): V1VirtualMach
     return V1VirtualMachineInstanceStatusFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceStatus {
+export function V1VirtualMachineInstanceStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceStatus {
     if (json == null) {
         return json;
     }
@@ -329,7 +329,7 @@ export function V1VirtualMachineInstanceStatusToJSON(json: any): V1VirtualMachin
     return V1VirtualMachineInstanceStatusToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceStatusToJSONTyped(value?: V1VirtualMachineInstanceStatus | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceStatusToJSONTyped(value?: V1VirtualMachineInstanceStatus | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

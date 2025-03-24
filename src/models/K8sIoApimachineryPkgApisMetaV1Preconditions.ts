@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * Preconditions must be fulfilled before an operation (update, delete, etc.) is carried out.
  * @export
@@ -44,7 +44,7 @@ export function K8sIoApimachineryPkgApisMetaV1PreconditionsFromJSON(json: any): 
     return K8sIoApimachineryPkgApisMetaV1PreconditionsFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1PreconditionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1Preconditions {
+export function K8sIoApimachineryPkgApisMetaV1PreconditionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1Preconditions {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function K8sIoApimachineryPkgApisMetaV1PreconditionsToJSON(json: any): K8
     return K8sIoApimachineryPkgApisMetaV1PreconditionsToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1PreconditionsToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1Preconditions | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1PreconditionsToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1Preconditions | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

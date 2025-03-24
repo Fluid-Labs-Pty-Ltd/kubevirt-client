@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -38,7 +38,7 @@ export function V1ACPIFromJSON(json: any): V1ACPI {
     return V1ACPIFromJSONTyped(json, false);
 }
 
-export function V1ACPIFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ACPI {
+export function V1ACPIFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ACPI {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1ACPIToJSON(json: any): V1ACPI {
     return V1ACPIToJSONTyped(json, false);
 }
 
-export function V1ACPIToJSONTyped(value?: V1ACPI | null, _ignoreDiscriminator: boolean = false): any {
+export function V1ACPIToJSONTyped(value?: V1ACPI | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

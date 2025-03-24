@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * VirtualMachineGuestOSUser is the single user of the guest os
  * @export
@@ -51,7 +51,7 @@ export function V1VirtualMachineInstanceGuestOSUserFromJSON(json: any): V1Virtua
     return V1VirtualMachineInstanceGuestOSUserFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceGuestOSUserFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestOSUser {
+export function V1VirtualMachineInstanceGuestOSUserFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestOSUser {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function V1VirtualMachineInstanceGuestOSUserToJSON(json: any): V1VirtualM
     return V1VirtualMachineInstanceGuestOSUserToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceGuestOSUserToJSONTyped(value?: V1VirtualMachineInstanceGuestOSUser | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceGuestOSUserToJSONTyped(value?: V1VirtualMachineInstanceGuestOSUser | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

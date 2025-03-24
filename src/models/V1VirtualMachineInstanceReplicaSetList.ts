@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1VirtualMachineInstanceReplicaSet } from './V1VirtualMachineInstanceReplicaSet';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1VirtualMachineInstanceReplicaSet } from './V1VirtualMachineInstanceReplicaSet.js';
 import {
     V1VirtualMachineInstanceReplicaSetFromJSON,
     V1VirtualMachineInstanceReplicaSetFromJSONTyped,
     V1VirtualMachineInstanceReplicaSetToJSON,
     V1VirtualMachineInstanceReplicaSetToJSONTyped,
-} from './V1VirtualMachineInstanceReplicaSet';
+} from './V1VirtualMachineInstanceReplicaSet.js';
 
 /**
  * VMIList is a list of VMIs
@@ -72,7 +72,7 @@ export function V1VirtualMachineInstanceReplicaSetListFromJSON(json: any): V1Vir
     return V1VirtualMachineInstanceReplicaSetListFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceReplicaSetListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSetList {
+export function V1VirtualMachineInstanceReplicaSetListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceReplicaSetList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1VirtualMachineInstanceReplicaSetListToJSON(json: any): V1Virtu
     return V1VirtualMachineInstanceReplicaSetListToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceReplicaSetListToJSONTyped(value?: V1VirtualMachineInstanceReplicaSetList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceReplicaSetListToJSONTyped(value?: V1VirtualMachineInstanceReplicaSetList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

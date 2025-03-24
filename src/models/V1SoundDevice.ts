@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * Represents the user's configuration to emulate sound cards in the VMI.
  * @export
@@ -45,7 +45,7 @@ export function V1SoundDeviceFromJSON(json: any): V1SoundDevice {
     return V1SoundDeviceFromJSONTyped(json, false);
 }
 
-export function V1SoundDeviceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SoundDevice {
+export function V1SoundDeviceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SoundDevice {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1SoundDeviceToJSON(json: any): V1SoundDevice {
     return V1SoundDeviceToJSONTyped(json, false);
 }
 
-export function V1SoundDeviceToJSONTyped(value?: V1SoundDevice | null, _ignoreDiscriminator: boolean = false): any {
+export function V1SoundDeviceToJSONTyped(value?: V1SoundDevice | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

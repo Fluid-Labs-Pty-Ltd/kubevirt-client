@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { K8sIoApimachineryPkgApisMetaV1StatusDetails } from './K8sIoApimachineryPkgApisMetaV1StatusDetails';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { K8sIoApimachineryPkgApisMetaV1StatusDetails } from './K8sIoApimachineryPkgApisMetaV1StatusDetails.js';
 import {
     K8sIoApimachineryPkgApisMetaV1StatusDetailsFromJSON,
     K8sIoApimachineryPkgApisMetaV1StatusDetailsFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1StatusDetailsToJSON,
     K8sIoApimachineryPkgApisMetaV1StatusDetailsToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1StatusDetails';
+} from './K8sIoApimachineryPkgApisMetaV1StatusDetails.js';
 
 /**
  * Status is a return value for calls that don't return other objects.
@@ -95,7 +95,7 @@ export function K8sIoApimachineryPkgApisMetaV1StatusFromJSON(json: any): K8sIoAp
     return K8sIoApimachineryPkgApisMetaV1StatusFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1StatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1Status {
+export function K8sIoApimachineryPkgApisMetaV1StatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1Status {
     if (json == null) {
         return json;
     }
@@ -116,7 +116,7 @@ export function K8sIoApimachineryPkgApisMetaV1StatusToJSON(json: any): K8sIoApim
     return K8sIoApimachineryPkgApisMetaV1StatusToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1StatusToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1Status | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1StatusToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1Status | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

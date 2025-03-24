@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1beta1VirtualMachineInstancetype } from './V1beta1VirtualMachineInstancetype';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1beta1VirtualMachineInstancetype } from './V1beta1VirtualMachineInstancetype.js';
 import {
     V1beta1VirtualMachineInstancetypeFromJSON,
     V1beta1VirtualMachineInstancetypeFromJSONTyped,
     V1beta1VirtualMachineInstancetypeToJSON,
     V1beta1VirtualMachineInstancetypeToJSONTyped,
-} from './V1beta1VirtualMachineInstancetype';
+} from './V1beta1VirtualMachineInstancetype.js';
 
 /**
  * VirtualMachineInstancetypeList is a list of VirtualMachineInstancetype resources.
@@ -72,7 +72,7 @@ export function V1beta1VirtualMachineInstancetypeListFromJSON(json: any): V1beta
     return V1beta1VirtualMachineInstancetypeListFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineInstancetypeListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineInstancetypeList {
+export function V1beta1VirtualMachineInstancetypeListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineInstancetypeList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1beta1VirtualMachineInstancetypeListToJSON(json: any): V1beta1V
     return V1beta1VirtualMachineInstancetypeListToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineInstancetypeListToJSONTyped(value?: V1beta1VirtualMachineInstancetypeList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineInstancetypeListToJSONTyped(value?: V1beta1VirtualMachineInstancetypeList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

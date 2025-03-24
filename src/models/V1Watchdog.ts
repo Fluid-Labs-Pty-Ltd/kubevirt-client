@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1I6300ESBWatchdog } from './V1I6300ESBWatchdog';
+import { mapValues } from '../runtime.js';
+import type { V1I6300ESBWatchdog } from './V1I6300ESBWatchdog.js';
 import {
     V1I6300ESBWatchdogFromJSON,
     V1I6300ESBWatchdogFromJSONTyped,
     V1I6300ESBWatchdogToJSON,
     V1I6300ESBWatchdogToJSONTyped,
-} from './V1I6300ESBWatchdog';
+} from './V1I6300ESBWatchdog.js';
 
 /**
  * Named watchdog device.
@@ -53,7 +53,7 @@ export function V1WatchdogFromJSON(json: any): V1Watchdog {
     return V1WatchdogFromJSONTyped(json, false);
 }
 
-export function V1WatchdogFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Watchdog {
+export function V1WatchdogFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Watchdog {
     if (json == null) {
         return json;
     }
@@ -68,7 +68,7 @@ export function V1WatchdogToJSON(json: any): V1Watchdog {
     return V1WatchdogToJSONTyped(json, false);
 }
 
-export function V1WatchdogToJSONTyped(value?: V1Watchdog | null, _ignoreDiscriminator: boolean = false): any {
+export function V1WatchdogToJSONTyped(value?: V1Watchdog | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
-import type { V1beta1VirtualMachineInstancetypeSpec } from './V1beta1VirtualMachineInstancetypeSpec';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
+import type { V1beta1VirtualMachineInstancetypeSpec } from './V1beta1VirtualMachineInstancetypeSpec.js';
 import {
     V1beta1VirtualMachineInstancetypeSpecFromJSON,
     V1beta1VirtualMachineInstancetypeSpecFromJSONTyped,
     V1beta1VirtualMachineInstancetypeSpecToJSON,
     V1beta1VirtualMachineInstancetypeSpecToJSONTyped,
-} from './V1beta1VirtualMachineInstancetypeSpec';
+} from './V1beta1VirtualMachineInstancetypeSpec.js';
 
 /**
  * VirtualMachineInstancetype resource contains quantitative and resource related VirtualMachine configuration that can be used by multiple VirtualMachine resources.
@@ -72,7 +72,7 @@ export function V1beta1VirtualMachineInstancetypeFromJSON(json: any): V1beta1Vir
     return V1beta1VirtualMachineInstancetypeFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineInstancetypeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineInstancetype {
+export function V1beta1VirtualMachineInstancetypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineInstancetype {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1beta1VirtualMachineInstancetypeToJSON(json: any): V1beta1Virtu
     return V1beta1VirtualMachineInstancetypeToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineInstancetypeToJSONTyped(value?: V1beta1VirtualMachineInstancetype | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineInstancetypeToJSONTyped(value?: V1beta1VirtualMachineInstancetype | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

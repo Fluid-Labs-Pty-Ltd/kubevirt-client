@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1ObjectFieldSelector } from './K8sIoApiCoreV1ObjectFieldSelector';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1ObjectFieldSelector } from './K8sIoApiCoreV1ObjectFieldSelector.js';
 import {
     K8sIoApiCoreV1ObjectFieldSelectorFromJSON,
     K8sIoApiCoreV1ObjectFieldSelectorFromJSONTyped,
     K8sIoApiCoreV1ObjectFieldSelectorToJSON,
     K8sIoApiCoreV1ObjectFieldSelectorToJSONTyped,
-} from './K8sIoApiCoreV1ObjectFieldSelector';
-import type { K8sIoApiCoreV1ResourceFieldSelector } from './K8sIoApiCoreV1ResourceFieldSelector';
+} from './K8sIoApiCoreV1ObjectFieldSelector.js';
+import type { K8sIoApiCoreV1ResourceFieldSelector } from './K8sIoApiCoreV1ResourceFieldSelector.js';
 import {
     K8sIoApiCoreV1ResourceFieldSelectorFromJSON,
     K8sIoApiCoreV1ResourceFieldSelectorFromJSONTyped,
     K8sIoApiCoreV1ResourceFieldSelectorToJSON,
     K8sIoApiCoreV1ResourceFieldSelectorToJSONTyped,
-} from './K8sIoApiCoreV1ResourceFieldSelector';
+} from './K8sIoApiCoreV1ResourceFieldSelector.js';
 
 /**
  * DownwardAPIVolumeFile represents information to create the file containing the pod field
@@ -72,7 +72,7 @@ export function K8sIoApiCoreV1DownwardAPIVolumeFileFromJSON(json: any): K8sIoApi
     return K8sIoApiCoreV1DownwardAPIVolumeFileFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1DownwardAPIVolumeFileFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1DownwardAPIVolumeFile {
+export function K8sIoApiCoreV1DownwardAPIVolumeFileFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1DownwardAPIVolumeFile {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function K8sIoApiCoreV1DownwardAPIVolumeFileToJSON(json: any): K8sIoApiCo
     return K8sIoApiCoreV1DownwardAPIVolumeFileToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1DownwardAPIVolumeFileToJSONTyped(value?: K8sIoApiCoreV1DownwardAPIVolumeFile | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1DownwardAPIVolumeFileToJSONTyped(value?: K8sIoApiCoreV1DownwardAPIVolumeFile | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

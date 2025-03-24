@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1beta1VirtualMachineSnapshotStatus } from './V1beta1VirtualMachineSnapshotStatus';
+import { mapValues } from '../runtime.js';
+import type { V1beta1VirtualMachineSnapshotStatus } from './V1beta1VirtualMachineSnapshotStatus.js';
 import {
     V1beta1VirtualMachineSnapshotStatusFromJSON,
     V1beta1VirtualMachineSnapshotStatusFromJSONTyped,
     V1beta1VirtualMachineSnapshotStatusToJSON,
     V1beta1VirtualMachineSnapshotStatusToJSONTyped,
-} from './V1beta1VirtualMachineSnapshotStatus';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './V1beta1VirtualMachineSnapshotStatus.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
-import type { V1beta1VirtualMachineSnapshotSpec } from './V1beta1VirtualMachineSnapshotSpec';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
+import type { V1beta1VirtualMachineSnapshotSpec } from './V1beta1VirtualMachineSnapshotSpec.js';
 import {
     V1beta1VirtualMachineSnapshotSpecFromJSON,
     V1beta1VirtualMachineSnapshotSpecFromJSONTyped,
     V1beta1VirtualMachineSnapshotSpecToJSON,
     V1beta1VirtualMachineSnapshotSpecToJSONTyped,
-} from './V1beta1VirtualMachineSnapshotSpec';
+} from './V1beta1VirtualMachineSnapshotSpec.js';
 
 /**
  * VirtualMachineSnapshot defines the operation of snapshotting a VM
@@ -85,7 +85,7 @@ export function V1beta1VirtualMachineSnapshotFromJSON(json: any): V1beta1Virtual
     return V1beta1VirtualMachineSnapshotFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineSnapshotFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshot {
+export function V1beta1VirtualMachineSnapshotFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshot {
     if (json == null) {
         return json;
     }
@@ -103,7 +103,7 @@ export function V1beta1VirtualMachineSnapshotToJSON(json: any): V1beta1VirtualMa
     return V1beta1VirtualMachineSnapshotToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineSnapshotToJSONTyped(value?: V1beta1VirtualMachineSnapshot | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineSnapshotToJSONTyped(value?: V1beta1VirtualMachineSnapshot | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

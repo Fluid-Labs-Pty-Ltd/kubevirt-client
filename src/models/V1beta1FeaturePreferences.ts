@@ -12,35 +12,35 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1FeatureAPIC } from './V1FeatureAPIC';
+import { mapValues } from '../runtime.js';
+import type { V1FeatureAPIC } from './V1FeatureAPIC.js';
 import {
     V1FeatureAPICFromJSON,
     V1FeatureAPICFromJSONTyped,
     V1FeatureAPICToJSON,
     V1FeatureAPICToJSONTyped,
-} from './V1FeatureAPIC';
-import type { V1FeatureHyperv } from './V1FeatureHyperv';
+} from './V1FeatureAPIC.js';
+import type { V1FeatureHyperv } from './V1FeatureHyperv.js';
 import {
     V1FeatureHypervFromJSON,
     V1FeatureHypervFromJSONTyped,
     V1FeatureHypervToJSON,
     V1FeatureHypervToJSONTyped,
-} from './V1FeatureHyperv';
-import type { V1FeatureState } from './V1FeatureState';
+} from './V1FeatureHyperv.js';
+import type { V1FeatureState } from './V1FeatureState.js';
 import {
     V1FeatureStateFromJSON,
     V1FeatureStateFromJSONTyped,
     V1FeatureStateToJSON,
     V1FeatureStateToJSONTyped,
-} from './V1FeatureState';
-import type { V1FeatureKVM } from './V1FeatureKVM';
+} from './V1FeatureState.js';
+import type { V1FeatureKVM } from './V1FeatureKVM.js';
 import {
     V1FeatureKVMFromJSON,
     V1FeatureKVMFromJSONTyped,
     V1FeatureKVMToJSON,
     V1FeatureKVMToJSONTyped,
-} from './V1FeatureKVM';
+} from './V1FeatureKVM.js';
 
 /**
  * FeaturePreferences contains various optional defaults for Features.
@@ -97,7 +97,7 @@ export function V1beta1FeaturePreferencesFromJSON(json: any): V1beta1FeaturePref
     return V1beta1FeaturePreferencesFromJSONTyped(json, false);
 }
 
-export function V1beta1FeaturePreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1FeaturePreferences {
+export function V1beta1FeaturePreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1FeaturePreferences {
     if (json == null) {
         return json;
     }
@@ -116,7 +116,7 @@ export function V1beta1FeaturePreferencesToJSON(json: any): V1beta1FeaturePrefer
     return V1beta1FeaturePreferencesToJSONTyped(json, false);
 }
 
-export function V1beta1FeaturePreferencesToJSONTyped(value?: V1beta1FeaturePreferences | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1FeaturePreferencesToJSONTyped(value?: V1beta1FeaturePreferences | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

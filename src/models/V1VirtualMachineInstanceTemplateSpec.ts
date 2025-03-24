@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1VirtualMachineInstanceSpec } from './V1VirtualMachineInstanceSpec';
+import { mapValues } from '../runtime.js';
+import type { V1VirtualMachineInstanceSpec } from './V1VirtualMachineInstanceSpec.js';
 import {
     V1VirtualMachineInstanceSpecFromJSON,
     V1VirtualMachineInstanceSpecFromJSONTyped,
     V1VirtualMachineInstanceSpecToJSON,
     V1VirtualMachineInstanceSpecToJSONTyped,
-} from './V1VirtualMachineInstanceSpec';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './V1VirtualMachineInstanceSpec.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 
 /**
  * 
@@ -59,7 +59,7 @@ export function V1VirtualMachineInstanceTemplateSpecFromJSON(json: any): V1Virtu
     return V1VirtualMachineInstanceTemplateSpecFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceTemplateSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceTemplateSpec {
+export function V1VirtualMachineInstanceTemplateSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceTemplateSpec {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1VirtualMachineInstanceTemplateSpecToJSON(json: any): V1Virtual
     return V1VirtualMachineInstanceTemplateSpecToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceTemplateSpecToJSONTyped(value?: V1VirtualMachineInstanceTemplateSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceTemplateSpecToJSONTyped(value?: V1VirtualMachineInstanceTemplateSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

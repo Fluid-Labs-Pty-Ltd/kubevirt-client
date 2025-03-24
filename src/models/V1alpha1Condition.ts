@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * Condition defines conditions
  * @export
@@ -58,7 +58,7 @@ export function V1alpha1ConditionFromJSON(json: any): V1alpha1Condition {
     return V1alpha1ConditionFromJSONTyped(json, false);
 }
 
-export function V1alpha1ConditionFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1Condition {
+export function V1alpha1ConditionFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1Condition {
     if (json == null) {
         return json;
     }
@@ -75,7 +75,7 @@ export function V1alpha1ConditionToJSON(json: any): V1alpha1Condition {
     return V1alpha1ConditionToJSONTyped(json, false);
 }
 
-export function V1alpha1ConditionToJSONTyped(value?: V1alpha1Condition | null, _ignoreDiscriminator: boolean = false): any {
+export function V1alpha1ConditionToJSONTyped(value?: V1alpha1Condition | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

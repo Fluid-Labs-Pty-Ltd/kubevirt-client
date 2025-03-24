@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
  * @export
@@ -56,7 +56,7 @@ export function K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON(json: any): K8sIo
     return K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1ListMeta {
+export function K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1ListMeta {
     if (json == null) {
         return json;
     }
@@ -73,7 +73,7 @@ export function K8sIoApimachineryPkgApisMetaV1ListMetaToJSON(json: any): K8sIoAp
     return K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1ListMeta | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1ListMeta | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,35 +12,35 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1ContainerDiskInfo } from './V1ContainerDiskInfo';
+import { mapValues } from '../runtime.js';
+import type { V1ContainerDiskInfo } from './V1ContainerDiskInfo.js';
 import {
     V1ContainerDiskInfoFromJSON,
     V1ContainerDiskInfoFromJSONTyped,
     V1ContainerDiskInfoToJSON,
     V1ContainerDiskInfoToJSONTyped,
-} from './V1ContainerDiskInfo';
-import type { V1HotplugVolumeStatus } from './V1HotplugVolumeStatus';
+} from './V1ContainerDiskInfo.js';
+import type { V1HotplugVolumeStatus } from './V1HotplugVolumeStatus.js';
 import {
     V1HotplugVolumeStatusFromJSON,
     V1HotplugVolumeStatusFromJSONTyped,
     V1HotplugVolumeStatusToJSON,
     V1HotplugVolumeStatusToJSONTyped,
-} from './V1HotplugVolumeStatus';
-import type { V1DomainMemoryDumpInfo } from './V1DomainMemoryDumpInfo';
+} from './V1HotplugVolumeStatus.js';
+import type { V1DomainMemoryDumpInfo } from './V1DomainMemoryDumpInfo.js';
 import {
     V1DomainMemoryDumpInfoFromJSON,
     V1DomainMemoryDumpInfoFromJSONTyped,
     V1DomainMemoryDumpInfoToJSON,
     V1DomainMemoryDumpInfoToJSONTyped,
-} from './V1DomainMemoryDumpInfo';
-import type { V1PersistentVolumeClaimInfo } from './V1PersistentVolumeClaimInfo';
+} from './V1DomainMemoryDumpInfo.js';
+import type { V1PersistentVolumeClaimInfo } from './V1PersistentVolumeClaimInfo.js';
 import {
     V1PersistentVolumeClaimInfoFromJSON,
     V1PersistentVolumeClaimInfoFromJSONTyped,
     V1PersistentVolumeClaimInfoToJSON,
     V1PersistentVolumeClaimInfoToJSONTyped,
-} from './V1PersistentVolumeClaimInfo';
+} from './V1PersistentVolumeClaimInfo.js';
 
 /**
  * VolumeStatus represents information about the status of volumes attached to the VirtualMachineInstance.
@@ -123,7 +123,7 @@ export function V1VolumeStatusFromJSON(json: any): V1VolumeStatus {
     return V1VolumeStatusFromJSONTyped(json, false);
 }
 
-export function V1VolumeStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VolumeStatus {
+export function V1VolumeStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VolumeStatus {
     if (json == null) {
         return json;
     }
@@ -146,7 +146,7 @@ export function V1VolumeStatusToJSON(json: any): V1VolumeStatus {
     return V1VolumeStatusToJSONTyped(json, false);
 }
 
-export function V1VolumeStatusToJSONTyped(value?: V1VolumeStatus | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VolumeStatusToJSONTyped(value?: V1VolumeStatus | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

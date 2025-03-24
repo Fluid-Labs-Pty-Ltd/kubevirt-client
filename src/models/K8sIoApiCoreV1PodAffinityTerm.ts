@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 import {
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+} from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 
 /**
  * Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key <topologyKey> matches that of any node on which a pod of the set of pods is running
@@ -77,7 +77,7 @@ export function K8sIoApiCoreV1PodAffinityTermFromJSON(json: any): K8sIoApiCoreV1
     return K8sIoApiCoreV1PodAffinityTermFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PodAffinityTermFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1PodAffinityTerm {
+export function K8sIoApiCoreV1PodAffinityTermFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1PodAffinityTerm {
     if (json == null) {
         return json;
     }
@@ -96,7 +96,7 @@ export function K8sIoApiCoreV1PodAffinityTermToJSON(json: any): K8sIoApiCoreV1Po
     return K8sIoApiCoreV1PodAffinityTermToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1PodAffinityTermToJSONTyped(value?: K8sIoApiCoreV1PodAffinityTerm | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1PodAffinityTermToJSONTyped(value?: K8sIoApiCoreV1PodAffinityTerm | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

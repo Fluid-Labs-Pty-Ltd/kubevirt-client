@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * Realtime holds the tuning knobs specific for realtime workloads.
  * @export
@@ -38,7 +38,7 @@ export function V1RealtimeFromJSON(json: any): V1Realtime {
     return V1RealtimeFromJSONTyped(json, false);
 }
 
-export function V1RealtimeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Realtime {
+export function V1RealtimeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Realtime {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1RealtimeToJSON(json: any): V1Realtime {
     return V1RealtimeToJSONTyped(json, false);
 }
 
-export function V1RealtimeToJSONTyped(value?: V1Realtime | null, _ignoreDiscriminator: boolean = false): any {
+export function V1RealtimeToJSONTyped(value?: V1Realtime | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

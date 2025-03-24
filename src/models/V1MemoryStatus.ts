@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -158,7 +158,7 @@ export function V1MemoryStatusFromJSON(json: any): V1MemoryStatus {
     return V1MemoryStatusFromJSONTyped(json, false);
 }
 
-export function V1MemoryStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1MemoryStatus {
+export function V1MemoryStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1MemoryStatus {
     if (json == null) {
         return json;
     }
@@ -174,7 +174,7 @@ export function V1MemoryStatusToJSON(json: any): V1MemoryStatus {
     return V1MemoryStatusToJSONTyped(json, false);
 }
 
-export function V1MemoryStatusToJSONTyped(value?: V1MemoryStatus | null, _ignoreDiscriminator: boolean = false): any {
+export function V1MemoryStatusToJSONTyped(value?: V1MemoryStatus | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

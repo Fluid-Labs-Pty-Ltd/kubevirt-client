@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1VGPUOptions } from './V1VGPUOptions';
+import { mapValues } from '../runtime.js';
+import type { V1VGPUOptions } from './V1VGPUOptions.js';
 import {
     V1VGPUOptionsFromJSON,
     V1VGPUOptionsFromJSONTyped,
     V1VGPUOptionsToJSON,
     V1VGPUOptionsToJSONTyped,
-} from './V1VGPUOptions';
-import type { V1BlockSize } from './V1BlockSize';
+} from './V1VGPUOptions.js';
+import type { V1BlockSize } from './V1BlockSize.js';
 import {
     V1BlockSizeFromJSON,
     V1BlockSizeFromJSONTyped,
     V1BlockSizeToJSON,
     V1BlockSizeToJSONTyped,
-} from './V1BlockSize';
-import type { V1TPMDevice } from './V1TPMDevice';
+} from './V1BlockSize.js';
+import type { V1TPMDevice } from './V1TPMDevice.js';
 import {
     V1TPMDeviceFromJSON,
     V1TPMDeviceFromJSONTyped,
     V1TPMDeviceToJSON,
     V1TPMDeviceToJSONTyped,
-} from './V1TPMDevice';
+} from './V1TPMDevice.js';
 
 /**
  * DevicePreferences contains various optional Device preferences.
@@ -198,7 +198,7 @@ export function V1beta1DevicePreferencesFromJSON(json: any): V1beta1DevicePrefer
     return V1beta1DevicePreferencesFromJSONTyped(json, false);
 }
 
-export function V1beta1DevicePreferencesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DevicePreferences {
+export function V1beta1DevicePreferencesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DevicePreferences {
     if (json == null) {
         return json;
     }
@@ -235,7 +235,7 @@ export function V1beta1DevicePreferencesToJSON(json: any): V1beta1DevicePreferen
     return V1beta1DevicePreferencesToJSONTyped(json, false);
 }
 
-export function V1beta1DevicePreferencesToJSONTyped(value?: V1beta1DevicePreferences | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1DevicePreferencesToJSONTyped(value?: V1beta1DevicePreferences | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1VirtualMachineInstanceFileSystem } from './V1VirtualMachineInstanceFileSystem';
+import { mapValues } from '../runtime.js';
+import type { V1VirtualMachineInstanceFileSystem } from './V1VirtualMachineInstanceFileSystem.js';
 import {
     V1VirtualMachineInstanceFileSystemFromJSON,
     V1VirtualMachineInstanceFileSystemFromJSONTyped,
     V1VirtualMachineInstanceFileSystemToJSON,
     V1VirtualMachineInstanceFileSystemToJSONTyped,
-} from './V1VirtualMachineInstanceFileSystem';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+} from './V1VirtualMachineInstanceFileSystem.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 
 /**
  * VirtualMachineInstanceFileSystemList comprises the list of all filesystems on guest machine
@@ -72,7 +72,7 @@ export function V1VirtualMachineInstanceFileSystemListFromJSON(json: any): V1Vir
     return V1VirtualMachineInstanceFileSystemListFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceFileSystemListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceFileSystemList {
+export function V1VirtualMachineInstanceFileSystemListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceFileSystemList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1VirtualMachineInstanceFileSystemListToJSON(json: any): V1Virtu
     return V1VirtualMachineInstanceFileSystemListToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceFileSystemListToJSONTyped(value?: V1VirtualMachineInstanceFileSystemList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceFileSystemListToJSONTyped(value?: V1VirtualMachineInstanceFileSystemList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

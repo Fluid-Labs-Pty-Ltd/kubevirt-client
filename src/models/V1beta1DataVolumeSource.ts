@@ -12,63 +12,63 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1beta1DataVolumeSourcePVC } from './V1beta1DataVolumeSourcePVC';
+import { mapValues } from '../runtime.js';
+import type { V1beta1DataVolumeSourcePVC } from './V1beta1DataVolumeSourcePVC.js';
 import {
     V1beta1DataVolumeSourcePVCFromJSON,
     V1beta1DataVolumeSourcePVCFromJSONTyped,
     V1beta1DataVolumeSourcePVCToJSON,
     V1beta1DataVolumeSourcePVCToJSONTyped,
-} from './V1beta1DataVolumeSourcePVC';
-import type { V1beta1DataVolumeSourceRegistry } from './V1beta1DataVolumeSourceRegistry';
+} from './V1beta1DataVolumeSourcePVC.js';
+import type { V1beta1DataVolumeSourceRegistry } from './V1beta1DataVolumeSourceRegistry.js';
 import {
     V1beta1DataVolumeSourceRegistryFromJSON,
     V1beta1DataVolumeSourceRegistryFromJSONTyped,
     V1beta1DataVolumeSourceRegistryToJSON,
     V1beta1DataVolumeSourceRegistryToJSONTyped,
-} from './V1beta1DataVolumeSourceRegistry';
-import type { V1beta1DataVolumeSourceImageIO } from './V1beta1DataVolumeSourceImageIO';
+} from './V1beta1DataVolumeSourceRegistry.js';
+import type { V1beta1DataVolumeSourceImageIO } from './V1beta1DataVolumeSourceImageIO.js';
 import {
     V1beta1DataVolumeSourceImageIOFromJSON,
     V1beta1DataVolumeSourceImageIOFromJSONTyped,
     V1beta1DataVolumeSourceImageIOToJSON,
     V1beta1DataVolumeSourceImageIOToJSONTyped,
-} from './V1beta1DataVolumeSourceImageIO';
-import type { V1beta1DataVolumeSourceVDDK } from './V1beta1DataVolumeSourceVDDK';
+} from './V1beta1DataVolumeSourceImageIO.js';
+import type { V1beta1DataVolumeSourceVDDK } from './V1beta1DataVolumeSourceVDDK.js';
 import {
     V1beta1DataVolumeSourceVDDKFromJSON,
     V1beta1DataVolumeSourceVDDKFromJSONTyped,
     V1beta1DataVolumeSourceVDDKToJSON,
     V1beta1DataVolumeSourceVDDKToJSONTyped,
-} from './V1beta1DataVolumeSourceVDDK';
-import type { V1beta1DataVolumeSourceGCS } from './V1beta1DataVolumeSourceGCS';
+} from './V1beta1DataVolumeSourceVDDK.js';
+import type { V1beta1DataVolumeSourceGCS } from './V1beta1DataVolumeSourceGCS.js';
 import {
     V1beta1DataVolumeSourceGCSFromJSON,
     V1beta1DataVolumeSourceGCSFromJSONTyped,
     V1beta1DataVolumeSourceGCSToJSON,
     V1beta1DataVolumeSourceGCSToJSONTyped,
-} from './V1beta1DataVolumeSourceGCS';
-import type { V1beta1DataVolumeSourceHTTP } from './V1beta1DataVolumeSourceHTTP';
+} from './V1beta1DataVolumeSourceGCS.js';
+import type { V1beta1DataVolumeSourceHTTP } from './V1beta1DataVolumeSourceHTTP.js';
 import {
     V1beta1DataVolumeSourceHTTPFromJSON,
     V1beta1DataVolumeSourceHTTPFromJSONTyped,
     V1beta1DataVolumeSourceHTTPToJSON,
     V1beta1DataVolumeSourceHTTPToJSONTyped,
-} from './V1beta1DataVolumeSourceHTTP';
-import type { V1beta1DataVolumeSourceS3 } from './V1beta1DataVolumeSourceS3';
+} from './V1beta1DataVolumeSourceHTTP.js';
+import type { V1beta1DataVolumeSourceS3 } from './V1beta1DataVolumeSourceS3.js';
 import {
     V1beta1DataVolumeSourceS3FromJSON,
     V1beta1DataVolumeSourceS3FromJSONTyped,
     V1beta1DataVolumeSourceS3ToJSON,
     V1beta1DataVolumeSourceS3ToJSONTyped,
-} from './V1beta1DataVolumeSourceS3';
-import type { V1beta1DataVolumeSourceSnapshot } from './V1beta1DataVolumeSourceSnapshot';
+} from './V1beta1DataVolumeSourceS3.js';
+import type { V1beta1DataVolumeSourceSnapshot } from './V1beta1DataVolumeSourceSnapshot.js';
 import {
     V1beta1DataVolumeSourceSnapshotFromJSON,
     V1beta1DataVolumeSourceSnapshotFromJSONTyped,
     V1beta1DataVolumeSourceSnapshotToJSON,
     V1beta1DataVolumeSourceSnapshotToJSONTyped,
-} from './V1beta1DataVolumeSourceSnapshot';
+} from './V1beta1DataVolumeSourceSnapshot.js';
 
 /**
  * DataVolumeSource represents the source for our Data Volume, this can be HTTP, Imageio, S3, GCS, Registry or an existing PVC
@@ -149,7 +149,7 @@ export function V1beta1DataVolumeSourceFromJSON(json: any): V1beta1DataVolumeSou
     return V1beta1DataVolumeSourceFromJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSource {
+export function V1beta1DataVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSource {
     if (json == null) {
         return json;
     }
@@ -172,7 +172,7 @@ export function V1beta1DataVolumeSourceToJSON(json: any): V1beta1DataVolumeSourc
     return V1beta1DataVolumeSourceToJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceToJSONTyped(value?: V1beta1DataVolumeSource | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1DataVolumeSourceToJSONTyped(value?: V1beta1DataVolumeSource | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

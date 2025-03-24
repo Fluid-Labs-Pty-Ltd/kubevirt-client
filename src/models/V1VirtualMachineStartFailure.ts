@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * VirtualMachineStartFailure tracks VMIs which failed to transition successfully to running using the VM status
  * @export
@@ -50,7 +50,7 @@ export function V1VirtualMachineStartFailureFromJSON(json: any): V1VirtualMachin
     return V1VirtualMachineStartFailureFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineStartFailureFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineStartFailure {
+export function V1VirtualMachineStartFailureFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineStartFailure {
     if (json == null) {
         return json;
     }
@@ -66,7 +66,7 @@ export function V1VirtualMachineStartFailureToJSON(json: any): V1VirtualMachineS
     return V1VirtualMachineStartFailureToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineStartFailureToJSONTyped(value?: V1VirtualMachineStartFailure | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineStartFailureToJSONTyped(value?: V1VirtualMachineStartFailure | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

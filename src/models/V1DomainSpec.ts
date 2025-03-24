@@ -12,77 +12,77 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1Memory } from './V1Memory';
+import { mapValues } from '../runtime.js';
+import type { V1Memory } from './V1Memory.js';
 import {
     V1MemoryFromJSON,
     V1MemoryFromJSONTyped,
     V1MemoryToJSON,
     V1MemoryToJSONTyped,
-} from './V1Memory';
-import type { V1Firmware } from './V1Firmware';
+} from './V1Memory.js';
+import type { V1Firmware } from './V1Firmware.js';
 import {
     V1FirmwareFromJSON,
     V1FirmwareFromJSONTyped,
     V1FirmwareToJSON,
     V1FirmwareToJSONTyped,
-} from './V1Firmware';
-import type { V1Features } from './V1Features';
+} from './V1Firmware.js';
+import type { V1Features } from './V1Features.js';
 import {
     V1FeaturesFromJSON,
     V1FeaturesFromJSONTyped,
     V1FeaturesToJSON,
     V1FeaturesToJSONTyped,
-} from './V1Features';
-import type { V1Chassis } from './V1Chassis';
+} from './V1Features.js';
+import type { V1Chassis } from './V1Chassis.js';
 import {
     V1ChassisFromJSON,
     V1ChassisFromJSONTyped,
     V1ChassisToJSON,
     V1ChassisToJSONTyped,
-} from './V1Chassis';
-import type { V1Devices } from './V1Devices';
+} from './V1Chassis.js';
+import type { V1Devices } from './V1Devices.js';
 import {
     V1DevicesFromJSON,
     V1DevicesFromJSONTyped,
     V1DevicesToJSON,
     V1DevicesToJSONTyped,
-} from './V1Devices';
-import type { V1Clock } from './V1Clock';
+} from './V1Devices.js';
+import type { V1Clock } from './V1Clock.js';
 import {
     V1ClockFromJSON,
     V1ClockFromJSONTyped,
     V1ClockToJSON,
     V1ClockToJSONTyped,
-} from './V1Clock';
-import type { V1Machine } from './V1Machine';
+} from './V1Clock.js';
+import type { V1Machine } from './V1Machine.js';
 import {
     V1MachineFromJSON,
     V1MachineFromJSONTyped,
     V1MachineToJSON,
     V1MachineToJSONTyped,
-} from './V1Machine';
-import type { V1LaunchSecurity } from './V1LaunchSecurity';
+} from './V1Machine.js';
+import type { V1LaunchSecurity } from './V1LaunchSecurity.js';
 import {
     V1LaunchSecurityFromJSON,
     V1LaunchSecurityFromJSONTyped,
     V1LaunchSecurityToJSON,
     V1LaunchSecurityToJSONTyped,
-} from './V1LaunchSecurity';
-import type { V1CPU } from './V1CPU';
+} from './V1LaunchSecurity.js';
+import type { V1CPU } from './V1CPU.js';
 import {
     V1CPUFromJSON,
     V1CPUFromJSONTyped,
     V1CPUToJSON,
     V1CPUToJSONTyped,
-} from './V1CPU';
-import type { V1ResourceRequirements } from './V1ResourceRequirements';
+} from './V1CPU.js';
+import type { V1ResourceRequirements } from './V1ResourceRequirements.js';
 import {
     V1ResourceRequirementsFromJSON,
     V1ResourceRequirementsFromJSONTyped,
     V1ResourceRequirementsToJSON,
     V1ResourceRequirementsToJSONTyped,
-} from './V1ResourceRequirements';
+} from './V1ResourceRequirements.js';
 
 /**
  * 
@@ -170,7 +170,7 @@ export function V1DomainSpecFromJSON(json: any): V1DomainSpec {
     return V1DomainSpecFromJSONTyped(json, false);
 }
 
-export function V1DomainSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1DomainSpec {
+export function V1DomainSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1DomainSpec {
     if (json == null) {
         return json;
     }
@@ -194,7 +194,7 @@ export function V1DomainSpecToJSON(json: any): V1DomainSpec {
     return V1DomainSpecToJSONTyped(json, false);
 }
 
-export function V1DomainSpecToJSONTyped(value?: V1DomainSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1DomainSpecToJSONTyped(value?: V1DomainSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

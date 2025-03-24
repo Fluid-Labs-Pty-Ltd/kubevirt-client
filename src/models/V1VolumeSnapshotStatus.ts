@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -52,7 +52,7 @@ export function V1VolumeSnapshotStatusFromJSON(json: any): V1VolumeSnapshotStatu
     return V1VolumeSnapshotStatusFromJSONTyped(json, false);
 }
 
-export function V1VolumeSnapshotStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VolumeSnapshotStatus {
+export function V1VolumeSnapshotStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VolumeSnapshotStatus {
     if (json == null) {
         return json;
     }
@@ -68,7 +68,7 @@ export function V1VolumeSnapshotStatusToJSON(json: any): V1VolumeSnapshotStatus 
     return V1VolumeSnapshotStatusToJSONTyped(json, false);
 }
 
-export function V1VolumeSnapshotStatusToJSONTyped(value?: V1VolumeSnapshotStatus | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VolumeSnapshotStatusToJSONTyped(value?: V1VolumeSnapshotStatus | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

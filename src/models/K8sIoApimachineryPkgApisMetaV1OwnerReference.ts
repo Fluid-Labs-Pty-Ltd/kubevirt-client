@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * OwnerReference contains enough information to let you identify an owning object. An owning object must be in the same namespace as the dependent, or be cluster-scoped, so there is no namespace field.
  * @export
@@ -72,7 +72,7 @@ export function K8sIoApimachineryPkgApisMetaV1OwnerReferenceFromJSON(json: any):
     return K8sIoApimachineryPkgApisMetaV1OwnerReferenceFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1OwnerReferenceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1OwnerReference {
+export function K8sIoApimachineryPkgApisMetaV1OwnerReferenceFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1OwnerReference {
     if (json == null) {
         return json;
     }
@@ -91,7 +91,7 @@ export function K8sIoApimachineryPkgApisMetaV1OwnerReferenceToJSON(json: any): K
     return K8sIoApimachineryPkgApisMetaV1OwnerReferenceToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1OwnerReferenceToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1OwnerReference | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1OwnerReferenceToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1OwnerReference | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

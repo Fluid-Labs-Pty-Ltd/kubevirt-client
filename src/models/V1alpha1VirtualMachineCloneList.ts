@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1alpha1VirtualMachineClone } from './V1alpha1VirtualMachineClone';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1alpha1VirtualMachineClone } from './V1alpha1VirtualMachineClone.js';
 import {
     V1alpha1VirtualMachineCloneFromJSON,
     V1alpha1VirtualMachineCloneFromJSONTyped,
     V1alpha1VirtualMachineCloneToJSON,
     V1alpha1VirtualMachineCloneToJSONTyped,
-} from './V1alpha1VirtualMachineClone';
+} from './V1alpha1VirtualMachineClone.js';
 
 /**
  * VirtualMachineCloneList is a list of MigrationPolicy
@@ -72,7 +72,7 @@ export function V1alpha1VirtualMachineCloneListFromJSON(json: any): V1alpha1Virt
     return V1alpha1VirtualMachineCloneListFromJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineCloneListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneList {
+export function V1alpha1VirtualMachineCloneListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachineCloneList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1alpha1VirtualMachineCloneListToJSON(json: any): V1alpha1Virtua
     return V1alpha1VirtualMachineCloneListToJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineCloneListToJSONTyped(value?: V1alpha1VirtualMachineCloneList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1alpha1VirtualMachineCloneListToJSONTyped(value?: V1alpha1VirtualMachineCloneList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

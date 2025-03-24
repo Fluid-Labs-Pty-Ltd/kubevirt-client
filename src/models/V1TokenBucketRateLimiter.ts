@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -46,7 +46,7 @@ export function V1TokenBucketRateLimiterFromJSON(json: any): V1TokenBucketRateLi
     return V1TokenBucketRateLimiterFromJSONTyped(json, false);
 }
 
-export function V1TokenBucketRateLimiterFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1TokenBucketRateLimiter {
+export function V1TokenBucketRateLimiterFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1TokenBucketRateLimiter {
     if (json == null) {
         return json;
     }
@@ -61,7 +61,7 @@ export function V1TokenBucketRateLimiterToJSON(json: any): V1TokenBucketRateLimi
     return V1TokenBucketRateLimiterToJSONTyped(json, false);
 }
 
-export function V1TokenBucketRateLimiterToJSONTyped(value?: V1TokenBucketRateLimiter | null, _ignoreDiscriminator: boolean = false): any {
+export function V1TokenBucketRateLimiterToJSONTyped(value?: V1TokenBucketRateLimiter | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

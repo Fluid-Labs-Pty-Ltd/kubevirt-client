@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1VirtualMachineSpec } from './V1VirtualMachineSpec';
+import { mapValues } from '../runtime.js';
+import type { V1VirtualMachineSpec } from './V1VirtualMachineSpec.js';
 import {
     V1VirtualMachineSpecFromJSON,
     V1VirtualMachineSpecFromJSONTyped,
     V1VirtualMachineSpecToJSON,
     V1VirtualMachineSpecToJSONTyped,
-} from './V1VirtualMachineSpec';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './V1VirtualMachineSpec.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 
 /**
  * 
@@ -59,7 +59,7 @@ export function V1alpha1VirtualMachineTemplateSpecFromJSON(json: any): V1alpha1V
     return V1alpha1VirtualMachineTemplateSpecFromJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineTemplateSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachineTemplateSpec {
+export function V1alpha1VirtualMachineTemplateSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachineTemplateSpec {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function V1alpha1VirtualMachineTemplateSpecToJSON(json: any): V1alpha1Vir
     return V1alpha1VirtualMachineTemplateSpecToJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachineTemplateSpecToJSONTyped(value?: V1alpha1VirtualMachineTemplateSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1alpha1VirtualMachineTemplateSpecToJSONTyped(value?: V1alpha1VirtualMachineTemplateSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

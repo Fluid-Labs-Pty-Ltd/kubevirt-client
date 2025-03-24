@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1USBSelector } from './V1USBSelector';
+import { mapValues } from '../runtime.js';
+import type { V1USBSelector } from './V1USBSelector.js';
 import {
     V1USBSelectorFromJSON,
     V1USBSelectorFromJSONTyped,
     V1USBSelectorToJSON,
     V1USBSelectorToJSONTyped,
-} from './V1USBSelector';
+} from './V1USBSelector.js';
 
 /**
  * 
@@ -59,7 +59,7 @@ export function V1USBHostDeviceFromJSON(json: any): V1USBHostDevice {
     return V1USBHostDeviceFromJSONTyped(json, false);
 }
 
-export function V1USBHostDeviceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1USBHostDevice {
+export function V1USBHostDeviceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1USBHostDevice {
     if (json == null) {
         return json;
     }
@@ -75,7 +75,7 @@ export function V1USBHostDeviceToJSON(json: any): V1USBHostDevice {
     return V1USBHostDeviceToJSONTyped(json, false);
 }
 
-export function V1USBHostDeviceToJSONTyped(value?: V1USBHostDevice | null, _ignoreDiscriminator: boolean = false): any {
+export function V1USBHostDeviceToJSONTyped(value?: V1USBHostDevice | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

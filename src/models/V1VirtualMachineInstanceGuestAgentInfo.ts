@@ -12,35 +12,35 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1VirtualMachineInstanceGuestOSInfo } from './V1VirtualMachineInstanceGuestOSInfo';
+import { mapValues } from '../runtime.js';
+import type { V1VirtualMachineInstanceGuestOSInfo } from './V1VirtualMachineInstanceGuestOSInfo.js';
 import {
     V1VirtualMachineInstanceGuestOSInfoFromJSON,
     V1VirtualMachineInstanceGuestOSInfoFromJSONTyped,
     V1VirtualMachineInstanceGuestOSInfoToJSON,
     V1VirtualMachineInstanceGuestOSInfoToJSONTyped,
-} from './V1VirtualMachineInstanceGuestOSInfo';
-import type { V1VirtualMachineInstanceFileSystemInfo } from './V1VirtualMachineInstanceFileSystemInfo';
+} from './V1VirtualMachineInstanceGuestOSInfo.js';
+import type { V1VirtualMachineInstanceFileSystemInfo } from './V1VirtualMachineInstanceFileSystemInfo.js';
 import {
     V1VirtualMachineInstanceFileSystemInfoFromJSON,
     V1VirtualMachineInstanceFileSystemInfoFromJSONTyped,
     V1VirtualMachineInstanceFileSystemInfoToJSON,
     V1VirtualMachineInstanceFileSystemInfoToJSONTyped,
-} from './V1VirtualMachineInstanceFileSystemInfo';
-import type { V1GuestAgentCommandInfo } from './V1GuestAgentCommandInfo';
+} from './V1VirtualMachineInstanceFileSystemInfo.js';
+import type { V1GuestAgentCommandInfo } from './V1GuestAgentCommandInfo.js';
 import {
     V1GuestAgentCommandInfoFromJSON,
     V1GuestAgentCommandInfoFromJSONTyped,
     V1GuestAgentCommandInfoToJSON,
     V1GuestAgentCommandInfoToJSONTyped,
-} from './V1GuestAgentCommandInfo';
-import type { V1VirtualMachineInstanceGuestOSUser } from './V1VirtualMachineInstanceGuestOSUser';
+} from './V1GuestAgentCommandInfo.js';
+import type { V1VirtualMachineInstanceGuestOSUser } from './V1VirtualMachineInstanceGuestOSUser.js';
 import {
     V1VirtualMachineInstanceGuestOSUserFromJSON,
     V1VirtualMachineInstanceGuestOSUserFromJSONTyped,
     V1VirtualMachineInstanceGuestOSUserToJSON,
     V1VirtualMachineInstanceGuestOSUserToJSONTyped,
-} from './V1VirtualMachineInstanceGuestOSUser';
+} from './V1VirtualMachineInstanceGuestOSUser.js';
 
 /**
  * VirtualMachineInstanceGuestAgentInfo represents information from the installed guest agent
@@ -121,7 +121,7 @@ export function V1VirtualMachineInstanceGuestAgentInfoFromJSON(json: any): V1Vir
     return V1VirtualMachineInstanceGuestAgentInfoFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceGuestAgentInfoFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestAgentInfo {
+export function V1VirtualMachineInstanceGuestAgentInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceGuestAgentInfo {
     if (json == null) {
         return json;
     }
@@ -144,7 +144,7 @@ export function V1VirtualMachineInstanceGuestAgentInfoToJSON(json: any): V1Virtu
     return V1VirtualMachineInstanceGuestAgentInfoToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceGuestAgentInfoToJSONTyped(value?: V1VirtualMachineInstanceGuestAgentInfo | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceGuestAgentInfoToJSONTyped(value?: V1VirtualMachineInstanceGuestAgentInfo | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

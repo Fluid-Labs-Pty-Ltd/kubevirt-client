@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1beta1VirtualMachineExportVolumeFormat } from './V1beta1VirtualMachineExportVolumeFormat';
+import { mapValues } from '../runtime.js';
+import type { V1beta1VirtualMachineExportVolumeFormat } from './V1beta1VirtualMachineExportVolumeFormat.js';
 import {
     V1beta1VirtualMachineExportVolumeFormatFromJSON,
     V1beta1VirtualMachineExportVolumeFormatFromJSONTyped,
     V1beta1VirtualMachineExportVolumeFormatToJSON,
     V1beta1VirtualMachineExportVolumeFormatToJSONTyped,
-} from './V1beta1VirtualMachineExportVolumeFormat';
+} from './V1beta1VirtualMachineExportVolumeFormat.js';
 
 /**
  * VirtualMachineExportVolume contains the name and available formats for the exported volume
@@ -53,7 +53,7 @@ export function V1beta1VirtualMachineExportVolumeFromJSON(json: any): V1beta1Vir
     return V1beta1VirtualMachineExportVolumeFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportVolumeFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineExportVolume {
+export function V1beta1VirtualMachineExportVolumeFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineExportVolume {
     if (json == null) {
         return json;
     }
@@ -68,7 +68,7 @@ export function V1beta1VirtualMachineExportVolumeToJSON(json: any): V1beta1Virtu
     return V1beta1VirtualMachineExportVolumeToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportVolumeToJSONTyped(value?: V1beta1VirtualMachineExportVolume | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineExportVolumeToJSONTyped(value?: V1beta1VirtualMachineExportVolume | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

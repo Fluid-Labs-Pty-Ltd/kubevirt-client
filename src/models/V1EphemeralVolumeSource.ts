@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1PersistentVolumeClaimVolumeSource } from './K8sIoApiCoreV1PersistentVolumeClaimVolumeSource';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1PersistentVolumeClaimVolumeSource } from './K8sIoApiCoreV1PersistentVolumeClaimVolumeSource.js';
 import {
     K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceFromJSON,
     K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceFromJSONTyped,
     K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceToJSON,
     K8sIoApiCoreV1PersistentVolumeClaimVolumeSourceToJSONTyped,
-} from './K8sIoApiCoreV1PersistentVolumeClaimVolumeSource';
+} from './K8sIoApiCoreV1PersistentVolumeClaimVolumeSource.js';
 
 /**
  * 
@@ -46,7 +46,7 @@ export function V1EphemeralVolumeSourceFromJSON(json: any): V1EphemeralVolumeSou
     return V1EphemeralVolumeSourceFromJSONTyped(json, false);
 }
 
-export function V1EphemeralVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1EphemeralVolumeSource {
+export function V1EphemeralVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1EphemeralVolumeSource {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function V1EphemeralVolumeSourceToJSON(json: any): V1EphemeralVolumeSourc
     return V1EphemeralVolumeSourceToJSONTyped(json, false);
 }
 
-export function V1EphemeralVolumeSourceToJSONTyped(value?: V1EphemeralVolumeSource | null, _ignoreDiscriminator: boolean = false): any {
+export function V1EphemeralVolumeSourceToJSONTyped(value?: V1EphemeralVolumeSource | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

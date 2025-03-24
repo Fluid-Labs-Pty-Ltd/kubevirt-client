@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1VirtualMachineInstance } from './V1VirtualMachineInstance';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1VirtualMachineInstance } from './V1VirtualMachineInstance.js';
 import {
     V1VirtualMachineInstanceFromJSON,
     V1VirtualMachineInstanceFromJSONTyped,
     V1VirtualMachineInstanceToJSON,
     V1VirtualMachineInstanceToJSONTyped,
-} from './V1VirtualMachineInstance';
+} from './V1VirtualMachineInstance.js';
 
 /**
  * VirtualMachineInstanceList is a list of VirtualMachines
@@ -72,7 +72,7 @@ export function V1VirtualMachineInstanceListFromJSON(json: any): V1VirtualMachin
     return V1VirtualMachineInstanceListFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineInstanceList {
+export function V1VirtualMachineInstanceListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineInstanceList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1VirtualMachineInstanceListToJSON(json: any): V1VirtualMachineI
     return V1VirtualMachineInstanceListToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineInstanceListToJSONTyped(value?: V1VirtualMachineInstanceList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineInstanceListToJSONTyped(value?: V1VirtualMachineInstanceList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

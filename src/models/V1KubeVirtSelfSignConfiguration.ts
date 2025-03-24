@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1CertConfig } from './V1CertConfig';
+import { mapValues } from '../runtime.js';
+import type { V1CertConfig } from './V1CertConfig.js';
 import {
     V1CertConfigFromJSON,
     V1CertConfigFromJSONTyped,
     V1CertConfigToJSON,
     V1CertConfigToJSONTyped,
-} from './V1CertConfig';
+} from './V1CertConfig.js';
 
 /**
  * 
@@ -70,7 +70,7 @@ export function V1KubeVirtSelfSignConfigurationFromJSON(json: any): V1KubeVirtSe
     return V1KubeVirtSelfSignConfigurationFromJSONTyped(json, false);
 }
 
-export function V1KubeVirtSelfSignConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtSelfSignConfiguration {
+export function V1KubeVirtSelfSignConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtSelfSignConfiguration {
     if (json == null) {
         return json;
     }
@@ -88,7 +88,7 @@ export function V1KubeVirtSelfSignConfigurationToJSON(json: any): V1KubeVirtSelf
     return V1KubeVirtSelfSignConfigurationToJSONTyped(json, false);
 }
 
-export function V1KubeVirtSelfSignConfigurationToJSONTyped(value?: V1KubeVirtSelfSignConfiguration | null, _ignoreDiscriminator: boolean = false): any {
+export function V1KubeVirtSelfSignConfigurationToJSONTyped(value?: V1KubeVirtSelfSignConfiguration | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

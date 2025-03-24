@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1Preconditions } from './K8sIoApimachineryPkgApisMetaV1Preconditions';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1Preconditions } from './K8sIoApimachineryPkgApisMetaV1Preconditions.js';
 import {
     K8sIoApimachineryPkgApisMetaV1PreconditionsFromJSON,
     K8sIoApimachineryPkgApisMetaV1PreconditionsFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1PreconditionsToJSON,
     K8sIoApimachineryPkgApisMetaV1PreconditionsToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1Preconditions';
+} from './K8sIoApimachineryPkgApisMetaV1Preconditions.js';
 
 /**
  * DeleteOptions may be provided when deleting an API object.
@@ -82,7 +82,7 @@ export function K8sIoApimachineryPkgApisMetaV1DeleteOptionsFromJSON(json: any): 
     return K8sIoApimachineryPkgApisMetaV1DeleteOptionsFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1DeleteOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1DeleteOptions {
+export function K8sIoApimachineryPkgApisMetaV1DeleteOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1DeleteOptions {
     if (json == null) {
         return json;
     }
@@ -102,7 +102,7 @@ export function K8sIoApimachineryPkgApisMetaV1DeleteOptionsToJSON(json: any): K8
     return K8sIoApimachineryPkgApisMetaV1DeleteOptionsToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1DeleteOptionsToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1DeleteOptions | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1DeleteOptionsToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1DeleteOptions | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1VirtualMachine } from './V1VirtualMachine';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1VirtualMachine } from './V1VirtualMachine.js';
 import {
     V1VirtualMachineFromJSON,
     V1VirtualMachineFromJSONTyped,
     V1VirtualMachineToJSON,
     V1VirtualMachineToJSONTyped,
-} from './V1VirtualMachine';
+} from './V1VirtualMachine.js';
 
 /**
  * VirtualMachineList is a list of virtualmachines
@@ -72,7 +72,7 @@ export function V1VirtualMachineListFromJSON(json: any): V1VirtualMachineList {
     return V1VirtualMachineListFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineList {
+export function V1VirtualMachineListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1VirtualMachineListToJSON(json: any): V1VirtualMachineList {
     return V1VirtualMachineListToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineListToJSONTyped(value?: V1VirtualMachineList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineListToJSONTyped(value?: V1VirtualMachineList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

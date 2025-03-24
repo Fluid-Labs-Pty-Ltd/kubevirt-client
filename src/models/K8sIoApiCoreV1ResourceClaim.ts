@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * ResourceClaim references one entry in PodSpec.ResourceClaims.
  * @export
@@ -45,7 +45,7 @@ export function K8sIoApiCoreV1ResourceClaimFromJSON(json: any): K8sIoApiCoreV1Re
     return K8sIoApiCoreV1ResourceClaimFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1ResourceClaimFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1ResourceClaim {
+export function K8sIoApiCoreV1ResourceClaimFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1ResourceClaim {
     if (json == null) {
         return json;
     }
@@ -60,7 +60,7 @@ export function K8sIoApiCoreV1ResourceClaimToJSON(json: any): K8sIoApiCoreV1Reso
     return K8sIoApiCoreV1ResourceClaimToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1ResourceClaimToJSONTyped(value?: K8sIoApiCoreV1ResourceClaim | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1ResourceClaimToJSONTyped(value?: K8sIoApiCoreV1ResourceClaim | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

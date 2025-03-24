@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1beta1VirtualMachineSnapshot } from './V1beta1VirtualMachineSnapshot';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1beta1VirtualMachineSnapshot } from './V1beta1VirtualMachineSnapshot.js';
 import {
     V1beta1VirtualMachineSnapshotFromJSON,
     V1beta1VirtualMachineSnapshotFromJSONTyped,
     V1beta1VirtualMachineSnapshotToJSON,
     V1beta1VirtualMachineSnapshotToJSONTyped,
-} from './V1beta1VirtualMachineSnapshot';
+} from './V1beta1VirtualMachineSnapshot.js';
 
 /**
  * VirtualMachineSnapshotList is a list of VirtualMachineSnapshot resources
@@ -73,7 +73,7 @@ export function V1beta1VirtualMachineSnapshotListFromJSON(json: any): V1beta1Vir
     return V1beta1VirtualMachineSnapshotListFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineSnapshotListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshotList {
+export function V1beta1VirtualMachineSnapshotListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshotList {
     if (json == null) {
         return json;
     }
@@ -90,7 +90,7 @@ export function V1beta1VirtualMachineSnapshotListToJSON(json: any): V1beta1Virtu
     return V1beta1VirtualMachineSnapshotListToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineSnapshotListToJSONTyped(value?: V1beta1VirtualMachineSnapshotList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineSnapshotListToJSONTyped(value?: V1beta1VirtualMachineSnapshotList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1alpha1Selectors } from './V1alpha1Selectors';
+import { mapValues } from '../runtime.js';
+import type { V1alpha1Selectors } from './V1alpha1Selectors.js';
 import {
     V1alpha1SelectorsFromJSON,
     V1alpha1SelectorsFromJSONTyped,
     V1alpha1SelectorsToJSON,
     V1alpha1SelectorsToJSONTyped,
-} from './V1alpha1Selectors';
+} from './V1alpha1Selectors.js';
 
 /**
  * 
@@ -107,7 +107,7 @@ export function V1alpha1MigrationPolicySpecFromJSON(json: any): V1alpha1Migratio
     return V1alpha1MigrationPolicySpecFromJSONTyped(json, false);
 }
 
-export function V1alpha1MigrationPolicySpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1MigrationPolicySpec {
+export function V1alpha1MigrationPolicySpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1MigrationPolicySpec {
     if (json == null) {
         return json;
     }
@@ -125,7 +125,7 @@ export function V1alpha1MigrationPolicySpecToJSON(json: any): V1alpha1MigrationP
     return V1alpha1MigrationPolicySpecToJSONTyped(json, false);
 }
 
-export function V1alpha1MigrationPolicySpecToJSONTyped(value?: V1alpha1MigrationPolicySpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1alpha1MigrationPolicySpecToJSONTyped(value?: V1alpha1MigrationPolicySpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

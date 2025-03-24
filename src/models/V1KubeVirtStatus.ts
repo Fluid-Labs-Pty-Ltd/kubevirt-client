@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1GenerationStatus } from './V1GenerationStatus';
+import { mapValues } from '../runtime.js';
+import type { V1GenerationStatus } from './V1GenerationStatus.js';
 import {
     V1GenerationStatusFromJSON,
     V1GenerationStatusFromJSONTyped,
     V1GenerationStatusToJSON,
     V1GenerationStatusToJSONTyped,
-} from './V1GenerationStatus';
-import type { V1KubeVirtCondition } from './V1KubeVirtCondition';
+} from './V1GenerationStatus.js';
+import type { V1KubeVirtCondition } from './V1KubeVirtCondition.js';
 import {
     V1KubeVirtConditionFromJSON,
     V1KubeVirtConditionFromJSONTyped,
     V1KubeVirtConditionToJSON,
     V1KubeVirtConditionToJSONTyped,
-} from './V1KubeVirtCondition';
+} from './V1KubeVirtCondition.js';
 
 /**
  * KubeVirtStatus represents information pertaining to a KubeVirt deployment.
@@ -137,7 +137,7 @@ export function V1KubeVirtStatusFromJSON(json: any): V1KubeVirtStatus {
     return V1KubeVirtStatusFromJSONTyped(json, false);
 }
 
-export function V1KubeVirtStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtStatus {
+export function V1KubeVirtStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtStatus {
     if (json == null) {
         return json;
     }
@@ -165,7 +165,7 @@ export function V1KubeVirtStatusToJSON(json: any): V1KubeVirtStatus {
     return V1KubeVirtStatusToJSONTyped(json, false);
 }
 
-export function V1KubeVirtStatusToJSONTyped(value?: V1KubeVirtStatus | null, _ignoreDiscriminator: boolean = false): any {
+export function V1KubeVirtStatusToJSONTyped(value?: V1KubeVirtStatus | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

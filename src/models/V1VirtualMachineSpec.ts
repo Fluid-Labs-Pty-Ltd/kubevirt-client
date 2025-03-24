@@ -12,35 +12,35 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1PreferenceMatcher } from './V1PreferenceMatcher';
+import { mapValues } from '../runtime.js';
+import type { V1PreferenceMatcher } from './V1PreferenceMatcher.js';
 import {
     V1PreferenceMatcherFromJSON,
     V1PreferenceMatcherFromJSONTyped,
     V1PreferenceMatcherToJSON,
     V1PreferenceMatcherToJSONTyped,
-} from './V1PreferenceMatcher';
-import type { V1DataVolumeTemplateSpec } from './V1DataVolumeTemplateSpec';
+} from './V1PreferenceMatcher.js';
+import type { V1DataVolumeTemplateSpec } from './V1DataVolumeTemplateSpec.js';
 import {
     V1DataVolumeTemplateSpecFromJSON,
     V1DataVolumeTemplateSpecFromJSONTyped,
     V1DataVolumeTemplateSpecToJSON,
     V1DataVolumeTemplateSpecToJSONTyped,
-} from './V1DataVolumeTemplateSpec';
-import type { V1InstancetypeMatcher } from './V1InstancetypeMatcher';
+} from './V1DataVolumeTemplateSpec.js';
+import type { V1InstancetypeMatcher } from './V1InstancetypeMatcher.js';
 import {
     V1InstancetypeMatcherFromJSON,
     V1InstancetypeMatcherFromJSONTyped,
     V1InstancetypeMatcherToJSON,
     V1InstancetypeMatcherToJSONTyped,
-} from './V1InstancetypeMatcher';
-import type { V1VirtualMachineInstanceTemplateSpec } from './V1VirtualMachineInstanceTemplateSpec';
+} from './V1InstancetypeMatcher.js';
+import type { V1VirtualMachineInstanceTemplateSpec } from './V1VirtualMachineInstanceTemplateSpec.js';
 import {
     V1VirtualMachineInstanceTemplateSpecFromJSON,
     V1VirtualMachineInstanceTemplateSpecFromJSONTyped,
     V1VirtualMachineInstanceTemplateSpecToJSON,
     V1VirtualMachineInstanceTemplateSpecToJSONTyped,
-} from './V1VirtualMachineInstanceTemplateSpec';
+} from './V1VirtualMachineInstanceTemplateSpec.js';
 
 /**
  * VirtualMachineSpec describes how the proper VirtualMachine should look like
@@ -104,7 +104,7 @@ export function V1VirtualMachineSpecFromJSON(json: any): V1VirtualMachineSpec {
     return V1VirtualMachineSpecFromJSONTyped(json, false);
 }
 
-export function V1VirtualMachineSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1VirtualMachineSpec {
+export function V1VirtualMachineSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1VirtualMachineSpec {
     if (json == null) {
         return json;
     }
@@ -124,7 +124,7 @@ export function V1VirtualMachineSpecToJSON(json: any): V1VirtualMachineSpec {
     return V1VirtualMachineSpecToJSONTyped(json, false);
 }
 
-export function V1VirtualMachineSpecToJSONTyped(value?: V1VirtualMachineSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1VirtualMachineSpecToJSONTyped(value?: V1VirtualMachineSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

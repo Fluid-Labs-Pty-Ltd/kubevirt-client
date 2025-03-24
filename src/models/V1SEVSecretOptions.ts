@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * SEVSecretOptions is used to provide a secret for a running guest.
  * @export
@@ -44,7 +44,7 @@ export function V1SEVSecretOptionsFromJSON(json: any): V1SEVSecretOptions {
     return V1SEVSecretOptionsFromJSONTyped(json, false);
 }
 
-export function V1SEVSecretOptionsFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SEVSecretOptions {
+export function V1SEVSecretOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SEVSecretOptions {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1SEVSecretOptionsToJSON(json: any): V1SEVSecretOptions {
     return V1SEVSecretOptionsToJSONTyped(json, false);
 }
 
-export function V1SEVSecretOptionsToJSONTyped(value?: V1SEVSecretOptions | null, _ignoreDiscriminator: boolean = false): any {
+export function V1SEVSecretOptionsToJSONTyped(value?: V1SEVSecretOptions | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

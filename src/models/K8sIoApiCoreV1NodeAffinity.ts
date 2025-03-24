@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1NodeSelector } from './K8sIoApiCoreV1NodeSelector';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1NodeSelector } from './K8sIoApiCoreV1NodeSelector.js';
 import {
     K8sIoApiCoreV1NodeSelectorFromJSON,
     K8sIoApiCoreV1NodeSelectorFromJSONTyped,
     K8sIoApiCoreV1NodeSelectorToJSON,
     K8sIoApiCoreV1NodeSelectorToJSONTyped,
-} from './K8sIoApiCoreV1NodeSelector';
-import type { K8sIoApiCoreV1PreferredSchedulingTerm } from './K8sIoApiCoreV1PreferredSchedulingTerm';
+} from './K8sIoApiCoreV1NodeSelector.js';
+import type { K8sIoApiCoreV1PreferredSchedulingTerm } from './K8sIoApiCoreV1PreferredSchedulingTerm.js';
 import {
     K8sIoApiCoreV1PreferredSchedulingTermFromJSON,
     K8sIoApiCoreV1PreferredSchedulingTermFromJSONTyped,
     K8sIoApiCoreV1PreferredSchedulingTermToJSON,
     K8sIoApiCoreV1PreferredSchedulingTermToJSONTyped,
-} from './K8sIoApiCoreV1PreferredSchedulingTerm';
+} from './K8sIoApiCoreV1PreferredSchedulingTerm.js';
 
 /**
  * Node affinity is a group of node affinity scheduling rules.
@@ -59,7 +59,7 @@ export function K8sIoApiCoreV1NodeAffinityFromJSON(json: any): K8sIoApiCoreV1Nod
     return K8sIoApiCoreV1NodeAffinityFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1NodeAffinityFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1NodeAffinity {
+export function K8sIoApiCoreV1NodeAffinityFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1NodeAffinity {
     if (json == null) {
         return json;
     }
@@ -74,7 +74,7 @@ export function K8sIoApiCoreV1NodeAffinityToJSON(json: any): K8sIoApiCoreV1NodeA
     return K8sIoApiCoreV1NodeAffinityToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1NodeAffinityToJSONTyped(value?: K8sIoApiCoreV1NodeAffinity | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1NodeAffinityToJSONTyped(value?: K8sIoApiCoreV1NodeAffinity | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

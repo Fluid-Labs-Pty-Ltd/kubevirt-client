@@ -12,126 +12,126 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1ArchConfiguration } from './V1ArchConfiguration';
+import { mapValues } from '../runtime.js';
+import type { V1ArchConfiguration } from './V1ArchConfiguration.js';
 import {
     V1ArchConfigurationFromJSON,
     V1ArchConfigurationFromJSONTyped,
     V1ArchConfigurationToJSON,
     V1ArchConfigurationToJSONTyped,
-} from './V1ArchConfiguration';
-import type { V1KSMConfiguration } from './V1KSMConfiguration';
+} from './V1ArchConfiguration.js';
+import type { V1KSMConfiguration } from './V1KSMConfiguration.js';
 import {
     V1KSMConfigurationFromJSON,
     V1KSMConfigurationFromJSONTyped,
     V1KSMConfigurationToJSON,
     V1KSMConfigurationToJSONTyped,
-} from './V1KSMConfiguration';
-import type { V1SupportContainerResources } from './V1SupportContainerResources';
+} from './V1KSMConfiguration.js';
+import type { V1SupportContainerResources } from './V1SupportContainerResources.js';
 import {
     V1SupportContainerResourcesFromJSON,
     V1SupportContainerResourcesFromJSONTyped,
     V1SupportContainerResourcesToJSON,
     V1SupportContainerResourcesToJSONTyped,
-} from './V1SupportContainerResources';
-import type { V1NetworkConfiguration } from './V1NetworkConfiguration';
+} from './V1SupportContainerResources.js';
+import type { V1NetworkConfiguration } from './V1NetworkConfiguration.js';
 import {
     V1NetworkConfigurationFromJSON,
     V1NetworkConfigurationFromJSONTyped,
     V1NetworkConfigurationToJSON,
     V1NetworkConfigurationToJSONTyped,
-} from './V1NetworkConfiguration';
-import type { V1SMBiosConfiguration } from './V1SMBiosConfiguration';
+} from './V1NetworkConfiguration.js';
+import type { V1SMBiosConfiguration } from './V1SMBiosConfiguration.js';
 import {
     V1SMBiosConfigurationFromJSON,
     V1SMBiosConfigurationFromJSONTyped,
     V1SMBiosConfigurationToJSON,
     V1SMBiosConfigurationToJSONTyped,
-} from './V1SMBiosConfiguration';
-import type { V1CommonInstancetypesDeployment } from './V1CommonInstancetypesDeployment';
+} from './V1SMBiosConfiguration.js';
+import type { V1CommonInstancetypesDeployment } from './V1CommonInstancetypesDeployment.js';
 import {
     V1CommonInstancetypesDeploymentFromJSON,
     V1CommonInstancetypesDeploymentFromJSONTyped,
     V1CommonInstancetypesDeploymentToJSON,
     V1CommonInstancetypesDeploymentToJSONTyped,
-} from './V1CommonInstancetypesDeployment';
-import type { V1VirtualMachineOptions } from './V1VirtualMachineOptions';
+} from './V1CommonInstancetypesDeployment.js';
+import type { V1VirtualMachineOptions } from './V1VirtualMachineOptions.js';
 import {
     V1VirtualMachineOptionsFromJSON,
     V1VirtualMachineOptionsFromJSONTyped,
     V1VirtualMachineOptionsToJSON,
     V1VirtualMachineOptionsToJSONTyped,
-} from './V1VirtualMachineOptions';
-import type { V1MigrationConfiguration } from './V1MigrationConfiguration';
+} from './V1VirtualMachineOptions.js';
+import type { V1MigrationConfiguration } from './V1MigrationConfiguration.js';
 import {
     V1MigrationConfigurationFromJSON,
     V1MigrationConfigurationFromJSONTyped,
     V1MigrationConfigurationToJSON,
     V1MigrationConfigurationToJSONTyped,
-} from './V1MigrationConfiguration';
-import type { V1ReloadableComponentConfiguration } from './V1ReloadableComponentConfiguration';
+} from './V1MigrationConfiguration.js';
+import type { V1ReloadableComponentConfiguration } from './V1ReloadableComponentConfiguration.js';
 import {
     V1ReloadableComponentConfigurationFromJSON,
     V1ReloadableComponentConfigurationFromJSONTyped,
     V1ReloadableComponentConfigurationToJSON,
     V1ReloadableComponentConfigurationToJSONTyped,
-} from './V1ReloadableComponentConfiguration';
-import type { V1TLSConfiguration } from './V1TLSConfiguration';
+} from './V1ReloadableComponentConfiguration.js';
+import type { V1TLSConfiguration } from './V1TLSConfiguration.js';
 import {
     V1TLSConfigurationFromJSON,
     V1TLSConfigurationFromJSONTyped,
     V1TLSConfigurationToJSON,
     V1TLSConfigurationToJSONTyped,
-} from './V1TLSConfiguration';
-import type { V1SeccompConfiguration } from './V1SeccompConfiguration';
+} from './V1TLSConfiguration.js';
+import type { V1SeccompConfiguration } from './V1SeccompConfiguration.js';
 import {
     V1SeccompConfigurationFromJSON,
     V1SeccompConfigurationFromJSONTyped,
     V1SeccompConfigurationToJSON,
     V1SeccompConfigurationToJSONTyped,
-} from './V1SeccompConfiguration';
-import type { V1DeveloperConfiguration } from './V1DeveloperConfiguration';
+} from './V1SeccompConfiguration.js';
+import type { V1DeveloperConfiguration } from './V1DeveloperConfiguration.js';
 import {
     V1DeveloperConfigurationFromJSON,
     V1DeveloperConfigurationFromJSONTyped,
     V1DeveloperConfigurationToJSON,
     V1DeveloperConfigurationToJSONTyped,
-} from './V1DeveloperConfiguration';
-import type { V1PermittedHostDevices } from './V1PermittedHostDevices';
+} from './V1DeveloperConfiguration.js';
+import type { V1PermittedHostDevices } from './V1PermittedHostDevices.js';
 import {
     V1PermittedHostDevicesFromJSON,
     V1PermittedHostDevicesFromJSONTyped,
     V1PermittedHostDevicesToJSON,
     V1PermittedHostDevicesToJSONTyped,
-} from './V1PermittedHostDevices';
-import type { V1LiveUpdateConfiguration } from './V1LiveUpdateConfiguration';
+} from './V1PermittedHostDevices.js';
+import type { V1LiveUpdateConfiguration } from './V1LiveUpdateConfiguration.js';
 import {
     V1LiveUpdateConfigurationFromJSON,
     V1LiveUpdateConfigurationFromJSONTyped,
     V1LiveUpdateConfigurationToJSON,
     V1LiveUpdateConfigurationToJSONTyped,
-} from './V1LiveUpdateConfiguration';
-import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+} from './V1LiveUpdateConfiguration.js';
+import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 import {
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
-import type { V1InstancetypeConfiguration } from './V1InstancetypeConfiguration';
+} from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
+import type { V1InstancetypeConfiguration } from './V1InstancetypeConfiguration.js';
 import {
     V1InstancetypeConfigurationFromJSON,
     V1InstancetypeConfigurationFromJSONTyped,
     V1InstancetypeConfigurationToJSON,
     V1InstancetypeConfigurationToJSONTyped,
-} from './V1InstancetypeConfiguration';
-import type { V1MediatedDevicesConfiguration } from './V1MediatedDevicesConfiguration';
+} from './V1InstancetypeConfiguration.js';
+import type { V1MediatedDevicesConfiguration } from './V1MediatedDevicesConfiguration.js';
 import {
     V1MediatedDevicesConfigurationFromJSON,
     V1MediatedDevicesConfigurationFromJSONTyped,
     V1MediatedDevicesConfigurationToJSON,
     V1MediatedDevicesConfigurationToJSONTyped,
-} from './V1MediatedDevicesConfiguration';
+} from './V1MediatedDevicesConfiguration.js';
 
 /**
  * KubeVirtConfiguration holds all kubevirt configurations
@@ -425,7 +425,7 @@ export function V1KubeVirtConfigurationFromJSON(json: any): V1KubeVirtConfigurat
     return V1KubeVirtConfigurationFromJSONTyped(json, false);
 }
 
-export function V1KubeVirtConfigurationFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtConfiguration {
+export function V1KubeVirtConfigurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtConfiguration {
     if (json == null) {
         return json;
     }
@@ -475,7 +475,7 @@ export function V1KubeVirtConfigurationToJSON(json: any): V1KubeVirtConfiguratio
     return V1KubeVirtConfigurationToJSONTyped(json, false);
 }
 
-export function V1KubeVirtConfigurationToJSONTyped(value?: V1KubeVirtConfiguration | null, _ignoreDiscriminator: boolean = false): any {
+export function V1KubeVirtConfigurationToJSONTyped(value?: V1KubeVirtConfiguration | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

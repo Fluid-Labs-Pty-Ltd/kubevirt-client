@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * DataVolumeSourceHTTP can be either an http or https endpoint, with an optional basic auth user name and password, and an optional configmap containing additional CAs
  * @export
@@ -63,7 +63,7 @@ export function V1beta1DataVolumeSourceHTTPFromJSON(json: any): V1beta1DataVolum
     return V1beta1DataVolumeSourceHTTPFromJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceHTTPFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSourceHTTP {
+export function V1beta1DataVolumeSourceHTTPFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSourceHTTP {
     if (json == null) {
         return json;
     }
@@ -81,7 +81,7 @@ export function V1beta1DataVolumeSourceHTTPToJSON(json: any): V1beta1DataVolumeS
     return V1beta1DataVolumeSourceHTTPToJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourceHTTPToJSONTyped(value?: V1beta1DataVolumeSourceHTTP | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1DataVolumeSourceHTTPToJSONTyped(value?: V1beta1DataVolumeSourceHTTP | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

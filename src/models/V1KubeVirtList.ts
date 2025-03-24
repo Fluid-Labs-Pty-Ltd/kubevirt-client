@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1KubeVirt } from './V1KubeVirt';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1KubeVirt } from './V1KubeVirt.js';
 import {
     V1KubeVirtFromJSON,
     V1KubeVirtFromJSONTyped,
     V1KubeVirtToJSON,
     V1KubeVirtToJSONTyped,
-} from './V1KubeVirt';
+} from './V1KubeVirt.js';
 
 /**
  * KubeVirtList is a list of KubeVirts
@@ -72,7 +72,7 @@ export function V1KubeVirtListFromJSON(json: any): V1KubeVirtList {
     return V1KubeVirtListFromJSONTyped(json, false);
 }
 
-export function V1KubeVirtListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtList {
+export function V1KubeVirtListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1KubeVirtListToJSON(json: any): V1KubeVirtList {
     return V1KubeVirtListToJSONTyped(json, false);
 }
 
-export function V1KubeVirtListToJSONTyped(value?: V1KubeVirtList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1KubeVirtListToJSONTyped(value?: V1KubeVirtList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

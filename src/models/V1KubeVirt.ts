@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1KubeVirtSpec } from './V1KubeVirtSpec';
+import { mapValues } from '../runtime.js';
+import type { V1KubeVirtSpec } from './V1KubeVirtSpec.js';
 import {
     V1KubeVirtSpecFromJSON,
     V1KubeVirtSpecFromJSONTyped,
     V1KubeVirtSpecToJSON,
     V1KubeVirtSpecToJSONTyped,
-} from './V1KubeVirtSpec';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './V1KubeVirtSpec.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
-import type { V1KubeVirtStatus } from './V1KubeVirtStatus';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
+import type { V1KubeVirtStatus } from './V1KubeVirtStatus.js';
 import {
     V1KubeVirtStatusFromJSON,
     V1KubeVirtStatusFromJSONTyped,
     V1KubeVirtStatusToJSON,
     V1KubeVirtStatusToJSONTyped,
-} from './V1KubeVirtStatus';
+} from './V1KubeVirtStatus.js';
 
 /**
  * KubeVirt represents the object deploying all KubeVirt resources
@@ -85,7 +85,7 @@ export function V1KubeVirtFromJSON(json: any): V1KubeVirt {
     return V1KubeVirtFromJSONTyped(json, false);
 }
 
-export function V1KubeVirtFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirt {
+export function V1KubeVirtFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirt {
     if (json == null) {
         return json;
     }
@@ -103,7 +103,7 @@ export function V1KubeVirtToJSON(json: any): V1KubeVirt {
     return V1KubeVirtToJSONTyped(json, false);
 }
 
-export function V1KubeVirtToJSONTyped(value?: V1KubeVirt | null, _ignoreDiscriminator: boolean = false): any {
+export function V1KubeVirtToJSONTyped(value?: V1KubeVirt | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

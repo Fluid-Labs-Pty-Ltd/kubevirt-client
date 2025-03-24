@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1PciHostDevice } from './V1PciHostDevice';
+import { mapValues } from '../runtime.js';
+import type { V1PciHostDevice } from './V1PciHostDevice.js';
 import {
     V1PciHostDeviceFromJSON,
     V1PciHostDeviceFromJSONTyped,
     V1PciHostDeviceToJSON,
     V1PciHostDeviceToJSONTyped,
-} from './V1PciHostDevice';
-import type { V1USBHostDevice } from './V1USBHostDevice';
+} from './V1PciHostDevice.js';
+import type { V1USBHostDevice } from './V1USBHostDevice.js';
 import {
     V1USBHostDeviceFromJSON,
     V1USBHostDeviceFromJSONTyped,
     V1USBHostDeviceToJSON,
     V1USBHostDeviceToJSONTyped,
-} from './V1USBHostDevice';
-import type { V1MediatedHostDevice } from './V1MediatedHostDevice';
+} from './V1USBHostDevice.js';
+import type { V1MediatedHostDevice } from './V1MediatedHostDevice.js';
 import {
     V1MediatedHostDeviceFromJSON,
     V1MediatedHostDeviceFromJSONTyped,
     V1MediatedHostDeviceToJSON,
     V1MediatedHostDeviceToJSONTyped,
-} from './V1MediatedHostDevice';
+} from './V1MediatedHostDevice.js';
 
 /**
  * PermittedHostDevices holds information about devices allowed for passthrough
@@ -72,7 +72,7 @@ export function V1PermittedHostDevicesFromJSON(json: any): V1PermittedHostDevice
     return V1PermittedHostDevicesFromJSONTyped(json, false);
 }
 
-export function V1PermittedHostDevicesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PermittedHostDevices {
+export function V1PermittedHostDevicesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PermittedHostDevices {
     if (json == null) {
         return json;
     }
@@ -88,7 +88,7 @@ export function V1PermittedHostDevicesToJSON(json: any): V1PermittedHostDevices 
     return V1PermittedHostDevicesToJSONTyped(json, false);
 }
 
-export function V1PermittedHostDevicesToJSONTyped(value?: V1PermittedHostDevices | null, _ignoreDiscriminator: boolean = false): any {
+export function V1PermittedHostDevicesToJSONTyped(value?: V1PermittedHostDevices | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

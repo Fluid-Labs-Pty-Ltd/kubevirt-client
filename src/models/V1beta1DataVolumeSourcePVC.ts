@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * DataVolumeSourcePVC provides the parameters to create a Data Volume from an existing PVC
  * @export
@@ -46,7 +46,7 @@ export function V1beta1DataVolumeSourcePVCFromJSON(json: any): V1beta1DataVolume
     return V1beta1DataVolumeSourcePVCFromJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourcePVCFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1DataVolumeSourcePVC {
+export function V1beta1DataVolumeSourcePVCFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1DataVolumeSourcePVC {
     if (json == null) {
         return json;
     }
@@ -61,7 +61,7 @@ export function V1beta1DataVolumeSourcePVCToJSON(json: any): V1beta1DataVolumeSo
     return V1beta1DataVolumeSourcePVCToJSONTyped(json, false);
 }
 
-export function V1beta1DataVolumeSourcePVCToJSONTyped(value?: V1beta1DataVolumeSourcePVC | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1DataVolumeSourcePVCToJSONTyped(value?: V1beta1DataVolumeSourcePVC | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

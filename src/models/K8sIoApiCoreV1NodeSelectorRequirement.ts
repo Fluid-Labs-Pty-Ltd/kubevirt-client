@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * A node selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
  * @export
@@ -75,7 +75,7 @@ export function K8sIoApiCoreV1NodeSelectorRequirementFromJSON(json: any): K8sIoA
     return K8sIoApiCoreV1NodeSelectorRequirementFromJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1NodeSelectorRequirementFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApiCoreV1NodeSelectorRequirement {
+export function K8sIoApiCoreV1NodeSelectorRequirementFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApiCoreV1NodeSelectorRequirement {
     if (json == null) {
         return json;
     }
@@ -91,7 +91,7 @@ export function K8sIoApiCoreV1NodeSelectorRequirementToJSON(json: any): K8sIoApi
     return K8sIoApiCoreV1NodeSelectorRequirementToJSONTyped(json, false);
 }
 
-export function K8sIoApiCoreV1NodeSelectorRequirementToJSONTyped(value?: K8sIoApiCoreV1NodeSelectorRequirement | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApiCoreV1NodeSelectorRequirementToJSONTyped(value?: K8sIoApiCoreV1NodeSelectorRequirement | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
@@ -51,7 +51,7 @@ export function V1MemoryDumpVolumeSourceFromJSON(json: any): V1MemoryDumpVolumeS
     return V1MemoryDumpVolumeSourceFromJSONTyped(json, false);
 }
 
-export function V1MemoryDumpVolumeSourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1MemoryDumpVolumeSource {
+export function V1MemoryDumpVolumeSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1MemoryDumpVolumeSource {
     if (json == null) {
         return json;
     }
@@ -67,7 +67,7 @@ export function V1MemoryDumpVolumeSourceToJSON(json: any): V1MemoryDumpVolumeSou
     return V1MemoryDumpVolumeSourceToJSONTyped(json, false);
 }
 
-export function V1MemoryDumpVolumeSourceToJSONTyped(value?: V1MemoryDumpVolumeSource | null, _ignoreDiscriminator: boolean = false): any {
+export function V1MemoryDumpVolumeSourceToJSONTyped(value?: V1MemoryDumpVolumeSource | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

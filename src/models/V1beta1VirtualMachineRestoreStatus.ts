@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1beta1VolumeRestore } from './V1beta1VolumeRestore';
+import { mapValues } from '../runtime.js';
+import type { V1beta1VolumeRestore } from './V1beta1VolumeRestore.js';
 import {
     V1beta1VolumeRestoreFromJSON,
     V1beta1VolumeRestoreFromJSONTyped,
     V1beta1VolumeRestoreToJSON,
     V1beta1VolumeRestoreToJSONTyped,
-} from './V1beta1VolumeRestore';
-import type { V1beta1Condition } from './V1beta1Condition';
+} from './V1beta1VolumeRestore.js';
+import type { V1beta1Condition } from './V1beta1Condition.js';
 import {
     V1beta1ConditionFromJSON,
     V1beta1ConditionFromJSONTyped,
     V1beta1ConditionToJSON,
     V1beta1ConditionToJSONTyped,
-} from './V1beta1Condition';
+} from './V1beta1Condition.js';
 
 /**
  * VirtualMachineRestoreStatus is the spec for a VirtualMachineRestoreresource
@@ -77,7 +77,7 @@ export function V1beta1VirtualMachineRestoreStatusFromJSON(json: any): V1beta1Vi
     return V1beta1VirtualMachineRestoreStatusFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineRestoreStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineRestoreStatus {
+export function V1beta1VirtualMachineRestoreStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineRestoreStatus {
     if (json == null) {
         return json;
     }
@@ -95,7 +95,7 @@ export function V1beta1VirtualMachineRestoreStatusToJSON(json: any): V1beta1Virt
     return V1beta1VirtualMachineRestoreStatusToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineRestoreStatusToJSONTyped(value?: V1beta1VirtualMachineRestoreStatus | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineRestoreStatusToJSONTyped(value?: V1beta1VirtualMachineRestoreStatus | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

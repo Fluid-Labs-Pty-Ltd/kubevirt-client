@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * Represents the stock pod network interface.
  * @export
@@ -44,7 +44,7 @@ export function V1PodNetworkFromJSON(json: any): V1PodNetwork {
     return V1PodNetworkFromJSONTyped(json, false);
 }
 
-export function V1PodNetworkFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PodNetwork {
+export function V1PodNetworkFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PodNetwork {
     if (json == null) {
         return json;
     }
@@ -59,7 +59,7 @@ export function V1PodNetworkToJSON(json: any): V1PodNetwork {
     return V1PodNetworkToJSONTyped(json, false);
 }
 
-export function V1PodNetworkToJSONTyped(value?: V1PodNetwork | null, _ignoreDiscriminator: boolean = false): any {
+export function V1PodNetworkToJSONTyped(value?: V1PodNetwork | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

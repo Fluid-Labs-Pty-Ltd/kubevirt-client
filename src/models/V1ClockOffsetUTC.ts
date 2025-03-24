@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * UTC sets the guest clock to UTC on each boot.
  * @export
@@ -38,7 +38,7 @@ export function V1ClockOffsetUTCFromJSON(json: any): V1ClockOffsetUTC {
     return V1ClockOffsetUTCFromJSONTyped(json, false);
 }
 
-export function V1ClockOffsetUTCFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1ClockOffsetUTC {
+export function V1ClockOffsetUTCFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1ClockOffsetUTC {
     if (json == null) {
         return json;
     }
@@ -52,7 +52,7 @@ export function V1ClockOffsetUTCToJSON(json: any): V1ClockOffsetUTC {
     return V1ClockOffsetUTCToJSONTyped(json, false);
 }
 
-export function V1ClockOffsetUTCToJSONTyped(value?: V1ClockOffsetUTC | null, _ignoreDiscriminator: boolean = false): any {
+export function V1ClockOffsetUTCToJSONTyped(value?: V1ClockOffsetUTC | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

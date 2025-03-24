@@ -12,35 +12,35 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1ResourceRequirements } from './K8sIoApiCoreV1ResourceRequirements';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1ResourceRequirements } from './K8sIoApiCoreV1ResourceRequirements.js';
 import {
     K8sIoApiCoreV1ResourceRequirementsFromJSON,
     K8sIoApiCoreV1ResourceRequirementsFromJSONTyped,
     K8sIoApiCoreV1ResourceRequirementsToJSON,
     K8sIoApiCoreV1ResourceRequirementsToJSONTyped,
-} from './K8sIoApiCoreV1ResourceRequirements';
-import type { K8sIoApiCoreV1TypedObjectReference } from './K8sIoApiCoreV1TypedObjectReference';
+} from './K8sIoApiCoreV1ResourceRequirements.js';
+import type { K8sIoApiCoreV1TypedObjectReference } from './K8sIoApiCoreV1TypedObjectReference.js';
 import {
     K8sIoApiCoreV1TypedObjectReferenceFromJSON,
     K8sIoApiCoreV1TypedObjectReferenceFromJSONTyped,
     K8sIoApiCoreV1TypedObjectReferenceToJSON,
     K8sIoApiCoreV1TypedObjectReferenceToJSONTyped,
-} from './K8sIoApiCoreV1TypedObjectReference';
-import type { K8sIoApiCoreV1TypedLocalObjectReference } from './K8sIoApiCoreV1TypedLocalObjectReference';
+} from './K8sIoApiCoreV1TypedObjectReference.js';
+import type { K8sIoApiCoreV1TypedLocalObjectReference } from './K8sIoApiCoreV1TypedLocalObjectReference.js';
 import {
     K8sIoApiCoreV1TypedLocalObjectReferenceFromJSON,
     K8sIoApiCoreV1TypedLocalObjectReferenceFromJSONTyped,
     K8sIoApiCoreV1TypedLocalObjectReferenceToJSON,
     K8sIoApiCoreV1TypedLocalObjectReferenceToJSONTyped,
-} from './K8sIoApiCoreV1TypedLocalObjectReference';
-import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+} from './K8sIoApiCoreV1TypedLocalObjectReference.js';
+import type { K8sIoApimachineryPkgApisMetaV1LabelSelector } from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 import {
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSON,
     K8sIoApimachineryPkgApisMetaV1LabelSelectorToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1LabelSelector';
+} from './K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
 
 /**
  * StorageSpec defines the Storage type specification
@@ -135,7 +135,7 @@ export function V1beta1StorageSpecFromJSON(json: any): V1beta1StorageSpec {
     return V1beta1StorageSpecFromJSONTyped(json, false);
 }
 
-export function V1beta1StorageSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1StorageSpec {
+export function V1beta1StorageSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1StorageSpec {
     if (json == null) {
         return json;
     }
@@ -156,7 +156,7 @@ export function V1beta1StorageSpecToJSON(json: any): V1beta1StorageSpec {
     return V1beta1StorageSpecToJSONTyped(json, false);
 }
 
-export function V1beta1StorageSpecToJSONTyped(value?: V1beta1StorageSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1StorageSpecToJSONTyped(value?: V1beta1StorageSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

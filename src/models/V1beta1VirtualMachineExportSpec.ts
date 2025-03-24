@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApiCoreV1TypedLocalObjectReference } from './K8sIoApiCoreV1TypedLocalObjectReference';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApiCoreV1TypedLocalObjectReference } from './K8sIoApiCoreV1TypedLocalObjectReference.js';
 import {
     K8sIoApiCoreV1TypedLocalObjectReferenceFromJSON,
     K8sIoApiCoreV1TypedLocalObjectReferenceFromJSONTyped,
     K8sIoApiCoreV1TypedLocalObjectReferenceToJSON,
     K8sIoApiCoreV1TypedLocalObjectReferenceToJSONTyped,
-} from './K8sIoApiCoreV1TypedLocalObjectReference';
+} from './K8sIoApiCoreV1TypedLocalObjectReference.js';
 
 /**
  * VirtualMachineExportSpec is the spec for a VirtualMachineExport resource
@@ -59,7 +59,7 @@ export function V1beta1VirtualMachineExportSpecFromJSON(json: any): V1beta1Virtu
     return V1beta1VirtualMachineExportSpecFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineExportSpec {
+export function V1beta1VirtualMachineExportSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineExportSpec {
     if (json == null) {
         return json;
     }
@@ -75,7 +75,7 @@ export function V1beta1VirtualMachineExportSpecToJSON(json: any): V1beta1Virtual
     return V1beta1VirtualMachineExportSpecToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineExportSpecToJSONTyped(value?: V1beta1VirtualMachineExportSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineExportSpecToJSONTyped(value?: V1beta1VirtualMachineExportSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

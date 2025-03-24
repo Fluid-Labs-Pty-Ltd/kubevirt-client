@@ -12,49 +12,49 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1ComponentConfig } from './V1ComponentConfig';
+import { mapValues } from '../runtime.js';
+import type { V1ComponentConfig } from './V1ComponentConfig.js';
 import {
     V1ComponentConfigFromJSON,
     V1ComponentConfigFromJSONTyped,
     V1ComponentConfigToJSON,
     V1ComponentConfigToJSONTyped,
-} from './V1ComponentConfig';
-import type { V1KubeVirtConfiguration } from './V1KubeVirtConfiguration';
+} from './V1ComponentConfig.js';
+import type { V1KubeVirtConfiguration } from './V1KubeVirtConfiguration.js';
 import {
     V1KubeVirtConfigurationFromJSON,
     V1KubeVirtConfigurationFromJSONTyped,
     V1KubeVirtConfigurationToJSON,
     V1KubeVirtConfigurationToJSONTyped,
-} from './V1KubeVirtConfiguration';
-import type { V1KubeVirtWorkloadUpdateStrategy } from './V1KubeVirtWorkloadUpdateStrategy';
+} from './V1KubeVirtConfiguration.js';
+import type { V1KubeVirtWorkloadUpdateStrategy } from './V1KubeVirtWorkloadUpdateStrategy.js';
 import {
     V1KubeVirtWorkloadUpdateStrategyFromJSON,
     V1KubeVirtWorkloadUpdateStrategyFromJSONTyped,
     V1KubeVirtWorkloadUpdateStrategyToJSON,
     V1KubeVirtWorkloadUpdateStrategyToJSONTyped,
-} from './V1KubeVirtWorkloadUpdateStrategy';
-import type { K8sIoApiCoreV1LocalObjectReference } from './K8sIoApiCoreV1LocalObjectReference';
+} from './V1KubeVirtWorkloadUpdateStrategy.js';
+import type { K8sIoApiCoreV1LocalObjectReference } from './K8sIoApiCoreV1LocalObjectReference.js';
 import {
     K8sIoApiCoreV1LocalObjectReferenceFromJSON,
     K8sIoApiCoreV1LocalObjectReferenceFromJSONTyped,
     K8sIoApiCoreV1LocalObjectReferenceToJSON,
     K8sIoApiCoreV1LocalObjectReferenceToJSONTyped,
-} from './K8sIoApiCoreV1LocalObjectReference';
-import type { V1CustomizeComponents } from './V1CustomizeComponents';
+} from './K8sIoApiCoreV1LocalObjectReference.js';
+import type { V1CustomizeComponents } from './V1CustomizeComponents.js';
 import {
     V1CustomizeComponentsFromJSON,
     V1CustomizeComponentsFromJSONTyped,
     V1CustomizeComponentsToJSON,
     V1CustomizeComponentsToJSONTyped,
-} from './V1CustomizeComponents';
-import type { V1KubeVirtCertificateRotateStrategy } from './V1KubeVirtCertificateRotateStrategy';
+} from './V1CustomizeComponents.js';
+import type { V1KubeVirtCertificateRotateStrategy } from './V1KubeVirtCertificateRotateStrategy.js';
 import {
     V1KubeVirtCertificateRotateStrategyFromJSON,
     V1KubeVirtCertificateRotateStrategyFromJSONTyped,
     V1KubeVirtCertificateRotateStrategyToJSON,
     V1KubeVirtCertificateRotateStrategyToJSONTyped,
-} from './V1KubeVirtCertificateRotateStrategy';
+} from './V1KubeVirtCertificateRotateStrategy.js';
 
 /**
  * 
@@ -196,7 +196,7 @@ export function V1KubeVirtSpecFromJSON(json: any): V1KubeVirtSpec {
     return V1KubeVirtSpecFromJSONTyped(json, false);
 }
 
-export function V1KubeVirtSpecFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1KubeVirtSpec {
+export function V1KubeVirtSpecFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1KubeVirtSpec {
     if (json == null) {
         return json;
     }
@@ -226,7 +226,7 @@ export function V1KubeVirtSpecToJSON(json: any): V1KubeVirtSpec {
     return V1KubeVirtSpecToJSONTyped(json, false);
 }
 
-export function V1KubeVirtSpecToJSONTyped(value?: V1KubeVirtSpec | null, _ignoreDiscriminator: boolean = false): any {
+export function V1KubeVirtSpecToJSONTyped(value?: V1KubeVirtSpec | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

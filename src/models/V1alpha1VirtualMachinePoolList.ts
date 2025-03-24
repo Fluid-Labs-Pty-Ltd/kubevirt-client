@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta';
+import { mapValues } from '../runtime.js';
+import type { K8sIoApimachineryPkgApisMetaV1ListMeta } from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ListMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ListMeta';
-import type { V1alpha1VirtualMachinePool } from './V1alpha1VirtualMachinePool';
+} from './K8sIoApimachineryPkgApisMetaV1ListMeta.js';
+import type { V1alpha1VirtualMachinePool } from './V1alpha1VirtualMachinePool.js';
 import {
     V1alpha1VirtualMachinePoolFromJSON,
     V1alpha1VirtualMachinePoolFromJSONTyped,
     V1alpha1VirtualMachinePoolToJSON,
     V1alpha1VirtualMachinePoolToJSONTyped,
-} from './V1alpha1VirtualMachinePool';
+} from './V1alpha1VirtualMachinePool.js';
 
 /**
  * VirtualMachinePoolList is a list of VirtualMachinePool resources.
@@ -72,7 +72,7 @@ export function V1alpha1VirtualMachinePoolListFromJSON(json: any): V1alpha1Virtu
     return V1alpha1VirtualMachinePoolListFromJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachinePoolListFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1alpha1VirtualMachinePoolList {
+export function V1alpha1VirtualMachinePoolListFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1alpha1VirtualMachinePoolList {
     if (json == null) {
         return json;
     }
@@ -89,7 +89,7 @@ export function V1alpha1VirtualMachinePoolListToJSON(json: any): V1alpha1Virtual
     return V1alpha1VirtualMachinePoolListToJSONTyped(json, false);
 }
 
-export function V1alpha1VirtualMachinePoolListToJSONTyped(value?: V1alpha1VirtualMachinePoolList | null, _ignoreDiscriminator: boolean = false): any {
+export function V1alpha1VirtualMachinePoolListToJSONTyped(value?: V1alpha1VirtualMachinePoolList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

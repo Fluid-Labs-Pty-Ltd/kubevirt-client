@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * APIResource specifies the name of a resource and whether it is namespaced.
  * @export
@@ -97,7 +97,7 @@ export function K8sIoApimachineryPkgApisMetaV1APIResourceFromJSON(json: any): K8
     return K8sIoApimachineryPkgApisMetaV1APIResourceFromJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1APIResourceFromJSONTyped(json: any, _ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1APIResource {
+export function K8sIoApimachineryPkgApisMetaV1APIResourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): K8sIoApimachineryPkgApisMetaV1APIResource {
     if (json == null) {
         return json;
     }
@@ -120,7 +120,7 @@ export function K8sIoApimachineryPkgApisMetaV1APIResourceToJSON(json: any): K8sI
     return K8sIoApimachineryPkgApisMetaV1APIResourceToJSONTyped(json, false);
 }
 
-export function K8sIoApimachineryPkgApisMetaV1APIResourceToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1APIResource | null, _ignoreDiscriminator: boolean = false): any {
+export function K8sIoApimachineryPkgApisMetaV1APIResourceToJSONTyped(value?: K8sIoApimachineryPkgApisMetaV1APIResource | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,21 +12,21 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1Timer } from './V1Timer';
+import { mapValues } from '../runtime.js';
+import type { V1Timer } from './V1Timer.js';
 import {
     V1TimerFromJSON,
     V1TimerFromJSONTyped,
     V1TimerToJSON,
     V1TimerToJSONTyped,
-} from './V1Timer';
-import type { V1ClockOffsetUTC } from './V1ClockOffsetUTC';
+} from './V1Timer.js';
+import type { V1ClockOffsetUTC } from './V1ClockOffsetUTC.js';
 import {
     V1ClockOffsetUTCFromJSON,
     V1ClockOffsetUTCFromJSONTyped,
     V1ClockOffsetUTCToJSON,
     V1ClockOffsetUTCToJSONTyped,
-} from './V1ClockOffsetUTC';
+} from './V1ClockOffsetUTC.js';
 
 /**
  * Represents the clock and timers of a vmi.
@@ -65,7 +65,7 @@ export function V1ClockFromJSON(json: any): V1Clock {
     return V1ClockFromJSONTyped(json, false);
 }
 
-export function V1ClockFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1Clock {
+export function V1ClockFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1Clock {
     if (json == null) {
         return json;
     }
@@ -81,7 +81,7 @@ export function V1ClockToJSON(json: any): V1Clock {
     return V1ClockToJSONTyped(json, false);
 }
 
-export function V1ClockToJSONTyped(value?: V1Clock | null, _ignoreDiscriminator: boolean = false): any {
+export function V1ClockToJSONTyped(value?: V1Clock | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

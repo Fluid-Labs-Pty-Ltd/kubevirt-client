@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from '../runtime.js';
 /**
  * PluginBinding represents a binding implemented in a plugin.
  * @export
@@ -39,7 +39,7 @@ export function V1PluginBindingFromJSON(json: any): V1PluginBinding {
     return V1PluginBindingFromJSONTyped(json, false);
 }
 
-export function V1PluginBindingFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1PluginBinding {
+export function V1PluginBindingFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1PluginBinding {
     if (json == null) {
         return json;
     }
@@ -53,7 +53,7 @@ export function V1PluginBindingToJSON(json: any): V1PluginBinding {
     return V1PluginBindingToJSONTyped(json, false);
 }
 
-export function V1PluginBindingToJSONTyped(value?: V1PluginBinding | null, _ignoreDiscriminator: boolean = false): any {
+export function V1PluginBindingToJSONTyped(value?: V1PluginBinding | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

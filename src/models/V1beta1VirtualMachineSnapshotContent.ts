@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1beta1VirtualMachineSnapshotContentSpec } from './V1beta1VirtualMachineSnapshotContentSpec';
+import { mapValues } from '../runtime.js';
+import type { V1beta1VirtualMachineSnapshotContentSpec } from './V1beta1VirtualMachineSnapshotContentSpec.js';
 import {
     V1beta1VirtualMachineSnapshotContentSpecFromJSON,
     V1beta1VirtualMachineSnapshotContentSpecFromJSONTyped,
     V1beta1VirtualMachineSnapshotContentSpecToJSON,
     V1beta1VirtualMachineSnapshotContentSpecToJSONTyped,
-} from './V1beta1VirtualMachineSnapshotContentSpec';
-import type { V1beta1VirtualMachineSnapshotContentStatus } from './V1beta1VirtualMachineSnapshotContentStatus';
+} from './V1beta1VirtualMachineSnapshotContentSpec.js';
+import type { V1beta1VirtualMachineSnapshotContentStatus } from './V1beta1VirtualMachineSnapshotContentStatus.js';
 import {
     V1beta1VirtualMachineSnapshotContentStatusFromJSON,
     V1beta1VirtualMachineSnapshotContentStatusFromJSONTyped,
     V1beta1VirtualMachineSnapshotContentStatusToJSON,
     V1beta1VirtualMachineSnapshotContentStatusToJSONTyped,
-} from './V1beta1VirtualMachineSnapshotContentStatus';
-import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './V1beta1VirtualMachineSnapshotContentStatus.js';
+import type { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 import {
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaFromJSONTyped,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSON,
     K8sIoApimachineryPkgApisMetaV1ObjectMetaToJSONTyped,
-} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta';
+} from './K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
 
 /**
  * VirtualMachineSnapshotContent contains the snapshot data
@@ -85,7 +85,7 @@ export function V1beta1VirtualMachineSnapshotContentFromJSON(json: any): V1beta1
     return V1beta1VirtualMachineSnapshotContentFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineSnapshotContentFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshotContent {
+export function V1beta1VirtualMachineSnapshotContentFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshotContent {
     if (json == null) {
         return json;
     }
@@ -103,7 +103,7 @@ export function V1beta1VirtualMachineSnapshotContentToJSON(json: any): V1beta1Vi
     return V1beta1VirtualMachineSnapshotContentToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineSnapshotContentToJSONTyped(value?: V1beta1VirtualMachineSnapshotContent | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineSnapshotContentToJSONTyped(value?: V1beta1VirtualMachineSnapshotContent | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

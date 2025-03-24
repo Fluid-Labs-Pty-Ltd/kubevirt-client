@@ -12,28 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1beta1Error } from './V1beta1Error';
+import { mapValues } from '../runtime.js';
+import type { V1beta1Error } from './V1beta1Error.js';
 import {
     V1beta1ErrorFromJSON,
     V1beta1ErrorFromJSONTyped,
     V1beta1ErrorToJSON,
     V1beta1ErrorToJSONTyped,
-} from './V1beta1Error';
-import type { V1beta1SnapshotVolumesLists } from './V1beta1SnapshotVolumesLists';
+} from './V1beta1Error.js';
+import type { V1beta1SnapshotVolumesLists } from './V1beta1SnapshotVolumesLists.js';
 import {
     V1beta1SnapshotVolumesListsFromJSON,
     V1beta1SnapshotVolumesListsFromJSONTyped,
     V1beta1SnapshotVolumesListsToJSON,
     V1beta1SnapshotVolumesListsToJSONTyped,
-} from './V1beta1SnapshotVolumesLists';
-import type { V1beta1Condition } from './V1beta1Condition';
+} from './V1beta1SnapshotVolumesLists.js';
+import type { V1beta1Condition } from './V1beta1Condition.js';
 import {
     V1beta1ConditionFromJSON,
     V1beta1ConditionFromJSONTyped,
     V1beta1ConditionToJSON,
     V1beta1ConditionToJSONTyped,
-} from './V1beta1Condition';
+} from './V1beta1Condition.js';
 
 /**
  * VirtualMachineSnapshotStatus is the status for a VirtualMachineSnapshot resource
@@ -108,7 +108,7 @@ export function V1beta1VirtualMachineSnapshotStatusFromJSON(json: any): V1beta1V
     return V1beta1VirtualMachineSnapshotStatusFromJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineSnapshotStatusFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshotStatus {
+export function V1beta1VirtualMachineSnapshotStatusFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1beta1VirtualMachineSnapshotStatus {
     if (json == null) {
         return json;
     }
@@ -130,7 +130,7 @@ export function V1beta1VirtualMachineSnapshotStatusToJSON(json: any): V1beta1Vir
     return V1beta1VirtualMachineSnapshotStatusToJSONTyped(json, false);
 }
 
-export function V1beta1VirtualMachineSnapshotStatusToJSONTyped(value?: V1beta1VirtualMachineSnapshotStatus | null, _ignoreDiscriminator: boolean = false): any {
+export function V1beta1VirtualMachineSnapshotStatusToJSONTyped(value?: V1beta1VirtualMachineSnapshotStatus | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
-import type { V1ResourceRequirementsWithoutClaims } from './V1ResourceRequirementsWithoutClaims';
+import { mapValues } from '../runtime.js';
+import type { V1ResourceRequirementsWithoutClaims } from './V1ResourceRequirementsWithoutClaims.js';
 import {
     V1ResourceRequirementsWithoutClaimsFromJSON,
     V1ResourceRequirementsWithoutClaimsFromJSONTyped,
     V1ResourceRequirementsWithoutClaimsToJSON,
     V1ResourceRequirementsWithoutClaimsToJSONTyped,
-} from './V1ResourceRequirementsWithoutClaims';
+} from './V1ResourceRequirementsWithoutClaims.js';
 
 /**
  * SupportContainerResources are used to specify the cpu/memory request and limits for the containers that support various features of Virtual Machines. These containers are usually idle and don't require a lot of memory or cpu.
@@ -54,7 +54,7 @@ export function V1SupportContainerResourcesFromJSON(json: any): V1SupportContain
     return V1SupportContainerResourcesFromJSONTyped(json, false);
 }
 
-export function V1SupportContainerResourcesFromJSONTyped(json: any, _ignoreDiscriminator: boolean): V1SupportContainerResources {
+export function V1SupportContainerResourcesFromJSONTyped(json: any, ignoreDiscriminator: boolean): V1SupportContainerResources {
     if (json == null) {
         return json;
     }
@@ -69,7 +69,7 @@ export function V1SupportContainerResourcesToJSON(json: any): V1SupportContainer
     return V1SupportContainerResourcesToJSONTyped(json, false);
 }
 
-export function V1SupportContainerResourcesToJSONTyped(value?: V1SupportContainerResources | null, _ignoreDiscriminator: boolean = false): any {
+export function V1SupportContainerResourcesToJSONTyped(value?: V1SupportContainerResources | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
