@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1KSMConfiguration = void 0;
 /**
 * KSMConfiguration holds information about KSM.
 */
-export class V1KSMConfiguration {
+class V1KSMConfiguration {
     'nodeLabelSelector';
     static discriminator = undefined;
     static mapping = undefined;
@@ -30,4 +33,5 @@ export class V1KSMConfiguration {
     constructor() {
     }
 }
+exports.V1KSMConfiguration = V1KSMConfiguration;
 //# sourceMappingURL=V1KSMConfiguration.js.map

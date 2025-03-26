@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1DataVolumeSourceVDDK = void 0;
 /**
 * DataVolumeSourceVDDK provides the parameters to create a Data Volume from a Vmware source
 */
-export class V1beta1DataVolumeSourceVDDK {
+class V1beta1DataVolumeSourceVDDK {
     /**
     * BackingFile is the path to the virtual hard disk to migrate from vCenter/ESXi
     */
@@ -83,4 +86,5 @@ export class V1beta1DataVolumeSourceVDDK {
     constructor() {
     }
 }
+exports.V1beta1DataVolumeSourceVDDK = V1beta1DataVolumeSourceVDDK;
 //# sourceMappingURL=V1beta1DataVolumeSourceVDDK.js.map

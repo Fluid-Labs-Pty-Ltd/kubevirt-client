@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1KubeVirtWorkloadUpdateStrategy = void 0;
 /**
 * KubeVirtWorkloadUpdateStrategy defines options related to updating a KubeVirt install
 */
-export class V1KubeVirtWorkloadUpdateStrategy {
+class V1KubeVirtWorkloadUpdateStrategy {
     /**
     * Duration is a wrapper around time.Duration which supports correct marshaling to YAML and JSON. In particular, it marshals into strings, which can be used as map keys in json.
     */
@@ -53,4 +56,5 @@ export class V1KubeVirtWorkloadUpdateStrategy {
     constructor() {
     }
 }
+exports.V1KubeVirtWorkloadUpdateStrategy = V1KubeVirtWorkloadUpdateStrategy;
 //# sourceMappingURL=V1KubeVirtWorkloadUpdateStrategy.js.map

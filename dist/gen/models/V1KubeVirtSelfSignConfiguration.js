@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1KubeVirtSelfSignConfiguration {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1KubeVirtSelfSignConfiguration = void 0;
+class V1KubeVirtSelfSignConfiguration {
     'ca';
     /**
     * Duration is a wrapper around time.Duration which supports correct marshaling to YAML and JSON. In particular, it marshals into strings, which can be used as map keys in json.
@@ -64,4 +67,5 @@ export class V1KubeVirtSelfSignConfiguration {
     constructor() {
     }
 }
+exports.V1KubeVirtSelfSignConfiguration = V1KubeVirtSelfSignConfiguration;
 //# sourceMappingURL=V1KubeVirtSelfSignConfiguration.js.map

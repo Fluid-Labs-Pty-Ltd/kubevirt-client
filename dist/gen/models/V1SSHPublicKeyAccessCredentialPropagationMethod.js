@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1SSHPublicKeyAccessCredentialPropagationMethod = void 0;
 /**
 * SSHPublicKeyAccessCredentialPropagationMethod represents the method used to inject a ssh public key into the vm guest. Only one of its members may be specified.
 */
-export class V1SSHPublicKeyAccessCredentialPropagationMethod {
+class V1SSHPublicKeyAccessCredentialPropagationMethod {
     'configDrive';
     'noCloud';
     'qemuGuestAgent';
@@ -44,4 +47,5 @@ export class V1SSHPublicKeyAccessCredentialPropagationMethod {
     constructor() {
     }
 }
+exports.V1SSHPublicKeyAccessCredentialPropagationMethod = V1SSHPublicKeyAccessCredentialPropagationMethod;
 //# sourceMappingURL=V1SSHPublicKeyAccessCredentialPropagationMethod.js.map

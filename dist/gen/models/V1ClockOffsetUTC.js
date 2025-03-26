@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1ClockOffsetUTC = void 0;
 /**
 * UTC sets the guest clock to UTC on each boot.
 */
-export class V1ClockOffsetUTC {
+class V1ClockOffsetUTC {
     /**
     * OffsetSeconds specifies an offset in seconds, relative to UTC. If set, guest changes to the clock will be kept during reboots and not reset.
     */
@@ -33,4 +36,5 @@ export class V1ClockOffsetUTC {
     constructor() {
     }
 }
+exports.V1ClockOffsetUTC = V1ClockOffsetUTC;
 //# sourceMappingURL=V1ClockOffsetUTC.js.map

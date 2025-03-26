@@ -1,3 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.isCodeInRange = isCodeInRange;
+exports.canConsumeForm = canConsumeForm;
 /**
  * Returns if a specific http code is in a given code range
  * where the code range is defined as a combination of digits
@@ -6,7 +10,7 @@
  * @param codeRange string with length 3 consisting of digits and "X" (the letter X)
  * @param code the http status code to be checked against the code range
  */
-export function isCodeInRange(codeRange, code) {
+function isCodeInRange(codeRange, code) {
     // This is how the default value is encoded in OAG
     if (codeRange === "0") {
         return true;
@@ -32,7 +36,7 @@ export function isCodeInRange(codeRange, code) {
 *
 * @param consumes array
 */
-export function canConsumeForm(contentTypes) {
+function canConsumeForm(contentTypes) {
     return contentTypes.indexOf('multipart/form-data') !== -1;
 }
 //# sourceMappingURL=util.js.map

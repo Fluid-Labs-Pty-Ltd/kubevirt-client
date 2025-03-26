@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1CPUFeature = void 0;
 /**
 * CPUFeature allows specifying a CPU feature.
 */
-export class V1CPUFeature {
+class V1CPUFeature {
     /**
     * Name of the CPU feature
     */
@@ -43,4 +46,5 @@ export class V1CPUFeature {
     constructor() {
     }
 }
+exports.V1CPUFeature = V1CPUFeature;
 //# sourceMappingURL=V1CPUFeature.js.map

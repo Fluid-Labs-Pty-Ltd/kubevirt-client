@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Chassis = void 0;
 /**
 * Chassis specifies the chassis info passed to the domain.
 */
-export class V1Chassis {
+class V1Chassis {
     'asset';
     'manufacturer';
     'serial';
@@ -58,4 +61,5 @@ export class V1Chassis {
     constructor() {
     }
 }
+exports.V1Chassis = V1Chassis;
 //# sourceMappingURL=V1Chassis.js.map

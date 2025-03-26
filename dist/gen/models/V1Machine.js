@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1Machine {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Machine = void 0;
+class V1Machine {
     /**
     * QEMU machine type is the actual chipset of the VirtualMachineInstance.
     */
@@ -30,4 +33,5 @@ export class V1Machine {
     constructor() {
     }
 }
+exports.V1Machine = V1Machine;
 //# sourceMappingURL=V1Machine.js.map

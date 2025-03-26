@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1StorageMigratedVolumeInfo = void 0;
 /**
 * StorageMigratedVolumeInfo tracks the information about the source and destination volumes during the volume migration
 */
-export class V1StorageMigratedVolumeInfo {
+class V1StorageMigratedVolumeInfo {
     'destinationPVCInfo';
     'sourcePVCInfo';
     /**
@@ -47,4 +50,5 @@ export class V1StorageMigratedVolumeInfo {
     constructor() {
     }
 }
+exports.V1StorageMigratedVolumeInfo = V1StorageMigratedVolumeInfo;
 //# sourceMappingURL=V1StorageMigratedVolumeInfo.js.map

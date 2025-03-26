@@ -1,11 +1,17 @@
-import { ResponseContext } from './http.js';
-import { from } from '../rxjsStub.js';
-import fetch from "node-fetch";
-export class IsomorphicFetchHttpLibrary {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IsomorphicFetchHttpLibrary = void 0;
+const http_js_1 = require("./http.js");
+const rxjsStub_js_1 = require("../rxjsStub.js");
+const node_fetch_1 = __importDefault(require("node-fetch"));
+class IsomorphicFetchHttpLibrary {
     send(request) {
         let method = request.getHttpMethod().toString();
         let body = request.getBody();
-        const resultPromise = fetch(request.getUrl(), {
+        const resultPromise = (0, node_fetch_1.default)(request.getUrl(), {
             method: method,
             body: body,
             headers: request.getHeaders(),
@@ -19,9 +25,10 @@ export class IsomorphicFetchHttpLibrary {
                 text: () => resp.text(),
                 binary: () => resp.buffer()
             };
-            return new ResponseContext(resp.status, headers, body);
+            return new http_js_1.ResponseContext(resp.status, headers, body);
         });
-        return from(resultPromise);
+        return (0, rxjsStub_js_1.from)(resultPromise);
     }
 }
+exports.IsomorphicFetchHttpLibrary = IsomorphicFetchHttpLibrary;
 //# sourceMappingURL=isomorphic-fetch.js.map

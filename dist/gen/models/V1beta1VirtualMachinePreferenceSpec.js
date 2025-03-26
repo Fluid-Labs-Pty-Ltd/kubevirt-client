@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1VirtualMachinePreferenceSpec = void 0;
 /**
 * VirtualMachinePreferenceSpec is a description of the VirtualMachinePreference or VirtualMachineClusterPreference.
 */
-export class V1beta1VirtualMachinePreferenceSpec {
+class V1beta1VirtualMachinePreferenceSpec {
     /**
     * Optionally defines preferred Annotations to be applied to the VirtualMachineInstance
     */
@@ -119,4 +122,5 @@ export class V1beta1VirtualMachinePreferenceSpec {
     constructor() {
     }
 }
+exports.V1beta1VirtualMachinePreferenceSpec = V1beta1VirtualMachinePreferenceSpec;
 //# sourceMappingURL=V1beta1VirtualMachinePreferenceSpec.js.map

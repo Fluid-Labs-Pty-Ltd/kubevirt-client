@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1SyNICTimer {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1SyNICTimer = void 0;
+class V1SyNICTimer {
     'direct';
     'enabled';
     static discriminator = undefined;
@@ -34,4 +37,5 @@ export class V1SyNICTimer {
     constructor() {
     }
 }
+exports.V1SyNICTimer = V1SyNICTimer;
 //# sourceMappingURL=V1SyNICTimer.js.map

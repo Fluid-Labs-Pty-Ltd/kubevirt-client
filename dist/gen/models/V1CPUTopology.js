@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1CPUTopology = void 0;
 /**
 * CPUTopology allows specifying the amount of cores, sockets and threads.
 */
-export class V1CPUTopology {
+class V1CPUTopology {
     /**
     * Cores specifies the number of cores inside the vmi. Must be a value greater or equal 1.
     */
@@ -53,4 +56,5 @@ export class V1CPUTopology {
     constructor() {
     }
 }
+exports.V1CPUTopology = V1CPUTopology;
 //# sourceMappingURL=V1CPUTopology.js.map

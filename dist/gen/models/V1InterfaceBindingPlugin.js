@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1InterfaceBindingPlugin {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1InterfaceBindingPlugin = void 0;
+class V1InterfaceBindingPlugin {
     'computeResourceOverhead';
     /**
     * DomainAttachmentType is a standard domain network attachment method kubevirt supports. Supported values: \"tap\", \"managedTap\" (since v1.4). The standard domain attachment can be used instead or in addition to the sidecarImage. version: 1alphav1
@@ -74,4 +77,5 @@ export class V1InterfaceBindingPlugin {
     constructor() {
     }
 }
+exports.V1InterfaceBindingPlugin = V1InterfaceBindingPlugin;
 //# sourceMappingURL=V1InterfaceBindingPlugin.js.map

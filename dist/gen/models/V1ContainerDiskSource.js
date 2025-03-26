@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1ContainerDiskSourceImagePullPolicyEnum = exports.V1ContainerDiskSource = void 0;
 /**
 * Represents a docker image with an embedded disk.
 */
-export class V1ContainerDiskSource {
+class V1ContainerDiskSource {
     /**
     * Image is the name of the image with the embedded disk.
     */
@@ -63,10 +66,11 @@ export class V1ContainerDiskSource {
     constructor() {
     }
 }
-export var V1ContainerDiskSourceImagePullPolicyEnum;
+exports.V1ContainerDiskSource = V1ContainerDiskSource;
+var V1ContainerDiskSourceImagePullPolicyEnum;
 (function (V1ContainerDiskSourceImagePullPolicyEnum) {
     V1ContainerDiskSourceImagePullPolicyEnum["Always"] = "Always";
     V1ContainerDiskSourceImagePullPolicyEnum["IfNotPresent"] = "IfNotPresent";
     V1ContainerDiskSourceImagePullPolicyEnum["Never"] = "Never";
-})(V1ContainerDiskSourceImagePullPolicyEnum || (V1ContainerDiskSourceImagePullPolicyEnum = {}));
+})(V1ContainerDiskSourceImagePullPolicyEnum || (exports.V1ContainerDiskSourceImagePullPolicyEnum = V1ContainerDiskSourceImagePullPolicyEnum = {}));
 //# sourceMappingURL=V1ContainerDiskSource.js.map

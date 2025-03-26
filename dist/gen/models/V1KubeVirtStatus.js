@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1KubeVirtStatus = void 0;
 /**
 * KubeVirtStatus represents information pertaining to a KubeVirt deployment.
 */
-export class V1KubeVirtStatus {
+class V1KubeVirtStatus {
     'conditions';
     'defaultArchitecture';
     'generations';
@@ -128,4 +131,5 @@ export class V1KubeVirtStatus {
     constructor() {
     }
 }
+exports.V1KubeVirtStatus = V1KubeVirtStatus;
 //# sourceMappingURL=V1KubeVirtStatus.js.map

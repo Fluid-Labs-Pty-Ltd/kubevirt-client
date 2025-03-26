@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1AccessCredential = void 0;
 /**
 * AccessCredential represents a credential source that can be used to authorize remote access to the vm guest Only one of its members may be specified.
 */
-export class V1AccessCredential {
+class V1AccessCredential {
     'sshPublicKey';
     'userPassword';
     static discriminator = undefined;
@@ -37,4 +40,5 @@ export class V1AccessCredential {
     constructor() {
     }
 }
+exports.V1AccessCredential = V1AccessCredential;
 //# sourceMappingURL=V1AccessCredential.js.map

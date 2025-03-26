@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1AddVolumeOptions = void 0;
 /**
 * AddVolumeOptions is provided when dynamically hot plugging a volume and disk
 */
-export class V1AddVolumeOptions {
+class V1AddVolumeOptions {
     'disk';
     /**
     * When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
@@ -57,4 +60,5 @@ export class V1AddVolumeOptions {
     constructor() {
     }
 }
+exports.V1AddVolumeOptions = V1AddVolumeOptions;
 //# sourceMappingURL=V1AddVolumeOptions.js.map

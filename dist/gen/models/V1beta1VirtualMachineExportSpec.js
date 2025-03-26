@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1VirtualMachineExportSpec = void 0;
 /**
 * VirtualMachineExportSpec is the spec for a VirtualMachineExport resource
 */
-export class V1beta1VirtualMachineExportSpec {
+class V1beta1VirtualMachineExportSpec {
     'source';
     /**
     * TokenSecretRef is the name of the custom-defined secret that contains the token used by the export server pod
@@ -50,4 +53,5 @@ export class V1beta1VirtualMachineExportSpec {
     constructor() {
     }
 }
+exports.V1beta1VirtualMachineExportSpec = V1beta1VirtualMachineExportSpec;
 //# sourceMappingURL=V1beta1VirtualMachineExportSpec.js.map

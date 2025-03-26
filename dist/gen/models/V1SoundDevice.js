@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1SoundDevice = void 0;
 /**
 * Represents the user\'s configuration to emulate sound cards in the VMI.
 */
-export class V1SoundDevice {
+class V1SoundDevice {
     /**
     * We only support ich9 or ac97. If SoundDevice is not set: No sound card is emulated. If SoundDevice is set but Model is not: ich9
     */
@@ -43,4 +46,5 @@ export class V1SoundDevice {
     constructor() {
     }
 }
+exports.V1SoundDevice = V1SoundDevice;
 //# sourceMappingURL=V1SoundDevice.js.map

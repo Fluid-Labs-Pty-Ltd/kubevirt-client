@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1SSHPublicKeyAccessCredential = void 0;
 /**
 * SSHPublicKeyAccessCredential represents a source and propagation method for injecting ssh public keys into a vm guest
 */
-export class V1SSHPublicKeyAccessCredential {
+class V1SSHPublicKeyAccessCredential {
     'propagationMethod';
     'source';
     static discriminator = undefined;
@@ -37,4 +40,5 @@ export class V1SSHPublicKeyAccessCredential {
     constructor() {
     }
 }
+exports.V1SSHPublicKeyAccessCredential = V1SSHPublicKeyAccessCredential;
 //# sourceMappingURL=V1SSHPublicKeyAccessCredential.js.map

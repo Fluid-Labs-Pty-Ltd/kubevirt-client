@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1ResourceClaim = void 0;
 /**
 * ResourceClaim references one entry in PodSpec.ResourceClaims.
 */
-export class K8sIoApiCoreV1ResourceClaim {
+class K8sIoApiCoreV1ResourceClaim {
     /**
     * Name must match the name of one entry in pod.spec.resourceClaims of the Pod where this field is used. It makes that resource available inside a container.
     */
@@ -43,4 +46,5 @@ export class K8sIoApiCoreV1ResourceClaim {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1ResourceClaim = K8sIoApiCoreV1ResourceClaim;
 //# sourceMappingURL=K8sIoApiCoreV1ResourceClaim.js.map

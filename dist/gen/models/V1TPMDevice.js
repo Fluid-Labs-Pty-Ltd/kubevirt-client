@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1TPMDevice {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1TPMDevice = void 0;
+class V1TPMDevice {
     /**
     * Persistent indicates the state of the TPM device should be kept accross reboots Defaults to false
     */
@@ -30,4 +33,5 @@ export class V1TPMDevice {
     constructor() {
     }
 }
+exports.V1TPMDevice = V1TPMDevice;
 //# sourceMappingURL=V1TPMDevice.js.map

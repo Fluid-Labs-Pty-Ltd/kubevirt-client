@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1KernelBootStatus = void 0;
 /**
 * KernelBootStatus contains info about the kernelBootContainer
 */
-export class V1KernelBootStatus {
+class V1KernelBootStatus {
     'initrdInfo';
     'kernelInfo';
     static discriminator = undefined;
@@ -37,4 +40,5 @@ export class V1KernelBootStatus {
     constructor() {
     }
 }
+exports.V1KernelBootStatus = V1KernelBootStatus;
 //# sourceMappingURL=V1KernelBootStatus.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1RemoveVolumeOptions = void 0;
 /**
 * RemoveVolumeOptions is provided when dynamically hot unplugging volume and disk
 */
-export class V1RemoveVolumeOptions {
+class V1RemoveVolumeOptions {
     /**
     * When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
     */
@@ -43,4 +46,5 @@ export class V1RemoveVolumeOptions {
     constructor() {
     }
 }
+exports.V1RemoveVolumeOptions = V1RemoveVolumeOptions;
 //# sourceMappingURL=V1RemoveVolumeOptions.js.map

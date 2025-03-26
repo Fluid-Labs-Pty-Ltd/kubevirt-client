@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1VGPUDisplayOptions {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VGPUDisplayOptions = void 0;
+class V1VGPUDisplayOptions {
     /**
     * Enabled determines if a display addapter backed by a vGPU should be enabled or disabled on the guest. Defaults to true.
     */
@@ -37,4 +40,5 @@ export class V1VGPUDisplayOptions {
     constructor() {
     }
 }
+exports.V1VGPUDisplayOptions = V1VGPUDisplayOptions;
 //# sourceMappingURL=V1VGPUDisplayOptions.js.map

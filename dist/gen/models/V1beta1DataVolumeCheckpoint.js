@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1DataVolumeCheckpoint = void 0;
 /**
 * DataVolumeCheckpoint defines a stage in a warm migration.
 */
-export class V1beta1DataVolumeCheckpoint {
+class V1beta1DataVolumeCheckpoint {
     /**
     * Current is the identifier of the snapshot created for this checkpoint.
     */
@@ -43,4 +46,5 @@ export class V1beta1DataVolumeCheckpoint {
     constructor() {
     }
 }
+exports.V1beta1DataVolumeCheckpoint = V1beta1DataVolumeCheckpoint;
 //# sourceMappingURL=V1beta1DataVolumeCheckpoint.js.map

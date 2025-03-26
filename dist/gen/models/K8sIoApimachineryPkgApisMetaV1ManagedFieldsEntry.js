@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry = void 0;
 /**
 * ManagedFieldsEntry is a workflow-id, a FieldSet and the group version of the resource that the fieldset applies to.
 */
-export class K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry {
+class K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry {
     /**
     * APIVersion defines the version of this resource that this field set applies to. The format is \"group/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted.
     */
@@ -93,4 +96,5 @@ export class K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry {
     constructor() {
     }
 }
+exports.K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry = K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry.js.map

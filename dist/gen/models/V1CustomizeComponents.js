@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1CustomizeComponents {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1CustomizeComponents = void 0;
+class V1CustomizeComponents {
     'flags';
     'patches';
     static discriminator = undefined;
@@ -34,4 +37,5 @@ export class V1CustomizeComponents {
     constructor() {
     }
 }
+exports.V1CustomizeComponents = V1CustomizeComponents;
 //# sourceMappingURL=V1CustomizeComponents.js.map

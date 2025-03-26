@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApimachineryPkgApisMetaV1DeleteOptions = void 0;
 /**
 * DeleteOptions may be provided when deleting an API object.
 */
-export class K8sIoApimachineryPkgApisMetaV1DeleteOptions {
+class K8sIoApimachineryPkgApisMetaV1DeleteOptions {
     /**
     * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     */
@@ -90,4 +93,5 @@ export class K8sIoApimachineryPkgApisMetaV1DeleteOptions {
     constructor() {
     }
 }
+exports.K8sIoApimachineryPkgApisMetaV1DeleteOptions = K8sIoApimachineryPkgApisMetaV1DeleteOptions;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1DeleteOptions.js.map

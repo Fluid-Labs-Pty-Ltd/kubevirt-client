@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1DHCPOptions = void 0;
 /**
 * Extra DHCP options to use in the interface.
 */
-export class V1DHCPOptions {
+class V1DHCPOptions {
     /**
     * If specified will pass option 67 to interface\'s DHCP server
     */
@@ -63,4 +66,5 @@ export class V1DHCPOptions {
     constructor() {
     }
 }
+exports.V1DHCPOptions = V1DHCPOptions;
 //# sourceMappingURL=V1DHCPOptions.js.map

@@ -1,9 +1,12 @@
-import { PromiseMiddlewareWrapper } from '../middleware.js';
-import { ObservableDefaultApi } from './ObservableAPI.js';
-export class PromiseDefaultApi {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PromiseDefaultApi = void 0;
+const middleware_js_1 = require("../middleware.js");
+const ObservableAPI_js_1 = require("./ObservableAPI.js");
+class PromiseDefaultApi {
     api;
     constructor(configuration, requestFactory, responseProcessor) {
-        this.api = new ObservableDefaultApi(configuration, requestFactory, responseProcessor);
+        this.api = new ObservableAPI_js_1.ObservableDefaultApi(configuration, requestFactory, responseProcessor);
     }
     /**
      * Create a MigrationPolicy object.
@@ -15,7 +18,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -33,7 +36,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -52,7 +55,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -71,7 +74,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -90,7 +93,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -109,7 +112,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -128,7 +131,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -147,7 +150,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -166,7 +169,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -185,7 +188,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -204,7 +207,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -223,7 +226,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -242,7 +245,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -261,7 +264,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -280,7 +283,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -299,7 +302,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -318,7 +321,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -337,7 +340,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -356,7 +359,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -375,7 +378,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -394,7 +397,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -413,7 +416,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -432,7 +435,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -451,7 +454,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -470,7 +473,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -489,7 +492,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -508,7 +511,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -527,7 +530,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -545,7 +548,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -563,7 +566,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -581,7 +584,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -599,7 +602,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -617,7 +620,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -635,7 +638,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -660,7 +663,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -685,7 +688,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -710,7 +713,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -735,7 +738,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -760,7 +763,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -785,7 +788,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -810,7 +813,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -835,7 +838,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -860,7 +863,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -885,7 +888,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -910,7 +913,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -935,7 +938,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -960,7 +963,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -985,7 +988,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1010,7 +1013,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1035,7 +1038,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1060,7 +1063,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1085,7 +1088,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1110,7 +1113,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1135,7 +1138,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1160,7 +1163,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1185,7 +1188,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1210,7 +1213,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1235,7 +1238,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1260,7 +1263,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1285,7 +1288,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1310,7 +1313,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1335,7 +1338,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1360,7 +1363,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1385,7 +1388,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1410,7 +1413,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1435,7 +1438,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1460,7 +1463,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1485,7 +1488,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1507,7 +1510,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1529,7 +1532,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1552,7 +1555,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1575,7 +1578,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1598,7 +1601,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1621,7 +1624,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1644,7 +1647,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1667,7 +1670,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1690,7 +1693,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1713,7 +1716,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1736,7 +1739,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1759,7 +1762,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1782,7 +1785,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1805,7 +1808,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1828,7 +1831,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1851,7 +1854,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1874,7 +1877,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1897,7 +1900,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1920,7 +1923,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1943,7 +1946,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1966,7 +1969,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -1989,7 +1992,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2012,7 +2015,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2035,7 +2038,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2058,7 +2061,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2081,7 +2084,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2104,7 +2107,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2127,7 +2130,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2149,7 +2152,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2171,7 +2174,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2193,7 +2196,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2215,7 +2218,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2237,7 +2240,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2259,7 +2262,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2276,7 +2279,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2293,7 +2296,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2309,7 +2312,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2325,7 +2328,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2342,7 +2345,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2359,7 +2362,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2376,7 +2379,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2393,7 +2396,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2410,7 +2413,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2427,7 +2430,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2444,7 +2447,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2461,7 +2464,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2478,7 +2481,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2495,7 +2498,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2512,7 +2515,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2529,7 +2532,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2546,7 +2549,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2563,7 +2566,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2580,7 +2583,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2597,7 +2600,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2614,7 +2617,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2631,7 +2634,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2648,7 +2651,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2665,7 +2668,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2682,7 +2685,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2699,7 +2702,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2716,7 +2719,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2733,7 +2736,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2750,7 +2753,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2767,7 +2770,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2784,7 +2787,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2801,7 +2804,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2818,7 +2821,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2835,7 +2838,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2852,7 +2855,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2869,7 +2872,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2886,7 +2889,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2903,7 +2906,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2920,7 +2923,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2937,7 +2940,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2954,7 +2957,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2971,7 +2974,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -2996,7 +2999,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3021,7 +3024,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3046,7 +3049,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3071,7 +3074,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3097,7 +3100,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3123,7 +3126,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3149,7 +3152,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3175,7 +3178,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3201,7 +3204,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3227,7 +3230,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3253,7 +3256,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3279,7 +3282,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3305,7 +3308,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3331,7 +3334,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3357,7 +3360,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3383,7 +3386,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3409,7 +3412,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3435,7 +3438,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3461,7 +3464,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3487,7 +3490,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3513,7 +3516,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3539,7 +3542,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3565,7 +3568,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3591,7 +3594,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3617,7 +3620,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3643,7 +3646,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3669,7 +3672,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3695,7 +3698,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3721,7 +3724,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3747,7 +3750,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3772,7 +3775,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3797,7 +3800,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3822,7 +3825,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3847,7 +3850,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3872,7 +3875,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3897,7 +3900,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3922,7 +3925,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3947,7 +3950,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3972,7 +3975,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -3997,7 +4000,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4022,7 +4025,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4047,7 +4050,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4072,7 +4075,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4097,7 +4100,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4122,7 +4125,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4147,7 +4150,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4172,7 +4175,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4197,7 +4200,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4222,7 +4225,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4247,7 +4250,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4272,7 +4275,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4297,7 +4300,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4322,7 +4325,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4347,7 +4350,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4372,7 +4375,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4397,7 +4400,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4422,7 +4425,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4447,7 +4450,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4472,7 +4475,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4497,7 +4500,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4516,7 +4519,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4535,7 +4538,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4555,7 +4558,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4575,7 +4578,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4595,7 +4598,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4615,7 +4618,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4635,7 +4638,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4655,7 +4658,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4675,7 +4678,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4695,7 +4698,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4715,7 +4718,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4735,7 +4738,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4755,7 +4758,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4775,7 +4778,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4795,7 +4798,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4815,7 +4818,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4835,7 +4838,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4855,7 +4858,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4875,7 +4878,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4895,7 +4898,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4915,7 +4918,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4935,7 +4938,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4955,7 +4958,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4975,7 +4978,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -4995,7 +4998,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5015,7 +5018,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5035,7 +5038,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5055,7 +5058,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5074,7 +5077,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5093,7 +5096,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5112,7 +5115,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5131,7 +5134,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5150,7 +5153,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5169,7 +5172,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5189,7 +5192,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5209,7 +5212,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5230,7 +5233,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5251,7 +5254,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5272,7 +5275,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5293,7 +5296,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5314,7 +5317,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5335,7 +5338,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5356,7 +5359,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5377,7 +5380,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5398,7 +5401,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5419,7 +5422,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5440,7 +5443,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5461,7 +5464,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5482,7 +5485,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5503,7 +5506,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5524,7 +5527,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5545,7 +5548,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5566,7 +5569,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5587,7 +5590,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5608,7 +5611,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5629,7 +5632,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5650,7 +5653,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5671,7 +5674,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5692,7 +5695,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5713,7 +5716,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5734,7 +5737,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5755,7 +5758,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5775,7 +5778,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5795,7 +5798,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5815,7 +5818,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5835,7 +5838,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5855,7 +5858,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5875,7 +5878,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5894,7 +5897,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5913,7 +5916,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5933,7 +5936,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5953,7 +5956,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5973,7 +5976,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -5993,7 +5996,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6013,7 +6016,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6033,7 +6036,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6053,7 +6056,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6073,7 +6076,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6093,7 +6096,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6113,7 +6116,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6133,7 +6136,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6153,7 +6156,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6173,7 +6176,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6193,7 +6196,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6213,7 +6216,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6233,7 +6236,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6253,7 +6256,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6273,7 +6276,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6293,7 +6296,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6313,7 +6316,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6333,7 +6336,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6353,7 +6356,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6373,7 +6376,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6393,7 +6396,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6413,7 +6416,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6433,7 +6436,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6452,7 +6455,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6471,7 +6474,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6490,7 +6493,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6509,7 +6512,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6528,7 +6531,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6547,7 +6550,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6564,7 +6567,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6581,7 +6584,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6600,7 +6603,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6619,7 +6622,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6637,7 +6640,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6655,7 +6658,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6674,7 +6677,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6693,7 +6696,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6713,7 +6716,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6733,7 +6736,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6750,7 +6753,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6767,7 +6770,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6783,7 +6786,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6799,7 +6802,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6818,7 +6821,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6837,7 +6840,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6857,7 +6860,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6877,7 +6880,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6897,7 +6900,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6917,7 +6920,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6937,7 +6940,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6957,7 +6960,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6976,7 +6979,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -6995,7 +6998,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7015,7 +7018,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7035,7 +7038,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7054,7 +7057,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7073,7 +7076,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7093,7 +7096,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7113,7 +7116,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7132,7 +7135,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7151,7 +7154,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7171,7 +7174,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7191,7 +7194,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7210,7 +7213,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7229,7 +7232,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7249,7 +7252,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7269,7 +7272,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7289,7 +7292,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7309,7 +7312,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7328,7 +7331,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7347,7 +7350,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7367,7 +7370,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7387,7 +7390,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7406,7 +7409,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7425,7 +7428,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7444,7 +7447,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7463,7 +7466,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7483,7 +7486,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7503,7 +7506,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7524,7 +7527,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7545,7 +7548,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7561,7 +7564,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7577,7 +7580,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7594,7 +7597,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7611,7 +7614,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7630,7 +7633,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7649,7 +7652,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7667,7 +7670,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7685,7 +7688,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7704,7 +7707,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7723,7 +7726,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7743,7 +7746,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7763,7 +7766,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7779,7 +7782,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7795,7 +7798,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7814,7 +7817,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7833,7 +7836,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7853,7 +7856,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7873,7 +7876,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7893,7 +7896,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7913,7 +7916,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7933,7 +7936,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7953,7 +7956,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7972,7 +7975,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -7991,7 +7994,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8011,7 +8014,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8031,7 +8034,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8050,7 +8053,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8069,7 +8072,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8089,7 +8092,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8109,7 +8112,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8128,7 +8131,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8147,7 +8150,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8167,7 +8170,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8187,7 +8190,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8206,7 +8209,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8225,7 +8228,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8245,7 +8248,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8265,7 +8268,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8285,7 +8288,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8305,7 +8308,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8324,7 +8327,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8343,7 +8346,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8363,7 +8366,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8383,7 +8386,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8402,7 +8405,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8421,7 +8424,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8440,7 +8443,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8459,7 +8462,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8479,7 +8482,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8499,7 +8502,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8520,7 +8523,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8541,7 +8544,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8557,7 +8560,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8573,7 +8576,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8589,7 +8592,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8605,7 +8608,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8622,7 +8625,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8639,7 +8642,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8655,7 +8658,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8671,7 +8674,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8687,7 +8690,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8703,7 +8706,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8722,7 +8725,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8741,7 +8744,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8761,7 +8764,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8781,7 +8784,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8800,7 +8803,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8819,7 +8822,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8839,7 +8842,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8859,7 +8862,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8880,7 +8883,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8901,7 +8904,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8921,7 +8924,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8941,7 +8944,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8961,7 +8964,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -8981,7 +8984,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9001,7 +9004,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9021,7 +9024,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9042,7 +9045,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9063,7 +9066,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9083,7 +9086,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9103,7 +9106,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9119,7 +9122,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9135,7 +9138,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9152,7 +9155,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9169,7 +9172,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9185,7 +9188,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9201,7 +9204,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9217,7 +9220,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9233,7 +9236,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9252,7 +9255,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9271,7 +9274,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9291,7 +9294,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9311,7 +9314,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9330,7 +9333,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9349,7 +9352,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9369,7 +9372,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9389,7 +9392,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9410,7 +9413,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9431,7 +9434,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9451,7 +9454,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9471,7 +9474,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9491,7 +9494,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9511,7 +9514,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9531,7 +9534,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9551,7 +9554,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9572,7 +9575,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9593,7 +9596,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9613,7 +9616,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9633,7 +9636,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9658,7 +9661,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9683,7 +9686,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9708,7 +9711,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9733,7 +9736,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9759,7 +9762,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9785,7 +9788,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9811,7 +9814,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9837,7 +9840,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9863,7 +9866,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9889,7 +9892,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9915,7 +9918,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9941,7 +9944,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9967,7 +9970,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -9993,7 +9996,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10019,7 +10022,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10045,7 +10048,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10071,7 +10074,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10097,7 +10100,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10123,7 +10126,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10149,7 +10152,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10175,7 +10178,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10201,7 +10204,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10227,7 +10230,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10253,7 +10256,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10279,7 +10282,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10305,7 +10308,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10331,7 +10334,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10357,7 +10360,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10383,7 +10386,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10409,7 +10412,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10434,7 +10437,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10459,7 +10462,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10484,7 +10487,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10509,7 +10512,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10534,7 +10537,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10559,7 +10562,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10584,7 +10587,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10609,7 +10612,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10634,7 +10637,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10659,7 +10662,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10684,7 +10687,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10709,7 +10712,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10734,7 +10737,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10759,7 +10762,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10784,7 +10787,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10809,7 +10812,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10834,7 +10837,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10859,7 +10862,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10884,7 +10887,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10909,7 +10912,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10934,7 +10937,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10959,7 +10962,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -10984,7 +10987,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -11009,7 +11012,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -11034,7 +11037,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -11059,7 +11062,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -11084,7 +11087,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -11109,7 +11112,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -11134,7 +11137,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -11159,7 +11162,7 @@ export class PromiseDefaultApi {
             observableOptions = {
                 baseServer: _options.baseServer,
                 httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(m => new PromiseMiddlewareWrapper(m)),
+                middleware: _options.middleware?.map(m => new middleware_js_1.PromiseMiddlewareWrapper(m)),
                 middlewareMergeStrategy: _options.middlewareMergeStrategy,
                 authMethods: _options.authMethods
             };
@@ -11168,4 +11171,5 @@ export class PromiseDefaultApi {
         return result.toPromise();
     }
 }
+exports.PromiseDefaultApi = PromiseDefaultApi;
 //# sourceMappingURL=PromiseAPI.js.map

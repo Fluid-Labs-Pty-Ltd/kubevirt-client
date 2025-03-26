@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1LocalObjectReference = void 0;
 /**
 * LocalObjectReference contains enough information to let you locate the referenced object inside the same namespace.
 */
-export class K8sIoApiCoreV1LocalObjectReference {
+class K8sIoApiCoreV1LocalObjectReference {
     /**
     * Name of the referent. This field is effectively required, but due to backwards compatibility is allowed to be empty. Instances of this type with an empty value here are almost certainly wrong. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
     */
@@ -33,4 +36,5 @@ export class K8sIoApiCoreV1LocalObjectReference {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1LocalObjectReference = K8sIoApiCoreV1LocalObjectReference;
 //# sourceMappingURL=K8sIoApiCoreV1LocalObjectReference.js.map

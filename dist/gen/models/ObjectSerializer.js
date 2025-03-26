@@ -1,681 +1,698 @@
-export * from '../models/K8sIoApiCoreV1Affinity.js';
-export * from '../models/K8sIoApiCoreV1DownwardAPIVolumeFile.js';
-export * from '../models/K8sIoApiCoreV1ExecAction.js';
-export * from '../models/K8sIoApiCoreV1HTTPGetAction.js';
-export * from '../models/K8sIoApiCoreV1HTTPHeader.js';
-export * from '../models/K8sIoApiCoreV1LocalObjectReference.js';
-export * from '../models/K8sIoApiCoreV1NodeAffinity.js';
-export * from '../models/K8sIoApiCoreV1NodeSelector.js';
-export * from '../models/K8sIoApiCoreV1NodeSelectorRequirement.js';
-export * from '../models/K8sIoApiCoreV1NodeSelectorTerm.js';
-export * from '../models/K8sIoApiCoreV1ObjectFieldSelector.js';
-export * from '../models/K8sIoApiCoreV1PersistentVolumeClaimSpec.js';
-export * from '../models/K8sIoApiCoreV1PersistentVolumeClaimVolumeSource.js';
-export * from '../models/K8sIoApiCoreV1PodAffinity.js';
-export * from '../models/K8sIoApiCoreV1PodAffinityTerm.js';
-export * from '../models/K8sIoApiCoreV1PodAntiAffinity.js';
-export * from '../models/K8sIoApiCoreV1PodDNSConfig.js';
-export * from '../models/K8sIoApiCoreV1PodDNSConfigOption.js';
-export * from '../models/K8sIoApiCoreV1PreferredSchedulingTerm.js';
-export * from '../models/K8sIoApiCoreV1ResourceClaim.js';
-export * from '../models/K8sIoApiCoreV1ResourceFieldSelector.js';
-export * from '../models/K8sIoApiCoreV1ResourceRequirements.js';
-export * from '../models/K8sIoApiCoreV1TCPSocketAction.js';
-export * from '../models/K8sIoApiCoreV1Toleration.js';
-export * from '../models/K8sIoApiCoreV1TopologySpreadConstraint.js';
-export * from '../models/K8sIoApiCoreV1TypedLocalObjectReference.js';
-export * from '../models/K8sIoApiCoreV1TypedObjectReference.js';
-export * from '../models/K8sIoApiCoreV1VolumeResourceRequirements.js';
-export * from '../models/K8sIoApiCoreV1WeightedPodAffinityTerm.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1APIGroup.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1APIGroupList.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1APIResource.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1APIResourceList.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1DeleteOptions.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1ListMeta.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1OwnerReference.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1Preconditions.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1RootPaths.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1Status.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1StatusCause.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1StatusDetails.js';
-export * from '../models/K8sIoApimachineryPkgApisMetaV1WatchEvent.js';
-export * from '../models/V1ACPI.js';
-export * from '../models/V1AccessCredential.js';
-export * from '../models/V1AccessCredentialSecretSource.js';
-export * from '../models/V1AddVolumeOptions.js';
-export * from '../models/V1ArchConfiguration.js';
-export * from '../models/V1ArchSpecificConfiguration.js';
-export * from '../models/V1BIOS.js';
-export * from '../models/V1BlockSize.js';
-export * from '../models/V1Bootloader.js';
-export * from '../models/V1CDRomTarget.js';
-export * from '../models/V1CPU.js';
-export * from '../models/V1CPUFeature.js';
-export * from '../models/V1CPUTopology.js';
-export * from '../models/V1CertConfig.js';
-export * from '../models/V1Chassis.js';
-export * from '../models/V1Clock.js';
-export * from '../models/V1ClockOffset.js';
-export * from '../models/V1ClockOffsetUTC.js';
-export * from '../models/V1CloudInitConfigDriveSource.js';
-export * from '../models/V1CloudInitNoCloudSource.js';
-export * from '../models/V1CommonInstancetypesDeployment.js';
-export * from '../models/V1ComponentConfig.js';
-export * from '../models/V1ConfigMapVolumeSource.js';
-export * from '../models/V1ContainerDiskInfo.js';
-export * from '../models/V1ContainerDiskSource.js';
-export * from '../models/V1CustomBlockSize.js';
-export * from '../models/V1CustomProfile.js';
-export * from '../models/V1CustomizeComponents.js';
-export * from '../models/V1CustomizeComponentsPatch.js';
-export * from '../models/V1DHCPOptions.js';
-export * from '../models/V1DHCPPrivateOptions.js';
-export * from '../models/V1DataVolumeSource.js';
-export * from '../models/V1DataVolumeTemplateSpec.js';
-export * from '../models/V1DeveloperConfiguration.js';
-export * from '../models/V1Devices.js';
-export * from '../models/V1Disk.js';
-export * from '../models/V1DiskTarget.js';
-export * from '../models/V1DiskVerification.js';
-export * from '../models/V1DomainMemoryDumpInfo.js';
-export * from '../models/V1DomainSpec.js';
-export * from '../models/V1DownwardAPIVolumeSource.js';
-export * from '../models/V1EFI.js';
-export * from '../models/V1EmptyDiskSource.js';
-export * from '../models/V1EphemeralVolumeSource.js';
-export * from '../models/V1FeatureAPIC.js';
-export * from '../models/V1FeatureHyperv.js';
-export * from '../models/V1FeatureKVM.js';
-export * from '../models/V1FeatureSpinlocks.js';
-export * from '../models/V1FeatureState.js';
-export * from '../models/V1FeatureVendorID.js';
-export * from '../models/V1Features.js';
-export * from '../models/V1Filesystem.js';
-export * from '../models/V1Firmware.js';
-export * from '../models/V1Flags.js';
-export * from '../models/V1FreezeUnfreezeTimeout.js';
-export * from '../models/V1GPU.js';
-export * from '../models/V1GenerationStatus.js';
-export * from '../models/V1GuestAgentCommandInfo.js';
-export * from '../models/V1HPETTimer.js';
-export * from '../models/V1HostDevice.js';
-export * from '../models/V1HostDisk.js';
-export * from '../models/V1HotplugVolumeSource.js';
-export * from '../models/V1HotplugVolumeStatus.js';
-export * from '../models/V1Hugepages.js';
-export * from '../models/V1HyperVPassthrough.js';
-export * from '../models/V1HypervTimer.js';
-export * from '../models/V1I6300ESBWatchdog.js';
-export * from '../models/V1InitrdInfo.js';
-export * from '../models/V1Input.js';
-export * from '../models/V1InstancetypeConfiguration.js';
-export * from '../models/V1InstancetypeMatcher.js';
-export * from '../models/V1Interface.js';
-export * from '../models/V1InterfaceBindingMigration.js';
-export * from '../models/V1InterfaceBindingPlugin.js';
-export * from '../models/V1KSMConfiguration.js';
-export * from '../models/V1KVMTimer.js';
-export * from '../models/V1KernelBoot.js';
-export * from '../models/V1KernelBootContainer.js';
-export * from '../models/V1KernelBootStatus.js';
-export * from '../models/V1KernelInfo.js';
-export * from '../models/V1KubeVirt.js';
-export * from '../models/V1KubeVirtCertificateRotateStrategy.js';
-export * from '../models/V1KubeVirtCondition.js';
-export * from '../models/V1KubeVirtConfiguration.js';
-export * from '../models/V1KubeVirtList.js';
-export * from '../models/V1KubeVirtSelfSignConfiguration.js';
-export * from '../models/V1KubeVirtSpec.js';
-export * from '../models/V1KubeVirtStatus.js';
-export * from '../models/V1KubeVirtWorkloadUpdateStrategy.js';
-export * from '../models/V1LaunchSecurity.js';
-export * from '../models/V1LiveUpdateConfiguration.js';
-export * from '../models/V1LogVerbosity.js';
-export * from '../models/V1LunTarget.js';
-export * from '../models/V1Machine.js';
-export * from '../models/V1MediatedDevicesConfiguration.js';
-export * from '../models/V1MediatedHostDevice.js';
-export * from '../models/V1Memory.js';
-export * from '../models/V1MemoryDumpVolumeSource.js';
-export * from '../models/V1MemoryStatus.js';
-export * from '../models/V1MigrateOptions.js';
-export * from '../models/V1MigrationConfiguration.js';
-export * from '../models/V1MultusNetwork.js';
-export * from '../models/V1NUMA.js';
-export * from '../models/V1Network.js';
-export * from '../models/V1NetworkConfiguration.js';
-export * from '../models/V1NodeMediatedDeviceTypesConfig.js';
-export * from '../models/V1NodePlacement.js';
-export * from '../models/V1PITTimer.js';
-export * from '../models/V1PauseOptions.js';
-export * from '../models/V1PciHostDevice.js';
-export * from '../models/V1PermittedHostDevices.js';
-export * from '../models/V1PersistentVolumeClaimInfo.js';
-export * from '../models/V1PersistentVolumeClaimVolumeSource.js';
-export * from '../models/V1PluginBinding.js';
-export * from '../models/V1PodNetwork.js';
-export * from '../models/V1Port.js';
-export * from '../models/V1PreferenceMatcher.js';
-export * from '../models/V1Probe.js';
-export * from '../models/V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation.js';
-export * from '../models/V1RESTClientConfiguration.js';
-export * from '../models/V1RTCTimer.js';
-export * from '../models/V1RateLimiter.js';
-export * from '../models/V1Realtime.js';
-export * from '../models/V1ReloadableComponentConfiguration.js';
-export * from '../models/V1RemoveVolumeOptions.js';
-export * from '../models/V1ResourceRequirements.js';
-export * from '../models/V1ResourceRequirementsWithoutClaims.js';
-export * from '../models/V1RestartOptions.js';
-export * from '../models/V1SEV.js';
-export * from '../models/V1SEVMeasurementInfo.js';
-export * from '../models/V1SEVPlatformInfo.js';
-export * from '../models/V1SEVPolicy.js';
-export * from '../models/V1SEVSecretOptions.js';
-export * from '../models/V1SEVSessionOptions.js';
-export * from '../models/V1SMBiosConfiguration.js';
-export * from '../models/V1SSHPublicKeyAccessCredential.js';
-export * from '../models/V1SSHPublicKeyAccessCredentialPropagationMethod.js';
-export * from '../models/V1SSHPublicKeyAccessCredentialSource.js';
-export * from '../models/V1SeccompConfiguration.js';
-export * from '../models/V1SecretVolumeSource.js';
-export * from '../models/V1ServiceAccountVolumeSource.js';
-export * from '../models/V1SoundDevice.js';
-export * from '../models/V1StartOptions.js';
-export * from '../models/V1StopOptions.js';
-export * from '../models/V1StorageMigratedVolumeInfo.js';
-export * from '../models/V1SupportContainerResources.js';
-export * from '../models/V1SyNICTimer.js';
-export * from '../models/V1SysprepSource.js';
-export * from '../models/V1TLSConfiguration.js';
-export * from '../models/V1TPMDevice.js';
-export * from '../models/V1Timer.js';
-export * from '../models/V1TokenBucketRateLimiter.js';
-export * from '../models/V1TopologyHints.js';
-export * from '../models/V1USBHostDevice.js';
-export * from '../models/V1USBSelector.js';
-export * from '../models/V1UnpauseOptions.js';
-export * from '../models/V1UserPasswordAccessCredential.js';
-export * from '../models/V1UserPasswordAccessCredentialPropagationMethod.js';
-export * from '../models/V1UserPasswordAccessCredentialSource.js';
-export * from '../models/V1VGPUDisplayOptions.js';
-export * from '../models/V1VGPUOptions.js';
-export * from '../models/V1VirtualMachine.js';
-export * from '../models/V1VirtualMachineCondition.js';
-export * from '../models/V1VirtualMachineInstance.js';
-export * from '../models/V1VirtualMachineInstanceCondition.js';
-export * from '../models/V1VirtualMachineInstanceFileSystem.js';
-export * from '../models/V1VirtualMachineInstanceFileSystemDisk.js';
-export * from '../models/V1VirtualMachineInstanceFileSystemInfo.js';
-export * from '../models/V1VirtualMachineInstanceFileSystemList.js';
-export * from '../models/V1VirtualMachineInstanceGuestAgentInfo.js';
-export * from '../models/V1VirtualMachineInstanceGuestOSInfo.js';
-export * from '../models/V1VirtualMachineInstanceGuestOSUser.js';
-export * from '../models/V1VirtualMachineInstanceGuestOSUserList.js';
-export * from '../models/V1VirtualMachineInstanceList.js';
-export * from '../models/V1VirtualMachineInstanceMigration.js';
-export * from '../models/V1VirtualMachineInstanceMigrationCondition.js';
-export * from '../models/V1VirtualMachineInstanceMigrationList.js';
-export * from '../models/V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp.js';
-export * from '../models/V1VirtualMachineInstanceMigrationSpec.js';
-export * from '../models/V1VirtualMachineInstanceMigrationState.js';
-export * from '../models/V1VirtualMachineInstanceMigrationStatus.js';
-export * from '../models/V1VirtualMachineInstanceNetworkInterface.js';
-export * from '../models/V1VirtualMachineInstancePhaseTransitionTimestamp.js';
-export * from '../models/V1VirtualMachineInstancePreset.js';
-export * from '../models/V1VirtualMachineInstancePresetList.js';
-export * from '../models/V1VirtualMachineInstancePresetSpec.js';
-export * from '../models/V1VirtualMachineInstanceProfile.js';
-export * from '../models/V1VirtualMachineInstanceReplicaSet.js';
-export * from '../models/V1VirtualMachineInstanceReplicaSetCondition.js';
-export * from '../models/V1VirtualMachineInstanceReplicaSetList.js';
-export * from '../models/V1VirtualMachineInstanceReplicaSetSpec.js';
-export * from '../models/V1VirtualMachineInstanceReplicaSetStatus.js';
-export * from '../models/V1VirtualMachineInstanceSpec.js';
-export * from '../models/V1VirtualMachineInstanceStatus.js';
-export * from '../models/V1VirtualMachineInstanceTemplateSpec.js';
-export * from '../models/V1VirtualMachineList.js';
-export * from '../models/V1VirtualMachineMemoryDumpRequest.js';
-export * from '../models/V1VirtualMachineOptions.js';
-export * from '../models/V1VirtualMachineSpec.js';
-export * from '../models/V1VirtualMachineStartFailure.js';
-export * from '../models/V1VirtualMachineStateChangeRequest.js';
-export * from '../models/V1VirtualMachineStatus.js';
-export * from '../models/V1VirtualMachineVolumeRequest.js';
-export * from '../models/V1Volume.js';
-export * from '../models/V1VolumeMigrationState.js';
-export * from '../models/V1VolumeSnapshotStatus.js';
-export * from '../models/V1VolumeStatus.js';
-export * from '../models/V1VolumeUpdateState.js';
-export * from '../models/V1Watchdog.js';
-export * from '../models/V1alpha1Condition.js';
-export * from '../models/V1alpha1MigrationPolicy.js';
-export * from '../models/V1alpha1MigrationPolicyList.js';
-export * from '../models/V1alpha1MigrationPolicySpec.js';
-export * from '../models/V1alpha1Selectors.js';
-export * from '../models/V1alpha1VirtualMachineClone.js';
-export * from '../models/V1alpha1VirtualMachineCloneList.js';
-export * from '../models/V1alpha1VirtualMachineCloneSpec.js';
-export * from '../models/V1alpha1VirtualMachineCloneStatus.js';
-export * from '../models/V1alpha1VirtualMachineCloneTemplateFilters.js';
-export * from '../models/V1alpha1VirtualMachinePool.js';
-export * from '../models/V1alpha1VirtualMachinePoolCondition.js';
-export * from '../models/V1alpha1VirtualMachinePoolList.js';
-export * from '../models/V1alpha1VirtualMachinePoolSpec.js';
-export * from '../models/V1alpha1VirtualMachinePoolStatus.js';
-export * from '../models/V1alpha1VirtualMachineTemplateSpec.js';
-export * from '../models/V1beta1CPUInstancetype.js';
-export * from '../models/V1beta1CPUPreferenceRequirement.js';
-export * from '../models/V1beta1CPUPreferences.js';
-export * from '../models/V1beta1ClockPreferences.js';
-export * from '../models/V1beta1Condition.js';
-export * from '../models/V1beta1DataVolumeCheckpoint.js';
-export * from '../models/V1beta1DataVolumeSource.js';
-export * from '../models/V1beta1DataVolumeSourceGCS.js';
-export * from '../models/V1beta1DataVolumeSourceHTTP.js';
-export * from '../models/V1beta1DataVolumeSourceImageIO.js';
-export * from '../models/V1beta1DataVolumeSourcePVC.js';
-export * from '../models/V1beta1DataVolumeSourceRef.js';
-export * from '../models/V1beta1DataVolumeSourceRegistry.js';
-export * from '../models/V1beta1DataVolumeSourceS3.js';
-export * from '../models/V1beta1DataVolumeSourceSnapshot.js';
-export * from '../models/V1beta1DataVolumeSourceVDDK.js';
-export * from '../models/V1beta1DataVolumeSpec.js';
-export * from '../models/V1beta1DevicePreferences.js';
-export * from '../models/V1beta1Error.js';
-export * from '../models/V1beta1FeaturePreferences.js';
-export * from '../models/V1beta1FirmwarePreferences.js';
-export * from '../models/V1beta1MachinePreferences.js';
-export * from '../models/V1beta1MemoryInstancetype.js';
-export * from '../models/V1beta1MemoryPreferenceRequirement.js';
-export * from '../models/V1beta1PersistentVolumeClaim.js';
-export * from '../models/V1beta1PreferenceRequirements.js';
-export * from '../models/V1beta1SnapshotVolumesLists.js';
-export * from '../models/V1beta1SourceSpec.js';
-export * from '../models/V1beta1SpreadOptions.js';
-export * from '../models/V1beta1StorageSpec.js';
-export * from '../models/V1beta1VirtualMachine.js';
-export * from '../models/V1beta1VirtualMachineClusterInstancetype.js';
-export * from '../models/V1beta1VirtualMachineClusterInstancetypeList.js';
-export * from '../models/V1beta1VirtualMachineClusterPreference.js';
-export * from '../models/V1beta1VirtualMachineClusterPreferenceList.js';
-export * from '../models/V1beta1VirtualMachineExport.js';
-export * from '../models/V1beta1VirtualMachineExportLink.js';
-export * from '../models/V1beta1VirtualMachineExportLinks.js';
-export * from '../models/V1beta1VirtualMachineExportList.js';
-export * from '../models/V1beta1VirtualMachineExportManifest.js';
-export * from '../models/V1beta1VirtualMachineExportSpec.js';
-export * from '../models/V1beta1VirtualMachineExportStatus.js';
-export * from '../models/V1beta1VirtualMachineExportVolume.js';
-export * from '../models/V1beta1VirtualMachineExportVolumeFormat.js';
-export * from '../models/V1beta1VirtualMachineInstancetype.js';
-export * from '../models/V1beta1VirtualMachineInstancetypeList.js';
-export * from '../models/V1beta1VirtualMachineInstancetypeSpec.js';
-export * from '../models/V1beta1VirtualMachinePreference.js';
-export * from '../models/V1beta1VirtualMachinePreferenceList.js';
-export * from '../models/V1beta1VirtualMachinePreferenceSpec.js';
-export * from '../models/V1beta1VirtualMachineRestore.js';
-export * from '../models/V1beta1VirtualMachineRestoreList.js';
-export * from '../models/V1beta1VirtualMachineRestoreSpec.js';
-export * from '../models/V1beta1VirtualMachineRestoreStatus.js';
-export * from '../models/V1beta1VirtualMachineSnapshot.js';
-export * from '../models/V1beta1VirtualMachineSnapshotContent.js';
-export * from '../models/V1beta1VirtualMachineSnapshotContentList.js';
-export * from '../models/V1beta1VirtualMachineSnapshotContentSpec.js';
-export * from '../models/V1beta1VirtualMachineSnapshotContentStatus.js';
-export * from '../models/V1beta1VirtualMachineSnapshotList.js';
-export * from '../models/V1beta1VirtualMachineSnapshotSpec.js';
-export * from '../models/V1beta1VirtualMachineSnapshotStatus.js';
-export * from '../models/V1beta1VolumeBackup.js';
-export * from '../models/V1beta1VolumePreferences.js';
-export * from '../models/V1beta1VolumeRestore.js';
-export * from '../models/V1beta1VolumeSnapshotStatus.js';
-import { K8sIoApiCoreV1Affinity } from '../models/K8sIoApiCoreV1Affinity.js';
-import { K8sIoApiCoreV1DownwardAPIVolumeFile } from '../models/K8sIoApiCoreV1DownwardAPIVolumeFile.js';
-import { K8sIoApiCoreV1ExecAction } from '../models/K8sIoApiCoreV1ExecAction.js';
-import { K8sIoApiCoreV1HTTPGetAction } from '../models/K8sIoApiCoreV1HTTPGetAction.js';
-import { K8sIoApiCoreV1HTTPHeader } from '../models/K8sIoApiCoreV1HTTPHeader.js';
-import { K8sIoApiCoreV1LocalObjectReference } from '../models/K8sIoApiCoreV1LocalObjectReference.js';
-import { K8sIoApiCoreV1NodeAffinity } from '../models/K8sIoApiCoreV1NodeAffinity.js';
-import { K8sIoApiCoreV1NodeSelector } from '../models/K8sIoApiCoreV1NodeSelector.js';
-import { K8sIoApiCoreV1NodeSelectorRequirement } from '../models/K8sIoApiCoreV1NodeSelectorRequirement.js';
-import { K8sIoApiCoreV1NodeSelectorTerm } from '../models/K8sIoApiCoreV1NodeSelectorTerm.js';
-import { K8sIoApiCoreV1ObjectFieldSelector } from '../models/K8sIoApiCoreV1ObjectFieldSelector.js';
-import { K8sIoApiCoreV1PersistentVolumeClaimSpec } from '../models/K8sIoApiCoreV1PersistentVolumeClaimSpec.js';
-import { K8sIoApiCoreV1PersistentVolumeClaimVolumeSource } from '../models/K8sIoApiCoreV1PersistentVolumeClaimVolumeSource.js';
-import { K8sIoApiCoreV1PodAffinity } from '../models/K8sIoApiCoreV1PodAffinity.js';
-import { K8sIoApiCoreV1PodAffinityTerm } from '../models/K8sIoApiCoreV1PodAffinityTerm.js';
-import { K8sIoApiCoreV1PodAntiAffinity } from '../models/K8sIoApiCoreV1PodAntiAffinity.js';
-import { K8sIoApiCoreV1PodDNSConfig } from '../models/K8sIoApiCoreV1PodDNSConfig.js';
-import { K8sIoApiCoreV1PodDNSConfigOption } from '../models/K8sIoApiCoreV1PodDNSConfigOption.js';
-import { K8sIoApiCoreV1PreferredSchedulingTerm } from '../models/K8sIoApiCoreV1PreferredSchedulingTerm.js';
-import { K8sIoApiCoreV1ResourceClaim } from '../models/K8sIoApiCoreV1ResourceClaim.js';
-import { K8sIoApiCoreV1ResourceFieldSelector } from '../models/K8sIoApiCoreV1ResourceFieldSelector.js';
-import { K8sIoApiCoreV1ResourceRequirements } from '../models/K8sIoApiCoreV1ResourceRequirements.js';
-import { K8sIoApiCoreV1TCPSocketAction } from '../models/K8sIoApiCoreV1TCPSocketAction.js';
-import { K8sIoApiCoreV1Toleration } from '../models/K8sIoApiCoreV1Toleration.js';
-import { K8sIoApiCoreV1TopologySpreadConstraint } from '../models/K8sIoApiCoreV1TopologySpreadConstraint.js';
-import { K8sIoApiCoreV1TypedLocalObjectReference } from '../models/K8sIoApiCoreV1TypedLocalObjectReference.js';
-import { K8sIoApiCoreV1TypedObjectReference } from '../models/K8sIoApiCoreV1TypedObjectReference.js';
-import { K8sIoApiCoreV1VolumeResourceRequirements } from '../models/K8sIoApiCoreV1VolumeResourceRequirements.js';
-import { K8sIoApiCoreV1WeightedPodAffinityTerm } from '../models/K8sIoApiCoreV1WeightedPodAffinityTerm.js';
-import { K8sIoApimachineryPkgApisMetaV1APIGroup } from '../models/K8sIoApimachineryPkgApisMetaV1APIGroup.js';
-import { K8sIoApimachineryPkgApisMetaV1APIGroupList } from '../models/K8sIoApimachineryPkgApisMetaV1APIGroupList.js';
-import { K8sIoApimachineryPkgApisMetaV1APIResource } from '../models/K8sIoApimachineryPkgApisMetaV1APIResource.js';
-import { K8sIoApimachineryPkgApisMetaV1APIResourceList } from '../models/K8sIoApimachineryPkgApisMetaV1APIResourceList.js';
-import { K8sIoApimachineryPkgApisMetaV1DeleteOptions } from '../models/K8sIoApimachineryPkgApisMetaV1DeleteOptions.js';
-import { K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery } from '../models/K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery.js';
-import { K8sIoApimachineryPkgApisMetaV1LabelSelector } from '../models/K8sIoApimachineryPkgApisMetaV1LabelSelector.js';
-import { K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement } from '../models/K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement.js';
-import { K8sIoApimachineryPkgApisMetaV1ListMeta } from '../models/K8sIoApimachineryPkgApisMetaV1ListMeta.js';
-import { K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry } from '../models/K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry.js';
-import { K8sIoApimachineryPkgApisMetaV1ObjectMeta } from '../models/K8sIoApimachineryPkgApisMetaV1ObjectMeta.js';
-import { K8sIoApimachineryPkgApisMetaV1OwnerReference } from '../models/K8sIoApimachineryPkgApisMetaV1OwnerReference.js';
-import { K8sIoApimachineryPkgApisMetaV1Preconditions } from '../models/K8sIoApimachineryPkgApisMetaV1Preconditions.js';
-import { K8sIoApimachineryPkgApisMetaV1RootPaths } from '../models/K8sIoApimachineryPkgApisMetaV1RootPaths.js';
-import { K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR } from '../models/K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR.js';
-import { K8sIoApimachineryPkgApisMetaV1Status } from '../models/K8sIoApimachineryPkgApisMetaV1Status.js';
-import { K8sIoApimachineryPkgApisMetaV1StatusCause } from '../models/K8sIoApimachineryPkgApisMetaV1StatusCause.js';
-import { K8sIoApimachineryPkgApisMetaV1StatusDetails } from '../models/K8sIoApimachineryPkgApisMetaV1StatusDetails.js';
-import { K8sIoApimachineryPkgApisMetaV1WatchEvent } from '../models/K8sIoApimachineryPkgApisMetaV1WatchEvent.js';
-import { V1ACPI } from '../models/V1ACPI.js';
-import { V1AccessCredential } from '../models/V1AccessCredential.js';
-import { V1AccessCredentialSecretSource } from '../models/V1AccessCredentialSecretSource.js';
-import { V1AddVolumeOptions } from '../models/V1AddVolumeOptions.js';
-import { V1ArchConfiguration } from '../models/V1ArchConfiguration.js';
-import { V1ArchSpecificConfiguration } from '../models/V1ArchSpecificConfiguration.js';
-import { V1BIOS } from '../models/V1BIOS.js';
-import { V1BlockSize } from '../models/V1BlockSize.js';
-import { V1Bootloader } from '../models/V1Bootloader.js';
-import { V1CDRomTarget } from '../models/V1CDRomTarget.js';
-import { V1CPU } from '../models/V1CPU.js';
-import { V1CPUFeature } from '../models/V1CPUFeature.js';
-import { V1CPUTopology } from '../models/V1CPUTopology.js';
-import { V1CertConfig } from '../models/V1CertConfig.js';
-import { V1Chassis } from '../models/V1Chassis.js';
-import { V1Clock } from '../models/V1Clock.js';
-import { V1ClockOffset } from '../models/V1ClockOffset.js';
-import { V1ClockOffsetUTC } from '../models/V1ClockOffsetUTC.js';
-import { V1CloudInitConfigDriveSource } from '../models/V1CloudInitConfigDriveSource.js';
-import { V1CloudInitNoCloudSource } from '../models/V1CloudInitNoCloudSource.js';
-import { V1CommonInstancetypesDeployment } from '../models/V1CommonInstancetypesDeployment.js';
-import { V1ComponentConfig } from '../models/V1ComponentConfig.js';
-import { V1ConfigMapVolumeSource } from '../models/V1ConfigMapVolumeSource.js';
-import { V1ContainerDiskInfo } from '../models/V1ContainerDiskInfo.js';
-import { V1ContainerDiskSource } from '../models/V1ContainerDiskSource.js';
-import { V1CustomBlockSize } from '../models/V1CustomBlockSize.js';
-import { V1CustomProfile } from '../models/V1CustomProfile.js';
-import { V1CustomizeComponents } from '../models/V1CustomizeComponents.js';
-import { V1CustomizeComponentsPatch } from '../models/V1CustomizeComponentsPatch.js';
-import { V1DHCPOptions } from '../models/V1DHCPOptions.js';
-import { V1DHCPPrivateOptions } from '../models/V1DHCPPrivateOptions.js';
-import { V1DataVolumeSource } from '../models/V1DataVolumeSource.js';
-import { V1DataVolumeTemplateSpec } from '../models/V1DataVolumeTemplateSpec.js';
-import { V1DeveloperConfiguration } from '../models/V1DeveloperConfiguration.js';
-import { V1Devices } from '../models/V1Devices.js';
-import { V1Disk } from '../models/V1Disk.js';
-import { V1DiskTarget } from '../models/V1DiskTarget.js';
-import { V1DiskVerification } from '../models/V1DiskVerification.js';
-import { V1DomainMemoryDumpInfo } from '../models/V1DomainMemoryDumpInfo.js';
-import { V1DomainSpec } from '../models/V1DomainSpec.js';
-import { V1DownwardAPIVolumeSource } from '../models/V1DownwardAPIVolumeSource.js';
-import { V1EFI } from '../models/V1EFI.js';
-import { V1EmptyDiskSource } from '../models/V1EmptyDiskSource.js';
-import { V1EphemeralVolumeSource } from '../models/V1EphemeralVolumeSource.js';
-import { V1FeatureAPIC } from '../models/V1FeatureAPIC.js';
-import { V1FeatureHyperv } from '../models/V1FeatureHyperv.js';
-import { V1FeatureKVM } from '../models/V1FeatureKVM.js';
-import { V1FeatureSpinlocks } from '../models/V1FeatureSpinlocks.js';
-import { V1FeatureState } from '../models/V1FeatureState.js';
-import { V1FeatureVendorID } from '../models/V1FeatureVendorID.js';
-import { V1Features } from '../models/V1Features.js';
-import { V1Filesystem } from '../models/V1Filesystem.js';
-import { V1Firmware } from '../models/V1Firmware.js';
-import { V1Flags } from '../models/V1Flags.js';
-import { V1FreezeUnfreezeTimeout } from '../models/V1FreezeUnfreezeTimeout.js';
-import { V1GPU } from '../models/V1GPU.js';
-import { V1GenerationStatus } from '../models/V1GenerationStatus.js';
-import { V1GuestAgentCommandInfo } from '../models/V1GuestAgentCommandInfo.js';
-import { V1HPETTimer } from '../models/V1HPETTimer.js';
-import { V1HostDevice } from '../models/V1HostDevice.js';
-import { V1HostDisk } from '../models/V1HostDisk.js';
-import { V1HotplugVolumeSource } from '../models/V1HotplugVolumeSource.js';
-import { V1HotplugVolumeStatus } from '../models/V1HotplugVolumeStatus.js';
-import { V1Hugepages } from '../models/V1Hugepages.js';
-import { V1HyperVPassthrough } from '../models/V1HyperVPassthrough.js';
-import { V1HypervTimer } from '../models/V1HypervTimer.js';
-import { V1I6300ESBWatchdog } from '../models/V1I6300ESBWatchdog.js';
-import { V1InitrdInfo } from '../models/V1InitrdInfo.js';
-import { V1Input } from '../models/V1Input.js';
-import { V1InstancetypeConfiguration } from '../models/V1InstancetypeConfiguration.js';
-import { V1InstancetypeMatcher } from '../models/V1InstancetypeMatcher.js';
-import { V1Interface } from '../models/V1Interface.js';
-import { V1InterfaceBindingMigration } from '../models/V1InterfaceBindingMigration.js';
-import { V1InterfaceBindingPlugin } from '../models/V1InterfaceBindingPlugin.js';
-import { V1KSMConfiguration } from '../models/V1KSMConfiguration.js';
-import { V1KVMTimer } from '../models/V1KVMTimer.js';
-import { V1KernelBoot } from '../models/V1KernelBoot.js';
-import { V1KernelBootContainer } from '../models/V1KernelBootContainer.js';
-import { V1KernelBootStatus } from '../models/V1KernelBootStatus.js';
-import { V1KernelInfo } from '../models/V1KernelInfo.js';
-import { V1KubeVirt } from '../models/V1KubeVirt.js';
-import { V1KubeVirtCertificateRotateStrategy } from '../models/V1KubeVirtCertificateRotateStrategy.js';
-import { V1KubeVirtCondition } from '../models/V1KubeVirtCondition.js';
-import { V1KubeVirtConfiguration } from '../models/V1KubeVirtConfiguration.js';
-import { V1KubeVirtList } from '../models/V1KubeVirtList.js';
-import { V1KubeVirtSelfSignConfiguration } from '../models/V1KubeVirtSelfSignConfiguration.js';
-import { V1KubeVirtSpec } from '../models/V1KubeVirtSpec.js';
-import { V1KubeVirtStatus } from '../models/V1KubeVirtStatus.js';
-import { V1KubeVirtWorkloadUpdateStrategy } from '../models/V1KubeVirtWorkloadUpdateStrategy.js';
-import { V1LaunchSecurity } from '../models/V1LaunchSecurity.js';
-import { V1LiveUpdateConfiguration } from '../models/V1LiveUpdateConfiguration.js';
-import { V1LogVerbosity } from '../models/V1LogVerbosity.js';
-import { V1LunTarget } from '../models/V1LunTarget.js';
-import { V1Machine } from '../models/V1Machine.js';
-import { V1MediatedDevicesConfiguration } from '../models/V1MediatedDevicesConfiguration.js';
-import { V1MediatedHostDevice } from '../models/V1MediatedHostDevice.js';
-import { V1Memory } from '../models/V1Memory.js';
-import { V1MemoryDumpVolumeSource } from '../models/V1MemoryDumpVolumeSource.js';
-import { V1MemoryStatus } from '../models/V1MemoryStatus.js';
-import { V1MigrateOptions } from '../models/V1MigrateOptions.js';
-import { V1MigrationConfiguration } from '../models/V1MigrationConfiguration.js';
-import { V1MultusNetwork } from '../models/V1MultusNetwork.js';
-import { V1NUMA } from '../models/V1NUMA.js';
-import { V1Network } from '../models/V1Network.js';
-import { V1NetworkConfiguration } from '../models/V1NetworkConfiguration.js';
-import { V1NodeMediatedDeviceTypesConfig } from '../models/V1NodeMediatedDeviceTypesConfig.js';
-import { V1NodePlacement } from '../models/V1NodePlacement.js';
-import { V1PITTimer } from '../models/V1PITTimer.js';
-import { V1PauseOptions } from '../models/V1PauseOptions.js';
-import { V1PciHostDevice } from '../models/V1PciHostDevice.js';
-import { V1PermittedHostDevices } from '../models/V1PermittedHostDevices.js';
-import { V1PersistentVolumeClaimInfo } from '../models/V1PersistentVolumeClaimInfo.js';
-import { V1PersistentVolumeClaimVolumeSource } from '../models/V1PersistentVolumeClaimVolumeSource.js';
-import { V1PluginBinding } from '../models/V1PluginBinding.js';
-import { V1PodNetwork } from '../models/V1PodNetwork.js';
-import { V1Port } from '../models/V1Port.js';
-import { V1PreferenceMatcher } from '../models/V1PreferenceMatcher.js';
-import { V1Probe } from '../models/V1Probe.js';
-import { V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation } from '../models/V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation.js';
-import { V1RESTClientConfiguration } from '../models/V1RESTClientConfiguration.js';
-import { V1RTCTimer } from '../models/V1RTCTimer.js';
-import { V1RateLimiter } from '../models/V1RateLimiter.js';
-import { V1Realtime } from '../models/V1Realtime.js';
-import { V1ReloadableComponentConfiguration } from '../models/V1ReloadableComponentConfiguration.js';
-import { V1RemoveVolumeOptions } from '../models/V1RemoveVolumeOptions.js';
-import { V1ResourceRequirements } from '../models/V1ResourceRequirements.js';
-import { V1ResourceRequirementsWithoutClaims } from '../models/V1ResourceRequirementsWithoutClaims.js';
-import { V1RestartOptions } from '../models/V1RestartOptions.js';
-import { V1SEV } from '../models/V1SEV.js';
-import { V1SEVMeasurementInfo } from '../models/V1SEVMeasurementInfo.js';
-import { V1SEVPlatformInfo } from '../models/V1SEVPlatformInfo.js';
-import { V1SEVPolicy } from '../models/V1SEVPolicy.js';
-import { V1SEVSecretOptions } from '../models/V1SEVSecretOptions.js';
-import { V1SEVSessionOptions } from '../models/V1SEVSessionOptions.js';
-import { V1SMBiosConfiguration } from '../models/V1SMBiosConfiguration.js';
-import { V1SSHPublicKeyAccessCredential } from '../models/V1SSHPublicKeyAccessCredential.js';
-import { V1SSHPublicKeyAccessCredentialPropagationMethod } from '../models/V1SSHPublicKeyAccessCredentialPropagationMethod.js';
-import { V1SSHPublicKeyAccessCredentialSource } from '../models/V1SSHPublicKeyAccessCredentialSource.js';
-import { V1SeccompConfiguration } from '../models/V1SeccompConfiguration.js';
-import { V1SecretVolumeSource } from '../models/V1SecretVolumeSource.js';
-import { V1ServiceAccountVolumeSource } from '../models/V1ServiceAccountVolumeSource.js';
-import { V1SoundDevice } from '../models/V1SoundDevice.js';
-import { V1StartOptions } from '../models/V1StartOptions.js';
-import { V1StopOptions } from '../models/V1StopOptions.js';
-import { V1StorageMigratedVolumeInfo } from '../models/V1StorageMigratedVolumeInfo.js';
-import { V1SupportContainerResources } from '../models/V1SupportContainerResources.js';
-import { V1SyNICTimer } from '../models/V1SyNICTimer.js';
-import { V1SysprepSource } from '../models/V1SysprepSource.js';
-import { V1TLSConfiguration } from '../models/V1TLSConfiguration.js';
-import { V1TPMDevice } from '../models/V1TPMDevice.js';
-import { V1Timer } from '../models/V1Timer.js';
-import { V1TokenBucketRateLimiter } from '../models/V1TokenBucketRateLimiter.js';
-import { V1TopologyHints } from '../models/V1TopologyHints.js';
-import { V1USBHostDevice } from '../models/V1USBHostDevice.js';
-import { V1USBSelector } from '../models/V1USBSelector.js';
-import { V1UnpauseOptions } from '../models/V1UnpauseOptions.js';
-import { V1UserPasswordAccessCredential } from '../models/V1UserPasswordAccessCredential.js';
-import { V1UserPasswordAccessCredentialPropagationMethod } from '../models/V1UserPasswordAccessCredentialPropagationMethod.js';
-import { V1UserPasswordAccessCredentialSource } from '../models/V1UserPasswordAccessCredentialSource.js';
-import { V1VGPUDisplayOptions } from '../models/V1VGPUDisplayOptions.js';
-import { V1VGPUOptions } from '../models/V1VGPUOptions.js';
-import { V1VirtualMachine } from '../models/V1VirtualMachine.js';
-import { V1VirtualMachineCondition } from '../models/V1VirtualMachineCondition.js';
-import { V1VirtualMachineInstance } from '../models/V1VirtualMachineInstance.js';
-import { V1VirtualMachineInstanceCondition } from '../models/V1VirtualMachineInstanceCondition.js';
-import { V1VirtualMachineInstanceFileSystem } from '../models/V1VirtualMachineInstanceFileSystem.js';
-import { V1VirtualMachineInstanceFileSystemDisk } from '../models/V1VirtualMachineInstanceFileSystemDisk.js';
-import { V1VirtualMachineInstanceFileSystemInfo } from '../models/V1VirtualMachineInstanceFileSystemInfo.js';
-import { V1VirtualMachineInstanceFileSystemList } from '../models/V1VirtualMachineInstanceFileSystemList.js';
-import { V1VirtualMachineInstanceGuestAgentInfo } from '../models/V1VirtualMachineInstanceGuestAgentInfo.js';
-import { V1VirtualMachineInstanceGuestOSInfo } from '../models/V1VirtualMachineInstanceGuestOSInfo.js';
-import { V1VirtualMachineInstanceGuestOSUser } from '../models/V1VirtualMachineInstanceGuestOSUser.js';
-import { V1VirtualMachineInstanceGuestOSUserList } from '../models/V1VirtualMachineInstanceGuestOSUserList.js';
-import { V1VirtualMachineInstanceList } from '../models/V1VirtualMachineInstanceList.js';
-import { V1VirtualMachineInstanceMigration } from '../models/V1VirtualMachineInstanceMigration.js';
-import { V1VirtualMachineInstanceMigrationCondition } from '../models/V1VirtualMachineInstanceMigrationCondition.js';
-import { V1VirtualMachineInstanceMigrationList } from '../models/V1VirtualMachineInstanceMigrationList.js';
-import { V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp } from '../models/V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp.js';
-import { V1VirtualMachineInstanceMigrationSpec } from '../models/V1VirtualMachineInstanceMigrationSpec.js';
-import { V1VirtualMachineInstanceMigrationState } from '../models/V1VirtualMachineInstanceMigrationState.js';
-import { V1VirtualMachineInstanceMigrationStatus } from '../models/V1VirtualMachineInstanceMigrationStatus.js';
-import { V1VirtualMachineInstanceNetworkInterface } from '../models/V1VirtualMachineInstanceNetworkInterface.js';
-import { V1VirtualMachineInstancePhaseTransitionTimestamp } from '../models/V1VirtualMachineInstancePhaseTransitionTimestamp.js';
-import { V1VirtualMachineInstancePreset } from '../models/V1VirtualMachineInstancePreset.js';
-import { V1VirtualMachineInstancePresetList } from '../models/V1VirtualMachineInstancePresetList.js';
-import { V1VirtualMachineInstancePresetSpec } from '../models/V1VirtualMachineInstancePresetSpec.js';
-import { V1VirtualMachineInstanceProfile } from '../models/V1VirtualMachineInstanceProfile.js';
-import { V1VirtualMachineInstanceReplicaSet } from '../models/V1VirtualMachineInstanceReplicaSet.js';
-import { V1VirtualMachineInstanceReplicaSetCondition } from '../models/V1VirtualMachineInstanceReplicaSetCondition.js';
-import { V1VirtualMachineInstanceReplicaSetList } from '../models/V1VirtualMachineInstanceReplicaSetList.js';
-import { V1VirtualMachineInstanceReplicaSetSpec } from '../models/V1VirtualMachineInstanceReplicaSetSpec.js';
-import { V1VirtualMachineInstanceReplicaSetStatus } from '../models/V1VirtualMachineInstanceReplicaSetStatus.js';
-import { V1VirtualMachineInstanceSpec } from '../models/V1VirtualMachineInstanceSpec.js';
-import { V1VirtualMachineInstanceStatus } from '../models/V1VirtualMachineInstanceStatus.js';
-import { V1VirtualMachineInstanceTemplateSpec } from '../models/V1VirtualMachineInstanceTemplateSpec.js';
-import { V1VirtualMachineList } from '../models/V1VirtualMachineList.js';
-import { V1VirtualMachineMemoryDumpRequest } from '../models/V1VirtualMachineMemoryDumpRequest.js';
-import { V1VirtualMachineOptions } from '../models/V1VirtualMachineOptions.js';
-import { V1VirtualMachineSpec } from '../models/V1VirtualMachineSpec.js';
-import { V1VirtualMachineStartFailure } from '../models/V1VirtualMachineStartFailure.js';
-import { V1VirtualMachineStateChangeRequest } from '../models/V1VirtualMachineStateChangeRequest.js';
-import { V1VirtualMachineStatus } from '../models/V1VirtualMachineStatus.js';
-import { V1VirtualMachineVolumeRequest } from '../models/V1VirtualMachineVolumeRequest.js';
-import { V1Volume } from '../models/V1Volume.js';
-import { V1VolumeMigrationState } from '../models/V1VolumeMigrationState.js';
-import { V1VolumeSnapshotStatus } from '../models/V1VolumeSnapshotStatus.js';
-import { V1VolumeStatus } from '../models/V1VolumeStatus.js';
-import { V1VolumeUpdateState } from '../models/V1VolumeUpdateState.js';
-import { V1Watchdog } from '../models/V1Watchdog.js';
-import { V1alpha1Condition } from '../models/V1alpha1Condition.js';
-import { V1alpha1MigrationPolicy } from '../models/V1alpha1MigrationPolicy.js';
-import { V1alpha1MigrationPolicyList } from '../models/V1alpha1MigrationPolicyList.js';
-import { V1alpha1MigrationPolicySpec } from '../models/V1alpha1MigrationPolicySpec.js';
-import { V1alpha1Selectors } from '../models/V1alpha1Selectors.js';
-import { V1alpha1VirtualMachineClone } from '../models/V1alpha1VirtualMachineClone.js';
-import { V1alpha1VirtualMachineCloneList } from '../models/V1alpha1VirtualMachineCloneList.js';
-import { V1alpha1VirtualMachineCloneSpec } from '../models/V1alpha1VirtualMachineCloneSpec.js';
-import { V1alpha1VirtualMachineCloneStatus } from '../models/V1alpha1VirtualMachineCloneStatus.js';
-import { V1alpha1VirtualMachineCloneTemplateFilters } from '../models/V1alpha1VirtualMachineCloneTemplateFilters.js';
-import { V1alpha1VirtualMachinePool } from '../models/V1alpha1VirtualMachinePool.js';
-import { V1alpha1VirtualMachinePoolCondition } from '../models/V1alpha1VirtualMachinePoolCondition.js';
-import { V1alpha1VirtualMachinePoolList } from '../models/V1alpha1VirtualMachinePoolList.js';
-import { V1alpha1VirtualMachinePoolSpec } from '../models/V1alpha1VirtualMachinePoolSpec.js';
-import { V1alpha1VirtualMachinePoolStatus } from '../models/V1alpha1VirtualMachinePoolStatus.js';
-import { V1alpha1VirtualMachineTemplateSpec } from '../models/V1alpha1VirtualMachineTemplateSpec.js';
-import { V1beta1CPUInstancetype } from '../models/V1beta1CPUInstancetype.js';
-import { V1beta1CPUPreferenceRequirement } from '../models/V1beta1CPUPreferenceRequirement.js';
-import { V1beta1CPUPreferences } from '../models/V1beta1CPUPreferences.js';
-import { V1beta1ClockPreferences } from '../models/V1beta1ClockPreferences.js';
-import { V1beta1Condition } from '../models/V1beta1Condition.js';
-import { V1beta1DataVolumeCheckpoint } from '../models/V1beta1DataVolumeCheckpoint.js';
-import { V1beta1DataVolumeSource } from '../models/V1beta1DataVolumeSource.js';
-import { V1beta1DataVolumeSourceGCS } from '../models/V1beta1DataVolumeSourceGCS.js';
-import { V1beta1DataVolumeSourceHTTP } from '../models/V1beta1DataVolumeSourceHTTP.js';
-import { V1beta1DataVolumeSourceImageIO } from '../models/V1beta1DataVolumeSourceImageIO.js';
-import { V1beta1DataVolumeSourcePVC } from '../models/V1beta1DataVolumeSourcePVC.js';
-import { V1beta1DataVolumeSourceRef } from '../models/V1beta1DataVolumeSourceRef.js';
-import { V1beta1DataVolumeSourceRegistry } from '../models/V1beta1DataVolumeSourceRegistry.js';
-import { V1beta1DataVolumeSourceS3 } from '../models/V1beta1DataVolumeSourceS3.js';
-import { V1beta1DataVolumeSourceSnapshot } from '../models/V1beta1DataVolumeSourceSnapshot.js';
-import { V1beta1DataVolumeSourceVDDK } from '../models/V1beta1DataVolumeSourceVDDK.js';
-import { V1beta1DataVolumeSpec } from '../models/V1beta1DataVolumeSpec.js';
-import { V1beta1DevicePreferences } from '../models/V1beta1DevicePreferences.js';
-import { V1beta1Error } from '../models/V1beta1Error.js';
-import { V1beta1FeaturePreferences } from '../models/V1beta1FeaturePreferences.js';
-import { V1beta1FirmwarePreferences } from '../models/V1beta1FirmwarePreferences.js';
-import { V1beta1MachinePreferences } from '../models/V1beta1MachinePreferences.js';
-import { V1beta1MemoryInstancetype } from '../models/V1beta1MemoryInstancetype.js';
-import { V1beta1MemoryPreferenceRequirement } from '../models/V1beta1MemoryPreferenceRequirement.js';
-import { V1beta1PersistentVolumeClaim } from '../models/V1beta1PersistentVolumeClaim.js';
-import { V1beta1PreferenceRequirements } from '../models/V1beta1PreferenceRequirements.js';
-import { V1beta1SnapshotVolumesLists } from '../models/V1beta1SnapshotVolumesLists.js';
-import { V1beta1SourceSpec } from '../models/V1beta1SourceSpec.js';
-import { V1beta1SpreadOptions } from '../models/V1beta1SpreadOptions.js';
-import { V1beta1StorageSpec } from '../models/V1beta1StorageSpec.js';
-import { V1beta1VirtualMachine } from '../models/V1beta1VirtualMachine.js';
-import { V1beta1VirtualMachineClusterInstancetype } from '../models/V1beta1VirtualMachineClusterInstancetype.js';
-import { V1beta1VirtualMachineClusterInstancetypeList } from '../models/V1beta1VirtualMachineClusterInstancetypeList.js';
-import { V1beta1VirtualMachineClusterPreference } from '../models/V1beta1VirtualMachineClusterPreference.js';
-import { V1beta1VirtualMachineClusterPreferenceList } from '../models/V1beta1VirtualMachineClusterPreferenceList.js';
-import { V1beta1VirtualMachineExport } from '../models/V1beta1VirtualMachineExport.js';
-import { V1beta1VirtualMachineExportLink } from '../models/V1beta1VirtualMachineExportLink.js';
-import { V1beta1VirtualMachineExportLinks } from '../models/V1beta1VirtualMachineExportLinks.js';
-import { V1beta1VirtualMachineExportList } from '../models/V1beta1VirtualMachineExportList.js';
-import { V1beta1VirtualMachineExportManifest } from '../models/V1beta1VirtualMachineExportManifest.js';
-import { V1beta1VirtualMachineExportSpec } from '../models/V1beta1VirtualMachineExportSpec.js';
-import { V1beta1VirtualMachineExportStatus } from '../models/V1beta1VirtualMachineExportStatus.js';
-import { V1beta1VirtualMachineExportVolume } from '../models/V1beta1VirtualMachineExportVolume.js';
-import { V1beta1VirtualMachineExportVolumeFormat } from '../models/V1beta1VirtualMachineExportVolumeFormat.js';
-import { V1beta1VirtualMachineInstancetype } from '../models/V1beta1VirtualMachineInstancetype.js';
-import { V1beta1VirtualMachineInstancetypeList } from '../models/V1beta1VirtualMachineInstancetypeList.js';
-import { V1beta1VirtualMachineInstancetypeSpec } from '../models/V1beta1VirtualMachineInstancetypeSpec.js';
-import { V1beta1VirtualMachinePreference } from '../models/V1beta1VirtualMachinePreference.js';
-import { V1beta1VirtualMachinePreferenceList } from '../models/V1beta1VirtualMachinePreferenceList.js';
-import { V1beta1VirtualMachinePreferenceSpec } from '../models/V1beta1VirtualMachinePreferenceSpec.js';
-import { V1beta1VirtualMachineRestore } from '../models/V1beta1VirtualMachineRestore.js';
-import { V1beta1VirtualMachineRestoreList } from '../models/V1beta1VirtualMachineRestoreList.js';
-import { V1beta1VirtualMachineRestoreSpec } from '../models/V1beta1VirtualMachineRestoreSpec.js';
-import { V1beta1VirtualMachineRestoreStatus } from '../models/V1beta1VirtualMachineRestoreStatus.js';
-import { V1beta1VirtualMachineSnapshot } from '../models/V1beta1VirtualMachineSnapshot.js';
-import { V1beta1VirtualMachineSnapshotContent } from '../models/V1beta1VirtualMachineSnapshotContent.js';
-import { V1beta1VirtualMachineSnapshotContentList } from '../models/V1beta1VirtualMachineSnapshotContentList.js';
-import { V1beta1VirtualMachineSnapshotContentSpec } from '../models/V1beta1VirtualMachineSnapshotContentSpec.js';
-import { V1beta1VirtualMachineSnapshotContentStatus } from '../models/V1beta1VirtualMachineSnapshotContentStatus.js';
-import { V1beta1VirtualMachineSnapshotList } from '../models/V1beta1VirtualMachineSnapshotList.js';
-import { V1beta1VirtualMachineSnapshotSpec } from '../models/V1beta1VirtualMachineSnapshotSpec.js';
-import { V1beta1VirtualMachineSnapshotStatus } from '../models/V1beta1VirtualMachineSnapshotStatus.js';
-import { V1beta1VolumeBackup } from '../models/V1beta1VolumeBackup.js';
-import { V1beta1VolumePreferences } from '../models/V1beta1VolumePreferences.js';
-import { V1beta1VolumeRestore } from '../models/V1beta1VolumeRestore.js';
-import { V1beta1VolumeSnapshotStatus } from '../models/V1beta1VolumeSnapshotStatus.js';
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ObjectSerializer = void 0;
+__exportStar(require("../models/K8sIoApiCoreV1Affinity.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1DownwardAPIVolumeFile.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1ExecAction.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1HTTPGetAction.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1HTTPHeader.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1LocalObjectReference.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1NodeAffinity.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1NodeSelector.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1NodeSelectorRequirement.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1NodeSelectorTerm.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1ObjectFieldSelector.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1PersistentVolumeClaimSpec.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1PersistentVolumeClaimVolumeSource.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1PodAffinity.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1PodAffinityTerm.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1PodAntiAffinity.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1PodDNSConfig.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1PodDNSConfigOption.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1PreferredSchedulingTerm.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1ResourceClaim.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1ResourceFieldSelector.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1ResourceRequirements.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1TCPSocketAction.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1Toleration.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1TopologySpreadConstraint.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1TypedLocalObjectReference.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1TypedObjectReference.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1VolumeResourceRequirements.js"), exports);
+__exportStar(require("../models/K8sIoApiCoreV1WeightedPodAffinityTerm.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1APIGroup.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1APIGroupList.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1APIResource.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1APIResourceList.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1DeleteOptions.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1LabelSelector.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1ListMeta.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1ObjectMeta.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1OwnerReference.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1Preconditions.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1RootPaths.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1Status.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1StatusCause.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1StatusDetails.js"), exports);
+__exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1WatchEvent.js"), exports);
+__exportStar(require("../models/V1ACPI.js"), exports);
+__exportStar(require("../models/V1AccessCredential.js"), exports);
+__exportStar(require("../models/V1AccessCredentialSecretSource.js"), exports);
+__exportStar(require("../models/V1AddVolumeOptions.js"), exports);
+__exportStar(require("../models/V1ArchConfiguration.js"), exports);
+__exportStar(require("../models/V1ArchSpecificConfiguration.js"), exports);
+__exportStar(require("../models/V1BIOS.js"), exports);
+__exportStar(require("../models/V1BlockSize.js"), exports);
+__exportStar(require("../models/V1Bootloader.js"), exports);
+__exportStar(require("../models/V1CDRomTarget.js"), exports);
+__exportStar(require("../models/V1CPU.js"), exports);
+__exportStar(require("../models/V1CPUFeature.js"), exports);
+__exportStar(require("../models/V1CPUTopology.js"), exports);
+__exportStar(require("../models/V1CertConfig.js"), exports);
+__exportStar(require("../models/V1Chassis.js"), exports);
+__exportStar(require("../models/V1Clock.js"), exports);
+__exportStar(require("../models/V1ClockOffset.js"), exports);
+__exportStar(require("../models/V1ClockOffsetUTC.js"), exports);
+__exportStar(require("../models/V1CloudInitConfigDriveSource.js"), exports);
+__exportStar(require("../models/V1CloudInitNoCloudSource.js"), exports);
+__exportStar(require("../models/V1CommonInstancetypesDeployment.js"), exports);
+__exportStar(require("../models/V1ComponentConfig.js"), exports);
+__exportStar(require("../models/V1ConfigMapVolumeSource.js"), exports);
+__exportStar(require("../models/V1ContainerDiskInfo.js"), exports);
+__exportStar(require("../models/V1ContainerDiskSource.js"), exports);
+__exportStar(require("../models/V1CustomBlockSize.js"), exports);
+__exportStar(require("../models/V1CustomProfile.js"), exports);
+__exportStar(require("../models/V1CustomizeComponents.js"), exports);
+__exportStar(require("../models/V1CustomizeComponentsPatch.js"), exports);
+__exportStar(require("../models/V1DHCPOptions.js"), exports);
+__exportStar(require("../models/V1DHCPPrivateOptions.js"), exports);
+__exportStar(require("../models/V1DataVolumeSource.js"), exports);
+__exportStar(require("../models/V1DataVolumeTemplateSpec.js"), exports);
+__exportStar(require("../models/V1DeveloperConfiguration.js"), exports);
+__exportStar(require("../models/V1Devices.js"), exports);
+__exportStar(require("../models/V1Disk.js"), exports);
+__exportStar(require("../models/V1DiskTarget.js"), exports);
+__exportStar(require("../models/V1DiskVerification.js"), exports);
+__exportStar(require("../models/V1DomainMemoryDumpInfo.js"), exports);
+__exportStar(require("../models/V1DomainSpec.js"), exports);
+__exportStar(require("../models/V1DownwardAPIVolumeSource.js"), exports);
+__exportStar(require("../models/V1EFI.js"), exports);
+__exportStar(require("../models/V1EmptyDiskSource.js"), exports);
+__exportStar(require("../models/V1EphemeralVolumeSource.js"), exports);
+__exportStar(require("../models/V1FeatureAPIC.js"), exports);
+__exportStar(require("../models/V1FeatureHyperv.js"), exports);
+__exportStar(require("../models/V1FeatureKVM.js"), exports);
+__exportStar(require("../models/V1FeatureSpinlocks.js"), exports);
+__exportStar(require("../models/V1FeatureState.js"), exports);
+__exportStar(require("../models/V1FeatureVendorID.js"), exports);
+__exportStar(require("../models/V1Features.js"), exports);
+__exportStar(require("../models/V1Filesystem.js"), exports);
+__exportStar(require("../models/V1Firmware.js"), exports);
+__exportStar(require("../models/V1Flags.js"), exports);
+__exportStar(require("../models/V1FreezeUnfreezeTimeout.js"), exports);
+__exportStar(require("../models/V1GPU.js"), exports);
+__exportStar(require("../models/V1GenerationStatus.js"), exports);
+__exportStar(require("../models/V1GuestAgentCommandInfo.js"), exports);
+__exportStar(require("../models/V1HPETTimer.js"), exports);
+__exportStar(require("../models/V1HostDevice.js"), exports);
+__exportStar(require("../models/V1HostDisk.js"), exports);
+__exportStar(require("../models/V1HotplugVolumeSource.js"), exports);
+__exportStar(require("../models/V1HotplugVolumeStatus.js"), exports);
+__exportStar(require("../models/V1Hugepages.js"), exports);
+__exportStar(require("../models/V1HyperVPassthrough.js"), exports);
+__exportStar(require("../models/V1HypervTimer.js"), exports);
+__exportStar(require("../models/V1I6300ESBWatchdog.js"), exports);
+__exportStar(require("../models/V1InitrdInfo.js"), exports);
+__exportStar(require("../models/V1Input.js"), exports);
+__exportStar(require("../models/V1InstancetypeConfiguration.js"), exports);
+__exportStar(require("../models/V1InstancetypeMatcher.js"), exports);
+__exportStar(require("../models/V1Interface.js"), exports);
+__exportStar(require("../models/V1InterfaceBindingMigration.js"), exports);
+__exportStar(require("../models/V1InterfaceBindingPlugin.js"), exports);
+__exportStar(require("../models/V1KSMConfiguration.js"), exports);
+__exportStar(require("../models/V1KVMTimer.js"), exports);
+__exportStar(require("../models/V1KernelBoot.js"), exports);
+__exportStar(require("../models/V1KernelBootContainer.js"), exports);
+__exportStar(require("../models/V1KernelBootStatus.js"), exports);
+__exportStar(require("../models/V1KernelInfo.js"), exports);
+__exportStar(require("../models/V1KubeVirt.js"), exports);
+__exportStar(require("../models/V1KubeVirtCertificateRotateStrategy.js"), exports);
+__exportStar(require("../models/V1KubeVirtCondition.js"), exports);
+__exportStar(require("../models/V1KubeVirtConfiguration.js"), exports);
+__exportStar(require("../models/V1KubeVirtList.js"), exports);
+__exportStar(require("../models/V1KubeVirtSelfSignConfiguration.js"), exports);
+__exportStar(require("../models/V1KubeVirtSpec.js"), exports);
+__exportStar(require("../models/V1KubeVirtStatus.js"), exports);
+__exportStar(require("../models/V1KubeVirtWorkloadUpdateStrategy.js"), exports);
+__exportStar(require("../models/V1LaunchSecurity.js"), exports);
+__exportStar(require("../models/V1LiveUpdateConfiguration.js"), exports);
+__exportStar(require("../models/V1LogVerbosity.js"), exports);
+__exportStar(require("../models/V1LunTarget.js"), exports);
+__exportStar(require("../models/V1Machine.js"), exports);
+__exportStar(require("../models/V1MediatedDevicesConfiguration.js"), exports);
+__exportStar(require("../models/V1MediatedHostDevice.js"), exports);
+__exportStar(require("../models/V1Memory.js"), exports);
+__exportStar(require("../models/V1MemoryDumpVolumeSource.js"), exports);
+__exportStar(require("../models/V1MemoryStatus.js"), exports);
+__exportStar(require("../models/V1MigrateOptions.js"), exports);
+__exportStar(require("../models/V1MigrationConfiguration.js"), exports);
+__exportStar(require("../models/V1MultusNetwork.js"), exports);
+__exportStar(require("../models/V1NUMA.js"), exports);
+__exportStar(require("../models/V1Network.js"), exports);
+__exportStar(require("../models/V1NetworkConfiguration.js"), exports);
+__exportStar(require("../models/V1NodeMediatedDeviceTypesConfig.js"), exports);
+__exportStar(require("../models/V1NodePlacement.js"), exports);
+__exportStar(require("../models/V1PITTimer.js"), exports);
+__exportStar(require("../models/V1PauseOptions.js"), exports);
+__exportStar(require("../models/V1PciHostDevice.js"), exports);
+__exportStar(require("../models/V1PermittedHostDevices.js"), exports);
+__exportStar(require("../models/V1PersistentVolumeClaimInfo.js"), exports);
+__exportStar(require("../models/V1PersistentVolumeClaimVolumeSource.js"), exports);
+__exportStar(require("../models/V1PluginBinding.js"), exports);
+__exportStar(require("../models/V1PodNetwork.js"), exports);
+__exportStar(require("../models/V1Port.js"), exports);
+__exportStar(require("../models/V1PreferenceMatcher.js"), exports);
+__exportStar(require("../models/V1Probe.js"), exports);
+__exportStar(require("../models/V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation.js"), exports);
+__exportStar(require("../models/V1RESTClientConfiguration.js"), exports);
+__exportStar(require("../models/V1RTCTimer.js"), exports);
+__exportStar(require("../models/V1RateLimiter.js"), exports);
+__exportStar(require("../models/V1Realtime.js"), exports);
+__exportStar(require("../models/V1ReloadableComponentConfiguration.js"), exports);
+__exportStar(require("../models/V1RemoveVolumeOptions.js"), exports);
+__exportStar(require("../models/V1ResourceRequirements.js"), exports);
+__exportStar(require("../models/V1ResourceRequirementsWithoutClaims.js"), exports);
+__exportStar(require("../models/V1RestartOptions.js"), exports);
+__exportStar(require("../models/V1SEV.js"), exports);
+__exportStar(require("../models/V1SEVMeasurementInfo.js"), exports);
+__exportStar(require("../models/V1SEVPlatformInfo.js"), exports);
+__exportStar(require("../models/V1SEVPolicy.js"), exports);
+__exportStar(require("../models/V1SEVSecretOptions.js"), exports);
+__exportStar(require("../models/V1SEVSessionOptions.js"), exports);
+__exportStar(require("../models/V1SMBiosConfiguration.js"), exports);
+__exportStar(require("../models/V1SSHPublicKeyAccessCredential.js"), exports);
+__exportStar(require("../models/V1SSHPublicKeyAccessCredentialPropagationMethod.js"), exports);
+__exportStar(require("../models/V1SSHPublicKeyAccessCredentialSource.js"), exports);
+__exportStar(require("../models/V1SeccompConfiguration.js"), exports);
+__exportStar(require("../models/V1SecretVolumeSource.js"), exports);
+__exportStar(require("../models/V1ServiceAccountVolumeSource.js"), exports);
+__exportStar(require("../models/V1SoundDevice.js"), exports);
+__exportStar(require("../models/V1StartOptions.js"), exports);
+__exportStar(require("../models/V1StopOptions.js"), exports);
+__exportStar(require("../models/V1StorageMigratedVolumeInfo.js"), exports);
+__exportStar(require("../models/V1SupportContainerResources.js"), exports);
+__exportStar(require("../models/V1SyNICTimer.js"), exports);
+__exportStar(require("../models/V1SysprepSource.js"), exports);
+__exportStar(require("../models/V1TLSConfiguration.js"), exports);
+__exportStar(require("../models/V1TPMDevice.js"), exports);
+__exportStar(require("../models/V1Timer.js"), exports);
+__exportStar(require("../models/V1TokenBucketRateLimiter.js"), exports);
+__exportStar(require("../models/V1TopologyHints.js"), exports);
+__exportStar(require("../models/V1USBHostDevice.js"), exports);
+__exportStar(require("../models/V1USBSelector.js"), exports);
+__exportStar(require("../models/V1UnpauseOptions.js"), exports);
+__exportStar(require("../models/V1UserPasswordAccessCredential.js"), exports);
+__exportStar(require("../models/V1UserPasswordAccessCredentialPropagationMethod.js"), exports);
+__exportStar(require("../models/V1UserPasswordAccessCredentialSource.js"), exports);
+__exportStar(require("../models/V1VGPUDisplayOptions.js"), exports);
+__exportStar(require("../models/V1VGPUOptions.js"), exports);
+__exportStar(require("../models/V1VirtualMachine.js"), exports);
+__exportStar(require("../models/V1VirtualMachineCondition.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstance.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceCondition.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceFileSystem.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceFileSystemDisk.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceFileSystemInfo.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceFileSystemList.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceGuestAgentInfo.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceGuestOSInfo.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceGuestOSUser.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceGuestOSUserList.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceList.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceMigration.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceMigrationCondition.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceMigrationList.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceMigrationSpec.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceMigrationState.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceMigrationStatus.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceNetworkInterface.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstancePhaseTransitionTimestamp.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstancePreset.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstancePresetList.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstancePresetSpec.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceProfile.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceReplicaSet.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceReplicaSetCondition.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceReplicaSetList.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceReplicaSetSpec.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceReplicaSetStatus.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceSpec.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceStatus.js"), exports);
+__exportStar(require("../models/V1VirtualMachineInstanceTemplateSpec.js"), exports);
+__exportStar(require("../models/V1VirtualMachineList.js"), exports);
+__exportStar(require("../models/V1VirtualMachineMemoryDumpRequest.js"), exports);
+__exportStar(require("../models/V1VirtualMachineOptions.js"), exports);
+__exportStar(require("../models/V1VirtualMachineSpec.js"), exports);
+__exportStar(require("../models/V1VirtualMachineStartFailure.js"), exports);
+__exportStar(require("../models/V1VirtualMachineStateChangeRequest.js"), exports);
+__exportStar(require("../models/V1VirtualMachineStatus.js"), exports);
+__exportStar(require("../models/V1VirtualMachineVolumeRequest.js"), exports);
+__exportStar(require("../models/V1Volume.js"), exports);
+__exportStar(require("../models/V1VolumeMigrationState.js"), exports);
+__exportStar(require("../models/V1VolumeSnapshotStatus.js"), exports);
+__exportStar(require("../models/V1VolumeStatus.js"), exports);
+__exportStar(require("../models/V1VolumeUpdateState.js"), exports);
+__exportStar(require("../models/V1Watchdog.js"), exports);
+__exportStar(require("../models/V1alpha1Condition.js"), exports);
+__exportStar(require("../models/V1alpha1MigrationPolicy.js"), exports);
+__exportStar(require("../models/V1alpha1MigrationPolicyList.js"), exports);
+__exportStar(require("../models/V1alpha1MigrationPolicySpec.js"), exports);
+__exportStar(require("../models/V1alpha1Selectors.js"), exports);
+__exportStar(require("../models/V1alpha1VirtualMachineClone.js"), exports);
+__exportStar(require("../models/V1alpha1VirtualMachineCloneList.js"), exports);
+__exportStar(require("../models/V1alpha1VirtualMachineCloneSpec.js"), exports);
+__exportStar(require("../models/V1alpha1VirtualMachineCloneStatus.js"), exports);
+__exportStar(require("../models/V1alpha1VirtualMachineCloneTemplateFilters.js"), exports);
+__exportStar(require("../models/V1alpha1VirtualMachinePool.js"), exports);
+__exportStar(require("../models/V1alpha1VirtualMachinePoolCondition.js"), exports);
+__exportStar(require("../models/V1alpha1VirtualMachinePoolList.js"), exports);
+__exportStar(require("../models/V1alpha1VirtualMachinePoolSpec.js"), exports);
+__exportStar(require("../models/V1alpha1VirtualMachinePoolStatus.js"), exports);
+__exportStar(require("../models/V1alpha1VirtualMachineTemplateSpec.js"), exports);
+__exportStar(require("../models/V1beta1CPUInstancetype.js"), exports);
+__exportStar(require("../models/V1beta1CPUPreferenceRequirement.js"), exports);
+__exportStar(require("../models/V1beta1CPUPreferences.js"), exports);
+__exportStar(require("../models/V1beta1ClockPreferences.js"), exports);
+__exportStar(require("../models/V1beta1Condition.js"), exports);
+__exportStar(require("../models/V1beta1DataVolumeCheckpoint.js"), exports);
+__exportStar(require("../models/V1beta1DataVolumeSource.js"), exports);
+__exportStar(require("../models/V1beta1DataVolumeSourceGCS.js"), exports);
+__exportStar(require("../models/V1beta1DataVolumeSourceHTTP.js"), exports);
+__exportStar(require("../models/V1beta1DataVolumeSourceImageIO.js"), exports);
+__exportStar(require("../models/V1beta1DataVolumeSourcePVC.js"), exports);
+__exportStar(require("../models/V1beta1DataVolumeSourceRef.js"), exports);
+__exportStar(require("../models/V1beta1DataVolumeSourceRegistry.js"), exports);
+__exportStar(require("../models/V1beta1DataVolumeSourceS3.js"), exports);
+__exportStar(require("../models/V1beta1DataVolumeSourceSnapshot.js"), exports);
+__exportStar(require("../models/V1beta1DataVolumeSourceVDDK.js"), exports);
+__exportStar(require("../models/V1beta1DataVolumeSpec.js"), exports);
+__exportStar(require("../models/V1beta1DevicePreferences.js"), exports);
+__exportStar(require("../models/V1beta1Error.js"), exports);
+__exportStar(require("../models/V1beta1FeaturePreferences.js"), exports);
+__exportStar(require("../models/V1beta1FirmwarePreferences.js"), exports);
+__exportStar(require("../models/V1beta1MachinePreferences.js"), exports);
+__exportStar(require("../models/V1beta1MemoryInstancetype.js"), exports);
+__exportStar(require("../models/V1beta1MemoryPreferenceRequirement.js"), exports);
+__exportStar(require("../models/V1beta1PersistentVolumeClaim.js"), exports);
+__exportStar(require("../models/V1beta1PreferenceRequirements.js"), exports);
+__exportStar(require("../models/V1beta1SnapshotVolumesLists.js"), exports);
+__exportStar(require("../models/V1beta1SourceSpec.js"), exports);
+__exportStar(require("../models/V1beta1SpreadOptions.js"), exports);
+__exportStar(require("../models/V1beta1StorageSpec.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachine.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineClusterInstancetype.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineClusterInstancetypeList.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineClusterPreference.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineClusterPreferenceList.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineExport.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineExportLink.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineExportLinks.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineExportList.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineExportManifest.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineExportSpec.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineExportStatus.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineExportVolume.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineExportVolumeFormat.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineInstancetype.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineInstancetypeList.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineInstancetypeSpec.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachinePreference.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachinePreferenceList.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachinePreferenceSpec.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineRestore.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineRestoreList.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineRestoreSpec.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineRestoreStatus.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineSnapshot.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineSnapshotContent.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineSnapshotContentList.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineSnapshotContentSpec.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineSnapshotContentStatus.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineSnapshotList.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineSnapshotSpec.js"), exports);
+__exportStar(require("../models/V1beta1VirtualMachineSnapshotStatus.js"), exports);
+__exportStar(require("../models/V1beta1VolumeBackup.js"), exports);
+__exportStar(require("../models/V1beta1VolumePreferences.js"), exports);
+__exportStar(require("../models/V1beta1VolumeRestore.js"), exports);
+__exportStar(require("../models/V1beta1VolumeSnapshotStatus.js"), exports);
+const K8sIoApiCoreV1Affinity_js_1 = require("../models/K8sIoApiCoreV1Affinity.js");
+const K8sIoApiCoreV1DownwardAPIVolumeFile_js_1 = require("../models/K8sIoApiCoreV1DownwardAPIVolumeFile.js");
+const K8sIoApiCoreV1ExecAction_js_1 = require("../models/K8sIoApiCoreV1ExecAction.js");
+const K8sIoApiCoreV1HTTPGetAction_js_1 = require("../models/K8sIoApiCoreV1HTTPGetAction.js");
+const K8sIoApiCoreV1HTTPHeader_js_1 = require("../models/K8sIoApiCoreV1HTTPHeader.js");
+const K8sIoApiCoreV1LocalObjectReference_js_1 = require("../models/K8sIoApiCoreV1LocalObjectReference.js");
+const K8sIoApiCoreV1NodeAffinity_js_1 = require("../models/K8sIoApiCoreV1NodeAffinity.js");
+const K8sIoApiCoreV1NodeSelector_js_1 = require("../models/K8sIoApiCoreV1NodeSelector.js");
+const K8sIoApiCoreV1NodeSelectorRequirement_js_1 = require("../models/K8sIoApiCoreV1NodeSelectorRequirement.js");
+const K8sIoApiCoreV1NodeSelectorTerm_js_1 = require("../models/K8sIoApiCoreV1NodeSelectorTerm.js");
+const K8sIoApiCoreV1ObjectFieldSelector_js_1 = require("../models/K8sIoApiCoreV1ObjectFieldSelector.js");
+const K8sIoApiCoreV1PersistentVolumeClaimSpec_js_1 = require("../models/K8sIoApiCoreV1PersistentVolumeClaimSpec.js");
+const K8sIoApiCoreV1PersistentVolumeClaimVolumeSource_js_1 = require("../models/K8sIoApiCoreV1PersistentVolumeClaimVolumeSource.js");
+const K8sIoApiCoreV1PodAffinity_js_1 = require("../models/K8sIoApiCoreV1PodAffinity.js");
+const K8sIoApiCoreV1PodAffinityTerm_js_1 = require("../models/K8sIoApiCoreV1PodAffinityTerm.js");
+const K8sIoApiCoreV1PodAntiAffinity_js_1 = require("../models/K8sIoApiCoreV1PodAntiAffinity.js");
+const K8sIoApiCoreV1PodDNSConfig_js_1 = require("../models/K8sIoApiCoreV1PodDNSConfig.js");
+const K8sIoApiCoreV1PodDNSConfigOption_js_1 = require("../models/K8sIoApiCoreV1PodDNSConfigOption.js");
+const K8sIoApiCoreV1PreferredSchedulingTerm_js_1 = require("../models/K8sIoApiCoreV1PreferredSchedulingTerm.js");
+const K8sIoApiCoreV1ResourceClaim_js_1 = require("../models/K8sIoApiCoreV1ResourceClaim.js");
+const K8sIoApiCoreV1ResourceFieldSelector_js_1 = require("../models/K8sIoApiCoreV1ResourceFieldSelector.js");
+const K8sIoApiCoreV1ResourceRequirements_js_1 = require("../models/K8sIoApiCoreV1ResourceRequirements.js");
+const K8sIoApiCoreV1TCPSocketAction_js_1 = require("../models/K8sIoApiCoreV1TCPSocketAction.js");
+const K8sIoApiCoreV1Toleration_js_1 = require("../models/K8sIoApiCoreV1Toleration.js");
+const K8sIoApiCoreV1TopologySpreadConstraint_js_1 = require("../models/K8sIoApiCoreV1TopologySpreadConstraint.js");
+const K8sIoApiCoreV1TypedLocalObjectReference_js_1 = require("../models/K8sIoApiCoreV1TypedLocalObjectReference.js");
+const K8sIoApiCoreV1TypedObjectReference_js_1 = require("../models/K8sIoApiCoreV1TypedObjectReference.js");
+const K8sIoApiCoreV1VolumeResourceRequirements_js_1 = require("../models/K8sIoApiCoreV1VolumeResourceRequirements.js");
+const K8sIoApiCoreV1WeightedPodAffinityTerm_js_1 = require("../models/K8sIoApiCoreV1WeightedPodAffinityTerm.js");
+const K8sIoApimachineryPkgApisMetaV1APIGroup_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1APIGroup.js");
+const K8sIoApimachineryPkgApisMetaV1APIGroupList_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1APIGroupList.js");
+const K8sIoApimachineryPkgApisMetaV1APIResource_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1APIResource.js");
+const K8sIoApimachineryPkgApisMetaV1APIResourceList_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1APIResourceList.js");
+const K8sIoApimachineryPkgApisMetaV1DeleteOptions_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1DeleteOptions.js");
+const K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery.js");
+const K8sIoApimachineryPkgApisMetaV1LabelSelector_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1LabelSelector.js");
+const K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement.js");
+const K8sIoApimachineryPkgApisMetaV1ListMeta_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1ListMeta.js");
+const K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry.js");
+const K8sIoApimachineryPkgApisMetaV1ObjectMeta_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1ObjectMeta.js");
+const K8sIoApimachineryPkgApisMetaV1OwnerReference_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1OwnerReference.js");
+const K8sIoApimachineryPkgApisMetaV1Preconditions_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1Preconditions.js");
+const K8sIoApimachineryPkgApisMetaV1RootPaths_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1RootPaths.js");
+const K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR.js");
+const K8sIoApimachineryPkgApisMetaV1Status_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1Status.js");
+const K8sIoApimachineryPkgApisMetaV1StatusCause_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1StatusCause.js");
+const K8sIoApimachineryPkgApisMetaV1StatusDetails_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1StatusDetails.js");
+const K8sIoApimachineryPkgApisMetaV1WatchEvent_js_1 = require("../models/K8sIoApimachineryPkgApisMetaV1WatchEvent.js");
+const V1ACPI_js_1 = require("../models/V1ACPI.js");
+const V1AccessCredential_js_1 = require("../models/V1AccessCredential.js");
+const V1AccessCredentialSecretSource_js_1 = require("../models/V1AccessCredentialSecretSource.js");
+const V1AddVolumeOptions_js_1 = require("../models/V1AddVolumeOptions.js");
+const V1ArchConfiguration_js_1 = require("../models/V1ArchConfiguration.js");
+const V1ArchSpecificConfiguration_js_1 = require("../models/V1ArchSpecificConfiguration.js");
+const V1BIOS_js_1 = require("../models/V1BIOS.js");
+const V1BlockSize_js_1 = require("../models/V1BlockSize.js");
+const V1Bootloader_js_1 = require("../models/V1Bootloader.js");
+const V1CDRomTarget_js_1 = require("../models/V1CDRomTarget.js");
+const V1CPU_js_1 = require("../models/V1CPU.js");
+const V1CPUFeature_js_1 = require("../models/V1CPUFeature.js");
+const V1CPUTopology_js_1 = require("../models/V1CPUTopology.js");
+const V1CertConfig_js_1 = require("../models/V1CertConfig.js");
+const V1Chassis_js_1 = require("../models/V1Chassis.js");
+const V1Clock_js_1 = require("../models/V1Clock.js");
+const V1ClockOffset_js_1 = require("../models/V1ClockOffset.js");
+const V1ClockOffsetUTC_js_1 = require("../models/V1ClockOffsetUTC.js");
+const V1CloudInitConfigDriveSource_js_1 = require("../models/V1CloudInitConfigDriveSource.js");
+const V1CloudInitNoCloudSource_js_1 = require("../models/V1CloudInitNoCloudSource.js");
+const V1CommonInstancetypesDeployment_js_1 = require("../models/V1CommonInstancetypesDeployment.js");
+const V1ComponentConfig_js_1 = require("../models/V1ComponentConfig.js");
+const V1ConfigMapVolumeSource_js_1 = require("../models/V1ConfigMapVolumeSource.js");
+const V1ContainerDiskInfo_js_1 = require("../models/V1ContainerDiskInfo.js");
+const V1ContainerDiskSource_js_1 = require("../models/V1ContainerDiskSource.js");
+const V1CustomBlockSize_js_1 = require("../models/V1CustomBlockSize.js");
+const V1CustomProfile_js_1 = require("../models/V1CustomProfile.js");
+const V1CustomizeComponents_js_1 = require("../models/V1CustomizeComponents.js");
+const V1CustomizeComponentsPatch_js_1 = require("../models/V1CustomizeComponentsPatch.js");
+const V1DHCPOptions_js_1 = require("../models/V1DHCPOptions.js");
+const V1DHCPPrivateOptions_js_1 = require("../models/V1DHCPPrivateOptions.js");
+const V1DataVolumeSource_js_1 = require("../models/V1DataVolumeSource.js");
+const V1DataVolumeTemplateSpec_js_1 = require("../models/V1DataVolumeTemplateSpec.js");
+const V1DeveloperConfiguration_js_1 = require("../models/V1DeveloperConfiguration.js");
+const V1Devices_js_1 = require("../models/V1Devices.js");
+const V1Disk_js_1 = require("../models/V1Disk.js");
+const V1DiskTarget_js_1 = require("../models/V1DiskTarget.js");
+const V1DiskVerification_js_1 = require("../models/V1DiskVerification.js");
+const V1DomainMemoryDumpInfo_js_1 = require("../models/V1DomainMemoryDumpInfo.js");
+const V1DomainSpec_js_1 = require("../models/V1DomainSpec.js");
+const V1DownwardAPIVolumeSource_js_1 = require("../models/V1DownwardAPIVolumeSource.js");
+const V1EFI_js_1 = require("../models/V1EFI.js");
+const V1EmptyDiskSource_js_1 = require("../models/V1EmptyDiskSource.js");
+const V1EphemeralVolumeSource_js_1 = require("../models/V1EphemeralVolumeSource.js");
+const V1FeatureAPIC_js_1 = require("../models/V1FeatureAPIC.js");
+const V1FeatureHyperv_js_1 = require("../models/V1FeatureHyperv.js");
+const V1FeatureKVM_js_1 = require("../models/V1FeatureKVM.js");
+const V1FeatureSpinlocks_js_1 = require("../models/V1FeatureSpinlocks.js");
+const V1FeatureState_js_1 = require("../models/V1FeatureState.js");
+const V1FeatureVendorID_js_1 = require("../models/V1FeatureVendorID.js");
+const V1Features_js_1 = require("../models/V1Features.js");
+const V1Filesystem_js_1 = require("../models/V1Filesystem.js");
+const V1Firmware_js_1 = require("../models/V1Firmware.js");
+const V1Flags_js_1 = require("../models/V1Flags.js");
+const V1FreezeUnfreezeTimeout_js_1 = require("../models/V1FreezeUnfreezeTimeout.js");
+const V1GPU_js_1 = require("../models/V1GPU.js");
+const V1GenerationStatus_js_1 = require("../models/V1GenerationStatus.js");
+const V1GuestAgentCommandInfo_js_1 = require("../models/V1GuestAgentCommandInfo.js");
+const V1HPETTimer_js_1 = require("../models/V1HPETTimer.js");
+const V1HostDevice_js_1 = require("../models/V1HostDevice.js");
+const V1HostDisk_js_1 = require("../models/V1HostDisk.js");
+const V1HotplugVolumeSource_js_1 = require("../models/V1HotplugVolumeSource.js");
+const V1HotplugVolumeStatus_js_1 = require("../models/V1HotplugVolumeStatus.js");
+const V1Hugepages_js_1 = require("../models/V1Hugepages.js");
+const V1HyperVPassthrough_js_1 = require("../models/V1HyperVPassthrough.js");
+const V1HypervTimer_js_1 = require("../models/V1HypervTimer.js");
+const V1I6300ESBWatchdog_js_1 = require("../models/V1I6300ESBWatchdog.js");
+const V1InitrdInfo_js_1 = require("../models/V1InitrdInfo.js");
+const V1Input_js_1 = require("../models/V1Input.js");
+const V1InstancetypeConfiguration_js_1 = require("../models/V1InstancetypeConfiguration.js");
+const V1InstancetypeMatcher_js_1 = require("../models/V1InstancetypeMatcher.js");
+const V1Interface_js_1 = require("../models/V1Interface.js");
+const V1InterfaceBindingMigration_js_1 = require("../models/V1InterfaceBindingMigration.js");
+const V1InterfaceBindingPlugin_js_1 = require("../models/V1InterfaceBindingPlugin.js");
+const V1KSMConfiguration_js_1 = require("../models/V1KSMConfiguration.js");
+const V1KVMTimer_js_1 = require("../models/V1KVMTimer.js");
+const V1KernelBoot_js_1 = require("../models/V1KernelBoot.js");
+const V1KernelBootContainer_js_1 = require("../models/V1KernelBootContainer.js");
+const V1KernelBootStatus_js_1 = require("../models/V1KernelBootStatus.js");
+const V1KernelInfo_js_1 = require("../models/V1KernelInfo.js");
+const V1KubeVirt_js_1 = require("../models/V1KubeVirt.js");
+const V1KubeVirtCertificateRotateStrategy_js_1 = require("../models/V1KubeVirtCertificateRotateStrategy.js");
+const V1KubeVirtCondition_js_1 = require("../models/V1KubeVirtCondition.js");
+const V1KubeVirtConfiguration_js_1 = require("../models/V1KubeVirtConfiguration.js");
+const V1KubeVirtList_js_1 = require("../models/V1KubeVirtList.js");
+const V1KubeVirtSelfSignConfiguration_js_1 = require("../models/V1KubeVirtSelfSignConfiguration.js");
+const V1KubeVirtSpec_js_1 = require("../models/V1KubeVirtSpec.js");
+const V1KubeVirtStatus_js_1 = require("../models/V1KubeVirtStatus.js");
+const V1KubeVirtWorkloadUpdateStrategy_js_1 = require("../models/V1KubeVirtWorkloadUpdateStrategy.js");
+const V1LaunchSecurity_js_1 = require("../models/V1LaunchSecurity.js");
+const V1LiveUpdateConfiguration_js_1 = require("../models/V1LiveUpdateConfiguration.js");
+const V1LogVerbosity_js_1 = require("../models/V1LogVerbosity.js");
+const V1LunTarget_js_1 = require("../models/V1LunTarget.js");
+const V1Machine_js_1 = require("../models/V1Machine.js");
+const V1MediatedDevicesConfiguration_js_1 = require("../models/V1MediatedDevicesConfiguration.js");
+const V1MediatedHostDevice_js_1 = require("../models/V1MediatedHostDevice.js");
+const V1Memory_js_1 = require("../models/V1Memory.js");
+const V1MemoryDumpVolumeSource_js_1 = require("../models/V1MemoryDumpVolumeSource.js");
+const V1MemoryStatus_js_1 = require("../models/V1MemoryStatus.js");
+const V1MigrateOptions_js_1 = require("../models/V1MigrateOptions.js");
+const V1MigrationConfiguration_js_1 = require("../models/V1MigrationConfiguration.js");
+const V1MultusNetwork_js_1 = require("../models/V1MultusNetwork.js");
+const V1NUMA_js_1 = require("../models/V1NUMA.js");
+const V1Network_js_1 = require("../models/V1Network.js");
+const V1NetworkConfiguration_js_1 = require("../models/V1NetworkConfiguration.js");
+const V1NodeMediatedDeviceTypesConfig_js_1 = require("../models/V1NodeMediatedDeviceTypesConfig.js");
+const V1NodePlacement_js_1 = require("../models/V1NodePlacement.js");
+const V1PITTimer_js_1 = require("../models/V1PITTimer.js");
+const V1PauseOptions_js_1 = require("../models/V1PauseOptions.js");
+const V1PciHostDevice_js_1 = require("../models/V1PciHostDevice.js");
+const V1PermittedHostDevices_js_1 = require("../models/V1PermittedHostDevices.js");
+const V1PersistentVolumeClaimInfo_js_1 = require("../models/V1PersistentVolumeClaimInfo.js");
+const V1PersistentVolumeClaimVolumeSource_js_1 = require("../models/V1PersistentVolumeClaimVolumeSource.js");
+const V1PluginBinding_js_1 = require("../models/V1PluginBinding.js");
+const V1PodNetwork_js_1 = require("../models/V1PodNetwork.js");
+const V1Port_js_1 = require("../models/V1Port.js");
+const V1PreferenceMatcher_js_1 = require("../models/V1PreferenceMatcher.js");
+const V1Probe_js_1 = require("../models/V1Probe.js");
+const V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation_js_1 = require("../models/V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation.js");
+const V1RESTClientConfiguration_js_1 = require("../models/V1RESTClientConfiguration.js");
+const V1RTCTimer_js_1 = require("../models/V1RTCTimer.js");
+const V1RateLimiter_js_1 = require("../models/V1RateLimiter.js");
+const V1Realtime_js_1 = require("../models/V1Realtime.js");
+const V1ReloadableComponentConfiguration_js_1 = require("../models/V1ReloadableComponentConfiguration.js");
+const V1RemoveVolumeOptions_js_1 = require("../models/V1RemoveVolumeOptions.js");
+const V1ResourceRequirements_js_1 = require("../models/V1ResourceRequirements.js");
+const V1ResourceRequirementsWithoutClaims_js_1 = require("../models/V1ResourceRequirementsWithoutClaims.js");
+const V1RestartOptions_js_1 = require("../models/V1RestartOptions.js");
+const V1SEV_js_1 = require("../models/V1SEV.js");
+const V1SEVMeasurementInfo_js_1 = require("../models/V1SEVMeasurementInfo.js");
+const V1SEVPlatformInfo_js_1 = require("../models/V1SEVPlatformInfo.js");
+const V1SEVPolicy_js_1 = require("../models/V1SEVPolicy.js");
+const V1SEVSecretOptions_js_1 = require("../models/V1SEVSecretOptions.js");
+const V1SEVSessionOptions_js_1 = require("../models/V1SEVSessionOptions.js");
+const V1SMBiosConfiguration_js_1 = require("../models/V1SMBiosConfiguration.js");
+const V1SSHPublicKeyAccessCredential_js_1 = require("../models/V1SSHPublicKeyAccessCredential.js");
+const V1SSHPublicKeyAccessCredentialPropagationMethod_js_1 = require("../models/V1SSHPublicKeyAccessCredentialPropagationMethod.js");
+const V1SSHPublicKeyAccessCredentialSource_js_1 = require("../models/V1SSHPublicKeyAccessCredentialSource.js");
+const V1SeccompConfiguration_js_1 = require("../models/V1SeccompConfiguration.js");
+const V1SecretVolumeSource_js_1 = require("../models/V1SecretVolumeSource.js");
+const V1ServiceAccountVolumeSource_js_1 = require("../models/V1ServiceAccountVolumeSource.js");
+const V1SoundDevice_js_1 = require("../models/V1SoundDevice.js");
+const V1StartOptions_js_1 = require("../models/V1StartOptions.js");
+const V1StopOptions_js_1 = require("../models/V1StopOptions.js");
+const V1StorageMigratedVolumeInfo_js_1 = require("../models/V1StorageMigratedVolumeInfo.js");
+const V1SupportContainerResources_js_1 = require("../models/V1SupportContainerResources.js");
+const V1SyNICTimer_js_1 = require("../models/V1SyNICTimer.js");
+const V1SysprepSource_js_1 = require("../models/V1SysprepSource.js");
+const V1TLSConfiguration_js_1 = require("../models/V1TLSConfiguration.js");
+const V1TPMDevice_js_1 = require("../models/V1TPMDevice.js");
+const V1Timer_js_1 = require("../models/V1Timer.js");
+const V1TokenBucketRateLimiter_js_1 = require("../models/V1TokenBucketRateLimiter.js");
+const V1TopologyHints_js_1 = require("../models/V1TopologyHints.js");
+const V1USBHostDevice_js_1 = require("../models/V1USBHostDevice.js");
+const V1USBSelector_js_1 = require("../models/V1USBSelector.js");
+const V1UnpauseOptions_js_1 = require("../models/V1UnpauseOptions.js");
+const V1UserPasswordAccessCredential_js_1 = require("../models/V1UserPasswordAccessCredential.js");
+const V1UserPasswordAccessCredentialPropagationMethod_js_1 = require("../models/V1UserPasswordAccessCredentialPropagationMethod.js");
+const V1UserPasswordAccessCredentialSource_js_1 = require("../models/V1UserPasswordAccessCredentialSource.js");
+const V1VGPUDisplayOptions_js_1 = require("../models/V1VGPUDisplayOptions.js");
+const V1VGPUOptions_js_1 = require("../models/V1VGPUOptions.js");
+const V1VirtualMachine_js_1 = require("../models/V1VirtualMachine.js");
+const V1VirtualMachineCondition_js_1 = require("../models/V1VirtualMachineCondition.js");
+const V1VirtualMachineInstance_js_1 = require("../models/V1VirtualMachineInstance.js");
+const V1VirtualMachineInstanceCondition_js_1 = require("../models/V1VirtualMachineInstanceCondition.js");
+const V1VirtualMachineInstanceFileSystem_js_1 = require("../models/V1VirtualMachineInstanceFileSystem.js");
+const V1VirtualMachineInstanceFileSystemDisk_js_1 = require("../models/V1VirtualMachineInstanceFileSystemDisk.js");
+const V1VirtualMachineInstanceFileSystemInfo_js_1 = require("../models/V1VirtualMachineInstanceFileSystemInfo.js");
+const V1VirtualMachineInstanceFileSystemList_js_1 = require("../models/V1VirtualMachineInstanceFileSystemList.js");
+const V1VirtualMachineInstanceGuestAgentInfo_js_1 = require("../models/V1VirtualMachineInstanceGuestAgentInfo.js");
+const V1VirtualMachineInstanceGuestOSInfo_js_1 = require("../models/V1VirtualMachineInstanceGuestOSInfo.js");
+const V1VirtualMachineInstanceGuestOSUser_js_1 = require("../models/V1VirtualMachineInstanceGuestOSUser.js");
+const V1VirtualMachineInstanceGuestOSUserList_js_1 = require("../models/V1VirtualMachineInstanceGuestOSUserList.js");
+const V1VirtualMachineInstanceList_js_1 = require("../models/V1VirtualMachineInstanceList.js");
+const V1VirtualMachineInstanceMigration_js_1 = require("../models/V1VirtualMachineInstanceMigration.js");
+const V1VirtualMachineInstanceMigrationCondition_js_1 = require("../models/V1VirtualMachineInstanceMigrationCondition.js");
+const V1VirtualMachineInstanceMigrationList_js_1 = require("../models/V1VirtualMachineInstanceMigrationList.js");
+const V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp_js_1 = require("../models/V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp.js");
+const V1VirtualMachineInstanceMigrationSpec_js_1 = require("../models/V1VirtualMachineInstanceMigrationSpec.js");
+const V1VirtualMachineInstanceMigrationState_js_1 = require("../models/V1VirtualMachineInstanceMigrationState.js");
+const V1VirtualMachineInstanceMigrationStatus_js_1 = require("../models/V1VirtualMachineInstanceMigrationStatus.js");
+const V1VirtualMachineInstanceNetworkInterface_js_1 = require("../models/V1VirtualMachineInstanceNetworkInterface.js");
+const V1VirtualMachineInstancePhaseTransitionTimestamp_js_1 = require("../models/V1VirtualMachineInstancePhaseTransitionTimestamp.js");
+const V1VirtualMachineInstancePreset_js_1 = require("../models/V1VirtualMachineInstancePreset.js");
+const V1VirtualMachineInstancePresetList_js_1 = require("../models/V1VirtualMachineInstancePresetList.js");
+const V1VirtualMachineInstancePresetSpec_js_1 = require("../models/V1VirtualMachineInstancePresetSpec.js");
+const V1VirtualMachineInstanceProfile_js_1 = require("../models/V1VirtualMachineInstanceProfile.js");
+const V1VirtualMachineInstanceReplicaSet_js_1 = require("../models/V1VirtualMachineInstanceReplicaSet.js");
+const V1VirtualMachineInstanceReplicaSetCondition_js_1 = require("../models/V1VirtualMachineInstanceReplicaSetCondition.js");
+const V1VirtualMachineInstanceReplicaSetList_js_1 = require("../models/V1VirtualMachineInstanceReplicaSetList.js");
+const V1VirtualMachineInstanceReplicaSetSpec_js_1 = require("../models/V1VirtualMachineInstanceReplicaSetSpec.js");
+const V1VirtualMachineInstanceReplicaSetStatus_js_1 = require("../models/V1VirtualMachineInstanceReplicaSetStatus.js");
+const V1VirtualMachineInstanceSpec_js_1 = require("../models/V1VirtualMachineInstanceSpec.js");
+const V1VirtualMachineInstanceStatus_js_1 = require("../models/V1VirtualMachineInstanceStatus.js");
+const V1VirtualMachineInstanceTemplateSpec_js_1 = require("../models/V1VirtualMachineInstanceTemplateSpec.js");
+const V1VirtualMachineList_js_1 = require("../models/V1VirtualMachineList.js");
+const V1VirtualMachineMemoryDumpRequest_js_1 = require("../models/V1VirtualMachineMemoryDumpRequest.js");
+const V1VirtualMachineOptions_js_1 = require("../models/V1VirtualMachineOptions.js");
+const V1VirtualMachineSpec_js_1 = require("../models/V1VirtualMachineSpec.js");
+const V1VirtualMachineStartFailure_js_1 = require("../models/V1VirtualMachineStartFailure.js");
+const V1VirtualMachineStateChangeRequest_js_1 = require("../models/V1VirtualMachineStateChangeRequest.js");
+const V1VirtualMachineStatus_js_1 = require("../models/V1VirtualMachineStatus.js");
+const V1VirtualMachineVolumeRequest_js_1 = require("../models/V1VirtualMachineVolumeRequest.js");
+const V1Volume_js_1 = require("../models/V1Volume.js");
+const V1VolumeMigrationState_js_1 = require("../models/V1VolumeMigrationState.js");
+const V1VolumeSnapshotStatus_js_1 = require("../models/V1VolumeSnapshotStatus.js");
+const V1VolumeStatus_js_1 = require("../models/V1VolumeStatus.js");
+const V1VolumeUpdateState_js_1 = require("../models/V1VolumeUpdateState.js");
+const V1Watchdog_js_1 = require("../models/V1Watchdog.js");
+const V1alpha1Condition_js_1 = require("../models/V1alpha1Condition.js");
+const V1alpha1MigrationPolicy_js_1 = require("../models/V1alpha1MigrationPolicy.js");
+const V1alpha1MigrationPolicyList_js_1 = require("../models/V1alpha1MigrationPolicyList.js");
+const V1alpha1MigrationPolicySpec_js_1 = require("../models/V1alpha1MigrationPolicySpec.js");
+const V1alpha1Selectors_js_1 = require("../models/V1alpha1Selectors.js");
+const V1alpha1VirtualMachineClone_js_1 = require("../models/V1alpha1VirtualMachineClone.js");
+const V1alpha1VirtualMachineCloneList_js_1 = require("../models/V1alpha1VirtualMachineCloneList.js");
+const V1alpha1VirtualMachineCloneSpec_js_1 = require("../models/V1alpha1VirtualMachineCloneSpec.js");
+const V1alpha1VirtualMachineCloneStatus_js_1 = require("../models/V1alpha1VirtualMachineCloneStatus.js");
+const V1alpha1VirtualMachineCloneTemplateFilters_js_1 = require("../models/V1alpha1VirtualMachineCloneTemplateFilters.js");
+const V1alpha1VirtualMachinePool_js_1 = require("../models/V1alpha1VirtualMachinePool.js");
+const V1alpha1VirtualMachinePoolCondition_js_1 = require("../models/V1alpha1VirtualMachinePoolCondition.js");
+const V1alpha1VirtualMachinePoolList_js_1 = require("../models/V1alpha1VirtualMachinePoolList.js");
+const V1alpha1VirtualMachinePoolSpec_js_1 = require("../models/V1alpha1VirtualMachinePoolSpec.js");
+const V1alpha1VirtualMachinePoolStatus_js_1 = require("../models/V1alpha1VirtualMachinePoolStatus.js");
+const V1alpha1VirtualMachineTemplateSpec_js_1 = require("../models/V1alpha1VirtualMachineTemplateSpec.js");
+const V1beta1CPUInstancetype_js_1 = require("../models/V1beta1CPUInstancetype.js");
+const V1beta1CPUPreferenceRequirement_js_1 = require("../models/V1beta1CPUPreferenceRequirement.js");
+const V1beta1CPUPreferences_js_1 = require("../models/V1beta1CPUPreferences.js");
+const V1beta1ClockPreferences_js_1 = require("../models/V1beta1ClockPreferences.js");
+const V1beta1Condition_js_1 = require("../models/V1beta1Condition.js");
+const V1beta1DataVolumeCheckpoint_js_1 = require("../models/V1beta1DataVolumeCheckpoint.js");
+const V1beta1DataVolumeSource_js_1 = require("../models/V1beta1DataVolumeSource.js");
+const V1beta1DataVolumeSourceGCS_js_1 = require("../models/V1beta1DataVolumeSourceGCS.js");
+const V1beta1DataVolumeSourceHTTP_js_1 = require("../models/V1beta1DataVolumeSourceHTTP.js");
+const V1beta1DataVolumeSourceImageIO_js_1 = require("../models/V1beta1DataVolumeSourceImageIO.js");
+const V1beta1DataVolumeSourcePVC_js_1 = require("../models/V1beta1DataVolumeSourcePVC.js");
+const V1beta1DataVolumeSourceRef_js_1 = require("../models/V1beta1DataVolumeSourceRef.js");
+const V1beta1DataVolumeSourceRegistry_js_1 = require("../models/V1beta1DataVolumeSourceRegistry.js");
+const V1beta1DataVolumeSourceS3_js_1 = require("../models/V1beta1DataVolumeSourceS3.js");
+const V1beta1DataVolumeSourceSnapshot_js_1 = require("../models/V1beta1DataVolumeSourceSnapshot.js");
+const V1beta1DataVolumeSourceVDDK_js_1 = require("../models/V1beta1DataVolumeSourceVDDK.js");
+const V1beta1DataVolumeSpec_js_1 = require("../models/V1beta1DataVolumeSpec.js");
+const V1beta1DevicePreferences_js_1 = require("../models/V1beta1DevicePreferences.js");
+const V1beta1Error_js_1 = require("../models/V1beta1Error.js");
+const V1beta1FeaturePreferences_js_1 = require("../models/V1beta1FeaturePreferences.js");
+const V1beta1FirmwarePreferences_js_1 = require("../models/V1beta1FirmwarePreferences.js");
+const V1beta1MachinePreferences_js_1 = require("../models/V1beta1MachinePreferences.js");
+const V1beta1MemoryInstancetype_js_1 = require("../models/V1beta1MemoryInstancetype.js");
+const V1beta1MemoryPreferenceRequirement_js_1 = require("../models/V1beta1MemoryPreferenceRequirement.js");
+const V1beta1PersistentVolumeClaim_js_1 = require("../models/V1beta1PersistentVolumeClaim.js");
+const V1beta1PreferenceRequirements_js_1 = require("../models/V1beta1PreferenceRequirements.js");
+const V1beta1SnapshotVolumesLists_js_1 = require("../models/V1beta1SnapshotVolumesLists.js");
+const V1beta1SourceSpec_js_1 = require("../models/V1beta1SourceSpec.js");
+const V1beta1SpreadOptions_js_1 = require("../models/V1beta1SpreadOptions.js");
+const V1beta1StorageSpec_js_1 = require("../models/V1beta1StorageSpec.js");
+const V1beta1VirtualMachine_js_1 = require("../models/V1beta1VirtualMachine.js");
+const V1beta1VirtualMachineClusterInstancetype_js_1 = require("../models/V1beta1VirtualMachineClusterInstancetype.js");
+const V1beta1VirtualMachineClusterInstancetypeList_js_1 = require("../models/V1beta1VirtualMachineClusterInstancetypeList.js");
+const V1beta1VirtualMachineClusterPreference_js_1 = require("../models/V1beta1VirtualMachineClusterPreference.js");
+const V1beta1VirtualMachineClusterPreferenceList_js_1 = require("../models/V1beta1VirtualMachineClusterPreferenceList.js");
+const V1beta1VirtualMachineExport_js_1 = require("../models/V1beta1VirtualMachineExport.js");
+const V1beta1VirtualMachineExportLink_js_1 = require("../models/V1beta1VirtualMachineExportLink.js");
+const V1beta1VirtualMachineExportLinks_js_1 = require("../models/V1beta1VirtualMachineExportLinks.js");
+const V1beta1VirtualMachineExportList_js_1 = require("../models/V1beta1VirtualMachineExportList.js");
+const V1beta1VirtualMachineExportManifest_js_1 = require("../models/V1beta1VirtualMachineExportManifest.js");
+const V1beta1VirtualMachineExportSpec_js_1 = require("../models/V1beta1VirtualMachineExportSpec.js");
+const V1beta1VirtualMachineExportStatus_js_1 = require("../models/V1beta1VirtualMachineExportStatus.js");
+const V1beta1VirtualMachineExportVolume_js_1 = require("../models/V1beta1VirtualMachineExportVolume.js");
+const V1beta1VirtualMachineExportVolumeFormat_js_1 = require("../models/V1beta1VirtualMachineExportVolumeFormat.js");
+const V1beta1VirtualMachineInstancetype_js_1 = require("../models/V1beta1VirtualMachineInstancetype.js");
+const V1beta1VirtualMachineInstancetypeList_js_1 = require("../models/V1beta1VirtualMachineInstancetypeList.js");
+const V1beta1VirtualMachineInstancetypeSpec_js_1 = require("../models/V1beta1VirtualMachineInstancetypeSpec.js");
+const V1beta1VirtualMachinePreference_js_1 = require("../models/V1beta1VirtualMachinePreference.js");
+const V1beta1VirtualMachinePreferenceList_js_1 = require("../models/V1beta1VirtualMachinePreferenceList.js");
+const V1beta1VirtualMachinePreferenceSpec_js_1 = require("../models/V1beta1VirtualMachinePreferenceSpec.js");
+const V1beta1VirtualMachineRestore_js_1 = require("../models/V1beta1VirtualMachineRestore.js");
+const V1beta1VirtualMachineRestoreList_js_1 = require("../models/V1beta1VirtualMachineRestoreList.js");
+const V1beta1VirtualMachineRestoreSpec_js_1 = require("../models/V1beta1VirtualMachineRestoreSpec.js");
+const V1beta1VirtualMachineRestoreStatus_js_1 = require("../models/V1beta1VirtualMachineRestoreStatus.js");
+const V1beta1VirtualMachineSnapshot_js_1 = require("../models/V1beta1VirtualMachineSnapshot.js");
+const V1beta1VirtualMachineSnapshotContent_js_1 = require("../models/V1beta1VirtualMachineSnapshotContent.js");
+const V1beta1VirtualMachineSnapshotContentList_js_1 = require("../models/V1beta1VirtualMachineSnapshotContentList.js");
+const V1beta1VirtualMachineSnapshotContentSpec_js_1 = require("../models/V1beta1VirtualMachineSnapshotContentSpec.js");
+const V1beta1VirtualMachineSnapshotContentStatus_js_1 = require("../models/V1beta1VirtualMachineSnapshotContentStatus.js");
+const V1beta1VirtualMachineSnapshotList_js_1 = require("../models/V1beta1VirtualMachineSnapshotList.js");
+const V1beta1VirtualMachineSnapshotSpec_js_1 = require("../models/V1beta1VirtualMachineSnapshotSpec.js");
+const V1beta1VirtualMachineSnapshotStatus_js_1 = require("../models/V1beta1VirtualMachineSnapshotStatus.js");
+const V1beta1VolumeBackup_js_1 = require("../models/V1beta1VolumeBackup.js");
+const V1beta1VolumePreferences_js_1 = require("../models/V1beta1VolumePreferences.js");
+const V1beta1VolumeRestore_js_1 = require("../models/V1beta1VolumeRestore.js");
+const V1beta1VolumeSnapshotStatus_js_1 = require("../models/V1beta1VolumeSnapshotStatus.js");
 /* tslint:disable:no-unused-variable */
 let primitives = [
     "string",
@@ -709,345 +726,345 @@ let enumsMap = new Set([
     "V1beta1StorageSpecVolumeModeEnum",
 ]);
 let typeMap = {
-    "K8sIoApiCoreV1Affinity": K8sIoApiCoreV1Affinity,
-    "K8sIoApiCoreV1DownwardAPIVolumeFile": K8sIoApiCoreV1DownwardAPIVolumeFile,
-    "K8sIoApiCoreV1ExecAction": K8sIoApiCoreV1ExecAction,
-    "K8sIoApiCoreV1HTTPGetAction": K8sIoApiCoreV1HTTPGetAction,
-    "K8sIoApiCoreV1HTTPHeader": K8sIoApiCoreV1HTTPHeader,
-    "K8sIoApiCoreV1LocalObjectReference": K8sIoApiCoreV1LocalObjectReference,
-    "K8sIoApiCoreV1NodeAffinity": K8sIoApiCoreV1NodeAffinity,
-    "K8sIoApiCoreV1NodeSelector": K8sIoApiCoreV1NodeSelector,
-    "K8sIoApiCoreV1NodeSelectorRequirement": K8sIoApiCoreV1NodeSelectorRequirement,
-    "K8sIoApiCoreV1NodeSelectorTerm": K8sIoApiCoreV1NodeSelectorTerm,
-    "K8sIoApiCoreV1ObjectFieldSelector": K8sIoApiCoreV1ObjectFieldSelector,
-    "K8sIoApiCoreV1PersistentVolumeClaimSpec": K8sIoApiCoreV1PersistentVolumeClaimSpec,
-    "K8sIoApiCoreV1PersistentVolumeClaimVolumeSource": K8sIoApiCoreV1PersistentVolumeClaimVolumeSource,
-    "K8sIoApiCoreV1PodAffinity": K8sIoApiCoreV1PodAffinity,
-    "K8sIoApiCoreV1PodAffinityTerm": K8sIoApiCoreV1PodAffinityTerm,
-    "K8sIoApiCoreV1PodAntiAffinity": K8sIoApiCoreV1PodAntiAffinity,
-    "K8sIoApiCoreV1PodDNSConfig": K8sIoApiCoreV1PodDNSConfig,
-    "K8sIoApiCoreV1PodDNSConfigOption": K8sIoApiCoreV1PodDNSConfigOption,
-    "K8sIoApiCoreV1PreferredSchedulingTerm": K8sIoApiCoreV1PreferredSchedulingTerm,
-    "K8sIoApiCoreV1ResourceClaim": K8sIoApiCoreV1ResourceClaim,
-    "K8sIoApiCoreV1ResourceFieldSelector": K8sIoApiCoreV1ResourceFieldSelector,
-    "K8sIoApiCoreV1ResourceRequirements": K8sIoApiCoreV1ResourceRequirements,
-    "K8sIoApiCoreV1TCPSocketAction": K8sIoApiCoreV1TCPSocketAction,
-    "K8sIoApiCoreV1Toleration": K8sIoApiCoreV1Toleration,
-    "K8sIoApiCoreV1TopologySpreadConstraint": K8sIoApiCoreV1TopologySpreadConstraint,
-    "K8sIoApiCoreV1TypedLocalObjectReference": K8sIoApiCoreV1TypedLocalObjectReference,
-    "K8sIoApiCoreV1TypedObjectReference": K8sIoApiCoreV1TypedObjectReference,
-    "K8sIoApiCoreV1VolumeResourceRequirements": K8sIoApiCoreV1VolumeResourceRequirements,
-    "K8sIoApiCoreV1WeightedPodAffinityTerm": K8sIoApiCoreV1WeightedPodAffinityTerm,
-    "K8sIoApimachineryPkgApisMetaV1APIGroup": K8sIoApimachineryPkgApisMetaV1APIGroup,
-    "K8sIoApimachineryPkgApisMetaV1APIGroupList": K8sIoApimachineryPkgApisMetaV1APIGroupList,
-    "K8sIoApimachineryPkgApisMetaV1APIResource": K8sIoApimachineryPkgApisMetaV1APIResource,
-    "K8sIoApimachineryPkgApisMetaV1APIResourceList": K8sIoApimachineryPkgApisMetaV1APIResourceList,
-    "K8sIoApimachineryPkgApisMetaV1DeleteOptions": K8sIoApimachineryPkgApisMetaV1DeleteOptions,
-    "K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery": K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery,
-    "K8sIoApimachineryPkgApisMetaV1LabelSelector": K8sIoApimachineryPkgApisMetaV1LabelSelector,
-    "K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement": K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement,
-    "K8sIoApimachineryPkgApisMetaV1ListMeta": K8sIoApimachineryPkgApisMetaV1ListMeta,
-    "K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry": K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry,
-    "K8sIoApimachineryPkgApisMetaV1ObjectMeta": K8sIoApimachineryPkgApisMetaV1ObjectMeta,
-    "K8sIoApimachineryPkgApisMetaV1OwnerReference": K8sIoApimachineryPkgApisMetaV1OwnerReference,
-    "K8sIoApimachineryPkgApisMetaV1Preconditions": K8sIoApimachineryPkgApisMetaV1Preconditions,
-    "K8sIoApimachineryPkgApisMetaV1RootPaths": K8sIoApimachineryPkgApisMetaV1RootPaths,
-    "K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR": K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR,
-    "K8sIoApimachineryPkgApisMetaV1Status": K8sIoApimachineryPkgApisMetaV1Status,
-    "K8sIoApimachineryPkgApisMetaV1StatusCause": K8sIoApimachineryPkgApisMetaV1StatusCause,
-    "K8sIoApimachineryPkgApisMetaV1StatusDetails": K8sIoApimachineryPkgApisMetaV1StatusDetails,
-    "K8sIoApimachineryPkgApisMetaV1WatchEvent": K8sIoApimachineryPkgApisMetaV1WatchEvent,
-    "V1ACPI": V1ACPI,
-    "V1AccessCredential": V1AccessCredential,
-    "V1AccessCredentialSecretSource": V1AccessCredentialSecretSource,
-    "V1AddVolumeOptions": V1AddVolumeOptions,
-    "V1ArchConfiguration": V1ArchConfiguration,
-    "V1ArchSpecificConfiguration": V1ArchSpecificConfiguration,
-    "V1BIOS": V1BIOS,
-    "V1BlockSize": V1BlockSize,
-    "V1Bootloader": V1Bootloader,
-    "V1CDRomTarget": V1CDRomTarget,
-    "V1CPU": V1CPU,
-    "V1CPUFeature": V1CPUFeature,
-    "V1CPUTopology": V1CPUTopology,
-    "V1CertConfig": V1CertConfig,
-    "V1Chassis": V1Chassis,
-    "V1Clock": V1Clock,
-    "V1ClockOffset": V1ClockOffset,
-    "V1ClockOffsetUTC": V1ClockOffsetUTC,
-    "V1CloudInitConfigDriveSource": V1CloudInitConfigDriveSource,
-    "V1CloudInitNoCloudSource": V1CloudInitNoCloudSource,
-    "V1CommonInstancetypesDeployment": V1CommonInstancetypesDeployment,
-    "V1ComponentConfig": V1ComponentConfig,
-    "V1ConfigMapVolumeSource": V1ConfigMapVolumeSource,
-    "V1ContainerDiskInfo": V1ContainerDiskInfo,
-    "V1ContainerDiskSource": V1ContainerDiskSource,
-    "V1CustomBlockSize": V1CustomBlockSize,
-    "V1CustomProfile": V1CustomProfile,
-    "V1CustomizeComponents": V1CustomizeComponents,
-    "V1CustomizeComponentsPatch": V1CustomizeComponentsPatch,
-    "V1DHCPOptions": V1DHCPOptions,
-    "V1DHCPPrivateOptions": V1DHCPPrivateOptions,
-    "V1DataVolumeSource": V1DataVolumeSource,
-    "V1DataVolumeTemplateSpec": V1DataVolumeTemplateSpec,
-    "V1DeveloperConfiguration": V1DeveloperConfiguration,
-    "V1Devices": V1Devices,
-    "V1Disk": V1Disk,
-    "V1DiskTarget": V1DiskTarget,
-    "V1DiskVerification": V1DiskVerification,
-    "V1DomainMemoryDumpInfo": V1DomainMemoryDumpInfo,
-    "V1DomainSpec": V1DomainSpec,
-    "V1DownwardAPIVolumeSource": V1DownwardAPIVolumeSource,
-    "V1EFI": V1EFI,
-    "V1EmptyDiskSource": V1EmptyDiskSource,
-    "V1EphemeralVolumeSource": V1EphemeralVolumeSource,
-    "V1FeatureAPIC": V1FeatureAPIC,
-    "V1FeatureHyperv": V1FeatureHyperv,
-    "V1FeatureKVM": V1FeatureKVM,
-    "V1FeatureSpinlocks": V1FeatureSpinlocks,
-    "V1FeatureState": V1FeatureState,
-    "V1FeatureVendorID": V1FeatureVendorID,
-    "V1Features": V1Features,
-    "V1Filesystem": V1Filesystem,
-    "V1Firmware": V1Firmware,
-    "V1Flags": V1Flags,
-    "V1FreezeUnfreezeTimeout": V1FreezeUnfreezeTimeout,
-    "V1GPU": V1GPU,
-    "V1GenerationStatus": V1GenerationStatus,
-    "V1GuestAgentCommandInfo": V1GuestAgentCommandInfo,
-    "V1HPETTimer": V1HPETTimer,
-    "V1HostDevice": V1HostDevice,
-    "V1HostDisk": V1HostDisk,
-    "V1HotplugVolumeSource": V1HotplugVolumeSource,
-    "V1HotplugVolumeStatus": V1HotplugVolumeStatus,
-    "V1Hugepages": V1Hugepages,
-    "V1HyperVPassthrough": V1HyperVPassthrough,
-    "V1HypervTimer": V1HypervTimer,
-    "V1I6300ESBWatchdog": V1I6300ESBWatchdog,
-    "V1InitrdInfo": V1InitrdInfo,
-    "V1Input": V1Input,
-    "V1InstancetypeConfiguration": V1InstancetypeConfiguration,
-    "V1InstancetypeMatcher": V1InstancetypeMatcher,
-    "V1Interface": V1Interface,
-    "V1InterfaceBindingMigration": V1InterfaceBindingMigration,
-    "V1InterfaceBindingPlugin": V1InterfaceBindingPlugin,
-    "V1KSMConfiguration": V1KSMConfiguration,
-    "V1KVMTimer": V1KVMTimer,
-    "V1KernelBoot": V1KernelBoot,
-    "V1KernelBootContainer": V1KernelBootContainer,
-    "V1KernelBootStatus": V1KernelBootStatus,
-    "V1KernelInfo": V1KernelInfo,
-    "V1KubeVirt": V1KubeVirt,
-    "V1KubeVirtCertificateRotateStrategy": V1KubeVirtCertificateRotateStrategy,
-    "V1KubeVirtCondition": V1KubeVirtCondition,
-    "V1KubeVirtConfiguration": V1KubeVirtConfiguration,
-    "V1KubeVirtList": V1KubeVirtList,
-    "V1KubeVirtSelfSignConfiguration": V1KubeVirtSelfSignConfiguration,
-    "V1KubeVirtSpec": V1KubeVirtSpec,
-    "V1KubeVirtStatus": V1KubeVirtStatus,
-    "V1KubeVirtWorkloadUpdateStrategy": V1KubeVirtWorkloadUpdateStrategy,
-    "V1LaunchSecurity": V1LaunchSecurity,
-    "V1LiveUpdateConfiguration": V1LiveUpdateConfiguration,
-    "V1LogVerbosity": V1LogVerbosity,
-    "V1LunTarget": V1LunTarget,
-    "V1Machine": V1Machine,
-    "V1MediatedDevicesConfiguration": V1MediatedDevicesConfiguration,
-    "V1MediatedHostDevice": V1MediatedHostDevice,
-    "V1Memory": V1Memory,
-    "V1MemoryDumpVolumeSource": V1MemoryDumpVolumeSource,
-    "V1MemoryStatus": V1MemoryStatus,
-    "V1MigrateOptions": V1MigrateOptions,
-    "V1MigrationConfiguration": V1MigrationConfiguration,
-    "V1MultusNetwork": V1MultusNetwork,
-    "V1NUMA": V1NUMA,
-    "V1Network": V1Network,
-    "V1NetworkConfiguration": V1NetworkConfiguration,
-    "V1NodeMediatedDeviceTypesConfig": V1NodeMediatedDeviceTypesConfig,
-    "V1NodePlacement": V1NodePlacement,
-    "V1PITTimer": V1PITTimer,
-    "V1PauseOptions": V1PauseOptions,
-    "V1PciHostDevice": V1PciHostDevice,
-    "V1PermittedHostDevices": V1PermittedHostDevices,
-    "V1PersistentVolumeClaimInfo": V1PersistentVolumeClaimInfo,
-    "V1PersistentVolumeClaimVolumeSource": V1PersistentVolumeClaimVolumeSource,
-    "V1PluginBinding": V1PluginBinding,
-    "V1PodNetwork": V1PodNetwork,
-    "V1Port": V1Port,
-    "V1PreferenceMatcher": V1PreferenceMatcher,
-    "V1Probe": V1Probe,
-    "V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation": V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation,
-    "V1RESTClientConfiguration": V1RESTClientConfiguration,
-    "V1RTCTimer": V1RTCTimer,
-    "V1RateLimiter": V1RateLimiter,
-    "V1Realtime": V1Realtime,
-    "V1ReloadableComponentConfiguration": V1ReloadableComponentConfiguration,
-    "V1RemoveVolumeOptions": V1RemoveVolumeOptions,
-    "V1ResourceRequirements": V1ResourceRequirements,
-    "V1ResourceRequirementsWithoutClaims": V1ResourceRequirementsWithoutClaims,
-    "V1RestartOptions": V1RestartOptions,
-    "V1SEV": V1SEV,
-    "V1SEVMeasurementInfo": V1SEVMeasurementInfo,
-    "V1SEVPlatformInfo": V1SEVPlatformInfo,
-    "V1SEVPolicy": V1SEVPolicy,
-    "V1SEVSecretOptions": V1SEVSecretOptions,
-    "V1SEVSessionOptions": V1SEVSessionOptions,
-    "V1SMBiosConfiguration": V1SMBiosConfiguration,
-    "V1SSHPublicKeyAccessCredential": V1SSHPublicKeyAccessCredential,
-    "V1SSHPublicKeyAccessCredentialPropagationMethod": V1SSHPublicKeyAccessCredentialPropagationMethod,
-    "V1SSHPublicKeyAccessCredentialSource": V1SSHPublicKeyAccessCredentialSource,
-    "V1SeccompConfiguration": V1SeccompConfiguration,
-    "V1SecretVolumeSource": V1SecretVolumeSource,
-    "V1ServiceAccountVolumeSource": V1ServiceAccountVolumeSource,
-    "V1SoundDevice": V1SoundDevice,
-    "V1StartOptions": V1StartOptions,
-    "V1StopOptions": V1StopOptions,
-    "V1StorageMigratedVolumeInfo": V1StorageMigratedVolumeInfo,
-    "V1SupportContainerResources": V1SupportContainerResources,
-    "V1SyNICTimer": V1SyNICTimer,
-    "V1SysprepSource": V1SysprepSource,
-    "V1TLSConfiguration": V1TLSConfiguration,
-    "V1TPMDevice": V1TPMDevice,
-    "V1Timer": V1Timer,
-    "V1TokenBucketRateLimiter": V1TokenBucketRateLimiter,
-    "V1TopologyHints": V1TopologyHints,
-    "V1USBHostDevice": V1USBHostDevice,
-    "V1USBSelector": V1USBSelector,
-    "V1UnpauseOptions": V1UnpauseOptions,
-    "V1UserPasswordAccessCredential": V1UserPasswordAccessCredential,
-    "V1UserPasswordAccessCredentialPropagationMethod": V1UserPasswordAccessCredentialPropagationMethod,
-    "V1UserPasswordAccessCredentialSource": V1UserPasswordAccessCredentialSource,
-    "V1VGPUDisplayOptions": V1VGPUDisplayOptions,
-    "V1VGPUOptions": V1VGPUOptions,
-    "V1VirtualMachine": V1VirtualMachine,
-    "V1VirtualMachineCondition": V1VirtualMachineCondition,
-    "V1VirtualMachineInstance": V1VirtualMachineInstance,
-    "V1VirtualMachineInstanceCondition": V1VirtualMachineInstanceCondition,
-    "V1VirtualMachineInstanceFileSystem": V1VirtualMachineInstanceFileSystem,
-    "V1VirtualMachineInstanceFileSystemDisk": V1VirtualMachineInstanceFileSystemDisk,
-    "V1VirtualMachineInstanceFileSystemInfo": V1VirtualMachineInstanceFileSystemInfo,
-    "V1VirtualMachineInstanceFileSystemList": V1VirtualMachineInstanceFileSystemList,
-    "V1VirtualMachineInstanceGuestAgentInfo": V1VirtualMachineInstanceGuestAgentInfo,
-    "V1VirtualMachineInstanceGuestOSInfo": V1VirtualMachineInstanceGuestOSInfo,
-    "V1VirtualMachineInstanceGuestOSUser": V1VirtualMachineInstanceGuestOSUser,
-    "V1VirtualMachineInstanceGuestOSUserList": V1VirtualMachineInstanceGuestOSUserList,
-    "V1VirtualMachineInstanceList": V1VirtualMachineInstanceList,
-    "V1VirtualMachineInstanceMigration": V1VirtualMachineInstanceMigration,
-    "V1VirtualMachineInstanceMigrationCondition": V1VirtualMachineInstanceMigrationCondition,
-    "V1VirtualMachineInstanceMigrationList": V1VirtualMachineInstanceMigrationList,
-    "V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp": V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp,
-    "V1VirtualMachineInstanceMigrationSpec": V1VirtualMachineInstanceMigrationSpec,
-    "V1VirtualMachineInstanceMigrationState": V1VirtualMachineInstanceMigrationState,
-    "V1VirtualMachineInstanceMigrationStatus": V1VirtualMachineInstanceMigrationStatus,
-    "V1VirtualMachineInstanceNetworkInterface": V1VirtualMachineInstanceNetworkInterface,
-    "V1VirtualMachineInstancePhaseTransitionTimestamp": V1VirtualMachineInstancePhaseTransitionTimestamp,
-    "V1VirtualMachineInstancePreset": V1VirtualMachineInstancePreset,
-    "V1VirtualMachineInstancePresetList": V1VirtualMachineInstancePresetList,
-    "V1VirtualMachineInstancePresetSpec": V1VirtualMachineInstancePresetSpec,
-    "V1VirtualMachineInstanceProfile": V1VirtualMachineInstanceProfile,
-    "V1VirtualMachineInstanceReplicaSet": V1VirtualMachineInstanceReplicaSet,
-    "V1VirtualMachineInstanceReplicaSetCondition": V1VirtualMachineInstanceReplicaSetCondition,
-    "V1VirtualMachineInstanceReplicaSetList": V1VirtualMachineInstanceReplicaSetList,
-    "V1VirtualMachineInstanceReplicaSetSpec": V1VirtualMachineInstanceReplicaSetSpec,
-    "V1VirtualMachineInstanceReplicaSetStatus": V1VirtualMachineInstanceReplicaSetStatus,
-    "V1VirtualMachineInstanceSpec": V1VirtualMachineInstanceSpec,
-    "V1VirtualMachineInstanceStatus": V1VirtualMachineInstanceStatus,
-    "V1VirtualMachineInstanceTemplateSpec": V1VirtualMachineInstanceTemplateSpec,
-    "V1VirtualMachineList": V1VirtualMachineList,
-    "V1VirtualMachineMemoryDumpRequest": V1VirtualMachineMemoryDumpRequest,
-    "V1VirtualMachineOptions": V1VirtualMachineOptions,
-    "V1VirtualMachineSpec": V1VirtualMachineSpec,
-    "V1VirtualMachineStartFailure": V1VirtualMachineStartFailure,
-    "V1VirtualMachineStateChangeRequest": V1VirtualMachineStateChangeRequest,
-    "V1VirtualMachineStatus": V1VirtualMachineStatus,
-    "V1VirtualMachineVolumeRequest": V1VirtualMachineVolumeRequest,
-    "V1Volume": V1Volume,
-    "V1VolumeMigrationState": V1VolumeMigrationState,
-    "V1VolumeSnapshotStatus": V1VolumeSnapshotStatus,
-    "V1VolumeStatus": V1VolumeStatus,
-    "V1VolumeUpdateState": V1VolumeUpdateState,
-    "V1Watchdog": V1Watchdog,
-    "V1alpha1Condition": V1alpha1Condition,
-    "V1alpha1MigrationPolicy": V1alpha1MigrationPolicy,
-    "V1alpha1MigrationPolicyList": V1alpha1MigrationPolicyList,
-    "V1alpha1MigrationPolicySpec": V1alpha1MigrationPolicySpec,
-    "V1alpha1Selectors": V1alpha1Selectors,
-    "V1alpha1VirtualMachineClone": V1alpha1VirtualMachineClone,
-    "V1alpha1VirtualMachineCloneList": V1alpha1VirtualMachineCloneList,
-    "V1alpha1VirtualMachineCloneSpec": V1alpha1VirtualMachineCloneSpec,
-    "V1alpha1VirtualMachineCloneStatus": V1alpha1VirtualMachineCloneStatus,
-    "V1alpha1VirtualMachineCloneTemplateFilters": V1alpha1VirtualMachineCloneTemplateFilters,
-    "V1alpha1VirtualMachinePool": V1alpha1VirtualMachinePool,
-    "V1alpha1VirtualMachinePoolCondition": V1alpha1VirtualMachinePoolCondition,
-    "V1alpha1VirtualMachinePoolList": V1alpha1VirtualMachinePoolList,
-    "V1alpha1VirtualMachinePoolSpec": V1alpha1VirtualMachinePoolSpec,
-    "V1alpha1VirtualMachinePoolStatus": V1alpha1VirtualMachinePoolStatus,
-    "V1alpha1VirtualMachineTemplateSpec": V1alpha1VirtualMachineTemplateSpec,
-    "V1beta1CPUInstancetype": V1beta1CPUInstancetype,
-    "V1beta1CPUPreferenceRequirement": V1beta1CPUPreferenceRequirement,
-    "V1beta1CPUPreferences": V1beta1CPUPreferences,
-    "V1beta1ClockPreferences": V1beta1ClockPreferences,
-    "V1beta1Condition": V1beta1Condition,
-    "V1beta1DataVolumeCheckpoint": V1beta1DataVolumeCheckpoint,
-    "V1beta1DataVolumeSource": V1beta1DataVolumeSource,
-    "V1beta1DataVolumeSourceGCS": V1beta1DataVolumeSourceGCS,
-    "V1beta1DataVolumeSourceHTTP": V1beta1DataVolumeSourceHTTP,
-    "V1beta1DataVolumeSourceImageIO": V1beta1DataVolumeSourceImageIO,
-    "V1beta1DataVolumeSourcePVC": V1beta1DataVolumeSourcePVC,
-    "V1beta1DataVolumeSourceRef": V1beta1DataVolumeSourceRef,
-    "V1beta1DataVolumeSourceRegistry": V1beta1DataVolumeSourceRegistry,
-    "V1beta1DataVolumeSourceS3": V1beta1DataVolumeSourceS3,
-    "V1beta1DataVolumeSourceSnapshot": V1beta1DataVolumeSourceSnapshot,
-    "V1beta1DataVolumeSourceVDDK": V1beta1DataVolumeSourceVDDK,
-    "V1beta1DataVolumeSpec": V1beta1DataVolumeSpec,
-    "V1beta1DevicePreferences": V1beta1DevicePreferences,
-    "V1beta1Error": V1beta1Error,
-    "V1beta1FeaturePreferences": V1beta1FeaturePreferences,
-    "V1beta1FirmwarePreferences": V1beta1FirmwarePreferences,
-    "V1beta1MachinePreferences": V1beta1MachinePreferences,
-    "V1beta1MemoryInstancetype": V1beta1MemoryInstancetype,
-    "V1beta1MemoryPreferenceRequirement": V1beta1MemoryPreferenceRequirement,
-    "V1beta1PersistentVolumeClaim": V1beta1PersistentVolumeClaim,
-    "V1beta1PreferenceRequirements": V1beta1PreferenceRequirements,
-    "V1beta1SnapshotVolumesLists": V1beta1SnapshotVolumesLists,
-    "V1beta1SourceSpec": V1beta1SourceSpec,
-    "V1beta1SpreadOptions": V1beta1SpreadOptions,
-    "V1beta1StorageSpec": V1beta1StorageSpec,
-    "V1beta1VirtualMachine": V1beta1VirtualMachine,
-    "V1beta1VirtualMachineClusterInstancetype": V1beta1VirtualMachineClusterInstancetype,
-    "V1beta1VirtualMachineClusterInstancetypeList": V1beta1VirtualMachineClusterInstancetypeList,
-    "V1beta1VirtualMachineClusterPreference": V1beta1VirtualMachineClusterPreference,
-    "V1beta1VirtualMachineClusterPreferenceList": V1beta1VirtualMachineClusterPreferenceList,
-    "V1beta1VirtualMachineExport": V1beta1VirtualMachineExport,
-    "V1beta1VirtualMachineExportLink": V1beta1VirtualMachineExportLink,
-    "V1beta1VirtualMachineExportLinks": V1beta1VirtualMachineExportLinks,
-    "V1beta1VirtualMachineExportList": V1beta1VirtualMachineExportList,
-    "V1beta1VirtualMachineExportManifest": V1beta1VirtualMachineExportManifest,
-    "V1beta1VirtualMachineExportSpec": V1beta1VirtualMachineExportSpec,
-    "V1beta1VirtualMachineExportStatus": V1beta1VirtualMachineExportStatus,
-    "V1beta1VirtualMachineExportVolume": V1beta1VirtualMachineExportVolume,
-    "V1beta1VirtualMachineExportVolumeFormat": V1beta1VirtualMachineExportVolumeFormat,
-    "V1beta1VirtualMachineInstancetype": V1beta1VirtualMachineInstancetype,
-    "V1beta1VirtualMachineInstancetypeList": V1beta1VirtualMachineInstancetypeList,
-    "V1beta1VirtualMachineInstancetypeSpec": V1beta1VirtualMachineInstancetypeSpec,
-    "V1beta1VirtualMachinePreference": V1beta1VirtualMachinePreference,
-    "V1beta1VirtualMachinePreferenceList": V1beta1VirtualMachinePreferenceList,
-    "V1beta1VirtualMachinePreferenceSpec": V1beta1VirtualMachinePreferenceSpec,
-    "V1beta1VirtualMachineRestore": V1beta1VirtualMachineRestore,
-    "V1beta1VirtualMachineRestoreList": V1beta1VirtualMachineRestoreList,
-    "V1beta1VirtualMachineRestoreSpec": V1beta1VirtualMachineRestoreSpec,
-    "V1beta1VirtualMachineRestoreStatus": V1beta1VirtualMachineRestoreStatus,
-    "V1beta1VirtualMachineSnapshot": V1beta1VirtualMachineSnapshot,
-    "V1beta1VirtualMachineSnapshotContent": V1beta1VirtualMachineSnapshotContent,
-    "V1beta1VirtualMachineSnapshotContentList": V1beta1VirtualMachineSnapshotContentList,
-    "V1beta1VirtualMachineSnapshotContentSpec": V1beta1VirtualMachineSnapshotContentSpec,
-    "V1beta1VirtualMachineSnapshotContentStatus": V1beta1VirtualMachineSnapshotContentStatus,
-    "V1beta1VirtualMachineSnapshotList": V1beta1VirtualMachineSnapshotList,
-    "V1beta1VirtualMachineSnapshotSpec": V1beta1VirtualMachineSnapshotSpec,
-    "V1beta1VirtualMachineSnapshotStatus": V1beta1VirtualMachineSnapshotStatus,
-    "V1beta1VolumeBackup": V1beta1VolumeBackup,
-    "V1beta1VolumePreferences": V1beta1VolumePreferences,
-    "V1beta1VolumeRestore": V1beta1VolumeRestore,
-    "V1beta1VolumeSnapshotStatus": V1beta1VolumeSnapshotStatus,
+    "K8sIoApiCoreV1Affinity": K8sIoApiCoreV1Affinity_js_1.K8sIoApiCoreV1Affinity,
+    "K8sIoApiCoreV1DownwardAPIVolumeFile": K8sIoApiCoreV1DownwardAPIVolumeFile_js_1.K8sIoApiCoreV1DownwardAPIVolumeFile,
+    "K8sIoApiCoreV1ExecAction": K8sIoApiCoreV1ExecAction_js_1.K8sIoApiCoreV1ExecAction,
+    "K8sIoApiCoreV1HTTPGetAction": K8sIoApiCoreV1HTTPGetAction_js_1.K8sIoApiCoreV1HTTPGetAction,
+    "K8sIoApiCoreV1HTTPHeader": K8sIoApiCoreV1HTTPHeader_js_1.K8sIoApiCoreV1HTTPHeader,
+    "K8sIoApiCoreV1LocalObjectReference": K8sIoApiCoreV1LocalObjectReference_js_1.K8sIoApiCoreV1LocalObjectReference,
+    "K8sIoApiCoreV1NodeAffinity": K8sIoApiCoreV1NodeAffinity_js_1.K8sIoApiCoreV1NodeAffinity,
+    "K8sIoApiCoreV1NodeSelector": K8sIoApiCoreV1NodeSelector_js_1.K8sIoApiCoreV1NodeSelector,
+    "K8sIoApiCoreV1NodeSelectorRequirement": K8sIoApiCoreV1NodeSelectorRequirement_js_1.K8sIoApiCoreV1NodeSelectorRequirement,
+    "K8sIoApiCoreV1NodeSelectorTerm": K8sIoApiCoreV1NodeSelectorTerm_js_1.K8sIoApiCoreV1NodeSelectorTerm,
+    "K8sIoApiCoreV1ObjectFieldSelector": K8sIoApiCoreV1ObjectFieldSelector_js_1.K8sIoApiCoreV1ObjectFieldSelector,
+    "K8sIoApiCoreV1PersistentVolumeClaimSpec": K8sIoApiCoreV1PersistentVolumeClaimSpec_js_1.K8sIoApiCoreV1PersistentVolumeClaimSpec,
+    "K8sIoApiCoreV1PersistentVolumeClaimVolumeSource": K8sIoApiCoreV1PersistentVolumeClaimVolumeSource_js_1.K8sIoApiCoreV1PersistentVolumeClaimVolumeSource,
+    "K8sIoApiCoreV1PodAffinity": K8sIoApiCoreV1PodAffinity_js_1.K8sIoApiCoreV1PodAffinity,
+    "K8sIoApiCoreV1PodAffinityTerm": K8sIoApiCoreV1PodAffinityTerm_js_1.K8sIoApiCoreV1PodAffinityTerm,
+    "K8sIoApiCoreV1PodAntiAffinity": K8sIoApiCoreV1PodAntiAffinity_js_1.K8sIoApiCoreV1PodAntiAffinity,
+    "K8sIoApiCoreV1PodDNSConfig": K8sIoApiCoreV1PodDNSConfig_js_1.K8sIoApiCoreV1PodDNSConfig,
+    "K8sIoApiCoreV1PodDNSConfigOption": K8sIoApiCoreV1PodDNSConfigOption_js_1.K8sIoApiCoreV1PodDNSConfigOption,
+    "K8sIoApiCoreV1PreferredSchedulingTerm": K8sIoApiCoreV1PreferredSchedulingTerm_js_1.K8sIoApiCoreV1PreferredSchedulingTerm,
+    "K8sIoApiCoreV1ResourceClaim": K8sIoApiCoreV1ResourceClaim_js_1.K8sIoApiCoreV1ResourceClaim,
+    "K8sIoApiCoreV1ResourceFieldSelector": K8sIoApiCoreV1ResourceFieldSelector_js_1.K8sIoApiCoreV1ResourceFieldSelector,
+    "K8sIoApiCoreV1ResourceRequirements": K8sIoApiCoreV1ResourceRequirements_js_1.K8sIoApiCoreV1ResourceRequirements,
+    "K8sIoApiCoreV1TCPSocketAction": K8sIoApiCoreV1TCPSocketAction_js_1.K8sIoApiCoreV1TCPSocketAction,
+    "K8sIoApiCoreV1Toleration": K8sIoApiCoreV1Toleration_js_1.K8sIoApiCoreV1Toleration,
+    "K8sIoApiCoreV1TopologySpreadConstraint": K8sIoApiCoreV1TopologySpreadConstraint_js_1.K8sIoApiCoreV1TopologySpreadConstraint,
+    "K8sIoApiCoreV1TypedLocalObjectReference": K8sIoApiCoreV1TypedLocalObjectReference_js_1.K8sIoApiCoreV1TypedLocalObjectReference,
+    "K8sIoApiCoreV1TypedObjectReference": K8sIoApiCoreV1TypedObjectReference_js_1.K8sIoApiCoreV1TypedObjectReference,
+    "K8sIoApiCoreV1VolumeResourceRequirements": K8sIoApiCoreV1VolumeResourceRequirements_js_1.K8sIoApiCoreV1VolumeResourceRequirements,
+    "K8sIoApiCoreV1WeightedPodAffinityTerm": K8sIoApiCoreV1WeightedPodAffinityTerm_js_1.K8sIoApiCoreV1WeightedPodAffinityTerm,
+    "K8sIoApimachineryPkgApisMetaV1APIGroup": K8sIoApimachineryPkgApisMetaV1APIGroup_js_1.K8sIoApimachineryPkgApisMetaV1APIGroup,
+    "K8sIoApimachineryPkgApisMetaV1APIGroupList": K8sIoApimachineryPkgApisMetaV1APIGroupList_js_1.K8sIoApimachineryPkgApisMetaV1APIGroupList,
+    "K8sIoApimachineryPkgApisMetaV1APIResource": K8sIoApimachineryPkgApisMetaV1APIResource_js_1.K8sIoApimachineryPkgApisMetaV1APIResource,
+    "K8sIoApimachineryPkgApisMetaV1APIResourceList": K8sIoApimachineryPkgApisMetaV1APIResourceList_js_1.K8sIoApimachineryPkgApisMetaV1APIResourceList,
+    "K8sIoApimachineryPkgApisMetaV1DeleteOptions": K8sIoApimachineryPkgApisMetaV1DeleteOptions_js_1.K8sIoApimachineryPkgApisMetaV1DeleteOptions,
+    "K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery": K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery_js_1.K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery,
+    "K8sIoApimachineryPkgApisMetaV1LabelSelector": K8sIoApimachineryPkgApisMetaV1LabelSelector_js_1.K8sIoApimachineryPkgApisMetaV1LabelSelector,
+    "K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement": K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement_js_1.K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement,
+    "K8sIoApimachineryPkgApisMetaV1ListMeta": K8sIoApimachineryPkgApisMetaV1ListMeta_js_1.K8sIoApimachineryPkgApisMetaV1ListMeta,
+    "K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry": K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry_js_1.K8sIoApimachineryPkgApisMetaV1ManagedFieldsEntry,
+    "K8sIoApimachineryPkgApisMetaV1ObjectMeta": K8sIoApimachineryPkgApisMetaV1ObjectMeta_js_1.K8sIoApimachineryPkgApisMetaV1ObjectMeta,
+    "K8sIoApimachineryPkgApisMetaV1OwnerReference": K8sIoApimachineryPkgApisMetaV1OwnerReference_js_1.K8sIoApimachineryPkgApisMetaV1OwnerReference,
+    "K8sIoApimachineryPkgApisMetaV1Preconditions": K8sIoApimachineryPkgApisMetaV1Preconditions_js_1.K8sIoApimachineryPkgApisMetaV1Preconditions,
+    "K8sIoApimachineryPkgApisMetaV1RootPaths": K8sIoApimachineryPkgApisMetaV1RootPaths_js_1.K8sIoApimachineryPkgApisMetaV1RootPaths,
+    "K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR": K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR_js_1.K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR,
+    "K8sIoApimachineryPkgApisMetaV1Status": K8sIoApimachineryPkgApisMetaV1Status_js_1.K8sIoApimachineryPkgApisMetaV1Status,
+    "K8sIoApimachineryPkgApisMetaV1StatusCause": K8sIoApimachineryPkgApisMetaV1StatusCause_js_1.K8sIoApimachineryPkgApisMetaV1StatusCause,
+    "K8sIoApimachineryPkgApisMetaV1StatusDetails": K8sIoApimachineryPkgApisMetaV1StatusDetails_js_1.K8sIoApimachineryPkgApisMetaV1StatusDetails,
+    "K8sIoApimachineryPkgApisMetaV1WatchEvent": K8sIoApimachineryPkgApisMetaV1WatchEvent_js_1.K8sIoApimachineryPkgApisMetaV1WatchEvent,
+    "V1ACPI": V1ACPI_js_1.V1ACPI,
+    "V1AccessCredential": V1AccessCredential_js_1.V1AccessCredential,
+    "V1AccessCredentialSecretSource": V1AccessCredentialSecretSource_js_1.V1AccessCredentialSecretSource,
+    "V1AddVolumeOptions": V1AddVolumeOptions_js_1.V1AddVolumeOptions,
+    "V1ArchConfiguration": V1ArchConfiguration_js_1.V1ArchConfiguration,
+    "V1ArchSpecificConfiguration": V1ArchSpecificConfiguration_js_1.V1ArchSpecificConfiguration,
+    "V1BIOS": V1BIOS_js_1.V1BIOS,
+    "V1BlockSize": V1BlockSize_js_1.V1BlockSize,
+    "V1Bootloader": V1Bootloader_js_1.V1Bootloader,
+    "V1CDRomTarget": V1CDRomTarget_js_1.V1CDRomTarget,
+    "V1CPU": V1CPU_js_1.V1CPU,
+    "V1CPUFeature": V1CPUFeature_js_1.V1CPUFeature,
+    "V1CPUTopology": V1CPUTopology_js_1.V1CPUTopology,
+    "V1CertConfig": V1CertConfig_js_1.V1CertConfig,
+    "V1Chassis": V1Chassis_js_1.V1Chassis,
+    "V1Clock": V1Clock_js_1.V1Clock,
+    "V1ClockOffset": V1ClockOffset_js_1.V1ClockOffset,
+    "V1ClockOffsetUTC": V1ClockOffsetUTC_js_1.V1ClockOffsetUTC,
+    "V1CloudInitConfigDriveSource": V1CloudInitConfigDriveSource_js_1.V1CloudInitConfigDriveSource,
+    "V1CloudInitNoCloudSource": V1CloudInitNoCloudSource_js_1.V1CloudInitNoCloudSource,
+    "V1CommonInstancetypesDeployment": V1CommonInstancetypesDeployment_js_1.V1CommonInstancetypesDeployment,
+    "V1ComponentConfig": V1ComponentConfig_js_1.V1ComponentConfig,
+    "V1ConfigMapVolumeSource": V1ConfigMapVolumeSource_js_1.V1ConfigMapVolumeSource,
+    "V1ContainerDiskInfo": V1ContainerDiskInfo_js_1.V1ContainerDiskInfo,
+    "V1ContainerDiskSource": V1ContainerDiskSource_js_1.V1ContainerDiskSource,
+    "V1CustomBlockSize": V1CustomBlockSize_js_1.V1CustomBlockSize,
+    "V1CustomProfile": V1CustomProfile_js_1.V1CustomProfile,
+    "V1CustomizeComponents": V1CustomizeComponents_js_1.V1CustomizeComponents,
+    "V1CustomizeComponentsPatch": V1CustomizeComponentsPatch_js_1.V1CustomizeComponentsPatch,
+    "V1DHCPOptions": V1DHCPOptions_js_1.V1DHCPOptions,
+    "V1DHCPPrivateOptions": V1DHCPPrivateOptions_js_1.V1DHCPPrivateOptions,
+    "V1DataVolumeSource": V1DataVolumeSource_js_1.V1DataVolumeSource,
+    "V1DataVolumeTemplateSpec": V1DataVolumeTemplateSpec_js_1.V1DataVolumeTemplateSpec,
+    "V1DeveloperConfiguration": V1DeveloperConfiguration_js_1.V1DeveloperConfiguration,
+    "V1Devices": V1Devices_js_1.V1Devices,
+    "V1Disk": V1Disk_js_1.V1Disk,
+    "V1DiskTarget": V1DiskTarget_js_1.V1DiskTarget,
+    "V1DiskVerification": V1DiskVerification_js_1.V1DiskVerification,
+    "V1DomainMemoryDumpInfo": V1DomainMemoryDumpInfo_js_1.V1DomainMemoryDumpInfo,
+    "V1DomainSpec": V1DomainSpec_js_1.V1DomainSpec,
+    "V1DownwardAPIVolumeSource": V1DownwardAPIVolumeSource_js_1.V1DownwardAPIVolumeSource,
+    "V1EFI": V1EFI_js_1.V1EFI,
+    "V1EmptyDiskSource": V1EmptyDiskSource_js_1.V1EmptyDiskSource,
+    "V1EphemeralVolumeSource": V1EphemeralVolumeSource_js_1.V1EphemeralVolumeSource,
+    "V1FeatureAPIC": V1FeatureAPIC_js_1.V1FeatureAPIC,
+    "V1FeatureHyperv": V1FeatureHyperv_js_1.V1FeatureHyperv,
+    "V1FeatureKVM": V1FeatureKVM_js_1.V1FeatureKVM,
+    "V1FeatureSpinlocks": V1FeatureSpinlocks_js_1.V1FeatureSpinlocks,
+    "V1FeatureState": V1FeatureState_js_1.V1FeatureState,
+    "V1FeatureVendorID": V1FeatureVendorID_js_1.V1FeatureVendorID,
+    "V1Features": V1Features_js_1.V1Features,
+    "V1Filesystem": V1Filesystem_js_1.V1Filesystem,
+    "V1Firmware": V1Firmware_js_1.V1Firmware,
+    "V1Flags": V1Flags_js_1.V1Flags,
+    "V1FreezeUnfreezeTimeout": V1FreezeUnfreezeTimeout_js_1.V1FreezeUnfreezeTimeout,
+    "V1GPU": V1GPU_js_1.V1GPU,
+    "V1GenerationStatus": V1GenerationStatus_js_1.V1GenerationStatus,
+    "V1GuestAgentCommandInfo": V1GuestAgentCommandInfo_js_1.V1GuestAgentCommandInfo,
+    "V1HPETTimer": V1HPETTimer_js_1.V1HPETTimer,
+    "V1HostDevice": V1HostDevice_js_1.V1HostDevice,
+    "V1HostDisk": V1HostDisk_js_1.V1HostDisk,
+    "V1HotplugVolumeSource": V1HotplugVolumeSource_js_1.V1HotplugVolumeSource,
+    "V1HotplugVolumeStatus": V1HotplugVolumeStatus_js_1.V1HotplugVolumeStatus,
+    "V1Hugepages": V1Hugepages_js_1.V1Hugepages,
+    "V1HyperVPassthrough": V1HyperVPassthrough_js_1.V1HyperVPassthrough,
+    "V1HypervTimer": V1HypervTimer_js_1.V1HypervTimer,
+    "V1I6300ESBWatchdog": V1I6300ESBWatchdog_js_1.V1I6300ESBWatchdog,
+    "V1InitrdInfo": V1InitrdInfo_js_1.V1InitrdInfo,
+    "V1Input": V1Input_js_1.V1Input,
+    "V1InstancetypeConfiguration": V1InstancetypeConfiguration_js_1.V1InstancetypeConfiguration,
+    "V1InstancetypeMatcher": V1InstancetypeMatcher_js_1.V1InstancetypeMatcher,
+    "V1Interface": V1Interface_js_1.V1Interface,
+    "V1InterfaceBindingMigration": V1InterfaceBindingMigration_js_1.V1InterfaceBindingMigration,
+    "V1InterfaceBindingPlugin": V1InterfaceBindingPlugin_js_1.V1InterfaceBindingPlugin,
+    "V1KSMConfiguration": V1KSMConfiguration_js_1.V1KSMConfiguration,
+    "V1KVMTimer": V1KVMTimer_js_1.V1KVMTimer,
+    "V1KernelBoot": V1KernelBoot_js_1.V1KernelBoot,
+    "V1KernelBootContainer": V1KernelBootContainer_js_1.V1KernelBootContainer,
+    "V1KernelBootStatus": V1KernelBootStatus_js_1.V1KernelBootStatus,
+    "V1KernelInfo": V1KernelInfo_js_1.V1KernelInfo,
+    "V1KubeVirt": V1KubeVirt_js_1.V1KubeVirt,
+    "V1KubeVirtCertificateRotateStrategy": V1KubeVirtCertificateRotateStrategy_js_1.V1KubeVirtCertificateRotateStrategy,
+    "V1KubeVirtCondition": V1KubeVirtCondition_js_1.V1KubeVirtCondition,
+    "V1KubeVirtConfiguration": V1KubeVirtConfiguration_js_1.V1KubeVirtConfiguration,
+    "V1KubeVirtList": V1KubeVirtList_js_1.V1KubeVirtList,
+    "V1KubeVirtSelfSignConfiguration": V1KubeVirtSelfSignConfiguration_js_1.V1KubeVirtSelfSignConfiguration,
+    "V1KubeVirtSpec": V1KubeVirtSpec_js_1.V1KubeVirtSpec,
+    "V1KubeVirtStatus": V1KubeVirtStatus_js_1.V1KubeVirtStatus,
+    "V1KubeVirtWorkloadUpdateStrategy": V1KubeVirtWorkloadUpdateStrategy_js_1.V1KubeVirtWorkloadUpdateStrategy,
+    "V1LaunchSecurity": V1LaunchSecurity_js_1.V1LaunchSecurity,
+    "V1LiveUpdateConfiguration": V1LiveUpdateConfiguration_js_1.V1LiveUpdateConfiguration,
+    "V1LogVerbosity": V1LogVerbosity_js_1.V1LogVerbosity,
+    "V1LunTarget": V1LunTarget_js_1.V1LunTarget,
+    "V1Machine": V1Machine_js_1.V1Machine,
+    "V1MediatedDevicesConfiguration": V1MediatedDevicesConfiguration_js_1.V1MediatedDevicesConfiguration,
+    "V1MediatedHostDevice": V1MediatedHostDevice_js_1.V1MediatedHostDevice,
+    "V1Memory": V1Memory_js_1.V1Memory,
+    "V1MemoryDumpVolumeSource": V1MemoryDumpVolumeSource_js_1.V1MemoryDumpVolumeSource,
+    "V1MemoryStatus": V1MemoryStatus_js_1.V1MemoryStatus,
+    "V1MigrateOptions": V1MigrateOptions_js_1.V1MigrateOptions,
+    "V1MigrationConfiguration": V1MigrationConfiguration_js_1.V1MigrationConfiguration,
+    "V1MultusNetwork": V1MultusNetwork_js_1.V1MultusNetwork,
+    "V1NUMA": V1NUMA_js_1.V1NUMA,
+    "V1Network": V1Network_js_1.V1Network,
+    "V1NetworkConfiguration": V1NetworkConfiguration_js_1.V1NetworkConfiguration,
+    "V1NodeMediatedDeviceTypesConfig": V1NodeMediatedDeviceTypesConfig_js_1.V1NodeMediatedDeviceTypesConfig,
+    "V1NodePlacement": V1NodePlacement_js_1.V1NodePlacement,
+    "V1PITTimer": V1PITTimer_js_1.V1PITTimer,
+    "V1PauseOptions": V1PauseOptions_js_1.V1PauseOptions,
+    "V1PciHostDevice": V1PciHostDevice_js_1.V1PciHostDevice,
+    "V1PermittedHostDevices": V1PermittedHostDevices_js_1.V1PermittedHostDevices,
+    "V1PersistentVolumeClaimInfo": V1PersistentVolumeClaimInfo_js_1.V1PersistentVolumeClaimInfo,
+    "V1PersistentVolumeClaimVolumeSource": V1PersistentVolumeClaimVolumeSource_js_1.V1PersistentVolumeClaimVolumeSource,
+    "V1PluginBinding": V1PluginBinding_js_1.V1PluginBinding,
+    "V1PodNetwork": V1PodNetwork_js_1.V1PodNetwork,
+    "V1Port": V1Port_js_1.V1Port,
+    "V1PreferenceMatcher": V1PreferenceMatcher_js_1.V1PreferenceMatcher,
+    "V1Probe": V1Probe_js_1.V1Probe,
+    "V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation": V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation_js_1.V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation,
+    "V1RESTClientConfiguration": V1RESTClientConfiguration_js_1.V1RESTClientConfiguration,
+    "V1RTCTimer": V1RTCTimer_js_1.V1RTCTimer,
+    "V1RateLimiter": V1RateLimiter_js_1.V1RateLimiter,
+    "V1Realtime": V1Realtime_js_1.V1Realtime,
+    "V1ReloadableComponentConfiguration": V1ReloadableComponentConfiguration_js_1.V1ReloadableComponentConfiguration,
+    "V1RemoveVolumeOptions": V1RemoveVolumeOptions_js_1.V1RemoveVolumeOptions,
+    "V1ResourceRequirements": V1ResourceRequirements_js_1.V1ResourceRequirements,
+    "V1ResourceRequirementsWithoutClaims": V1ResourceRequirementsWithoutClaims_js_1.V1ResourceRequirementsWithoutClaims,
+    "V1RestartOptions": V1RestartOptions_js_1.V1RestartOptions,
+    "V1SEV": V1SEV_js_1.V1SEV,
+    "V1SEVMeasurementInfo": V1SEVMeasurementInfo_js_1.V1SEVMeasurementInfo,
+    "V1SEVPlatformInfo": V1SEVPlatformInfo_js_1.V1SEVPlatformInfo,
+    "V1SEVPolicy": V1SEVPolicy_js_1.V1SEVPolicy,
+    "V1SEVSecretOptions": V1SEVSecretOptions_js_1.V1SEVSecretOptions,
+    "V1SEVSessionOptions": V1SEVSessionOptions_js_1.V1SEVSessionOptions,
+    "V1SMBiosConfiguration": V1SMBiosConfiguration_js_1.V1SMBiosConfiguration,
+    "V1SSHPublicKeyAccessCredential": V1SSHPublicKeyAccessCredential_js_1.V1SSHPublicKeyAccessCredential,
+    "V1SSHPublicKeyAccessCredentialPropagationMethod": V1SSHPublicKeyAccessCredentialPropagationMethod_js_1.V1SSHPublicKeyAccessCredentialPropagationMethod,
+    "V1SSHPublicKeyAccessCredentialSource": V1SSHPublicKeyAccessCredentialSource_js_1.V1SSHPublicKeyAccessCredentialSource,
+    "V1SeccompConfiguration": V1SeccompConfiguration_js_1.V1SeccompConfiguration,
+    "V1SecretVolumeSource": V1SecretVolumeSource_js_1.V1SecretVolumeSource,
+    "V1ServiceAccountVolumeSource": V1ServiceAccountVolumeSource_js_1.V1ServiceAccountVolumeSource,
+    "V1SoundDevice": V1SoundDevice_js_1.V1SoundDevice,
+    "V1StartOptions": V1StartOptions_js_1.V1StartOptions,
+    "V1StopOptions": V1StopOptions_js_1.V1StopOptions,
+    "V1StorageMigratedVolumeInfo": V1StorageMigratedVolumeInfo_js_1.V1StorageMigratedVolumeInfo,
+    "V1SupportContainerResources": V1SupportContainerResources_js_1.V1SupportContainerResources,
+    "V1SyNICTimer": V1SyNICTimer_js_1.V1SyNICTimer,
+    "V1SysprepSource": V1SysprepSource_js_1.V1SysprepSource,
+    "V1TLSConfiguration": V1TLSConfiguration_js_1.V1TLSConfiguration,
+    "V1TPMDevice": V1TPMDevice_js_1.V1TPMDevice,
+    "V1Timer": V1Timer_js_1.V1Timer,
+    "V1TokenBucketRateLimiter": V1TokenBucketRateLimiter_js_1.V1TokenBucketRateLimiter,
+    "V1TopologyHints": V1TopologyHints_js_1.V1TopologyHints,
+    "V1USBHostDevice": V1USBHostDevice_js_1.V1USBHostDevice,
+    "V1USBSelector": V1USBSelector_js_1.V1USBSelector,
+    "V1UnpauseOptions": V1UnpauseOptions_js_1.V1UnpauseOptions,
+    "V1UserPasswordAccessCredential": V1UserPasswordAccessCredential_js_1.V1UserPasswordAccessCredential,
+    "V1UserPasswordAccessCredentialPropagationMethod": V1UserPasswordAccessCredentialPropagationMethod_js_1.V1UserPasswordAccessCredentialPropagationMethod,
+    "V1UserPasswordAccessCredentialSource": V1UserPasswordAccessCredentialSource_js_1.V1UserPasswordAccessCredentialSource,
+    "V1VGPUDisplayOptions": V1VGPUDisplayOptions_js_1.V1VGPUDisplayOptions,
+    "V1VGPUOptions": V1VGPUOptions_js_1.V1VGPUOptions,
+    "V1VirtualMachine": V1VirtualMachine_js_1.V1VirtualMachine,
+    "V1VirtualMachineCondition": V1VirtualMachineCondition_js_1.V1VirtualMachineCondition,
+    "V1VirtualMachineInstance": V1VirtualMachineInstance_js_1.V1VirtualMachineInstance,
+    "V1VirtualMachineInstanceCondition": V1VirtualMachineInstanceCondition_js_1.V1VirtualMachineInstanceCondition,
+    "V1VirtualMachineInstanceFileSystem": V1VirtualMachineInstanceFileSystem_js_1.V1VirtualMachineInstanceFileSystem,
+    "V1VirtualMachineInstanceFileSystemDisk": V1VirtualMachineInstanceFileSystemDisk_js_1.V1VirtualMachineInstanceFileSystemDisk,
+    "V1VirtualMachineInstanceFileSystemInfo": V1VirtualMachineInstanceFileSystemInfo_js_1.V1VirtualMachineInstanceFileSystemInfo,
+    "V1VirtualMachineInstanceFileSystemList": V1VirtualMachineInstanceFileSystemList_js_1.V1VirtualMachineInstanceFileSystemList,
+    "V1VirtualMachineInstanceGuestAgentInfo": V1VirtualMachineInstanceGuestAgentInfo_js_1.V1VirtualMachineInstanceGuestAgentInfo,
+    "V1VirtualMachineInstanceGuestOSInfo": V1VirtualMachineInstanceGuestOSInfo_js_1.V1VirtualMachineInstanceGuestOSInfo,
+    "V1VirtualMachineInstanceGuestOSUser": V1VirtualMachineInstanceGuestOSUser_js_1.V1VirtualMachineInstanceGuestOSUser,
+    "V1VirtualMachineInstanceGuestOSUserList": V1VirtualMachineInstanceGuestOSUserList_js_1.V1VirtualMachineInstanceGuestOSUserList,
+    "V1VirtualMachineInstanceList": V1VirtualMachineInstanceList_js_1.V1VirtualMachineInstanceList,
+    "V1VirtualMachineInstanceMigration": V1VirtualMachineInstanceMigration_js_1.V1VirtualMachineInstanceMigration,
+    "V1VirtualMachineInstanceMigrationCondition": V1VirtualMachineInstanceMigrationCondition_js_1.V1VirtualMachineInstanceMigrationCondition,
+    "V1VirtualMachineInstanceMigrationList": V1VirtualMachineInstanceMigrationList_js_1.V1VirtualMachineInstanceMigrationList,
+    "V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp": V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp_js_1.V1VirtualMachineInstanceMigrationPhaseTransitionTimestamp,
+    "V1VirtualMachineInstanceMigrationSpec": V1VirtualMachineInstanceMigrationSpec_js_1.V1VirtualMachineInstanceMigrationSpec,
+    "V1VirtualMachineInstanceMigrationState": V1VirtualMachineInstanceMigrationState_js_1.V1VirtualMachineInstanceMigrationState,
+    "V1VirtualMachineInstanceMigrationStatus": V1VirtualMachineInstanceMigrationStatus_js_1.V1VirtualMachineInstanceMigrationStatus,
+    "V1VirtualMachineInstanceNetworkInterface": V1VirtualMachineInstanceNetworkInterface_js_1.V1VirtualMachineInstanceNetworkInterface,
+    "V1VirtualMachineInstancePhaseTransitionTimestamp": V1VirtualMachineInstancePhaseTransitionTimestamp_js_1.V1VirtualMachineInstancePhaseTransitionTimestamp,
+    "V1VirtualMachineInstancePreset": V1VirtualMachineInstancePreset_js_1.V1VirtualMachineInstancePreset,
+    "V1VirtualMachineInstancePresetList": V1VirtualMachineInstancePresetList_js_1.V1VirtualMachineInstancePresetList,
+    "V1VirtualMachineInstancePresetSpec": V1VirtualMachineInstancePresetSpec_js_1.V1VirtualMachineInstancePresetSpec,
+    "V1VirtualMachineInstanceProfile": V1VirtualMachineInstanceProfile_js_1.V1VirtualMachineInstanceProfile,
+    "V1VirtualMachineInstanceReplicaSet": V1VirtualMachineInstanceReplicaSet_js_1.V1VirtualMachineInstanceReplicaSet,
+    "V1VirtualMachineInstanceReplicaSetCondition": V1VirtualMachineInstanceReplicaSetCondition_js_1.V1VirtualMachineInstanceReplicaSetCondition,
+    "V1VirtualMachineInstanceReplicaSetList": V1VirtualMachineInstanceReplicaSetList_js_1.V1VirtualMachineInstanceReplicaSetList,
+    "V1VirtualMachineInstanceReplicaSetSpec": V1VirtualMachineInstanceReplicaSetSpec_js_1.V1VirtualMachineInstanceReplicaSetSpec,
+    "V1VirtualMachineInstanceReplicaSetStatus": V1VirtualMachineInstanceReplicaSetStatus_js_1.V1VirtualMachineInstanceReplicaSetStatus,
+    "V1VirtualMachineInstanceSpec": V1VirtualMachineInstanceSpec_js_1.V1VirtualMachineInstanceSpec,
+    "V1VirtualMachineInstanceStatus": V1VirtualMachineInstanceStatus_js_1.V1VirtualMachineInstanceStatus,
+    "V1VirtualMachineInstanceTemplateSpec": V1VirtualMachineInstanceTemplateSpec_js_1.V1VirtualMachineInstanceTemplateSpec,
+    "V1VirtualMachineList": V1VirtualMachineList_js_1.V1VirtualMachineList,
+    "V1VirtualMachineMemoryDumpRequest": V1VirtualMachineMemoryDumpRequest_js_1.V1VirtualMachineMemoryDumpRequest,
+    "V1VirtualMachineOptions": V1VirtualMachineOptions_js_1.V1VirtualMachineOptions,
+    "V1VirtualMachineSpec": V1VirtualMachineSpec_js_1.V1VirtualMachineSpec,
+    "V1VirtualMachineStartFailure": V1VirtualMachineStartFailure_js_1.V1VirtualMachineStartFailure,
+    "V1VirtualMachineStateChangeRequest": V1VirtualMachineStateChangeRequest_js_1.V1VirtualMachineStateChangeRequest,
+    "V1VirtualMachineStatus": V1VirtualMachineStatus_js_1.V1VirtualMachineStatus,
+    "V1VirtualMachineVolumeRequest": V1VirtualMachineVolumeRequest_js_1.V1VirtualMachineVolumeRequest,
+    "V1Volume": V1Volume_js_1.V1Volume,
+    "V1VolumeMigrationState": V1VolumeMigrationState_js_1.V1VolumeMigrationState,
+    "V1VolumeSnapshotStatus": V1VolumeSnapshotStatus_js_1.V1VolumeSnapshotStatus,
+    "V1VolumeStatus": V1VolumeStatus_js_1.V1VolumeStatus,
+    "V1VolumeUpdateState": V1VolumeUpdateState_js_1.V1VolumeUpdateState,
+    "V1Watchdog": V1Watchdog_js_1.V1Watchdog,
+    "V1alpha1Condition": V1alpha1Condition_js_1.V1alpha1Condition,
+    "V1alpha1MigrationPolicy": V1alpha1MigrationPolicy_js_1.V1alpha1MigrationPolicy,
+    "V1alpha1MigrationPolicyList": V1alpha1MigrationPolicyList_js_1.V1alpha1MigrationPolicyList,
+    "V1alpha1MigrationPolicySpec": V1alpha1MigrationPolicySpec_js_1.V1alpha1MigrationPolicySpec,
+    "V1alpha1Selectors": V1alpha1Selectors_js_1.V1alpha1Selectors,
+    "V1alpha1VirtualMachineClone": V1alpha1VirtualMachineClone_js_1.V1alpha1VirtualMachineClone,
+    "V1alpha1VirtualMachineCloneList": V1alpha1VirtualMachineCloneList_js_1.V1alpha1VirtualMachineCloneList,
+    "V1alpha1VirtualMachineCloneSpec": V1alpha1VirtualMachineCloneSpec_js_1.V1alpha1VirtualMachineCloneSpec,
+    "V1alpha1VirtualMachineCloneStatus": V1alpha1VirtualMachineCloneStatus_js_1.V1alpha1VirtualMachineCloneStatus,
+    "V1alpha1VirtualMachineCloneTemplateFilters": V1alpha1VirtualMachineCloneTemplateFilters_js_1.V1alpha1VirtualMachineCloneTemplateFilters,
+    "V1alpha1VirtualMachinePool": V1alpha1VirtualMachinePool_js_1.V1alpha1VirtualMachinePool,
+    "V1alpha1VirtualMachinePoolCondition": V1alpha1VirtualMachinePoolCondition_js_1.V1alpha1VirtualMachinePoolCondition,
+    "V1alpha1VirtualMachinePoolList": V1alpha1VirtualMachinePoolList_js_1.V1alpha1VirtualMachinePoolList,
+    "V1alpha1VirtualMachinePoolSpec": V1alpha1VirtualMachinePoolSpec_js_1.V1alpha1VirtualMachinePoolSpec,
+    "V1alpha1VirtualMachinePoolStatus": V1alpha1VirtualMachinePoolStatus_js_1.V1alpha1VirtualMachinePoolStatus,
+    "V1alpha1VirtualMachineTemplateSpec": V1alpha1VirtualMachineTemplateSpec_js_1.V1alpha1VirtualMachineTemplateSpec,
+    "V1beta1CPUInstancetype": V1beta1CPUInstancetype_js_1.V1beta1CPUInstancetype,
+    "V1beta1CPUPreferenceRequirement": V1beta1CPUPreferenceRequirement_js_1.V1beta1CPUPreferenceRequirement,
+    "V1beta1CPUPreferences": V1beta1CPUPreferences_js_1.V1beta1CPUPreferences,
+    "V1beta1ClockPreferences": V1beta1ClockPreferences_js_1.V1beta1ClockPreferences,
+    "V1beta1Condition": V1beta1Condition_js_1.V1beta1Condition,
+    "V1beta1DataVolumeCheckpoint": V1beta1DataVolumeCheckpoint_js_1.V1beta1DataVolumeCheckpoint,
+    "V1beta1DataVolumeSource": V1beta1DataVolumeSource_js_1.V1beta1DataVolumeSource,
+    "V1beta1DataVolumeSourceGCS": V1beta1DataVolumeSourceGCS_js_1.V1beta1DataVolumeSourceGCS,
+    "V1beta1DataVolumeSourceHTTP": V1beta1DataVolumeSourceHTTP_js_1.V1beta1DataVolumeSourceHTTP,
+    "V1beta1DataVolumeSourceImageIO": V1beta1DataVolumeSourceImageIO_js_1.V1beta1DataVolumeSourceImageIO,
+    "V1beta1DataVolumeSourcePVC": V1beta1DataVolumeSourcePVC_js_1.V1beta1DataVolumeSourcePVC,
+    "V1beta1DataVolumeSourceRef": V1beta1DataVolumeSourceRef_js_1.V1beta1DataVolumeSourceRef,
+    "V1beta1DataVolumeSourceRegistry": V1beta1DataVolumeSourceRegistry_js_1.V1beta1DataVolumeSourceRegistry,
+    "V1beta1DataVolumeSourceS3": V1beta1DataVolumeSourceS3_js_1.V1beta1DataVolumeSourceS3,
+    "V1beta1DataVolumeSourceSnapshot": V1beta1DataVolumeSourceSnapshot_js_1.V1beta1DataVolumeSourceSnapshot,
+    "V1beta1DataVolumeSourceVDDK": V1beta1DataVolumeSourceVDDK_js_1.V1beta1DataVolumeSourceVDDK,
+    "V1beta1DataVolumeSpec": V1beta1DataVolumeSpec_js_1.V1beta1DataVolumeSpec,
+    "V1beta1DevicePreferences": V1beta1DevicePreferences_js_1.V1beta1DevicePreferences,
+    "V1beta1Error": V1beta1Error_js_1.V1beta1Error,
+    "V1beta1FeaturePreferences": V1beta1FeaturePreferences_js_1.V1beta1FeaturePreferences,
+    "V1beta1FirmwarePreferences": V1beta1FirmwarePreferences_js_1.V1beta1FirmwarePreferences,
+    "V1beta1MachinePreferences": V1beta1MachinePreferences_js_1.V1beta1MachinePreferences,
+    "V1beta1MemoryInstancetype": V1beta1MemoryInstancetype_js_1.V1beta1MemoryInstancetype,
+    "V1beta1MemoryPreferenceRequirement": V1beta1MemoryPreferenceRequirement_js_1.V1beta1MemoryPreferenceRequirement,
+    "V1beta1PersistentVolumeClaim": V1beta1PersistentVolumeClaim_js_1.V1beta1PersistentVolumeClaim,
+    "V1beta1PreferenceRequirements": V1beta1PreferenceRequirements_js_1.V1beta1PreferenceRequirements,
+    "V1beta1SnapshotVolumesLists": V1beta1SnapshotVolumesLists_js_1.V1beta1SnapshotVolumesLists,
+    "V1beta1SourceSpec": V1beta1SourceSpec_js_1.V1beta1SourceSpec,
+    "V1beta1SpreadOptions": V1beta1SpreadOptions_js_1.V1beta1SpreadOptions,
+    "V1beta1StorageSpec": V1beta1StorageSpec_js_1.V1beta1StorageSpec,
+    "V1beta1VirtualMachine": V1beta1VirtualMachine_js_1.V1beta1VirtualMachine,
+    "V1beta1VirtualMachineClusterInstancetype": V1beta1VirtualMachineClusterInstancetype_js_1.V1beta1VirtualMachineClusterInstancetype,
+    "V1beta1VirtualMachineClusterInstancetypeList": V1beta1VirtualMachineClusterInstancetypeList_js_1.V1beta1VirtualMachineClusterInstancetypeList,
+    "V1beta1VirtualMachineClusterPreference": V1beta1VirtualMachineClusterPreference_js_1.V1beta1VirtualMachineClusterPreference,
+    "V1beta1VirtualMachineClusterPreferenceList": V1beta1VirtualMachineClusterPreferenceList_js_1.V1beta1VirtualMachineClusterPreferenceList,
+    "V1beta1VirtualMachineExport": V1beta1VirtualMachineExport_js_1.V1beta1VirtualMachineExport,
+    "V1beta1VirtualMachineExportLink": V1beta1VirtualMachineExportLink_js_1.V1beta1VirtualMachineExportLink,
+    "V1beta1VirtualMachineExportLinks": V1beta1VirtualMachineExportLinks_js_1.V1beta1VirtualMachineExportLinks,
+    "V1beta1VirtualMachineExportList": V1beta1VirtualMachineExportList_js_1.V1beta1VirtualMachineExportList,
+    "V1beta1VirtualMachineExportManifest": V1beta1VirtualMachineExportManifest_js_1.V1beta1VirtualMachineExportManifest,
+    "V1beta1VirtualMachineExportSpec": V1beta1VirtualMachineExportSpec_js_1.V1beta1VirtualMachineExportSpec,
+    "V1beta1VirtualMachineExportStatus": V1beta1VirtualMachineExportStatus_js_1.V1beta1VirtualMachineExportStatus,
+    "V1beta1VirtualMachineExportVolume": V1beta1VirtualMachineExportVolume_js_1.V1beta1VirtualMachineExportVolume,
+    "V1beta1VirtualMachineExportVolumeFormat": V1beta1VirtualMachineExportVolumeFormat_js_1.V1beta1VirtualMachineExportVolumeFormat,
+    "V1beta1VirtualMachineInstancetype": V1beta1VirtualMachineInstancetype_js_1.V1beta1VirtualMachineInstancetype,
+    "V1beta1VirtualMachineInstancetypeList": V1beta1VirtualMachineInstancetypeList_js_1.V1beta1VirtualMachineInstancetypeList,
+    "V1beta1VirtualMachineInstancetypeSpec": V1beta1VirtualMachineInstancetypeSpec_js_1.V1beta1VirtualMachineInstancetypeSpec,
+    "V1beta1VirtualMachinePreference": V1beta1VirtualMachinePreference_js_1.V1beta1VirtualMachinePreference,
+    "V1beta1VirtualMachinePreferenceList": V1beta1VirtualMachinePreferenceList_js_1.V1beta1VirtualMachinePreferenceList,
+    "V1beta1VirtualMachinePreferenceSpec": V1beta1VirtualMachinePreferenceSpec_js_1.V1beta1VirtualMachinePreferenceSpec,
+    "V1beta1VirtualMachineRestore": V1beta1VirtualMachineRestore_js_1.V1beta1VirtualMachineRestore,
+    "V1beta1VirtualMachineRestoreList": V1beta1VirtualMachineRestoreList_js_1.V1beta1VirtualMachineRestoreList,
+    "V1beta1VirtualMachineRestoreSpec": V1beta1VirtualMachineRestoreSpec_js_1.V1beta1VirtualMachineRestoreSpec,
+    "V1beta1VirtualMachineRestoreStatus": V1beta1VirtualMachineRestoreStatus_js_1.V1beta1VirtualMachineRestoreStatus,
+    "V1beta1VirtualMachineSnapshot": V1beta1VirtualMachineSnapshot_js_1.V1beta1VirtualMachineSnapshot,
+    "V1beta1VirtualMachineSnapshotContent": V1beta1VirtualMachineSnapshotContent_js_1.V1beta1VirtualMachineSnapshotContent,
+    "V1beta1VirtualMachineSnapshotContentList": V1beta1VirtualMachineSnapshotContentList_js_1.V1beta1VirtualMachineSnapshotContentList,
+    "V1beta1VirtualMachineSnapshotContentSpec": V1beta1VirtualMachineSnapshotContentSpec_js_1.V1beta1VirtualMachineSnapshotContentSpec,
+    "V1beta1VirtualMachineSnapshotContentStatus": V1beta1VirtualMachineSnapshotContentStatus_js_1.V1beta1VirtualMachineSnapshotContentStatus,
+    "V1beta1VirtualMachineSnapshotList": V1beta1VirtualMachineSnapshotList_js_1.V1beta1VirtualMachineSnapshotList,
+    "V1beta1VirtualMachineSnapshotSpec": V1beta1VirtualMachineSnapshotSpec_js_1.V1beta1VirtualMachineSnapshotSpec,
+    "V1beta1VirtualMachineSnapshotStatus": V1beta1VirtualMachineSnapshotStatus_js_1.V1beta1VirtualMachineSnapshotStatus,
+    "V1beta1VolumeBackup": V1beta1VolumeBackup_js_1.V1beta1VolumeBackup,
+    "V1beta1VolumePreferences": V1beta1VolumePreferences_js_1.V1beta1VolumePreferences,
+    "V1beta1VolumeRestore": V1beta1VolumeRestore_js_1.V1beta1VolumeRestore,
+    "V1beta1VolumeSnapshotStatus": V1beta1VolumeSnapshotStatus_js_1.V1beta1VolumeSnapshotStatus,
 };
 /**
  * Every mime-type consists of a type, subtype, and optional parameters.
@@ -1096,7 +1113,7 @@ const arrayPrefix = "Array<";
 const arraySuffix = ">";
 const mapPrefix = "{ [key: string]: ";
 const mapSuffix = "; }";
-export class ObjectSerializer {
+class ObjectSerializer {
     static findCorrectType(data, expectedType) {
         if (data == undefined) {
             return expectedType;
@@ -1315,4 +1332,5 @@ export class ObjectSerializer {
         throw new Error("The mediaType " + mediaType + " is not supported by ObjectSerializer.parse.");
     }
 }
+exports.ObjectSerializer = ObjectSerializer;
 //# sourceMappingURL=ObjectSerializer.js.map

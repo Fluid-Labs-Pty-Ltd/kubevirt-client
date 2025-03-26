@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ApiException = void 0;
 /**
  * Represents an error caused by an api call i.e. it has attributes for a HTTP status code
  * and the returned body object.
@@ -7,7 +10,7 @@
  * => ApiException(404, someErrorMessageObject)
  *
  */
-export class ApiException extends Error {
+class ApiException extends Error {
     code;
     body;
     headers;
@@ -19,4 +22,5 @@ export class ApiException extends Error {
         this.headers = headers;
     }
 }
+exports.ApiException = ApiException;
 //# sourceMappingURL=exception.js.map

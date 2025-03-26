@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1TolerationOperatorEnum = exports.K8sIoApiCoreV1TolerationEffectEnum = exports.K8sIoApiCoreV1Toleration = void 0;
 /**
 * The pod this Toleration is attached to tolerates any taint that matches the triple <key,value,effect> using the matching operator <operator>.
 */
-export class K8sIoApiCoreV1Toleration {
+class K8sIoApiCoreV1Toleration {
     /**
     * Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.  Possible enum values:  - `\"NoExecute\"` Evict any already-running pods that do not tolerate the taint. Currently enforced by NodeController.  - `\"NoSchedule\"` Do not allow new pods to schedule onto the node unless they tolerate the taint, but allow all pods submitted to Kubelet without going through the scheduler to start, and allow all already-running pods to continue running. Enforced by the scheduler.  - `\"PreferNoSchedule\"` Like TaintEffectNoSchedule, but the scheduler tries not to schedule new pods onto the node, rather than prohibiting new pods from scheduling onto the node entirely. Enforced by the scheduler.
     */
@@ -73,15 +76,16 @@ export class K8sIoApiCoreV1Toleration {
     constructor() {
     }
 }
-export var K8sIoApiCoreV1TolerationEffectEnum;
+exports.K8sIoApiCoreV1Toleration = K8sIoApiCoreV1Toleration;
+var K8sIoApiCoreV1TolerationEffectEnum;
 (function (K8sIoApiCoreV1TolerationEffectEnum) {
     K8sIoApiCoreV1TolerationEffectEnum["NoExecute"] = "NoExecute";
     K8sIoApiCoreV1TolerationEffectEnum["NoSchedule"] = "NoSchedule";
     K8sIoApiCoreV1TolerationEffectEnum["PreferNoSchedule"] = "PreferNoSchedule";
-})(K8sIoApiCoreV1TolerationEffectEnum || (K8sIoApiCoreV1TolerationEffectEnum = {}));
-export var K8sIoApiCoreV1TolerationOperatorEnum;
+})(K8sIoApiCoreV1TolerationEffectEnum || (exports.K8sIoApiCoreV1TolerationEffectEnum = K8sIoApiCoreV1TolerationEffectEnum = {}));
+var K8sIoApiCoreV1TolerationOperatorEnum;
 (function (K8sIoApiCoreV1TolerationOperatorEnum) {
     K8sIoApiCoreV1TolerationOperatorEnum["Equal"] = "Equal";
     K8sIoApiCoreV1TolerationOperatorEnum["Exists"] = "Exists";
-})(K8sIoApiCoreV1TolerationOperatorEnum || (K8sIoApiCoreV1TolerationOperatorEnum = {}));
+})(K8sIoApiCoreV1TolerationOperatorEnum || (exports.K8sIoApiCoreV1TolerationOperatorEnum = K8sIoApiCoreV1TolerationOperatorEnum = {}));
 //# sourceMappingURL=K8sIoApiCoreV1Toleration.js.map

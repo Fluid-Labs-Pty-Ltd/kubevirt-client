@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR = void 0;
 /**
 * ServerAddressByClientCIDR helps the client to determine the server address that they should use, depending on the clientCIDR that they match.
 */
-export class K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR {
+class K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR {
     /**
     * The CIDR with which clients can match their IP to figure out the server address that they should use.
     */
@@ -43,4 +46,5 @@ export class K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR {
     constructor() {
     }
 }
+exports.K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR = K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1ServerAddressByClientCIDR.js.map

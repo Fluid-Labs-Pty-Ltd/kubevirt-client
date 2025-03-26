@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1SecretVolumeSource = void 0;
 /**
 * SecretVolumeSource adapts a Secret into a volume.
 */
-export class V1SecretVolumeSource {
+class V1SecretVolumeSource {
     /**
     * Specify whether the Secret or it\'s keys must be defined
     */
@@ -53,4 +56,5 @@ export class V1SecretVolumeSource {
     constructor() {
     }
 }
+exports.V1SecretVolumeSource = V1SecretVolumeSource;
 //# sourceMappingURL=V1SecretVolumeSource.js.map

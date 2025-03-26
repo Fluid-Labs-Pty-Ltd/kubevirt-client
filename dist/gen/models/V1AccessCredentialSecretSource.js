@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1AccessCredentialSecretSource {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1AccessCredentialSecretSource = void 0;
+class V1AccessCredentialSecretSource {
     /**
     * SecretName represents the name of the secret in the VMI\'s namespace
     */
@@ -30,4 +33,5 @@ export class V1AccessCredentialSecretSource {
     constructor() {
     }
 }
+exports.V1AccessCredentialSecretSource = V1AccessCredentialSecretSource;
 //# sourceMappingURL=V1AccessCredentialSecretSource.js.map

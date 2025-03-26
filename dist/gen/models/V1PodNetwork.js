@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1PodNetwork = void 0;
 /**
 * Represents the stock pod network interface.
 */
-export class V1PodNetwork {
+class V1PodNetwork {
     /**
     * IPv6 CIDR for the vm network. Defaults to fd10:0:2::/120 if not specified.
     */
@@ -43,4 +46,5 @@ export class V1PodNetwork {
     constructor() {
     }
 }
+exports.V1PodNetwork = V1PodNetwork;
 //# sourceMappingURL=V1PodNetwork.js.map

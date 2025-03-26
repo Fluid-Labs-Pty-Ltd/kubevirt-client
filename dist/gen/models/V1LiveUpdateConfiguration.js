@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1LiveUpdateConfiguration {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1LiveUpdateConfiguration = void 0;
+class V1LiveUpdateConfiguration {
     /**
     * MaxCpuSockets provides a MaxSockets value for VMs that do not provide their own. For VMs with more sockets than maximum the MaxSockets will be set to equal number of sockets.
     */
@@ -50,4 +53,5 @@ export class V1LiveUpdateConfiguration {
     constructor() {
     }
 }
+exports.V1LiveUpdateConfiguration = V1LiveUpdateConfiguration;
 //# sourceMappingURL=V1LiveUpdateConfiguration.js.map

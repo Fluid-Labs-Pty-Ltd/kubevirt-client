@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1InitrdInfo = void 0;
 /**
 * InitrdInfo show info about the initrd file
 */
-export class V1InitrdInfo {
+class V1InitrdInfo {
     /**
     * Checksum is the checksum of the initrd file
     */
@@ -33,4 +36,5 @@ export class V1InitrdInfo {
     constructor() {
     }
 }
+exports.V1InitrdInfo = V1InitrdInfo;
 //# sourceMappingURL=V1InitrdInfo.js.map

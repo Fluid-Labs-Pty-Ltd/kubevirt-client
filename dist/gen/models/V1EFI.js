@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1EFI = void 0;
 /**
 * If set, EFI will be used instead of BIOS.
 */
-export class V1EFI {
+class V1EFI {
     /**
     * If set to true, Persistent will persist the EFI NVRAM across reboots. Defaults to false
     */
@@ -43,4 +46,5 @@ export class V1EFI {
     constructor() {
     }
 }
+exports.V1EFI = V1EFI;
 //# sourceMappingURL=V1EFI.js.map

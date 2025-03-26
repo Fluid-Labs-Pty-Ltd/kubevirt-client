@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1HotplugVolumeStatus = void 0;
 /**
 * HotplugVolumeStatus represents the hotplug status of the volume
 */
-export class V1HotplugVolumeStatus {
+class V1HotplugVolumeStatus {
     /**
     * AttachPodName is the name of the pod used to attach the volume to the node.
     */
@@ -43,4 +46,5 @@ export class V1HotplugVolumeStatus {
     constructor() {
     }
 }
+exports.V1HotplugVolumeStatus = V1HotplugVolumeStatus;
 //# sourceMappingURL=V1HotplugVolumeStatus.js.map

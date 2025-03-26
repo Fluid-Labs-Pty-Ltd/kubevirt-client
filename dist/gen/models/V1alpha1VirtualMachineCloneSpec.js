@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1alpha1VirtualMachineCloneSpec {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1alpha1VirtualMachineCloneSpec = void 0;
+class V1alpha1VirtualMachineCloneSpec {
     /**
     * Example use: \"!some/key*\". For a detailed description, please refer to https://kubevirt.io/user-guide/operations/clone_api/#label-annotation-filters.
     */
@@ -81,4 +84,5 @@ export class V1alpha1VirtualMachineCloneSpec {
     constructor() {
     }
 }
+exports.V1alpha1VirtualMachineCloneSpec = V1alpha1VirtualMachineCloneSpec;
 //# sourceMappingURL=V1alpha1VirtualMachineCloneSpec.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1VirtualMachineInstanceGuestOSInfo {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstanceGuestOSInfo = void 0;
+class V1VirtualMachineInstanceGuestOSInfo {
     /**
     * Guest OS Id
     */
@@ -100,4 +103,5 @@ export class V1VirtualMachineInstanceGuestOSInfo {
     constructor() {
     }
 }
+exports.V1VirtualMachineInstanceGuestOSInfo = V1VirtualMachineInstanceGuestOSInfo;
 //# sourceMappingURL=V1VirtualMachineInstanceGuestOSInfo.js.map

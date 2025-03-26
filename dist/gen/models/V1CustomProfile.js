@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1CustomProfile {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1CustomProfile = void 0;
+class V1CustomProfile {
     'localhostProfile';
     'runtimeDefaultProfile';
     static discriminator = undefined;
@@ -34,4 +37,5 @@ export class V1CustomProfile {
     constructor() {
     }
 }
+exports.V1CustomProfile = V1CustomProfile;
 //# sourceMappingURL=V1CustomProfile.js.map

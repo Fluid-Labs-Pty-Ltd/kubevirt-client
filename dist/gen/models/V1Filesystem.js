@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1Filesystem {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Filesystem = void 0;
+class V1Filesystem {
     /**
     * Name is the device name
     */
@@ -37,4 +40,5 @@ export class V1Filesystem {
     constructor() {
     }
 }
+exports.V1Filesystem = V1Filesystem;
 //# sourceMappingURL=V1Filesystem.js.map

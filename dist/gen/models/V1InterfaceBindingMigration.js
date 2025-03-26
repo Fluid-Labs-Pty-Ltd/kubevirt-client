@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1InterfaceBindingMigration {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1InterfaceBindingMigration = void 0;
+class V1InterfaceBindingMigration {
     /**
     * Method defines a pre-defined migration methodology version: 1alphav1
     */
@@ -30,4 +33,5 @@ export class V1InterfaceBindingMigration {
     constructor() {
     }
 }
+exports.V1InterfaceBindingMigration = V1InterfaceBindingMigration;
 //# sourceMappingURL=V1InterfaceBindingMigration.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Network = void 0;
 /**
 * Network represents a network type and a resource that should be connected to the vm.
 */
-export class V1Network {
+class V1Network {
     'multus';
     /**
     * Network name. Must be a DNS_LABEL and unique within the vm. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -47,4 +50,5 @@ export class V1Network {
     constructor() {
     }
 }
+exports.V1Network = V1Network;
 //# sourceMappingURL=V1Network.js.map

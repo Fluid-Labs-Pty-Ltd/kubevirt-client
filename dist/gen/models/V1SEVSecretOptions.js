@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1SEVSecretOptions = void 0;
 /**
 * SEVSecretOptions is used to provide a secret for a running guest.
 */
-export class V1SEVSecretOptions {
+class V1SEVSecretOptions {
     /**
     * Base64 encoded header needed to decrypt the secret.
     */
@@ -43,4 +46,5 @@ export class V1SEVSecretOptions {
     constructor() {
     }
 }
+exports.V1SEVSecretOptions = V1SEVSecretOptions;
 //# sourceMappingURL=V1SEVSecretOptions.js.map

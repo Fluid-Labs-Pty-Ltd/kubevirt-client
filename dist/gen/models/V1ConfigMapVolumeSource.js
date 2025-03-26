@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1ConfigMapVolumeSource = void 0;
 /**
 * ConfigMapVolumeSource adapts a ConfigMap into a volume. More info: https://kubernetes.io/docs/concepts/storage/volumes/#configmap
 */
-export class V1ConfigMapVolumeSource {
+class V1ConfigMapVolumeSource {
     /**
     * Name of the referent. This field is effectively required, but due to backwards compatibility is allowed to be empty. Instances of this type with an empty value here are almost certainly wrong. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
     */
@@ -53,4 +56,5 @@ export class V1ConfigMapVolumeSource {
     constructor() {
     }
 }
+exports.V1ConfigMapVolumeSource = V1ConfigMapVolumeSource;
 //# sourceMappingURL=V1ConfigMapVolumeSource.js.map

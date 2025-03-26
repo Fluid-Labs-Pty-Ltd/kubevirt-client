@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1ContainerDiskInfo = void 0;
 /**
 * ContainerDiskInfo shows info about the containerdisk
 */
-export class V1ContainerDiskInfo {
+class V1ContainerDiskInfo {
     /**
     * Checksum is the checksum of the rootdisk or kernel artifacts inside the containerdisk
     */
@@ -33,4 +36,5 @@ export class V1ContainerDiskInfo {
     constructor() {
     }
 }
+exports.V1ContainerDiskInfo = V1ContainerDiskInfo;
 //# sourceMappingURL=V1ContainerDiskInfo.js.map

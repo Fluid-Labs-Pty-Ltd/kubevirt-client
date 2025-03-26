@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1KubeVirtCondition = void 0;
 /**
 * KubeVirtCondition represents a condition of a KubeVirt deployment
 */
-export class V1KubeVirtCondition {
+class V1KubeVirtCondition {
     'message';
     'reason';
     'status';
@@ -51,4 +54,5 @@ export class V1KubeVirtCondition {
     constructor() {
     }
 }
+exports.V1KubeVirtCondition = V1KubeVirtCondition;
 //# sourceMappingURL=V1KubeVirtCondition.js.map

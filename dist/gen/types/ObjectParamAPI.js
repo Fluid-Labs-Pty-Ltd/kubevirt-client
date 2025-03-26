@@ -1,8 +1,11 @@
-import { ObservableDefaultApi } from "./ObservableAPI.js";
-export class ObjectDefaultApi {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ObjectDefaultApi = void 0;
+const ObservableAPI_js_1 = require("./ObservableAPI.js");
+class ObjectDefaultApi {
     api;
     constructor(configuration, requestFactory, responseProcessor) {
-        this.api = new ObservableDefaultApi(configuration, requestFactory, responseProcessor);
+        this.api = new ObservableAPI_js_1.ObservableDefaultApi(configuration, requestFactory, responseProcessor);
     }
     /**
      * Create a MigrationPolicy object.
@@ -3679,4 +3682,5 @@ export class ObjectDefaultApi {
         return this.api.watchVirtualMachineSnapshotListForAllNamespaces(param._continue, param.fieldSelector, param.includeUninitialized, param.labelSelector, param.limit, param.resourceVersion, param.timeoutSeconds, param.watch, options).toPromise();
     }
 }
+exports.ObjectDefaultApi = ObjectDefaultApi;
 //# sourceMappingURL=ObjectParamAPI.js.map

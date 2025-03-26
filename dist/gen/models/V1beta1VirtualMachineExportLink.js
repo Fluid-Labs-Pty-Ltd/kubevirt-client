@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1VirtualMachineExportLink = void 0;
 /**
 * VirtualMachineExportLink contains a list of volumes available for export, as well as the URLs to obtain these volumes
 */
-export class V1beta1VirtualMachineExportLink {
+class V1beta1VirtualMachineExportLink {
     /**
     * Cert is the public CA certificate base64 encoded
     */
@@ -53,4 +56,5 @@ export class V1beta1VirtualMachineExportLink {
     constructor() {
     }
 }
+exports.V1beta1VirtualMachineExportLink = V1beta1VirtualMachineExportLink;
 //# sourceMappingURL=V1beta1VirtualMachineExportLink.js.map

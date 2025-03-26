@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1VirtualMachineInstanceMigrationState {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstanceMigrationState = void 0;
+class V1VirtualMachineInstanceMigrationState {
     /**
     * Indicates that the migration has been requested to abort
     */
@@ -254,4 +257,5 @@ export class V1VirtualMachineInstanceMigrationState {
     constructor() {
     }
 }
+exports.V1VirtualMachineInstanceMigrationState = V1VirtualMachineInstanceMigrationState;
 //# sourceMappingURL=V1VirtualMachineInstanceMigrationState.js.map

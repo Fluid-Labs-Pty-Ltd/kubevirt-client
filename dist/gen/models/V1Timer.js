@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Timer = void 0;
 /**
 * Represents all available timers in a vmi.
 */
-export class V1Timer {
+class V1Timer {
     'hpet';
     'hyperv';
     'kvm';
@@ -58,4 +61,5 @@ export class V1Timer {
     constructor() {
     }
 }
+exports.V1Timer = V1Timer;
 //# sourceMappingURL=V1Timer.js.map

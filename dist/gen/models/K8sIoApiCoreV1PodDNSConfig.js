@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1PodDNSConfig = void 0;
 /**
 * PodDNSConfig defines the DNS parameters of a pod in addition to those generated from DNSPolicy.
 */
-export class K8sIoApiCoreV1PodDNSConfig {
+class K8sIoApiCoreV1PodDNSConfig {
     /**
     * A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed.
     */
@@ -53,4 +56,5 @@ export class K8sIoApiCoreV1PodDNSConfig {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1PodDNSConfig = K8sIoApiCoreV1PodDNSConfig;
 //# sourceMappingURL=K8sIoApiCoreV1PodDNSConfig.js.map

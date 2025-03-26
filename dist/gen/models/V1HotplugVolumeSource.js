@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1HotplugVolumeSource = void 0;
 /**
 * HotplugVolumeSource Represents the source of a volume to mount which are capable of being hotplugged on a live running VMI. Only one of its members may be specified.
 */
-export class V1HotplugVolumeSource {
+class V1HotplugVolumeSource {
     'dataVolume';
     'persistentVolumeClaim';
     static discriminator = undefined;
@@ -37,4 +40,5 @@ export class V1HotplugVolumeSource {
     constructor() {
     }
 }
+exports.V1HotplugVolumeSource = V1HotplugVolumeSource;
 //# sourceMappingURL=V1HotplugVolumeSource.js.map

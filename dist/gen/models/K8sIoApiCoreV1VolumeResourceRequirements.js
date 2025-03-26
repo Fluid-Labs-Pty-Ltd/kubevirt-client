@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1VolumeResourceRequirements = void 0;
 /**
 * VolumeResourceRequirements describes the storage resource requirements for a volume.
 */
-export class K8sIoApiCoreV1VolumeResourceRequirements {
+class K8sIoApiCoreV1VolumeResourceRequirements {
     /**
     * Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
     */
@@ -43,4 +46,5 @@ export class K8sIoApiCoreV1VolumeResourceRequirements {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1VolumeResourceRequirements = K8sIoApiCoreV1VolumeResourceRequirements;
 //# sourceMappingURL=K8sIoApiCoreV1VolumeResourceRequirements.js.map

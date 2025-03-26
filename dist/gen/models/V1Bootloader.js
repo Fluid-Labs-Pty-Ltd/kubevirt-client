@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Bootloader = void 0;
 /**
 * Represents the firmware blob used to assist in the domain creation process. Used for setting the QEMU BIOS file path for the libvirt domain.
 */
-export class V1Bootloader {
+class V1Bootloader {
     'bios';
     'efi';
     static discriminator = undefined;
@@ -37,4 +40,5 @@ export class V1Bootloader {
     constructor() {
     }
 }
+exports.V1Bootloader = V1Bootloader;
 //# sourceMappingURL=V1Bootloader.js.map

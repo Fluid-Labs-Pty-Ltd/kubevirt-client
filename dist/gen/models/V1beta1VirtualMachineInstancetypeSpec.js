@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1VirtualMachineInstancetypeSpec = void 0;
 /**
 * VirtualMachineInstancetypeSpec is a description of the VirtualMachineInstancetype or VirtualMachineClusterInstancetype.  CPU and Memory are required attributes with both requiring that their Guest attribute is defined, ensuring a number of vCPUs and amount of RAM is always provided by each instancetype.
 */
-export class V1beta1VirtualMachineInstancetypeSpec {
+class V1beta1VirtualMachineInstancetypeSpec {
     /**
     * Optionally defines the required Annotations to be used by the instance type and applied to the VirtualMachineInstance
     */
@@ -104,4 +107,5 @@ export class V1beta1VirtualMachineInstancetypeSpec {
     constructor() {
     }
 }
+exports.V1beta1VirtualMachineInstancetypeSpec = V1beta1VirtualMachineInstancetypeSpec;
 //# sourceMappingURL=V1beta1VirtualMachineInstancetypeSpec.js.map

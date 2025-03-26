@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Hugepages = void 0;
 /**
 * Hugepages allow to use hugepages for the VirtualMachineInstance instead of regular memory.
 */
-export class V1Hugepages {
+class V1Hugepages {
     /**
     * PageSize specifies the hugepage size, for x86_64 architecture valid values are 1Gi and 2Mi.
     */
@@ -33,4 +36,5 @@ export class V1Hugepages {
     constructor() {
     }
 }
+exports.V1Hugepages = V1Hugepages;
 //# sourceMappingURL=V1Hugepages.js.map

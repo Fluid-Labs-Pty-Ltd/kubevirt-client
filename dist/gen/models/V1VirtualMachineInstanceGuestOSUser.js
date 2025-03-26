@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstanceGuestOSUser = void 0;
 /**
 * VirtualMachineGuestOSUser is the single user of the guest os
 */
-export class V1VirtualMachineInstanceGuestOSUser {
+class V1VirtualMachineInstanceGuestOSUser {
     'domain';
     'loginTime';
     'userName';
@@ -44,4 +47,5 @@ export class V1VirtualMachineInstanceGuestOSUser {
     constructor() {
     }
 }
+exports.V1VirtualMachineInstanceGuestOSUser = V1VirtualMachineInstanceGuestOSUser;
 //# sourceMappingURL=V1VirtualMachineInstanceGuestOSUser.js.map

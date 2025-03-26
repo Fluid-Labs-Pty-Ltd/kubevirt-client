@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1FeaturePreferences = void 0;
 /**
 * FeaturePreferences contains various optional defaults for Features.
 */
-export class V1beta1FeaturePreferences {
+class V1beta1FeaturePreferences {
     'preferredAcpi';
     'preferredApic';
     'preferredHyperv';
@@ -65,4 +68,5 @@ export class V1beta1FeaturePreferences {
     constructor() {
     }
 }
+exports.V1beta1FeaturePreferences = V1beta1FeaturePreferences;
 //# sourceMappingURL=V1beta1FeaturePreferences.js.map

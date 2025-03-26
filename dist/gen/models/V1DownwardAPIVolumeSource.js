@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1DownwardAPIVolumeSource = void 0;
 /**
 * DownwardAPIVolumeSource represents a volume containing downward API info.
 */
-export class V1DownwardAPIVolumeSource {
+class V1DownwardAPIVolumeSource {
     /**
     * Fields is a list of downward API volume file
     */
@@ -43,4 +46,5 @@ export class V1DownwardAPIVolumeSource {
     constructor() {
     }
 }
+exports.V1DownwardAPIVolumeSource = V1DownwardAPIVolumeSource;
 //# sourceMappingURL=V1DownwardAPIVolumeSource.js.map

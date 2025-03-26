@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstanceStatusQosClassEnum = exports.V1VirtualMachineInstanceStatus = void 0;
 /**
 * VirtualMachineInstanceStatus represents information about the status of a VirtualMachineInstance. Status may trail the actual state of a system.
 */
-export class V1VirtualMachineInstanceStatus {
+class V1VirtualMachineInstanceStatus {
     /**
     * VSOCKCID is used to track the allocated VSOCK CID in the VM.
     */
@@ -262,10 +265,11 @@ export class V1VirtualMachineInstanceStatus {
     constructor() {
     }
 }
-export var V1VirtualMachineInstanceStatusQosClassEnum;
+exports.V1VirtualMachineInstanceStatus = V1VirtualMachineInstanceStatus;
+var V1VirtualMachineInstanceStatusQosClassEnum;
 (function (V1VirtualMachineInstanceStatusQosClassEnum) {
     V1VirtualMachineInstanceStatusQosClassEnum["BestEffort"] = "BestEffort";
     V1VirtualMachineInstanceStatusQosClassEnum["Burstable"] = "Burstable";
     V1VirtualMachineInstanceStatusQosClassEnum["Guaranteed"] = "Guaranteed";
-})(V1VirtualMachineInstanceStatusQosClassEnum || (V1VirtualMachineInstanceStatusQosClassEnum = {}));
+})(V1VirtualMachineInstanceStatusQosClassEnum || (exports.V1VirtualMachineInstanceStatusQosClassEnum = V1VirtualMachineInstanceStatusQosClassEnum = {}));
 //# sourceMappingURL=V1VirtualMachineInstanceStatus.js.map

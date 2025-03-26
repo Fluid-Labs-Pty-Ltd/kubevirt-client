@@ -1,4 +1,11 @@
-export class Observable {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Observable = void 0;
+exports.from = from;
+exports.of = of;
+exports.mergeMap = mergeMap;
+exports.map = map;
+class Observable {
     promise;
     constructor(promise) {
         this.promise = promise;
@@ -10,16 +17,17 @@ export class Observable {
         return new Observable(this.promise.then(callback));
     }
 }
-export function from(promise) {
+exports.Observable = Observable;
+function from(promise) {
     return new Observable(promise);
 }
-export function of(value) {
+function of(value) {
     return new Observable(Promise.resolve(value));
 }
-export function mergeMap(callback) {
+function mergeMap(callback) {
     return (value) => callback(value).toPromise();
 }
-export function map(callback) {
+function map(callback) {
     return callback;
 }
 //# sourceMappingURL=rxjsStub.js.map

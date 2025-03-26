@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1HTTPGetActionSchemeEnum = exports.K8sIoApiCoreV1HTTPGetAction = void 0;
 /**
 * HTTPGetAction describes an action based on HTTP Get requests.
 */
-export class K8sIoApiCoreV1HTTPGetAction {
+class K8sIoApiCoreV1HTTPGetAction {
     /**
     * Host name to connect to, defaults to the pod IP. You probably want to set \"Host\" in httpHeaders instead.
     */
@@ -63,9 +66,10 @@ export class K8sIoApiCoreV1HTTPGetAction {
     constructor() {
     }
 }
-export var K8sIoApiCoreV1HTTPGetActionSchemeEnum;
+exports.K8sIoApiCoreV1HTTPGetAction = K8sIoApiCoreV1HTTPGetAction;
+var K8sIoApiCoreV1HTTPGetActionSchemeEnum;
 (function (K8sIoApiCoreV1HTTPGetActionSchemeEnum) {
     K8sIoApiCoreV1HTTPGetActionSchemeEnum["Http"] = "HTTP";
     K8sIoApiCoreV1HTTPGetActionSchemeEnum["Https"] = "HTTPS";
-})(K8sIoApiCoreV1HTTPGetActionSchemeEnum || (K8sIoApiCoreV1HTTPGetActionSchemeEnum = {}));
+})(K8sIoApiCoreV1HTTPGetActionSchemeEnum || (exports.K8sIoApiCoreV1HTTPGetActionSchemeEnum = K8sIoApiCoreV1HTTPGetActionSchemeEnum = {}));
 //# sourceMappingURL=K8sIoApiCoreV1HTTPGetAction.js.map

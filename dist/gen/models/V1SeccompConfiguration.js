@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1SeccompConfiguration = void 0;
 /**
 * SeccompConfiguration holds Seccomp configuration for Kubevirt components
 */
-export class V1SeccompConfiguration {
+class V1SeccompConfiguration {
     'virtualMachineInstanceProfile';
     static discriminator = undefined;
     static mapping = undefined;
@@ -30,4 +33,5 @@ export class V1SeccompConfiguration {
     constructor() {
     }
 }
+exports.V1SeccompConfiguration = V1SeccompConfiguration;
 //# sourceMappingURL=V1SeccompConfiguration.js.map

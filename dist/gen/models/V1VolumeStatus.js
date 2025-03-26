@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VolumeStatus = void 0;
 /**
 * VolumeStatus represents information about the status of volumes attached to the VirtualMachineInstance.
 */
-export class V1VolumeStatus {
+class V1VolumeStatus {
     'containerDiskVolume';
     'hotplugVolume';
     'memoryDumpVolume';
@@ -111,4 +114,5 @@ export class V1VolumeStatus {
     constructor() {
     }
 }
+exports.V1VolumeStatus = V1VolumeStatus;
 //# sourceMappingURL=V1VolumeStatus.js.map

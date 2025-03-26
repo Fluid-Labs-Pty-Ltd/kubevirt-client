@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1NodePlacement = void 0;
 /**
 * NodePlacement describes node scheduling configuration.
 */
-export class V1NodePlacement {
+class V1NodePlacement {
     'affinity';
     /**
     * nodeSelector is the node selector applied to the relevant kind of pods It specifies a map of key-value pairs: for the pod to be eligible to run on a node, the node must have each of the indicated key-value pairs as labels (it can have additional labels as well). See https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector
@@ -50,4 +53,5 @@ export class V1NodePlacement {
     constructor() {
     }
 }
+exports.V1NodePlacement = V1NodePlacement;
 //# sourceMappingURL=V1NodePlacement.js.map

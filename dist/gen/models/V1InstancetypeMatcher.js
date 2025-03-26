@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1InstancetypeMatcher = void 0;
 /**
 * InstancetypeMatcher references a instancetype that is used to fill fields in the VMI template.
 */
-export class V1InstancetypeMatcher {
+class V1InstancetypeMatcher {
     /**
     * InferFromVolume lists the name of a volume that should be used to infer or discover the instancetype to be used through known annotations on the underlying resource. Once applied to the InstancetypeMatcher this field is removed.
     */
@@ -73,4 +76,5 @@ export class V1InstancetypeMatcher {
     constructor() {
     }
 }
+exports.V1InstancetypeMatcher = V1InstancetypeMatcher;
 //# sourceMappingURL=V1InstancetypeMatcher.js.map

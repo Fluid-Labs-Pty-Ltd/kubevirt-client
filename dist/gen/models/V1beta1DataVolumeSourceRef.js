@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1DataVolumeSourceRef = void 0;
 /**
 * DataVolumeSourceRef defines an indirect reference to the source of data for the DataVolume
 */
-export class V1beta1DataVolumeSourceRef {
+class V1beta1DataVolumeSourceRef {
     /**
     * The kind of the source reference, currently only \"DataSource\" is supported
     */
@@ -53,4 +56,5 @@ export class V1beta1DataVolumeSourceRef {
     constructor() {
     }
 }
+exports.V1beta1DataVolumeSourceRef = V1beta1DataVolumeSourceRef;
 //# sourceMappingURL=V1beta1DataVolumeSourceRef.js.map

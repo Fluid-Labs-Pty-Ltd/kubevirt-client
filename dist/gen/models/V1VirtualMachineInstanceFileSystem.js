@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstanceFileSystem = void 0;
 /**
 * VirtualMachineInstanceFileSystem represents guest os disk
 */
-export class V1VirtualMachineInstanceFileSystem {
+class V1VirtualMachineInstanceFileSystem {
     'disk';
     'diskName';
     'fileSystemType';
@@ -65,4 +68,5 @@ export class V1VirtualMachineInstanceFileSystem {
     constructor() {
     }
 }
+exports.V1VirtualMachineInstanceFileSystem = V1VirtualMachineInstanceFileSystem;
 //# sourceMappingURL=V1VirtualMachineInstanceFileSystem.js.map

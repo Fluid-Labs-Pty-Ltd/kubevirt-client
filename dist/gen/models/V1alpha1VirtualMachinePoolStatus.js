@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1alpha1VirtualMachinePoolStatus {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1alpha1VirtualMachinePoolStatus = void 0;
+class V1alpha1VirtualMachinePoolStatus {
     'conditions';
     /**
     * Canonical form of the label selector for HPA which consumes it through the scale subresource.
@@ -51,4 +54,5 @@ export class V1alpha1VirtualMachinePoolStatus {
     constructor() {
     }
 }
+exports.V1alpha1VirtualMachinePoolStatus = V1alpha1VirtualMachinePoolStatus;
 //# sourceMappingURL=V1alpha1VirtualMachinePoolStatus.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1KubeVirtSpec {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1KubeVirtSpecImagePullPolicyEnum = exports.V1KubeVirtSpec = void 0;
+class V1KubeVirtSpec {
     'certificateRotateStrategy';
     'configuration';
     'customizeComponents';
@@ -172,10 +175,11 @@ export class V1KubeVirtSpec {
     constructor() {
     }
 }
-export var V1KubeVirtSpecImagePullPolicyEnum;
+exports.V1KubeVirtSpec = V1KubeVirtSpec;
+var V1KubeVirtSpecImagePullPolicyEnum;
 (function (V1KubeVirtSpecImagePullPolicyEnum) {
     V1KubeVirtSpecImagePullPolicyEnum["Always"] = "Always";
     V1KubeVirtSpecImagePullPolicyEnum["IfNotPresent"] = "IfNotPresent";
     V1KubeVirtSpecImagePullPolicyEnum["Never"] = "Never";
-})(V1KubeVirtSpecImagePullPolicyEnum || (V1KubeVirtSpecImagePullPolicyEnum = {}));
+})(V1KubeVirtSpecImagePullPolicyEnum || (exports.V1KubeVirtSpecImagePullPolicyEnum = V1KubeVirtSpecImagePullPolicyEnum = {}));
 //# sourceMappingURL=V1KubeVirtSpec.js.map

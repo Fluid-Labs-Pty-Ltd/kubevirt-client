@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1SourceSpec = void 0;
 /**
 * SourceSpec contains the appropriate spec for the resource being snapshotted
 */
-export class V1beta1SourceSpec {
+class V1beta1SourceSpec {
     'virtualMachine';
     static discriminator = undefined;
     static mapping = undefined;
@@ -30,4 +33,5 @@ export class V1beta1SourceSpec {
     constructor() {
     }
 }
+exports.V1beta1SourceSpec = V1beta1SourceSpec;
 //# sourceMappingURL=V1beta1SourceSpec.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1alpha1Selectors {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1alpha1Selectors = void 0;
+class V1alpha1Selectors {
     'namespaceSelector';
     'virtualMachineInstanceSelector';
     static discriminator = undefined;
@@ -34,4 +37,5 @@ export class V1alpha1Selectors {
     constructor() {
     }
 }
+exports.V1alpha1Selectors = V1alpha1Selectors;
 //# sourceMappingURL=V1alpha1Selectors.js.map

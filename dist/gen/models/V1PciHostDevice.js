@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1PciHostDevice = void 0;
 /**
 * PciHostDevice represents a host PCI device allowed for passthrough
 */
-export class V1PciHostDevice {
+class V1PciHostDevice {
     /**
     * If true, KubeVirt will leave the allocation and monitoring to an external device plugin
     */
@@ -53,4 +56,5 @@ export class V1PciHostDevice {
     constructor() {
     }
 }
+exports.V1PciHostDevice = V1PciHostDevice;
 //# sourceMappingURL=V1PciHostDevice.js.map

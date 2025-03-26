@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1LaunchSecurity {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1LaunchSecurity = void 0;
+class V1LaunchSecurity {
     'sev';
     static discriminator = undefined;
     static mapping = undefined;
@@ -27,4 +30,5 @@ export class V1LaunchSecurity {
     constructor() {
     }
 }
+exports.V1LaunchSecurity = V1LaunchSecurity;
 //# sourceMappingURL=V1LaunchSecurity.js.map

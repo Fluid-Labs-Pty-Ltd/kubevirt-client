@@ -1,7 +1,10 @@
-import { PromiseMiddlewareWrapper } from "./middleware.js";
-import { IsomorphicFetchHttpLibrary as DefaultHttpLibrary } from "./http/isomorphic-fetch.js";
-import { server1 } from "./servers.js";
-import { configureAuthMethods } from "./auth/auth.js";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createConfiguration = createConfiguration;
+const middleware_js_1 = require("./middleware.js");
+const isomorphic_fetch_js_1 = require("./http/isomorphic-fetch.js");
+const servers_js_1 = require("./servers.js");
+const auth_js_1 = require("./auth/auth.js");
 /**
  * Provide your `ConfigurationParameters` to this function to get a `Configuration`
  * object that can be used to configure your APIs (in the constructor or
@@ -16,15 +19,15 @@ import { configureAuthMethods } from "./auth/auth.js";
  *
  * @param conf partial configuration
  */
-export function createConfiguration(conf = {}) {
+function createConfiguration(conf = {}) {
     const configuration = {
-        baseServer: conf.baseServer !== undefined ? conf.baseServer : server1,
-        httpApi: conf.httpApi || new DefaultHttpLibrary(),
+        baseServer: conf.baseServer !== undefined ? conf.baseServer : servers_js_1.server1,
+        httpApi: conf.httpApi || new isomorphic_fetch_js_1.IsomorphicFetchHttpLibrary(),
         middleware: conf.middleware || [],
-        authMethods: configureAuthMethods(conf.authMethods)
+        authMethods: (0, auth_js_1.configureAuthMethods)(conf.authMethods)
     };
     if (conf.promiseMiddleware) {
-        conf.promiseMiddleware.forEach(m => configuration.middleware.push(new PromiseMiddlewareWrapper(m)));
+        conf.promiseMiddleware.forEach(m => configuration.middleware.push(new middleware_js_1.PromiseMiddlewareWrapper(m)));
     }
     return configuration;
 }

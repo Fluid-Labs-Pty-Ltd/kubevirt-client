@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1RESTClientConfiguration = void 0;
 /**
 * RESTClientConfiguration allows configuring certain aspects of the k8s rest client.
 */
-export class V1RESTClientConfiguration {
+class V1RESTClientConfiguration {
     'rateLimiter';
     static discriminator = undefined;
     static mapping = undefined;
@@ -30,4 +33,5 @@ export class V1RESTClientConfiguration {
     constructor() {
     }
 }
+exports.V1RESTClientConfiguration = V1RESTClientConfiguration;
 //# sourceMappingURL=V1RESTClientConfiguration.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApimachineryPkgApisMetaV1LabelSelector = void 0;
 /**
 * A label selector is a label query over a set of resources. The result of matchLabels and matchExpressions are ANDed. An empty label selector matches all objects. A null label selector matches no objects.
 */
-export class K8sIoApimachineryPkgApisMetaV1LabelSelector {
+class K8sIoApimachineryPkgApisMetaV1LabelSelector {
     /**
     * matchExpressions is a list of label selector requirements. The requirements are ANDed.
     */
@@ -43,4 +46,5 @@ export class K8sIoApimachineryPkgApisMetaV1LabelSelector {
     constructor() {
     }
 }
+exports.K8sIoApimachineryPkgApisMetaV1LabelSelector = K8sIoApimachineryPkgApisMetaV1LabelSelector;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1LabelSelector.js.map

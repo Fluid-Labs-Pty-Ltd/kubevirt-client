@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1DataVolumeSpec = void 0;
 /**
 * DataVolumeSpec defines the DataVolume type specification
 */
-export class V1beta1DataVolumeSpec {
+class V1beta1DataVolumeSpec {
     /**
     * Checkpoints is a list of DataVolumeCheckpoints, representing stages in a multistage import.
     */
@@ -101,4 +104,5 @@ export class V1beta1DataVolumeSpec {
     constructor() {
     }
 }
+exports.V1beta1DataVolumeSpec = V1beta1DataVolumeSpec;
 //# sourceMappingURL=V1beta1DataVolumeSpec.js.map

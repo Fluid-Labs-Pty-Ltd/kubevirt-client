@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1VirtualMachineInstanceReplicaSetSpec {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstanceReplicaSetSpec = void 0;
+class V1VirtualMachineInstanceReplicaSetSpec {
     /**
     * Indicates that the replica set is paused.
     */
@@ -54,4 +57,5 @@ export class V1VirtualMachineInstanceReplicaSetSpec {
     constructor() {
     }
 }
+exports.V1VirtualMachineInstanceReplicaSetSpec = V1VirtualMachineInstanceReplicaSetSpec;
 //# sourceMappingURL=V1VirtualMachineInstanceReplicaSetSpec.js.map

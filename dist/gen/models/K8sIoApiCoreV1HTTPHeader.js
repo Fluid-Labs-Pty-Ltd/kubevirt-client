@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1HTTPHeader = void 0;
 /**
 * HTTPHeader describes a custom header to be used in HTTP probes
 */
-export class K8sIoApiCoreV1HTTPHeader {
+class K8sIoApiCoreV1HTTPHeader {
     /**
     * The header field name. This will be canonicalized upon output, so case-variant names will be understood as the same header.
     */
@@ -43,4 +46,5 @@ export class K8sIoApiCoreV1HTTPHeader {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1HTTPHeader = K8sIoApiCoreV1HTTPHeader;
 //# sourceMappingURL=K8sIoApiCoreV1HTTPHeader.js.map

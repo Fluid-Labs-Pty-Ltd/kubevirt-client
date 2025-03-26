@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1ArchConfiguration {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1ArchConfiguration = void 0;
+class V1ArchConfiguration {
     'amd64';
     'arm64';
     'defaultArchitecture';
@@ -48,4 +51,5 @@ export class V1ArchConfiguration {
     constructor() {
     }
 }
+exports.V1ArchConfiguration = V1ArchConfiguration;
 //# sourceMappingURL=V1ArchConfiguration.js.map

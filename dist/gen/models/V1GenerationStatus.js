@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1GenerationStatus = void 0;
 /**
 * GenerationStatus keeps track of the generation for a given resource so that decisions about forced updates can be made.
 */
-export class V1GenerationStatus {
+class V1GenerationStatus {
     /**
     * group is the group of the thing you\'re tracking
     */
@@ -83,4 +86,5 @@ export class V1GenerationStatus {
     constructor() {
     }
 }
+exports.V1GenerationStatus = V1GenerationStatus;
 //# sourceMappingURL=V1GenerationStatus.js.map

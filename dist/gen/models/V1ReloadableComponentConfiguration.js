@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1ReloadableComponentConfiguration = void 0;
 /**
 * ReloadableComponentConfiguration holds all generic k8s configuration options which can be reloaded by components without requiring a restart.
 */
-export class V1ReloadableComponentConfiguration {
+class V1ReloadableComponentConfiguration {
     'restClient';
     static discriminator = undefined;
     static mapping = undefined;
@@ -30,4 +33,5 @@ export class V1ReloadableComponentConfiguration {
     constructor() {
     }
 }
+exports.V1ReloadableComponentConfiguration = V1ReloadableComponentConfiguration;
 //# sourceMappingURL=V1ReloadableComponentConfiguration.js.map

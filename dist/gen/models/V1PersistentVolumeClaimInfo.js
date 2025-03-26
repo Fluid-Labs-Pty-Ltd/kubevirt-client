@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1PersistentVolumeClaimInfoVolumeModeEnum = exports.V1PersistentVolumeClaimInfoAccessModesEnum = exports.V1PersistentVolumeClaimInfo = void 0;
 /**
 * PersistentVolumeClaimInfo contains the relavant information virt-handler needs cached about a PVC
 */
-export class V1PersistentVolumeClaimInfo {
+class V1PersistentVolumeClaimInfo {
     /**
     * AccessModes contains the desired access modes the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1
     */
@@ -93,16 +96,17 @@ export class V1PersistentVolumeClaimInfo {
     constructor() {
     }
 }
-export var V1PersistentVolumeClaimInfoAccessModesEnum;
+exports.V1PersistentVolumeClaimInfo = V1PersistentVolumeClaimInfo;
+var V1PersistentVolumeClaimInfoAccessModesEnum;
 (function (V1PersistentVolumeClaimInfoAccessModesEnum) {
     V1PersistentVolumeClaimInfoAccessModesEnum["ReadOnlyMany"] = "ReadOnlyMany";
     V1PersistentVolumeClaimInfoAccessModesEnum["ReadWriteMany"] = "ReadWriteMany";
     V1PersistentVolumeClaimInfoAccessModesEnum["ReadWriteOnce"] = "ReadWriteOnce";
     V1PersistentVolumeClaimInfoAccessModesEnum["ReadWriteOncePod"] = "ReadWriteOncePod";
-})(V1PersistentVolumeClaimInfoAccessModesEnum || (V1PersistentVolumeClaimInfoAccessModesEnum = {}));
-export var V1PersistentVolumeClaimInfoVolumeModeEnum;
+})(V1PersistentVolumeClaimInfoAccessModesEnum || (exports.V1PersistentVolumeClaimInfoAccessModesEnum = V1PersistentVolumeClaimInfoAccessModesEnum = {}));
+var V1PersistentVolumeClaimInfoVolumeModeEnum;
 (function (V1PersistentVolumeClaimInfoVolumeModeEnum) {
     V1PersistentVolumeClaimInfoVolumeModeEnum["Block"] = "Block";
     V1PersistentVolumeClaimInfoVolumeModeEnum["Filesystem"] = "Filesystem";
-})(V1PersistentVolumeClaimInfoVolumeModeEnum || (V1PersistentVolumeClaimInfoVolumeModeEnum = {}));
+})(V1PersistentVolumeClaimInfoVolumeModeEnum || (exports.V1PersistentVolumeClaimInfoVolumeModeEnum = V1PersistentVolumeClaimInfoVolumeModeEnum = {}));
 //# sourceMappingURL=V1PersistentVolumeClaimInfo.js.map

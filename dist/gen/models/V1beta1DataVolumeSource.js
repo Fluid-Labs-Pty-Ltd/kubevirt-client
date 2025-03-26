@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1DataVolumeSource = void 0;
 /**
 * DataVolumeSource represents the source for our Data Volume, this can be HTTP, Imageio, S3, GCS, Registry or an existing PVC
 */
-export class V1beta1DataVolumeSource {
+class V1beta1DataVolumeSource {
     /**
     * DataVolumeBlankImage provides the parameters to create a new raw blank image for the PVC
     */
@@ -99,4 +102,5 @@ export class V1beta1DataVolumeSource {
     constructor() {
     }
 }
+exports.V1beta1DataVolumeSource = V1beta1DataVolumeSource;
 //# sourceMappingURL=V1beta1DataVolumeSource.js.map

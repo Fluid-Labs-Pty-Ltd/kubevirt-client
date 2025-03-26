@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1VirtualMachineRestoreSpec = void 0;
 /**
 * VirtualMachineRestoreSpec is the spec for a VirtualMachineRestoreresource
 */
-export class V1beta1VirtualMachineRestoreSpec {
+class V1beta1VirtualMachineRestoreSpec {
     /**
     * If the target for the restore does not exist, it will be created. Patches holds JSON patches that would be applied to the target manifest before it\'s created. Patches should fit the target\'s Kind.  Example for a patch: {\"op\": \"replace\", \"path\": \"/metadata/name\", \"value\": \"new-vm-name\"}
     */
@@ -47,4 +50,5 @@ export class V1beta1VirtualMachineRestoreSpec {
     constructor() {
     }
 }
+exports.V1beta1VirtualMachineRestoreSpec = V1beta1VirtualMachineRestoreSpec;
 //# sourceMappingURL=V1beta1VirtualMachineRestoreSpec.js.map

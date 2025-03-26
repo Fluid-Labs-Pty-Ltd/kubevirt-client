@@ -1,7 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BearerTokenAuthentication = void 0;
+exports.configureAuthMethods = configureAuthMethods;
 /**
  * Applies apiKey authentication to the request context.
  */
-export class BearerTokenAuthentication {
+class BearerTokenAuthentication {
     apiKey;
     /**
      * Configures this api key authentication with the necessary properties
@@ -18,11 +22,12 @@ export class BearerTokenAuthentication {
         context.setHeaderParam("authorization", this.apiKey);
     }
 }
+exports.BearerTokenAuthentication = BearerTokenAuthentication;
 /**
  * Creates the authentication methods from a swagger description.
  *
  */
-export function configureAuthMethods(config) {
+function configureAuthMethods(config) {
     let authMethods = {};
     if (!config) {
         return authMethods;

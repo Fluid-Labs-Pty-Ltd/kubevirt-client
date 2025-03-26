@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1KernelInfo = void 0;
 /**
 * KernelInfo show info about the kernel image
 */
-export class V1KernelInfo {
+class V1KernelInfo {
     /**
     * Checksum is the checksum of the kernel image
     */
@@ -33,4 +36,5 @@ export class V1KernelInfo {
     constructor() {
     }
 }
+exports.V1KernelInfo = V1KernelInfo;
 //# sourceMappingURL=V1KernelInfo.js.map

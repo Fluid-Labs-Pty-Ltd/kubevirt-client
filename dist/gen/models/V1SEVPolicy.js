@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1SEVPolicy {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1SEVPolicy = void 0;
+class V1SEVPolicy {
     /**
     * SEV-ES is required. Defaults to false.
     */
@@ -30,4 +33,5 @@ export class V1SEVPolicy {
     constructor() {
     }
 }
+exports.V1SEVPolicy = V1SEVPolicy;
 //# sourceMappingURL=V1SEVPolicy.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstanceSpecDnsPolicyEnum = exports.V1VirtualMachineInstanceSpec = void 0;
 /**
 * VirtualMachineInstanceSpec is a description of a VirtualMachineInstance.
 */
-export class V1VirtualMachineInstanceSpec {
+class V1VirtualMachineInstanceSpec {
     /**
     * Specifies a set of public keys to inject into the vm guest
     */
@@ -208,11 +211,12 @@ export class V1VirtualMachineInstanceSpec {
     constructor() {
     }
 }
-export var V1VirtualMachineInstanceSpecDnsPolicyEnum;
+exports.V1VirtualMachineInstanceSpec = V1VirtualMachineInstanceSpec;
+var V1VirtualMachineInstanceSpecDnsPolicyEnum;
 (function (V1VirtualMachineInstanceSpecDnsPolicyEnum) {
     V1VirtualMachineInstanceSpecDnsPolicyEnum["ClusterFirst"] = "ClusterFirst";
     V1VirtualMachineInstanceSpecDnsPolicyEnum["ClusterFirstWithHostNet"] = "ClusterFirstWithHostNet";
     V1VirtualMachineInstanceSpecDnsPolicyEnum["Default"] = "Default";
     V1VirtualMachineInstanceSpecDnsPolicyEnum["None"] = "None";
-})(V1VirtualMachineInstanceSpecDnsPolicyEnum || (V1VirtualMachineInstanceSpecDnsPolicyEnum = {}));
+})(V1VirtualMachineInstanceSpecDnsPolicyEnum || (exports.V1VirtualMachineInstanceSpecDnsPolicyEnum = V1VirtualMachineInstanceSpecDnsPolicyEnum = {}));
 //# sourceMappingURL=V1VirtualMachineInstanceSpec.js.map

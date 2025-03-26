@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApimachineryPkgApisMetaV1Preconditions = void 0;
 /**
 * Preconditions must be fulfilled before an operation (update, delete, etc.) is carried out.
 */
-export class K8sIoApimachineryPkgApisMetaV1Preconditions {
+class K8sIoApimachineryPkgApisMetaV1Preconditions {
     /**
     * Specifies the target ResourceVersion
     */
@@ -43,4 +46,5 @@ export class K8sIoApimachineryPkgApisMetaV1Preconditions {
     constructor() {
     }
 }
+exports.K8sIoApimachineryPkgApisMetaV1Preconditions = K8sIoApimachineryPkgApisMetaV1Preconditions;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1Preconditions.js.map

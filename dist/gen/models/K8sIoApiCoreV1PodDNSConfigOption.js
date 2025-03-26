@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1PodDNSConfigOption = void 0;
 /**
 * PodDNSConfigOption defines DNS resolver options of a pod.
 */
-export class K8sIoApiCoreV1PodDNSConfigOption {
+class K8sIoApiCoreV1PodDNSConfigOption {
     /**
     * Required.
     */
@@ -40,4 +43,5 @@ export class K8sIoApiCoreV1PodDNSConfigOption {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1PodDNSConfigOption = K8sIoApiCoreV1PodDNSConfigOption;
 //# sourceMappingURL=K8sIoApiCoreV1PodDNSConfigOption.js.map

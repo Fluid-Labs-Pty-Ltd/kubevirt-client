@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Volume = void 0;
 /**
 * Volume represents a named volume in a vmi.
 */
-export class V1Volume {
+class V1Volume {
     'cloudInitConfigDrive';
     'cloudInitNoCloud';
     'configMap';
@@ -141,4 +144,5 @@ export class V1Volume {
     constructor() {
     }
 }
+exports.V1Volume = V1Volume;
 //# sourceMappingURL=V1Volume.js.map

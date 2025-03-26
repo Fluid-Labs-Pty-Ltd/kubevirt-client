@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1PodAffinityTerm = void 0;
 /**
 * Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key <topologyKey> matches that of any node on which a pod of the set of pods is running
 */
-export class K8sIoApiCoreV1PodAffinityTerm {
+class K8sIoApiCoreV1PodAffinityTerm {
     'labelSelector';
     /**
     * MatchLabelKeys is a set of pod label keys to select which pods will be taken into consideration. The keys are used to lookup values from the incoming pod labels, those key-value labels are merged with `labelSelector` as `key in (value)` to select the group of existing pods which pods will be taken into consideration for the incoming pod\'s pod (anti) affinity. Keys that don\'t exist in the incoming pod labels will be ignored. The default value is empty. The same key is forbidden to exist in both matchLabelKeys and labelSelector. Also, matchLabelKeys cannot be set when labelSelector isn\'t set. This is a beta field and requires enabling MatchLabelKeysInPodAffinity feature gate (enabled by default).
@@ -77,4 +80,5 @@ export class K8sIoApiCoreV1PodAffinityTerm {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1PodAffinityTerm = K8sIoApiCoreV1PodAffinityTerm;
 //# sourceMappingURL=K8sIoApiCoreV1PodAffinityTerm.js.map

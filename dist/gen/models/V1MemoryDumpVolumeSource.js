@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1MemoryDumpVolumeSource {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1MemoryDumpVolumeSource = void 0;
+class V1MemoryDumpVolumeSource {
     /**
     * claimName is the name of a PersistentVolumeClaim in the same namespace as the pod using this volume. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims
     */
@@ -50,4 +53,5 @@ export class V1MemoryDumpVolumeSource {
     constructor() {
     }
 }
+exports.V1MemoryDumpVolumeSource = V1MemoryDumpVolumeSource;
 //# sourceMappingURL=V1MemoryDumpVolumeSource.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1SSHPublicKeyAccessCredentialSource = void 0;
 /**
 * SSHPublicKeyAccessCredentialSource represents where to retrieve the ssh key credentials Only one of its members may be specified.
 */
-export class V1SSHPublicKeyAccessCredentialSource {
+class V1SSHPublicKeyAccessCredentialSource {
     'secret';
     static discriminator = undefined;
     static mapping = undefined;
@@ -30,4 +33,5 @@ export class V1SSHPublicKeyAccessCredentialSource {
     constructor() {
     }
 }
+exports.V1SSHPublicKeyAccessCredentialSource = V1SSHPublicKeyAccessCredentialSource;
 //# sourceMappingURL=V1SSHPublicKeyAccessCredentialSource.js.map

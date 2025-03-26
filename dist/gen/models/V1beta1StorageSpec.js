@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1StorageSpecVolumeModeEnum = exports.V1beta1StorageSpecAccessModesEnum = exports.V1beta1StorageSpec = void 0;
 /**
 * StorageSpec defines the Storage type specification
 */
-export class V1beta1StorageSpec {
+class V1beta1StorageSpec {
     /**
     * AccessModes contains the desired access modes the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1
     */
@@ -91,16 +94,17 @@ export class V1beta1StorageSpec {
     constructor() {
     }
 }
-export var V1beta1StorageSpecAccessModesEnum;
+exports.V1beta1StorageSpec = V1beta1StorageSpec;
+var V1beta1StorageSpecAccessModesEnum;
 (function (V1beta1StorageSpecAccessModesEnum) {
     V1beta1StorageSpecAccessModesEnum["ReadOnlyMany"] = "ReadOnlyMany";
     V1beta1StorageSpecAccessModesEnum["ReadWriteMany"] = "ReadWriteMany";
     V1beta1StorageSpecAccessModesEnum["ReadWriteOnce"] = "ReadWriteOnce";
     V1beta1StorageSpecAccessModesEnum["ReadWriteOncePod"] = "ReadWriteOncePod";
-})(V1beta1StorageSpecAccessModesEnum || (V1beta1StorageSpecAccessModesEnum = {}));
-export var V1beta1StorageSpecVolumeModeEnum;
+})(V1beta1StorageSpecAccessModesEnum || (exports.V1beta1StorageSpecAccessModesEnum = V1beta1StorageSpecAccessModesEnum = {}));
+var V1beta1StorageSpecVolumeModeEnum;
 (function (V1beta1StorageSpecVolumeModeEnum) {
     V1beta1StorageSpecVolumeModeEnum["Block"] = "Block";
     V1beta1StorageSpecVolumeModeEnum["Filesystem"] = "Filesystem";
-})(V1beta1StorageSpecVolumeModeEnum || (V1beta1StorageSpecVolumeModeEnum = {}));
+})(V1beta1StorageSpecVolumeModeEnum || (exports.V1beta1StorageSpecVolumeModeEnum = V1beta1StorageSpecVolumeModeEnum = {}));
 //# sourceMappingURL=V1beta1StorageSpec.js.map

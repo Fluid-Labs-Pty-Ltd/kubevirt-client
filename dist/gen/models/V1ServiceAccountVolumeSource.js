@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1ServiceAccountVolumeSource = void 0;
 /**
 * ServiceAccountVolumeSource adapts a ServiceAccount into a volume.
 */
-export class V1ServiceAccountVolumeSource {
+class V1ServiceAccountVolumeSource {
     /**
     * Name of the service account in the pod\'s namespace to use. More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
     */
@@ -33,4 +36,5 @@ export class V1ServiceAccountVolumeSource {
     constructor() {
     }
 }
+exports.V1ServiceAccountVolumeSource = V1ServiceAccountVolumeSource;
 //# sourceMappingURL=V1ServiceAccountVolumeSource.js.map

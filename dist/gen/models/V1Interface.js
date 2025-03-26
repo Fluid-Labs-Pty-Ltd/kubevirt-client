@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1Interface {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Interface = void 0;
+class V1Interface {
     /**
     * If specified, the ACPI index is used to provide network interface device naming, that is stable across changes in PCI addresses assigned to the device. This value is required to be unique across all devices and be between 1 and (16*1024-1).
     */
@@ -184,4 +187,5 @@ export class V1Interface {
     constructor() {
     }
 }
+exports.V1Interface = V1Interface;
 //# sourceMappingURL=V1Interface.js.map

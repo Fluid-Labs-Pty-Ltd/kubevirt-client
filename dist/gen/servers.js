@@ -1,11 +1,14 @@
-import { RequestContext } from "./http/http.js";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.servers = exports.server1 = exports.ServerConfiguration = void 0;
+const http_js_1 = require("./http/http.js");
 /**
  *
  * Represents the configuration of a server including its
  * url template and variable configuration based on the url.
  *
  */
-export class ServerConfiguration {
+class ServerConfiguration {
     url;
     variableConfiguration;
     constructor(url, variableConfiguration) {
@@ -41,9 +44,10 @@ export class ServerConfiguration {
      *
      */
     makeRequestContext(endpoint, httpMethod) {
-        return new RequestContext(this.getUrl() + endpoint, httpMethod);
+        return new http_js_1.RequestContext(this.getUrl() + endpoint, httpMethod);
     }
 }
-export const server1 = new ServerConfiguration("", {});
-export const servers = [server1];
+exports.ServerConfiguration = ServerConfiguration;
+exports.server1 = new ServerConfiguration("", {});
+exports.servers = [exports.server1];
 //# sourceMappingURL=servers.js.map

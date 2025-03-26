@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Port = void 0;
 /**
 * Port represents a port to expose from the virtual machine. Default protocol TCP. The port field is mandatory
 */
-export class V1Port {
+class V1Port {
     /**
     * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services.
     */
@@ -53,4 +56,5 @@ export class V1Port {
     constructor() {
     }
 }
+exports.V1Port = V1Port;
 //# sourceMappingURL=V1Port.js.map

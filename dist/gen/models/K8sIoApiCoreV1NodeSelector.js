@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1NodeSelector = void 0;
 /**
 * A node selector represents the union of the results of one or more label queries over a set of nodes; that is, it represents the OR of the selectors represented by the node selector terms.
 */
-export class K8sIoApiCoreV1NodeSelector {
+class K8sIoApiCoreV1NodeSelector {
     /**
     * Required. A list of node selector terms. The terms are ORed.
     */
@@ -33,4 +36,5 @@ export class K8sIoApiCoreV1NodeSelector {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1NodeSelector = K8sIoApiCoreV1NodeSelector;
 //# sourceMappingURL=K8sIoApiCoreV1NodeSelector.js.map

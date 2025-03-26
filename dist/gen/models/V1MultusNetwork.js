@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1MultusNetwork = void 0;
 /**
 * Represents the multus cni network.
 */
-export class V1MultusNetwork {
+class V1MultusNetwork {
     /**
     * Select the default network and add it to the multus-cni.io/default-network annotation.
     */
@@ -43,4 +46,5 @@ export class V1MultusNetwork {
     constructor() {
     }
 }
+exports.V1MultusNetwork = V1MultusNetwork;
 //# sourceMappingURL=V1MultusNetwork.js.map

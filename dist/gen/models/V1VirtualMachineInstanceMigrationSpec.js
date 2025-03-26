@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1VirtualMachineInstanceMigrationSpec {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstanceMigrationSpec = void 0;
+class V1VirtualMachineInstanceMigrationSpec {
     /**
     * The name of the VMI to perform the migration on. VMI must exist in the migration objects namespace
     */
@@ -30,4 +33,5 @@ export class V1VirtualMachineInstanceMigrationSpec {
     constructor() {
     }
 }
+exports.V1VirtualMachineInstanceMigrationSpec = V1VirtualMachineInstanceMigrationSpec;
 //# sourceMappingURL=V1VirtualMachineInstanceMigrationSpec.js.map

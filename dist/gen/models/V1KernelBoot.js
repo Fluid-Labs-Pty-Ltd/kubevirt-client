@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1KernelBoot = void 0;
 /**
 * Represents the firmware blob used to assist in the kernel boot process. Used for setting the kernel, initrd and command line arguments
 */
-export class V1KernelBoot {
+class V1KernelBoot {
     'container';
     /**
     * Arguments to be passed to the kernel at boot time
@@ -40,4 +43,5 @@ export class V1KernelBoot {
     constructor() {
     }
 }
+exports.V1KernelBoot = V1KernelBoot;
 //# sourceMappingURL=V1KernelBoot.js.map

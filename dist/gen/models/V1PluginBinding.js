@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1PluginBinding = void 0;
 /**
 * PluginBinding represents a binding implemented in a plugin.
 */
-export class V1PluginBinding {
+class V1PluginBinding {
     /**
     * Name references to the binding name as denined in the kubevirt CR. version: 1alphav1
     */
@@ -33,4 +36,5 @@ export class V1PluginBinding {
     constructor() {
     }
 }
+exports.V1PluginBinding = V1PluginBinding;
 //# sourceMappingURL=V1PluginBinding.js.map

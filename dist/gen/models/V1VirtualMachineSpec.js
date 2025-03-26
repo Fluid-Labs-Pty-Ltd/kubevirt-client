@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineSpec = void 0;
 /**
 * VirtualMachineSpec describes how the proper VirtualMachine should look like
 */
-export class V1VirtualMachineSpec {
+class V1VirtualMachineSpec {
     /**
     * dataVolumeTemplates is a list of dataVolumes that the VirtualMachineInstance template can reference. DataVolumes in this list are dynamically created for the VirtualMachine and are tied to the VirtualMachine\'s life-cycle.
     */
@@ -84,4 +87,5 @@ export class V1VirtualMachineSpec {
     constructor() {
     }
 }
+exports.V1VirtualMachineSpec = V1VirtualMachineSpec;
 //# sourceMappingURL=V1VirtualMachineSpec.js.map

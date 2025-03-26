@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstanceGuestOSUserList = void 0;
 /**
 * VirtualMachineInstanceGuestOSUserList comprises the list of all active users on guest machine
 */
-export class V1VirtualMachineInstanceGuestOSUserList {
+class V1VirtualMachineInstanceGuestOSUserList {
     /**
     * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     */
@@ -57,4 +60,5 @@ export class V1VirtualMachineInstanceGuestOSUserList {
     constructor() {
     }
 }
+exports.V1VirtualMachineInstanceGuestOSUserList = V1VirtualMachineInstanceGuestOSUserList;
 //# sourceMappingURL=V1VirtualMachineInstanceGuestOSUserList.js.map

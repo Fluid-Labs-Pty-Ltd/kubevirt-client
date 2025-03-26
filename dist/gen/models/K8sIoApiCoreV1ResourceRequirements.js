@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1ResourceRequirements = void 0;
 /**
 * ResourceRequirements describes the compute resource requirements.
 */
-export class K8sIoApiCoreV1ResourceRequirements {
+class K8sIoApiCoreV1ResourceRequirements {
     /**
     * Claims lists the names of resources, defined in spec.resourceClaims, that are used by this container.  This is an alpha field and requires enabling the DynamicResourceAllocation feature gate.  This field is immutable. It can only be set for containers.
     */
@@ -53,4 +56,5 @@ export class K8sIoApiCoreV1ResourceRequirements {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1ResourceRequirements = K8sIoApiCoreV1ResourceRequirements;
 //# sourceMappingURL=K8sIoApiCoreV1ResourceRequirements.js.map

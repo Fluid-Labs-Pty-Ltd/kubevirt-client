@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1DownwardAPIVolumeFile = void 0;
 /**
 * DownwardAPIVolumeFile represents information to create the file containing the pod field
 */
-export class K8sIoApiCoreV1DownwardAPIVolumeFile {
+class K8sIoApiCoreV1DownwardAPIVolumeFile {
     'fieldRef';
     /**
     * Optional: mode bits used to set permissions on this file, must be an octal value between 0000 and 0777 or a decimal value between 0 and 511. YAML accepts both octal and decimal values, JSON requires decimal values for mode bits. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
@@ -57,4 +60,5 @@ export class K8sIoApiCoreV1DownwardAPIVolumeFile {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1DownwardAPIVolumeFile = K8sIoApiCoreV1DownwardAPIVolumeFile;
 //# sourceMappingURL=K8sIoApiCoreV1DownwardAPIVolumeFile.js.map

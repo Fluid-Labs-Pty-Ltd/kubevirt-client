@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1PreferenceMatcher = void 0;
 /**
 * PreferenceMatcher references a set of preference that is used to fill fields in the VMI template.
 */
-export class V1PreferenceMatcher {
+class V1PreferenceMatcher {
     /**
     * InferFromVolume lists the name of a volume that should be used to infer or discover the preference to be used through known annotations on the underlying resource. Once applied to the PreferenceMatcher this field is removed.
     */
@@ -73,4 +76,5 @@ export class V1PreferenceMatcher {
     constructor() {
     }
 }
+exports.V1PreferenceMatcher = V1PreferenceMatcher;
 //# sourceMappingURL=V1PreferenceMatcher.js.map

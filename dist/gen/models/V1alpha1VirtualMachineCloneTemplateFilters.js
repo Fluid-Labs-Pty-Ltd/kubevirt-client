@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1alpha1VirtualMachineCloneTemplateFilters {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1alpha1VirtualMachineCloneTemplateFilters = void 0;
+class V1alpha1VirtualMachineCloneTemplateFilters {
     /**
     * Example use: \"!some/key*\". For a detailed description, please refer to https://kubevirt.io/user-guide/operations/clone_api/#label-annotation-filters.
     */
@@ -40,4 +43,5 @@ export class V1alpha1VirtualMachineCloneTemplateFilters {
     constructor() {
     }
 }
+exports.V1alpha1VirtualMachineCloneTemplateFilters = V1alpha1VirtualMachineCloneTemplateFilters;
 //# sourceMappingURL=V1alpha1VirtualMachineCloneTemplateFilters.js.map

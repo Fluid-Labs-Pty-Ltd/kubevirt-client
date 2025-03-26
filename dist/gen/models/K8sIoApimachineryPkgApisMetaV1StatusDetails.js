@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApimachineryPkgApisMetaV1StatusDetails = void 0;
 /**
 * StatusDetails is a set of additional properties that MAY be set by the server to provide additional information about a response. The Reason field of a Status object defines what attributes will be set. Clients must ignore fields that do not match the defined type of each attribute, and should assume that any attribute may be empty, invalid, or under defined.
 */
-export class K8sIoApimachineryPkgApisMetaV1StatusDetails {
+class K8sIoApimachineryPkgApisMetaV1StatusDetails {
     /**
     * The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes.
     */
@@ -83,4 +86,5 @@ export class K8sIoApimachineryPkgApisMetaV1StatusDetails {
     constructor() {
     }
 }
+exports.K8sIoApimachineryPkgApisMetaV1StatusDetails = K8sIoApimachineryPkgApisMetaV1StatusDetails;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1StatusDetails.js.map

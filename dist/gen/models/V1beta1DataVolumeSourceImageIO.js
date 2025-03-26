@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1DataVolumeSourceImageIO = void 0;
 /**
 * DataVolumeSourceImageIO provides the parameters to create a Data Volume from an imageio source
 */
-export class V1beta1DataVolumeSourceImageIO {
+class V1beta1DataVolumeSourceImageIO {
     /**
     * CertConfigMap provides a reference to the CA cert
     */
@@ -63,4 +66,5 @@ export class V1beta1DataVolumeSourceImageIO {
     constructor() {
     }
 }
+exports.V1beta1DataVolumeSourceImageIO = V1beta1DataVolumeSourceImageIO;
 //# sourceMappingURL=V1beta1DataVolumeSourceImageIO.js.map

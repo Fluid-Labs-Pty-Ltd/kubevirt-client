@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1CertConfig = void 0;
 /**
 * CertConfig contains the tunables for TLS certificates
 */
-export class V1CertConfig {
+class V1CertConfig {
     /**
     * Duration is a wrapper around time.Duration which supports correct marshaling to YAML and JSON. In particular, it marshals into strings, which can be used as map keys in json.
     */
@@ -43,4 +46,5 @@ export class V1CertConfig {
     constructor() {
     }
 }
+exports.V1CertConfig = V1CertConfig;
 //# sourceMappingURL=V1CertConfig.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1PersistentVolumeClaimVolumeSource = void 0;
 /**
 * PersistentVolumeClaimVolumeSource represents a reference to a PersistentVolumeClaim in the same namespace. Directly attached to the vmi via qemu. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims
 */
-export class V1PersistentVolumeClaimVolumeSource {
+class V1PersistentVolumeClaimVolumeSource {
     /**
     * claimName is the name of a PersistentVolumeClaim in the same namespace as the pod using this volume. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims
     */
@@ -53,4 +56,5 @@ export class V1PersistentVolumeClaimVolumeSource {
     constructor() {
     }
 }
+exports.V1PersistentVolumeClaimVolumeSource = V1PersistentVolumeClaimVolumeSource;
 //# sourceMappingURL=V1PersistentVolumeClaimVolumeSource.js.map

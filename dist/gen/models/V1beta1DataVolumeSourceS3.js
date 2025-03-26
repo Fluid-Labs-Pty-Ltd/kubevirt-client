@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1DataVolumeSourceS3 = void 0;
 /**
 * DataVolumeSourceS3 provides the parameters to create a Data Volume from an S3 source
 */
-export class V1beta1DataVolumeSourceS3 {
+class V1beta1DataVolumeSourceS3 {
     /**
     * CertConfigMap is a configmap reference, containing a Certificate Authority(CA) public key, and a base64 encoded pem certificate
     */
@@ -53,4 +56,5 @@ export class V1beta1DataVolumeSourceS3 {
     constructor() {
     }
 }
+exports.V1beta1DataVolumeSourceS3 = V1beta1DataVolumeSourceS3;
 //# sourceMappingURL=V1beta1DataVolumeSourceS3.js.map

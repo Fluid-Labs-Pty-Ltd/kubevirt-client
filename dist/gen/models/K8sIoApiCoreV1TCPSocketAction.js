@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1TCPSocketAction = void 0;
 /**
 * TCPSocketAction describes an action based on opening a socket
 */
-export class K8sIoApiCoreV1TCPSocketAction {
+class K8sIoApiCoreV1TCPSocketAction {
     /**
     * Optional: Host name to connect to, defaults to the pod IP.
     */
@@ -33,4 +36,5 @@ export class K8sIoApiCoreV1TCPSocketAction {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1TCPSocketAction = K8sIoApiCoreV1TCPSocketAction;
 //# sourceMappingURL=K8sIoApiCoreV1TCPSocketAction.js.map

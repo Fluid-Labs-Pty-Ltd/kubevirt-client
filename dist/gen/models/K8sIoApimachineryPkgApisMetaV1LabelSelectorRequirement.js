@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement = void 0;
 /**
 * A label selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
 */
-export class K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement {
+class K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement {
     /**
     * key is the label key that the selector applies to.
     */
@@ -53,4 +56,5 @@ export class K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement {
     constructor() {
     }
 }
+exports.K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement = K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1LabelSelectorRequirement.js.map

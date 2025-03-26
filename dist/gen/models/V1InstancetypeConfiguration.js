@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1InstancetypeConfiguration {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1InstancetypeConfiguration = void 0;
+class V1InstancetypeConfiguration {
     /**
     * ReferencePolicy defines how an instance type or preference should be referenced by the VM after submission, supported values are: reference (default) - Where a copy of the original object is stashed in a ControllerRevision and referenced by the VM. expand - Where the instance type or preference are expanded into the VM if no revisionNames have been populated. expandAll - Where the instance type or preference are expanded into the VM regardless of revisionNames previously being populated.
     */
@@ -30,4 +33,5 @@ export class V1InstancetypeConfiguration {
     constructor() {
     }
 }
+exports.V1InstancetypeConfiguration = V1InstancetypeConfiguration;
 //# sourceMappingURL=V1InstancetypeConfiguration.js.map

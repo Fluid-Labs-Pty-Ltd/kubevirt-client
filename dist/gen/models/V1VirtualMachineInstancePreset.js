@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstancePreset = void 0;
 /**
 * Deprecated for removal in v2, please use VirtualMachineInstanceType and VirtualMachinePreference instead.  VirtualMachineInstancePreset defines a VMI spec.domain to be applied to all VMIs that match the provided label selector More info: https://kubevirt.io/user-guide/virtual_machines/presets/#overrides
 */
-export class V1VirtualMachineInstancePreset {
+class V1VirtualMachineInstancePreset {
     /**
     * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     */
@@ -57,4 +60,5 @@ export class V1VirtualMachineInstancePreset {
     constructor() {
     }
 }
+exports.V1VirtualMachineInstancePreset = V1VirtualMachineInstancePreset;
 //# sourceMappingURL=V1VirtualMachineInstancePreset.js.map

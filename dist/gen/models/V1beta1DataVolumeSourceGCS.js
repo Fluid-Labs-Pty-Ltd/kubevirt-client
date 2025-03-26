@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1DataVolumeSourceGCS = void 0;
 /**
 * DataVolumeSourceGCS provides the parameters to create a Data Volume from an GCS source
 */
-export class V1beta1DataVolumeSourceGCS {
+class V1beta1DataVolumeSourceGCS {
     /**
     * SecretRef provides the secret reference needed to access the GCS source
     */
@@ -43,4 +46,5 @@ export class V1beta1DataVolumeSourceGCS {
     constructor() {
     }
 }
+exports.V1beta1DataVolumeSourceGCS = V1beta1DataVolumeSourceGCS;
 //# sourceMappingURL=V1beta1DataVolumeSourceGCS.js.map

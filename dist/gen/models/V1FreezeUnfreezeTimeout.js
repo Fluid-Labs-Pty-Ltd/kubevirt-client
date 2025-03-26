@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1FreezeUnfreezeTimeout = void 0;
 /**
 * FreezeUnfreezeTimeout represent the time unfreeze will be triggered if guest was not unfrozen by unfreeze command
 */
-export class V1FreezeUnfreezeTimeout {
+class V1FreezeUnfreezeTimeout {
     /**
     * Duration is a wrapper around time.Duration which supports correct marshaling to YAML and JSON. In particular, it marshals into strings, which can be used as map keys in json.
     */
@@ -33,4 +36,5 @@ export class V1FreezeUnfreezeTimeout {
     constructor() {
     }
 }
+exports.V1FreezeUnfreezeTimeout = V1FreezeUnfreezeTimeout;
 //# sourceMappingURL=V1FreezeUnfreezeTimeout.js.map

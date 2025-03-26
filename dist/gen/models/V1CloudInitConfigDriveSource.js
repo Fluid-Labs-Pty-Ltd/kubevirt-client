@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1CloudInitConfigDriveSource = void 0;
 /**
 * Represents a cloud-init config drive user data source. More info: https://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html
 */
-export class V1CloudInitConfigDriveSource {
+class V1CloudInitConfigDriveSource {
     /**
     * NetworkData contains config drive inline cloud-init networkdata.
     */
@@ -77,4 +80,5 @@ export class V1CloudInitConfigDriveSource {
     constructor() {
     }
 }
+exports.V1CloudInitConfigDriveSource = V1CloudInitConfigDriveSource;
 //# sourceMappingURL=V1CloudInitConfigDriveSource.js.map

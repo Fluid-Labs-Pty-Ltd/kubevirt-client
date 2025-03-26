@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1MediatedHostDevice = void 0;
 /**
 * MediatedHostDevice represents a host mediated device allowed for passthrough
 */
-export class V1MediatedHostDevice {
+class V1MediatedHostDevice {
     'externalResourceProvider';
     'mdevNameSelector';
     'resourceName';
@@ -44,4 +47,5 @@ export class V1MediatedHostDevice {
     constructor() {
     }
 }
+exports.V1MediatedHostDevice = V1MediatedHostDevice;
 //# sourceMappingURL=V1MediatedHostDevice.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Probe = void 0;
 /**
 * Probe describes a health check to be performed against a VirtualMachineInstance to determine whether it is alive or ready to receive traffic.
 */
-export class V1Probe {
+class V1Probe {
     'exec';
     /**
     * Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
@@ -104,4 +107,5 @@ export class V1Probe {
     constructor() {
     }
 }
+exports.V1Probe = V1Probe;
 //# sourceMappingURL=V1Probe.js.map

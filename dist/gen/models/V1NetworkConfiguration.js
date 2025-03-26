@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1NetworkConfiguration = void 0;
 /**
 * NetworkConfiguration holds network options
 */
-export class V1NetworkConfiguration {
+class V1NetworkConfiguration {
     'binding';
     'defaultNetworkInterface';
     'permitBridgeInterfaceOnPodNetwork';
@@ -54,4 +57,5 @@ export class V1NetworkConfiguration {
     constructor() {
     }
 }
+exports.V1NetworkConfiguration = V1NetworkConfiguration;
 //# sourceMappingURL=V1NetworkConfiguration.js.map

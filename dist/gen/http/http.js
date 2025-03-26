@@ -1,10 +1,28 @@
-import { URL } from 'url';
-import { from } from '../rxjsStub.js';
-export * from './isomorphic-fetch.js';
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.HttpInfo = exports.ResponseContext = exports.SelfDecodingBody = exports.RequestContext = exports.HttpException = exports.HttpMethod = void 0;
+exports.wrapHttpLibrary = wrapHttpLibrary;
+const url_1 = require("url");
+const rxjsStub_js_1 = require("../rxjsStub.js");
+__exportStar(require("./isomorphic-fetch.js"), exports);
 /**
  * Represents an HTTP method.
  */
-export var HttpMethod;
+var HttpMethod;
 (function (HttpMethod) {
     HttpMethod["GET"] = "GET";
     HttpMethod["HEAD"] = "HEAD";
@@ -15,12 +33,13 @@ export var HttpMethod;
     HttpMethod["OPTIONS"] = "OPTIONS";
     HttpMethod["TRACE"] = "TRACE";
     HttpMethod["PATCH"] = "PATCH";
-})(HttpMethod || (HttpMethod = {}));
-export class HttpException extends Error {
+})(HttpMethod || (exports.HttpMethod = HttpMethod = {}));
+class HttpException extends Error {
     constructor(msg) {
         super(msg);
     }
 }
+exports.HttpException = HttpException;
 function ensureAbsoluteUrl(url) {
     if (url.startsWith("http://") || url.startsWith("https://")) {
         return url;
@@ -30,7 +49,7 @@ function ensureAbsoluteUrl(url) {
 /**
  * Represents an HTTP request context
  */
-export class RequestContext {
+class RequestContext {
     httpMethod;
     headers = {};
     body = undefined;
@@ -44,7 +63,7 @@ export class RequestContext {
      */
     constructor(url, httpMethod) {
         this.httpMethod = httpMethod;
-        this.url = new URL(ensureAbsoluteUrl(url));
+        this.url = new url_1.URL(ensureAbsoluteUrl(url));
     }
     /*
      * Returns the url set in the constructor including the query string
@@ -60,7 +79,7 @@ export class RequestContext {
      *
      */
     setUrl(url) {
-        this.url = new URL(ensureAbsoluteUrl(url));
+        this.url = new url_1.URL(ensureAbsoluteUrl(url));
     }
     /**
      * Sets the body of the http request either as a string or FormData
@@ -109,10 +128,11 @@ export class RequestContext {
         return this.agent;
     }
 }
+exports.RequestContext = RequestContext;
 /**
  * Helper class to generate a `ResponseBody` from binary data
  */
-export class SelfDecodingBody {
+class SelfDecodingBody {
     dataSource;
     constructor(dataSource) {
         this.dataSource = dataSource;
@@ -125,7 +145,8 @@ export class SelfDecodingBody {
         return data.toString();
     }
 }
-export class ResponseContext {
+exports.SelfDecodingBody = SelfDecodingBody;
+class ResponseContext {
     httpStatusCode;
     headers;
     body;
@@ -187,18 +208,20 @@ export class ResponseContext {
         return Promise.resolve(undefined);
     }
 }
-export function wrapHttpLibrary(promiseHttpLibrary) {
+exports.ResponseContext = ResponseContext;
+function wrapHttpLibrary(promiseHttpLibrary) {
     return {
         send(request) {
-            return from(promiseHttpLibrary.send(request));
+            return (0, rxjsStub_js_1.from)(promiseHttpLibrary.send(request));
         }
     };
 }
-export class HttpInfo extends ResponseContext {
+class HttpInfo extends ResponseContext {
     data;
     constructor(httpStatusCode, headers, body, data) {
         super(httpStatusCode, headers, body);
         this.data = data;
     }
 }
+exports.HttpInfo = HttpInfo;
 //# sourceMappingURL=http.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1VolumeBackup = void 0;
 /**
 * VolumeBackup contains the data neeed to restore a PVC
 */
-export class V1beta1VolumeBackup {
+class V1beta1VolumeBackup {
     'persistentVolumeClaim';
     'volumeName';
     'volumeSnapshotName';
@@ -44,4 +47,5 @@ export class V1beta1VolumeBackup {
     constructor() {
     }
 }
+exports.V1beta1VolumeBackup = V1beta1VolumeBackup;
 //# sourceMappingURL=V1beta1VolumeBackup.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1SEV {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1SEV = void 0;
+class V1SEV {
     'attestation';
     /**
     * Base64 encoded guest owner\'s Diffie-Hellman key.
@@ -54,4 +57,5 @@ export class V1SEV {
     constructor() {
     }
 }
+exports.V1SEV = V1SEV;
 //# sourceMappingURL=V1SEV.js.map

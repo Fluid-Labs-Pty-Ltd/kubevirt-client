@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1VolumeMigrationState {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VolumeMigrationState = void 0;
+class V1VolumeMigrationState {
     /**
     * MigratedVolumes lists the source and destination volumes during the volume migration
     */
@@ -30,4 +33,5 @@ export class V1VolumeMigrationState {
     constructor() {
     }
 }
+exports.V1VolumeMigrationState = V1VolumeMigrationState;
 //# sourceMappingURL=V1VolumeMigrationState.js.map

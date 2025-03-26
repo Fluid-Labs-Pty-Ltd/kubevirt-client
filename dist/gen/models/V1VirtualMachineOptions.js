@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineOptions = void 0;
 /**
 * VirtualMachineOptions holds the cluster level information regarding the virtual machine.
 */
-export class V1VirtualMachineOptions {
+class V1VirtualMachineOptions {
     'disableFreePageReporting';
     'disableSerialConsoleLog';
     static discriminator = undefined;
@@ -37,4 +40,5 @@ export class V1VirtualMachineOptions {
     constructor() {
     }
 }
+exports.V1VirtualMachineOptions = V1VirtualMachineOptions;
 //# sourceMappingURL=V1VirtualMachineOptions.js.map

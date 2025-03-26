@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1ComponentConfig {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1ComponentConfig = void 0;
+class V1ComponentConfig {
     'nodePlacement';
     /**
     * replicas indicates how many replicas should be created for each KubeVirt infrastructure component (like virt-api or virt-controller). Defaults to 2. WARNING: this is an advanced feature that prevents auto-scaling for core kubevirt components. Please use with caution!
@@ -37,4 +40,5 @@ export class V1ComponentConfig {
     constructor() {
     }
 }
+exports.V1ComponentConfig = V1ComponentConfig;
 //# sourceMappingURL=V1ComponentConfig.js.map

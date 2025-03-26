@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1PermittedHostDevices = void 0;
 /**
 * PermittedHostDevices holds information about devices allowed for passthrough
 */
-export class V1PermittedHostDevices {
+class V1PermittedHostDevices {
     'mediatedDevices';
     'pciHostDevices';
     'usb';
@@ -44,4 +47,5 @@ export class V1PermittedHostDevices {
     constructor() {
     }
 }
+exports.V1PermittedHostDevices = V1PermittedHostDevices;
 //# sourceMappingURL=V1PermittedHostDevices.js.map

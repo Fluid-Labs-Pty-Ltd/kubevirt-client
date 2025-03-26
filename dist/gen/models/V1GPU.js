@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1GPU {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1GPU = void 0;
+class V1GPU {
     'deviceName';
     /**
     * Name of the GPU device as exposed by a device plugin
@@ -54,4 +57,5 @@ export class V1GPU {
     constructor() {
     }
 }
+exports.V1GPU = V1GPU;
 //# sourceMappingURL=V1GPU.js.map

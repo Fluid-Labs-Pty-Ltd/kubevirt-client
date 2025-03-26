@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1ResourceRequirementsWithoutClaims = void 0;
 /**
 * ResourceRequirementsWithoutClaims describes the compute resource requirements. This struct was taken from the k8s.ResourceRequirements and cleaned up the `Claims` field.
 */
-export class V1ResourceRequirementsWithoutClaims {
+class V1ResourceRequirementsWithoutClaims {
     /**
     * Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
     */
@@ -43,4 +46,5 @@ export class V1ResourceRequirementsWithoutClaims {
     constructor() {
     }
 }
+exports.V1ResourceRequirementsWithoutClaims = V1ResourceRequirementsWithoutClaims;
 //# sourceMappingURL=V1ResourceRequirementsWithoutClaims.js.map

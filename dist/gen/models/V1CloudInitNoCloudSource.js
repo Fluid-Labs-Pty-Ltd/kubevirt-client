@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1CloudInitNoCloudSource = void 0;
 /**
 * Represents a cloud-init nocloud user data source. More info: http://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html
 */
-export class V1CloudInitNoCloudSource {
+class V1CloudInitNoCloudSource {
     /**
     * NetworkData contains NoCloud inline cloud-init networkdata.
     */
@@ -77,4 +80,5 @@ export class V1CloudInitNoCloudSource {
     constructor() {
     }
 }
+exports.V1CloudInitNoCloudSource = V1CloudInitNoCloudSource;
 //# sourceMappingURL=V1CloudInitNoCloudSource.js.map

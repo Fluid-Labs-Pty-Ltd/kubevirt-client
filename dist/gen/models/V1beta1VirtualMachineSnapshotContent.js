@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1VirtualMachineSnapshotContent = void 0;
 /**
 * VirtualMachineSnapshotContent contains the snapshot data
 */
-export class V1beta1VirtualMachineSnapshotContent {
+class V1beta1VirtualMachineSnapshotContent {
     /**
     * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     */
@@ -64,4 +67,5 @@ export class V1beta1VirtualMachineSnapshotContent {
     constructor() {
     }
 }
+exports.V1beta1VirtualMachineSnapshotContent = V1beta1VirtualMachineSnapshotContent;
 //# sourceMappingURL=V1beta1VirtualMachineSnapshotContent.js.map

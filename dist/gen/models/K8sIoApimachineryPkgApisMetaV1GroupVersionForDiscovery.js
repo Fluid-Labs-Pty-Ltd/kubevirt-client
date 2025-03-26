@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery = void 0;
 /**
 * GroupVersion contains the \"group/version\" and \"version\" string of a version. It is made a struct to keep extensibility.
 */
-export class K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery {
+class K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery {
     /**
     * groupVersion specifies the API group and version in the form \"group/version\"
     */
@@ -43,4 +46,5 @@ export class K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery {
     constructor() {
     }
 }
+exports.K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery = K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1GroupVersionForDiscovery.js.map

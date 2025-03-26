@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1NUMA {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1NUMA = void 0;
+class V1NUMA {
     /**
     * NUMAGuestMappingPassthrough instructs kubevirt to model numa topology which is compatible with the CPU pinning on the guest. This will result in a subset of the node numa topology being passed through, ensuring that virtual numa nodes and their memory never cross boundaries coming from the node numa mapping.
     */
@@ -30,4 +33,5 @@ export class V1NUMA {
     constructor() {
     }
 }
+exports.V1NUMA = V1NUMA;
 //# sourceMappingURL=V1NUMA.js.map

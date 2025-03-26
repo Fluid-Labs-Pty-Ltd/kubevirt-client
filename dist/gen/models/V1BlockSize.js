@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1BlockSize = void 0;
 /**
 * BlockSize provides the option to change the block size presented to the VM for a disk. Only one of its members may be specified.
 */
-export class V1BlockSize {
+class V1BlockSize {
     'custom';
     'matchVolume';
     static discriminator = undefined;
@@ -37,4 +40,5 @@ export class V1BlockSize {
     constructor() {
     }
 }
+exports.V1BlockSize = V1BlockSize;
 //# sourceMappingURL=V1BlockSize.js.map

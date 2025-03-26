@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApimachineryPkgApisMetaV1OwnerReference = void 0;
 /**
 * OwnerReference contains enough information to let you identify an owning object. An owning object must be in the same namespace as the dependent, or be cluster-scoped, so there is no namespace field.
 */
-export class K8sIoApimachineryPkgApisMetaV1OwnerReference {
+class K8sIoApimachineryPkgApisMetaV1OwnerReference {
     /**
     * API version of the referent.
     */
@@ -83,4 +86,5 @@ export class K8sIoApimachineryPkgApisMetaV1OwnerReference {
     constructor() {
     }
 }
+exports.K8sIoApimachineryPkgApisMetaV1OwnerReference = K8sIoApimachineryPkgApisMetaV1OwnerReference;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1OwnerReference.js.map

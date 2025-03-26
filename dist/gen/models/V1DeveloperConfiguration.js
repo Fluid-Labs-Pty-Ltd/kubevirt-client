@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1DeveloperConfiguration = void 0;
 /**
 * DeveloperConfiguration holds developer options
 */
-export class V1DeveloperConfiguration {
+class V1DeveloperConfiguration {
     /**
     * For each requested virtual CPU, CPUAllocationRatio defines how much physical CPU to request per VMI from the hosting node. The value is in fraction of a CPU thread (or core on non-hyperthreaded nodes). For example, a value of 1 means 1 physical CPU thread per VMI CPU thread. A value of 100 would be 1% of a physical thread allocated for each requested VMI thread. This option has no effect on VMIs that request dedicated CPUs. More information at: https://kubevirt.io/user-guide/operations/node_overcommit/#node-cpu-allocation-ratio Defaults to 10
     */
@@ -117,4 +120,5 @@ export class V1DeveloperConfiguration {
     constructor() {
     }
 }
+exports.V1DeveloperConfiguration = V1DeveloperConfiguration;
 //# sourceMappingURL=V1DeveloperConfiguration.js.map

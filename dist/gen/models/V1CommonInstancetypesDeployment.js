@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1CommonInstancetypesDeployment {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1CommonInstancetypesDeployment = void 0;
+class V1CommonInstancetypesDeployment {
     /**
     * Enabled controls the deployment of common-instancetypes resources, defaults to True.
     */
@@ -30,4 +33,5 @@ export class V1CommonInstancetypesDeployment {
     constructor() {
     }
 }
+exports.V1CommonInstancetypesDeployment = V1CommonInstancetypesDeployment;
 //# sourceMappingURL=V1CommonInstancetypesDeployment.js.map

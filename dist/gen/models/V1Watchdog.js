@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Watchdog = void 0;
 /**
 * Named watchdog device.
 */
-export class V1Watchdog {
+class V1Watchdog {
     'i6300esb';
     /**
     * Name of the watchdog.
@@ -40,4 +43,5 @@ export class V1Watchdog {
     constructor() {
     }
 }
+exports.V1Watchdog = V1Watchdog;
 //# sourceMappingURL=V1Watchdog.js.map

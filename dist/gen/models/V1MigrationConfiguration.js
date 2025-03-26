@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1MigrationConfiguration = void 0;
 /**
 * MigrationConfiguration holds migration options. Can be overridden for specific groups of VMs though migration policies. Visit https://kubevirt.io/user-guide/operations/migration_policies/ for more information.
 */
-export class V1MigrationConfiguration {
+class V1MigrationConfiguration {
     /**
     * AllowAutoConverge allows the platform to compromise performance/availability of VMIs to guarantee successful VMI live migrations. Defaults to false
     */
@@ -143,4 +146,5 @@ export class V1MigrationConfiguration {
     constructor() {
     }
 }
+exports.V1MigrationConfiguration = V1MigrationConfiguration;
 //# sourceMappingURL=V1MigrationConfiguration.js.map

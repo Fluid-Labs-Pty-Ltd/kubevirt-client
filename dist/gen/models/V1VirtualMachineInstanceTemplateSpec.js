@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1VirtualMachineInstanceTemplateSpec {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstanceTemplateSpec = void 0;
+class V1VirtualMachineInstanceTemplateSpec {
     'metadata';
     'spec';
     static discriminator = undefined;
@@ -34,4 +37,5 @@ export class V1VirtualMachineInstanceTemplateSpec {
     constructor() {
     }
 }
+exports.V1VirtualMachineInstanceTemplateSpec = V1VirtualMachineInstanceTemplateSpec;
 //# sourceMappingURL=V1VirtualMachineInstanceTemplateSpec.js.map

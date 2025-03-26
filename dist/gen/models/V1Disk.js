@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1Disk {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Disk = void 0;
+class V1Disk {
     'blockSize';
     /**
     * BootOrder is an integer value > 0, used to determine ordering of boot devices. Lower values take precedence. Each disk or interface that has a boot order must have a unique value. Disks without a boot order are not tried if a disk with a boot order exists.
@@ -138,4 +141,5 @@ export class V1Disk {
     constructor() {
     }
 }
+exports.V1Disk = V1Disk;
 //# sourceMappingURL=V1Disk.js.map

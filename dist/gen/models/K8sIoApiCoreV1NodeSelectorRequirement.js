@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum = exports.K8sIoApiCoreV1NodeSelectorRequirement = void 0;
 /**
 * A node selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
 */
-export class K8sIoApiCoreV1NodeSelectorRequirement {
+class K8sIoApiCoreV1NodeSelectorRequirement {
     /**
     * The label key that the selector applies to.
     */
@@ -53,7 +56,8 @@ export class K8sIoApiCoreV1NodeSelectorRequirement {
     constructor() {
     }
 }
-export var K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum;
+exports.K8sIoApiCoreV1NodeSelectorRequirement = K8sIoApiCoreV1NodeSelectorRequirement;
+var K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum;
 (function (K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum) {
     K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum["DoesNotExist"] = "DoesNotExist";
     K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum["Exists"] = "Exists";
@@ -61,5 +65,5 @@ export var K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum;
     K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum["In"] = "In";
     K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum["Lt"] = "Lt";
     K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum["NotIn"] = "NotIn";
-})(K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum || (K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum = {}));
+})(K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum || (exports.K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum = K8sIoApiCoreV1NodeSelectorRequirementOperatorEnum = {}));
 //# sourceMappingURL=K8sIoApiCoreV1NodeSelectorRequirement.js.map

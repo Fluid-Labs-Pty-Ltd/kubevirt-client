@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation = void 0;
+class V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation {
     /**
     * Users represents a list of guest users that should have the ssh public keys added to their authorized_keys file.
     */
@@ -30,4 +33,5 @@ export class V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation {
     constructor() {
     }
 }
+exports.V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation = V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation;
 //# sourceMappingURL=V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation.js.map

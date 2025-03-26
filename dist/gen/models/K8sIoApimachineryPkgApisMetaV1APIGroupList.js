@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApimachineryPkgApisMetaV1APIGroupList = void 0;
 /**
 * APIGroupList is a list of APIGroup, to allow clients to discover the API at /apis.
 */
-export class K8sIoApimachineryPkgApisMetaV1APIGroupList {
+class K8sIoApimachineryPkgApisMetaV1APIGroupList {
     /**
     * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     */
@@ -53,4 +56,5 @@ export class K8sIoApimachineryPkgApisMetaV1APIGroupList {
     constructor() {
     }
 }
+exports.K8sIoApimachineryPkgApisMetaV1APIGroupList = K8sIoApimachineryPkgApisMetaV1APIGroupList;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1APIGroupList.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1RTCTimer {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1RTCTimer = void 0;
+class V1RTCTimer {
     /**
     * Enabled set to false makes sure that the machine type or a preset can\'t add the timer. Defaults to true.
     */
@@ -50,4 +53,5 @@ export class V1RTCTimer {
     constructor() {
     }
 }
+exports.V1RTCTimer = V1RTCTimer;
 //# sourceMappingURL=V1RTCTimer.js.map

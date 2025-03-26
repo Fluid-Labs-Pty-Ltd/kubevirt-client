@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1ResourceRequirements {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1ResourceRequirements = void 0;
+class V1ResourceRequirements {
     /**
     * Limits describes the maximum amount of compute resources allowed. Valid resource keys are \"memory\" and \"cpu\".
     */
@@ -50,4 +53,5 @@ export class V1ResourceRequirements {
     constructor() {
     }
 }
+exports.V1ResourceRequirements = V1ResourceRequirements;
 //# sourceMappingURL=V1ResourceRequirements.js.map

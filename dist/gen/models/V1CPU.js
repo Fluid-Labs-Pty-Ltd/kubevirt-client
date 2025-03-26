@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1CPU = void 0;
 /**
 * CPU allows specifying the CPU topology.
 */
-export class V1CPU {
+class V1CPU {
     /**
     * Cores specifies the number of cores inside the vmi. Must be a value greater or equal 1.
     */
@@ -117,4 +120,5 @@ export class V1CPU {
     constructor() {
     }
 }
+exports.V1CPU = V1CPU;
 //# sourceMappingURL=V1CPU.js.map

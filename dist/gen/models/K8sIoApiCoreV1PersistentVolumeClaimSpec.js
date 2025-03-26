@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1PersistentVolumeClaimSpecVolumeModeEnum = exports.K8sIoApiCoreV1PersistentVolumeClaimSpecAccessModesEnum = exports.K8sIoApiCoreV1PersistentVolumeClaimSpec = void 0;
 /**
 * PersistentVolumeClaimSpec describes the common attributes of storage devices and allows a Source for provider-specific attributes
 */
-export class K8sIoApiCoreV1PersistentVolumeClaimSpec {
+class K8sIoApiCoreV1PersistentVolumeClaimSpec {
     /**
     * accessModes contains the desired access modes the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1
     */
@@ -101,16 +104,17 @@ export class K8sIoApiCoreV1PersistentVolumeClaimSpec {
     constructor() {
     }
 }
-export var K8sIoApiCoreV1PersistentVolumeClaimSpecAccessModesEnum;
+exports.K8sIoApiCoreV1PersistentVolumeClaimSpec = K8sIoApiCoreV1PersistentVolumeClaimSpec;
+var K8sIoApiCoreV1PersistentVolumeClaimSpecAccessModesEnum;
 (function (K8sIoApiCoreV1PersistentVolumeClaimSpecAccessModesEnum) {
     K8sIoApiCoreV1PersistentVolumeClaimSpecAccessModesEnum["ReadOnlyMany"] = "ReadOnlyMany";
     K8sIoApiCoreV1PersistentVolumeClaimSpecAccessModesEnum["ReadWriteMany"] = "ReadWriteMany";
     K8sIoApiCoreV1PersistentVolumeClaimSpecAccessModesEnum["ReadWriteOnce"] = "ReadWriteOnce";
     K8sIoApiCoreV1PersistentVolumeClaimSpecAccessModesEnum["ReadWriteOncePod"] = "ReadWriteOncePod";
-})(K8sIoApiCoreV1PersistentVolumeClaimSpecAccessModesEnum || (K8sIoApiCoreV1PersistentVolumeClaimSpecAccessModesEnum = {}));
-export var K8sIoApiCoreV1PersistentVolumeClaimSpecVolumeModeEnum;
+})(K8sIoApiCoreV1PersistentVolumeClaimSpecAccessModesEnum || (exports.K8sIoApiCoreV1PersistentVolumeClaimSpecAccessModesEnum = K8sIoApiCoreV1PersistentVolumeClaimSpecAccessModesEnum = {}));
+var K8sIoApiCoreV1PersistentVolumeClaimSpecVolumeModeEnum;
 (function (K8sIoApiCoreV1PersistentVolumeClaimSpecVolumeModeEnum) {
     K8sIoApiCoreV1PersistentVolumeClaimSpecVolumeModeEnum["Block"] = "Block";
     K8sIoApiCoreV1PersistentVolumeClaimSpecVolumeModeEnum["Filesystem"] = "Filesystem";
-})(K8sIoApiCoreV1PersistentVolumeClaimSpecVolumeModeEnum || (K8sIoApiCoreV1PersistentVolumeClaimSpecVolumeModeEnum = {}));
+})(K8sIoApiCoreV1PersistentVolumeClaimSpecVolumeModeEnum || (exports.K8sIoApiCoreV1PersistentVolumeClaimSpecVolumeModeEnum = K8sIoApiCoreV1PersistentVolumeClaimSpecVolumeModeEnum = {}));
 //# sourceMappingURL=K8sIoApiCoreV1PersistentVolumeClaimSpec.js.map

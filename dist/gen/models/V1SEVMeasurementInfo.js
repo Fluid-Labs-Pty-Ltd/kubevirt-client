@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1SEVMeasurementInfo = void 0;
 /**
 * SEVMeasurementInfo contains information about the guest launch measurement.
 */
-export class V1SEVMeasurementInfo {
+class V1SEVMeasurementInfo {
     /**
     * API major version of the SEV host.
     */
@@ -103,4 +106,5 @@ export class V1SEVMeasurementInfo {
     constructor() {
     }
 }
+exports.V1SEVMeasurementInfo = V1SEVMeasurementInfo;
 //# sourceMappingURL=V1SEVMeasurementInfo.js.map

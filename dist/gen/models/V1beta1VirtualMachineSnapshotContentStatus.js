@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1VirtualMachineSnapshotContentStatus = void 0;
 /**
 * VirtualMachineSnapshotContentStatus is the status for a VirtualMachineSnapshotStatus resource
 */
-export class V1beta1VirtualMachineSnapshotContentStatus {
+class V1beta1VirtualMachineSnapshotContentStatus {
     /**
     * Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
     */
@@ -54,4 +57,5 @@ export class V1beta1VirtualMachineSnapshotContentStatus {
     constructor() {
     }
 }
+exports.V1beta1VirtualMachineSnapshotContentStatus = V1beta1VirtualMachineSnapshotContentStatus;
 //# sourceMappingURL=V1beta1VirtualMachineSnapshotContentStatus.js.map

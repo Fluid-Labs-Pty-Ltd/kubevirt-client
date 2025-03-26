@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1FirmwarePreferences = void 0;
 /**
 * FirmwarePreferences contains various optional defaults for Firmware.
 */
-export class V1beta1FirmwarePreferences {
+class V1beta1FirmwarePreferences {
     'preferredEfi';
     /**
     * PreferredUseBios optionally enables BIOS
@@ -70,4 +73,5 @@ export class V1beta1FirmwarePreferences {
     constructor() {
     }
 }
+exports.V1beta1FirmwarePreferences = V1beta1FirmwarePreferences;
 //# sourceMappingURL=V1beta1FirmwarePreferences.js.map

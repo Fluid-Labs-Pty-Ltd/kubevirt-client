@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1BIOS = void 0;
 /**
 * If set (default), BIOS will be used.
 */
-export class V1BIOS {
+class V1BIOS {
     /**
     * If set, the BIOS output will be transmitted over serial
     */
@@ -33,4 +36,5 @@ export class V1BIOS {
     constructor() {
     }
 }
+exports.V1BIOS = V1BIOS;
 //# sourceMappingURL=V1BIOS.js.map

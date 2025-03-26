@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1alpha1MigrationPolicy = void 0;
 /**
 * MigrationPolicy holds migration policy (i.e. configurations) to apply to a VM or group of VMs
 */
-export class V1alpha1MigrationPolicy {
+class V1alpha1MigrationPolicy {
     /**
     * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     */
@@ -64,4 +67,5 @@ export class V1alpha1MigrationPolicy {
     constructor() {
     }
 }
+exports.V1alpha1MigrationPolicy = V1alpha1MigrationPolicy;
 //# sourceMappingURL=V1alpha1MigrationPolicy.js.map

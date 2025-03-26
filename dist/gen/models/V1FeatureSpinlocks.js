@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1FeatureSpinlocks {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1FeatureSpinlocks = void 0;
+class V1FeatureSpinlocks {
     /**
     * Enabled determines if the feature should be enabled or disabled on the guest. Defaults to true.
     */
@@ -40,4 +43,5 @@ export class V1FeatureSpinlocks {
     constructor() {
     }
 }
+exports.V1FeatureSpinlocks = V1FeatureSpinlocks;
 //# sourceMappingURL=V1FeatureSpinlocks.js.map

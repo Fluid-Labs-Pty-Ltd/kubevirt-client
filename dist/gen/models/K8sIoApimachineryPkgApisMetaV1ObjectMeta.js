@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApimachineryPkgApisMetaV1ObjectMeta = void 0;
 /**
 * ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
 */
-export class K8sIoApimachineryPkgApisMetaV1ObjectMeta {
+class K8sIoApimachineryPkgApisMetaV1ObjectMeta {
     /**
     * Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
     */
@@ -173,4 +176,5 @@ export class K8sIoApimachineryPkgApisMetaV1ObjectMeta {
     constructor() {
     }
 }
+exports.K8sIoApimachineryPkgApisMetaV1ObjectMeta = K8sIoApimachineryPkgApisMetaV1ObjectMeta;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1ObjectMeta.js.map

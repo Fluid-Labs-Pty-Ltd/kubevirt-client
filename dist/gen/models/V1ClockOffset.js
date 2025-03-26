@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1ClockOffset = void 0;
 /**
 * Exactly one of its members must be set.
 */
-export class V1ClockOffset {
+class V1ClockOffset {
     /**
     * Timezone sets the guest clock to the specified timezone. Zone name follows the TZ environment variable format (e.g. \'America/New_York\').
     */
@@ -40,4 +43,5 @@ export class V1ClockOffset {
     constructor() {
     }
 }
+exports.V1ClockOffset = V1ClockOffset;
 //# sourceMappingURL=V1ClockOffset.js.map

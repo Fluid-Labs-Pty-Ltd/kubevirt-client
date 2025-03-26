@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1ResourceFieldSelector = void 0;
 /**
 * ResourceFieldSelector represents container resources (cpu, memory) and their output format
 */
-export class K8sIoApiCoreV1ResourceFieldSelector {
+class K8sIoApiCoreV1ResourceFieldSelector {
     /**
     * Container name: required for volumes, optional for env vars
     */
@@ -53,4 +56,5 @@ export class K8sIoApiCoreV1ResourceFieldSelector {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1ResourceFieldSelector = K8sIoApiCoreV1ResourceFieldSelector;
 //# sourceMappingURL=K8sIoApiCoreV1ResourceFieldSelector.js.map

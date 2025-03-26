@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApimachineryPkgApisMetaV1APIResource = void 0;
 /**
 * APIResource specifies the name of a resource and whether it is namespaced.
 */
-export class K8sIoApimachineryPkgApisMetaV1APIResource {
+class K8sIoApimachineryPkgApisMetaV1APIResource {
     /**
     * categories is a list of the grouped resources this resource belongs to (e.g. \'all\')
     */
@@ -123,4 +126,5 @@ export class K8sIoApimachineryPkgApisMetaV1APIResource {
     constructor() {
     }
 }
+exports.K8sIoApimachineryPkgApisMetaV1APIResource = K8sIoApimachineryPkgApisMetaV1APIResource;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1APIResource.js.map

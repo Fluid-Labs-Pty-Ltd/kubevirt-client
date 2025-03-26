@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1NodeSelectorTerm = void 0;
 /**
 * A null or empty node selector term matches no objects. The requirements of them are ANDed. The TopologySelectorTerm type implements a subset of the NodeSelectorTerm.
 */
-export class K8sIoApiCoreV1NodeSelectorTerm {
+class K8sIoApiCoreV1NodeSelectorTerm {
     /**
     * A list of node selector requirements by node\'s labels.
     */
@@ -43,4 +46,5 @@ export class K8sIoApiCoreV1NodeSelectorTerm {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1NodeSelectorTerm = K8sIoApiCoreV1NodeSelectorTerm;
 //# sourceMappingURL=K8sIoApiCoreV1NodeSelectorTerm.js.map

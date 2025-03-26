@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1FeatureKVM {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1FeatureKVM = void 0;
+class V1FeatureKVM {
     /**
     * Hide the KVM hypervisor from standard MSR based discovery. Defaults to false
     */
@@ -30,4 +33,5 @@ export class V1FeatureKVM {
     constructor() {
     }
 }
+exports.V1FeatureKVM = V1FeatureKVM;
 //# sourceMappingURL=V1FeatureKVM.js.map

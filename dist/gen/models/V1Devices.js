@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1Devices {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Devices = void 0;
+class V1Devices {
     /**
     * Whether to attach the default graphics device or not. VNC will not be available if set to false. Defaults to true.
     */
@@ -238,4 +241,5 @@ export class V1Devices {
     constructor() {
     }
 }
+exports.V1Devices = V1Devices;
 //# sourceMappingURL=V1Devices.js.map

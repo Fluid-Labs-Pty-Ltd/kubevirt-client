@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1Error = void 0;
 /**
 * Error is the last error encountered during the snapshot/restore
 */
-export class V1beta1Error {
+class V1beta1Error {
     'message';
     /**
     * Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
@@ -40,4 +43,5 @@ export class V1beta1Error {
     constructor() {
     }
 }
+exports.V1beta1Error = V1beta1Error;
 //# sourceMappingURL=V1beta1Error.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1UserPasswordAccessCredential = void 0;
 /**
 * UserPasswordAccessCredential represents a source and propagation method for injecting user passwords into a vm guest Only one of its members may be specified.
 */
-export class V1UserPasswordAccessCredential {
+class V1UserPasswordAccessCredential {
     'propagationMethod';
     'source';
     static discriminator = undefined;
@@ -37,4 +40,5 @@ export class V1UserPasswordAccessCredential {
     constructor() {
     }
 }
+exports.V1UserPasswordAccessCredential = V1UserPasswordAccessCredential;
 //# sourceMappingURL=V1UserPasswordAccessCredential.js.map

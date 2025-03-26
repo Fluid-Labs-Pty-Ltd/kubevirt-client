@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstanceList = void 0;
 /**
 * VirtualMachineInstanceList is a list of VirtualMachines
 */
-export class V1VirtualMachineInstanceList {
+class V1VirtualMachineInstanceList {
     /**
     * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     */
@@ -57,4 +60,5 @@ export class V1VirtualMachineInstanceList {
     constructor() {
     }
 }
+exports.V1VirtualMachineInstanceList = V1VirtualMachineInstanceList;
 //# sourceMappingURL=V1VirtualMachineInstanceList.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1MachinePreferences = void 0;
 /**
 * MachinePreferences contains various optional defaults for Machine.
 */
-export class V1beta1MachinePreferences {
+class V1beta1MachinePreferences {
     /**
     * PreferredMachineType optionally defines the preferred machine type to use.
     */
@@ -33,4 +36,5 @@ export class V1beta1MachinePreferences {
     constructor() {
     }
 }
+exports.V1beta1MachinePreferences = V1beta1MachinePreferences;
 //# sourceMappingURL=V1beta1MachinePreferences.js.map

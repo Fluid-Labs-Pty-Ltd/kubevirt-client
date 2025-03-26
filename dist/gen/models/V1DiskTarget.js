@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1DiskTarget {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1DiskTarget = void 0;
+class V1DiskTarget {
     /**
     * Bus indicates the type of disk device to emulate. supported values: virtio, sata, scsi, usb.
     */
@@ -50,4 +53,5 @@ export class V1DiskTarget {
     constructor() {
     }
 }
+exports.V1DiskTarget = V1DiskTarget;
 //# sourceMappingURL=V1DiskTarget.js.map

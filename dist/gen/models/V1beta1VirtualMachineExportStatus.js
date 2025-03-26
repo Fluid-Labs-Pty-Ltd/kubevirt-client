@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1VirtualMachineExportStatus = void 0;
 /**
 * VirtualMachineExportStatus is the status for a VirtualMachineExport resource
 */
-export class V1beta1VirtualMachineExportStatus {
+class V1beta1VirtualMachineExportStatus {
     'conditions';
     'links';
     'phase';
@@ -84,4 +87,5 @@ export class V1beta1VirtualMachineExportStatus {
     constructor() {
     }
 }
+exports.V1beta1VirtualMachineExportStatus = V1beta1VirtualMachineExportStatus;
 //# sourceMappingURL=V1beta1VirtualMachineExportStatus.js.map

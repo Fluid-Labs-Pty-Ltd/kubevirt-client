@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1ExecAction = void 0;
 /**
 * ExecAction describes a \"run in container\" action.
 */
-export class K8sIoApiCoreV1ExecAction {
+class K8sIoApiCoreV1ExecAction {
     /**
     * Command is the command line to execute inside the container, the working directory for the command  is root (\'/\') in the container\'s filesystem. The command is simply exec\'d, it is not run inside a shell, so traditional shell instructions (\'|\', etc) won\'t work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
     */
@@ -33,4 +36,5 @@ export class K8sIoApiCoreV1ExecAction {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1ExecAction = K8sIoApiCoreV1ExecAction;
 //# sourceMappingURL=K8sIoApiCoreV1ExecAction.js.map

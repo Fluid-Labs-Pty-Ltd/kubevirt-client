@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApimachineryPkgApisMetaV1StatusCause = void 0;
 /**
 * StatusCause provides more information about an api.Status failure, including cases when multiple errors are encountered.
 */
-export class K8sIoApimachineryPkgApisMetaV1StatusCause {
+class K8sIoApimachineryPkgApisMetaV1StatusCause {
     /**
     * The field of the resource that has caused this error, as named by its JSON serialization. May include dot and postfix notation for nested attributes. Arrays are zero-indexed.  Fields may appear more than once in an array of causes due to fields having multiple errors. Optional.  Examples:   \"name\" - the field \"name\" on the current resource   \"items[0].name\" - the field \"name\" on the first array entry in \"items\"
     */
@@ -53,4 +56,5 @@ export class K8sIoApimachineryPkgApisMetaV1StatusCause {
     constructor() {
     }
 }
+exports.K8sIoApimachineryPkgApisMetaV1StatusCause = K8sIoApimachineryPkgApisMetaV1StatusCause;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1StatusCause.js.map

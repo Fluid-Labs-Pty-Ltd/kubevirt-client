@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1VirtualMachineInstanceNetworkInterface {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstanceNetworkInterface = void 0;
+class V1VirtualMachineInstanceNetworkInterface {
     /**
     * Specifies the origin of the interface data collected. values: domain, guest-agent, multus-status.
     */
@@ -100,4 +103,5 @@ export class V1VirtualMachineInstanceNetworkInterface {
     constructor() {
     }
 }
+exports.V1VirtualMachineInstanceNetworkInterface = V1VirtualMachineInstanceNetworkInterface;
 //# sourceMappingURL=V1VirtualMachineInstanceNetworkInterface.js.map

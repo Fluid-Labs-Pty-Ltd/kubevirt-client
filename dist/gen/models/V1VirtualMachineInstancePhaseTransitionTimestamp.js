@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstancePhaseTransitionTimestamp = void 0;
 /**
 * VirtualMachineInstancePhaseTransitionTimestamp gives a timestamp in relation to when a phase is set on a vmi
 */
-export class V1VirtualMachineInstancePhaseTransitionTimestamp {
+class V1VirtualMachineInstancePhaseTransitionTimestamp {
     /**
     * Phase is the status of the VirtualMachineInstance in kubernetes world. It is not the VirtualMachineInstance status, but partially correlates to it.
     */
@@ -43,4 +46,5 @@ export class V1VirtualMachineInstancePhaseTransitionTimestamp {
     constructor() {
     }
 }
+exports.V1VirtualMachineInstancePhaseTransitionTimestamp = V1VirtualMachineInstancePhaseTransitionTimestamp;
 //# sourceMappingURL=V1VirtualMachineInstancePhaseTransitionTimestamp.js.map

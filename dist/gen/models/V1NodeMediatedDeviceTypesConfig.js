@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1NodeMediatedDeviceTypesConfig = void 0;
 /**
 * NodeMediatedDeviceTypesConfig holds information about MDEV types to be defined in a specific node that matches the NodeSelector field.
 */
-export class V1NodeMediatedDeviceTypesConfig {
+class V1NodeMediatedDeviceTypesConfig {
     'mediatedDeviceTypes';
     /**
     * Deprecated. Use mediatedDeviceTypes instead.
@@ -50,4 +53,5 @@ export class V1NodeMediatedDeviceTypesConfig {
     constructor() {
     }
 }
+exports.V1NodeMediatedDeviceTypesConfig = V1NodeMediatedDeviceTypesConfig;
 //# sourceMappingURL=V1NodeMediatedDeviceTypesConfig.js.map

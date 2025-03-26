@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1LogVerbosity = void 0;
 /**
 * LogVerbosity sets log verbosity level of  various components
 */
-export class V1LogVerbosity {
+class V1LogVerbosity {
     /**
     * NodeVerbosity represents a map of nodes with a specific verbosity level
     */
@@ -68,4 +71,5 @@ export class V1LogVerbosity {
     constructor() {
     }
 }
+exports.V1LogVerbosity = V1LogVerbosity;
 //# sourceMappingURL=V1LogVerbosity.js.map

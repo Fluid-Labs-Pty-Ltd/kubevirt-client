@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1VirtualMachineSnapshotSpec = void 0;
 /**
 * VirtualMachineSnapshotSpec is the spec for a VirtualMachineSnapshot resource
 */
-export class V1beta1VirtualMachineSnapshotSpec {
+class V1beta1VirtualMachineSnapshotSpec {
     'deletionPolicy';
     /**
     * Duration is a wrapper around time.Duration which supports correct marshaling to YAML and JSON. In particular, it marshals into strings, which can be used as map keys in json.
@@ -47,4 +50,5 @@ export class V1beta1VirtualMachineSnapshotSpec {
     constructor() {
     }
 }
+exports.V1beta1VirtualMachineSnapshotSpec = V1beta1VirtualMachineSnapshotSpec;
 //# sourceMappingURL=V1beta1VirtualMachineSnapshotSpec.js.map

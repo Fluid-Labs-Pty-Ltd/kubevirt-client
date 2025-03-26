@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1VolumeSnapshotStatus {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VolumeSnapshotStatus = void 0;
+class V1VolumeSnapshotStatus {
     /**
     * True if the volume supports snapshotting
     */
@@ -50,4 +53,5 @@ export class V1VolumeSnapshotStatus {
     constructor() {
     }
 }
+exports.V1VolumeSnapshotStatus = V1VolumeSnapshotStatus;
 //# sourceMappingURL=V1VolumeSnapshotStatus.js.map

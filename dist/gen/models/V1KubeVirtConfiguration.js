@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1KubeVirtConfigurationImagePullPolicyEnum = exports.V1KubeVirtConfiguration = void 0;
 /**
 * KubeVirtConfiguration holds all kubevirt configurations
 */
-export class V1KubeVirtConfiguration {
+class V1KubeVirtConfiguration {
     /**
     * AdditionalGuestMemoryOverheadRatio can be used to increase the virtualization infrastructure overhead. This is useful, since the calculation of this overhead is not accurate and cannot be entirely known in advance. The ratio that is being set determines by which factor to increase the overhead calculated by Kubevirt. A higher ratio means that the VMs would be less compromised by node pressures, but would mean that fewer VMs could be scheduled to a node. If not set, the default is 1.
     */
@@ -315,10 +318,11 @@ export class V1KubeVirtConfiguration {
     constructor() {
     }
 }
-export var V1KubeVirtConfigurationImagePullPolicyEnum;
+exports.V1KubeVirtConfiguration = V1KubeVirtConfiguration;
+var V1KubeVirtConfigurationImagePullPolicyEnum;
 (function (V1KubeVirtConfigurationImagePullPolicyEnum) {
     V1KubeVirtConfigurationImagePullPolicyEnum["Always"] = "Always";
     V1KubeVirtConfigurationImagePullPolicyEnum["IfNotPresent"] = "IfNotPresent";
     V1KubeVirtConfigurationImagePullPolicyEnum["Never"] = "Never";
-})(V1KubeVirtConfigurationImagePullPolicyEnum || (V1KubeVirtConfigurationImagePullPolicyEnum = {}));
+})(V1KubeVirtConfigurationImagePullPolicyEnum || (exports.V1KubeVirtConfigurationImagePullPolicyEnum = V1KubeVirtConfigurationImagePullPolicyEnum = {}));
 //# sourceMappingURL=V1KubeVirtConfiguration.js.map

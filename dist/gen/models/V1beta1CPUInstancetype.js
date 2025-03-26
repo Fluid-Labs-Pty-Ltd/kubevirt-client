@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1CPUInstancetype = void 0;
 /**
 * CPUInstancetype contains the CPU related configuration of a given VirtualMachineInstancetypeSpec.  Guest is a required attribute and defines the number of vCPUs to be exposed to the guest by the instancetype.
 */
-export class V1beta1CPUInstancetype {
+class V1beta1CPUInstancetype {
     /**
     * DedicatedCPUPlacement requests the scheduler to place the VirtualMachineInstance on a node with enough dedicated pCPUs and pin the vCPUs to it.
     */
@@ -87,4 +90,5 @@ export class V1beta1CPUInstancetype {
     constructor() {
     }
 }
+exports.V1beta1CPUInstancetype = V1beta1CPUInstancetype;
 //# sourceMappingURL=V1beta1CPUInstancetype.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1Firmware {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Firmware = void 0;
+class V1Firmware {
     'acpi';
     'bootloader';
     'kernelBoot';
@@ -61,4 +64,5 @@ export class V1Firmware {
     constructor() {
     }
 }
+exports.V1Firmware = V1Firmware;
 //# sourceMappingURL=V1Firmware.js.map

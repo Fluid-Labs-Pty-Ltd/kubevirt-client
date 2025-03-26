@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1VirtualMachineStateChangeRequest {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineStateChangeRequest = void 0;
+class V1VirtualMachineStateChangeRequest {
     /**
     * Indicates the type of action that is requested. e.g. Start or Stop
     */
@@ -50,4 +53,5 @@ export class V1VirtualMachineStateChangeRequest {
     constructor() {
     }
 }
+exports.V1VirtualMachineStateChangeRequest = V1VirtualMachineStateChangeRequest;
 //# sourceMappingURL=V1VirtualMachineStateChangeRequest.js.map

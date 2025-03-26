@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1KernelBootContainerImagePullPolicyEnum = exports.V1KernelBootContainer = void 0;
 /**
 * If set, the VM will be booted from the defined kernel / initrd.
 */
-export class V1KernelBootContainer {
+class V1KernelBootContainer {
     /**
     * Image that contains initrd / kernel files.
     */
@@ -73,10 +76,11 @@ export class V1KernelBootContainer {
     constructor() {
     }
 }
-export var V1KernelBootContainerImagePullPolicyEnum;
+exports.V1KernelBootContainer = V1KernelBootContainer;
+var V1KernelBootContainerImagePullPolicyEnum;
 (function (V1KernelBootContainerImagePullPolicyEnum) {
     V1KernelBootContainerImagePullPolicyEnum["Always"] = "Always";
     V1KernelBootContainerImagePullPolicyEnum["IfNotPresent"] = "IfNotPresent";
     V1KernelBootContainerImagePullPolicyEnum["Never"] = "Never";
-})(V1KernelBootContainerImagePullPolicyEnum || (V1KernelBootContainerImagePullPolicyEnum = {}));
+})(V1KernelBootContainerImagePullPolicyEnum || (exports.V1KernelBootContainerImagePullPolicyEnum = V1KernelBootContainerImagePullPolicyEnum = {}));
 //# sourceMappingURL=V1KernelBootContainer.js.map

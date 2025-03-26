@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApimachineryPkgApisMetaV1RootPaths = void 0;
 /**
 * RootPaths lists the paths available at root. For example: \"/healthz\", \"/apis\".
 */
-export class K8sIoApimachineryPkgApisMetaV1RootPaths {
+class K8sIoApimachineryPkgApisMetaV1RootPaths {
     /**
     * paths are the paths available at root.
     */
@@ -33,4 +36,5 @@ export class K8sIoApimachineryPkgApisMetaV1RootPaths {
     constructor() {
     }
 }
+exports.K8sIoApimachineryPkgApisMetaV1RootPaths = K8sIoApimachineryPkgApisMetaV1RootPaths;
 //# sourceMappingURL=K8sIoApimachineryPkgApisMetaV1RootPaths.js.map

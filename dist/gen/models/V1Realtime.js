@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Realtime = void 0;
 /**
 * Realtime holds the tuning knobs specific for realtime workloads.
 */
-export class V1Realtime {
+class V1Realtime {
     /**
     * Mask defines the vcpu mask expression that defines which vcpus are used for realtime. Format matches libvirt\'s expressions. Example: \"0-3,^1\",\"0,2,3\",\"2-3\"
     */
@@ -33,4 +36,5 @@ export class V1Realtime {
     constructor() {
     }
 }
+exports.V1Realtime = V1Realtime;
 //# sourceMappingURL=V1Realtime.js.map

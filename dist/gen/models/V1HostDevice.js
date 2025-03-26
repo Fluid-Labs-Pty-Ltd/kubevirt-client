@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1HostDevice {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1HostDevice = void 0;
+class V1HostDevice {
     /**
     * DeviceName is the resource name of the host device exposed by a device plugin
     */
@@ -47,4 +50,5 @@ export class V1HostDevice {
     constructor() {
     }
 }
+exports.V1HostDevice = V1HostDevice;
 //# sourceMappingURL=V1HostDevice.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1VirtualMachineSnapshotContentSpec = void 0;
 /**
 * VirtualMachineSnapshotContentSpec is the spec for a VirtualMachineSnapshotContent resource
 */
-export class V1beta1VirtualMachineSnapshotContentSpec {
+class V1beta1VirtualMachineSnapshotContentSpec {
     'source';
     'virtualMachineSnapshotName';
     'volumeBackups';
@@ -44,4 +47,5 @@ export class V1beta1VirtualMachineSnapshotContentSpec {
     constructor() {
     }
 }
+exports.V1beta1VirtualMachineSnapshotContentSpec = V1beta1VirtualMachineSnapshotContentSpec;
 //# sourceMappingURL=V1beta1VirtualMachineSnapshotContentSpec.js.map

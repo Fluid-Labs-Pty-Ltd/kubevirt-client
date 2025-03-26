@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1DomainMemoryDumpInfo = void 0;
 /**
 * DomainMemoryDumpInfo represents the memory dump information
 */
-export class V1DomainMemoryDumpInfo {
+class V1DomainMemoryDumpInfo {
     /**
     * ClaimName is the name of the pvc the memory was dumped to
     */
@@ -63,4 +66,5 @@ export class V1DomainMemoryDumpInfo {
     constructor() {
     }
 }
+exports.V1DomainMemoryDumpInfo = V1DomainMemoryDumpInfo;
 //# sourceMappingURL=V1DomainMemoryDumpInfo.js.map

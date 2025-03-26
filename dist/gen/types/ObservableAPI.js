@@ -1,14 +1,17 @@
-import { of, from } from '../rxjsStub.js';
-import { mergeMap, map } from '../rxjsStub.js';
-import { DefaultApiRequestFactory, DefaultApiResponseProcessor } from "../apis/DefaultApi.js";
-export class ObservableDefaultApi {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ObservableDefaultApi = void 0;
+const rxjsStub_js_1 = require("../rxjsStub.js");
+const rxjsStub_js_2 = require("../rxjsStub.js");
+const DefaultApi_js_1 = require("../apis/DefaultApi.js");
+class ObservableDefaultApi {
     requestFactory;
     responseProcessor;
     configuration;
     constructor(configuration, requestFactory, responseProcessor) {
         this.configuration = configuration;
-        this.requestFactory = requestFactory || new DefaultApiRequestFactory(configuration);
-        this.responseProcessor = responseProcessor || new DefaultApiResponseProcessor();
+        this.requestFactory = requestFactory || new DefaultApi_js_1.DefaultApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new DefaultApi_js_1.DefaultApiResponseProcessor();
     }
     /**
      * Create a MigrationPolicy object.
@@ -45,17 +48,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createMigrationPolicy(body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createMigrationPolicyWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createMigrationPolicyWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -63,7 +66,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createMigrationPolicy(body, _options) {
-        return this.createMigrationPolicyWithHttpInfo(body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createMigrationPolicyWithHttpInfo(body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a KubeVirt object.
@@ -101,17 +104,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createNamespacedKubeVirt(namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createNamespacedKubeVirtWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createNamespacedKubeVirtWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -120,7 +123,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createNamespacedKubeVirt(namespace, body, _options) {
-        return this.createNamespacedKubeVirtWithHttpInfo(namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createNamespacedKubeVirtWithHttpInfo(namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachine object.
@@ -158,17 +161,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createNamespacedVirtualMachine(namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createNamespacedVirtualMachineWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createNamespacedVirtualMachineWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -177,7 +180,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createNamespacedVirtualMachine(namespace, body, _options) {
-        return this.createNamespacedVirtualMachineWithHttpInfo(namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createNamespacedVirtualMachineWithHttpInfo(namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachineExport object.
@@ -215,17 +218,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createNamespacedVirtualMachineExport(namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createNamespacedVirtualMachineExportWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createNamespacedVirtualMachineExportWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -234,7 +237,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createNamespacedVirtualMachineExport(namespace, body, _options) {
-        return this.createNamespacedVirtualMachineExportWithHttpInfo(namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createNamespacedVirtualMachineExportWithHttpInfo(namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachineInstance object.
@@ -272,17 +275,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createNamespacedVirtualMachineInstance(namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -291,7 +294,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createNamespacedVirtualMachineInstance(namespace, body, _options) {
-        return this.createNamespacedVirtualMachineInstanceWithHttpInfo(namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createNamespacedVirtualMachineInstanceWithHttpInfo(namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachineInstanceMigration object.
@@ -329,17 +332,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createNamespacedVirtualMachineInstanceMigration(namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -348,7 +351,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createNamespacedVirtualMachineInstanceMigration(namespace, body, _options) {
-        return this.createNamespacedVirtualMachineInstanceMigrationWithHttpInfo(namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createNamespacedVirtualMachineInstanceMigrationWithHttpInfo(namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachineInstancePreset object.
@@ -386,17 +389,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createNamespacedVirtualMachineInstancePreset(namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -405,7 +408,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createNamespacedVirtualMachineInstancePreset(namespace, body, _options) {
-        return this.createNamespacedVirtualMachineInstancePresetWithHttpInfo(namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createNamespacedVirtualMachineInstancePresetWithHttpInfo(namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachineInstanceReplicaSet object.
@@ -443,17 +446,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createNamespacedVirtualMachineInstanceReplicaSet(namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -462,7 +465,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createNamespacedVirtualMachineInstanceReplicaSet(namespace, body, _options) {
-        return this.createNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachineInstancetype object.
@@ -500,17 +503,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createNamespacedVirtualMachineInstancetype(namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -519,7 +522,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createNamespacedVirtualMachineInstancetype(namespace, body, _options) {
-        return this.createNamespacedVirtualMachineInstancetypeWithHttpInfo(namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createNamespacedVirtualMachineInstancetypeWithHttpInfo(namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachinePool object.
@@ -557,17 +560,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createNamespacedVirtualMachinePool(namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -576,7 +579,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createNamespacedVirtualMachinePool(namespace, body, _options) {
-        return this.createNamespacedVirtualMachinePoolWithHttpInfo(namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createNamespacedVirtualMachinePoolWithHttpInfo(namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachinePreference object.
@@ -614,17 +617,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createNamespacedVirtualMachinePreference(namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -633,7 +636,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createNamespacedVirtualMachinePreference(namespace, body, _options) {
-        return this.createNamespacedVirtualMachinePreferenceWithHttpInfo(namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createNamespacedVirtualMachinePreferenceWithHttpInfo(namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachineRestore object.
@@ -671,17 +674,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createNamespacedVirtualMachineRestore(namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -690,7 +693,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createNamespacedVirtualMachineRestore(namespace, body, _options) {
-        return this.createNamespacedVirtualMachineRestoreWithHttpInfo(namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createNamespacedVirtualMachineRestoreWithHttpInfo(namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachineSnapshot object.
@@ -728,17 +731,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createNamespacedVirtualMachineSnapshot(namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -747,7 +750,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createNamespacedVirtualMachineSnapshot(namespace, body, _options) {
-        return this.createNamespacedVirtualMachineSnapshotWithHttpInfo(namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createNamespacedVirtualMachineSnapshotWithHttpInfo(namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachineSnapshotContent object.
@@ -785,17 +788,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createNamespacedVirtualMachineSnapshotContent(namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -804,7 +807,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createNamespacedVirtualMachineSnapshotContent(namespace, body, _options) {
-        return this.createNamespacedVirtualMachineSnapshotContentWithHttpInfo(namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createNamespacedVirtualMachineSnapshotContentWithHttpInfo(namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachineClone object.
@@ -841,17 +844,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createVirtualMachineClone(body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createVirtualMachineCloneWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createVirtualMachineCloneWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -859,7 +862,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createVirtualMachineClone(body, _options) {
-        return this.createVirtualMachineCloneWithHttpInfo(body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createVirtualMachineCloneWithHttpInfo(body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachineClusterInstancetype object.
@@ -896,17 +899,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createVirtualMachineClusterInstancetype(body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createVirtualMachineClusterInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createVirtualMachineClusterInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -914,7 +917,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createVirtualMachineClusterInstancetype(body, _options) {
-        return this.createVirtualMachineClusterInstancetypeWithHttpInfo(body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createVirtualMachineClusterInstancetypeWithHttpInfo(body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Create a VirtualMachineClusterPreference object.
@@ -951,17 +954,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.createVirtualMachineClusterPreference(body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.createVirtualMachineClusterPreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.createVirtualMachineClusterPreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -969,7 +972,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     createVirtualMachineClusterPreference(body, _options) {
-        return this.createVirtualMachineClusterPreferenceWithHttpInfo(body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.createVirtualMachineClusterPreferenceWithHttpInfo(body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of MigrationPolicy objects.
@@ -1013,17 +1016,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionMigrationPolicy(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionMigrationPolicyWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionMigrationPolicyWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -1038,7 +1041,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionMigrationPolicy(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionMigrationPolicyWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionMigrationPolicyWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of KubeVirt objects.
@@ -1082,17 +1085,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionNamespacedKubeVirt(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionNamespacedKubeVirtWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionNamespacedKubeVirtWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -1107,7 +1110,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionNamespacedKubeVirt(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionNamespacedKubeVirtWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionNamespacedKubeVirtWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachine objects.
@@ -1151,17 +1154,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionNamespacedVirtualMachine(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -1176,7 +1179,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionNamespacedVirtualMachine(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionNamespacedVirtualMachineWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionNamespacedVirtualMachineWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachineExport objects.
@@ -1220,17 +1223,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionNamespacedVirtualMachineExport(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineExportWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineExportWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -1245,7 +1248,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionNamespacedVirtualMachineExport(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionNamespacedVirtualMachineExportWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionNamespacedVirtualMachineExportWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachineInstance objects.
@@ -1289,17 +1292,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionNamespacedVirtualMachineInstance(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -1314,7 +1317,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionNamespacedVirtualMachineInstance(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionNamespacedVirtualMachineInstanceWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionNamespacedVirtualMachineInstanceWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachineInstanceMigration objects.
@@ -1358,17 +1361,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionNamespacedVirtualMachineInstanceMigration(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -1383,7 +1386,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionNamespacedVirtualMachineInstanceMigration(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionNamespacedVirtualMachineInstanceMigrationWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionNamespacedVirtualMachineInstanceMigrationWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachineInstancePreset objects.
@@ -1427,17 +1430,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionNamespacedVirtualMachineInstancePreset(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -1452,7 +1455,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionNamespacedVirtualMachineInstancePreset(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionNamespacedVirtualMachineInstancePresetWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionNamespacedVirtualMachineInstancePresetWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachineInstanceReplicaSet objects.
@@ -1496,17 +1499,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionNamespacedVirtualMachineInstanceReplicaSet(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -1521,7 +1524,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionNamespacedVirtualMachineInstanceReplicaSet(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachineInstancetype objects.
@@ -1565,17 +1568,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionNamespacedVirtualMachineInstancetype(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -1590,7 +1593,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionNamespacedVirtualMachineInstancetype(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionNamespacedVirtualMachineInstancetypeWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionNamespacedVirtualMachineInstancetypeWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachinePool objects.
@@ -1634,17 +1637,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionNamespacedVirtualMachinePool(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -1659,7 +1662,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionNamespacedVirtualMachinePool(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionNamespacedVirtualMachinePoolWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionNamespacedVirtualMachinePoolWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachinePreference objects.
@@ -1703,17 +1706,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionNamespacedVirtualMachinePreference(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -1728,7 +1731,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionNamespacedVirtualMachinePreference(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionNamespacedVirtualMachinePreferenceWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionNamespacedVirtualMachinePreferenceWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachineRestore objects.
@@ -1772,17 +1775,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionNamespacedVirtualMachineRestore(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -1797,7 +1800,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionNamespacedVirtualMachineRestore(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionNamespacedVirtualMachineRestoreWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionNamespacedVirtualMachineRestoreWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachineSnapshot objects.
@@ -1841,17 +1844,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionNamespacedVirtualMachineSnapshot(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -1866,7 +1869,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionNamespacedVirtualMachineSnapshot(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionNamespacedVirtualMachineSnapshotWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionNamespacedVirtualMachineSnapshotWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachineSnapshotContent objects.
@@ -1910,17 +1913,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionNamespacedVirtualMachineSnapshotContent(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -1935,7 +1938,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionNamespacedVirtualMachineSnapshotContent(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionNamespacedVirtualMachineSnapshotContentWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionNamespacedVirtualMachineSnapshotContentWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachineClone objects.
@@ -1979,17 +1982,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionVirtualMachineClone(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionVirtualMachineCloneWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionVirtualMachineCloneWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2004,7 +2007,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionVirtualMachineClone(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionVirtualMachineCloneWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionVirtualMachineCloneWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachineClusterInstancetype objects.
@@ -2048,17 +2051,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionVirtualMachineClusterInstancetype(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionVirtualMachineClusterInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionVirtualMachineClusterInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2073,7 +2076,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionVirtualMachineClusterInstancetype(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionVirtualMachineClusterInstancetypeWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionVirtualMachineClusterInstancetypeWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a collection of VirtualMachineClusterPreference objects.
@@ -2117,17 +2120,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteCollectionVirtualMachineClusterPreference(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteCollectionVirtualMachineClusterPreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteCollectionVirtualMachineClusterPreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2142,7 +2145,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     deleteCollectionVirtualMachineClusterPreference(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.deleteCollectionVirtualMachineClusterPreferenceWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteCollectionVirtualMachineClusterPreferenceWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a MigrationPolicy object.
@@ -2183,17 +2186,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteMigrationPolicy(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteMigrationPolicyWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteMigrationPolicyWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2205,7 +2208,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteMigrationPolicy(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteMigrationPolicyWithHttpInfo(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteMigrationPolicyWithHttpInfo(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a KubeVirt object.
@@ -2247,17 +2250,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteNamespacedKubeVirt(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteNamespacedKubeVirtWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteNamespacedKubeVirtWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2270,7 +2273,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteNamespacedKubeVirt(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteNamespacedKubeVirtWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteNamespacedKubeVirtWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachine object.
@@ -2312,17 +2315,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteNamespacedVirtualMachine(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2335,7 +2338,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteNamespacedVirtualMachine(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteNamespacedVirtualMachineWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteNamespacedVirtualMachineWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachineExport object.
@@ -2377,17 +2380,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteNamespacedVirtualMachineExport(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineExportWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineExportWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2400,7 +2403,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteNamespacedVirtualMachineExport(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteNamespacedVirtualMachineExportWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteNamespacedVirtualMachineExportWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachineInstance object.
@@ -2442,17 +2445,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteNamespacedVirtualMachineInstance(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2465,7 +2468,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteNamespacedVirtualMachineInstance(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteNamespacedVirtualMachineInstanceWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteNamespacedVirtualMachineInstanceWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachineInstanceMigration object.
@@ -2507,17 +2510,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteNamespacedVirtualMachineInstanceMigration(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2530,7 +2533,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteNamespacedVirtualMachineInstanceMigration(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteNamespacedVirtualMachineInstanceMigrationWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteNamespacedVirtualMachineInstanceMigrationWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachineInstancePreset object.
@@ -2572,17 +2575,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteNamespacedVirtualMachineInstancePreset(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2595,7 +2598,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteNamespacedVirtualMachineInstancePreset(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteNamespacedVirtualMachineInstancePresetWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteNamespacedVirtualMachineInstancePresetWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachineInstanceReplicaSet object.
@@ -2637,17 +2640,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteNamespacedVirtualMachineInstanceReplicaSet(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2660,7 +2663,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteNamespacedVirtualMachineInstanceReplicaSet(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachineInstancetype object.
@@ -2702,17 +2705,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteNamespacedVirtualMachineInstancetype(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2725,7 +2728,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteNamespacedVirtualMachineInstancetype(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteNamespacedVirtualMachineInstancetypeWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteNamespacedVirtualMachineInstancetypeWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachinePool object.
@@ -2767,17 +2770,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteNamespacedVirtualMachinePool(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2790,7 +2793,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteNamespacedVirtualMachinePool(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteNamespacedVirtualMachinePoolWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteNamespacedVirtualMachinePoolWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachinePreference object.
@@ -2832,17 +2835,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteNamespacedVirtualMachinePreference(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2855,7 +2858,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteNamespacedVirtualMachinePreference(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteNamespacedVirtualMachinePreferenceWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteNamespacedVirtualMachinePreferenceWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachineRestore object.
@@ -2897,17 +2900,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteNamespacedVirtualMachineRestore(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2920,7 +2923,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteNamespacedVirtualMachineRestore(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteNamespacedVirtualMachineRestoreWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteNamespacedVirtualMachineRestoreWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachineSnapshot object.
@@ -2962,17 +2965,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteNamespacedVirtualMachineSnapshot(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -2985,7 +2988,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteNamespacedVirtualMachineSnapshot(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteNamespacedVirtualMachineSnapshotWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteNamespacedVirtualMachineSnapshotWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachineSnapshotContent object.
@@ -3027,17 +3030,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteNamespacedVirtualMachineSnapshotContent(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -3050,7 +3053,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteNamespacedVirtualMachineSnapshotContent(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteNamespacedVirtualMachineSnapshotContentWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteNamespacedVirtualMachineSnapshotContentWithHttpInfo(name, namespace, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachineClone object.
@@ -3091,17 +3094,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteVirtualMachineClone(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteVirtualMachineCloneWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteVirtualMachineCloneWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -3113,7 +3116,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteVirtualMachineClone(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteVirtualMachineCloneWithHttpInfo(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteVirtualMachineCloneWithHttpInfo(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachineClusterInstancetype object.
@@ -3154,17 +3157,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteVirtualMachineClusterInstancetype(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteVirtualMachineClusterInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteVirtualMachineClusterInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -3176,7 +3179,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteVirtualMachineClusterInstancetype(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteVirtualMachineClusterInstancetypeWithHttpInfo(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteVirtualMachineClusterInstancetypeWithHttpInfo(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Delete a VirtualMachineClusterPreference object.
@@ -3217,17 +3220,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.deleteVirtualMachineClusterPreference(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.deleteVirtualMachineClusterPreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.deleteVirtualMachineClusterPreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -3239,7 +3242,7 @@ export class ObservableDefaultApi {
      * @param [propagationPolicy] Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
     deleteVirtualMachineClusterPreference(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options) {
-        return this.deleteVirtualMachineClusterPreferenceWithHttpInfo(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.deleteVirtualMachineClusterPreferenceWithHttpInfo(name, body, gracePeriodSeconds, orphanDependents, propagationPolicy, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Health endpoint
@@ -3275,24 +3278,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.func13(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.func13WithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.func13WithHttpInfo(rsp)));
         }));
     }
     /**
      * Health endpoint
      */
     func13(_options) {
-        return this.func13WithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.func13WithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      */
@@ -3327,23 +3330,23 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.func6(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.func6WithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.func6WithHttpInfo(rsp)));
         }));
     }
     /**
      */
     func6(_options) {
-        return this.func6WithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.func6WithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a KubeVirt API group
@@ -3379,24 +3382,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIGroupCloneKubevirtIo(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIGroupCloneKubevirtIoWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIGroupCloneKubevirtIoWithHttpInfo(rsp)));
         }));
     }
     /**
      * Get a KubeVirt API group
      */
     getAPIGroupCloneKubevirtIo(_options) {
-        return this.getAPIGroupCloneKubevirtIoWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIGroupCloneKubevirtIoWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a KubeVirt API group
@@ -3432,24 +3435,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIGroupExportKubevirtIo(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIGroupExportKubevirtIoWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIGroupExportKubevirtIoWithHttpInfo(rsp)));
         }));
     }
     /**
      * Get a KubeVirt API group
      */
     getAPIGroupExportKubevirtIo(_options) {
-        return this.getAPIGroupExportKubevirtIoWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIGroupExportKubevirtIoWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a KubeVirt API group
@@ -3485,24 +3488,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIGroupInstancetypeKubevirtIo(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIGroupInstancetypeKubevirtIoWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIGroupInstancetypeKubevirtIoWithHttpInfo(rsp)));
         }));
     }
     /**
      * Get a KubeVirt API group
      */
     getAPIGroupInstancetypeKubevirtIo(_options) {
-        return this.getAPIGroupInstancetypeKubevirtIoWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIGroupInstancetypeKubevirtIoWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a KubeVirt API group
@@ -3538,24 +3541,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIGroupKubevirtIo(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIGroupKubevirtIoWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIGroupKubevirtIoWithHttpInfo(rsp)));
         }));
     }
     /**
      * Get a KubeVirt API group
      */
     getAPIGroupKubevirtIo(_options) {
-        return this.getAPIGroupKubevirtIoWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIGroupKubevirtIoWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a KubeVirt API GroupList
@@ -3591,24 +3594,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIGroupList(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIGroupListWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIGroupListWithHttpInfo(rsp)));
         }));
     }
     /**
      * Get a KubeVirt API GroupList
      */
     getAPIGroupList(_options) {
-        return this.getAPIGroupListWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIGroupListWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a KubeVirt API group
@@ -3644,24 +3647,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIGroupMigrationsKubevirtIo(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIGroupMigrationsKubevirtIoWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIGroupMigrationsKubevirtIoWithHttpInfo(rsp)));
         }));
     }
     /**
      * Get a KubeVirt API group
      */
     getAPIGroupMigrationsKubevirtIo(_options) {
-        return this.getAPIGroupMigrationsKubevirtIoWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIGroupMigrationsKubevirtIoWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a KubeVirt API group
@@ -3697,24 +3700,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIGroupPoolKubevirtIo(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIGroupPoolKubevirtIoWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIGroupPoolKubevirtIoWithHttpInfo(rsp)));
         }));
     }
     /**
      * Get a KubeVirt API group
      */
     getAPIGroupPoolKubevirtIo(_options) {
-        return this.getAPIGroupPoolKubevirtIoWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIGroupPoolKubevirtIoWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a KubeVirt API group
@@ -3750,24 +3753,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIGroupSnapshotKubevirtIo(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIGroupSnapshotKubevirtIoWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIGroupSnapshotKubevirtIoWithHttpInfo(rsp)));
         }));
     }
     /**
      * Get a KubeVirt API group
      */
     getAPIGroupSnapshotKubevirtIo(_options) {
-        return this.getAPIGroupSnapshotKubevirtIoWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIGroupSnapshotKubevirtIoWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get KubeVirt API Resources
@@ -3803,24 +3806,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIResourcesCloneKubevirtIoV1alpha1(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIResourcesCloneKubevirtIoV1alpha1WithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIResourcesCloneKubevirtIoV1alpha1WithHttpInfo(rsp)));
         }));
     }
     /**
      * Get KubeVirt API Resources
      */
     getAPIResourcesCloneKubevirtIoV1alpha1(_options) {
-        return this.getAPIResourcesCloneKubevirtIoV1alpha1WithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIResourcesCloneKubevirtIoV1alpha1WithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get KubeVirt API Resources
@@ -3856,24 +3859,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIResourcesExportKubevirtIoV1beta1(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIResourcesExportKubevirtIoV1beta1WithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIResourcesExportKubevirtIoV1beta1WithHttpInfo(rsp)));
         }));
     }
     /**
      * Get KubeVirt API Resources
      */
     getAPIResourcesExportKubevirtIoV1beta1(_options) {
-        return this.getAPIResourcesExportKubevirtIoV1beta1WithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIResourcesExportKubevirtIoV1beta1WithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get KubeVirt API Resources
@@ -3909,24 +3912,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIResourcesInstancetypeKubevirtIoV1beta1(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIResourcesInstancetypeKubevirtIoV1beta1WithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIResourcesInstancetypeKubevirtIoV1beta1WithHttpInfo(rsp)));
         }));
     }
     /**
      * Get KubeVirt API Resources
      */
     getAPIResourcesInstancetypeKubevirtIoV1beta1(_options) {
-        return this.getAPIResourcesInstancetypeKubevirtIoV1beta1WithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIResourcesInstancetypeKubevirtIoV1beta1WithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get KubeVirt API Resources
@@ -3962,24 +3965,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIResourcesKubevirtIoV1(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIResourcesKubevirtIoV1WithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIResourcesKubevirtIoV1WithHttpInfo(rsp)));
         }));
     }
     /**
      * Get KubeVirt API Resources
      */
     getAPIResourcesKubevirtIoV1(_options) {
-        return this.getAPIResourcesKubevirtIoV1WithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIResourcesKubevirtIoV1WithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get KubeVirt API Resources
@@ -4015,24 +4018,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIResourcesMigrationsKubevirtIoV1alpha1(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIResourcesMigrationsKubevirtIoV1alpha1WithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIResourcesMigrationsKubevirtIoV1alpha1WithHttpInfo(rsp)));
         }));
     }
     /**
      * Get KubeVirt API Resources
      */
     getAPIResourcesMigrationsKubevirtIoV1alpha1(_options) {
-        return this.getAPIResourcesMigrationsKubevirtIoV1alpha1WithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIResourcesMigrationsKubevirtIoV1alpha1WithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get KubeVirt API Resources
@@ -4068,24 +4071,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIResourcesPoolKubevirtIoV1alpha1(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIResourcesPoolKubevirtIoV1alpha1WithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIResourcesPoolKubevirtIoV1alpha1WithHttpInfo(rsp)));
         }));
     }
     /**
      * Get KubeVirt API Resources
      */
     getAPIResourcesPoolKubevirtIoV1alpha1(_options) {
-        return this.getAPIResourcesPoolKubevirtIoV1alpha1WithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIResourcesPoolKubevirtIoV1alpha1WithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get KubeVirt API Resources
@@ -4121,24 +4124,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getAPIResourcesSnapshotKubevirtIoV1beta1(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getAPIResourcesSnapshotKubevirtIoV1beta1WithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getAPIResourcesSnapshotKubevirtIoV1beta1WithHttpInfo(rsp)));
         }));
     }
     /**
      * Get KubeVirt API Resources
      */
     getAPIResourcesSnapshotKubevirtIoV1beta1(_options) {
-        return this.getAPIResourcesSnapshotKubevirtIoV1beta1WithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getAPIResourcesSnapshotKubevirtIoV1beta1WithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get KubeVirt API root paths
@@ -4174,24 +4177,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.getRootPaths(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.getRootPathsWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.getRootPathsWithHttpInfo(rsp)));
         }));
     }
     /**
      * Get KubeVirt API root paths
      */
     getRootPaths(_options) {
-        return this.getRootPathsWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.getRootPathsWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * dump profiler results endpoint
@@ -4227,24 +4230,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.handleDumpProfiler(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.handleDumpProfilerWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.handleDumpProfilerWithHttpInfo(rsp)));
         }));
     }
     /**
      * dump profiler results endpoint
      */
     handleDumpProfiler(_options) {
-        return this.handleDumpProfilerWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.handleDumpProfilerWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * start profiler endpoint
@@ -4280,24 +4283,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.handleStartProfiler(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.handleStartProfilerWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.handleStartProfilerWithHttpInfo(rsp)));
         }));
     }
     /**
      * start profiler endpoint
      */
     handleStartProfiler(_options) {
-        return this.handleStartProfilerWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.handleStartProfilerWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * stop profiler endpoint
@@ -4333,24 +4336,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.handleStopProfiler(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.handleStopProfilerWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.handleStopProfilerWithHttpInfo(rsp)));
         }));
     }
     /**
      * stop profiler endpoint
      */
     handleStopProfiler(_options) {
-        return this.handleStopProfilerWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.handleStopProfilerWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of all KubeVirt objects.
@@ -4394,17 +4397,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listKubeVirtForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listKubeVirtForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listKubeVirtForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -4419,7 +4422,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listKubeVirtForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listKubeVirtForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listKubeVirtForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of MigrationPolicy objects.
@@ -4463,17 +4466,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listMigrationPolicy(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listMigrationPolicyWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listMigrationPolicyWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -4488,7 +4491,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listMigrationPolicy(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listMigrationPolicyWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listMigrationPolicyWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of KubeVirt objects.
@@ -4533,17 +4536,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listNamespacedKubeVirt(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listNamespacedKubeVirtWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listNamespacedKubeVirtWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -4559,7 +4562,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listNamespacedKubeVirt(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listNamespacedKubeVirtWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listNamespacedKubeVirtWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachine objects.
@@ -4604,17 +4607,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listNamespacedVirtualMachine(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listNamespacedVirtualMachineWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listNamespacedVirtualMachineWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -4630,7 +4633,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listNamespacedVirtualMachine(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listNamespacedVirtualMachineWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listNamespacedVirtualMachineWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachineExport objects.
@@ -4675,17 +4678,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listNamespacedVirtualMachineExport(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listNamespacedVirtualMachineExportWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listNamespacedVirtualMachineExportWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -4701,7 +4704,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listNamespacedVirtualMachineExport(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listNamespacedVirtualMachineExportWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listNamespacedVirtualMachineExportWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachineInstance objects.
@@ -4746,17 +4749,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listNamespacedVirtualMachineInstance(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -4772,7 +4775,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listNamespacedVirtualMachineInstance(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listNamespacedVirtualMachineInstanceWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listNamespacedVirtualMachineInstanceWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachineInstanceMigration objects.
@@ -4817,17 +4820,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listNamespacedVirtualMachineInstanceMigration(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -4843,7 +4846,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listNamespacedVirtualMachineInstanceMigration(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listNamespacedVirtualMachineInstanceMigrationWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listNamespacedVirtualMachineInstanceMigrationWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachineInstancePreset objects.
@@ -4888,17 +4891,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listNamespacedVirtualMachineInstancePreset(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -4914,7 +4917,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listNamespacedVirtualMachineInstancePreset(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listNamespacedVirtualMachineInstancePresetWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listNamespacedVirtualMachineInstancePresetWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachineInstanceReplicaSet objects.
@@ -4959,17 +4962,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listNamespacedVirtualMachineInstanceReplicaSet(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -4985,7 +4988,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listNamespacedVirtualMachineInstanceReplicaSet(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachineInstancetype objects.
@@ -5030,17 +5033,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listNamespacedVirtualMachineInstancetype(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -5056,7 +5059,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listNamespacedVirtualMachineInstancetype(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listNamespacedVirtualMachineInstancetypeWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listNamespacedVirtualMachineInstancetypeWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachinePool objects.
@@ -5101,17 +5104,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listNamespacedVirtualMachinePool(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -5127,7 +5130,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listNamespacedVirtualMachinePool(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listNamespacedVirtualMachinePoolWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listNamespacedVirtualMachinePoolWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachinePreference objects.
@@ -5172,17 +5175,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listNamespacedVirtualMachinePreference(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -5198,7 +5201,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listNamespacedVirtualMachinePreference(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listNamespacedVirtualMachinePreferenceWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listNamespacedVirtualMachinePreferenceWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachineRestore objects.
@@ -5243,17 +5246,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listNamespacedVirtualMachineRestore(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -5269,7 +5272,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listNamespacedVirtualMachineRestore(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listNamespacedVirtualMachineRestoreWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listNamespacedVirtualMachineRestoreWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachineSnapshot objects.
@@ -5314,17 +5317,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listNamespacedVirtualMachineSnapshot(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -5340,7 +5343,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listNamespacedVirtualMachineSnapshot(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listNamespacedVirtualMachineSnapshotWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listNamespacedVirtualMachineSnapshotWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachineSnapshotContent objects.
@@ -5385,17 +5388,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listNamespacedVirtualMachineSnapshotContent(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -5411,7 +5414,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listNamespacedVirtualMachineSnapshotContent(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listNamespacedVirtualMachineSnapshotContentWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listNamespacedVirtualMachineSnapshotContentWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachineClone objects.
@@ -5455,17 +5458,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachineClone(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachineCloneWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachineCloneWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -5480,7 +5483,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachineClone(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachineCloneWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachineCloneWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachineClusterInstancetype objects.
@@ -5524,17 +5527,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachineClusterInstancetype(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachineClusterInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachineClusterInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -5549,7 +5552,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachineClusterInstancetype(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachineClusterInstancetypeWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachineClusterInstancetypeWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of VirtualMachineClusterPreference objects.
@@ -5593,17 +5596,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachineClusterPreference(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachineClusterPreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachineClusterPreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -5618,7 +5621,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachineClusterPreference(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachineClusterPreferenceWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachineClusterPreferenceWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of all VirtualMachineExport objects.
@@ -5662,17 +5665,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachineExportForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachineExportForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachineExportForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -5687,7 +5690,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachineExportForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachineExportForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachineExportForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of all VirtualMachine objects.
@@ -5731,17 +5734,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachineForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachineForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachineForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -5756,7 +5759,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachineForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachineForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachineForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of all VirtualMachineInstance objects.
@@ -5800,17 +5803,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachineInstanceForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachineInstanceForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachineInstanceForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -5825,7 +5828,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachineInstanceForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachineInstanceForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachineInstanceForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of all VirtualMachineInstanceMigration objects.
@@ -5869,17 +5872,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachineInstanceMigrationForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachineInstanceMigrationForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachineInstanceMigrationForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -5894,7 +5897,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachineInstanceMigrationForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachineInstanceMigrationForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachineInstanceMigrationForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of all VirtualMachineInstancePreset objects.
@@ -5938,17 +5941,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachineInstancePresetForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachineInstancePresetForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachineInstancePresetForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -5963,7 +5966,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachineInstancePresetForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachineInstancePresetForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachineInstancePresetForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of all VirtualMachineInstanceReplicaSet objects.
@@ -6007,17 +6010,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachineInstanceReplicaSetForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachineInstanceReplicaSetForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachineInstanceReplicaSetForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6032,7 +6035,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachineInstanceReplicaSetForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachineInstanceReplicaSetForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachineInstanceReplicaSetForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of all VirtualMachineInstancetype objects.
@@ -6076,17 +6079,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachineInstancetypeForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachineInstancetypeForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachineInstancetypeForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6101,7 +6104,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachineInstancetypeForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachineInstancetypeForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachineInstancetypeForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of all VirtualMachinePool objects.
@@ -6145,17 +6148,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachinePoolForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachinePoolForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachinePoolForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6170,7 +6173,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachinePoolForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachinePoolForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachinePoolForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of all VirtualMachinePreference objects.
@@ -6214,17 +6217,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachinePreferenceForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachinePreferenceForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachinePreferenceForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6239,7 +6242,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachinePreferenceForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachinePreferenceForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachinePreferenceForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of all VirtualMachineRestore objects.
@@ -6283,17 +6286,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachineRestoreForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachineRestoreForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachineRestoreForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6308,7 +6311,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachineRestoreForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachineRestoreForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachineRestoreForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of all VirtualMachineSnapshotContent objects.
@@ -6352,17 +6355,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachineSnapshotContentForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachineSnapshotContentForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachineSnapshotContentForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6377,7 +6380,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachineSnapshotContentForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachineSnapshotContentForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachineSnapshotContentForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a list of all VirtualMachineSnapshot objects.
@@ -6421,17 +6424,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.listVirtualMachineSnapshotForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.listVirtualMachineSnapshotForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.listVirtualMachineSnapshotForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6446,7 +6449,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     listVirtualMachineSnapshotForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.listVirtualMachineSnapshotForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.listVirtualMachineSnapshotForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a MigrationPolicy object.
@@ -6484,17 +6487,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchMigrationPolicy(name, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchMigrationPolicyWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchMigrationPolicyWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6503,7 +6506,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchMigrationPolicy(name, body, _options) {
-        return this.patchMigrationPolicyWithHttpInfo(name, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchMigrationPolicyWithHttpInfo(name, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a KubeVirt object.
@@ -6542,17 +6545,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchNamespacedKubeVirt(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchNamespacedKubeVirtWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchNamespacedKubeVirtWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6562,7 +6565,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchNamespacedKubeVirt(name, namespace, body, _options) {
-        return this.patchNamespacedKubeVirtWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchNamespacedKubeVirtWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachine object.
@@ -6601,17 +6604,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchNamespacedVirtualMachine(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchNamespacedVirtualMachineWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchNamespacedVirtualMachineWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6621,7 +6624,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchNamespacedVirtualMachine(name, namespace, body, _options) {
-        return this.patchNamespacedVirtualMachineWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchNamespacedVirtualMachineWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachineExport object.
@@ -6660,17 +6663,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchNamespacedVirtualMachineExport(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchNamespacedVirtualMachineExportWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchNamespacedVirtualMachineExportWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6680,7 +6683,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchNamespacedVirtualMachineExport(name, namespace, body, _options) {
-        return this.patchNamespacedVirtualMachineExportWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchNamespacedVirtualMachineExportWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachineInstance object.
@@ -6719,17 +6722,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchNamespacedVirtualMachineInstance(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6739,7 +6742,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchNamespacedVirtualMachineInstance(name, namespace, body, _options) {
-        return this.patchNamespacedVirtualMachineInstanceWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchNamespacedVirtualMachineInstanceWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachineInstanceMigration object.
@@ -6778,17 +6781,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchNamespacedVirtualMachineInstanceMigration(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6798,7 +6801,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchNamespacedVirtualMachineInstanceMigration(name, namespace, body, _options) {
-        return this.patchNamespacedVirtualMachineInstanceMigrationWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchNamespacedVirtualMachineInstanceMigrationWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachineInstancePreset object.
@@ -6837,17 +6840,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchNamespacedVirtualMachineInstancePreset(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6857,7 +6860,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchNamespacedVirtualMachineInstancePreset(name, namespace, body, _options) {
-        return this.patchNamespacedVirtualMachineInstancePresetWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchNamespacedVirtualMachineInstancePresetWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachineInstanceReplicaSet object.
@@ -6896,17 +6899,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchNamespacedVirtualMachineInstanceReplicaSet(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6916,7 +6919,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchNamespacedVirtualMachineInstanceReplicaSet(name, namespace, body, _options) {
-        return this.patchNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachineInstancetype object.
@@ -6955,17 +6958,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchNamespacedVirtualMachineInstancetype(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -6975,7 +6978,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchNamespacedVirtualMachineInstancetype(name, namespace, body, _options) {
-        return this.patchNamespacedVirtualMachineInstancetypeWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchNamespacedVirtualMachineInstancetypeWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachinePool object.
@@ -7014,17 +7017,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchNamespacedVirtualMachinePool(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7034,7 +7037,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchNamespacedVirtualMachinePool(name, namespace, body, _options) {
-        return this.patchNamespacedVirtualMachinePoolWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchNamespacedVirtualMachinePoolWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachinePreference object.
@@ -7073,17 +7076,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchNamespacedVirtualMachinePreference(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7093,7 +7096,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchNamespacedVirtualMachinePreference(name, namespace, body, _options) {
-        return this.patchNamespacedVirtualMachinePreferenceWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchNamespacedVirtualMachinePreferenceWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachineRestore object.
@@ -7132,17 +7135,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchNamespacedVirtualMachineRestore(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7152,7 +7155,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchNamespacedVirtualMachineRestore(name, namespace, body, _options) {
-        return this.patchNamespacedVirtualMachineRestoreWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchNamespacedVirtualMachineRestoreWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachineSnapshot object.
@@ -7191,17 +7194,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchNamespacedVirtualMachineSnapshot(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7211,7 +7214,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchNamespacedVirtualMachineSnapshot(name, namespace, body, _options) {
-        return this.patchNamespacedVirtualMachineSnapshotWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchNamespacedVirtualMachineSnapshotWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachineSnapshotContent object.
@@ -7250,17 +7253,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchNamespacedVirtualMachineSnapshotContent(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7270,7 +7273,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchNamespacedVirtualMachineSnapshotContent(name, namespace, body, _options) {
-        return this.patchNamespacedVirtualMachineSnapshotContentWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchNamespacedVirtualMachineSnapshotContentWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachineClone object.
@@ -7308,17 +7311,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchVirtualMachineClone(name, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchVirtualMachineCloneWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchVirtualMachineCloneWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7327,7 +7330,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchVirtualMachineClone(name, body, _options) {
-        return this.patchVirtualMachineCloneWithHttpInfo(name, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchVirtualMachineCloneWithHttpInfo(name, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachineClusterInstancetype object.
@@ -7365,17 +7368,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchVirtualMachineClusterInstancetype(name, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchVirtualMachineClusterInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchVirtualMachineClusterInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7384,7 +7387,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchVirtualMachineClusterInstancetype(name, body, _options) {
-        return this.patchVirtualMachineClusterInstancetypeWithHttpInfo(name, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchVirtualMachineClusterInstancetypeWithHttpInfo(name, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Patch a VirtualMachineClusterPreference object.
@@ -7422,17 +7425,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.patchVirtualMachineClusterPreference(name, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.patchVirtualMachineClusterPreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.patchVirtualMachineClusterPreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7441,7 +7444,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     patchVirtualMachineClusterPreference(name, body, _options) {
-        return this.patchVirtualMachineClusterPreferenceWithHttpInfo(name, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.patchVirtualMachineClusterPreferenceWithHttpInfo(name, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a MigrationPolicy object.
@@ -7480,17 +7483,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readMigrationPolicy(name, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readMigrationPolicyWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readMigrationPolicyWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7500,7 +7503,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readMigrationPolicy(name, exact, _export, _options) {
-        return this.readMigrationPolicyWithHttpInfo(name, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readMigrationPolicyWithHttpInfo(name, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a KubeVirt object.
@@ -7540,17 +7543,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readNamespacedKubeVirt(name, namespace, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readNamespacedKubeVirtWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readNamespacedKubeVirtWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7561,7 +7564,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readNamespacedKubeVirt(name, namespace, exact, _export, _options) {
-        return this.readNamespacedKubeVirtWithHttpInfo(name, namespace, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readNamespacedKubeVirtWithHttpInfo(name, namespace, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachine object.
@@ -7601,17 +7604,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readNamespacedVirtualMachine(name, namespace, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readNamespacedVirtualMachineWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readNamespacedVirtualMachineWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7622,7 +7625,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readNamespacedVirtualMachine(name, namespace, exact, _export, _options) {
-        return this.readNamespacedVirtualMachineWithHttpInfo(name, namespace, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readNamespacedVirtualMachineWithHttpInfo(name, namespace, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachineExport object.
@@ -7662,17 +7665,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readNamespacedVirtualMachineExport(name, namespace, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readNamespacedVirtualMachineExportWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readNamespacedVirtualMachineExportWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7683,7 +7686,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readNamespacedVirtualMachineExport(name, namespace, exact, _export, _options) {
-        return this.readNamespacedVirtualMachineExportWithHttpInfo(name, namespace, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readNamespacedVirtualMachineExportWithHttpInfo(name, namespace, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachineInstance object.
@@ -7723,17 +7726,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readNamespacedVirtualMachineInstance(name, namespace, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7744,7 +7747,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readNamespacedVirtualMachineInstance(name, namespace, exact, _export, _options) {
-        return this.readNamespacedVirtualMachineInstanceWithHttpInfo(name, namespace, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readNamespacedVirtualMachineInstanceWithHttpInfo(name, namespace, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachineInstanceMigration object.
@@ -7784,17 +7787,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readNamespacedVirtualMachineInstanceMigration(name, namespace, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7805,7 +7808,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readNamespacedVirtualMachineInstanceMigration(name, namespace, exact, _export, _options) {
-        return this.readNamespacedVirtualMachineInstanceMigrationWithHttpInfo(name, namespace, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readNamespacedVirtualMachineInstanceMigrationWithHttpInfo(name, namespace, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachineInstancePreset object.
@@ -7845,17 +7848,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readNamespacedVirtualMachineInstancePreset(name, namespace, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7866,7 +7869,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readNamespacedVirtualMachineInstancePreset(name, namespace, exact, _export, _options) {
-        return this.readNamespacedVirtualMachineInstancePresetWithHttpInfo(name, namespace, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readNamespacedVirtualMachineInstancePresetWithHttpInfo(name, namespace, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachineInstanceReplicaSet object.
@@ -7906,17 +7909,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readNamespacedVirtualMachineInstanceReplicaSet(name, namespace, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7927,7 +7930,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readNamespacedVirtualMachineInstanceReplicaSet(name, namespace, exact, _export, _options) {
-        return this.readNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(name, namespace, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(name, namespace, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachineInstancetype object.
@@ -7967,17 +7970,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readNamespacedVirtualMachineInstancetype(name, namespace, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -7988,7 +7991,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readNamespacedVirtualMachineInstancetype(name, namespace, exact, _export, _options) {
-        return this.readNamespacedVirtualMachineInstancetypeWithHttpInfo(name, namespace, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readNamespacedVirtualMachineInstancetypeWithHttpInfo(name, namespace, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachinePool object.
@@ -8028,17 +8031,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readNamespacedVirtualMachinePool(name, namespace, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8049,7 +8052,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readNamespacedVirtualMachinePool(name, namespace, exact, _export, _options) {
-        return this.readNamespacedVirtualMachinePoolWithHttpInfo(name, namespace, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readNamespacedVirtualMachinePoolWithHttpInfo(name, namespace, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachinePreference object.
@@ -8089,17 +8092,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readNamespacedVirtualMachinePreference(name, namespace, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8110,7 +8113,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readNamespacedVirtualMachinePreference(name, namespace, exact, _export, _options) {
-        return this.readNamespacedVirtualMachinePreferenceWithHttpInfo(name, namespace, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readNamespacedVirtualMachinePreferenceWithHttpInfo(name, namespace, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachineRestore object.
@@ -8150,17 +8153,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readNamespacedVirtualMachineRestore(name, namespace, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8171,7 +8174,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readNamespacedVirtualMachineRestore(name, namespace, exact, _export, _options) {
-        return this.readNamespacedVirtualMachineRestoreWithHttpInfo(name, namespace, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readNamespacedVirtualMachineRestoreWithHttpInfo(name, namespace, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachineSnapshot object.
@@ -8211,17 +8214,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readNamespacedVirtualMachineSnapshot(name, namespace, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8232,7 +8235,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readNamespacedVirtualMachineSnapshot(name, namespace, exact, _export, _options) {
-        return this.readNamespacedVirtualMachineSnapshotWithHttpInfo(name, namespace, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readNamespacedVirtualMachineSnapshotWithHttpInfo(name, namespace, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachineSnapshotContent object.
@@ -8272,17 +8275,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readNamespacedVirtualMachineSnapshotContent(name, namespace, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8293,7 +8296,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readNamespacedVirtualMachineSnapshotContent(name, namespace, exact, _export, _options) {
-        return this.readNamespacedVirtualMachineSnapshotContentWithHttpInfo(name, namespace, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readNamespacedVirtualMachineSnapshotContentWithHttpInfo(name, namespace, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachineClone object.
@@ -8332,17 +8335,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readVirtualMachineClone(name, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readVirtualMachineCloneWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readVirtualMachineCloneWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8352,7 +8355,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readVirtualMachineClone(name, exact, _export, _options) {
-        return this.readVirtualMachineCloneWithHttpInfo(name, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readVirtualMachineCloneWithHttpInfo(name, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachineClusterInstancetype object.
@@ -8391,17 +8394,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readVirtualMachineClusterInstancetype(name, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readVirtualMachineClusterInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readVirtualMachineClusterInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8411,7 +8414,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readVirtualMachineClusterInstancetype(name, exact, _export, _options) {
-        return this.readVirtualMachineClusterInstancetypeWithHttpInfo(name, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readVirtualMachineClusterInstancetypeWithHttpInfo(name, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a VirtualMachineClusterPreference object.
@@ -8450,17 +8453,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.readVirtualMachineClusterPreference(name, exact, _export, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.readVirtualMachineClusterPreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.readVirtualMachineClusterPreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8470,7 +8473,7 @@ export class ObservableDefaultApi {
      * @param [_export] Should this value be exported. Export strips fields that a user can not specify.
      */
     readVirtualMachineClusterPreference(name, exact, _export, _options) {
-        return this.readVirtualMachineClusterPreferenceWithHttpInfo(name, exact, _export, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.readVirtualMachineClusterPreferenceWithHttpInfo(name, exact, _export, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a MigrationPolicy object.
@@ -8508,17 +8511,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceMigrationPolicy(name, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceMigrationPolicyWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceMigrationPolicyWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8527,7 +8530,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceMigrationPolicy(name, body, _options) {
-        return this.replaceMigrationPolicyWithHttpInfo(name, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceMigrationPolicyWithHttpInfo(name, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a KubeVirt object.
@@ -8566,17 +8569,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceNamespacedKubeVirt(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceNamespacedKubeVirtWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceNamespacedKubeVirtWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8586,7 +8589,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceNamespacedKubeVirt(name, namespace, body, _options) {
-        return this.replaceNamespacedKubeVirtWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceNamespacedKubeVirtWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachine object.
@@ -8625,17 +8628,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceNamespacedVirtualMachine(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8645,7 +8648,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceNamespacedVirtualMachine(name, namespace, body, _options) {
-        return this.replaceNamespacedVirtualMachineWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceNamespacedVirtualMachineWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachineExport object.
@@ -8684,17 +8687,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceNamespacedVirtualMachineExport(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineExportWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineExportWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8704,7 +8707,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceNamespacedVirtualMachineExport(name, namespace, body, _options) {
-        return this.replaceNamespacedVirtualMachineExportWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceNamespacedVirtualMachineExportWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachineInstance object.
@@ -8743,17 +8746,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceNamespacedVirtualMachineInstance(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8763,7 +8766,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceNamespacedVirtualMachineInstance(name, namespace, body, _options) {
-        return this.replaceNamespacedVirtualMachineInstanceWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceNamespacedVirtualMachineInstanceWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachineInstanceMigration object.
@@ -8802,17 +8805,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceNamespacedVirtualMachineInstanceMigration(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8822,7 +8825,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceNamespacedVirtualMachineInstanceMigration(name, namespace, body, _options) {
-        return this.replaceNamespacedVirtualMachineInstanceMigrationWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceNamespacedVirtualMachineInstanceMigrationWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachineInstancePreset object.
@@ -8861,17 +8864,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceNamespacedVirtualMachineInstancePreset(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8881,7 +8884,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceNamespacedVirtualMachineInstancePreset(name, namespace, body, _options) {
-        return this.replaceNamespacedVirtualMachineInstancePresetWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceNamespacedVirtualMachineInstancePresetWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachineInstanceReplicaSet object.
@@ -8920,17 +8923,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceNamespacedVirtualMachineInstanceReplicaSet(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8940,7 +8943,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceNamespacedVirtualMachineInstanceReplicaSet(name, namespace, body, _options) {
-        return this.replaceNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachineInstancetype object.
@@ -8979,17 +8982,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceNamespacedVirtualMachineInstancetype(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -8999,7 +9002,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceNamespacedVirtualMachineInstancetype(name, namespace, body, _options) {
-        return this.replaceNamespacedVirtualMachineInstancetypeWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceNamespacedVirtualMachineInstancetypeWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachinePool object.
@@ -9038,17 +9041,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceNamespacedVirtualMachinePool(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -9058,7 +9061,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceNamespacedVirtualMachinePool(name, namespace, body, _options) {
-        return this.replaceNamespacedVirtualMachinePoolWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceNamespacedVirtualMachinePoolWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachinePreference object.
@@ -9097,17 +9100,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceNamespacedVirtualMachinePreference(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -9117,7 +9120,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceNamespacedVirtualMachinePreference(name, namespace, body, _options) {
-        return this.replaceNamespacedVirtualMachinePreferenceWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceNamespacedVirtualMachinePreferenceWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachineRestore object.
@@ -9156,17 +9159,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceNamespacedVirtualMachineRestore(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -9176,7 +9179,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceNamespacedVirtualMachineRestore(name, namespace, body, _options) {
-        return this.replaceNamespacedVirtualMachineRestoreWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceNamespacedVirtualMachineRestoreWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachineSnapshot object.
@@ -9215,17 +9218,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceNamespacedVirtualMachineSnapshot(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -9235,7 +9238,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceNamespacedVirtualMachineSnapshot(name, namespace, body, _options) {
-        return this.replaceNamespacedVirtualMachineSnapshotWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceNamespacedVirtualMachineSnapshotWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachineSnapshotContent object.
@@ -9274,17 +9277,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceNamespacedVirtualMachineSnapshotContent(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -9294,7 +9297,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceNamespacedVirtualMachineSnapshotContent(name, namespace, body, _options) {
-        return this.replaceNamespacedVirtualMachineSnapshotContentWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceNamespacedVirtualMachineSnapshotContentWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachineClone object.
@@ -9332,17 +9335,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceVirtualMachineClone(name, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceVirtualMachineCloneWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceVirtualMachineCloneWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -9351,7 +9354,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceVirtualMachineClone(name, body, _options) {
-        return this.replaceVirtualMachineCloneWithHttpInfo(name, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceVirtualMachineCloneWithHttpInfo(name, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachineClusterInstancetype object.
@@ -9389,17 +9392,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceVirtualMachineClusterInstancetype(name, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceVirtualMachineClusterInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceVirtualMachineClusterInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -9408,7 +9411,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceVirtualMachineClusterInstancetype(name, body, _options) {
-        return this.replaceVirtualMachineClusterInstancetypeWithHttpInfo(name, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceVirtualMachineClusterInstancetypeWithHttpInfo(name, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Update a VirtualMachineClusterPreference object.
@@ -9446,17 +9449,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.replaceVirtualMachineClusterPreference(name, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.replaceVirtualMachineClusterPreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.replaceVirtualMachineClusterPreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -9465,7 +9468,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     replaceVirtualMachineClusterPreference(name, body, _options) {
-        return this.replaceVirtualMachineClusterPreferenceWithHttpInfo(name, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.replaceVirtualMachineClusterPreferenceWithHttpInfo(name, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Health endpoint
@@ -9501,24 +9504,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1CheckHealth(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1CheckHealthWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1CheckHealthWithHttpInfo(rsp)));
         }));
     }
     /**
      * Health endpoint
      */
     v1CheckHealth(_options) {
-        return this.v1CheckHealthWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1CheckHealthWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection to a serial console on the specified VirtualMachineInstance.
@@ -9556,17 +9559,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1Console(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1ConsoleWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1ConsoleWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -9575,7 +9578,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1Console(name, namespace, _options) {
-        return this.v1ConsoleWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1ConsoleWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Expands instancetype and preference into the passed VirtualMachine object.
@@ -9612,17 +9615,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1ExpandSpec(namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1ExpandSpecWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1ExpandSpecWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -9630,7 +9633,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1ExpandSpec(namespace, _options) {
-        return this.v1ExpandSpecWithHttpInfo(namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1ExpandSpecWithHttpInfo(namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get list of active filesystems on guest machine via guest agent
@@ -9668,17 +9671,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1Filesystemlist(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1FilesystemlistWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1FilesystemlistWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -9687,7 +9690,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1Filesystemlist(name, namespace, _options) {
-        return this.v1FilesystemlistWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1FilesystemlistWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Freeze a VirtualMachineInstance object.
@@ -9726,17 +9729,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1Freeze(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1FreezeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1FreezeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -9746,7 +9749,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1Freeze(name, namespace, body, _options) {
-        return this.v1FreezeWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1FreezeWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a KubeVirt API Group
@@ -9782,24 +9785,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1GetSubAPIGroup(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1GetSubAPIGroupWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1GetSubAPIGroupWithHttpInfo(rsp)));
         }));
     }
     /**
      * Get a KubeVirt API Group
      */
     v1GetSubAPIGroup(_options) {
-        return this.v1GetSubAPIGroupWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1GetSubAPIGroupWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      */
@@ -9834,23 +9837,23 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1Guestfs(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1GuestfsWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1GuestfsWithHttpInfo(rsp)));
         }));
     }
     /**
      */
     v1Guestfs(_options) {
-        return this.v1GuestfsWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1GuestfsWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get guest agent os information
@@ -9888,17 +9891,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1Guestosinfo(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1GuestosinfoWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1GuestosinfoWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -9907,7 +9910,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1Guestosinfo(name, namespace, _options) {
-        return this.v1GuestosinfoWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1GuestosinfoWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Dumps a VirtualMachineInstance memory.
@@ -9946,17 +9949,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1MemoryDump(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1MemoryDumpWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1MemoryDumpWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -9966,7 +9969,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1MemoryDump(name, namespace, body, _options) {
-        return this.v1MemoryDumpWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1MemoryDumpWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Migrate a running VirtualMachine to another node.
@@ -10005,17 +10008,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1Migrate(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1MigrateWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1MigrateWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10025,7 +10028,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1Migrate(name, namespace, body, _options) {
-        return this.v1MigrateWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1MigrateWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Pause a VirtualMachineInstance object.
@@ -10064,17 +10067,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1Pause(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1PauseWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1PauseWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10084,7 +10087,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1Pause(name, namespace, body, _options) {
-        return this.v1PauseWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1PauseWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Remove memory dump association.
@@ -10122,17 +10125,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1RemoveMemoryDump(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1RemoveMemoryDumpWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1RemoveMemoryDumpWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10141,7 +10144,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1RemoveMemoryDump(name, namespace, _options) {
-        return this.v1RemoveMemoryDumpWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1RemoveMemoryDumpWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Restart a VirtualMachine object.
@@ -10180,17 +10183,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1Restart(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1RestartWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1RestartWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10200,7 +10203,7 @@ export class ObservableDefaultApi {
      * @param [body]
      */
     v1Restart(name, namespace, body, _options) {
-        return this.v1RestartWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1RestartWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Fetch SEV certificate chain from the node where Virtual Machine is scheduled
@@ -10238,17 +10241,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1SEVFetchCertChain(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1SEVFetchCertChainWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1SEVFetchCertChainWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10257,7 +10260,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1SEVFetchCertChain(name, namespace, _options) {
-        return this.v1SEVFetchCertChainWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1SEVFetchCertChainWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Inject SEV launch secret into a Virtual Machine
@@ -10296,17 +10299,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1SEVInjectLaunchSecret(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1SEVInjectLaunchSecretWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1SEVInjectLaunchSecretWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10316,7 +10319,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1SEVInjectLaunchSecret(name, namespace, body, _options) {
-        return this.v1SEVInjectLaunchSecretWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1SEVInjectLaunchSecretWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Query SEV launch measurement from a Virtual Machine
@@ -10354,17 +10357,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1SEVQueryLaunchMeasurement(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1SEVQueryLaunchMeasurementWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1SEVQueryLaunchMeasurementWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10373,7 +10376,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1SEVQueryLaunchMeasurement(name, namespace, _options) {
-        return this.v1SEVQueryLaunchMeasurementWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1SEVQueryLaunchMeasurementWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Setup SEV session parameters for a Virtual Machine
@@ -10412,17 +10415,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1SEVSetupSession(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1SEVSetupSessionWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1SEVSetupSessionWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10432,7 +10435,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1SEVSetupSession(name, namespace, body, _options) {
-        return this.v1SEVSetupSessionWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1SEVSetupSessionWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Soft reboot a VirtualMachineInstance object.
@@ -10470,17 +10473,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1SoftReboot(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1SoftRebootWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1SoftRebootWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10489,7 +10492,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1SoftReboot(name, namespace, _options) {
-        return this.v1SoftRebootWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1SoftRebootWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Start a VirtualMachine object.
@@ -10528,17 +10531,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1Start(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1StartWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1StartWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10548,7 +10551,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1Start(name, namespace, body, _options) {
-        return this.v1StartWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1StartWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Stop a VirtualMachine object.
@@ -10587,17 +10590,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1Stop(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1StopWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1StopWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10607,7 +10610,7 @@ export class ObservableDefaultApi {
      * @param [body]
      */
     v1Stop(name, namespace, body, _options) {
-        return this.v1StopWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1StopWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Unfreeze a VirtualMachineInstance object.
@@ -10645,17 +10648,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1Unfreeze(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1UnfreezeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1UnfreezeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10664,7 +10667,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1Unfreeze(name, namespace, _options) {
-        return this.v1UnfreezeWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1UnfreezeWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Unpause a VirtualMachineInstance object.
@@ -10703,17 +10706,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1Unpause(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1UnpauseWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1UnpauseWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10723,7 +10726,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1Unpause(name, namespace, body, _options) {
-        return this.v1UnpauseWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1UnpauseWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get list of active users via guest agent
@@ -10761,17 +10764,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1Userlist(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1UserlistWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1UserlistWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10780,7 +10783,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1Userlist(name, namespace, _options) {
-        return this.v1UserlistWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1UserlistWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection to connect to VNC on the specified VirtualMachineInstance.
@@ -10818,17 +10821,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1VNC(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1VNCWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1VNCWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10837,7 +10840,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1VNC(name, namespace, _options) {
-        return this.v1VNCWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1VNCWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a PNG VNC screenshot of the specified VirtualMachineInstance.
@@ -10876,17 +10879,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1VNCScreenshot(name, namespace, moveCursor, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1VNCScreenshotWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1VNCScreenshotWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10896,7 +10899,7 @@ export class ObservableDefaultApi {
      * @param [moveCursor] Move the cursor on the VNC display to wake up the screen
      */
     v1VNCScreenshot(name, namespace, moveCursor, _options) {
-        return this.v1VNCScreenshotWithHttpInfo(name, namespace, moveCursor, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1VNCScreenshotWithHttpInfo(name, namespace, moveCursor, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection forwarding traffic to the specified VirtualMachineInstance and port via VSOCK.
@@ -10936,17 +10939,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1VSOCK(name, namespace, port, tls, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1VSOCKWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1VSOCKWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -10957,7 +10960,7 @@ export class ObservableDefaultApi {
      * @param [tls] Weather to request a TLS encrypted session from the VSOCK application.
      */
     v1VSOCK(name, namespace, port, tls, _options) {
-        return this.v1VSOCKWithHttpInfo(name, namespace, port, tls, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1VSOCKWithHttpInfo(name, namespace, port, tls, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      */
@@ -10992,23 +10995,23 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1Version(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1VersionWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1VersionWithHttpInfo(rsp)));
         }));
     }
     /**
      */
     v1Version(_options) {
-        return this.v1VersionWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1VersionWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Health endpoint
@@ -11044,24 +11047,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3CheckHealth(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3CheckHealthWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3CheckHealthWithHttpInfo(rsp)));
         }));
     }
     /**
      * Health endpoint
      */
     v1alpha3CheckHealth(_options) {
-        return this.v1alpha3CheckHealthWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3CheckHealthWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection to a serial console on the specified VirtualMachineInstance.
@@ -11099,17 +11102,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3Console(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3ConsoleWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3ConsoleWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11118,7 +11121,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1alpha3Console(name, namespace, _options) {
-        return this.v1alpha3ConsoleWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3ConsoleWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Expands instancetype and preference into the passed VirtualMachine object.
@@ -11155,17 +11158,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3ExpandSpec(namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3ExpandSpecWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3ExpandSpecWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11173,7 +11176,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1alpha3ExpandSpec(namespace, _options) {
-        return this.v1alpha3ExpandSpecWithHttpInfo(namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3ExpandSpecWithHttpInfo(namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get list of active filesystems on guest machine via guest agent
@@ -11211,17 +11214,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3Filesystemlist(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3FilesystemlistWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3FilesystemlistWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11230,7 +11233,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1alpha3Filesystemlist(name, namespace, _options) {
-        return this.v1alpha3FilesystemlistWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3FilesystemlistWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Freeze a VirtualMachineInstance object.
@@ -11269,17 +11272,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3Freeze(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3FreezeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3FreezeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11289,7 +11292,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1alpha3Freeze(name, namespace, body, _options) {
-        return this.v1alpha3FreezeWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3FreezeWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      */
@@ -11324,23 +11327,23 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3Guestfs(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3GuestfsWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3GuestfsWithHttpInfo(rsp)));
         }));
     }
     /**
      */
     v1alpha3Guestfs(_options) {
-        return this.v1alpha3GuestfsWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3GuestfsWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get guest agent os information
@@ -11378,17 +11381,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3Guestosinfo(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3GuestosinfoWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3GuestosinfoWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11397,7 +11400,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1alpha3Guestosinfo(name, namespace, _options) {
-        return this.v1alpha3GuestosinfoWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3GuestosinfoWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Dumps a VirtualMachineInstance memory.
@@ -11436,17 +11439,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3MemoryDump(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3MemoryDumpWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3MemoryDumpWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11456,7 +11459,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1alpha3MemoryDump(name, namespace, body, _options) {
-        return this.v1alpha3MemoryDumpWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3MemoryDumpWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Migrate a running VirtualMachine to another node.
@@ -11495,17 +11498,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3Migrate(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3MigrateWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3MigrateWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11515,7 +11518,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1alpha3Migrate(name, namespace, body, _options) {
-        return this.v1alpha3MigrateWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3MigrateWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Pause a VirtualMachineInstance object.
@@ -11554,17 +11557,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3Pause(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3PauseWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3PauseWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11574,7 +11577,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1alpha3Pause(name, namespace, body, _options) {
-        return this.v1alpha3PauseWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3PauseWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Remove memory dump association.
@@ -11612,17 +11615,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3RemoveMemoryDump(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3RemoveMemoryDumpWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3RemoveMemoryDumpWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11631,7 +11634,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1alpha3RemoveMemoryDump(name, namespace, _options) {
-        return this.v1alpha3RemoveMemoryDumpWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3RemoveMemoryDumpWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Restart a VirtualMachine object.
@@ -11670,17 +11673,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3Restart(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3RestartWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3RestartWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11690,7 +11693,7 @@ export class ObservableDefaultApi {
      * @param [body]
      */
     v1alpha3Restart(name, namespace, body, _options) {
-        return this.v1alpha3RestartWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3RestartWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Fetch SEV certificate chain from the node where Virtual Machine is scheduled
@@ -11728,17 +11731,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3SEVFetchCertChain(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3SEVFetchCertChainWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3SEVFetchCertChainWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11747,7 +11750,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1alpha3SEVFetchCertChain(name, namespace, _options) {
-        return this.v1alpha3SEVFetchCertChainWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3SEVFetchCertChainWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Inject SEV launch secret into a Virtual Machine
@@ -11786,17 +11789,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3SEVInjectLaunchSecret(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3SEVInjectLaunchSecretWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3SEVInjectLaunchSecretWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11806,7 +11809,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1alpha3SEVInjectLaunchSecret(name, namespace, body, _options) {
-        return this.v1alpha3SEVInjectLaunchSecretWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3SEVInjectLaunchSecretWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Query SEV launch measurement from a Virtual Machine
@@ -11844,17 +11847,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3SEVQueryLaunchMeasurement(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3SEVQueryLaunchMeasurementWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3SEVQueryLaunchMeasurementWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11863,7 +11866,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1alpha3SEVQueryLaunchMeasurement(name, namespace, _options) {
-        return this.v1alpha3SEVQueryLaunchMeasurementWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3SEVQueryLaunchMeasurementWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Setup SEV session parameters for a Virtual Machine
@@ -11902,17 +11905,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3SEVSetupSession(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3SEVSetupSessionWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3SEVSetupSessionWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11922,7 +11925,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1alpha3SEVSetupSession(name, namespace, body, _options) {
-        return this.v1alpha3SEVSetupSessionWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3SEVSetupSessionWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Soft reboot a VirtualMachineInstance object.
@@ -11960,17 +11963,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3SoftReboot(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3SoftRebootWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3SoftRebootWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -11979,7 +11982,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1alpha3SoftReboot(name, namespace, _options) {
-        return this.v1alpha3SoftRebootWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3SoftRebootWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Start a VirtualMachine object.
@@ -12018,17 +12021,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3Start(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3StartWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3StartWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -12038,7 +12041,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1alpha3Start(name, namespace, body, _options) {
-        return this.v1alpha3StartWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3StartWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Stop a VirtualMachine object.
@@ -12077,17 +12080,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3Stop(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3StopWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3StopWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -12097,7 +12100,7 @@ export class ObservableDefaultApi {
      * @param [body]
      */
     v1alpha3Stop(name, namespace, body, _options) {
-        return this.v1alpha3StopWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3StopWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Unfreeze a VirtualMachineInstance object.
@@ -12135,17 +12138,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3Unfreeze(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3UnfreezeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3UnfreezeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -12154,7 +12157,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1alpha3Unfreeze(name, namespace, _options) {
-        return this.v1alpha3UnfreezeWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3UnfreezeWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Unpause a VirtualMachineInstance object.
@@ -12193,17 +12196,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3Unpause(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3UnpauseWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3UnpauseWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -12213,7 +12216,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1alpha3Unpause(name, namespace, body, _options) {
-        return this.v1alpha3UnpauseWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3UnpauseWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get list of active users via guest agent
@@ -12251,17 +12254,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3Userlist(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3UserlistWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3UserlistWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -12270,7 +12273,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1alpha3Userlist(name, namespace, _options) {
-        return this.v1alpha3UserlistWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3UserlistWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection to connect to VNC on the specified VirtualMachineInstance.
@@ -12308,17 +12311,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3VNC(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3VNCWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3VNCWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -12327,7 +12330,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1alpha3VNC(name, namespace, _options) {
-        return this.v1alpha3VNCWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3VNCWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a PNG VNC screenshot of the specified VirtualMachineInstance.
@@ -12366,17 +12369,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3VNCScreenshot(name, namespace, moveCursor, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3VNCScreenshotWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3VNCScreenshotWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -12386,7 +12389,7 @@ export class ObservableDefaultApi {
      * @param [moveCursor] Move the cursor on the VNC display to wake up the screen
      */
     v1alpha3VNCScreenshot(name, namespace, moveCursor, _options) {
-        return this.v1alpha3VNCScreenshotWithHttpInfo(name, namespace, moveCursor, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3VNCScreenshotWithHttpInfo(name, namespace, moveCursor, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection forwarding traffic to the specified VirtualMachineInstance and port via VSOCK.
@@ -12426,17 +12429,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3VSOCK(name, namespace, port, tls, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3VSOCKWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3VSOCKWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -12447,7 +12450,7 @@ export class ObservableDefaultApi {
      * @param [tls] Weather to request a TLS encrypted session from the VSOCK application.
      */
     v1alpha3VSOCK(name, namespace, port, tls, _options) {
-        return this.v1alpha3VSOCKWithHttpInfo(name, namespace, port, tls, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3VSOCKWithHttpInfo(name, namespace, port, tls, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      */
@@ -12482,23 +12485,23 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3Version(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3VersionWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3VersionWithHttpInfo(rsp)));
         }));
     }
     /**
      */
     v1alpha3Version(_options) {
-        return this.v1alpha3VersionWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3VersionWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      */
@@ -12533,23 +12536,23 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3dumpClusterProfiler(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3dumpClusterProfilerWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3dumpClusterProfilerWithHttpInfo(rsp)));
         }));
     }
     /**
      */
     v1alpha3dumpClusterProfiler(_options) {
-        return this.v1alpha3dumpClusterProfilerWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3dumpClusterProfilerWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a KubeVirt API resources
@@ -12585,24 +12588,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3getAPISubResources(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3getAPISubResourcesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3getAPISubResourcesWithHttpInfo(rsp)));
         }));
     }
     /**
      * Get a KubeVirt API resources
      */
     v1alpha3getAPISubResources(_options) {
-        return this.v1alpha3getAPISubResourcesWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3getAPISubResourcesWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      */
@@ -12637,23 +12640,23 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3startClusterProfiler(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3startClusterProfilerWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3startClusterProfilerWithHttpInfo(rsp)));
         }));
     }
     /**
      */
     v1alpha3startClusterProfiler(_options) {
-        return this.v1alpha3startClusterProfilerWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3startClusterProfilerWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      */
@@ -12688,23 +12691,23 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3stopClusterProfiler(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3stopClusterProfilerWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3stopClusterProfilerWithHttpInfo(rsp)));
         }));
     }
     /**
      */
     v1alpha3stopClusterProfiler(_options) {
-        return this.v1alpha3stopClusterProfilerWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3stopClusterProfilerWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection to connect to USB device on the specified VirtualMachineInstance.
@@ -12742,17 +12745,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3usbredir(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3usbredirWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3usbredirWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -12761,7 +12764,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1alpha3usbredir(name, namespace, _options) {
-        return this.v1alpha3usbredirWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3usbredirWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Add a volume and disk to a running Virtual Machine.
@@ -12800,17 +12803,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3vmAddvolume(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3vmAddvolumeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3vmAddvolumeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -12820,7 +12823,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1alpha3vmAddvolume(name, namespace, body, _options) {
-        return this.v1alpha3vmAddvolumeWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3vmAddvolumeWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get VirtualMachine object with expanded instancetype and preference.
@@ -12858,17 +12861,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3vmExpandSpec(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3vmExpandSpecWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3vmExpandSpecWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -12877,7 +12880,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1alpha3vmExpandSpec(name, namespace, _options) {
-        return this.v1alpha3vmExpandSpecWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3vmExpandSpecWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection forwarding traffic to the running VMI for the specified VirtualMachine and port.
@@ -12916,17 +12919,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3vmPortForward(name, namespace, port, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3vmPortForwardWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3vmPortForwardWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -12936,7 +12939,7 @@ export class ObservableDefaultApi {
      * @param port The target port for portforward on the VirtualMachineInstance.
      */
     v1alpha3vmPortForward(name, namespace, port, _options) {
-        return this.v1alpha3vmPortForwardWithHttpInfo(name, namespace, port, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3vmPortForwardWithHttpInfo(name, namespace, port, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection forwarding traffic of the specified protocol (either tcp or udp) to the specified VirtualMachine and port.
@@ -12976,17 +12979,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3vmPortForwardWithProtocol(name, namespace, port, protocol, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3vmPortForwardWithProtocolWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3vmPortForwardWithProtocolWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -12997,7 +13000,7 @@ export class ObservableDefaultApi {
      * @param protocol The protocol for portforward on the VirtualMachineInstance.
      */
     v1alpha3vmPortForwardWithProtocol(name, namespace, port, protocol, _options) {
-        return this.v1alpha3vmPortForwardWithProtocolWithHttpInfo(name, namespace, port, protocol, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3vmPortForwardWithProtocolWithHttpInfo(name, namespace, port, protocol, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Removes a volume and disk from a running Virtual Machine.
@@ -13036,17 +13039,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3vmRemovevolume(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3vmRemovevolumeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3vmRemovevolumeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -13056,7 +13059,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1alpha3vmRemovevolume(name, namespace, body, _options) {
-        return this.v1alpha3vmRemovevolumeWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3vmRemovevolumeWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Add a volume and disk to a running Virtual Machine Instance
@@ -13095,17 +13098,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3vmiAddvolume(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3vmiAddvolumeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3vmiAddvolumeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -13115,7 +13118,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1alpha3vmiAddvolume(name, namespace, body, _options) {
-        return this.v1alpha3vmiAddvolumeWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3vmiAddvolumeWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection forwarding traffic to the specified VirtualMachineInstance and port.
@@ -13154,17 +13157,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3vmiPortForward(name, namespace, port, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3vmiPortForwardWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3vmiPortForwardWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -13174,7 +13177,7 @@ export class ObservableDefaultApi {
      * @param port The target port for portforward on the VirtualMachineInstance.
      */
     v1alpha3vmiPortForward(name, namespace, port, _options) {
-        return this.v1alpha3vmiPortForwardWithHttpInfo(name, namespace, port, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3vmiPortForwardWithHttpInfo(name, namespace, port, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection forwarding traffic of the specified protocol (either tcp or udp) to the specified VirtualMachineInstance and port.
@@ -13214,17 +13217,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3vmiPortForwardWithProtocol(name, namespace, port, protocol, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3vmiPortForwardWithProtocolWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3vmiPortForwardWithProtocolWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -13235,7 +13238,7 @@ export class ObservableDefaultApi {
      * @param protocol The protocol for portforward on the VirtualMachineInstance.
      */
     v1alpha3vmiPortForwardWithProtocol(name, namespace, port, protocol, _options) {
-        return this.v1alpha3vmiPortForwardWithProtocolWithHttpInfo(name, namespace, port, protocol, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3vmiPortForwardWithProtocolWithHttpInfo(name, namespace, port, protocol, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Removes a volume and disk from a running Virtual Machine Instance
@@ -13274,17 +13277,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1alpha3vmiRemovevolume(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1alpha3vmiRemovevolumeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1alpha3vmiRemovevolumeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -13294,7 +13297,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1alpha3vmiRemovevolume(name, namespace, body, _options) {
-        return this.v1alpha3vmiRemovevolumeWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1alpha3vmiRemovevolumeWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      */
@@ -13329,23 +13332,23 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1dumpClusterProfiler(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1dumpClusterProfilerWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1dumpClusterProfilerWithHttpInfo(rsp)));
         }));
     }
     /**
      */
     v1dumpClusterProfiler(_options) {
-        return this.v1dumpClusterProfilerWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1dumpClusterProfilerWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get a KubeVirt API resources
@@ -13381,24 +13384,24 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1getAPISubResources(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1getAPISubResourcesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1getAPISubResourcesWithHttpInfo(rsp)));
         }));
     }
     /**
      * Get a KubeVirt API resources
      */
     v1getAPISubResources(_options) {
-        return this.v1getAPISubResourcesWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1getAPISubResourcesWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      */
@@ -13433,23 +13436,23 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1startClusterProfiler(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1startClusterProfilerWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1startClusterProfilerWithHttpInfo(rsp)));
         }));
     }
     /**
      */
     v1startClusterProfiler(_options) {
-        return this.v1startClusterProfilerWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1startClusterProfilerWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      */
@@ -13484,23 +13487,23 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1stopClusterProfiler(_config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1stopClusterProfilerWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1stopClusterProfilerWithHttpInfo(rsp)));
         }));
     }
     /**
      */
     v1stopClusterProfiler(_options) {
-        return this.v1stopClusterProfilerWithHttpInfo(_options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1stopClusterProfilerWithHttpInfo(_options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection to connect to USB device on the specified VirtualMachineInstance.
@@ -13538,17 +13541,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1usbredir(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1usbredirWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1usbredirWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -13557,7 +13560,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1usbredir(name, namespace, _options) {
-        return this.v1usbredirWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1usbredirWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Add a volume and disk to a running Virtual Machine.
@@ -13596,17 +13599,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1vmAddvolume(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1vmAddvolumeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1vmAddvolumeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -13616,7 +13619,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1vmAddvolume(name, namespace, body, _options) {
-        return this.v1vmAddvolumeWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1vmAddvolumeWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Get VirtualMachine object with expanded instancetype and preference.
@@ -13654,17 +13657,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1vmExpandSpec(name, namespace, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1vmExpandSpecWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1vmExpandSpecWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -13673,7 +13676,7 @@ export class ObservableDefaultApi {
      * @param namespace Object name and auth scope, such as for teams and projects
      */
     v1vmExpandSpec(name, namespace, _options) {
-        return this.v1vmExpandSpecWithHttpInfo(name, namespace, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1vmExpandSpecWithHttpInfo(name, namespace, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection forwarding traffic to the running VMI for the specified VirtualMachine and port.
@@ -13712,17 +13715,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1vmPortForward(name, namespace, port, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1vmPortForwardWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1vmPortForwardWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -13732,7 +13735,7 @@ export class ObservableDefaultApi {
      * @param port The target port for portforward on the VirtualMachineInstance.
      */
     v1vmPortForward(name, namespace, port, _options) {
-        return this.v1vmPortForwardWithHttpInfo(name, namespace, port, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1vmPortForwardWithHttpInfo(name, namespace, port, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection forwarding traffic of the specified protocol (either tcp or udp) to the specified VirtualMachine and port.
@@ -13772,17 +13775,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1vmPortForwardWithProtocol(name, namespace, port, protocol, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1vmPortForwardWithProtocolWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1vmPortForwardWithProtocolWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -13793,7 +13796,7 @@ export class ObservableDefaultApi {
      * @param protocol The protocol for portforward on the VirtualMachineInstance.
      */
     v1vmPortForwardWithProtocol(name, namespace, port, protocol, _options) {
-        return this.v1vmPortForwardWithProtocolWithHttpInfo(name, namespace, port, protocol, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1vmPortForwardWithProtocolWithHttpInfo(name, namespace, port, protocol, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Removes a volume and disk from a running Virtual Machine.
@@ -13832,17 +13835,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1vmRemovevolume(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1vmRemovevolumeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1vmRemovevolumeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -13852,7 +13855,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1vmRemovevolume(name, namespace, body, _options) {
-        return this.v1vmRemovevolumeWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1vmRemovevolumeWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Add a volume and disk to a running Virtual Machine Instance
@@ -13891,17 +13894,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1vmiAddvolume(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1vmiAddvolumeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1vmiAddvolumeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -13911,7 +13914,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1vmiAddvolume(name, namespace, body, _options) {
-        return this.v1vmiAddvolumeWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1vmiAddvolumeWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection forwarding traffic to the specified VirtualMachineInstance and port.
@@ -13950,17 +13953,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1vmiPortForward(name, namespace, port, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1vmiPortForwardWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1vmiPortForwardWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -13970,7 +13973,7 @@ export class ObservableDefaultApi {
      * @param port The target port for portforward on the VirtualMachineInstance.
      */
     v1vmiPortForward(name, namespace, port, _options) {
-        return this.v1vmiPortForwardWithHttpInfo(name, namespace, port, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1vmiPortForwardWithHttpInfo(name, namespace, port, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Open a websocket connection forwarding traffic of the specified protocol (either tcp or udp) to the specified VirtualMachineInstance and port.
@@ -14010,17 +14013,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1vmiPortForwardWithProtocol(name, namespace, port, protocol, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1vmiPortForwardWithProtocolWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1vmiPortForwardWithProtocolWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -14031,7 +14034,7 @@ export class ObservableDefaultApi {
      * @param protocol The protocol for portforward on the VirtualMachineInstance.
      */
     v1vmiPortForwardWithProtocol(name, namespace, port, protocol, _options) {
-        return this.v1vmiPortForwardWithProtocolWithHttpInfo(name, namespace, port, protocol, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1vmiPortForwardWithProtocolWithHttpInfo(name, namespace, port, protocol, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Removes a volume and disk from a running Virtual Machine Instance
@@ -14070,17 +14073,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.v1vmiRemovevolume(name, namespace, body, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.v1vmiRemovevolumeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.v1vmiRemovevolumeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -14090,7 +14093,7 @@ export class ObservableDefaultApi {
      * @param body
      */
     v1vmiRemovevolume(name, namespace, body, _options) {
-        return this.v1vmiRemovevolumeWithHttpInfo(name, namespace, body, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.v1vmiRemovevolumeWithHttpInfo(name, namespace, body, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a KubeVirtList object.
@@ -14134,17 +14137,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchKubeVirtListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchKubeVirtListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchKubeVirtListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -14159,7 +14162,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchKubeVirtListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchKubeVirtListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchKubeVirtListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a MigrationPolicyList object.
@@ -14203,17 +14206,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchMigrationPolicyListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchMigrationPolicyListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchMigrationPolicyListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -14228,7 +14231,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchMigrationPolicyListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchMigrationPolicyListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchMigrationPolicyListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a KubeVirt object.
@@ -14273,17 +14276,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchNamespacedKubeVirt(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchNamespacedKubeVirtWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchNamespacedKubeVirtWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -14299,7 +14302,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchNamespacedKubeVirt(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchNamespacedKubeVirtWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchNamespacedKubeVirtWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachine object.
@@ -14344,17 +14347,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchNamespacedVirtualMachine(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchNamespacedVirtualMachineWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchNamespacedVirtualMachineWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -14370,7 +14373,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchNamespacedVirtualMachine(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchNamespacedVirtualMachineWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchNamespacedVirtualMachineWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineExport object.
@@ -14415,17 +14418,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchNamespacedVirtualMachineExport(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchNamespacedVirtualMachineExportWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchNamespacedVirtualMachineExportWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -14441,7 +14444,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchNamespacedVirtualMachineExport(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchNamespacedVirtualMachineExportWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchNamespacedVirtualMachineExportWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineInstance object.
@@ -14486,17 +14489,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchNamespacedVirtualMachineInstance(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchNamespacedVirtualMachineInstanceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -14512,7 +14515,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchNamespacedVirtualMachineInstance(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchNamespacedVirtualMachineInstanceWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchNamespacedVirtualMachineInstanceWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineInstanceMigration object.
@@ -14557,17 +14560,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchNamespacedVirtualMachineInstanceMigration(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchNamespacedVirtualMachineInstanceMigrationWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -14583,7 +14586,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchNamespacedVirtualMachineInstanceMigration(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchNamespacedVirtualMachineInstanceMigrationWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchNamespacedVirtualMachineInstanceMigrationWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineInstancePreset object.
@@ -14628,17 +14631,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchNamespacedVirtualMachineInstancePreset(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchNamespacedVirtualMachineInstancePresetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -14654,7 +14657,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchNamespacedVirtualMachineInstancePreset(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchNamespacedVirtualMachineInstancePresetWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchNamespacedVirtualMachineInstancePresetWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineInstanceReplicaSet object.
@@ -14699,17 +14702,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchNamespacedVirtualMachineInstanceReplicaSet(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -14725,7 +14728,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchNamespacedVirtualMachineInstanceReplicaSet(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineInstancetype object.
@@ -14770,17 +14773,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchNamespacedVirtualMachineInstancetype(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchNamespacedVirtualMachineInstancetypeWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -14796,7 +14799,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchNamespacedVirtualMachineInstancetype(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchNamespacedVirtualMachineInstancetypeWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchNamespacedVirtualMachineInstancetypeWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachinePool object.
@@ -14841,17 +14844,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchNamespacedVirtualMachinePool(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchNamespacedVirtualMachinePoolWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -14867,7 +14870,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchNamespacedVirtualMachinePool(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchNamespacedVirtualMachinePoolWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchNamespacedVirtualMachinePoolWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachinePreference object.
@@ -14912,17 +14915,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchNamespacedVirtualMachinePreference(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchNamespacedVirtualMachinePreferenceWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -14938,7 +14941,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchNamespacedVirtualMachinePreference(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchNamespacedVirtualMachinePreferenceWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchNamespacedVirtualMachinePreferenceWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineRestore object.
@@ -14983,17 +14986,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchNamespacedVirtualMachineRestore(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchNamespacedVirtualMachineRestoreWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15009,7 +15012,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchNamespacedVirtualMachineRestore(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchNamespacedVirtualMachineRestoreWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchNamespacedVirtualMachineRestoreWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineSnapshot object.
@@ -15054,17 +15057,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchNamespacedVirtualMachineSnapshot(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchNamespacedVirtualMachineSnapshotWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15080,7 +15083,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchNamespacedVirtualMachineSnapshot(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchNamespacedVirtualMachineSnapshotWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchNamespacedVirtualMachineSnapshotWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineSnapshotContent object.
@@ -15125,17 +15128,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchNamespacedVirtualMachineSnapshotContent(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchNamespacedVirtualMachineSnapshotContentWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15151,7 +15154,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchNamespacedVirtualMachineSnapshotContent(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchNamespacedVirtualMachineSnapshotContentWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchNamespacedVirtualMachineSnapshotContentWithHttpInfo(namespace, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineCloneList object.
@@ -15195,17 +15198,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachineCloneListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachineCloneListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachineCloneListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15220,7 +15223,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachineCloneListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachineCloneListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachineCloneListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineClusterInstancetypeList object.
@@ -15264,17 +15267,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachineClusterInstancetypeListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachineClusterInstancetypeListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachineClusterInstancetypeListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15289,7 +15292,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachineClusterInstancetypeListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachineClusterInstancetypeListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachineClusterInstancetypeListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineClusterPreferenceList object.
@@ -15333,17 +15336,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachineClusterPreferenceListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachineClusterPreferenceListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachineClusterPreferenceListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15358,7 +15361,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachineClusterPreferenceListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachineClusterPreferenceListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachineClusterPreferenceListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineExportList object.
@@ -15402,17 +15405,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachineExportListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachineExportListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachineExportListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15427,7 +15430,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachineExportListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachineExportListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachineExportListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineInstanceList object.
@@ -15471,17 +15474,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachineInstanceListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachineInstanceListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachineInstanceListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15496,7 +15499,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachineInstanceListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachineInstanceListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachineInstanceListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineInstanceMigrationList object.
@@ -15540,17 +15543,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachineInstanceMigrationListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachineInstanceMigrationListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachineInstanceMigrationListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15565,7 +15568,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachineInstanceMigrationListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachineInstanceMigrationListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachineInstanceMigrationListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineInstancePresetList object.
@@ -15609,17 +15612,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachineInstancePresetListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachineInstancePresetListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachineInstancePresetListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15634,7 +15637,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachineInstancePresetListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachineInstancePresetListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachineInstancePresetListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineInstanceReplicaSetList object.
@@ -15678,17 +15681,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachineInstanceReplicaSetListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachineInstanceReplicaSetListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachineInstanceReplicaSetListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15703,7 +15706,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachineInstanceReplicaSetListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachineInstanceReplicaSetListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachineInstanceReplicaSetListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineInstancetypeList object.
@@ -15747,17 +15750,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachineInstancetypeListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachineInstancetypeListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachineInstancetypeListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15772,7 +15775,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachineInstancetypeListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachineInstancetypeListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachineInstancetypeListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineList object.
@@ -15816,17 +15819,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachineListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachineListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachineListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15841,7 +15844,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachineListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachineListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachineListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachinePoolList object.
@@ -15885,17 +15888,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachinePoolListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachinePoolListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachinePoolListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15910,7 +15913,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachinePoolListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachinePoolListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachinePoolListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachinePreferenceList object.
@@ -15954,17 +15957,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachinePreferenceListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachinePreferenceListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachinePreferenceListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -15979,7 +15982,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachinePreferenceListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachinePreferenceListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachinePreferenceListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineRestoreList object.
@@ -16023,17 +16026,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachineRestoreListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachineRestoreListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachineRestoreListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -16048,7 +16051,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachineRestoreListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachineRestoreListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachineRestoreListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineSnapshotContentList object.
@@ -16092,17 +16095,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachineSnapshotContentListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachineSnapshotContentListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachineSnapshotContentListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -16117,7 +16120,7 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachineSnapshotContentListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachineSnapshotContentListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachineSnapshotContentListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
     /**
      * Watch a VirtualMachineSnapshotList object.
@@ -16161,17 +16164,17 @@ export class ObservableDefaultApi {
         }
         const requestContextPromise = this.requestFactory.watchVirtualMachineSnapshotListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _config);
         // build promise chain
-        let middlewarePreObservable = from(requestContextPromise);
+        let middlewarePreObservable = (0, rxjsStub_js_1.from)(requestContextPromise);
         for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx) => middleware.pre(ctx)));
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => middleware.pre(ctx)));
         }
-        return middlewarePreObservable.pipe(mergeMap((ctx) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response) => {
-            let middlewarePostObservable = of(response);
+        return middlewarePreObservable.pipe((0, rxjsStub_js_2.mergeMap)((ctx) => this.configuration.httpApi.send(ctx))).
+            pipe((0, rxjsStub_js_2.mergeMap)((response) => {
+            let middlewarePostObservable = (0, rxjsStub_js_1.of)(response);
             for (const middleware of allMiddleware.reverse()) {
-                middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp) => middleware.post(rsp)));
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_js_2.mergeMap)((rsp) => middleware.post(rsp)));
             }
-            return middlewarePostObservable.pipe(map((rsp) => this.responseProcessor.watchVirtualMachineSnapshotListForAllNamespacesWithHttpInfo(rsp)));
+            return middlewarePostObservable.pipe((0, rxjsStub_js_2.map)((rsp) => this.responseProcessor.watchVirtualMachineSnapshotListForAllNamespacesWithHttpInfo(rsp)));
         }));
     }
     /**
@@ -16186,7 +16189,8 @@ export class ObservableDefaultApi {
      * @param [watch] Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
     watchVirtualMachineSnapshotListForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options) {
-        return this.watchVirtualMachineSnapshotListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe(map((apiResponse) => apiResponse.data));
+        return this.watchVirtualMachineSnapshotListForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, _options).pipe((0, rxjsStub_js_2.map)((apiResponse) => apiResponse.data));
     }
 }
+exports.ObservableDefaultApi = ObservableDefaultApi;
 //# sourceMappingURL=ObservableAPI.js.map

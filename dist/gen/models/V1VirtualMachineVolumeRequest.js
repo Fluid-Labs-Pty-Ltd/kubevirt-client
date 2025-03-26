@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1VirtualMachineVolumeRequest {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineVolumeRequest = void 0;
+class V1VirtualMachineVolumeRequest {
     'addVolumeOptions';
     'removeVolumeOptions';
     static discriminator = undefined;
@@ -34,4 +37,5 @@ export class V1VirtualMachineVolumeRequest {
     constructor() {
     }
 }
+exports.V1VirtualMachineVolumeRequest = V1VirtualMachineVolumeRequest;
 //# sourceMappingURL=V1VirtualMachineVolumeRequest.js.map

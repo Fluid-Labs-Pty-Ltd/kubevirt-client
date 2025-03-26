@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1Input {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Input = void 0;
+class V1Input {
     /**
     * Bus indicates the bus of input device to emulate. Supported values: virtio, usb.
     */
@@ -50,4 +53,5 @@ export class V1Input {
     constructor() {
     }
 }
+exports.V1Input = V1Input;
 //# sourceMappingURL=V1Input.js.map

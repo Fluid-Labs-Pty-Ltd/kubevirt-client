@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1SnapshotVolumesLists = void 0;
 /**
 * SnapshotVolumesLists includes the list of volumes which were included in the snapshot and volumes which were excluded from the snapshot
 */
-export class V1beta1SnapshotVolumesLists {
+class V1beta1SnapshotVolumesLists {
     'excludedVolumes';
     'includedVolumes';
     static discriminator = undefined;
@@ -37,4 +40,5 @@ export class V1beta1SnapshotVolumesLists {
     constructor() {
     }
 }
+exports.V1beta1SnapshotVolumesLists = V1beta1SnapshotVolumesLists;
 //# sourceMappingURL=V1beta1SnapshotVolumesLists.js.map

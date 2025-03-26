@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1DataVolumeSourceRegistry = void 0;
 /**
 * DataVolumeSourceRegistry provides the parameters to create a Data Volume from an registry source
 */
-export class V1beta1DataVolumeSourceRegistry {
+class V1beta1DataVolumeSourceRegistry {
     /**
     * CertConfigMap provides a reference to the Registry certs
     */
@@ -73,4 +76,5 @@ export class V1beta1DataVolumeSourceRegistry {
     constructor() {
     }
 }
+exports.V1beta1DataVolumeSourceRegistry = V1beta1DataVolumeSourceRegistry;
 //# sourceMappingURL=V1beta1DataVolumeSourceRegistry.js.map

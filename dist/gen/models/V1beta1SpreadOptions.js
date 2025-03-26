@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1beta1SpreadOptions {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1SpreadOptions = void 0;
+class V1beta1SpreadOptions {
     /**
     * Across optionally defines how to spread vCPUs across the guest visible topology. Default: SocketsCores
     */
@@ -40,4 +43,5 @@ export class V1beta1SpreadOptions {
     constructor() {
     }
 }
+exports.V1beta1SpreadOptions = V1beta1SpreadOptions;
 //# sourceMappingURL=V1beta1SpreadOptions.js.map

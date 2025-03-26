@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1ACPI {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1ACPI = void 0;
+class V1ACPI {
     /**
     * SlicNameRef should match the volume name of a secret object. The data in the secret should be a binary blob that follows the ACPI SLIC standard, see: https://learn.microsoft.com/en-us/previous-versions/windows/hardware/design/dn653305(v=vs.85)
     */
@@ -30,4 +33,5 @@ export class V1ACPI {
     constructor() {
     }
 }
+exports.V1ACPI = V1ACPI;
 //# sourceMappingURL=V1ACPI.js.map

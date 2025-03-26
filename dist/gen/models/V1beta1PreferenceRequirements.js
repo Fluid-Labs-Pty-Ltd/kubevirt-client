@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1beta1PreferenceRequirements {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1PreferenceRequirements = void 0;
+class V1beta1PreferenceRequirements {
     'cpu';
     'memory';
     static discriminator = undefined;
@@ -34,4 +37,5 @@ export class V1beta1PreferenceRequirements {
     constructor() {
     }
 }
+exports.V1beta1PreferenceRequirements = V1beta1PreferenceRequirements;
 //# sourceMappingURL=V1beta1PreferenceRequirements.js.map

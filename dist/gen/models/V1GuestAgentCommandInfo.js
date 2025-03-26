@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1GuestAgentCommandInfo = void 0;
 /**
 * List of commands that QEMU guest agent supports
 */
-export class V1GuestAgentCommandInfo {
+class V1GuestAgentCommandInfo {
     'enabled';
     'name';
     static discriminator = undefined;
@@ -37,4 +40,5 @@ export class V1GuestAgentCommandInfo {
     constructor() {
     }
 }
+exports.V1GuestAgentCommandInfo = V1GuestAgentCommandInfo;
 //# sourceMappingURL=V1GuestAgentCommandInfo.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1VirtualMachineInstancePresetSpec {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1VirtualMachineInstancePresetSpec = void 0;
+class V1VirtualMachineInstancePresetSpec {
     'domain';
     'selector';
     static discriminator = undefined;
@@ -34,4 +37,5 @@ export class V1VirtualMachineInstancePresetSpec {
     constructor() {
     }
 }
+exports.V1VirtualMachineInstancePresetSpec = V1VirtualMachineInstancePresetSpec;
 //# sourceMappingURL=V1VirtualMachineInstancePresetSpec.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1FeatureAPIC {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1FeatureAPIC = void 0;
+class V1FeatureAPIC {
     /**
     * Enabled determines if the feature should be enabled or disabled on the guest. Defaults to true.
     */
@@ -40,4 +43,5 @@ export class V1FeatureAPIC {
     constructor() {
     }
 }
+exports.V1FeatureAPIC = V1FeatureAPIC;
 //# sourceMappingURL=V1FeatureAPIC.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1TopologySpreadConstraintWhenUnsatisfiableEnum = exports.K8sIoApiCoreV1TopologySpreadConstraintNodeTaintsPolicyEnum = exports.K8sIoApiCoreV1TopologySpreadConstraintNodeAffinityPolicyEnum = exports.K8sIoApiCoreV1TopologySpreadConstraint = void 0;
 /**
 * TopologySpreadConstraint specifies how to spread matching pods among the given topology.
 */
-export class K8sIoApiCoreV1TopologySpreadConstraint {
+class K8sIoApiCoreV1TopologySpreadConstraint {
     'labelSelector';
     /**
     * MatchLabelKeys is a set of pod label keys to select the pods over which spreading will be calculated. The keys are used to lookup values from the incoming pod labels, those key-value labels are ANDed with labelSelector to select the group of existing pods over which spreading will be calculated for the incoming pod. The same key is forbidden to exist in both MatchLabelKeys and LabelSelector. MatchLabelKeys cannot be set when LabelSelector isn\'t set. Keys that don\'t exist in the incoming pod labels will be ignored. A null or empty list means only match against labelSelector.  This is a beta field and requires the MatchLabelKeysInPodTopologySpread feature gate to be enabled (enabled by default).
@@ -100,19 +103,20 @@ export class K8sIoApiCoreV1TopologySpreadConstraint {
     constructor() {
     }
 }
-export var K8sIoApiCoreV1TopologySpreadConstraintNodeAffinityPolicyEnum;
+exports.K8sIoApiCoreV1TopologySpreadConstraint = K8sIoApiCoreV1TopologySpreadConstraint;
+var K8sIoApiCoreV1TopologySpreadConstraintNodeAffinityPolicyEnum;
 (function (K8sIoApiCoreV1TopologySpreadConstraintNodeAffinityPolicyEnum) {
     K8sIoApiCoreV1TopologySpreadConstraintNodeAffinityPolicyEnum["Honor"] = "Honor";
     K8sIoApiCoreV1TopologySpreadConstraintNodeAffinityPolicyEnum["Ignore"] = "Ignore";
-})(K8sIoApiCoreV1TopologySpreadConstraintNodeAffinityPolicyEnum || (K8sIoApiCoreV1TopologySpreadConstraintNodeAffinityPolicyEnum = {}));
-export var K8sIoApiCoreV1TopologySpreadConstraintNodeTaintsPolicyEnum;
+})(K8sIoApiCoreV1TopologySpreadConstraintNodeAffinityPolicyEnum || (exports.K8sIoApiCoreV1TopologySpreadConstraintNodeAffinityPolicyEnum = K8sIoApiCoreV1TopologySpreadConstraintNodeAffinityPolicyEnum = {}));
+var K8sIoApiCoreV1TopologySpreadConstraintNodeTaintsPolicyEnum;
 (function (K8sIoApiCoreV1TopologySpreadConstraintNodeTaintsPolicyEnum) {
     K8sIoApiCoreV1TopologySpreadConstraintNodeTaintsPolicyEnum["Honor"] = "Honor";
     K8sIoApiCoreV1TopologySpreadConstraintNodeTaintsPolicyEnum["Ignore"] = "Ignore";
-})(K8sIoApiCoreV1TopologySpreadConstraintNodeTaintsPolicyEnum || (K8sIoApiCoreV1TopologySpreadConstraintNodeTaintsPolicyEnum = {}));
-export var K8sIoApiCoreV1TopologySpreadConstraintWhenUnsatisfiableEnum;
+})(K8sIoApiCoreV1TopologySpreadConstraintNodeTaintsPolicyEnum || (exports.K8sIoApiCoreV1TopologySpreadConstraintNodeTaintsPolicyEnum = K8sIoApiCoreV1TopologySpreadConstraintNodeTaintsPolicyEnum = {}));
+var K8sIoApiCoreV1TopologySpreadConstraintWhenUnsatisfiableEnum;
 (function (K8sIoApiCoreV1TopologySpreadConstraintWhenUnsatisfiableEnum) {
     K8sIoApiCoreV1TopologySpreadConstraintWhenUnsatisfiableEnum["DoNotSchedule"] = "DoNotSchedule";
     K8sIoApiCoreV1TopologySpreadConstraintWhenUnsatisfiableEnum["ScheduleAnyway"] = "ScheduleAnyway";
-})(K8sIoApiCoreV1TopologySpreadConstraintWhenUnsatisfiableEnum || (K8sIoApiCoreV1TopologySpreadConstraintWhenUnsatisfiableEnum = {}));
+})(K8sIoApiCoreV1TopologySpreadConstraintWhenUnsatisfiableEnum || (exports.K8sIoApiCoreV1TopologySpreadConstraintWhenUnsatisfiableEnum = K8sIoApiCoreV1TopologySpreadConstraintWhenUnsatisfiableEnum = {}));
 //# sourceMappingURL=K8sIoApiCoreV1TopologySpreadConstraint.js.map

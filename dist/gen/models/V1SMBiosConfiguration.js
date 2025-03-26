@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1SMBiosConfiguration {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1SMBiosConfiguration = void 0;
+class V1SMBiosConfiguration {
     'family';
     'manufacturer';
     'product';
@@ -55,4 +58,5 @@ export class V1SMBiosConfiguration {
     constructor() {
     }
 }
+exports.V1SMBiosConfiguration = V1SMBiosConfiguration;
 //# sourceMappingURL=V1SMBiosConfiguration.js.map

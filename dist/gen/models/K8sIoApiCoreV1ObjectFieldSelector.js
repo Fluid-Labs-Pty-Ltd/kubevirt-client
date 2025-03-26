@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1ObjectFieldSelector = void 0;
 /**
 * ObjectFieldSelector selects an APIVersioned field of an object.
 */
-export class K8sIoApiCoreV1ObjectFieldSelector {
+class K8sIoApiCoreV1ObjectFieldSelector {
     /**
     * Version of the schema the FieldPath is written in terms of, defaults to \"v1\".
     */
@@ -43,4 +46,5 @@ export class K8sIoApiCoreV1ObjectFieldSelector {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1ObjectFieldSelector = K8sIoApiCoreV1ObjectFieldSelector;
 //# sourceMappingURL=K8sIoApiCoreV1ObjectFieldSelector.js.map

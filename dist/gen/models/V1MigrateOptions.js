@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1MigrateOptions = void 0;
 /**
 * MigrateOptions may be provided on migrate request.
 */
-export class V1MigrateOptions {
+class V1MigrateOptions {
     /**
     * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     */
@@ -53,4 +56,5 @@ export class V1MigrateOptions {
     constructor() {
     }
 }
+exports.V1MigrateOptions = V1MigrateOptions;
 //# sourceMappingURL=V1MigrateOptions.js.map

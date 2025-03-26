@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class V1beta1VolumePreferences {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1VolumePreferences = void 0;
+class V1beta1VolumePreferences {
     /**
     * PreffereedStorageClassName optionally defines the preferred storageClass
     */
@@ -30,4 +33,5 @@ export class V1beta1VolumePreferences {
     constructor() {
     }
 }
+exports.V1beta1VolumePreferences = V1beta1VolumePreferences;
 //# sourceMappingURL=V1beta1VolumePreferences.js.map

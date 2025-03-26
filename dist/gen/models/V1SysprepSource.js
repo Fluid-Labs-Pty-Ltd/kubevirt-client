@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1SysprepSource = void 0;
 /**
 * Represents a Sysprep volume source.
 */
-export class V1SysprepSource {
+class V1SysprepSource {
     'configMap';
     'secret';
     static discriminator = undefined;
@@ -37,4 +40,5 @@ export class V1SysprepSource {
     constructor() {
     }
 }
+exports.V1SysprepSource = V1SysprepSource;
 //# sourceMappingURL=V1SysprepSource.js.map

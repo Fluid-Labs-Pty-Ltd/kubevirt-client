@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1SupportContainerResources = void 0;
 /**
 * SupportContainerResources are used to specify the cpu/memory request and limits for the containers that support various features of Virtual Machines. These containers are usually idle and don\'t require a lot of memory or cpu.
 */
-export class V1SupportContainerResources {
+class V1SupportContainerResources {
     'resources';
     'type';
     static discriminator = undefined;
@@ -37,4 +40,5 @@ export class V1SupportContainerResources {
     constructor() {
     }
 }
+exports.V1SupportContainerResources = V1SupportContainerResources;
 //# sourceMappingURL=V1SupportContainerResources.js.map

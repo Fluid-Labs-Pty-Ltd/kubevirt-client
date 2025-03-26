@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1beta1DataVolumeSourceHTTP = void 0;
 /**
 * DataVolumeSourceHTTP can be either an http or https endpoint, with an optional basic auth user name and password, and an optional configmap containing additional CAs
 */
-export class V1beta1DataVolumeSourceHTTP {
+class V1beta1DataVolumeSourceHTTP {
     /**
     * CertConfigMap is a configmap reference, containing a Certificate Authority(CA) public key, and a base64 encoded pem certificate
     */
@@ -73,4 +76,5 @@ export class V1beta1DataVolumeSourceHTTP {
     constructor() {
     }
 }
+exports.V1beta1DataVolumeSourceHTTP = V1beta1DataVolumeSourceHTTP;
 //# sourceMappingURL=V1beta1DataVolumeSourceHTTP.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,7 +10,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export class K8sIoApiCoreV1TypedObjectReference {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.K8sIoApiCoreV1TypedObjectReference = void 0;
+class K8sIoApiCoreV1TypedObjectReference {
     /**
     * APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.
     */
@@ -60,4 +63,5 @@ export class K8sIoApiCoreV1TypedObjectReference {
     constructor() {
     }
 }
+exports.K8sIoApiCoreV1TypedObjectReference = K8sIoApiCoreV1TypedObjectReference;
 //# sourceMappingURL=K8sIoApiCoreV1TypedObjectReference.js.map

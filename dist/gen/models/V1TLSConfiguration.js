@@ -1,3 +1,4 @@
+"use strict";
 /**
  * KubeVirt API
  * This is KubeVirt API an add-on for Kubernetes.
@@ -9,10 +10,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1TLSConfiguration = void 0;
 /**
 * TLSConfiguration holds TLS options
 */
-export class V1TLSConfiguration {
+class V1TLSConfiguration {
     'ciphers';
     /**
     * MinTLSVersion is a way to specify the minimum protocol version that is acceptable for TLS connections. Protocol versions are based on the following most common TLS configurations:    https://ssl-config.mozilla.org/  Note that SSLv3.0 is not a supported protocol version due to well known vulnerabilities such as POODLE: https://en.wikipedia.org/wiki/POODLE
@@ -40,4 +43,5 @@ export class V1TLSConfiguration {
     constructor() {
     }
 }
+exports.V1TLSConfiguration = V1TLSConfiguration;
 //# sourceMappingURL=V1TLSConfiguration.js.map

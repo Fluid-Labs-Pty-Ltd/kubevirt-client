@@ -18,9 +18,9 @@ trap 'error_handler' ERR
 git apply ./scripts/globalFetchFix.patch
 
 # Patch ignoreDiscriminator
-sed -i "s/ignoreDiscriminator/_ignoreDiscriminator/g" ./src/models/* 
+sed -i "s/ignoreDiscriminator/_ignoreDiscriminator/g" ./src/gen/models/* 
 
-# Patch Data type to steing conversion
-sed -i "s/.toISOString()//g" ./src/models/*
-sed -i "s/new Date\((json\['.*'\])\)/\1/g" ./src/models/*
+# Patch Data type to string conversion
+sed -i "s/.toISOString()//g" ./src/gen/models/*
+sed -i "s/new Date\((json\['.*'\])\)/\1/g" ./src/gen/models/*
 
