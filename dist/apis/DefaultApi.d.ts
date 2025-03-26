@@ -1,3669 +1,4330 @@
+import { BaseAPIRequestFactory } from './baseapi.js';
+import { Configuration } from '../configuration.js';
+import { RequestContext, ResponseContext, HttpInfo } from '../http/http.js';
+import { K8sIoApimachineryPkgApisMetaV1APIGroup } from '../models/K8sIoApimachineryPkgApisMetaV1APIGroup.js';
+import { K8sIoApimachineryPkgApisMetaV1APIGroupList } from '../models/K8sIoApimachineryPkgApisMetaV1APIGroupList.js';
+import { K8sIoApimachineryPkgApisMetaV1APIResourceList } from '../models/K8sIoApimachineryPkgApisMetaV1APIResourceList.js';
+import { K8sIoApimachineryPkgApisMetaV1DeleteOptions } from '../models/K8sIoApimachineryPkgApisMetaV1DeleteOptions.js';
+import { K8sIoApimachineryPkgApisMetaV1RootPaths } from '../models/K8sIoApimachineryPkgApisMetaV1RootPaths.js';
+import { K8sIoApimachineryPkgApisMetaV1Status } from '../models/K8sIoApimachineryPkgApisMetaV1Status.js';
+import { K8sIoApimachineryPkgApisMetaV1WatchEvent } from '../models/K8sIoApimachineryPkgApisMetaV1WatchEvent.js';
+import { V1AddVolumeOptions } from '../models/V1AddVolumeOptions.js';
+import { V1FreezeUnfreezeTimeout } from '../models/V1FreezeUnfreezeTimeout.js';
+import { V1KubeVirt } from '../models/V1KubeVirt.js';
+import { V1KubeVirtList } from '../models/V1KubeVirtList.js';
+import { V1MigrateOptions } from '../models/V1MigrateOptions.js';
+import { V1PauseOptions } from '../models/V1PauseOptions.js';
+import { V1RemoveVolumeOptions } from '../models/V1RemoveVolumeOptions.js';
+import { V1RestartOptions } from '../models/V1RestartOptions.js';
+import { V1SEVMeasurementInfo } from '../models/V1SEVMeasurementInfo.js';
+import { V1SEVPlatformInfo } from '../models/V1SEVPlatformInfo.js';
+import { V1SEVSecretOptions } from '../models/V1SEVSecretOptions.js';
+import { V1SEVSessionOptions } from '../models/V1SEVSessionOptions.js';
+import { V1StartOptions } from '../models/V1StartOptions.js';
+import { V1StopOptions } from '../models/V1StopOptions.js';
+import { V1UnpauseOptions } from '../models/V1UnpauseOptions.js';
+import { V1VirtualMachine } from '../models/V1VirtualMachine.js';
+import { V1VirtualMachineInstance } from '../models/V1VirtualMachineInstance.js';
+import { V1VirtualMachineInstanceFileSystemList } from '../models/V1VirtualMachineInstanceFileSystemList.js';
+import { V1VirtualMachineInstanceGuestAgentInfo } from '../models/V1VirtualMachineInstanceGuestAgentInfo.js';
+import { V1VirtualMachineInstanceGuestOSUserList } from '../models/V1VirtualMachineInstanceGuestOSUserList.js';
+import { V1VirtualMachineInstanceList } from '../models/V1VirtualMachineInstanceList.js';
+import { V1VirtualMachineInstanceMigration } from '../models/V1VirtualMachineInstanceMigration.js';
+import { V1VirtualMachineInstanceMigrationList } from '../models/V1VirtualMachineInstanceMigrationList.js';
+import { V1VirtualMachineInstancePreset } from '../models/V1VirtualMachineInstancePreset.js';
+import { V1VirtualMachineInstancePresetList } from '../models/V1VirtualMachineInstancePresetList.js';
+import { V1VirtualMachineInstanceReplicaSet } from '../models/V1VirtualMachineInstanceReplicaSet.js';
+import { V1VirtualMachineInstanceReplicaSetList } from '../models/V1VirtualMachineInstanceReplicaSetList.js';
+import { V1VirtualMachineList } from '../models/V1VirtualMachineList.js';
+import { V1VirtualMachineMemoryDumpRequest } from '../models/V1VirtualMachineMemoryDumpRequest.js';
+import { V1alpha1MigrationPolicy } from '../models/V1alpha1MigrationPolicy.js';
+import { V1alpha1MigrationPolicyList } from '../models/V1alpha1MigrationPolicyList.js';
+import { V1alpha1VirtualMachineClone } from '../models/V1alpha1VirtualMachineClone.js';
+import { V1alpha1VirtualMachineCloneList } from '../models/V1alpha1VirtualMachineCloneList.js';
+import { V1alpha1VirtualMachinePool } from '../models/V1alpha1VirtualMachinePool.js';
+import { V1alpha1VirtualMachinePoolList } from '../models/V1alpha1VirtualMachinePoolList.js';
+import { V1beta1VirtualMachineClusterInstancetype } from '../models/V1beta1VirtualMachineClusterInstancetype.js';
+import { V1beta1VirtualMachineClusterInstancetypeList } from '../models/V1beta1VirtualMachineClusterInstancetypeList.js';
+import { V1beta1VirtualMachineClusterPreference } from '../models/V1beta1VirtualMachineClusterPreference.js';
+import { V1beta1VirtualMachineClusterPreferenceList } from '../models/V1beta1VirtualMachineClusterPreferenceList.js';
+import { V1beta1VirtualMachineExport } from '../models/V1beta1VirtualMachineExport.js';
+import { V1beta1VirtualMachineExportList } from '../models/V1beta1VirtualMachineExportList.js';
+import { V1beta1VirtualMachineInstancetype } from '../models/V1beta1VirtualMachineInstancetype.js';
+import { V1beta1VirtualMachineInstancetypeList } from '../models/V1beta1VirtualMachineInstancetypeList.js';
+import { V1beta1VirtualMachinePreference } from '../models/V1beta1VirtualMachinePreference.js';
+import { V1beta1VirtualMachinePreferenceList } from '../models/V1beta1VirtualMachinePreferenceList.js';
+import { V1beta1VirtualMachineRestore } from '../models/V1beta1VirtualMachineRestore.js';
+import { V1beta1VirtualMachineRestoreList } from '../models/V1beta1VirtualMachineRestoreList.js';
+import { V1beta1VirtualMachineSnapshot } from '../models/V1beta1VirtualMachineSnapshot.js';
+import { V1beta1VirtualMachineSnapshotContent } from '../models/V1beta1VirtualMachineSnapshotContent.js';
+import { V1beta1VirtualMachineSnapshotContentList } from '../models/V1beta1VirtualMachineSnapshotContentList.js';
+import { V1beta1VirtualMachineSnapshotList } from '../models/V1beta1VirtualMachineSnapshotList.js';
 /**
- * KubeVirt API
- * This is KubeVirt API an add-on for Kubernetes.
- *
- * The version of the OpenAPI document: 1.0.0
- * Contact: kubevirt-dev@googlegroups.com
- *
- * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
- * https://openapi-generator.tech
- * Do not edit the class manually.
+ * no description
  */
-import * as runtime from '../runtime.js';
-import type { K8sIoApimachineryPkgApisMetaV1APIGroup, K8sIoApimachineryPkgApisMetaV1APIGroupList, K8sIoApimachineryPkgApisMetaV1APIResourceList, K8sIoApimachineryPkgApisMetaV1DeleteOptions, K8sIoApimachineryPkgApisMetaV1RootPaths, K8sIoApimachineryPkgApisMetaV1Status, K8sIoApimachineryPkgApisMetaV1WatchEvent, V1AddVolumeOptions, V1FreezeUnfreezeTimeout, V1KubeVirt, V1KubeVirtList, V1MigrateOptions, V1PauseOptions, V1RemoveVolumeOptions, V1RestartOptions, V1SEVMeasurementInfo, V1SEVPlatformInfo, V1SEVSecretOptions, V1SEVSessionOptions, V1StartOptions, V1StopOptions, V1UnpauseOptions, V1VirtualMachine, V1VirtualMachineInstance, V1VirtualMachineInstanceFileSystemList, V1VirtualMachineInstanceGuestAgentInfo, V1VirtualMachineInstanceGuestOSUserList, V1VirtualMachineInstanceList, V1VirtualMachineInstanceMigration, V1VirtualMachineInstanceMigrationList, V1VirtualMachineInstancePreset, V1VirtualMachineInstancePresetList, V1VirtualMachineInstanceReplicaSet, V1VirtualMachineInstanceReplicaSetList, V1VirtualMachineList, V1VirtualMachineMemoryDumpRequest, V1alpha1MigrationPolicy, V1alpha1MigrationPolicyList, V1alpha1VirtualMachineClone, V1alpha1VirtualMachineCloneList, V1alpha1VirtualMachinePool, V1alpha1VirtualMachinePoolList, V1beta1VirtualMachineClusterInstancetype, V1beta1VirtualMachineClusterInstancetypeList, V1beta1VirtualMachineClusterPreference, V1beta1VirtualMachineClusterPreferenceList, V1beta1VirtualMachineExport, V1beta1VirtualMachineExportList, V1beta1VirtualMachineInstancetype, V1beta1VirtualMachineInstancetypeList, V1beta1VirtualMachinePreference, V1beta1VirtualMachinePreferenceList, V1beta1VirtualMachineRestore, V1beta1VirtualMachineRestoreList, V1beta1VirtualMachineSnapshot, V1beta1VirtualMachineSnapshotContent, V1beta1VirtualMachineSnapshotContentList, V1beta1VirtualMachineSnapshotList } from '../models/index.js';
-export interface CreateMigrationPolicyRequest {
-    body: V1alpha1MigrationPolicy;
-}
-export interface CreateNamespacedKubeVirtRequest {
-    namespace: string;
-    body: V1KubeVirt;
-}
-export interface CreateNamespacedVirtualMachineRequest {
-    namespace: string;
-    body: V1VirtualMachine;
-}
-export interface CreateNamespacedVirtualMachineExportRequest {
-    namespace: string;
-    body: V1beta1VirtualMachineExport;
-}
-export interface CreateNamespacedVirtualMachineInstanceRequest {
-    namespace: string;
-    body: V1VirtualMachineInstance;
-}
-export interface CreateNamespacedVirtualMachineInstanceMigrationRequest {
-    namespace: string;
-    body: V1VirtualMachineInstanceMigration;
-}
-export interface CreateNamespacedVirtualMachineInstancePresetRequest {
-    namespace: string;
-    body: V1VirtualMachineInstancePreset;
-}
-export interface CreateNamespacedVirtualMachineInstanceReplicaSetRequest {
-    namespace: string;
-    body: V1VirtualMachineInstanceReplicaSet;
-}
-export interface CreateNamespacedVirtualMachineInstancetypeRequest {
-    namespace: string;
-    body: V1beta1VirtualMachineInstancetype;
-}
-export interface CreateNamespacedVirtualMachinePoolRequest {
-    namespace: string;
-    body: V1alpha1VirtualMachinePool;
-}
-export interface CreateNamespacedVirtualMachinePreferenceRequest {
-    namespace: string;
-    body: V1beta1VirtualMachinePreference;
-}
-export interface CreateNamespacedVirtualMachineRestoreRequest {
-    namespace: string;
-    body: V1beta1VirtualMachineRestore;
-}
-export interface CreateNamespacedVirtualMachineSnapshotRequest {
-    namespace: string;
-    body: V1beta1VirtualMachineSnapshot;
-}
-export interface CreateNamespacedVirtualMachineSnapshotContentRequest {
-    namespace: string;
-    body: V1beta1VirtualMachineSnapshotContent;
-}
-export interface CreateVirtualMachineCloneRequest {
-    body: V1alpha1VirtualMachineClone;
-}
-export interface CreateVirtualMachineClusterInstancetypeRequest {
-    body: V1beta1VirtualMachineClusterInstancetype;
-}
-export interface CreateVirtualMachineClusterPreferenceRequest {
-    body: V1beta1VirtualMachineClusterPreference;
-}
-export interface DeleteCollectionMigrationPolicyRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionNamespacedKubeVirtRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionNamespacedVirtualMachineRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionNamespacedVirtualMachineExportRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionNamespacedVirtualMachineInstanceRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionNamespacedVirtualMachineInstanceMigrationRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionNamespacedVirtualMachineInstancePresetRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionNamespacedVirtualMachineInstanceReplicaSetRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionNamespacedVirtualMachineInstancetypeRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionNamespacedVirtualMachinePoolRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionNamespacedVirtualMachinePreferenceRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionNamespacedVirtualMachineRestoreRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionNamespacedVirtualMachineSnapshotRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionNamespacedVirtualMachineSnapshotContentRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionVirtualMachineCloneRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionVirtualMachineClusterInstancetypeRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteCollectionVirtualMachineClusterPreferenceRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface DeleteMigrationPolicyRequest {
-    name: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteNamespacedKubeVirtRequest {
-    name: string;
-    namespace: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteNamespacedVirtualMachineRequest {
-    name: string;
-    namespace: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteNamespacedVirtualMachineExportRequest {
-    name: string;
-    namespace: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteNamespacedVirtualMachineInstanceRequest {
-    name: string;
-    namespace: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteNamespacedVirtualMachineInstanceMigrationRequest {
-    name: string;
-    namespace: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteNamespacedVirtualMachineInstancePresetRequest {
-    name: string;
-    namespace: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteNamespacedVirtualMachineInstanceReplicaSetRequest {
-    name: string;
-    namespace: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteNamespacedVirtualMachineInstancetypeRequest {
-    name: string;
-    namespace: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteNamespacedVirtualMachinePoolRequest {
-    name: string;
-    namespace: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteNamespacedVirtualMachinePreferenceRequest {
-    name: string;
-    namespace: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteNamespacedVirtualMachineRestoreRequest {
-    name: string;
-    namespace: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteNamespacedVirtualMachineSnapshotRequest {
-    name: string;
-    namespace: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteNamespacedVirtualMachineSnapshotContentRequest {
-    name: string;
-    namespace: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteVirtualMachineCloneRequest {
-    name: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteVirtualMachineClusterInstancetypeRequest {
-    name: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface DeleteVirtualMachineClusterPreferenceRequest {
-    name: string;
-    body: K8sIoApimachineryPkgApisMetaV1DeleteOptions;
-    gracePeriodSeconds?: number;
-    orphanDependents?: boolean;
-    propagationPolicy?: string;
-}
-export interface ListKubeVirtForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListMigrationPolicyRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListNamespacedKubeVirtRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListNamespacedVirtualMachineRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListNamespacedVirtualMachineExportRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListNamespacedVirtualMachineInstanceRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListNamespacedVirtualMachineInstanceMigrationRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListNamespacedVirtualMachineInstancePresetRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListNamespacedVirtualMachineInstanceReplicaSetRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListNamespacedVirtualMachineInstancetypeRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListNamespacedVirtualMachinePoolRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListNamespacedVirtualMachinePreferenceRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListNamespacedVirtualMachineRestoreRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListNamespacedVirtualMachineSnapshotRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListNamespacedVirtualMachineSnapshotContentRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachineCloneRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachineClusterInstancetypeRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachineClusterPreferenceRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachineExportForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachineForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachineInstanceForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachineInstanceMigrationForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachineInstancePresetForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachineInstanceReplicaSetForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachineInstancetypeForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachinePoolForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachinePreferenceForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachineRestoreForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachineSnapshotContentForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface ListVirtualMachineSnapshotForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface PatchMigrationPolicyRequest {
-    name: string;
-    body: object;
-}
-export interface PatchNamespacedKubeVirtRequest {
-    name: string;
-    namespace: string;
-    body: object;
-}
-export interface PatchNamespacedVirtualMachineRequest {
-    name: string;
-    namespace: string;
-    body: object;
-}
-export interface PatchNamespacedVirtualMachineExportRequest {
-    name: string;
-    namespace: string;
-    body: object;
-}
-export interface PatchNamespacedVirtualMachineInstanceRequest {
-    name: string;
-    namespace: string;
-    body: object;
-}
-export interface PatchNamespacedVirtualMachineInstanceMigrationRequest {
-    name: string;
-    namespace: string;
-    body: object;
-}
-export interface PatchNamespacedVirtualMachineInstancePresetRequest {
-    name: string;
-    namespace: string;
-    body: object;
-}
-export interface PatchNamespacedVirtualMachineInstanceReplicaSetRequest {
-    name: string;
-    namespace: string;
-    body: object;
-}
-export interface PatchNamespacedVirtualMachineInstancetypeRequest {
-    name: string;
-    namespace: string;
-    body: object;
-}
-export interface PatchNamespacedVirtualMachinePoolRequest {
-    name: string;
-    namespace: string;
-    body: object;
-}
-export interface PatchNamespacedVirtualMachinePreferenceRequest {
-    name: string;
-    namespace: string;
-    body: object;
-}
-export interface PatchNamespacedVirtualMachineRestoreRequest {
-    name: string;
-    namespace: string;
-    body: object;
-}
-export interface PatchNamespacedVirtualMachineSnapshotRequest {
-    name: string;
-    namespace: string;
-    body: object;
-}
-export interface PatchNamespacedVirtualMachineSnapshotContentRequest {
-    name: string;
-    namespace: string;
-    body: object;
-}
-export interface PatchVirtualMachineCloneRequest {
-    name: string;
-    body: object;
-}
-export interface PatchVirtualMachineClusterInstancetypeRequest {
-    name: string;
-    body: object;
-}
-export interface PatchVirtualMachineClusterPreferenceRequest {
-    name: string;
-    body: object;
-}
-export interface ReadMigrationPolicyRequest {
-    name: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadNamespacedKubeVirtRequest {
-    name: string;
-    namespace: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadNamespacedVirtualMachineRequest {
-    name: string;
-    namespace: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadNamespacedVirtualMachineExportRequest {
-    name: string;
-    namespace: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadNamespacedVirtualMachineInstanceRequest {
-    name: string;
-    namespace: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadNamespacedVirtualMachineInstanceMigrationRequest {
-    name: string;
-    namespace: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadNamespacedVirtualMachineInstancePresetRequest {
-    name: string;
-    namespace: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadNamespacedVirtualMachineInstanceReplicaSetRequest {
-    name: string;
-    namespace: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadNamespacedVirtualMachineInstancetypeRequest {
-    name: string;
-    namespace: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadNamespacedVirtualMachinePoolRequest {
-    name: string;
-    namespace: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadNamespacedVirtualMachinePreferenceRequest {
-    name: string;
-    namespace: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadNamespacedVirtualMachineRestoreRequest {
-    name: string;
-    namespace: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadNamespacedVirtualMachineSnapshotRequest {
-    name: string;
-    namespace: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadNamespacedVirtualMachineSnapshotContentRequest {
-    name: string;
-    namespace: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadVirtualMachineCloneRequest {
-    name: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadVirtualMachineClusterInstancetypeRequest {
-    name: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReadVirtualMachineClusterPreferenceRequest {
-    name: string;
-    exact?: boolean;
-    _export?: boolean;
-}
-export interface ReplaceMigrationPolicyRequest {
-    name: string;
-    body: V1alpha1MigrationPolicy;
-}
-export interface ReplaceNamespacedKubeVirtRequest {
-    name: string;
-    namespace: string;
-    body: V1KubeVirt;
-}
-export interface ReplaceNamespacedVirtualMachineRequest {
-    name: string;
-    namespace: string;
-    body: V1VirtualMachine;
-}
-export interface ReplaceNamespacedVirtualMachineExportRequest {
-    name: string;
-    namespace: string;
-    body: V1beta1VirtualMachineExport;
-}
-export interface ReplaceNamespacedVirtualMachineInstanceRequest {
-    name: string;
-    namespace: string;
-    body: V1VirtualMachineInstance;
-}
-export interface ReplaceNamespacedVirtualMachineInstanceMigrationRequest {
-    name: string;
-    namespace: string;
-    body: V1VirtualMachineInstanceMigration;
-}
-export interface ReplaceNamespacedVirtualMachineInstancePresetRequest {
-    name: string;
-    namespace: string;
-    body: V1VirtualMachineInstancePreset;
-}
-export interface ReplaceNamespacedVirtualMachineInstanceReplicaSetRequest {
-    name: string;
-    namespace: string;
-    body: V1VirtualMachineInstanceReplicaSet;
-}
-export interface ReplaceNamespacedVirtualMachineInstancetypeRequest {
-    name: string;
-    namespace: string;
-    body: V1beta1VirtualMachineInstancetype;
-}
-export interface ReplaceNamespacedVirtualMachinePoolRequest {
-    name: string;
-    namespace: string;
-    body: V1alpha1VirtualMachinePool;
-}
-export interface ReplaceNamespacedVirtualMachinePreferenceRequest {
-    name: string;
-    namespace: string;
-    body: V1beta1VirtualMachinePreference;
-}
-export interface ReplaceNamespacedVirtualMachineRestoreRequest {
-    name: string;
-    namespace: string;
-    body: V1beta1VirtualMachineRestore;
-}
-export interface ReplaceNamespacedVirtualMachineSnapshotRequest {
-    name: string;
-    namespace: string;
-    body: V1beta1VirtualMachineSnapshot;
-}
-export interface ReplaceNamespacedVirtualMachineSnapshotContentRequest {
-    name: string;
-    namespace: string;
-    body: V1beta1VirtualMachineSnapshotContent;
-}
-export interface ReplaceVirtualMachineCloneRequest {
-    name: string;
-    body: V1alpha1VirtualMachineClone;
-}
-export interface ReplaceVirtualMachineClusterInstancetypeRequest {
-    name: string;
-    body: V1beta1VirtualMachineClusterInstancetype;
-}
-export interface ReplaceVirtualMachineClusterPreferenceRequest {
-    name: string;
-    body: V1beta1VirtualMachineClusterPreference;
-}
-export interface V1ConsoleRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1ExpandSpecRequest {
-    namespace: string;
-}
-export interface V1FilesystemlistRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1FreezeRequest {
-    name: string;
-    namespace: string;
-    body: V1FreezeUnfreezeTimeout;
-}
-export interface V1GuestosinfoRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1MemoryDumpRequest {
-    name: string;
-    namespace: string;
-    body: V1VirtualMachineMemoryDumpRequest;
-}
-export interface V1MigrateRequest {
-    name: string;
-    namespace: string;
-    body: V1MigrateOptions;
-}
-export interface V1PauseRequest {
-    name: string;
-    namespace: string;
-    body: V1PauseOptions;
-}
-export interface V1RemoveMemoryDumpRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1RestartRequest {
-    name: string;
-    namespace: string;
-    body?: V1RestartOptions;
-}
-export interface V1SEVFetchCertChainRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1SEVInjectLaunchSecretRequest {
-    name: string;
-    namespace: string;
-    body: V1SEVSecretOptions;
-}
-export interface V1SEVQueryLaunchMeasurementRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1SEVSetupSessionRequest {
-    name: string;
-    namespace: string;
-    body: V1SEVSessionOptions;
-}
-export interface V1SoftRebootRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1StartRequest {
-    name: string;
-    namespace: string;
-    body: V1StartOptions;
-}
-export interface V1StopRequest {
-    name: string;
-    namespace: string;
-    body?: V1StopOptions;
-}
-export interface V1UnfreezeRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1UnpauseRequest {
-    name: string;
-    namespace: string;
-    body: V1UnpauseOptions;
-}
-export interface V1UserlistRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1VNCRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1VNCScreenshotRequest {
-    name: string;
-    namespace: string;
-    moveCursor?: boolean;
-}
-export interface V1VSOCKRequest {
-    name: string;
-    namespace: string;
-    port: number;
-    tls?: boolean;
-}
-export interface V1alpha3ConsoleRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1alpha3ExpandSpecRequest {
-    namespace: string;
-}
-export interface V1alpha3FilesystemlistRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1alpha3FreezeRequest {
-    name: string;
-    namespace: string;
-    body: V1FreezeUnfreezeTimeout;
-}
-export interface V1alpha3GuestosinfoRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1alpha3MemoryDumpRequest {
-    name: string;
-    namespace: string;
-    body: V1VirtualMachineMemoryDumpRequest;
-}
-export interface V1alpha3MigrateRequest {
-    name: string;
-    namespace: string;
-    body: V1MigrateOptions;
-}
-export interface V1alpha3PauseRequest {
-    name: string;
-    namespace: string;
-    body: V1PauseOptions;
-}
-export interface V1alpha3RemoveMemoryDumpRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1alpha3RestartRequest {
-    name: string;
-    namespace: string;
-    body?: V1RestartOptions;
-}
-export interface V1alpha3SEVFetchCertChainRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1alpha3SEVInjectLaunchSecretRequest {
-    name: string;
-    namespace: string;
-    body: V1SEVSecretOptions;
-}
-export interface V1alpha3SEVQueryLaunchMeasurementRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1alpha3SEVSetupSessionRequest {
-    name: string;
-    namespace: string;
-    body: V1SEVSessionOptions;
-}
-export interface V1alpha3SoftRebootRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1alpha3StartRequest {
-    name: string;
-    namespace: string;
-    body: V1StartOptions;
-}
-export interface V1alpha3StopRequest {
-    name: string;
-    namespace: string;
-    body?: V1StopOptions;
-}
-export interface V1alpha3UnfreezeRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1alpha3UnpauseRequest {
-    name: string;
-    namespace: string;
-    body: V1UnpauseOptions;
-}
-export interface V1alpha3UserlistRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1alpha3VNCRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1alpha3VNCScreenshotRequest {
-    name: string;
-    namespace: string;
-    moveCursor?: boolean;
-}
-export interface V1alpha3VSOCKRequest {
-    name: string;
-    namespace: string;
-    port: number;
-    tls?: boolean;
-}
-export interface V1alpha3usbredirRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1alpha3vmAddvolumeRequest {
-    name: string;
-    namespace: string;
-    body: V1AddVolumeOptions;
-}
-export interface V1alpha3vmExpandSpecRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1alpha3vmPortForwardRequest {
-    name: string;
-    namespace: string;
-    port: string;
-}
-export interface V1alpha3vmPortForwardWithProtocolRequest {
-    name: string;
-    namespace: string;
-    port: string;
-    protocol: string;
-}
-export interface V1alpha3vmRemovevolumeRequest {
-    name: string;
-    namespace: string;
-    body: V1RemoveVolumeOptions;
-}
-export interface V1alpha3vmiAddvolumeRequest {
-    name: string;
-    namespace: string;
-    body: V1AddVolumeOptions;
-}
-export interface V1alpha3vmiPortForwardRequest {
-    name: string;
-    namespace: string;
-    port: string;
-}
-export interface V1alpha3vmiPortForwardWithProtocolRequest {
-    name: string;
-    namespace: string;
-    port: string;
-    protocol: string;
-}
-export interface V1alpha3vmiRemovevolumeRequest {
-    name: string;
-    namespace: string;
-    body: V1RemoveVolumeOptions;
-}
-export interface V1usbredirRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1vmAddvolumeRequest {
-    name: string;
-    namespace: string;
-    body: V1AddVolumeOptions;
-}
-export interface V1vmExpandSpecRequest {
-    name: string;
-    namespace: string;
-}
-export interface V1vmPortForwardRequest {
-    name: string;
-    namespace: string;
-    port: string;
-}
-export interface V1vmPortForwardWithProtocolRequest {
-    name: string;
-    namespace: string;
-    port: string;
-    protocol: string;
-}
-export interface V1vmRemovevolumeRequest {
-    name: string;
-    namespace: string;
-    body: V1RemoveVolumeOptions;
-}
-export interface V1vmiAddvolumeRequest {
-    name: string;
-    namespace: string;
-    body: V1AddVolumeOptions;
-}
-export interface V1vmiPortForwardRequest {
-    name: string;
-    namespace: string;
-    port: string;
-}
-export interface V1vmiPortForwardWithProtocolRequest {
-    name: string;
-    namespace: string;
-    port: string;
-    protocol: string;
-}
-export interface V1vmiRemovevolumeRequest {
-    name: string;
-    namespace: string;
-    body: V1RemoveVolumeOptions;
-}
-export interface WatchKubeVirtListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchMigrationPolicyListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchNamespacedKubeVirtRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchNamespacedVirtualMachineRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchNamespacedVirtualMachineExportRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchNamespacedVirtualMachineInstanceRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchNamespacedVirtualMachineInstanceMigrationRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchNamespacedVirtualMachineInstancePresetRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchNamespacedVirtualMachineInstanceReplicaSetRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchNamespacedVirtualMachineInstancetypeRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchNamespacedVirtualMachinePoolRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchNamespacedVirtualMachinePreferenceRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchNamespacedVirtualMachineRestoreRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchNamespacedVirtualMachineSnapshotRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchNamespacedVirtualMachineSnapshotContentRequest {
-    namespace: string;
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachineCloneListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachineClusterInstancetypeListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachineClusterPreferenceListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachineExportListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachineInstanceListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachineInstanceMigrationListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachineInstancePresetListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachineInstanceReplicaSetListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachineInstancetypeListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachineListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachinePoolListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachinePreferenceListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachineRestoreListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachineSnapshotContentListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-export interface WatchVirtualMachineSnapshotListForAllNamespacesRequest {
-    _continue?: string;
-    fieldSelector?: string;
-    includeUninitialized?: boolean;
-    labelSelector?: string;
-    limit?: number;
-    resourceVersion?: string;
-    timeoutSeconds?: number;
-    watch?: boolean;
-}
-/**
- *
- */
-export declare class DefaultApi extends runtime.BaseAPI {
+export declare class DefaultApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Create a MigrationPolicy object.
+     * @param body
      */
-    createMigrationPolicyRaw(requestParameters: CreateMigrationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1MigrationPolicy>>;
-    /**
-     * Create a MigrationPolicy object.
-     */
-    createMigrationPolicy(requestParameters: CreateMigrationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1MigrationPolicy>;
+    createMigrationPolicy(body: V1alpha1MigrationPolicy, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a KubeVirt object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    createNamespacedKubeVirtRaw(requestParameters: CreateNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1KubeVirt>>;
-    /**
-     * Create a KubeVirt object.
-     */
-    createNamespacedKubeVirt(requestParameters: CreateNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1KubeVirt>;
+    createNamespacedKubeVirt(namespace: string, body: V1KubeVirt, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachine object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    createNamespacedVirtualMachineRaw(requestParameters: CreateNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachine>>;
-    /**
-     * Create a VirtualMachine object.
-     */
-    createNamespacedVirtualMachine(requestParameters: CreateNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachine>;
+    createNamespacedVirtualMachine(namespace: string, body: V1VirtualMachine, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachineExport object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    createNamespacedVirtualMachineExportRaw(requestParameters: CreateNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineExport>>;
-    /**
-     * Create a VirtualMachineExport object.
-     */
-    createNamespacedVirtualMachineExport(requestParameters: CreateNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineExport>;
+    createNamespacedVirtualMachineExport(namespace: string, body: V1beta1VirtualMachineExport, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachineInstance object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    createNamespacedVirtualMachineInstanceRaw(requestParameters: CreateNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstance>>;
-    /**
-     * Create a VirtualMachineInstance object.
-     */
-    createNamespacedVirtualMachineInstance(requestParameters: CreateNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstance>;
+    createNamespacedVirtualMachineInstance(namespace: string, body: V1VirtualMachineInstance, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachineInstanceMigration object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    createNamespacedVirtualMachineInstanceMigrationRaw(requestParameters: CreateNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceMigration>>;
-    /**
-     * Create a VirtualMachineInstanceMigration object.
-     */
-    createNamespacedVirtualMachineInstanceMigration(requestParameters: CreateNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceMigration>;
+    createNamespacedVirtualMachineInstanceMigration(namespace: string, body: V1VirtualMachineInstanceMigration, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachineInstancePreset object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    createNamespacedVirtualMachineInstancePresetRaw(requestParameters: CreateNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstancePreset>>;
-    /**
-     * Create a VirtualMachineInstancePreset object.
-     */
-    createNamespacedVirtualMachineInstancePreset(requestParameters: CreateNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstancePreset>;
+    createNamespacedVirtualMachineInstancePreset(namespace: string, body: V1VirtualMachineInstancePreset, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachineInstanceReplicaSet object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    createNamespacedVirtualMachineInstanceReplicaSetRaw(requestParameters: CreateNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceReplicaSet>>;
-    /**
-     * Create a VirtualMachineInstanceReplicaSet object.
-     */
-    createNamespacedVirtualMachineInstanceReplicaSet(requestParameters: CreateNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceReplicaSet>;
+    createNamespacedVirtualMachineInstanceReplicaSet(namespace: string, body: V1VirtualMachineInstanceReplicaSet, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachineInstancetype object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    createNamespacedVirtualMachineInstancetypeRaw(requestParameters: CreateNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineInstancetype>>;
-    /**
-     * Create a VirtualMachineInstancetype object.
-     */
-    createNamespacedVirtualMachineInstancetype(requestParameters: CreateNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineInstancetype>;
+    createNamespacedVirtualMachineInstancetype(namespace: string, body: V1beta1VirtualMachineInstancetype, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachinePool object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    createNamespacedVirtualMachinePoolRaw(requestParameters: CreateNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1VirtualMachinePool>>;
-    /**
-     * Create a VirtualMachinePool object.
-     */
-    createNamespacedVirtualMachinePool(requestParameters: CreateNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1VirtualMachinePool>;
+    createNamespacedVirtualMachinePool(namespace: string, body: V1alpha1VirtualMachinePool, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachinePreference object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    createNamespacedVirtualMachinePreferenceRaw(requestParameters: CreateNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachinePreference>>;
-    /**
-     * Create a VirtualMachinePreference object.
-     */
-    createNamespacedVirtualMachinePreference(requestParameters: CreateNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachinePreference>;
+    createNamespacedVirtualMachinePreference(namespace: string, body: V1beta1VirtualMachinePreference, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachineRestore object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    createNamespacedVirtualMachineRestoreRaw(requestParameters: CreateNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineRestore>>;
-    /**
-     * Create a VirtualMachineRestore object.
-     */
-    createNamespacedVirtualMachineRestore(requestParameters: CreateNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineRestore>;
+    createNamespacedVirtualMachineRestore(namespace: string, body: V1beta1VirtualMachineRestore, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachineSnapshot object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    createNamespacedVirtualMachineSnapshotRaw(requestParameters: CreateNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineSnapshot>>;
-    /**
-     * Create a VirtualMachineSnapshot object.
-     */
-    createNamespacedVirtualMachineSnapshot(requestParameters: CreateNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineSnapshot>;
+    createNamespacedVirtualMachineSnapshot(namespace: string, body: V1beta1VirtualMachineSnapshot, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachineSnapshotContent object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    createNamespacedVirtualMachineSnapshotContentRaw(requestParameters: CreateNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineSnapshotContent>>;
-    /**
-     * Create a VirtualMachineSnapshotContent object.
-     */
-    createNamespacedVirtualMachineSnapshotContent(requestParameters: CreateNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineSnapshotContent>;
+    createNamespacedVirtualMachineSnapshotContent(namespace: string, body: V1beta1VirtualMachineSnapshotContent, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachineClone object.
+     * @param body
      */
-    createVirtualMachineCloneRaw(requestParameters: CreateVirtualMachineCloneRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1VirtualMachineClone>>;
-    /**
-     * Create a VirtualMachineClone object.
-     */
-    createVirtualMachineClone(requestParameters: CreateVirtualMachineCloneRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1VirtualMachineClone>;
+    createVirtualMachineClone(body: V1alpha1VirtualMachineClone, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachineClusterInstancetype object.
+     * @param body
      */
-    createVirtualMachineClusterInstancetypeRaw(requestParameters: CreateVirtualMachineClusterInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineClusterInstancetype>>;
-    /**
-     * Create a VirtualMachineClusterInstancetype object.
-     */
-    createVirtualMachineClusterInstancetype(requestParameters: CreateVirtualMachineClusterInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineClusterInstancetype>;
+    createVirtualMachineClusterInstancetype(body: V1beta1VirtualMachineClusterInstancetype, _options?: Configuration): Promise<RequestContext>;
     /**
      * Create a VirtualMachineClusterPreference object.
+     * @param body
      */
-    createVirtualMachineClusterPreferenceRaw(requestParameters: CreateVirtualMachineClusterPreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineClusterPreference>>;
-    /**
-     * Create a VirtualMachineClusterPreference object.
-     */
-    createVirtualMachineClusterPreference(requestParameters: CreateVirtualMachineClusterPreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineClusterPreference>;
+    createVirtualMachineClusterPreference(body: V1beta1VirtualMachineClusterPreference, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of MigrationPolicy objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionMigrationPolicyRaw(requestParameters: DeleteCollectionMigrationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of MigrationPolicy objects.
-     */
-    deleteCollectionMigrationPolicy(requestParameters?: DeleteCollectionMigrationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionMigrationPolicy(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of KubeVirt objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionNamespacedKubeVirtRaw(requestParameters: DeleteCollectionNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of KubeVirt objects.
-     */
-    deleteCollectionNamespacedKubeVirt(requestParameters?: DeleteCollectionNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionNamespacedKubeVirt(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachine objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionNamespacedVirtualMachineRaw(requestParameters: DeleteCollectionNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachine objects.
-     */
-    deleteCollectionNamespacedVirtualMachine(requestParameters?: DeleteCollectionNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionNamespacedVirtualMachine(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachineExport objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionNamespacedVirtualMachineExportRaw(requestParameters: DeleteCollectionNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachineExport objects.
-     */
-    deleteCollectionNamespacedVirtualMachineExport(requestParameters?: DeleteCollectionNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionNamespacedVirtualMachineExport(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachineInstance objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionNamespacedVirtualMachineInstanceRaw(requestParameters: DeleteCollectionNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachineInstance objects.
-     */
-    deleteCollectionNamespacedVirtualMachineInstance(requestParameters?: DeleteCollectionNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionNamespacedVirtualMachineInstance(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachineInstanceMigration objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionNamespacedVirtualMachineInstanceMigrationRaw(requestParameters: DeleteCollectionNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachineInstanceMigration objects.
-     */
-    deleteCollectionNamespacedVirtualMachineInstanceMigration(requestParameters?: DeleteCollectionNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionNamespacedVirtualMachineInstanceMigration(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachineInstancePreset objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionNamespacedVirtualMachineInstancePresetRaw(requestParameters: DeleteCollectionNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachineInstancePreset objects.
-     */
-    deleteCollectionNamespacedVirtualMachineInstancePreset(requestParameters?: DeleteCollectionNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionNamespacedVirtualMachineInstancePreset(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachineInstanceReplicaSet objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionNamespacedVirtualMachineInstanceReplicaSetRaw(requestParameters: DeleteCollectionNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachineInstanceReplicaSet objects.
-     */
-    deleteCollectionNamespacedVirtualMachineInstanceReplicaSet(requestParameters?: DeleteCollectionNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionNamespacedVirtualMachineInstanceReplicaSet(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachineInstancetype objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionNamespacedVirtualMachineInstancetypeRaw(requestParameters: DeleteCollectionNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachineInstancetype objects.
-     */
-    deleteCollectionNamespacedVirtualMachineInstancetype(requestParameters?: DeleteCollectionNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionNamespacedVirtualMachineInstancetype(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachinePool objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionNamespacedVirtualMachinePoolRaw(requestParameters: DeleteCollectionNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachinePool objects.
-     */
-    deleteCollectionNamespacedVirtualMachinePool(requestParameters?: DeleteCollectionNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionNamespacedVirtualMachinePool(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachinePreference objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionNamespacedVirtualMachinePreferenceRaw(requestParameters: DeleteCollectionNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachinePreference objects.
-     */
-    deleteCollectionNamespacedVirtualMachinePreference(requestParameters?: DeleteCollectionNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionNamespacedVirtualMachinePreference(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachineRestore objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionNamespacedVirtualMachineRestoreRaw(requestParameters: DeleteCollectionNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachineRestore objects.
-     */
-    deleteCollectionNamespacedVirtualMachineRestore(requestParameters?: DeleteCollectionNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionNamespacedVirtualMachineRestore(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachineSnapshot objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionNamespacedVirtualMachineSnapshotRaw(requestParameters: DeleteCollectionNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachineSnapshot objects.
-     */
-    deleteCollectionNamespacedVirtualMachineSnapshot(requestParameters?: DeleteCollectionNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionNamespacedVirtualMachineSnapshot(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachineSnapshotContent objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionNamespacedVirtualMachineSnapshotContentRaw(requestParameters: DeleteCollectionNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachineSnapshotContent objects.
-     */
-    deleteCollectionNamespacedVirtualMachineSnapshotContent(requestParameters?: DeleteCollectionNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionNamespacedVirtualMachineSnapshotContent(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachineClone objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionVirtualMachineCloneRaw(requestParameters: DeleteCollectionVirtualMachineCloneRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachineClone objects.
-     */
-    deleteCollectionVirtualMachineClone(requestParameters?: DeleteCollectionVirtualMachineCloneRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionVirtualMachineClone(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachineClusterInstancetype objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionVirtualMachineClusterInstancetypeRaw(requestParameters: DeleteCollectionVirtualMachineClusterInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachineClusterInstancetype objects.
-     */
-    deleteCollectionVirtualMachineClusterInstancetype(requestParameters?: DeleteCollectionVirtualMachineClusterInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionVirtualMachineClusterInstancetype(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a collection of VirtualMachineClusterPreference objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    deleteCollectionVirtualMachineClusterPreferenceRaw(requestParameters: DeleteCollectionVirtualMachineClusterPreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a collection of VirtualMachineClusterPreference objects.
-     */
-    deleteCollectionVirtualMachineClusterPreference(requestParameters?: DeleteCollectionVirtualMachineClusterPreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteCollectionVirtualMachineClusterPreference(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a MigrationPolicy object.
+     * @param name Name of the resource
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteMigrationPolicyRaw(requestParameters: DeleteMigrationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a MigrationPolicy object.
-     */
-    deleteMigrationPolicy(requestParameters: DeleteMigrationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
-    /**
-     * Delete a KubeVirt object.
-     */
-    deleteNamespacedKubeVirtRaw(requestParameters: DeleteNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
+    deleteMigrationPolicy(name: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a KubeVirt object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteNamespacedKubeVirt(requestParameters: DeleteNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteNamespacedKubeVirt(name: string, namespace: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachine object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteNamespacedVirtualMachineRaw(requestParameters: DeleteNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a VirtualMachine object.
-     */
-    deleteNamespacedVirtualMachine(requestParameters: DeleteNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
-    /**
-     * Delete a VirtualMachineExport object.
-     */
-    deleteNamespacedVirtualMachineExportRaw(requestParameters: DeleteNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
+    deleteNamespacedVirtualMachine(name: string, namespace: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachineExport object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteNamespacedVirtualMachineExport(requestParameters: DeleteNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteNamespacedVirtualMachineExport(name: string, namespace: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachineInstance object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteNamespacedVirtualMachineInstanceRaw(requestParameters: DeleteNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a VirtualMachineInstance object.
-     */
-    deleteNamespacedVirtualMachineInstance(requestParameters: DeleteNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
-    /**
-     * Delete a VirtualMachineInstanceMigration object.
-     */
-    deleteNamespacedVirtualMachineInstanceMigrationRaw(requestParameters: DeleteNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
+    deleteNamespacedVirtualMachineInstance(name: string, namespace: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachineInstanceMigration object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteNamespacedVirtualMachineInstanceMigration(requestParameters: DeleteNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteNamespacedVirtualMachineInstanceMigration(name: string, namespace: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachineInstancePreset object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteNamespacedVirtualMachineInstancePresetRaw(requestParameters: DeleteNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a VirtualMachineInstancePreset object.
-     */
-    deleteNamespacedVirtualMachineInstancePreset(requestParameters: DeleteNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
-    /**
-     * Delete a VirtualMachineInstanceReplicaSet object.
-     */
-    deleteNamespacedVirtualMachineInstanceReplicaSetRaw(requestParameters: DeleteNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
+    deleteNamespacedVirtualMachineInstancePreset(name: string, namespace: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachineInstanceReplicaSet object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteNamespacedVirtualMachineInstanceReplicaSet(requestParameters: DeleteNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteNamespacedVirtualMachineInstanceReplicaSet(name: string, namespace: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachineInstancetype object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteNamespacedVirtualMachineInstancetypeRaw(requestParameters: DeleteNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a VirtualMachineInstancetype object.
-     */
-    deleteNamespacedVirtualMachineInstancetype(requestParameters: DeleteNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
-    /**
-     * Delete a VirtualMachinePool object.
-     */
-    deleteNamespacedVirtualMachinePoolRaw(requestParameters: DeleteNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
+    deleteNamespacedVirtualMachineInstancetype(name: string, namespace: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachinePool object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteNamespacedVirtualMachinePool(requestParameters: DeleteNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteNamespacedVirtualMachinePool(name: string, namespace: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachinePreference object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteNamespacedVirtualMachinePreferenceRaw(requestParameters: DeleteNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a VirtualMachinePreference object.
-     */
-    deleteNamespacedVirtualMachinePreference(requestParameters: DeleteNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
-    /**
-     * Delete a VirtualMachineRestore object.
-     */
-    deleteNamespacedVirtualMachineRestoreRaw(requestParameters: DeleteNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
+    deleteNamespacedVirtualMachinePreference(name: string, namespace: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachineRestore object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteNamespacedVirtualMachineRestore(requestParameters: DeleteNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteNamespacedVirtualMachineRestore(name: string, namespace: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachineSnapshot object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteNamespacedVirtualMachineSnapshotRaw(requestParameters: DeleteNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a VirtualMachineSnapshot object.
-     */
-    deleteNamespacedVirtualMachineSnapshot(requestParameters: DeleteNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
-    /**
-     * Delete a VirtualMachineSnapshotContent object.
-     */
-    deleteNamespacedVirtualMachineSnapshotContentRaw(requestParameters: DeleteNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
+    deleteNamespacedVirtualMachineSnapshot(name: string, namespace: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachineSnapshotContent object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteNamespacedVirtualMachineSnapshotContent(requestParameters: DeleteNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteNamespacedVirtualMachineSnapshotContent(name: string, namespace: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachineClone object.
+     * @param name Name of the resource
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteVirtualMachineCloneRaw(requestParameters: DeleteVirtualMachineCloneRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a VirtualMachineClone object.
-     */
-    deleteVirtualMachineClone(requestParameters: DeleteVirtualMachineCloneRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
-    /**
-     * Delete a VirtualMachineClusterInstancetype object.
-     */
-    deleteVirtualMachineClusterInstancetypeRaw(requestParameters: DeleteVirtualMachineClusterInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
+    deleteVirtualMachineClone(name: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachineClusterInstancetype object.
+     * @param name Name of the resource
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteVirtualMachineClusterInstancetype(requestParameters: DeleteVirtualMachineClusterInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteVirtualMachineClusterInstancetype(name: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Delete a VirtualMachineClusterPreference object.
+     * @param name Name of the resource
+     * @param body
+     * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+     * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object\&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+     * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: \&#39;Orphan\&#39; - orphan the dependents; \&#39;Background\&#39; - allow the garbage collector to delete the dependents in the background; \&#39;Foreground\&#39; - a cascading policy that deletes all dependents in the foreground.
      */
-    deleteVirtualMachineClusterPreferenceRaw(requestParameters: DeleteVirtualMachineClusterPreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1Status>>;
-    /**
-     * Delete a VirtualMachineClusterPreference object.
-     */
-    deleteVirtualMachineClusterPreference(requestParameters: DeleteVirtualMachineClusterPreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1Status>;
+    deleteVirtualMachineClusterPreference(name: string, body: K8sIoApimachineryPkgApisMetaV1DeleteOptions, gracePeriodSeconds?: number, orphanDependents?: boolean, propagationPolicy?: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Health endpoint
      */
-    func13Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Health endpoint
-     */
-    func13(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    func13(_options?: Configuration): Promise<RequestContext>;
     /**
      */
-    func6Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     */
-    func6(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    func6(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get a KubeVirt API group
      */
-    getAPIGroupCloneKubevirtIoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
+    getAPIGroupCloneKubevirtIo(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get a KubeVirt API group
      */
-    getAPIGroupCloneKubevirtIo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIGroup>;
+    getAPIGroupExportKubevirtIo(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get a KubeVirt API group
      */
-    getAPIGroupExportKubevirtIoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
+    getAPIGroupInstancetypeKubevirtIo(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get a KubeVirt API group
      */
-    getAPIGroupExportKubevirtIo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIGroup>;
-    /**
-     * Get a KubeVirt API group
-     */
-    getAPIGroupInstancetypeKubevirtIoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
-    /**
-     * Get a KubeVirt API group
-     */
-    getAPIGroupInstancetypeKubevirtIo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIGroup>;
-    /**
-     * Get a KubeVirt API group
-     */
-    getAPIGroupKubevirtIoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
-    /**
-     * Get a KubeVirt API group
-     */
-    getAPIGroupKubevirtIo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIGroup>;
+    getAPIGroupKubevirtIo(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get a KubeVirt API GroupList
      */
-    getAPIGroupListRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIGroupList>>;
-    /**
-     * Get a KubeVirt API GroupList
-     */
-    getAPIGroupList(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIGroupList>;
+    getAPIGroupList(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get a KubeVirt API group
      */
-    getAPIGroupMigrationsKubevirtIoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
+    getAPIGroupMigrationsKubevirtIo(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get a KubeVirt API group
      */
-    getAPIGroupMigrationsKubevirtIo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIGroup>;
+    getAPIGroupPoolKubevirtIo(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get a KubeVirt API group
      */
-    getAPIGroupPoolKubevirtIoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
-    /**
-     * Get a KubeVirt API group
-     */
-    getAPIGroupPoolKubevirtIo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIGroup>;
-    /**
-     * Get a KubeVirt API group
-     */
-    getAPIGroupSnapshotKubevirtIoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
-    /**
-     * Get a KubeVirt API group
-     */
-    getAPIGroupSnapshotKubevirtIo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIGroup>;
+    getAPIGroupSnapshotKubevirtIo(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get KubeVirt API Resources
      */
-    getAPIResourcesCloneKubevirtIoV1alpha1Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
+    getAPIResourcesCloneKubevirtIoV1alpha1(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get KubeVirt API Resources
      */
-    getAPIResourcesCloneKubevirtIoV1alpha1(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIResourceList>;
+    getAPIResourcesExportKubevirtIoV1beta1(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get KubeVirt API Resources
      */
-    getAPIResourcesExportKubevirtIoV1beta1Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
+    getAPIResourcesInstancetypeKubevirtIoV1beta1(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get KubeVirt API Resources
      */
-    getAPIResourcesExportKubevirtIoV1beta1(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIResourceList>;
+    getAPIResourcesKubevirtIoV1(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get KubeVirt API Resources
      */
-    getAPIResourcesInstancetypeKubevirtIoV1beta1Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
+    getAPIResourcesMigrationsKubevirtIoV1alpha1(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get KubeVirt API Resources
      */
-    getAPIResourcesInstancetypeKubevirtIoV1beta1(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIResourceList>;
+    getAPIResourcesPoolKubevirtIoV1alpha1(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get KubeVirt API Resources
      */
-    getAPIResourcesKubevirtIoV1Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
-    /**
-     * Get KubeVirt API Resources
-     */
-    getAPIResourcesKubevirtIoV1(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIResourceList>;
-    /**
-     * Get KubeVirt API Resources
-     */
-    getAPIResourcesMigrationsKubevirtIoV1alpha1Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
-    /**
-     * Get KubeVirt API Resources
-     */
-    getAPIResourcesMigrationsKubevirtIoV1alpha1(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIResourceList>;
-    /**
-     * Get KubeVirt API Resources
-     */
-    getAPIResourcesPoolKubevirtIoV1alpha1Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
-    /**
-     * Get KubeVirt API Resources
-     */
-    getAPIResourcesPoolKubevirtIoV1alpha1(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIResourceList>;
-    /**
-     * Get KubeVirt API Resources
-     */
-    getAPIResourcesSnapshotKubevirtIoV1beta1Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
-    /**
-     * Get KubeVirt API Resources
-     */
-    getAPIResourcesSnapshotKubevirtIoV1beta1(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIResourceList>;
+    getAPIResourcesSnapshotKubevirtIoV1beta1(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get KubeVirt API root paths
      */
-    getRootPathsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1RootPaths>>;
-    /**
-     * Get KubeVirt API root paths
-     */
-    getRootPaths(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1RootPaths>;
+    getRootPaths(_options?: Configuration): Promise<RequestContext>;
     /**
      * dump profiler results endpoint
      */
-    handleDumpProfilerRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * dump profiler results endpoint
-     */
-    handleDumpProfiler(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    handleDumpProfiler(_options?: Configuration): Promise<RequestContext>;
     /**
      * start profiler endpoint
      */
-    handleStartProfilerRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * start profiler endpoint
-     */
-    handleStartProfiler(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    handleStartProfiler(_options?: Configuration): Promise<RequestContext>;
     /**
      * stop profiler endpoint
      */
-    handleStopProfilerRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * stop profiler endpoint
-     */
-    handleStopProfiler(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    handleStopProfiler(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of all KubeVirt objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listKubeVirtForAllNamespacesRaw(requestParameters: ListKubeVirtForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1KubeVirtList>>;
-    /**
-     * Get a list of all KubeVirt objects.
-     */
-    listKubeVirtForAllNamespaces(requestParameters?: ListKubeVirtForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1KubeVirtList>;
+    listKubeVirtForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of MigrationPolicy objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listMigrationPolicyRaw(requestParameters: ListMigrationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1MigrationPolicyList>>;
-    /**
-     * Get a list of MigrationPolicy objects.
-     */
-    listMigrationPolicy(requestParameters?: ListMigrationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1MigrationPolicyList>;
+    listMigrationPolicy(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of KubeVirt objects.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listNamespacedKubeVirtRaw(requestParameters: ListNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1KubeVirtList>>;
-    /**
-     * Get a list of KubeVirt objects.
-     */
-    listNamespacedKubeVirt(requestParameters: ListNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1KubeVirtList>;
+    listNamespacedKubeVirt(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachine objects.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listNamespacedVirtualMachineRaw(requestParameters: ListNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineList>>;
-    /**
-     * Get a list of VirtualMachine objects.
-     */
-    listNamespacedVirtualMachine(requestParameters: ListNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineList>;
+    listNamespacedVirtualMachine(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachineExport objects.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listNamespacedVirtualMachineExportRaw(requestParameters: ListNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineExportList>>;
-    /**
-     * Get a list of VirtualMachineExport objects.
-     */
-    listNamespacedVirtualMachineExport(requestParameters: ListNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineExportList>;
+    listNamespacedVirtualMachineExport(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachineInstance objects.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listNamespacedVirtualMachineInstanceRaw(requestParameters: ListNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceList>>;
-    /**
-     * Get a list of VirtualMachineInstance objects.
-     */
-    listNamespacedVirtualMachineInstance(requestParameters: ListNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceList>;
+    listNamespacedVirtualMachineInstance(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachineInstanceMigration objects.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listNamespacedVirtualMachineInstanceMigrationRaw(requestParameters: ListNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceMigrationList>>;
-    /**
-     * Get a list of VirtualMachineInstanceMigration objects.
-     */
-    listNamespacedVirtualMachineInstanceMigration(requestParameters: ListNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceMigrationList>;
+    listNamespacedVirtualMachineInstanceMigration(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachineInstancePreset objects.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listNamespacedVirtualMachineInstancePresetRaw(requestParameters: ListNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstancePresetList>>;
-    /**
-     * Get a list of VirtualMachineInstancePreset objects.
-     */
-    listNamespacedVirtualMachineInstancePreset(requestParameters: ListNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstancePresetList>;
+    listNamespacedVirtualMachineInstancePreset(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachineInstanceReplicaSet objects.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listNamespacedVirtualMachineInstanceReplicaSetRaw(requestParameters: ListNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceReplicaSetList>>;
-    /**
-     * Get a list of VirtualMachineInstanceReplicaSet objects.
-     */
-    listNamespacedVirtualMachineInstanceReplicaSet(requestParameters: ListNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceReplicaSetList>;
+    listNamespacedVirtualMachineInstanceReplicaSet(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachineInstancetype objects.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listNamespacedVirtualMachineInstancetypeRaw(requestParameters: ListNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineInstancetypeList>>;
-    /**
-     * Get a list of VirtualMachineInstancetype objects.
-     */
-    listNamespacedVirtualMachineInstancetype(requestParameters: ListNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineInstancetypeList>;
+    listNamespacedVirtualMachineInstancetype(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachinePool objects.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listNamespacedVirtualMachinePoolRaw(requestParameters: ListNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1VirtualMachinePoolList>>;
-    /**
-     * Get a list of VirtualMachinePool objects.
-     */
-    listNamespacedVirtualMachinePool(requestParameters: ListNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1VirtualMachinePoolList>;
+    listNamespacedVirtualMachinePool(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachinePreference objects.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listNamespacedVirtualMachinePreferenceRaw(requestParameters: ListNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachinePreferenceList>>;
-    /**
-     * Get a list of VirtualMachinePreference objects.
-     */
-    listNamespacedVirtualMachinePreference(requestParameters: ListNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachinePreferenceList>;
+    listNamespacedVirtualMachinePreference(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachineRestore objects.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listNamespacedVirtualMachineRestoreRaw(requestParameters: ListNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineRestoreList>>;
-    /**
-     * Get a list of VirtualMachineRestore objects.
-     */
-    listNamespacedVirtualMachineRestore(requestParameters: ListNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineRestoreList>;
+    listNamespacedVirtualMachineRestore(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachineSnapshot objects.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listNamespacedVirtualMachineSnapshotRaw(requestParameters: ListNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineSnapshotList>>;
-    /**
-     * Get a list of VirtualMachineSnapshot objects.
-     */
-    listNamespacedVirtualMachineSnapshot(requestParameters: ListNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineSnapshotList>;
+    listNamespacedVirtualMachineSnapshot(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachineSnapshotContent objects.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listNamespacedVirtualMachineSnapshotContentRaw(requestParameters: ListNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineSnapshotContentList>>;
-    /**
-     * Get a list of VirtualMachineSnapshotContent objects.
-     */
-    listNamespacedVirtualMachineSnapshotContent(requestParameters: ListNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineSnapshotContentList>;
+    listNamespacedVirtualMachineSnapshotContent(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachineClone objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachineCloneRaw(requestParameters: ListVirtualMachineCloneRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1VirtualMachineCloneList>>;
-    /**
-     * Get a list of VirtualMachineClone objects.
-     */
-    listVirtualMachineClone(requestParameters?: ListVirtualMachineCloneRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1VirtualMachineCloneList>;
+    listVirtualMachineClone(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachineClusterInstancetype objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachineClusterInstancetypeRaw(requestParameters: ListVirtualMachineClusterInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineClusterInstancetypeList>>;
-    /**
-     * Get a list of VirtualMachineClusterInstancetype objects.
-     */
-    listVirtualMachineClusterInstancetype(requestParameters?: ListVirtualMachineClusterInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineClusterInstancetypeList>;
+    listVirtualMachineClusterInstancetype(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of VirtualMachineClusterPreference objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachineClusterPreferenceRaw(requestParameters: ListVirtualMachineClusterPreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineClusterPreferenceList>>;
-    /**
-     * Get a list of VirtualMachineClusterPreference objects.
-     */
-    listVirtualMachineClusterPreference(requestParameters?: ListVirtualMachineClusterPreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineClusterPreferenceList>;
+    listVirtualMachineClusterPreference(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of all VirtualMachineExport objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachineExportForAllNamespacesRaw(requestParameters: ListVirtualMachineExportForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineExportList>>;
-    /**
-     * Get a list of all VirtualMachineExport objects.
-     */
-    listVirtualMachineExportForAllNamespaces(requestParameters?: ListVirtualMachineExportForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineExportList>;
+    listVirtualMachineExportForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of all VirtualMachine objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachineForAllNamespacesRaw(requestParameters: ListVirtualMachineForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineList>>;
-    /**
-     * Get a list of all VirtualMachine objects.
-     */
-    listVirtualMachineForAllNamespaces(requestParameters?: ListVirtualMachineForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineList>;
+    listVirtualMachineForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of all VirtualMachineInstance objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachineInstanceForAllNamespacesRaw(requestParameters: ListVirtualMachineInstanceForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceList>>;
-    /**
-     * Get a list of all VirtualMachineInstance objects.
-     */
-    listVirtualMachineInstanceForAllNamespaces(requestParameters?: ListVirtualMachineInstanceForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceList>;
+    listVirtualMachineInstanceForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of all VirtualMachineInstanceMigration objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachineInstanceMigrationForAllNamespacesRaw(requestParameters: ListVirtualMachineInstanceMigrationForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceMigrationList>>;
-    /**
-     * Get a list of all VirtualMachineInstanceMigration objects.
-     */
-    listVirtualMachineInstanceMigrationForAllNamespaces(requestParameters?: ListVirtualMachineInstanceMigrationForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceMigrationList>;
+    listVirtualMachineInstanceMigrationForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of all VirtualMachineInstancePreset objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachineInstancePresetForAllNamespacesRaw(requestParameters: ListVirtualMachineInstancePresetForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstancePresetList>>;
-    /**
-     * Get a list of all VirtualMachineInstancePreset objects.
-     */
-    listVirtualMachineInstancePresetForAllNamespaces(requestParameters?: ListVirtualMachineInstancePresetForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstancePresetList>;
+    listVirtualMachineInstancePresetForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of all VirtualMachineInstanceReplicaSet objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachineInstanceReplicaSetForAllNamespacesRaw(requestParameters: ListVirtualMachineInstanceReplicaSetForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceReplicaSetList>>;
-    /**
-     * Get a list of all VirtualMachineInstanceReplicaSet objects.
-     */
-    listVirtualMachineInstanceReplicaSetForAllNamespaces(requestParameters?: ListVirtualMachineInstanceReplicaSetForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceReplicaSetList>;
+    listVirtualMachineInstanceReplicaSetForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of all VirtualMachineInstancetype objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachineInstancetypeForAllNamespacesRaw(requestParameters: ListVirtualMachineInstancetypeForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineInstancetypeList>>;
-    /**
-     * Get a list of all VirtualMachineInstancetype objects.
-     */
-    listVirtualMachineInstancetypeForAllNamespaces(requestParameters?: ListVirtualMachineInstancetypeForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineInstancetypeList>;
+    listVirtualMachineInstancetypeForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of all VirtualMachinePool objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachinePoolForAllNamespacesRaw(requestParameters: ListVirtualMachinePoolForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1VirtualMachinePoolList>>;
-    /**
-     * Get a list of all VirtualMachinePool objects.
-     */
-    listVirtualMachinePoolForAllNamespaces(requestParameters?: ListVirtualMachinePoolForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1VirtualMachinePoolList>;
+    listVirtualMachinePoolForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of all VirtualMachinePreference objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachinePreferenceForAllNamespacesRaw(requestParameters: ListVirtualMachinePreferenceForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachinePreferenceList>>;
-    /**
-     * Get a list of all VirtualMachinePreference objects.
-     */
-    listVirtualMachinePreferenceForAllNamespaces(requestParameters?: ListVirtualMachinePreferenceForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachinePreferenceList>;
+    listVirtualMachinePreferenceForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of all VirtualMachineRestore objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachineRestoreForAllNamespacesRaw(requestParameters: ListVirtualMachineRestoreForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineRestoreList>>;
-    /**
-     * Get a list of all VirtualMachineRestore objects.
-     */
-    listVirtualMachineRestoreForAllNamespaces(requestParameters?: ListVirtualMachineRestoreForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineRestoreList>;
+    listVirtualMachineRestoreForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of all VirtualMachineSnapshotContent objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachineSnapshotContentForAllNamespacesRaw(requestParameters: ListVirtualMachineSnapshotContentForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineSnapshotContentList>>;
-    /**
-     * Get a list of all VirtualMachineSnapshotContent objects.
-     */
-    listVirtualMachineSnapshotContentForAllNamespaces(requestParameters?: ListVirtualMachineSnapshotContentForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineSnapshotContentList>;
+    listVirtualMachineSnapshotContentForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a list of all VirtualMachineSnapshot objects.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    listVirtualMachineSnapshotForAllNamespacesRaw(requestParameters: ListVirtualMachineSnapshotForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineSnapshotList>>;
-    /**
-     * Get a list of all VirtualMachineSnapshot objects.
-     */
-    listVirtualMachineSnapshotForAllNamespaces(requestParameters?: ListVirtualMachineSnapshotForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineSnapshotList>;
+    listVirtualMachineSnapshotForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a MigrationPolicy object.
+     * @param name Name of the resource
+     * @param body
      */
-    patchMigrationPolicyRaw(requestParameters: PatchMigrationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1MigrationPolicy>>;
-    /**
-     * Patch a MigrationPolicy object.
-     */
-    patchMigrationPolicy(requestParameters: PatchMigrationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1MigrationPolicy>;
+    patchMigrationPolicy(name: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a KubeVirt object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    patchNamespacedKubeVirtRaw(requestParameters: PatchNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1KubeVirt>>;
-    /**
-     * Patch a KubeVirt object.
-     */
-    patchNamespacedKubeVirt(requestParameters: PatchNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1KubeVirt>;
-    /**
-     * Patch a VirtualMachine object.
-     */
-    patchNamespacedVirtualMachineRaw(requestParameters: PatchNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachine>>;
+    patchNamespacedKubeVirt(name: string, namespace: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachine object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    patchNamespacedVirtualMachine(requestParameters: PatchNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachine>;
+    patchNamespacedVirtualMachine(name: string, namespace: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachineExport object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    patchNamespacedVirtualMachineExportRaw(requestParameters: PatchNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineExport>>;
-    /**
-     * Patch a VirtualMachineExport object.
-     */
-    patchNamespacedVirtualMachineExport(requestParameters: PatchNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineExport>;
-    /**
-     * Patch a VirtualMachineInstance object.
-     */
-    patchNamespacedVirtualMachineInstanceRaw(requestParameters: PatchNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstance>>;
+    patchNamespacedVirtualMachineExport(name: string, namespace: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachineInstance object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    patchNamespacedVirtualMachineInstance(requestParameters: PatchNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstance>;
+    patchNamespacedVirtualMachineInstance(name: string, namespace: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachineInstanceMigration object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    patchNamespacedVirtualMachineInstanceMigrationRaw(requestParameters: PatchNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceMigration>>;
-    /**
-     * Patch a VirtualMachineInstanceMigration object.
-     */
-    patchNamespacedVirtualMachineInstanceMigration(requestParameters: PatchNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceMigration>;
-    /**
-     * Patch a VirtualMachineInstancePreset object.
-     */
-    patchNamespacedVirtualMachineInstancePresetRaw(requestParameters: PatchNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstancePreset>>;
+    patchNamespacedVirtualMachineInstanceMigration(name: string, namespace: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachineInstancePreset object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    patchNamespacedVirtualMachineInstancePreset(requestParameters: PatchNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstancePreset>;
+    patchNamespacedVirtualMachineInstancePreset(name: string, namespace: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachineInstanceReplicaSet object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    patchNamespacedVirtualMachineInstanceReplicaSetRaw(requestParameters: PatchNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceReplicaSet>>;
-    /**
-     * Patch a VirtualMachineInstanceReplicaSet object.
-     */
-    patchNamespacedVirtualMachineInstanceReplicaSet(requestParameters: PatchNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceReplicaSet>;
-    /**
-     * Patch a VirtualMachineInstancetype object.
-     */
-    patchNamespacedVirtualMachineInstancetypeRaw(requestParameters: PatchNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineInstancetype>>;
+    patchNamespacedVirtualMachineInstanceReplicaSet(name: string, namespace: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachineInstancetype object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    patchNamespacedVirtualMachineInstancetype(requestParameters: PatchNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineInstancetype>;
+    patchNamespacedVirtualMachineInstancetype(name: string, namespace: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachinePool object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    patchNamespacedVirtualMachinePoolRaw(requestParameters: PatchNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1VirtualMachinePool>>;
-    /**
-     * Patch a VirtualMachinePool object.
-     */
-    patchNamespacedVirtualMachinePool(requestParameters: PatchNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1VirtualMachinePool>;
-    /**
-     * Patch a VirtualMachinePreference object.
-     */
-    patchNamespacedVirtualMachinePreferenceRaw(requestParameters: PatchNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachinePreference>>;
+    patchNamespacedVirtualMachinePool(name: string, namespace: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachinePreference object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    patchNamespacedVirtualMachinePreference(requestParameters: PatchNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachinePreference>;
+    patchNamespacedVirtualMachinePreference(name: string, namespace: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachineRestore object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    patchNamespacedVirtualMachineRestoreRaw(requestParameters: PatchNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineRestore>>;
-    /**
-     * Patch a VirtualMachineRestore object.
-     */
-    patchNamespacedVirtualMachineRestore(requestParameters: PatchNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineRestore>;
-    /**
-     * Patch a VirtualMachineSnapshot object.
-     */
-    patchNamespacedVirtualMachineSnapshotRaw(requestParameters: PatchNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineSnapshot>>;
+    patchNamespacedVirtualMachineRestore(name: string, namespace: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachineSnapshot object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    patchNamespacedVirtualMachineSnapshot(requestParameters: PatchNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineSnapshot>;
+    patchNamespacedVirtualMachineSnapshot(name: string, namespace: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachineSnapshotContent object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    patchNamespacedVirtualMachineSnapshotContentRaw(requestParameters: PatchNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineSnapshotContent>>;
-    /**
-     * Patch a VirtualMachineSnapshotContent object.
-     */
-    patchNamespacedVirtualMachineSnapshotContent(requestParameters: PatchNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineSnapshotContent>;
-    /**
-     * Patch a VirtualMachineClone object.
-     */
-    patchVirtualMachineCloneRaw(requestParameters: PatchVirtualMachineCloneRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1VirtualMachineClone>>;
+    patchNamespacedVirtualMachineSnapshotContent(name: string, namespace: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachineClone object.
+     * @param name Name of the resource
+     * @param body
      */
-    patchVirtualMachineClone(requestParameters: PatchVirtualMachineCloneRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1VirtualMachineClone>;
+    patchVirtualMachineClone(name: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachineClusterInstancetype object.
+     * @param name Name of the resource
+     * @param body
      */
-    patchVirtualMachineClusterInstancetypeRaw(requestParameters: PatchVirtualMachineClusterInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineClusterInstancetype>>;
-    /**
-     * Patch a VirtualMachineClusterInstancetype object.
-     */
-    patchVirtualMachineClusterInstancetype(requestParameters: PatchVirtualMachineClusterInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineClusterInstancetype>;
+    patchVirtualMachineClusterInstancetype(name: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Patch a VirtualMachineClusterPreference object.
+     * @param name Name of the resource
+     * @param body
      */
-    patchVirtualMachineClusterPreferenceRaw(requestParameters: PatchVirtualMachineClusterPreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineClusterPreference>>;
-    /**
-     * Patch a VirtualMachineClusterPreference object.
-     */
-    patchVirtualMachineClusterPreference(requestParameters: PatchVirtualMachineClusterPreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineClusterPreference>;
+    patchVirtualMachineClusterPreference(name: string, body: any, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a MigrationPolicy object.
+     * @param name Name of the resource
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readMigrationPolicyRaw(requestParameters: ReadMigrationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1MigrationPolicy>>;
-    /**
-     * Get a MigrationPolicy object.
-     */
-    readMigrationPolicy(requestParameters: ReadMigrationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1MigrationPolicy>;
-    /**
-     * Get a KubeVirt object.
-     */
-    readNamespacedKubeVirtRaw(requestParameters: ReadNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1KubeVirt>>;
+    readMigrationPolicy(name: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a KubeVirt object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readNamespacedKubeVirt(requestParameters: ReadNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1KubeVirt>;
+    readNamespacedKubeVirt(name: string, namespace: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachine object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readNamespacedVirtualMachineRaw(requestParameters: ReadNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachine>>;
-    /**
-     * Get a VirtualMachine object.
-     */
-    readNamespacedVirtualMachine(requestParameters: ReadNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachine>;
-    /**
-     * Get a VirtualMachineExport object.
-     */
-    readNamespacedVirtualMachineExportRaw(requestParameters: ReadNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineExport>>;
+    readNamespacedVirtualMachine(name: string, namespace: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachineExport object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readNamespacedVirtualMachineExport(requestParameters: ReadNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineExport>;
+    readNamespacedVirtualMachineExport(name: string, namespace: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachineInstance object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readNamespacedVirtualMachineInstanceRaw(requestParameters: ReadNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstance>>;
-    /**
-     * Get a VirtualMachineInstance object.
-     */
-    readNamespacedVirtualMachineInstance(requestParameters: ReadNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstance>;
-    /**
-     * Get a VirtualMachineInstanceMigration object.
-     */
-    readNamespacedVirtualMachineInstanceMigrationRaw(requestParameters: ReadNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceMigration>>;
+    readNamespacedVirtualMachineInstance(name: string, namespace: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachineInstanceMigration object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readNamespacedVirtualMachineInstanceMigration(requestParameters: ReadNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceMigration>;
+    readNamespacedVirtualMachineInstanceMigration(name: string, namespace: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachineInstancePreset object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readNamespacedVirtualMachineInstancePresetRaw(requestParameters: ReadNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstancePreset>>;
-    /**
-     * Get a VirtualMachineInstancePreset object.
-     */
-    readNamespacedVirtualMachineInstancePreset(requestParameters: ReadNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstancePreset>;
-    /**
-     * Get a VirtualMachineInstanceReplicaSet object.
-     */
-    readNamespacedVirtualMachineInstanceReplicaSetRaw(requestParameters: ReadNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceReplicaSet>>;
+    readNamespacedVirtualMachineInstancePreset(name: string, namespace: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachineInstanceReplicaSet object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readNamespacedVirtualMachineInstanceReplicaSet(requestParameters: ReadNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceReplicaSet>;
+    readNamespacedVirtualMachineInstanceReplicaSet(name: string, namespace: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachineInstancetype object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readNamespacedVirtualMachineInstancetypeRaw(requestParameters: ReadNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineInstancetype>>;
-    /**
-     * Get a VirtualMachineInstancetype object.
-     */
-    readNamespacedVirtualMachineInstancetype(requestParameters: ReadNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineInstancetype>;
-    /**
-     * Get a VirtualMachinePool object.
-     */
-    readNamespacedVirtualMachinePoolRaw(requestParameters: ReadNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1VirtualMachinePool>>;
+    readNamespacedVirtualMachineInstancetype(name: string, namespace: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachinePool object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readNamespacedVirtualMachinePool(requestParameters: ReadNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1VirtualMachinePool>;
+    readNamespacedVirtualMachinePool(name: string, namespace: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachinePreference object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readNamespacedVirtualMachinePreferenceRaw(requestParameters: ReadNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachinePreference>>;
-    /**
-     * Get a VirtualMachinePreference object.
-     */
-    readNamespacedVirtualMachinePreference(requestParameters: ReadNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachinePreference>;
-    /**
-     * Get a VirtualMachineRestore object.
-     */
-    readNamespacedVirtualMachineRestoreRaw(requestParameters: ReadNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineRestore>>;
+    readNamespacedVirtualMachinePreference(name: string, namespace: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachineRestore object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readNamespacedVirtualMachineRestore(requestParameters: ReadNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineRestore>;
+    readNamespacedVirtualMachineRestore(name: string, namespace: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachineSnapshot object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readNamespacedVirtualMachineSnapshotRaw(requestParameters: ReadNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineSnapshot>>;
-    /**
-     * Get a VirtualMachineSnapshot object.
-     */
-    readNamespacedVirtualMachineSnapshot(requestParameters: ReadNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineSnapshot>;
-    /**
-     * Get a VirtualMachineSnapshotContent object.
-     */
-    readNamespacedVirtualMachineSnapshotContentRaw(requestParameters: ReadNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineSnapshotContent>>;
+    readNamespacedVirtualMachineSnapshot(name: string, namespace: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachineSnapshotContent object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readNamespacedVirtualMachineSnapshotContent(requestParameters: ReadNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineSnapshotContent>;
+    readNamespacedVirtualMachineSnapshotContent(name: string, namespace: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachineClone object.
+     * @param name Name of the resource
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readVirtualMachineCloneRaw(requestParameters: ReadVirtualMachineCloneRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1VirtualMachineClone>>;
-    /**
-     * Get a VirtualMachineClone object.
-     */
-    readVirtualMachineClone(requestParameters: ReadVirtualMachineCloneRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1VirtualMachineClone>;
-    /**
-     * Get a VirtualMachineClusterInstancetype object.
-     */
-    readVirtualMachineClusterInstancetypeRaw(requestParameters: ReadVirtualMachineClusterInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineClusterInstancetype>>;
+    readVirtualMachineClone(name: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachineClusterInstancetype object.
+     * @param name Name of the resource
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readVirtualMachineClusterInstancetype(requestParameters: ReadVirtualMachineClusterInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineClusterInstancetype>;
+    readVirtualMachineClusterInstancetype(name: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a VirtualMachineClusterPreference object.
+     * @param name Name of the resource
+     * @param exact Should the export be exact. Exact export maintains cluster-specific fields like \&#39;Namespace\&#39;.
+     * @param _export Should this value be exported. Export strips fields that a user can not specify.
      */
-    readVirtualMachineClusterPreferenceRaw(requestParameters: ReadVirtualMachineClusterPreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineClusterPreference>>;
-    /**
-     * Get a VirtualMachineClusterPreference object.
-     */
-    readVirtualMachineClusterPreference(requestParameters: ReadVirtualMachineClusterPreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineClusterPreference>;
-    /**
-     * Update a MigrationPolicy object.
-     */
-    replaceMigrationPolicyRaw(requestParameters: ReplaceMigrationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1MigrationPolicy>>;
+    readVirtualMachineClusterPreference(name: string, exact?: boolean, _export?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a MigrationPolicy object.
+     * @param name Name of the resource
+     * @param body
      */
-    replaceMigrationPolicy(requestParameters: ReplaceMigrationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1MigrationPolicy>;
+    replaceMigrationPolicy(name: string, body: V1alpha1MigrationPolicy, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a KubeVirt object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    replaceNamespacedKubeVirtRaw(requestParameters: ReplaceNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1KubeVirt>>;
-    /**
-     * Update a KubeVirt object.
-     */
-    replaceNamespacedKubeVirt(requestParameters: ReplaceNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1KubeVirt>;
-    /**
-     * Update a VirtualMachine object.
-     */
-    replaceNamespacedVirtualMachineRaw(requestParameters: ReplaceNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachine>>;
+    replaceNamespacedKubeVirt(name: string, namespace: string, body: V1KubeVirt, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachine object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    replaceNamespacedVirtualMachine(requestParameters: ReplaceNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachine>;
+    replaceNamespacedVirtualMachine(name: string, namespace: string, body: V1VirtualMachine, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachineExport object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    replaceNamespacedVirtualMachineExportRaw(requestParameters: ReplaceNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineExport>>;
-    /**
-     * Update a VirtualMachineExport object.
-     */
-    replaceNamespacedVirtualMachineExport(requestParameters: ReplaceNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineExport>;
-    /**
-     * Update a VirtualMachineInstance object.
-     */
-    replaceNamespacedVirtualMachineInstanceRaw(requestParameters: ReplaceNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstance>>;
+    replaceNamespacedVirtualMachineExport(name: string, namespace: string, body: V1beta1VirtualMachineExport, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachineInstance object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    replaceNamespacedVirtualMachineInstance(requestParameters: ReplaceNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstance>;
+    replaceNamespacedVirtualMachineInstance(name: string, namespace: string, body: V1VirtualMachineInstance, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachineInstanceMigration object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    replaceNamespacedVirtualMachineInstanceMigrationRaw(requestParameters: ReplaceNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceMigration>>;
-    /**
-     * Update a VirtualMachineInstanceMigration object.
-     */
-    replaceNamespacedVirtualMachineInstanceMigration(requestParameters: ReplaceNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceMigration>;
-    /**
-     * Update a VirtualMachineInstancePreset object.
-     */
-    replaceNamespacedVirtualMachineInstancePresetRaw(requestParameters: ReplaceNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstancePreset>>;
+    replaceNamespacedVirtualMachineInstanceMigration(name: string, namespace: string, body: V1VirtualMachineInstanceMigration, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachineInstancePreset object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    replaceNamespacedVirtualMachineInstancePreset(requestParameters: ReplaceNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstancePreset>;
+    replaceNamespacedVirtualMachineInstancePreset(name: string, namespace: string, body: V1VirtualMachineInstancePreset, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachineInstanceReplicaSet object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    replaceNamespacedVirtualMachineInstanceReplicaSetRaw(requestParameters: ReplaceNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceReplicaSet>>;
-    /**
-     * Update a VirtualMachineInstanceReplicaSet object.
-     */
-    replaceNamespacedVirtualMachineInstanceReplicaSet(requestParameters: ReplaceNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceReplicaSet>;
-    /**
-     * Update a VirtualMachineInstancetype object.
-     */
-    replaceNamespacedVirtualMachineInstancetypeRaw(requestParameters: ReplaceNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineInstancetype>>;
+    replaceNamespacedVirtualMachineInstanceReplicaSet(name: string, namespace: string, body: V1VirtualMachineInstanceReplicaSet, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachineInstancetype object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    replaceNamespacedVirtualMachineInstancetype(requestParameters: ReplaceNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineInstancetype>;
+    replaceNamespacedVirtualMachineInstancetype(name: string, namespace: string, body: V1beta1VirtualMachineInstancetype, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachinePool object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    replaceNamespacedVirtualMachinePoolRaw(requestParameters: ReplaceNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1VirtualMachinePool>>;
-    /**
-     * Update a VirtualMachinePool object.
-     */
-    replaceNamespacedVirtualMachinePool(requestParameters: ReplaceNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1VirtualMachinePool>;
-    /**
-     * Update a VirtualMachinePreference object.
-     */
-    replaceNamespacedVirtualMachinePreferenceRaw(requestParameters: ReplaceNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachinePreference>>;
+    replaceNamespacedVirtualMachinePool(name: string, namespace: string, body: V1alpha1VirtualMachinePool, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachinePreference object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    replaceNamespacedVirtualMachinePreference(requestParameters: ReplaceNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachinePreference>;
+    replaceNamespacedVirtualMachinePreference(name: string, namespace: string, body: V1beta1VirtualMachinePreference, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachineRestore object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    replaceNamespacedVirtualMachineRestoreRaw(requestParameters: ReplaceNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineRestore>>;
-    /**
-     * Update a VirtualMachineRestore object.
-     */
-    replaceNamespacedVirtualMachineRestore(requestParameters: ReplaceNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineRestore>;
-    /**
-     * Update a VirtualMachineSnapshot object.
-     */
-    replaceNamespacedVirtualMachineSnapshotRaw(requestParameters: ReplaceNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineSnapshot>>;
+    replaceNamespacedVirtualMachineRestore(name: string, namespace: string, body: V1beta1VirtualMachineRestore, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachineSnapshot object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    replaceNamespacedVirtualMachineSnapshot(requestParameters: ReplaceNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineSnapshot>;
+    replaceNamespacedVirtualMachineSnapshot(name: string, namespace: string, body: V1beta1VirtualMachineSnapshot, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachineSnapshotContent object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    replaceNamespacedVirtualMachineSnapshotContentRaw(requestParameters: ReplaceNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineSnapshotContent>>;
-    /**
-     * Update a VirtualMachineSnapshotContent object.
-     */
-    replaceNamespacedVirtualMachineSnapshotContent(requestParameters: ReplaceNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineSnapshotContent>;
-    /**
-     * Update a VirtualMachineClone object.
-     */
-    replaceVirtualMachineCloneRaw(requestParameters: ReplaceVirtualMachineCloneRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1alpha1VirtualMachineClone>>;
+    replaceNamespacedVirtualMachineSnapshotContent(name: string, namespace: string, body: V1beta1VirtualMachineSnapshotContent, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachineClone object.
+     * @param name Name of the resource
+     * @param body
      */
-    replaceVirtualMachineClone(requestParameters: ReplaceVirtualMachineCloneRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1alpha1VirtualMachineClone>;
+    replaceVirtualMachineClone(name: string, body: V1alpha1VirtualMachineClone, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachineClusterInstancetype object.
+     * @param name Name of the resource
+     * @param body
      */
-    replaceVirtualMachineClusterInstancetypeRaw(requestParameters: ReplaceVirtualMachineClusterInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineClusterInstancetype>>;
-    /**
-     * Update a VirtualMachineClusterInstancetype object.
-     */
-    replaceVirtualMachineClusterInstancetype(requestParameters: ReplaceVirtualMachineClusterInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineClusterInstancetype>;
+    replaceVirtualMachineClusterInstancetype(name: string, body: V1beta1VirtualMachineClusterInstancetype, _options?: Configuration): Promise<RequestContext>;
     /**
      * Update a VirtualMachineClusterPreference object.
+     * @param name Name of the resource
+     * @param body
      */
-    replaceVirtualMachineClusterPreferenceRaw(requestParameters: ReplaceVirtualMachineClusterPreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1beta1VirtualMachineClusterPreference>>;
-    /**
-     * Update a VirtualMachineClusterPreference object.
-     */
-    replaceVirtualMachineClusterPreference(requestParameters: ReplaceVirtualMachineClusterPreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1beta1VirtualMachineClusterPreference>;
+    replaceVirtualMachineClusterPreference(name: string, body: V1beta1VirtualMachineClusterPreference, _options?: Configuration): Promise<RequestContext>;
     /**
      * Health endpoint
      */
-    v1CheckHealthRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Health endpoint
-     */
-    v1CheckHealth(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1CheckHealth(_options?: Configuration): Promise<RequestContext>;
     /**
      * Open a websocket connection to a serial console on the specified VirtualMachineInstance.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1ConsoleRaw(requestParameters: V1ConsoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Open a websocket connection to a serial console on the specified VirtualMachineInstance.
-     */
-    v1Console(requestParameters: V1ConsoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    v1Console(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Expands instancetype and preference into the passed VirtualMachine object.
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1ExpandSpecRaw(requestParameters: V1ExpandSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Expands instancetype and preference into the passed VirtualMachine object.
-     */
-    v1ExpandSpec(requestParameters: V1ExpandSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1ExpandSpec(namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get list of active filesystems on guest machine via guest agent
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1FilesystemlistRaw(requestParameters: V1FilesystemlistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceFileSystemList>>;
-    /**
-     * Get list of active filesystems on guest machine via guest agent
-     */
-    v1Filesystemlist(requestParameters: V1FilesystemlistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceFileSystemList>;
+    v1Filesystemlist(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Freeze a VirtualMachineInstance object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1FreezeRaw(requestParameters: V1FreezeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Freeze a VirtualMachineInstance object.
-     */
-    v1Freeze(requestParameters: V1FreezeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1Freeze(name: string, namespace: string, body: V1FreezeUnfreezeTimeout, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a KubeVirt API Group
      */
-    v1GetSubAPIGroupRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
-    /**
-     * Get a KubeVirt API Group
-     */
-    v1GetSubAPIGroup(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIGroup>;
+    v1GetSubAPIGroup(_options?: Configuration): Promise<RequestContext>;
     /**
      */
-    v1GuestfsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     */
-    v1Guestfs(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1Guestfs(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get guest agent os information
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1GuestosinfoRaw(requestParameters: V1GuestosinfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceGuestAgentInfo>>;
-    /**
-     * Get guest agent os information
-     */
-    v1Guestosinfo(requestParameters: V1GuestosinfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceGuestAgentInfo>;
+    v1Guestosinfo(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Dumps a VirtualMachineInstance memory.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1MemoryDumpRaw(requestParameters: V1MemoryDumpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Dumps a VirtualMachineInstance memory.
-     */
-    v1MemoryDump(requestParameters: V1MemoryDumpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Migrate a running VirtualMachine to another node.
-     */
-    v1MigrateRaw(requestParameters: V1MigrateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    v1MemoryDump(name: string, namespace: string, body: V1VirtualMachineMemoryDumpRequest, _options?: Configuration): Promise<RequestContext>;
     /**
      * Migrate a running VirtualMachine to another node.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1Migrate(requestParameters: V1MigrateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1Migrate(name: string, namespace: string, body: V1MigrateOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Pause a VirtualMachineInstance object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1PauseRaw(requestParameters: V1PauseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Pause a VirtualMachineInstance object.
-     */
-    v1Pause(requestParameters: V1PauseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Remove memory dump association.
-     */
-    v1RemoveMemoryDumpRaw(requestParameters: V1RemoveMemoryDumpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    v1Pause(name: string, namespace: string, body: V1PauseOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Remove memory dump association.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1RemoveMemoryDump(requestParameters: V1RemoveMemoryDumpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1RemoveMemoryDump(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Restart a VirtualMachine object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1RestartRaw(requestParameters: V1RestartRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Restart a VirtualMachine object.
-     */
-    v1Restart(requestParameters: V1RestartRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Fetch SEV certificate chain from the node where Virtual Machine is scheduled
-     */
-    v1SEVFetchCertChainRaw(requestParameters: V1SEVFetchCertChainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1SEVPlatformInfo>>;
+    v1Restart(name: string, namespace: string, body?: V1RestartOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Fetch SEV certificate chain from the node where Virtual Machine is scheduled
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1SEVFetchCertChain(requestParameters: V1SEVFetchCertChainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1SEVPlatformInfo>;
+    v1SEVFetchCertChain(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Inject SEV launch secret into a Virtual Machine
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1SEVInjectLaunchSecretRaw(requestParameters: V1SEVInjectLaunchSecretRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Inject SEV launch secret into a Virtual Machine
-     */
-    v1SEVInjectLaunchSecret(requestParameters: V1SEVInjectLaunchSecretRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Query SEV launch measurement from a Virtual Machine
-     */
-    v1SEVQueryLaunchMeasurementRaw(requestParameters: V1SEVQueryLaunchMeasurementRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1SEVMeasurementInfo>>;
+    v1SEVInjectLaunchSecret(name: string, namespace: string, body: V1SEVSecretOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Query SEV launch measurement from a Virtual Machine
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1SEVQueryLaunchMeasurement(requestParameters: V1SEVQueryLaunchMeasurementRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1SEVMeasurementInfo>;
+    v1SEVQueryLaunchMeasurement(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Setup SEV session parameters for a Virtual Machine
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1SEVSetupSessionRaw(requestParameters: V1SEVSetupSessionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Setup SEV session parameters for a Virtual Machine
-     */
-    v1SEVSetupSession(requestParameters: V1SEVSetupSessionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Soft reboot a VirtualMachineInstance object.
-     */
-    v1SoftRebootRaw(requestParameters: V1SoftRebootRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    v1SEVSetupSession(name: string, namespace: string, body: V1SEVSessionOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Soft reboot a VirtualMachineInstance object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1SoftReboot(requestParameters: V1SoftRebootRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1SoftReboot(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Start a VirtualMachine object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1StartRaw(requestParameters: V1StartRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Start a VirtualMachine object.
-     */
-    v1Start(requestParameters: V1StartRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Stop a VirtualMachine object.
-     */
-    v1StopRaw(requestParameters: V1StopRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    v1Start(name: string, namespace: string, body: V1StartOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Stop a VirtualMachine object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1Stop(requestParameters: V1StopRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1Stop(name: string, namespace: string, body?: V1StopOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Unfreeze a VirtualMachineInstance object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1UnfreezeRaw(requestParameters: V1UnfreezeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Unfreeze a VirtualMachineInstance object.
-     */
-    v1Unfreeze(requestParameters: V1UnfreezeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1Unfreeze(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Unpause a VirtualMachineInstance object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1UnpauseRaw(requestParameters: V1UnpauseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Unpause a VirtualMachineInstance object.
-     */
-    v1Unpause(requestParameters: V1UnpauseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Get list of active users via guest agent
-     */
-    v1UserlistRaw(requestParameters: V1UserlistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceGuestOSUserList>>;
+    v1Unpause(name: string, namespace: string, body: V1UnpauseOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get list of active users via guest agent
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1Userlist(requestParameters: V1UserlistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceGuestOSUserList>;
+    v1Userlist(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Open a websocket connection to connect to VNC on the specified VirtualMachineInstance.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1VNCRaw(requestParameters: V1VNCRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Open a websocket connection to connect to VNC on the specified VirtualMachineInstance.
-     */
-    v1VNC(requestParameters: V1VNCRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    v1VNC(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a PNG VNC screenshot of the specified VirtualMachineInstance.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param moveCursor Move the cursor on the VNC display to wake up the screen
      */
-    v1VNCScreenshotRaw(requestParameters: V1VNCScreenshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Get a PNG VNC screenshot of the specified VirtualMachineInstance.
-     */
-    v1VNCScreenshot(requestParameters: V1VNCScreenshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     * Open a websocket connection forwarding traffic to the specified VirtualMachineInstance and port via VSOCK.
-     */
-    v1VSOCKRaw(requestParameters: V1VSOCKRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    v1VNCScreenshot(name: string, namespace: string, moveCursor?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Open a websocket connection forwarding traffic to the specified VirtualMachineInstance and port via VSOCK.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param port The port which the VSOCK application listens to.
+     * @param tls Weather to request a TLS encrypted session from the VSOCK application.
      */
-    v1VSOCK(requestParameters: V1VSOCKRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    v1VSOCK(name: string, namespace: string, port: number, tls?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      */
-    v1VersionRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     */
-    v1Version(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    v1Version(_options?: Configuration): Promise<RequestContext>;
     /**
      * Health endpoint
      */
-    v1alpha3CheckHealthRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Health endpoint
-     */
-    v1alpha3CheckHealth(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1alpha3CheckHealth(_options?: Configuration): Promise<RequestContext>;
     /**
      * Open a websocket connection to a serial console on the specified VirtualMachineInstance.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1alpha3ConsoleRaw(requestParameters: V1alpha3ConsoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Open a websocket connection to a serial console on the specified VirtualMachineInstance.
-     */
-    v1alpha3Console(requestParameters: V1alpha3ConsoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    v1alpha3Console(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Expands instancetype and preference into the passed VirtualMachine object.
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1alpha3ExpandSpecRaw(requestParameters: V1alpha3ExpandSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Expands instancetype and preference into the passed VirtualMachine object.
-     */
-    v1alpha3ExpandSpec(requestParameters: V1alpha3ExpandSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1alpha3ExpandSpec(namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get list of active filesystems on guest machine via guest agent
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1alpha3FilesystemlistRaw(requestParameters: V1alpha3FilesystemlistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceFileSystemList>>;
-    /**
-     * Get list of active filesystems on guest machine via guest agent
-     */
-    v1alpha3Filesystemlist(requestParameters: V1alpha3FilesystemlistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceFileSystemList>;
+    v1alpha3Filesystemlist(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Freeze a VirtualMachineInstance object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1alpha3FreezeRaw(requestParameters: V1alpha3FreezeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Freeze a VirtualMachineInstance object.
-     */
-    v1alpha3Freeze(requestParameters: V1alpha3FreezeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     */
-    v1alpha3GuestfsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    v1alpha3Freeze(name: string, namespace: string, body: V1FreezeUnfreezeTimeout, _options?: Configuration): Promise<RequestContext>;
     /**
      */
-    v1alpha3Guestfs(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1alpha3Guestfs(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get guest agent os information
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1alpha3GuestosinfoRaw(requestParameters: V1alpha3GuestosinfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceGuestAgentInfo>>;
-    /**
-     * Get guest agent os information
-     */
-    v1alpha3Guestosinfo(requestParameters: V1alpha3GuestosinfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceGuestAgentInfo>;
+    v1alpha3Guestosinfo(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Dumps a VirtualMachineInstance memory.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1alpha3MemoryDumpRaw(requestParameters: V1alpha3MemoryDumpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Dumps a VirtualMachineInstance memory.
-     */
-    v1alpha3MemoryDump(requestParameters: V1alpha3MemoryDumpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Migrate a running VirtualMachine to another node.
-     */
-    v1alpha3MigrateRaw(requestParameters: V1alpha3MigrateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    v1alpha3MemoryDump(name: string, namespace: string, body: V1VirtualMachineMemoryDumpRequest, _options?: Configuration): Promise<RequestContext>;
     /**
      * Migrate a running VirtualMachine to another node.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1alpha3Migrate(requestParameters: V1alpha3MigrateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1alpha3Migrate(name: string, namespace: string, body: V1MigrateOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Pause a VirtualMachineInstance object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1alpha3PauseRaw(requestParameters: V1alpha3PauseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Pause a VirtualMachineInstance object.
-     */
-    v1alpha3Pause(requestParameters: V1alpha3PauseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Remove memory dump association.
-     */
-    v1alpha3RemoveMemoryDumpRaw(requestParameters: V1alpha3RemoveMemoryDumpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    v1alpha3Pause(name: string, namespace: string, body: V1PauseOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Remove memory dump association.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1alpha3RemoveMemoryDump(requestParameters: V1alpha3RemoveMemoryDumpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1alpha3RemoveMemoryDump(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Restart a VirtualMachine object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1alpha3RestartRaw(requestParameters: V1alpha3RestartRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Restart a VirtualMachine object.
-     */
-    v1alpha3Restart(requestParameters: V1alpha3RestartRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Fetch SEV certificate chain from the node where Virtual Machine is scheduled
-     */
-    v1alpha3SEVFetchCertChainRaw(requestParameters: V1alpha3SEVFetchCertChainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1SEVPlatformInfo>>;
+    v1alpha3Restart(name: string, namespace: string, body?: V1RestartOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Fetch SEV certificate chain from the node where Virtual Machine is scheduled
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1alpha3SEVFetchCertChain(requestParameters: V1alpha3SEVFetchCertChainRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1SEVPlatformInfo>;
+    v1alpha3SEVFetchCertChain(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Inject SEV launch secret into a Virtual Machine
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1alpha3SEVInjectLaunchSecretRaw(requestParameters: V1alpha3SEVInjectLaunchSecretRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Inject SEV launch secret into a Virtual Machine
-     */
-    v1alpha3SEVInjectLaunchSecret(requestParameters: V1alpha3SEVInjectLaunchSecretRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Query SEV launch measurement from a Virtual Machine
-     */
-    v1alpha3SEVQueryLaunchMeasurementRaw(requestParameters: V1alpha3SEVQueryLaunchMeasurementRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1SEVMeasurementInfo>>;
+    v1alpha3SEVInjectLaunchSecret(name: string, namespace: string, body: V1SEVSecretOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Query SEV launch measurement from a Virtual Machine
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1alpha3SEVQueryLaunchMeasurement(requestParameters: V1alpha3SEVQueryLaunchMeasurementRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1SEVMeasurementInfo>;
+    v1alpha3SEVQueryLaunchMeasurement(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Setup SEV session parameters for a Virtual Machine
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1alpha3SEVSetupSessionRaw(requestParameters: V1alpha3SEVSetupSessionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Setup SEV session parameters for a Virtual Machine
-     */
-    v1alpha3SEVSetupSession(requestParameters: V1alpha3SEVSetupSessionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Soft reboot a VirtualMachineInstance object.
-     */
-    v1alpha3SoftRebootRaw(requestParameters: V1alpha3SoftRebootRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    v1alpha3SEVSetupSession(name: string, namespace: string, body: V1SEVSessionOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Soft reboot a VirtualMachineInstance object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1alpha3SoftReboot(requestParameters: V1alpha3SoftRebootRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1alpha3SoftReboot(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Start a VirtualMachine object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1alpha3StartRaw(requestParameters: V1alpha3StartRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Start a VirtualMachine object.
-     */
-    v1alpha3Start(requestParameters: V1alpha3StartRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Stop a VirtualMachine object.
-     */
-    v1alpha3StopRaw(requestParameters: V1alpha3StopRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    v1alpha3Start(name: string, namespace: string, body: V1StartOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Stop a VirtualMachine object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1alpha3Stop(requestParameters: V1alpha3StopRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1alpha3Stop(name: string, namespace: string, body?: V1StopOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Unfreeze a VirtualMachineInstance object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1alpha3UnfreezeRaw(requestParameters: V1alpha3UnfreezeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Unfreeze a VirtualMachineInstance object.
-     */
-    v1alpha3Unfreeze(requestParameters: V1alpha3UnfreezeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1alpha3Unfreeze(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Unpause a VirtualMachineInstance object.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1alpha3UnpauseRaw(requestParameters: V1alpha3UnpauseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Unpause a VirtualMachineInstance object.
-     */
-    v1alpha3Unpause(requestParameters: V1alpha3UnpauseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Get list of active users via guest agent
-     */
-    v1alpha3UserlistRaw(requestParameters: V1alpha3UserlistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1VirtualMachineInstanceGuestOSUserList>>;
+    v1alpha3Unpause(name: string, namespace: string, body: V1UnpauseOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get list of active users via guest agent
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1alpha3Userlist(requestParameters: V1alpha3UserlistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1VirtualMachineInstanceGuestOSUserList>;
+    v1alpha3Userlist(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Open a websocket connection to connect to VNC on the specified VirtualMachineInstance.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1alpha3VNCRaw(requestParameters: V1alpha3VNCRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Open a websocket connection to connect to VNC on the specified VirtualMachineInstance.
-     */
-    v1alpha3VNC(requestParameters: V1alpha3VNCRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    v1alpha3VNC(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get a PNG VNC screenshot of the specified VirtualMachineInstance.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param moveCursor Move the cursor on the VNC display to wake up the screen
      */
-    v1alpha3VNCScreenshotRaw(requestParameters: V1alpha3VNCScreenshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Get a PNG VNC screenshot of the specified VirtualMachineInstance.
-     */
-    v1alpha3VNCScreenshot(requestParameters: V1alpha3VNCScreenshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     * Open a websocket connection forwarding traffic to the specified VirtualMachineInstance and port via VSOCK.
-     */
-    v1alpha3VSOCKRaw(requestParameters: V1alpha3VSOCKRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    v1alpha3VNCScreenshot(name: string, namespace: string, moveCursor?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Open a websocket connection forwarding traffic to the specified VirtualMachineInstance and port via VSOCK.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param port The port which the VSOCK application listens to.
+     * @param tls Weather to request a TLS encrypted session from the VSOCK application.
      */
-    v1alpha3VSOCK(requestParameters: V1alpha3VSOCKRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    v1alpha3VSOCK(name: string, namespace: string, port: number, tls?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      */
-    v1alpha3VersionRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    v1alpha3Version(_options?: Configuration): Promise<RequestContext>;
     /**
      */
-    v1alpha3Version(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     */
-    v1alpha3dumpClusterProfilerRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     */
-    v1alpha3dumpClusterProfiler(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    v1alpha3dumpClusterProfiler(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get a KubeVirt API resources
      */
-    v1alpha3getAPISubResourcesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
+    v1alpha3getAPISubResources(_options?: Configuration): Promise<RequestContext>;
+    /**
+     */
+    v1alpha3startClusterProfiler(_options?: Configuration): Promise<RequestContext>;
+    /**
+     */
+    v1alpha3stopClusterProfiler(_options?: Configuration): Promise<RequestContext>;
+    /**
+     * Open a websocket connection to connect to USB device on the specified VirtualMachineInstance.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     */
+    v1alpha3usbredir(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
+    /**
+     * Add a volume and disk to a running Virtual Machine.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     */
+    v1alpha3vmAddvolume(name: string, namespace: string, body: V1AddVolumeOptions, _options?: Configuration): Promise<RequestContext>;
+    /**
+     * Get VirtualMachine object with expanded instancetype and preference.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     */
+    v1alpha3vmExpandSpec(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
+    /**
+     * Open a websocket connection forwarding traffic to the running VMI for the specified VirtualMachine and port.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param port The target port for portforward on the VirtualMachineInstance.
+     */
+    v1alpha3vmPortForward(name: string, namespace: string, port: string, _options?: Configuration): Promise<RequestContext>;
+    /**
+     * Open a websocket connection forwarding traffic of the specified protocol (either tcp or udp) to the specified VirtualMachine and port.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param port The target port for portforward on the VirtualMachineInstance.
+     * @param protocol The protocol for portforward on the VirtualMachineInstance.
+     */
+    v1alpha3vmPortForwardWithProtocol(name: string, namespace: string, port: string, protocol: string, _options?: Configuration): Promise<RequestContext>;
+    /**
+     * Removes a volume and disk from a running Virtual Machine.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     */
+    v1alpha3vmRemovevolume(name: string, namespace: string, body: V1RemoveVolumeOptions, _options?: Configuration): Promise<RequestContext>;
+    /**
+     * Add a volume and disk to a running Virtual Machine Instance
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     */
+    v1alpha3vmiAddvolume(name: string, namespace: string, body: V1AddVolumeOptions, _options?: Configuration): Promise<RequestContext>;
+    /**
+     * Open a websocket connection forwarding traffic to the specified VirtualMachineInstance and port.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param port The target port for portforward on the VirtualMachineInstance.
+     */
+    v1alpha3vmiPortForward(name: string, namespace: string, port: string, _options?: Configuration): Promise<RequestContext>;
+    /**
+     * Open a websocket connection forwarding traffic of the specified protocol (either tcp or udp) to the specified VirtualMachineInstance and port.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param port The target port for portforward on the VirtualMachineInstance.
+     * @param protocol The protocol for portforward on the VirtualMachineInstance.
+     */
+    v1alpha3vmiPortForwardWithProtocol(name: string, namespace: string, port: string, protocol: string, _options?: Configuration): Promise<RequestContext>;
+    /**
+     * Removes a volume and disk from a running Virtual Machine Instance
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
+     */
+    v1alpha3vmiRemovevolume(name: string, namespace: string, body: V1RemoveVolumeOptions, _options?: Configuration): Promise<RequestContext>;
+    /**
+     */
+    v1dumpClusterProfiler(_options?: Configuration): Promise<RequestContext>;
     /**
      * Get a KubeVirt API resources
      */
-    v1alpha3getAPISubResources(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIResourceList>;
+    v1getAPISubResources(_options?: Configuration): Promise<RequestContext>;
     /**
      */
-    v1alpha3startClusterProfilerRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    v1startClusterProfiler(_options?: Configuration): Promise<RequestContext>;
     /**
      */
-    v1alpha3startClusterProfiler(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     */
-    v1alpha3stopClusterProfilerRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     */
-    v1alpha3stopClusterProfiler(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    v1stopClusterProfiler(_options?: Configuration): Promise<RequestContext>;
     /**
      * Open a websocket connection to connect to USB device on the specified VirtualMachineInstance.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1alpha3usbredirRaw(requestParameters: V1alpha3usbredirRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Open a websocket connection to connect to USB device on the specified VirtualMachineInstance.
-     */
-    v1alpha3usbredir(requestParameters: V1alpha3usbredirRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    v1usbredir(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Add a volume and disk to a running Virtual Machine.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1alpha3vmAddvolumeRaw(requestParameters: V1alpha3vmAddvolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Add a volume and disk to a running Virtual Machine.
-     */
-    v1alpha3vmAddvolume(requestParameters: V1alpha3vmAddvolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Get VirtualMachine object with expanded instancetype and preference.
-     */
-    v1alpha3vmExpandSpecRaw(requestParameters: V1alpha3vmExpandSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    v1vmAddvolume(name: string, namespace: string, body: V1AddVolumeOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Get VirtualMachine object with expanded instancetype and preference.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
      */
-    v1alpha3vmExpandSpec(requestParameters: V1alpha3vmExpandSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1vmExpandSpec(name: string, namespace: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Open a websocket connection forwarding traffic to the running VMI for the specified VirtualMachine and port.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param port The target port for portforward on the VirtualMachineInstance.
      */
-    v1alpha3vmPortForwardRaw(requestParameters: V1alpha3vmPortForwardRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Open a websocket connection forwarding traffic to the running VMI for the specified VirtualMachine and port.
-     */
-    v1alpha3vmPortForward(requestParameters: V1alpha3vmPortForwardRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     * Open a websocket connection forwarding traffic of the specified protocol (either tcp or udp) to the specified VirtualMachine and port.
-     */
-    v1alpha3vmPortForwardWithProtocolRaw(requestParameters: V1alpha3vmPortForwardWithProtocolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    v1vmPortForward(name: string, namespace: string, port: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Open a websocket connection forwarding traffic of the specified protocol (either tcp or udp) to the specified VirtualMachine and port.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param port The target port for portforward on the VirtualMachineInstance.
+     * @param protocol The protocol for portforward on the VirtualMachineInstance.
      */
-    v1alpha3vmPortForwardWithProtocol(requestParameters: V1alpha3vmPortForwardWithProtocolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    v1vmPortForwardWithProtocol(name: string, namespace: string, port: string, protocol: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Removes a volume and disk from a running Virtual Machine.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1alpha3vmRemovevolumeRaw(requestParameters: V1alpha3vmRemovevolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Removes a volume and disk from a running Virtual Machine.
-     */
-    v1alpha3vmRemovevolume(requestParameters: V1alpha3vmRemovevolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Add a volume and disk to a running Virtual Machine Instance
-     */
-    v1alpha3vmiAddvolumeRaw(requestParameters: V1alpha3vmiAddvolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    v1vmRemovevolume(name: string, namespace: string, body: V1RemoveVolumeOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Add a volume and disk to a running Virtual Machine Instance
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1alpha3vmiAddvolume(requestParameters: V1alpha3vmiAddvolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1vmiAddvolume(name: string, namespace: string, body: V1AddVolumeOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Open a websocket connection forwarding traffic to the specified VirtualMachineInstance and port.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param port The target port for portforward on the VirtualMachineInstance.
      */
-    v1alpha3vmiPortForwardRaw(requestParameters: V1alpha3vmiPortForwardRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Open a websocket connection forwarding traffic to the specified VirtualMachineInstance and port.
-     */
-    v1alpha3vmiPortForward(requestParameters: V1alpha3vmiPortForwardRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     * Open a websocket connection forwarding traffic of the specified protocol (either tcp or udp) to the specified VirtualMachineInstance and port.
-     */
-    v1alpha3vmiPortForwardWithProtocolRaw(requestParameters: V1alpha3vmiPortForwardWithProtocolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    v1vmiPortForward(name: string, namespace: string, port: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Open a websocket connection forwarding traffic of the specified protocol (either tcp or udp) to the specified VirtualMachineInstance and port.
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param port The target port for portforward on the VirtualMachineInstance.
+     * @param protocol The protocol for portforward on the VirtualMachineInstance.
      */
-    v1alpha3vmiPortForwardWithProtocol(requestParameters: V1alpha3vmiPortForwardWithProtocolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    v1vmiPortForwardWithProtocol(name: string, namespace: string, port: string, protocol: string, _options?: Configuration): Promise<RequestContext>;
     /**
      * Removes a volume and disk from a running Virtual Machine Instance
+     * @param name Name of the resource
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param body
      */
-    v1alpha3vmiRemovevolumeRaw(requestParameters: V1alpha3vmiRemovevolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Removes a volume and disk from a running Virtual Machine Instance
-     */
-    v1alpha3vmiRemovevolume(requestParameters: V1alpha3vmiRemovevolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     */
-    v1dumpClusterProfilerRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     */
-    v1dumpClusterProfiler(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     * Get a KubeVirt API resources
-     */
-    v1getAPISubResourcesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
-    /**
-     * Get a KubeVirt API resources
-     */
-    v1getAPISubResources(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1APIResourceList>;
-    /**
-     */
-    v1startClusterProfilerRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     */
-    v1startClusterProfiler(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     */
-    v1stopClusterProfilerRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     */
-    v1stopClusterProfiler(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     * Open a websocket connection to connect to USB device on the specified VirtualMachineInstance.
-     */
-    v1usbredirRaw(requestParameters: V1usbredirRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Open a websocket connection to connect to USB device on the specified VirtualMachineInstance.
-     */
-    v1usbredir(requestParameters: V1usbredirRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     * Add a volume and disk to a running Virtual Machine.
-     */
-    v1vmAddvolumeRaw(requestParameters: V1vmAddvolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Add a volume and disk to a running Virtual Machine.
-     */
-    v1vmAddvolume(requestParameters: V1vmAddvolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Get VirtualMachine object with expanded instancetype and preference.
-     */
-    v1vmExpandSpecRaw(requestParameters: V1vmExpandSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Get VirtualMachine object with expanded instancetype and preference.
-     */
-    v1vmExpandSpec(requestParameters: V1vmExpandSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Open a websocket connection forwarding traffic to the running VMI for the specified VirtualMachine and port.
-     */
-    v1vmPortForwardRaw(requestParameters: V1vmPortForwardRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Open a websocket connection forwarding traffic to the running VMI for the specified VirtualMachine and port.
-     */
-    v1vmPortForward(requestParameters: V1vmPortForwardRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     * Open a websocket connection forwarding traffic of the specified protocol (either tcp or udp) to the specified VirtualMachine and port.
-     */
-    v1vmPortForwardWithProtocolRaw(requestParameters: V1vmPortForwardWithProtocolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Open a websocket connection forwarding traffic of the specified protocol (either tcp or udp) to the specified VirtualMachine and port.
-     */
-    v1vmPortForwardWithProtocol(requestParameters: V1vmPortForwardWithProtocolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     * Removes a volume and disk from a running Virtual Machine.
-     */
-    v1vmRemovevolumeRaw(requestParameters: V1vmRemovevolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Removes a volume and disk from a running Virtual Machine.
-     */
-    v1vmRemovevolume(requestParameters: V1vmRemovevolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Add a volume and disk to a running Virtual Machine Instance
-     */
-    v1vmiAddvolumeRaw(requestParameters: V1vmiAddvolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Add a volume and disk to a running Virtual Machine Instance
-     */
-    v1vmiAddvolume(requestParameters: V1vmiAddvolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
-    /**
-     * Open a websocket connection forwarding traffic to the specified VirtualMachineInstance and port.
-     */
-    v1vmiPortForwardRaw(requestParameters: V1vmiPortForwardRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Open a websocket connection forwarding traffic to the specified VirtualMachineInstance and port.
-     */
-    v1vmiPortForward(requestParameters: V1vmiPortForwardRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     * Open a websocket connection forwarding traffic of the specified protocol (either tcp or udp) to the specified VirtualMachineInstance and port.
-     */
-    v1vmiPortForwardWithProtocolRaw(requestParameters: V1vmiPortForwardWithProtocolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Open a websocket connection forwarding traffic of the specified protocol (either tcp or udp) to the specified VirtualMachineInstance and port.
-     */
-    v1vmiPortForwardWithProtocol(requestParameters: V1vmiPortForwardWithProtocolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     * Removes a volume and disk from a running Virtual Machine Instance
-     */
-    v1vmiRemovevolumeRaw(requestParameters: V1vmiRemovevolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
-    /**
-     * Removes a volume and disk from a running Virtual Machine Instance
-     */
-    v1vmiRemovevolume(requestParameters: V1vmiRemovevolumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    v1vmiRemovevolume(name: string, namespace: string, body: V1RemoveVolumeOptions, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a KubeVirtList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchKubeVirtListForAllNamespacesRaw(requestParameters: WatchKubeVirtListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a KubeVirtList object.
-     */
-    watchKubeVirtListForAllNamespaces(requestParameters?: WatchKubeVirtListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchKubeVirtListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a MigrationPolicyList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchMigrationPolicyListForAllNamespacesRaw(requestParameters: WatchMigrationPolicyListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a MigrationPolicyList object.
-     */
-    watchMigrationPolicyListForAllNamespaces(requestParameters?: WatchMigrationPolicyListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchMigrationPolicyListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a KubeVirt object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchNamespacedKubeVirtRaw(requestParameters: WatchNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a KubeVirt object.
-     */
-    watchNamespacedKubeVirt(requestParameters: WatchNamespacedKubeVirtRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchNamespacedKubeVirt(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachine object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchNamespacedVirtualMachineRaw(requestParameters: WatchNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachine object.
-     */
-    watchNamespacedVirtualMachine(requestParameters: WatchNamespacedVirtualMachineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchNamespacedVirtualMachine(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineExport object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchNamespacedVirtualMachineExportRaw(requestParameters: WatchNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineExport object.
-     */
-    watchNamespacedVirtualMachineExport(requestParameters: WatchNamespacedVirtualMachineExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchNamespacedVirtualMachineExport(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineInstance object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchNamespacedVirtualMachineInstanceRaw(requestParameters: WatchNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineInstance object.
-     */
-    watchNamespacedVirtualMachineInstance(requestParameters: WatchNamespacedVirtualMachineInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchNamespacedVirtualMachineInstance(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineInstanceMigration object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchNamespacedVirtualMachineInstanceMigrationRaw(requestParameters: WatchNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineInstanceMigration object.
-     */
-    watchNamespacedVirtualMachineInstanceMigration(requestParameters: WatchNamespacedVirtualMachineInstanceMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchNamespacedVirtualMachineInstanceMigration(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineInstancePreset object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchNamespacedVirtualMachineInstancePresetRaw(requestParameters: WatchNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineInstancePreset object.
-     */
-    watchNamespacedVirtualMachineInstancePreset(requestParameters: WatchNamespacedVirtualMachineInstancePresetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchNamespacedVirtualMachineInstancePreset(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineInstanceReplicaSet object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchNamespacedVirtualMachineInstanceReplicaSetRaw(requestParameters: WatchNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineInstanceReplicaSet object.
-     */
-    watchNamespacedVirtualMachineInstanceReplicaSet(requestParameters: WatchNamespacedVirtualMachineInstanceReplicaSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchNamespacedVirtualMachineInstanceReplicaSet(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineInstancetype object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchNamespacedVirtualMachineInstancetypeRaw(requestParameters: WatchNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineInstancetype object.
-     */
-    watchNamespacedVirtualMachineInstancetype(requestParameters: WatchNamespacedVirtualMachineInstancetypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchNamespacedVirtualMachineInstancetype(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachinePool object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchNamespacedVirtualMachinePoolRaw(requestParameters: WatchNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachinePool object.
-     */
-    watchNamespacedVirtualMachinePool(requestParameters: WatchNamespacedVirtualMachinePoolRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchNamespacedVirtualMachinePool(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachinePreference object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchNamespacedVirtualMachinePreferenceRaw(requestParameters: WatchNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachinePreference object.
-     */
-    watchNamespacedVirtualMachinePreference(requestParameters: WatchNamespacedVirtualMachinePreferenceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchNamespacedVirtualMachinePreference(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineRestore object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchNamespacedVirtualMachineRestoreRaw(requestParameters: WatchNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineRestore object.
-     */
-    watchNamespacedVirtualMachineRestore(requestParameters: WatchNamespacedVirtualMachineRestoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchNamespacedVirtualMachineRestore(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineSnapshot object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchNamespacedVirtualMachineSnapshotRaw(requestParameters: WatchNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineSnapshot object.
-     */
-    watchNamespacedVirtualMachineSnapshot(requestParameters: WatchNamespacedVirtualMachineSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchNamespacedVirtualMachineSnapshot(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineSnapshotContent object.
+     * @param namespace Object name and auth scope, such as for teams and projects
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchNamespacedVirtualMachineSnapshotContentRaw(requestParameters: WatchNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineSnapshotContent object.
-     */
-    watchNamespacedVirtualMachineSnapshotContent(requestParameters: WatchNamespacedVirtualMachineSnapshotContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchNamespacedVirtualMachineSnapshotContent(namespace: string, _continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineCloneList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachineCloneListForAllNamespacesRaw(requestParameters: WatchVirtualMachineCloneListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineCloneList object.
-     */
-    watchVirtualMachineCloneListForAllNamespaces(requestParameters?: WatchVirtualMachineCloneListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchVirtualMachineCloneListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineClusterInstancetypeList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachineClusterInstancetypeListForAllNamespacesRaw(requestParameters: WatchVirtualMachineClusterInstancetypeListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineClusterInstancetypeList object.
-     */
-    watchVirtualMachineClusterInstancetypeListForAllNamespaces(requestParameters?: WatchVirtualMachineClusterInstancetypeListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchVirtualMachineClusterInstancetypeListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineClusterPreferenceList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachineClusterPreferenceListForAllNamespacesRaw(requestParameters: WatchVirtualMachineClusterPreferenceListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineClusterPreferenceList object.
-     */
-    watchVirtualMachineClusterPreferenceListForAllNamespaces(requestParameters?: WatchVirtualMachineClusterPreferenceListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchVirtualMachineClusterPreferenceListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineExportList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachineExportListForAllNamespacesRaw(requestParameters: WatchVirtualMachineExportListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineExportList object.
-     */
-    watchVirtualMachineExportListForAllNamespaces(requestParameters?: WatchVirtualMachineExportListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchVirtualMachineExportListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineInstanceList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachineInstanceListForAllNamespacesRaw(requestParameters: WatchVirtualMachineInstanceListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineInstanceList object.
-     */
-    watchVirtualMachineInstanceListForAllNamespaces(requestParameters?: WatchVirtualMachineInstanceListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchVirtualMachineInstanceListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineInstanceMigrationList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachineInstanceMigrationListForAllNamespacesRaw(requestParameters: WatchVirtualMachineInstanceMigrationListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineInstanceMigrationList object.
-     */
-    watchVirtualMachineInstanceMigrationListForAllNamespaces(requestParameters?: WatchVirtualMachineInstanceMigrationListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchVirtualMachineInstanceMigrationListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineInstancePresetList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachineInstancePresetListForAllNamespacesRaw(requestParameters: WatchVirtualMachineInstancePresetListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineInstancePresetList object.
-     */
-    watchVirtualMachineInstancePresetListForAllNamespaces(requestParameters?: WatchVirtualMachineInstancePresetListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchVirtualMachineInstancePresetListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineInstanceReplicaSetList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachineInstanceReplicaSetListForAllNamespacesRaw(requestParameters: WatchVirtualMachineInstanceReplicaSetListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineInstanceReplicaSetList object.
-     */
-    watchVirtualMachineInstanceReplicaSetListForAllNamespaces(requestParameters?: WatchVirtualMachineInstanceReplicaSetListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchVirtualMachineInstanceReplicaSetListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineInstancetypeList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachineInstancetypeListForAllNamespacesRaw(requestParameters: WatchVirtualMachineInstancetypeListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineInstancetypeList object.
-     */
-    watchVirtualMachineInstancetypeListForAllNamespaces(requestParameters?: WatchVirtualMachineInstancetypeListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchVirtualMachineInstancetypeListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachineListForAllNamespacesRaw(requestParameters: WatchVirtualMachineListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineList object.
-     */
-    watchVirtualMachineListForAllNamespaces(requestParameters?: WatchVirtualMachineListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchVirtualMachineListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachinePoolList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachinePoolListForAllNamespacesRaw(requestParameters: WatchVirtualMachinePoolListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachinePoolList object.
-     */
-    watchVirtualMachinePoolListForAllNamespaces(requestParameters?: WatchVirtualMachinePoolListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchVirtualMachinePoolListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachinePreferenceList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachinePreferenceListForAllNamespacesRaw(requestParameters: WatchVirtualMachinePreferenceListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachinePreferenceList object.
-     */
-    watchVirtualMachinePreferenceListForAllNamespaces(requestParameters?: WatchVirtualMachinePreferenceListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchVirtualMachinePreferenceListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineRestoreList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachineRestoreListForAllNamespacesRaw(requestParameters: WatchVirtualMachineRestoreListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineRestoreList object.
-     */
-    watchVirtualMachineRestoreListForAllNamespaces(requestParameters?: WatchVirtualMachineRestoreListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchVirtualMachineRestoreListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineSnapshotContentList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachineSnapshotContentListForAllNamespacesRaw(requestParameters: WatchVirtualMachineSnapshotContentListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
-    /**
-     * Watch a VirtualMachineSnapshotContentList object.
-     */
-    watchVirtualMachineSnapshotContentListForAllNamespaces(requestParameters?: WatchVirtualMachineSnapshotContentListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    watchVirtualMachineSnapshotContentListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
     /**
      * Watch a VirtualMachineSnapshotList object.
+     * @param _continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+     * @param fieldSelector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+     * @param includeUninitialized If true, partially initialized resources are included in the response.
+     * @param labelSelector A selector to restrict the list of returned objects by their labels. Defaults to everything
+     * @param limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+     * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+     * @param timeoutSeconds TimeoutSeconds for the list/watch call.
+     * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
      */
-    watchVirtualMachineSnapshotListForAllNamespacesRaw(requestParameters: WatchVirtualMachineSnapshotListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    watchVirtualMachineSnapshotListForAllNamespaces(_continue?: string, fieldSelector?: string, includeUninitialized?: boolean, labelSelector?: string, limit?: number, resourceVersion?: string, timeoutSeconds?: number, watch?: boolean, _options?: Configuration): Promise<RequestContext>;
+}
+export declare class DefaultApiResponseProcessor {
     /**
-     * Watch a VirtualMachineSnapshotList object.
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createMigrationPolicy
+     * @throws ApiException if the response code was not in [200, 299]
      */
-    watchVirtualMachineSnapshotListForAllNamespaces(requestParameters?: WatchVirtualMachineSnapshotListForAllNamespacesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<K8sIoApimachineryPkgApisMetaV1WatchEvent>;
+    createMigrationPolicyWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1MigrationPolicy>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createNamespacedKubeVirt
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createNamespacedKubeVirtWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1KubeVirt>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createNamespacedVirtualMachine
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createNamespacedVirtualMachineWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachine>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createNamespacedVirtualMachineExport
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createNamespacedVirtualMachineExportWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineExport>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createNamespacedVirtualMachineInstance
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createNamespacedVirtualMachineInstanceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstance>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createNamespacedVirtualMachineInstanceMigration
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createNamespacedVirtualMachineInstanceMigrationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceMigration>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createNamespacedVirtualMachineInstancePreset
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createNamespacedVirtualMachineInstancePresetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstancePreset>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createNamespacedVirtualMachineInstanceReplicaSet
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceReplicaSet>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createNamespacedVirtualMachineInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createNamespacedVirtualMachineInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineInstancetype>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createNamespacedVirtualMachinePool
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createNamespacedVirtualMachinePoolWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1VirtualMachinePool>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createNamespacedVirtualMachinePreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createNamespacedVirtualMachinePreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachinePreference>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createNamespacedVirtualMachineRestore
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createNamespacedVirtualMachineRestoreWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineRestore>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createNamespacedVirtualMachineSnapshot
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createNamespacedVirtualMachineSnapshotWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineSnapshot>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createNamespacedVirtualMachineSnapshotContent
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createNamespacedVirtualMachineSnapshotContentWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineSnapshotContent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createVirtualMachineClone
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createVirtualMachineCloneWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1VirtualMachineClone>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createVirtualMachineClusterInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createVirtualMachineClusterInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineClusterInstancetype>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to createVirtualMachineClusterPreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    createVirtualMachineClusterPreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineClusterPreference>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionMigrationPolicy
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionMigrationPolicyWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionNamespacedKubeVirt
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionNamespacedKubeVirtWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionNamespacedVirtualMachine
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionNamespacedVirtualMachineWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionNamespacedVirtualMachineExport
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionNamespacedVirtualMachineExportWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionNamespacedVirtualMachineInstance
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionNamespacedVirtualMachineInstanceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionNamespacedVirtualMachineInstanceMigration
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionNamespacedVirtualMachineInstanceMigrationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionNamespacedVirtualMachineInstancePreset
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionNamespacedVirtualMachineInstancePresetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionNamespacedVirtualMachineInstanceReplicaSet
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionNamespacedVirtualMachineInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionNamespacedVirtualMachineInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionNamespacedVirtualMachinePool
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionNamespacedVirtualMachinePoolWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionNamespacedVirtualMachinePreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionNamespacedVirtualMachinePreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionNamespacedVirtualMachineRestore
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionNamespacedVirtualMachineRestoreWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionNamespacedVirtualMachineSnapshot
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionNamespacedVirtualMachineSnapshotWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionNamespacedVirtualMachineSnapshotContent
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionNamespacedVirtualMachineSnapshotContentWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionVirtualMachineClone
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionVirtualMachineCloneWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionVirtualMachineClusterInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionVirtualMachineClusterInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteCollectionVirtualMachineClusterPreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteCollectionVirtualMachineClusterPreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteMigrationPolicy
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteMigrationPolicyWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteNamespacedKubeVirt
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteNamespacedKubeVirtWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteNamespacedVirtualMachine
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteNamespacedVirtualMachineWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteNamespacedVirtualMachineExport
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteNamespacedVirtualMachineExportWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteNamespacedVirtualMachineInstance
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteNamespacedVirtualMachineInstanceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteNamespacedVirtualMachineInstanceMigration
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteNamespacedVirtualMachineInstanceMigrationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteNamespacedVirtualMachineInstancePreset
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteNamespacedVirtualMachineInstancePresetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteNamespacedVirtualMachineInstanceReplicaSet
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteNamespacedVirtualMachineInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteNamespacedVirtualMachineInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteNamespacedVirtualMachinePool
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteNamespacedVirtualMachinePoolWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteNamespacedVirtualMachinePreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteNamespacedVirtualMachinePreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteNamespacedVirtualMachineRestore
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteNamespacedVirtualMachineRestoreWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteNamespacedVirtualMachineSnapshot
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteNamespacedVirtualMachineSnapshotWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteNamespacedVirtualMachineSnapshotContent
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteNamespacedVirtualMachineSnapshotContentWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteVirtualMachineClone
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteVirtualMachineCloneWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteVirtualMachineClusterInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteVirtualMachineClusterInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to deleteVirtualMachineClusterPreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    deleteVirtualMachineClusterPreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1Status>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to func13
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    func13WithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to func6
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    func6WithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIGroupCloneKubevirtIo
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIGroupCloneKubevirtIoWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIGroupExportKubevirtIo
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIGroupExportKubevirtIoWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIGroupInstancetypeKubevirtIo
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIGroupInstancetypeKubevirtIoWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIGroupKubevirtIo
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIGroupKubevirtIoWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIGroupList
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIGroupListWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIGroupList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIGroupMigrationsKubevirtIo
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIGroupMigrationsKubevirtIoWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIGroupPoolKubevirtIo
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIGroupPoolKubevirtIoWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIGroupSnapshotKubevirtIo
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIGroupSnapshotKubevirtIoWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIResourcesCloneKubevirtIoV1alpha1
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIResourcesCloneKubevirtIoV1alpha1WithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIResourcesExportKubevirtIoV1beta1
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIResourcesExportKubevirtIoV1beta1WithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIResourcesInstancetypeKubevirtIoV1beta1
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIResourcesInstancetypeKubevirtIoV1beta1WithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIResourcesKubevirtIoV1
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIResourcesKubevirtIoV1WithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIResourcesMigrationsKubevirtIoV1alpha1
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIResourcesMigrationsKubevirtIoV1alpha1WithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIResourcesPoolKubevirtIoV1alpha1
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIResourcesPoolKubevirtIoV1alpha1WithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getAPIResourcesSnapshotKubevirtIoV1beta1
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getAPIResourcesSnapshotKubevirtIoV1beta1WithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getRootPaths
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    getRootPathsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1RootPaths>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to handleDumpProfiler
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    handleDumpProfilerWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to handleStartProfiler
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    handleStartProfilerWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to handleStopProfiler
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    handleStopProfilerWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listKubeVirtForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listKubeVirtForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1KubeVirtList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listMigrationPolicy
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listMigrationPolicyWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1MigrationPolicyList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listNamespacedKubeVirt
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listNamespacedKubeVirtWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1KubeVirtList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listNamespacedVirtualMachine
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listNamespacedVirtualMachineWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listNamespacedVirtualMachineExport
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listNamespacedVirtualMachineExportWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineExportList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listNamespacedVirtualMachineInstance
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listNamespacedVirtualMachineInstanceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listNamespacedVirtualMachineInstanceMigration
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listNamespacedVirtualMachineInstanceMigrationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceMigrationList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listNamespacedVirtualMachineInstancePreset
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listNamespacedVirtualMachineInstancePresetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstancePresetList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listNamespacedVirtualMachineInstanceReplicaSet
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceReplicaSetList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listNamespacedVirtualMachineInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listNamespacedVirtualMachineInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineInstancetypeList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listNamespacedVirtualMachinePool
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listNamespacedVirtualMachinePoolWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1VirtualMachinePoolList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listNamespacedVirtualMachinePreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listNamespacedVirtualMachinePreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachinePreferenceList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listNamespacedVirtualMachineRestore
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listNamespacedVirtualMachineRestoreWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineRestoreList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listNamespacedVirtualMachineSnapshot
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listNamespacedVirtualMachineSnapshotWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineSnapshotList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listNamespacedVirtualMachineSnapshotContent
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listNamespacedVirtualMachineSnapshotContentWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineSnapshotContentList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachineClone
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachineCloneWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1VirtualMachineCloneList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachineClusterInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachineClusterInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineClusterInstancetypeList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachineClusterPreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachineClusterPreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineClusterPreferenceList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachineExportForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachineExportForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineExportList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachineForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachineForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachineInstanceForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachineInstanceForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachineInstanceMigrationForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachineInstanceMigrationForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceMigrationList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachineInstancePresetForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachineInstancePresetForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstancePresetList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachineInstanceReplicaSetForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachineInstanceReplicaSetForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceReplicaSetList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachineInstancetypeForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachineInstancetypeForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineInstancetypeList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachinePoolForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachinePoolForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1VirtualMachinePoolList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachinePreferenceForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachinePreferenceForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachinePreferenceList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachineRestoreForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachineRestoreForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineRestoreList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachineSnapshotContentForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachineSnapshotContentForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineSnapshotContentList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listVirtualMachineSnapshotForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    listVirtualMachineSnapshotForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineSnapshotList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchMigrationPolicy
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchMigrationPolicyWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1MigrationPolicy>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchNamespacedKubeVirt
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchNamespacedKubeVirtWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1KubeVirt>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchNamespacedVirtualMachine
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchNamespacedVirtualMachineWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachine>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchNamespacedVirtualMachineExport
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchNamespacedVirtualMachineExportWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineExport>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchNamespacedVirtualMachineInstance
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchNamespacedVirtualMachineInstanceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstance>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchNamespacedVirtualMachineInstanceMigration
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchNamespacedVirtualMachineInstanceMigrationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceMigration>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchNamespacedVirtualMachineInstancePreset
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchNamespacedVirtualMachineInstancePresetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstancePreset>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchNamespacedVirtualMachineInstanceReplicaSet
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceReplicaSet>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchNamespacedVirtualMachineInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchNamespacedVirtualMachineInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineInstancetype>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchNamespacedVirtualMachinePool
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchNamespacedVirtualMachinePoolWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1VirtualMachinePool>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchNamespacedVirtualMachinePreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchNamespacedVirtualMachinePreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachinePreference>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchNamespacedVirtualMachineRestore
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchNamespacedVirtualMachineRestoreWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineRestore>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchNamespacedVirtualMachineSnapshot
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchNamespacedVirtualMachineSnapshotWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineSnapshot>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchNamespacedVirtualMachineSnapshotContent
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchNamespacedVirtualMachineSnapshotContentWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineSnapshotContent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchVirtualMachineClone
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchVirtualMachineCloneWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1VirtualMachineClone>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchVirtualMachineClusterInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchVirtualMachineClusterInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineClusterInstancetype>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to patchVirtualMachineClusterPreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    patchVirtualMachineClusterPreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineClusterPreference>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readMigrationPolicy
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readMigrationPolicyWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1MigrationPolicy>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readNamespacedKubeVirt
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readNamespacedKubeVirtWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1KubeVirt>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readNamespacedVirtualMachine
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readNamespacedVirtualMachineWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachine>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readNamespacedVirtualMachineExport
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readNamespacedVirtualMachineExportWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineExport>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readNamespacedVirtualMachineInstance
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readNamespacedVirtualMachineInstanceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstance>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readNamespacedVirtualMachineInstanceMigration
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readNamespacedVirtualMachineInstanceMigrationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceMigration>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readNamespacedVirtualMachineInstancePreset
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readNamespacedVirtualMachineInstancePresetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstancePreset>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readNamespacedVirtualMachineInstanceReplicaSet
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceReplicaSet>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readNamespacedVirtualMachineInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readNamespacedVirtualMachineInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineInstancetype>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readNamespacedVirtualMachinePool
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readNamespacedVirtualMachinePoolWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1VirtualMachinePool>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readNamespacedVirtualMachinePreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readNamespacedVirtualMachinePreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachinePreference>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readNamespacedVirtualMachineRestore
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readNamespacedVirtualMachineRestoreWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineRestore>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readNamespacedVirtualMachineSnapshot
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readNamespacedVirtualMachineSnapshotWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineSnapshot>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readNamespacedVirtualMachineSnapshotContent
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readNamespacedVirtualMachineSnapshotContentWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineSnapshotContent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readVirtualMachineClone
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readVirtualMachineCloneWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1VirtualMachineClone>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readVirtualMachineClusterInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readVirtualMachineClusterInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineClusterInstancetype>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to readVirtualMachineClusterPreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    readVirtualMachineClusterPreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineClusterPreference>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceMigrationPolicy
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceMigrationPolicyWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1MigrationPolicy>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceNamespacedKubeVirt
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceNamespacedKubeVirtWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1KubeVirt>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceNamespacedVirtualMachine
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceNamespacedVirtualMachineWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachine>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceNamespacedVirtualMachineExport
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceNamespacedVirtualMachineExportWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineExport>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceNamespacedVirtualMachineInstance
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceNamespacedVirtualMachineInstanceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstance>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceNamespacedVirtualMachineInstanceMigration
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceNamespacedVirtualMachineInstanceMigrationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceMigration>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceNamespacedVirtualMachineInstancePreset
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceNamespacedVirtualMachineInstancePresetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstancePreset>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceNamespacedVirtualMachineInstanceReplicaSet
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceReplicaSet>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceNamespacedVirtualMachineInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceNamespacedVirtualMachineInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineInstancetype>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceNamespacedVirtualMachinePool
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceNamespacedVirtualMachinePoolWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1VirtualMachinePool>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceNamespacedVirtualMachinePreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceNamespacedVirtualMachinePreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachinePreference>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceNamespacedVirtualMachineRestore
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceNamespacedVirtualMachineRestoreWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineRestore>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceNamespacedVirtualMachineSnapshot
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceNamespacedVirtualMachineSnapshotWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineSnapshot>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceNamespacedVirtualMachineSnapshotContent
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceNamespacedVirtualMachineSnapshotContentWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineSnapshotContent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceVirtualMachineClone
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceVirtualMachineCloneWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1alpha1VirtualMachineClone>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceVirtualMachineClusterInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceVirtualMachineClusterInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineClusterInstancetype>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to replaceVirtualMachineClusterPreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    replaceVirtualMachineClusterPreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1beta1VirtualMachineClusterPreference>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1CheckHealth
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1CheckHealthWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1Console
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1ConsoleWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1ExpandSpec
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1ExpandSpecWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1Filesystemlist
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1FilesystemlistWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceFileSystemList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1Freeze
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1FreezeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1GetSubAPIGroup
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1GetSubAPIGroupWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIGroup>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1Guestfs
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1GuestfsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1Guestosinfo
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1GuestosinfoWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceGuestAgentInfo>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1MemoryDump
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1MemoryDumpWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1Migrate
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1MigrateWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1Pause
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1PauseWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1RemoveMemoryDump
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1RemoveMemoryDumpWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1Restart
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1RestartWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1SEVFetchCertChain
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1SEVFetchCertChainWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1SEVPlatformInfo>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1SEVInjectLaunchSecret
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1SEVInjectLaunchSecretWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1SEVQueryLaunchMeasurement
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1SEVQueryLaunchMeasurementWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1SEVMeasurementInfo>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1SEVSetupSession
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1SEVSetupSessionWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1SoftReboot
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1SoftRebootWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1Start
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1StartWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1Stop
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1StopWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1Unfreeze
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1UnfreezeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1Unpause
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1UnpauseWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1Userlist
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1UserlistWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceGuestOSUserList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1VNC
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1VNCWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1VNCScreenshot
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1VNCScreenshotWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1VSOCK
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1VSOCKWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1Version
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1VersionWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3CheckHealth
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3CheckHealthWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3Console
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3ConsoleWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3ExpandSpec
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3ExpandSpecWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3Filesystemlist
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3FilesystemlistWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceFileSystemList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3Freeze
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3FreezeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3Guestfs
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3GuestfsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3Guestosinfo
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3GuestosinfoWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceGuestAgentInfo>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3MemoryDump
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3MemoryDumpWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3Migrate
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3MigrateWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3Pause
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3PauseWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3RemoveMemoryDump
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3RemoveMemoryDumpWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3Restart
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3RestartWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3SEVFetchCertChain
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3SEVFetchCertChainWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1SEVPlatformInfo>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3SEVInjectLaunchSecret
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3SEVInjectLaunchSecretWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3SEVQueryLaunchMeasurement
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3SEVQueryLaunchMeasurementWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1SEVMeasurementInfo>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3SEVSetupSession
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3SEVSetupSessionWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3SoftReboot
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3SoftRebootWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3Start
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3StartWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3Stop
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3StopWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3Unfreeze
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3UnfreezeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3Unpause
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3UnpauseWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3Userlist
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3UserlistWithHttpInfo(response: ResponseContext): Promise<HttpInfo<V1VirtualMachineInstanceGuestOSUserList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3VNC
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3VNCWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3VNCScreenshot
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3VNCScreenshotWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3VSOCK
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3VSOCKWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3Version
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3VersionWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3dumpClusterProfiler
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3dumpClusterProfilerWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3getAPISubResources
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3getAPISubResourcesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3startClusterProfiler
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3startClusterProfilerWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3stopClusterProfiler
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3stopClusterProfilerWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3usbredir
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3usbredirWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3vmAddvolume
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3vmAddvolumeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3vmExpandSpec
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3vmExpandSpecWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3vmPortForward
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3vmPortForwardWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3vmPortForwardWithProtocol
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3vmPortForwardWithProtocolWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3vmRemovevolume
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3vmRemovevolumeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3vmiAddvolume
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3vmiAddvolumeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3vmiPortForward
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3vmiPortForwardWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3vmiPortForwardWithProtocol
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3vmiPortForwardWithProtocolWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1alpha3vmiRemovevolume
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1alpha3vmiRemovevolumeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1dumpClusterProfiler
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1dumpClusterProfilerWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1getAPISubResources
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1getAPISubResourcesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1APIResourceList>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1startClusterProfiler
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1startClusterProfilerWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1stopClusterProfiler
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1stopClusterProfilerWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1usbredir
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1usbredirWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1vmAddvolume
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1vmAddvolumeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1vmExpandSpec
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1vmExpandSpecWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1vmPortForward
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1vmPortForwardWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1vmPortForwardWithProtocol
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1vmPortForwardWithProtocolWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1vmRemovevolume
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1vmRemovevolumeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1vmiAddvolume
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1vmiAddvolumeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1vmiPortForward
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1vmiPortForwardWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1vmiPortForwardWithProtocol
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1vmiPortForwardWithProtocolWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v1vmiRemovevolume
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    v1vmiRemovevolumeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchKubeVirtListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchKubeVirtListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchMigrationPolicyListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchMigrationPolicyListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchNamespacedKubeVirt
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchNamespacedKubeVirtWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchNamespacedVirtualMachine
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchNamespacedVirtualMachineWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchNamespacedVirtualMachineExport
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchNamespacedVirtualMachineExportWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchNamespacedVirtualMachineInstance
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchNamespacedVirtualMachineInstanceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchNamespacedVirtualMachineInstanceMigration
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchNamespacedVirtualMachineInstanceMigrationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchNamespacedVirtualMachineInstancePreset
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchNamespacedVirtualMachineInstancePresetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchNamespacedVirtualMachineInstanceReplicaSet
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchNamespacedVirtualMachineInstanceReplicaSetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchNamespacedVirtualMachineInstancetype
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchNamespacedVirtualMachineInstancetypeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchNamespacedVirtualMachinePool
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchNamespacedVirtualMachinePoolWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchNamespacedVirtualMachinePreference
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchNamespacedVirtualMachinePreferenceWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchNamespacedVirtualMachineRestore
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchNamespacedVirtualMachineRestoreWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchNamespacedVirtualMachineSnapshot
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchNamespacedVirtualMachineSnapshotWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchNamespacedVirtualMachineSnapshotContent
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchNamespacedVirtualMachineSnapshotContentWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachineCloneListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachineCloneListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachineClusterInstancetypeListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachineClusterInstancetypeListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachineClusterPreferenceListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachineClusterPreferenceListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachineExportListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachineExportListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachineInstanceListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachineInstanceListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachineInstanceMigrationListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachineInstanceMigrationListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachineInstancePresetListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachineInstancePresetListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachineInstanceReplicaSetListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachineInstanceReplicaSetListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachineInstancetypeListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachineInstancetypeListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachineListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachineListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachinePoolListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachinePoolListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachinePreferenceListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachinePreferenceListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachineRestoreListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachineRestoreListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachineSnapshotContentListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachineSnapshotContentListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to watchVirtualMachineSnapshotListForAllNamespaces
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+    watchVirtualMachineSnapshotListForAllNamespacesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<K8sIoApimachineryPkgApisMetaV1WatchEvent>>;
 }
 //# sourceMappingURL=DefaultApi.d.ts.map
