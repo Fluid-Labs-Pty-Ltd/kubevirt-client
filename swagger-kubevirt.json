@@ -9232,6 +9232,9 @@
     },
     "/apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/removememorydump": {
       "put": {
+        "produces": [
+          "application/json"
+        ],
         "description": "Remove memory dump association.",
         "operationId": "v1RemoveMemoryDump",
         "responses": {
@@ -9268,6 +9271,9 @@
     },
     "/apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/removevolume": {
       "put": {
+        "produces": [
+          "application/json"
+        ],
         "description": "Removes a volume and disk from a running Virtual Machine.",
         "consumes": [
           "*/*"
@@ -9317,6 +9323,9 @@
     },
     "/apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/restart": {
       "put": {
+        "produces": [
+          "application/json"
+        ],
         "description": "Restart a VirtualMachine object.",
         "consumes": [
           "*/*"
@@ -9371,6 +9380,9 @@
     },
     "/apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/start": {
       "put": {
+        "produces": [
+          "application/json"
+        ],
         "description": "Start a VirtualMachine object.",
         "consumes": [
           "*/*"
@@ -9426,6 +9438,9 @@
     },
     "/apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/stop": {
       "put": {
+        "produces": [
+          "application/json"
+        ],
         "description": "Stop a VirtualMachine object.",
         "consumes": [
           "*/*"
