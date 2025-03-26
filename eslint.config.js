@@ -1,13 +1,34 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import globals from "globals";
-import js from "@eslint/js";
+import eslint from '@eslint/js';
 import tseslint from "typescript-eslint";
 
 
-export default defineConfig([
-  { files: ["**/*.{js,mjs,cjs,ts}"] },
-  { files: ["**/*.{js,mjs,cjs,ts}"], languageOptions: { globals: globals.browser } },
-  { files: ["**/*.{js,mjs,cjs,ts}"], plugins: { js }, extends: ["js/recommended"] },
-  globalIgnores(["dist/*"]),
-  tseslint.configs.recommended,
-]);
+export default tseslint.config(
+  {
+    ignores: ['dist/', 'src/gen/']
+  },
+  eslint.configs.recommended,
+  tseslint.configs.strict,
+  {
+    languageOptions: {
+      globals: {
+        Buffer: true,
+        console: true,
+        process: true,
+        setTimeout: true,
+      },
+    },
+    rules: {
+      '@typescript-eslint/ban-ts-comment': ['error', { 'ts-expect-error': false }],
+      '@typescript-eslint/no-empty-obejct-type': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-non-null-assertion': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          args: 'none',
+          destructuredArrayIgnorePattern: '^_',
+        }
+      ]
+    }
+  }
+);
