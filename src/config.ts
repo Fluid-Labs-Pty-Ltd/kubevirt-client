@@ -234,7 +234,7 @@ export class KubeVirtKubeConfig implements SecurityAuthentication {
                 spanAttributes['http.method'] = contextHttpMethod
 
                 for (const [key, value] of Object.entries(contextHeaders)) {
-                    let santisedValue = value;
+                    let santisedValue = `${value}`;
                     if (key == 'Authorization') {
                         santisedValue = 'REDACTED'
                     }
