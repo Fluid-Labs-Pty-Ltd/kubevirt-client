@@ -9323,12 +9323,9 @@
     },
     "/apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/restart": {
       "put": {
-        "produces": [
-          "application/json"
-        ],
         "description": "Restart a VirtualMachine object.",
         "consumes": [
-          "*/*"
+          "application/json"
         ],
         "operationId": "v1Restart",
         "parameters": [
@@ -9380,12 +9377,9 @@
     },
     "/apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/start": {
       "put": {
-        "produces": [
-          "application/json"
-        ],
         "description": "Start a VirtualMachine object.",
         "consumes": [
-          "*/*"
+          "application/json"
         ],
         "operationId": "v1Start",
         "parameters": [
@@ -10802,7 +10796,7 @@
       "put": {
         "description": "Restart a VirtualMachine object.",
         "consumes": [
-          "*/*"
+          "application/json"
         ],
         "operationId": "v1alpha3Restart",
         "parameters": [
@@ -10856,7 +10850,7 @@
       "put": {
         "description": "Start a VirtualMachine object.",
         "consumes": [
-          "*/*"
+          "application/json"
         ],
         "operationId": "v1alpha3Start",
         "parameters": [
@@ -10912,6 +10906,9 @@
         "description": "Stop a VirtualMachine object.",
         "consumes": [
           "*/*"
+        ],
+        "produces": [
+          "application/json"
         ],
         "operationId": "v1alpha3Stop",
         "parameters": [
