@@ -9855,7 +9855,9 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([]);
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
             ObjectSerializer.serialize(body, "V1RestartOptions", ""),
@@ -10137,7 +10139,9 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([]);
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
             ObjectSerializer.serialize(body, "V1StartOptions", ""),
@@ -10987,7 +10991,9 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([]);
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
             ObjectSerializer.serialize(body, "V1RestartOptions", ""),
@@ -11269,7 +11275,9 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([]);
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
             ObjectSerializer.serialize(body, "V1StartOptions", ""),

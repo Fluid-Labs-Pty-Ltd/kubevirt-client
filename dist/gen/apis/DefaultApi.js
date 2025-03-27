@@ -6880,7 +6880,9 @@ class DefaultApiRequestFactory extends baseapi_js_1.BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, http_js_1.HttpMethod.PUT);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8");
         // Body Params
-        const contentType = ObjectSerializer_js_1.ObjectSerializer.getPreferredMediaType([]);
+        const contentType = ObjectSerializer_js_1.ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer_js_1.ObjectSerializer.stringify(ObjectSerializer_js_1.ObjectSerializer.serialize(body, "V1RestartOptions", ""), contentType);
         requestContext.setBody(serializedBody);
@@ -7078,7 +7080,9 @@ class DefaultApiRequestFactory extends baseapi_js_1.BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, http_js_1.HttpMethod.PUT);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8");
         // Body Params
-        const contentType = ObjectSerializer_js_1.ObjectSerializer.getPreferredMediaType([]);
+        const contentType = ObjectSerializer_js_1.ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer_js_1.ObjectSerializer.stringify(ObjectSerializer_js_1.ObjectSerializer.serialize(body, "V1StartOptions", ""), contentType);
         requestContext.setBody(serializedBody);
@@ -7675,7 +7679,9 @@ class DefaultApiRequestFactory extends baseapi_js_1.BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, http_js_1.HttpMethod.PUT);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8");
         // Body Params
-        const contentType = ObjectSerializer_js_1.ObjectSerializer.getPreferredMediaType([]);
+        const contentType = ObjectSerializer_js_1.ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer_js_1.ObjectSerializer.stringify(ObjectSerializer_js_1.ObjectSerializer.serialize(body, "V1RestartOptions", ""), contentType);
         requestContext.setBody(serializedBody);
@@ -7873,7 +7879,9 @@ class DefaultApiRequestFactory extends baseapi_js_1.BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, http_js_1.HttpMethod.PUT);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8");
         // Body Params
-        const contentType = ObjectSerializer_js_1.ObjectSerializer.getPreferredMediaType([]);
+        const contentType = ObjectSerializer_js_1.ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer_js_1.ObjectSerializer.stringify(ObjectSerializer_js_1.ObjectSerializer.serialize(body, "V1StartOptions", ""), contentType);
         requestContext.setBody(serializedBody);
