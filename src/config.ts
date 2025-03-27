@@ -3,8 +3,6 @@ import https from 'node:https';
 import path from 'node:path';
 import { KubeConfig as k8sKubeConfig } from '@kubernetes/client-node';
 import { Cluster, User, Context } from '@kubernetes/client-node';
-
-
 import {
     SecurityAuthentication,
     AuthMethodsConfiguration,
@@ -15,11 +13,20 @@ import {
 import { Headers, RequestInit } from 'node-fetch';
 import { RequestContext } from './api.js';
 import WebSocket from 'isomorphic-ws';
-
 import { Authenticator } from './auth.js'
 import { FileAuth } from './file_auth.js';
 import { ExecAuth } from './exec_auth.js';
 import { OpenIDConnectAuth } from './oidc_auth.js';
+
+import { trace, SpanStatus, SpanStatusCode } from '@opentelemetry/api';
+
+const tracer = trace.getTracer('kubevirt-client')
+
+
+// This file was initially copied from https://github.com/kubernetes-client/javascript/ in order to try to provide compaibility / the same logic as they did
+// Since we are also calling the kubernetes api to get to the KubeVirt Api's
+
+
 
 
 // TODO: the empty interface breaks the linter, but this type
@@ -178,42 +185,72 @@ export class KubeVirtKubeConfig implements SecurityAuthentication {
      * @param context
      */
     public async applySecurityAuthentication(context: RequestContext): Promise<void> {
-        const cluster = this.getCurrentCluster();
-        const user = this.getCurrentUser();
+        return tracer.startActiveSpan('add-authentication-headers', async span => {
+            try {
+                const cluster = this.getCurrentCluster();
+                const user = this.getCurrentUser();
 
-        const agentOptions: https.AgentOptions = {};
-        const httpsOptions: https.RequestOptions = {};
+                const agentOptions: https.AgentOptions = {};
+                const httpsOptions: https.RequestOptions = {};
 
-        await this.applyOptions(httpsOptions);
+                await this.applyOptions(httpsOptions);
 
-        if (cluster && cluster.skipTLSVerify) {
-            agentOptions.rejectUnauthorized = false;
-        }
+                if (cluster && cluster.skipTLSVerify) {
+                    agentOptions.rejectUnauthorized = false;
+                }
 
-        if (cluster && cluster.tlsServerName) {
-            agentOptions.servername = cluster.tlsServerName;
-        }
+                if (cluster && cluster.tlsServerName) {
+                    agentOptions.servername = cluster.tlsServerName;
+                }
 
-        if (user && user.username) {
-            const auth = Buffer.from(`${user.username}:${user.password}`).toString('base64');
-            context.setHeaderParam('Authorization', `Basic ${auth}`);
-        }
+                if (user && user.username) {
+                    const auth = Buffer.from(`${user.username}:${user.password}`).toString('base64');
+                    context.setHeaderParam('Authorization', `Basic ${auth}`);
+                }
 
-        // Copy headers from httpsOptions to RequestContext
-        const headers = httpsOptions.headers || {};
-        Object.entries(headers).forEach(([key, value]) => {
-            context.setHeaderParam(key, `${value}`);
-        });
+                // Copy headers from httpsOptions to RequestContext
+                const headers = httpsOptions.headers || {};
+                Object.entries(headers).forEach(([key, value]) => {
+                    context.setHeaderParam(key, `${value}`);
+                });
 
-        // Copy AgentOptions from RequestOptions
-        agentOptions.ca = httpsOptions.ca;
-        agentOptions.cert = httpsOptions.cert;
-        agentOptions.key = httpsOptions.key;
-        agentOptions.pfx = httpsOptions.pfx;
-        agentOptions.passphrase = httpsOptions.passphrase;
-        agentOptions.rejectUnauthorized = httpsOptions.rejectUnauthorized;
+                // Copy AgentOptions from RequestOptions
+                agentOptions.ca = httpsOptions.ca;
+                agentOptions.cert = httpsOptions.cert;
+                agentOptions.key = httpsOptions.key;
+                agentOptions.pfx = httpsOptions.pfx;
+                agentOptions.passphrase = httpsOptions.passphrase;
+                agentOptions.rejectUnauthorized = httpsOptions.rejectUnauthorized;
 
-        context.setAgent(new https.Agent(agentOptions));
+                context.setAgent(new https.Agent(agentOptions));
+
+                const contextHeaders = context.getHeaders();
+                const contextAddress = context.getUrl();
+                const contextHttpMethod = context.getHttpMethod();
+
+                const spanAttributes: { [key: string]: string } = {};
+
+                spanAttributes['http.url'] = contextAddress
+                spanAttributes['http.method'] = contextHttpMethod
+
+                for (const [key, value] of Object.entries(contextHeaders)) {
+                    let santisedValue = value;
+                    if (key == 'Authorization') {
+                        santisedValue = 'REDACTED'
+                    }
+                    spanAttributes[`http.headers.${key}`] = santisedValue
+                };
+                return
+
+            } catch (exc) {
+                if (exc instanceof Error) {
+                    span.recordException(exc)
+                    span.setStatus({ code: SpanStatusCode.ERROR, message: `Error adding security headers to api request: ${exc.message}` })
+                }
+            } finally {
+                span.end()
+            }
+        })
     }
 
     /**
